@@ -1,5 +1,5 @@
 #! /bin/bash
-# TODO compilation errors ? and cheat != 0
+# TODO compilation errors ? and cheat != 0 and run_student
 getinput stack > MyStack.java
 
 cheat=$(cat MyStack.java | grep -c "import java.util.Stack")
@@ -14,11 +14,11 @@ else
     
     	scalac -cp .:scalacheck.jar StackProps.scala
 		output=$(run_student scala -cp .:scalacheck.jar StackProps)
-		if [ "$output" = "252"]; then
+		if [ "$output" = "252" ]; then
         	feedback --result failed --feedback "Command was killed due to an out-of-memory"
-        elif [ "$output" = "253"]; then
+        elif [ "$output" = "253" ]; then
         	feedback --result failed --feedback "Command timed out"
-        elif [ "$output" = "254"]; then
+        elif [ "$output" = "254" ]; then
         	feedback --result failed --feedback "An runtime error occured"
         else
     
