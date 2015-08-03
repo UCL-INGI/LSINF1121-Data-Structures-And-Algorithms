@@ -4,7 +4,7 @@ getinput stack > MyStack.java
 javac MyStack.java
 scalac -cp .:scalacheck.jar StackProps.scala
 output=$(scala -cp .:scalacheck.jar StackProps)
-output=$(echo "$output" | grep "\n" | xargs)
+output="$output test"
 #if [ "$output" = "OK" ]; then
 	feedback --result success --feedback "$output" #"Toutes mes félicitations!"
 #else

@@ -58,5 +58,5 @@ object StackProps extends Properties("Stack") {
   	}
 }
 
-// scalac -cp .:oldscalacheck.jar StackProps.scala
-// scala -cp .:oldscalacheck.jar StackProps
+// scalac -cp .:scalacheck.jar StackProps.scala
+// scala -cp .:scalacheck.jar StackProps
