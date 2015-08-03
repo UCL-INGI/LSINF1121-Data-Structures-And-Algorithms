@@ -1,0 +1,2 @@
+3 3 div pstack
+1 sub 0 eq pstack pop
