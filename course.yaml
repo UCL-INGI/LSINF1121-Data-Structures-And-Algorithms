@@ -1,0 +1,16 @@
+name: '[LSINF1121-2015] ALgorithmique et structures de données'
+admins:
+- gderval
+- gegoa
+- sihardy
+- pschaus
+accessible: false
+registration: false
+registration_password: null
+groups: false
+tutors: []
+registration_ac: null
+registration_ac_list:
+- ''
+groups_student_choice: true
+
