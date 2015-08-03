@@ -7,11 +7,12 @@ if [ $cheat != "1" ]; then
 	feedback --result failed --feedback "You can't use java.util.Stack!"
 else
 
-	scalac -cp .:scalacheck.jar StackProps.scala
+	javac MyStack.java
     if [ ! -f MyStack.class ]; then
     	feedback --result failed --feedback "Compilation failed"
     else
     
+    	scalac -cp .:scalacheck.jar StackProps.scala
 		output=$(run_student scala -cp .:scalacheck.jar StackProps)
 		if [ "$output" = "252"]; then
         	feedback --result failed --feedback "Command was killed due to an out-of-memory"
