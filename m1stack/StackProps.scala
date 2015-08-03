@@ -1,6 +1,5 @@
 import org.scalacheck.Properties
 import org.scalacheck.Prop
-import org.scalacheck.Prop._
 import org.scalacheck.Gen.{listOf, alphaStr, numChar}
 import java.util.EmptyStackException
 
@@ -43,12 +42,12 @@ object StackProps extends Properties("Stack") {
 
 	property("pop exception") =  {
 		var s = new MyStack()
-		(s.pop()) throws classOf[EmptyStackException]
+		Prop.throws(classOf[EmptyStackException]) {s.pop()}
 	}
 
 	property("peek exception") = {
 		var s = new MyStack()
-		(s.peek()) throws classOf[EmptyStackException]
+		Prop.throws(classOf[EmptyStackException]) {s.peek()}
 	}
 
 	property("LIFO order") = Prop.forAll { ( elements: List[String]) =>
