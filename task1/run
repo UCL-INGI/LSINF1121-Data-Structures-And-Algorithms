@@ -1,0 +1,10 @@
+#! /bin/bash
+
+getinput file > file.java
+
+output=$(cat file.java)
+if [ "$output" = "Hello World!" ]; then
+	feedback --result success --feedback "Toutes mes félicitations!"
+else
+	feedback --result failed --feedback "Tu as lamentablement échoué"
+fi
