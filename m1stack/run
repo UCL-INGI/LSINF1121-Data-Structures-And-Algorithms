@@ -1,9 +1,10 @@
 #! /bin/bash
-# TODO no import of java.util.Stack + handle compilation errors...
+# TODO no import of java.util.Stack + handle compilation errors + check +/-...
 getinput stack > MyStack.java
 javac MyStack.java
 scalac -cp .:scalacheck.jar StackProps.scala
 output=$(scala -cp .:scalacheck.jar StackProps)
+output="test2"
 #if [ "$output" = "OK" ]; then
 	feedback --result success --feedback "$output" #"Toutes mes félicitations!"
 #else
