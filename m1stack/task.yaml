@@ -22,13 +22,17 @@ limits:
     memory: '512'
     output: '100'
     time: '30'
-name: Mission 1 - Stack
+name: Mission 1
 problems:
     stack:
         name: Your Java file
         allowed_exts:
         - .Java
-        header: 'Please upload your file here. '
         type: code-file
+        header: 'Please upload your file here. '
         max_size: 1000000
+    tests:
+        type: code-file
+        name: Unit tests
+        header: Upload your tests here
 weight: 1.0
