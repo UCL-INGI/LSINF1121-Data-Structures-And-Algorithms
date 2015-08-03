@@ -16,14 +16,12 @@ context: |-
             public E push(E item);
 
         }
-
-    You are also asked to write unit tests to test both the stack and your PostScript interpreter.
 environment: java8scala
 limits:
     memory: '512'
     output: '100'
     time: '30'
-name: '[Individual] Mission 1'
+name: '[Individual] Mission 1 - Stack'
 problems:
     tests:
         type: code-file
