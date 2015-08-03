@@ -1,0 +1,34 @@
+accessible: true
+author: Simon Hardy
+context: |+
+    You are asked to implement the following interface, representing a stack, without using *java.util.Stack<E>* !
+
+    .. code-block:: java
+
+        public interface Stack<E> {
+
+            public boolean empty();
+
+            public E peek();
+
+            public E pop();
+
+            public E top();
+
+        }
+
+environment: java8scala
+limits:
+    memory: '512'
+    output: '100'
+    time: '30'
+name: Mission 1 - Stack
+problems:
+    stack:
+        name: Your Java file
+        allowed_exts:
+        - .Java
+        header: 'Please upload your file here. '
+        type: code-file
+        max_size: 1000000
+weight: 1.0
