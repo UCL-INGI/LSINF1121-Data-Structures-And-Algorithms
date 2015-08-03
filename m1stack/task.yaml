@@ -13,7 +13,7 @@ context: |-
 
             public E pop();
 
-            public E top();
+            public E push(E item);
 
         }
 
@@ -36,5 +36,6 @@ problems:
         allowed_exts:
         - .Java
         type: code-file
-        header: 'Upload the file containing your implementation here. '
+        header: 'Upload the file containing your implementation here. The file and
+            your class should be named *MyStack.java*. '
 weight: 1.0
