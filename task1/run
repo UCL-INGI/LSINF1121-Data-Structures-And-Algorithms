@@ -1,8 +1,8 @@
 #! /bin/bash
 
-getinput file > file.java
-javac file.java
-output=$(java file)
+getinput file > Main.java
+javac Main.java
+output=$(java Main)
 if [ "$output" = "Hello World!" ]; then
 	feedback --result success --feedback "Toutes mes félicitations!"
 else
