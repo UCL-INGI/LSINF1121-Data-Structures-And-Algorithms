@@ -7,12 +7,11 @@ if [ $cheat != "0" ]; then
 	feedback --result failed --feedback "You can't use java.util.Stack!"
 else
 
-	javac MyStack.java
 	scalac -cp .:scalacheck.jar StackProps.scala
 	output=$(scala -cp .:scalacheck.jar StackProps)
 	
-    failed=$(echo "$output" | grep -c "Falsified")
-    passed=$(echo "$output" | grep -c "OK")
+	failed=$(echo "$output" | grep -c "Falsified")
+	passed=$(echo "$output" | grep -c "OK")
 
 	if [ "$failed" = "0" ]; then
 		feedback --result success --feedback "Congratulations, you passed all the tests!"
