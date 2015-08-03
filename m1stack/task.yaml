@@ -9,9 +9,9 @@ context: |-
 
             public boolean empty();
 
-            public E peek();
+            public E peek() throws EmptyStackException;
 
-            public E pop();
+            public E pop() throws EmptyStackException;
 
             public E push(E item);
 
@@ -23,17 +23,11 @@ limits:
     time: '30'
 name: '[Individual] Mission 1 - Stack'
 problems:
-    tests:
-        type: code-file
-        name: Unit tests
-        allowed_exts:
-        - .java
-        header: 'Upload your tests for both the stack and the interpreter here. '
     stack:
         name: Stack
         allowed_exts:
         - .java
-        type: code-file
         header: 'Upload the file containing your implementation here. The file and
             your class should be named *MyStack.java*. '
+        type: code-file
 weight: 1.0
