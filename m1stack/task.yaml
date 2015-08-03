@@ -25,15 +25,16 @@ limits:
     time: '30'
 name: '[Individual] Mission 1'
 problems:
-    stack:
-        name: Your Java file
-        allowed_exts:
-        - .Java
-        type: code-file
-        header: 'Please upload your file here. '
-        max_size: 1000000
     tests:
         type: code-file
         name: Unit tests
-        header: Upload your tests here
+        allowed_exts:
+        - .Java
+        header: 'Upload your tests for both the stack and the interpreter here. '
+    stack:
+        name: Stack
+        allowed_exts:
+        - .Java
+        type: code-file
+        header: 'Upload the file containing your implementation here. '
 weight: 1.0
