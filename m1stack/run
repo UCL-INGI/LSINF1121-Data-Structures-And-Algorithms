@@ -1,5 +1,5 @@
 #! /bin/bash
-# TODO handle compilation errors + check +/-...
+# TODO handle compilation errors
 getinput stack > MyStack.java
 
 cheat=$(cat MyStack.java | grep -c "import java.util.Stack")
@@ -11,8 +11,8 @@ else
 	scalac -cp .:scalacheck.jar StackProps.scala
 	output=$(scala -cp .:scalacheck.jar StackProps)
 	
-    failed=$(echo "$output" | grep -c "-")
-    passed=$(echo "$output" | grep -c "+")
+    failed=$(echo "$output" | grep -c "Falsified")
+    passed=$(echo "$output" | grep -c "OK")
 
 	if [ "$failed" = "0" ]; then
 		feedback --result success --feedback "Congratulations, you passed all the tests!"
