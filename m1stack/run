@@ -13,7 +13,7 @@ else
     else
     
     	scalac -cp .:scalacheck.jar StackProps.scala
-		output=$(run_student scala -cp .:scalacheck.jar StackProps)
+		output=$(scala -cp .:scalacheck.jar StackProps)
 		if [ "$output" = "252" ]; then
         	feedback --result failed --feedback "Command was killed due to an out-of-memory"
         elif [ "$output" = "253" ]; then
