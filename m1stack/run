@@ -1,11 +1,11 @@
 #! /bin/bash
-
+# TODO no import of java.util.Stack + handle compilation errors...
 getinput stack > MyStack.java
 javac MyStack.java
-javac Main.java
-output=$(java Main)
-if [ "$output" = "OK" ]; then
-	feedback --result success --feedback "Toutes mes félicitations!"
-else
-	feedback --result failed --feedback "Tu as lamentablement échoué"
-fi
+scalac -cp .:scalacheck.jar StackProps.scala
+output=$(scala -cp .:scalacheck.jar StackProps)
+#if [ "$output" = "OK" ]; then
+	feedback --result success --feedback $output #"Toutes mes félicitations!"
+#else
+#	feedback --result failed --feedback "Tu as lamentablement échoué"
+#fi
