@@ -1,0 +1,26 @@
+accessible: true
+author: Simon Hardy
+context: |-
+    You are asked to write unit tests to test :
+    - Your implementation of the stack;
+    - Your PostScript interpreter.
+environment: java8scala
+limits:
+    memory: '512'
+    output: '100'
+    time: '30'
+name: '[Individual] Mission 1 - Unit tests'
+problems:
+    stack_tests:
+        name: Unit tests for the stack implementation
+        header: TODO
+        allowed_exts:
+        - .java
+        type: code-file
+    interpreter_tests:
+        allowed_exts:
+        - .java
+        name: Unit tests for the PostScript interpreter
+        header: TODO
+        type: code-file
+weight: 1.0
