@@ -1,6 +1,6 @@
 accessible: true
 author: Simon Hardy
-context: |+
+context: |-
     You are asked to implement the following interface, representing a stack, without using *java.util.Stack<E>* !
 
     .. code-block:: java
@@ -17,12 +17,13 @@ context: |+
 
         }
 
+    You are also asked to write unit tests to test both the stack and your PostScript interpreter.
 environment: java8scala
 limits:
     memory: '512'
     output: '100'
     time: '30'
-name: Mission 1
+name: '[Individual] Mission 1'
 problems:
     stack:
         name: Your Java file
