@@ -33,9 +33,9 @@ object StackProps extends Properties("Stack") {
 
 	property("multiple push") = Prop.forAll { (el: String, n: Int) =>
 		var s = new MyStack()
-		for (i <- 1 to n%1000)
+		for (i <- 1 to n%100)
 			s.push(el)
-		for (i <- 1 to n%1000)
+		for (i <- 1 to n%100)
 			s.pop()
 		s.empty()
 	}
