@@ -1,23 +1,57 @@
 accessible: true
 author: Simon Hardy
-context: ''
+context: |-
+    Recall the Stack interface :
+
+    .. code-block:: java
+
+        public interface Stack<E> {
+
+            public boolean empty();
+
+            public E peek() throws EmptyStackException;
+
+            public E pop() throws EmptyStackException;
+
+            public E push(E item);
+
+        }
+
+    You are asked to write unit tests (using JUnit) in order to check wether a particular implementation of this interface is correct. Be aware to special cases!
+
+    Here is a simple template you can use to write your tests :
+
+    .. code-block:: java
+
+        import org.junit.Test;
+        import static org.junit.Assert.assertEquals;
+        public class TestJUnit {
+
+            String element = "a";
+            MyStack stack = new MyStack();
+
+            @Test
+            public void firstTest() {
+                stack.push(element);
+                assertEquals(element,stack.pop());
+            }
+
+            @Test
+            public void secondTest() {
+                ...
+            }
+        }
 environment: java8scala
 limits:
     memory: '512'
-    output: '100'
     time: '30'
+    output: '100'
 name: Mission 1 - Unit tests for the stack [individual]
 problems:
     stack_tests:
+        allowed_exts:
+        - .java
+        type: code-file
+        header: 'Upload your file here. '
         name: Unit tests for the stack implementation
-        header: TODO
-        allowed_exts:
-        - .java
-        type: code-file
-    interpreter_tests:
-        allowed_exts:
-        - .java
-        name: Unit tests for the PostScript interpreter
-        header: TODO
-        type: code-file
 weight: 1.0
