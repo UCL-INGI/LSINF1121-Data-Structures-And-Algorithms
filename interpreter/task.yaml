@@ -22,4 +22,10 @@ problems:
         type: code-file
         header: 'Upload the stack used by your interpreter here. The class must be
             named "MyStack". '
+    element:
+        allowed_exts:
+        - .java
+        name: Element
+        type: code-file
+        header: 'Upload the class representing an element of your stack. '
 weight: 1.0
