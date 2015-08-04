@@ -18,7 +18,7 @@ fi
 cat StackProps.scala > student/StackProps.scala
 cd student
 scalac -cp .:../scalacheck.jar StackProps.scala
-output=$(run_student scala -cp .:../scalacheck.jar StackProps)
+output=$(run_student scala -cp .:/scalacheck.jar StackProps)
 cd ..
 
 if [ "$output" = "252" ]; then
