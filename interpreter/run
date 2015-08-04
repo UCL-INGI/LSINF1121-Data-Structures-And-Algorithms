@@ -4,13 +4,13 @@ getinput stack > student/MyStack.java
 
 javac student/MyStack.java
 if [ ! -f student/MyStack.class ]; then
-    feedback --result failed --feedback "Compilation failed"
+    feedback --result failed --feedback "Compilation of MyStack.java failed"
     exit 0
 fi
 
 javac student/Interpreter.java
 if [ ! -f student/Interpreter.class ]; then
-    feedback --result failed --feedback "Compilation failed"
+    feedback --result failed --feedback "Compilation of Interpreter.java failed"
     exit 0
 fi
 

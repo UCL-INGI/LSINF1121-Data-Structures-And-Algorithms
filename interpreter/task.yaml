@@ -21,5 +21,5 @@ problems:
         - .java
         type: code-file
         header: 'Upload the stack used by your interpreter here. The class must be
-            named "MyStack.java". '
+            named "MyStack". '
 weight: 1.0
