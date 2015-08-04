@@ -1,19 +1,24 @@
 accessible: true
 author: Simon Hardy
-context: 'You are asked to write a mini-PostScript interpreter. Your interpreter should
-    read the instructions written in the file named *input* and write the result of
-    each instruction (one per line) in a file named *output*. '
+context: 'You are asked to write a mini-PostScript interpreter. '
 environment: java8scala
 limits:
     memory: '512'
-    time: '30'
     output: '100'
+    time: '30'
 name: '[Group] Mission 1 - PostScript Interpreter'
 problems:
     interpreter:
         allowed_exts:
-        - .Java
-        header: 'Upload your interpreter here. '
-        name: PostScript interpreter
+        - .java
+        header: 'Upload your interpreter here. The class should be named "Interpreter"
+            and have an "interpret" method. '
         type: code-file
+        name: PostScript interpreter
+    stack:
+        name: Stack
+        allowed_exts:
+        - .java
+        type: code-file
+        header: 'Upload the stack used by your interpreter here. '
 weight: 1.0
