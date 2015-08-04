@@ -7,54 +7,94 @@ import java.util.ArrayList
 object InterpreterProps extends Properties("Interpreter") {
 	property("add") = Prop.forAll { (x: Int, y: Int) =>
 		var interpreter = new Interpreter()
-		val result = interpreter.interpret(x + " " + y + " add pstack")
+		val result = interpreter.interpret(x + " " + y + " add pstack pop")
 		result.equals((x+y).toString)
 	}
 
-	/*property("not empty 1") = Prop.forAll { (el: String) =>
-		var s = new MyStack()
-		s.push(el)
-		!s.empty()
+	property("sub") = Prop.forAll { (x: Int, y: Int) =>
+		var interpreter = new Interpreter()
+		val result = interpreter.interpret(x + " " + y + " sub pstack pop")
+		result.equals((x-y).toString)
 	}
 
-	property("not empty 2") = Prop.forAll { (el: String) =>
-		var s = new MyStack()
-		s.push(el)
-		s.peek()
-		!s.empty()
+	property("mul") = Prop.forAll { (x: Int, y: Int) =>
+		var interpreter = new Interpreter()
+		val result = interpreter.interpret(x + " " + y + " mul pstack pop")
+		result.equals((x*y).toString)
 	}
 
-	property("double push") = Prop.forAll { (el1: String, el2: String) =>
-		var s = new MyStack()
-		s.push(el1)
-		s.push(el2)
-		(s.pop().equals(el2) && s.peek().equals(el1) && !s.empty())
+	/*property("div") = Prop.forAll { (x: Int, y: Int) =>
+		var interpreter = new Interpreter()
+		if (y == 0) // div by 0, must throw the appropriate exception !
+			Prop.throws(classOf[ArithmeticException]) { interpreter.interpret(x + " " + y + " div pstack pop") }
+		else {
+			val result = interpreter.interpret(x + " " + y + " div pstack pop")
+			result.equals((x/y).toString)
+		}
 	}
 
-	property("multiple push") = Prop.forAll { (el: String, n: Int) =>
-		var s = new MyStack()
-		for (i <- 1 to n%100)
-			s.push(el)
-		for (i <- 1 to n%100)
-			s.pop()
-		s.empty()
+	property("empty stack") = Prop.forAll { (x: Int) =>
+		var interpreter = new Interpreter()
+		Prop.throws(classOf[ArithmeticException]) { interpreter.interpret(x + " pop pop") }
+	}*/
+
+	property("stack empty") = Prop.forAll { (x: Int, y: Int) =>
+		var interpreter = new Interpreter()
+		val result = interpreter.interpret(x + " " + y + " add pop pstack")
+		result.equals("")
 	}
 
-	property("pop exception") =  {
-		var s = new MyStack()
-		Prop.throws(classOf[EmptyStackException]) {s.pop()}
+	property("no pstack") = Prop.forAll { (x: Int, y: Int) =>
+		var interpreter = new Interpreter()
+		val result = interpreter.interpret(x + " " + y + " add pop")
+		result.equals("")
 	}
 
-	property("peek exception") = {
-		var s = new MyStack()
-		Prop.throws(classOf[EmptyStackException]) {s.peek()}
+	property("mul add") = Prop.forAll { (x: Int, y: Int, z: Int) =>
+		var interpreter = new Interpreter()
+		val result = interpreter.interpret(x + " " + y + " " + z + " mul add pstack pop")
+		result.equals((x+(y*z)).toString)
 	}
 
-	property("LIFO order") = Prop.forAll { ( elements: List[String]) =>
-    	var s = new MyStack()
-    	elements.foreach(el => s.push(el))
-    	elements.reverse.forall{_ == s.pop()}
-  	}*/
+	property("add mul") = Prop.forAll { (x: Int, y: Int, z: Int) =>
+		var interpreter = new Interpreter()
+		val result = interpreter.interpret(x + " " + y + " add " + z + " mul pstack pop")
+		result.equals(((x+y)*z).toString)
+	}
+
+	property("dup with double") = Prop.forAll { (x: Double) =>
+		var interpreter = new Interpreter()
+		val result = interpreter.interpret(x + " dup mul pstack pop")
+		result.equals((x*x).toString)
+	}
+
+	property("exch") = Prop.forAll { (x: Int, y: Int) =>
+		var interpreter = new Interpreter()
+		val result = interpreter.interpret(x + " " + y + " exch sub pstack pop")
+		result.equals((x-y).toString)
+	}
+
+	property("eq") = Prop.forAll { (x: Int, y: Int) =>
+		var interpreter = new Interpreter()
+		val result = interpreter.interpret(x + " " + y + " eq pstack pop")
+		result.equals((x==y).toString)
+	}
+
+	property("ne") = Prop.forAll { (x: Int, y: Int) =>
+		var interpreter = new Interpreter()
+		val result = interpreter.interpret(x + " " + y + " ne pstack pop")
+		result.equals((x!=y).toString)
+	}
+
+	property("def") = Prop.forAll { (x: Double) =>
+		if (x > 100000 || x < -100000) true
+		else {
+			var interpreter = new Interpreter()
+			val result = interpreter.interpret("/pi 3.141592653 def /radius " + x + " def pi radius dup mul mul pstack pop")
+			result.equals((3.141592653*x*x).toString)
+		}
+	}
+
 }
 
 // scalac -cp .:scalacheck.jar StackProps.scala
