@@ -16,9 +16,10 @@ if [ ! -f student/MyStack.class ]; then
 fi
 
 cat StackProps.scala > student/StackProps.scala
+cp scalacheck.jar student/scalacheck.jar
 cd student
-scalac -cp .:../scalacheck.jar StackProps.scala
-output=$(run_student scala -cp .:/scalacheck.jar StackProps)
+scalac -cp .:scalacheck.jar StackProps.scala
+output=$(run_student scala -cp .:scalacheck.jar StackProps)
 cd ..
 
 if [ "$output" = "252" ]; then
