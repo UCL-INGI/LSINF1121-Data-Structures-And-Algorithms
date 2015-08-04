@@ -6,7 +6,7 @@ limits:
     memory: '512'
     output: '100'
     time: '30'
-name: '[Group] Mission 1 - PostScript Interpreter'
+name: Mission 1 - PostScript Interpreter [group]
 problems:
     interpreter:
         allowed_exts:

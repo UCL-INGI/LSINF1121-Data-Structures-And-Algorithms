@@ -1,15 +1,12 @@
 accessible: true
 author: Simon Hardy
-context: |-
-    You are asked to write unit tests to test :
-    - Your implementation of the stack;
-    - Your PostScript interpreter.
+context: ''
 environment: java8scala
 limits:
     memory: '512'
     output: '100'
     time: '30'
-name: '[Individual] Mission 1 - Unit tests'
+name: Mission 1 - Unit tests for the stack [individual]
 problems:
     stack_tests:
         name: Unit tests for the stack implementation
