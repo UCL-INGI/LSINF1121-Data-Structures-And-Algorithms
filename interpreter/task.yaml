@@ -27,5 +27,6 @@ problems:
         - .java
         name: Element
         type: code-file
-        header: TODO
+        header: 'Upload the class representing an element of the stack here. It must
+            be named "Element". '
 weight: 1.0
