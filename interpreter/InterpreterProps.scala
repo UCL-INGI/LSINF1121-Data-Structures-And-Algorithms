@@ -2,16 +2,16 @@ import org.scalacheck.Properties
 import org.scalacheck.Prop
 import org.scalacheck.Gen.{listOf, alphaStr, numChar}
 import java.util.EmptyStackException
+import java.util.ArrayList
 
-object StackProps extends Properties("Stack") {
-	property("empty") = Prop.forAll { (el: String) =>
-		var s = new MyStack()
-		s.push(el)
-		s.pop()
-		s.empty()
+object InterpreterProps extends Properties("Interpreter") {
+	property("add") = Prop.forAll { (x: Int, y: Int) =>
+		var interpreter = new Interpreter()
+		val result = interpreter.interpret(x + " " + y + " add pstack")
+		result.equals((x+y).toString)
 	}
 
-	property("not empty 1") = Prop.forAll { (el: String) =>
+	/*property("not empty 1") = Prop.forAll { (el: String) =>
 		var s = new MyStack()
 		s.push(el)
 		!s.empty()
@@ -54,7 +54,7 @@ object StackProps extends Properties("Stack") {
     	var s = new MyStack()
     	elements.foreach(el => s.push(el))
     	elements.reverse.forall{_ == s.pop()}
-  	}
+  	}*/
 }
 
 // scalac -cp .:scalacheck.jar StackProps.scala

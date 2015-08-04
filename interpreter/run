@@ -1,12 +1,6 @@
 #! /bin/bash
+getinput interpreter > student/Interpreter.java
 getinput stack > student/MyStack.java
-
-cheat=$(cat student/MyStack.java | grep -c "import java.util.Stack")
-if [ $cheat != "0" ]; then
-	feedback --result failed --feedback "You can't use java.util.Stack!"
-    exit 0
-fi
-
 
 javac student/MyStack.java
 if [ ! -f student/MyStack.class ]; then
@@ -14,12 +8,18 @@ if [ ! -f student/MyStack.class ]; then
     exit 0
 fi
 
+javac student/Interpreter.java
+if [ ! -f student/Interpreter.class ]; then
+    feedback --result failed --feedback "Compilation failed"
+    exit 0
+fi
+
 # Copy everything in the 'student' directory for run_student
-cat StackProps.scala > student/StackProps.scala
+cat InterpreterProps.scala > student/InterpreterProps.scala
 cp scalacheck.jar student/scalacheck.jar
 cd student
-scalac -cp .:scalacheck.jar StackProps.scala
-output=$(run_student scala -cp .:scalacheck.jar StackProps)
+scalac -cp .:scalacheck.jar InterpreterProps.scala
+output=$(run_student scala -cp .:scalacheck.jar InterpreterProps)
 cd ..
 
 if [ "$output" = "252" ]; then
@@ -29,7 +29,7 @@ elif [ "$output" = "253" ]; then
 elif [ "$output" = "254" ]; then
       feedback --result failed --feedback "An runtime error occured"
 else
-    failed=$(echo "$output" | grep -c "Falsified")
+    	failed=$(echo "$output" | grep -c "Falsified")
 	passed=$(echo "$output" | grep -c "OK")
 
 	if [ "$failed" = "0" ]; then
