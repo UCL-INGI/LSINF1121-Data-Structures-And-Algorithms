@@ -30,7 +30,7 @@ elif [ "$output" = "253" ]; then
 elif [ "$output" = "254" ]; then
       feedback --result failed --feedback "An runtime error occured"
 else
-    	failed=$(echo "$output" | grep -c "Falsified")
+    failed=$(echo "$output" | grep -c "Falsified")
 	passed=$(echo "$output" | grep -c "OK")
 
 	if [ "$failed" = "0" ]; then
