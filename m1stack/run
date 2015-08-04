@@ -8,6 +8,7 @@ if [ $cheat != "1" ]; then
     exit 0
 fi
 
+
 javac student/MyStack.java
 if [ ! -f student/MyStack.class ]; then
     feedback --result failed --feedback "Compilation failed"
@@ -15,8 +16,11 @@ if [ ! -f student/MyStack.class ]; then
 fi
 
 cat StackProps.scala > student/StackProps.scala
-scalac -cp .:scalacheck.jar student/StackProps.scala
-output=$(run_student scala -cp .:scalacheck.jar student/StackProps)
+cd student
+scalac -cp .:../scalacheck.jar StackProps.scala
+output=$(run_student scala -cp .:../scalacheck.jar StackProps)
+cd ..
+
 if [ "$output" = "252" ]; then
 	feedback --result failed --feedback "Command was killed due to an out-of-memory"
 elif [ "$output" = "253" ]; then
