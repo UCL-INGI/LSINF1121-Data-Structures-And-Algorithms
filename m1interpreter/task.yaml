@@ -15,6 +15,8 @@ context: |-
 
         }
 
+    Don't forget to handle the different possible exceptions : think about java.util.EmptyStackException, java.lang.ArithmeticException...
+
     Note that [group] means that only one student must submit the code for the entire group.
 environment: java8scala
 limits:
