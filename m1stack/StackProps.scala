@@ -55,6 +55,18 @@ object StackProps extends Properties("Stack") {
     	elements.foreach(el => s.push(el))
     	elements.reverse.forall{_ == s.pop()}
   	}
+    
+	property("int") = Prop.forAll { (el: Int) =>
+		var s = new MyStack<Int>()
+		s.push(el)
+		(s.pop() == el && s.empty())
+	}
+    
+    property("double") = Prop.forAll { (el: Double) =>
+		var s = new MyStack<Double>()
+		s.push(el)
+		(s.pop() == el && s.empty())
+	}
 }
 
 // scalac -cp .:scalacheck.jar StackProps.scala
