@@ -87,7 +87,7 @@ object InterpreterProps extends Properties("Interpreter") {
 	}
 
 	property("def") = Prop.forAll { (x: Double) =>
-		if (x > 100000 || x < -100000) true
+		if (x > 100000 || x < -100000) true // avoid overflow
 		else {
 			var interpreter = new Interpreter()
 			val result = interpreter.interpret("/pi 3.141592653 def /radius " + x + " def pi radius dup mul mul pstack pop")
@@ -96,6 +96,3 @@ object InterpreterProps extends Properties("Interpreter") {
 	}
 
 }
-
-// scalac -cp .:scalacheck.jar StackProps.scala
-// scala -cp .:scalacheck.jar StackProps
