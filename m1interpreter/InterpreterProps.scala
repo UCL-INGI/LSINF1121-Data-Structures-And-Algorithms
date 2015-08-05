@@ -86,13 +86,12 @@ object InterpreterProps extends Properties("Interpreter") {
 		result.equals((x!=y).toString)
 	}
 
-	// TODO problems with this test
 	property("def") = Prop.forAll { (x: Double) =>
 		if (x > 100000 || x < -100000) true
 		else {
 			var interpreter = new Interpreter()
 			val result = interpreter.interpret("/pi 3.141592653 def /radius " + x + " def pi radius dup mul mul pstack pop")
-			true //result.equals((3.141592653*x*x).toString)
+			result.equals((3.141592653*x*x).toString)
 		}
 	}
 
