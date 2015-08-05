@@ -28,7 +28,7 @@ context: |-
         public class StackTests {
 
             String element = "a";
-            MyStack stack = new MyStack();
+            MyStack<String> stack = new MyStack<String>();
 
             @Test
             public void firstTest() {
@@ -41,6 +41,8 @@ context: |-
                 ...
             }
         }
+
+    NB : you can (should?) also write tests for other types than String !
 environment: java8scala
 limits:
     memory: '512'
