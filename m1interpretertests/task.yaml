@@ -1,0 +1,43 @@
+accessible: true
+author: Simon Hardy
+context: |-
+    You are asked to write unit tests (using JUnit) in order to check wether a particular interpreter does its job correctly (i.e. the method *interpret* follows its specifications).
+
+    Here is a simple template you can use to write your tests :
+
+    .. code-block:: java
+
+        import org.junit.Test;
+        import static org.junit.Assert.assertEquals;
+        public class InterpreterTests {
+
+            String instructions = "1 1 add pstack";
+            Interpreter interpreter = new Interpreter();
+
+            @Test
+            public void firstTest() {
+                String result = interpreter.interpret(instructions);
+                assertEquals(result,"2");
+            }
+
+            @Test
+            public void secondTest() {
+                ...
+            }
+        }
+environment: java8scala
+limits:
+    memory: '512'
+    time: '30'
+    output: '100'
+name: Mission 1 - Unit tests for the interpreter [individual]
+problems:
+    interpreter_tests:
+        type: code-file
+        allowed_exts:
+        - .java
+        name: Unit tests for the interpreter
+        header: 'Upload your file here, with only one class named "InterpreterTests".
+            The class representing the interpreter under test is called *Interpreter*,
+            as written in the template. '
+weight: 1.0
