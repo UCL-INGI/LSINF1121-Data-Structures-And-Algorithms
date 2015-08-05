@@ -20,7 +20,7 @@ public class MyBuggyStack8<E> {
 
 	public E pop() {
 		size--; 
-        if (size >= 1) {
+        if (size >= 5) {
         	E temp = stack.pop(); 
             E toReturn = stack.pop(); 
             stack.push(temp); 
