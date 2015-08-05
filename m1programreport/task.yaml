@@ -1,0 +1,19 @@
+accessible: true
+author: Simon Hardy
+context: 'Report of 1-2 pages max. containing short explanations concerning the programs
+    of the first mission (stack, interpreter and tests). '
+environment: default
+limits:
+    memory: '20'
+    time: '15'
+    output: '2'
+name: Mission 1 - Program report [group]
+problems:
+    program_report:
+        header: 'Please upload here your *program report* for the mission 1. '
+        type: code-file
+        name: Program report
+        allowed_exts:
+        - .pdf
+        max_size: 5000000
+weight: 1.0

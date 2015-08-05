@@ -12,7 +12,7 @@ problems:
         max_size: 5000000
         allowed_exts:
         - .pdf
-        header: 'Please upload here your questions report for the mission 1. '
+        header: 'Please upload here your *questions report* for the mission 1. '
         type: code-file
         name: Report
 weight: 1.0
