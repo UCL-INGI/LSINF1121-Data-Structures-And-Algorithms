@@ -23,12 +23,17 @@ public class MyBuggyStack9<E> {
 		return myStack.pop(); 
 	}
 	
-	public E push(E item) {
-		size++; 
-        if (size >= 2) {
-        	
+	public E push(E item) { // add the element at the end instead of the top of the stack
+    	Stack<E> tempStack = new Stack<E>(); 
+    	for (int i = 0 ; i < size ; i++) {
+        	tempStack.push(myStack.pop()); 
         }
-		return myStack.push(item); 
+        E toRet = myStack.push(item); 
+    	for (int i = 0 ; i < size ; i++) {
+        	myStack.push(tempStack.pop());
+        }
+		size++; 
+		return toRet; 
 	}
 	
 }
