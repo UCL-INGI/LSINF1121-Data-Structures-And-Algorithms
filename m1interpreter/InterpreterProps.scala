@@ -23,8 +23,7 @@ object InterpreterProps extends Properties("Interpreter") {
 		result.equals((x*y).toString)
 	}
 
-	// TODO check these tests too
-	/*property("div") = Prop.forAll { (x: Int, y: Int) =>
+	property("div") = Prop.forAll { (x: Int, y: Int) =>
 		var interpreter = new Interpreter()
 		if (y == 0) // div by 0, must throw the appropriate exception !
 			Prop.throws(classOf[ArithmeticException]) { interpreter.interpret(x + " " + y + " div pstack pop") }
@@ -32,7 +31,7 @@ object InterpreterProps extends Properties("Interpreter") {
 			val result = interpreter.interpret(x + " " + y + " div pstack pop")
 			result.equals((x/y).toString)
 		}
-	}*/
+	}
 
 	property("empty stack") = Prop.forAll { (x: Int) =>
 		var interpreter = new Interpreter()
