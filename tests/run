@@ -1,0 +1,64 @@
+#! /bin/bash
+
+javac -d ./student MyStack.java
+javac -d ./student MyBuggyStack1.java
+javac -d ./student MyBuggyStack2.java
+javac -d ./student MyBuggyStack3.java
+javac -d ./student MyBuggyStack4.java
+javac -d ./student MyBuggyStack5.java
+javac -d ./student MyBuggyStack6.java
+
+getinput stack_tests > student/StackTests.java
+cp junit-4.12.jar student/junit-4.12.jar
+cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
+cd student
+
+n=0 # number of tests passed (OK for MyStack, FAILURES for MyBuggyStacks)
+className="MyStack"
+
+for i in `seq 1 7`;
+do
+	javac -cp .:junit-4.12.jar StackTests.java
+	if [ ! -f StackTests.class ]; then
+	    feedback --result failed --feedback "Compilation failed"
+	    exit 0
+	fi
+
+	output=$(java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore StackTests)
+	if [ "$output" = "252" ]; then
+		feedback --result failed --feedback "Command was killed due to an out-of-memory"
+		exit 0
+	elif [ "$output" = "253" ]; then
+		feedback --result failed --feedback "Command timed out"
+		exit 0
+	elif [ "$output" = "254" ]; then
+	      feedback --result failed --feedback "An runtime error occured"
+		exit 0
+	fi
+
+	failed=$(echo "$output" | grep -c "FAILURES")
+
+	if [ "$i" = "1" ] && [ "$failed" = "0" ]; then
+		((n++))
+		feedback --result success --feedback "No error detected in a correct stack, good job!"
+	else
+		feedback --result failed --feedback "You detected an error in a correct stack :("
+	fi
+
+	if [ "$i" != "1" ] && [ "$failed" = "1" ]; then
+		((n++))
+		feedback --result success --feedback "Error detected in an incorrect stack, good job!"
+	else
+		feedback --result failed --feedback "You didn't detect any error in an incorrect stack :("
+	fi
+
+	sed -i -e 's/$className/MyBuggyStack$i/g' ./StackTests.java
+	className="MyBuggyStack$i"
+done
+cd ..
+
+if [ "$n" = 7 ]; then
+	feedback --result success --feedback "Congratulations, you passed all the tests!"
+else
+	feedback --result failed --feedback "Unfortunately, you passed only $n tests out of 7"
+fi
