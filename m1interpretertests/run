@@ -10,13 +10,13 @@ cd student
 n=0 # number of tests passed (OK for Interpreter, FAILURES for BuggyInterpreters)
 passOk=0
 failOK=0
-name="Interpreter"
+name="Interpreter.java"
 
 for i in `seq 1 3`;
 do
 	
 	cp "../$name" ./Interpreter.java
-	name="BuggyInterpreter$i"
+	name="BuggyInterpreter${i}.java"
 
 	javac -d ./student MyStack.java Element.java Interpreter.java
 
