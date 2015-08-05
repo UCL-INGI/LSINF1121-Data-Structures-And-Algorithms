@@ -3,8 +3,8 @@
 getinput interpreter_tests > student/InterpreterTests.java
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
-cp MyStack.java ./student
-cp Element.java ./student
+cp MyStack.java ./student/MyStack.java
+cp Element.java ./student/Element.java
 cd student
 
 n=0 # number of tests passed (OK for Interpreter, FAILURES for BuggyInterpreters)
