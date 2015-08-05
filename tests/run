@@ -15,6 +15,7 @@ cd student
 
 n=0 # number of tests passed (OK for MyStack, FAILURES for MyBuggyStacks)
 className="MyStack"
+feedback=""
 
 for i in `seq 1 7`;
 do
@@ -51,8 +52,9 @@ do
 	else
 		feedback --result failed --feedback "You didn't detect any error in an incorrect stack :("
 	fi
-
-	sed -i -e 's/$className/MyBuggyStack$i/g' ./StackTests.java
+	
+	replacement=$(printf "s/%s/MyBuggyStack%s/g" "$className" "$i")
+	sed -i -e "$replacement" ./StackTests.java # change the stack
 	className="MyBuggyStack$i"
 done
 cd ..
