@@ -17,7 +17,7 @@ context: |-
 
         }
 
-    You are asked to write unit tests (using JUnit) in order to check wether a particular implementation of this interface is correct. Be aware to special cases!
+    You are asked to write unit tests (using JUnit) in order to check wether a particular implementation of this interface is correct.
 
     Here is a simple template you can use to write your tests :
 
