@@ -41,16 +41,16 @@ do
 
 	if [ "$i" = "1" ] && [ "$failed" = "0" ]; then
 		((n++))
-		feedback="$feedback \n No error detected in a correct stack, good job!"
+		feedback="$feedback ; No error detected in a correct stack, good job!"
 	else
-		feedback="$feedback \n You detected an error in a correct stack :("
+		feedback="$feedback ; You detected an error in a correct stack :("
 	fi
 
 	if [ "$i" != "1" ] && [ "$failed" = "1" ]; then
 		((n++))
-		feedback="$feedback \n Error detected in an incorrect stack, good job!"
+		feedback="$feedback ; Error detected in an incorrect stack, good job!"
 	else
-		feedback="$feedback \n You didn't detect any error in an incorrect stack :("
+		feedback="$feedback ; You didn't detect any error in an incorrect stack :("
 	fi
 	
 	replacement=$(printf "s/%s/MyBuggyStack%s/g" "$className" "$i")
@@ -60,7 +60,7 @@ done
 cd ..
 
 if [ "$n" = 7 ]; then
-	feedback --result success --feedback "$feedback \n Congratulations, you passed all the tests!"
+	feedback --result success --feedback "$feedback ; Congratulations, you passed all the tests!"
 else
-	feedback --result failed --feedback "$feedback \n Unfortunately, you passed only $n tests out of 7"
+	feedback --result failed --feedback "$feedback ; Unfortunately, you passed only $n tests out of 7"
 fi
