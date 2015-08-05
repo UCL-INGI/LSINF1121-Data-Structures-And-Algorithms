@@ -1,1 +1,5 @@
+#! /bin/bash
+
+getinput report > Report.pdf
+
 feedback --result success --feedback "Report uploaded. "
