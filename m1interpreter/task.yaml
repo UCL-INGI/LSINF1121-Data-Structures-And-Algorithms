@@ -19,22 +19,17 @@ context: |-
 environment: java8scala
 limits:
     memory: '512'
-    output: '100'
     time: '30'
+    output: '100'
 name: Mission 1 - PostScript Interpreter [group]
 problems:
     interpreter:
         allowed_exts:
         - .java
-        header: 'Upload your interpreter here. The class should be named "Interpreter"
-            and have an "interpret" method. '
-        type: code-file
+        header: 'Upload your interpreter here. Your file should contain exactly one
+            public class named "Interpreter", that has at least an "interpret" method.
+            Put additional classes inside "Interpreter", or just after it but then
+            without the *public* key-word. '
         name: PostScript interpreter
-    stack:
-        name: Stack
-        allowed_exts:
-        - .java
         type: code-file
-        header: 'Upload the stack used by your interpreter here. The class must be
-            named "MyStack". '
 weight: 1.0

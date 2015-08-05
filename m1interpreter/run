@@ -1,14 +1,7 @@
 #! /bin/bash
 getinput interpreter > student/Interpreter.java
-getinput stack > student/MyStack.java
-getinput element > student/Element.java
 
-javac student/Element.java student/MyStack.java student/Interpreter.java
-
-if [ ! -f student/MyStack.class ]; then
-    feedback --result failed --feedback "Compilation of MyStack.java failed"
-    exit 0
-fi
+javac student/Interpreter.java
 
 if [ ! -f student/Interpreter.class ]; then
     feedback --result failed --feedback "Compilation of Interpreter.java failed"
