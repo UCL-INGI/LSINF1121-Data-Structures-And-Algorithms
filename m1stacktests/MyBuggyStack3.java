@@ -24,7 +24,7 @@ public class MyBuggyStack3<E> {
 	}
 	
 	public E push(E item) {
-		if (size >= 10) return myStack.peek(); // doesn't push the element + return another one
+		if (size >= 5) return myStack.peek(); // doesn't push the element + return another one
 		size++; 
 		return myStack.push(item); 
 	}

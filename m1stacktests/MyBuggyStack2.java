@@ -25,7 +25,7 @@ public class MyBuggyStack2<E> {
 	
 	public E push(E item) {
 		nbrOp++; 
-		if (nbrOp > 50) myStack.push(item); 
+		if (nbrOp > 10) myStack.push(item); 
 		return myStack.push(item); 
 	}
 	

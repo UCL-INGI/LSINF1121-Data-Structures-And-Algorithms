@@ -9,7 +9,7 @@ public class MyBuggyStack6<E> {
 	}
 	
 	public boolean empty() {
-		return !myStack.empty();
+		return myStack.empty();
 	}
 	
 	public E peek() {
