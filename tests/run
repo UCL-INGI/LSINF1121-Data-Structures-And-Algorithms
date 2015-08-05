@@ -64,7 +64,8 @@ if [ "$failOk" != 6 ]; then
 	if [ "$feedback" != "" ]; then
     	feedback="$feedback and "
     fi
-	feedback="you didn't detect errors in $failOk incorrect stacks. "
+    lack=$((6-$failOk))
+	feedback="you didn't detect errors in $lack incorrect stacks. "
 fi
 
 if [ "$n" = 7 ]; then
