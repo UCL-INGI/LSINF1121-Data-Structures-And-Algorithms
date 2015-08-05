@@ -23,6 +23,7 @@ object InterpreterProps extends Properties("Interpreter") {
 		result.equals((x*y).toString)
 	}
 
+	// TODO check these tests too
 	/*property("div") = Prop.forAll { (x: Int, y: Int) =>
 		var interpreter = new Interpreter()
 		if (y == 0) // div by 0, must throw the appropriate exception !
@@ -86,6 +87,7 @@ object InterpreterProps extends Properties("Interpreter") {
 		result.equals((x!=y).toString)
 	}
 
+	// TODO problems with this test
 	property("def") = Prop.forAll { (x: Double) =>
 		if (x > 100000 || x < -100000) true
 		else {
