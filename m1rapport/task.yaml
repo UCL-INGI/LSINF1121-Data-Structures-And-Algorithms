@@ -1,6 +1,9 @@
 accessible: true
 author: Simon Hardy
-context: 'Answers to the different questions in the statement of the first mission. '
+context: |-
+    Answers to the different questions in the statement of the first mission.
+
+    Note that [group] means that only one student must submit the report for the entire group.
 environment: default
 limits:
     memory: '20'

@@ -1,7 +1,9 @@
 accessible: true
 author: Simon Hardy
-context: 'Report of 1-2 pages max. containing short explanations concerning the programs
-    of the first mission (stack, interpreter and tests). '
+context: |-
+    Report of 1-2 pages max. containing short explanations concerning the programs of the first mission (stack, interpreter and tests).
+
+    Note that [group] means that only one student must submit the code for the entire group.
 environment: default
 limits:
     memory: '20'
@@ -10,9 +12,7 @@ limits:
 name: Mission 1 - Program report [group]
 problems:
     program_report:
-        header: 'Please upload here your *program report* for the mission 1. Note
-            that [group] means that only one student must submit the report for the
-            entire group.  '
+        header: 'Please upload here your *program report* for the mission 1. '
         type: code-file
         name: Program report
         allowed_exts:
