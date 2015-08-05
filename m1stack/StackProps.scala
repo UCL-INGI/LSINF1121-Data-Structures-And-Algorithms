@@ -68,6 +68,3 @@ object StackProps extends Properties("Stack") {
 		(s.pop() == el && s.empty())
 	}
 }
-
-// scalac -cp .:scalacheck.jar StackProps.scala
-// scala -cp .:scalacheck.jar StackProps
