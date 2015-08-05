@@ -32,12 +32,12 @@ object InterpreterProps extends Properties("Interpreter") {
 			val result = interpreter.interpret(x + " " + y + " div pstack pop")
 			result.equals((x/y).toString)
 		}
-	}
+	}*/
 
 	property("empty stack") = Prop.forAll { (x: Int) =>
 		var interpreter = new Interpreter()
-		Prop.throws(classOf[ArithmeticException]) { interpreter.interpret(x + " pop pop") }
-	}*/
+		Prop.throws(classOf[ArithmeticException]) { interpreter.interpret(x + " pop pop pstack") }
+	}
 
 	property("stack empty") = Prop.forAll { (x: Int, y: Int) =>
 		var interpreter = new Interpreter()
