@@ -10,7 +10,9 @@ limits:
 name: Mission 1 - Program report [group]
 problems:
     program_report:
-        header: 'Please upload here your *program report* for the mission 1. '
+        header: 'Please upload here your *program report* for the mission 1. Note
+            that [group] means that only one student must submit the report for the
+            entire group.  '
         type: code-file
         name: Program report
         allowed_exts:
