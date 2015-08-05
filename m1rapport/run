@@ -1,5 +1,5 @@
 #! /bin/bash
 
-getinput report > Report.pdf
+getinput report > QuestionsReport.pdf
 
-feedback --result success --feedback "Report uploaded. "
+feedback --result success --feedback "Questions report uploaded. "
