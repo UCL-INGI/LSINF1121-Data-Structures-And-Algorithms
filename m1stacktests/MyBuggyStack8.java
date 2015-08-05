@@ -1,11 +1,13 @@
 import java.util.Stack; 
 
-public class MyBuggyStack7<E> {
+public class MyBuggyStack4<E> {
 
 	private Stack<E> myStack; 
+	private int size; 
 	
-	public MyBuggyStack7() {
+	public MyBuggyStack4() {
 		myStack = new Stack<E>(); 
+		size = 0; 
 	}
 	
 	public boolean empty() {
@@ -17,11 +19,14 @@ public class MyBuggyStack7<E> {
 	}
 
 	public E pop() {
+		size--; 
+		if (size >= 5) return myStack.peek(); // returns the right element, but doesn't pop it !
 		return myStack.pop(); 
 	}
 	
 	public E push(E item) {
-		return myStack.push(null); // pushes null instead of the right item
+		size++; 
+		return myStack.push(item); 
 	}
 	
 }
