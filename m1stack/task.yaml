@@ -1,7 +1,7 @@
 accessible: true
 author: Simon Hardy
 context: |-
-    You are asked to implement the following interface, representing a stack, without using *java.util.Stack<E>* !
+    You are asked to implement the following interface, representing a stack, using a singly linked list. Note : it's forbidden to use *java.util.Stack<E>* !
 
     .. code-block:: java
 
@@ -29,7 +29,7 @@ problems:
         name: Stack
         allowed_exts:
         - .java
-        header: 'Upload the file containing your implementation here. The file and
-            your class should be named *MyStack.java*. '
+        header: 'Upload the file containing your implementation here. The class representing
+            your stack should be named *MyStack* ! '
         type: code-file
 weight: 1.0
