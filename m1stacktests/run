@@ -7,6 +7,9 @@ javac -d ./student MyBuggyStack3.java
 javac -d ./student MyBuggyStack4.java
 javac -d ./student MyBuggyStack5.java
 javac -d ./student MyBuggyStack6.java
+javac -d ./student MyBuggyStack7.java
+javac -d ./student MyBuggyStack8.java
+javac -d ./student MyBuggyStack9.java
 
 getinput stack_tests > student/StackTests.java
 cp junit-4.12.jar student/junit-4.12.jar
@@ -18,7 +21,7 @@ className="MyStack"
 passOk=0
 failOK=0
 
-for i in `seq 1 7`;
+for i in `seq 1 10`;
 do
 	javac -cp .:junit-4.12.jar StackTests.java
 	if [ ! -f StackTests.class ]; then
@@ -60,16 +63,16 @@ feedback=""
 if [ "$passOk" != 1 ]; then
 	feedback="you detected an error in a correct stack"
 fi
-if [ "$failOk" != 6 ]; then
+if [ "$failOk" != 9 ]; then
 	if [ "$feedback" != "" ]; then
     	feedback="$feedback and "
     fi
-    lack=$((6-$failOk))
+    lack=$((9-$failOk))
 	feedback="you didn't detect errors in $lack incorrect implementations of stacks. "
 fi
 
 if [ "$n" = 7 ]; then
 	feedback --result success --feedback "Congratulations, you passed all the tests!"
 else
-	feedback --result failed --feedback "Unfortunately, you passed only $n tests out of 7 : $feedback"
+	feedback --result failed --feedback "Unfortunately, you passed only $n tests out of 10 : $feedback"
 fi
