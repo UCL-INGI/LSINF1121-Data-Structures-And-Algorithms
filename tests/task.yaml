@@ -25,7 +25,7 @@ context: |-
 
         import org.junit.Test;
         import static org.junit.Assert.assertEquals;
-        public class TestJUnit {
+        public class StackTests {
 
             String element = "a";
             MyStack stack = new MyStack();
@@ -52,6 +52,6 @@ problems:
         allowed_exts:
         - .java
         type: code-file
-        header: 'Upload your file here. '
+        header: 'Upload your file here, with only one class named "StackTests". '
         name: Unit tests for the stack implementation
 weight: 1.0
