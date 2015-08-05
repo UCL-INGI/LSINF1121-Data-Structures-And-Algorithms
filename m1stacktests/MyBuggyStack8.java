@@ -20,10 +20,10 @@ public class MyBuggyStack8<E> {
 
 	public E pop() {
 		size--; 
-        if (size > 5) {
-        	E temp = stack.pop(); 
-            E toReturn = stack.pop(); 
-            stack.push(temp); 
+        if (size >= 3) {
+        	E temp = myStack.pop(); 
+            E toReturn = myStack.pop(); 
+            myStack.push(temp); 
             return toReturn; 
         }
 		return myStack.pop(); 
