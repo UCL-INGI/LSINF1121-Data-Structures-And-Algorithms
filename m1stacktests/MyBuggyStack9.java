@@ -1,11 +1,11 @@
 import java.util.Stack; 
 
-public class MyBuggyStack8<E> {
+public class MyBuggyStack9<E> {
 
 	private Stack<E> myStack; 
 	private int size; 
 	
-	public MyBuggyStack8() {
+	public MyBuggyStack9() {
 		myStack = new Stack<E>(); 
 		size = 0; 
 	}
@@ -20,17 +20,14 @@ public class MyBuggyStack8<E> {
 
 	public E pop() {
 		size--; 
-        if (size >= 1) {
-        	E temp = stack.pop(); 
-            E toReturn = stack.pop(); 
-            stack.push(temp); 
-            return toReturn; 
-        }
 		return myStack.pop(); 
 	}
 	
 	public E push(E item) {
 		size++; 
+        if (size >= 2) {
+        	
+        }
 		return myStack.push(item); 
 	}
 	
