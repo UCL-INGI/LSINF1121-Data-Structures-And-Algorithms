@@ -1,19 +1,18 @@
 accessible: true
 author: Simon Hardy
-context: Report for the mission 1 (answers to the different questions + some comments
-    about your programs)
+context: 'Answers to the different questions in the statement of the first mission. '
 environment: default
 limits:
     memory: '20'
     time: '15'
     output: '2'
-name: Mission 1 - Report [groupe]
+name: Mission 1 - Questions report [group]
 problems:
     report:
         max_size: 5000000
         allowed_exts:
         - .pdf
-        header: 'Please upload here your report for the mission 1. '
+        header: 'Please upload here your questions report for the mission 1. '
         type: code-file
         name: Report
 weight: 1.0
