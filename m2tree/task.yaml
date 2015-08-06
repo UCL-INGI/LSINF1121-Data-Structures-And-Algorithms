@@ -42,18 +42,19 @@ context: |-
           public FormalExpressionTree derive();
         }
 environment: java8scala
+groups: false
 limits:
     memory: '512'
-    time: '30'
     output: '100'
+    time: '30'
 name: Misson 2 - Formal expression tree [group]
 problems:
     tree:
         name: Formal expression tree
-        type: code-file
         allowed_exts:
         - .java
         header: 'Upload the file containing your implementation here. The class representing
-            your tree should be named *MyFormalExpressionTree*. If you need other
-            classes, put them in the same file but without any *public* modifier.  '
+            your tree should be named *ExpressionTree*. If you need other classes,
+            put them in the same file but without any *public* modifier. '
+        type: code-file
 weight: 1.0
