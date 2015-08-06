@@ -1,15 +1,6 @@
 #! /bin/bash
 
-javac -d ./student MyStack.java
-javac -d ./student MyBuggyStack1.java
-javac -d ./student MyBuggyStack2.java
-javac -d ./student MyBuggyStack3.java
-javac -d ./student MyBuggyStack4.java
-javac -d ./student MyBuggyStack5.java
-javac -d ./student MyBuggyStack6.java
-javac -d ./student MyBuggyStack7.java
-javac -d ./student MyBuggyStack8.java
-javac -d ./student MyBuggyStack9.java
+javac -d ./student MyStack.java MyBuggyStack1.java MyBuggyStack2.java MyBuggyStack3.java MyBuggyStack4.java MyBuggyStack5.java MyBuggyStack6.java MyBuggyStack7.java MyBuggyStack8.java MyBuggyStack9.java
 
 getinput stack_tests > student/StackTests.java
 cp junit-4.12.jar student/junit-4.12.jar
