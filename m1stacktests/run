@@ -27,7 +27,7 @@ do
 	compilationMessage=$(javac -cp .:junit-4.12.jar StackTests.java 2>&1)
 	compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 	compilationMessage=$(printf "Compilation of StackTests.java failed :\n::\n\n $compilationMessage")
-	if [ ! -f student/StackTests.class ]; then
+	if [ ! -f StackTests.class ]; then
 		feedback --result failed --feedback "$compilationMessage"
 		exit 0
 	fi
