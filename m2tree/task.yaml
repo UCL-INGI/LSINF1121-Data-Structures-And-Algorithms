@@ -54,5 +54,6 @@ problems:
         allowed_exts:
         - .java
         header: 'Upload the file containing your implementation here. The class representing
-            your tree should be named *MyFormalExpressionTree* ! '
+            your tree should be named *MyFormalExpressionTree*. If you need other
+            classes, put them in the same file but without any *public* modifier.  '
 weight: 1.0
