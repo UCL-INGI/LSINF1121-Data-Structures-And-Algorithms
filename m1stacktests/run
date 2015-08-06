@@ -15,7 +15,7 @@ passOk=0
 failOK=0
 
 wrongName=$(cat StackTests.java | grep -c "$className")
-if [ $wrongName < 1 ]; then
+if [ "$wrongName" = "0" ]; then
 	feedback --result failed --feedback "The stack under test must be named MyStack !"
 	exit 0
 fi
