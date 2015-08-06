@@ -54,8 +54,8 @@ problems:
         allowed_exts:
         - .java
         type: code-file
-        header: 'Upload your file here, with only one class named "StackTests". The
+        header: Upload your file here, with only one class named "StackTests". The
             class representing the stack under test is called *MyStack*, as written
-            in the template. '
+            in the template !
         name: Unit tests for the stack implementation
 weight: 1.0
