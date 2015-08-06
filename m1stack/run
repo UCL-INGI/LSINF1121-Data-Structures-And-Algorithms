@@ -34,7 +34,7 @@ else
     failed=$(echo "$output" | grep -c "Falsified")
 	passed=$(echo "$output" | grep -c "OK")
 
-	if [ "$failed" = "0" ]; then
+	if [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
 		feedback --result success --feedback "Congratulations, you passed all the tests!"
 	else
 		feedback --result failed --feedback "Unfortunately, you failed $failed tests out of $(($passed+$failed))"
