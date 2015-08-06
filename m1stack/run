@@ -9,8 +9,10 @@ fi
 
 
 compilationMessage=$(javac student/MyStack.java 2>&1)
+compilationMessage=$(echo $compilationMessage | sed -e 's/^/\t/' | sed -e 's/%/%%%g')
+compilationMessage=$(printf "Compilation of MyStack.java failed :\n::\n\n $compilationMessage")
 if [ ! -f student/MyStack.class ]; then
-    feedback --result failed --feedback "Compilation of MyStack.java failed : $compilationMessage"
+    feedback --result failed --feedback "$compilationMessage"
     exit 0
 fi
 
