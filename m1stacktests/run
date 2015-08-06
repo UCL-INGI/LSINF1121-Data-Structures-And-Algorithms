@@ -23,9 +23,9 @@ fi
 for i in $(seq 1 $tot)
 do
 
-	javac -cp .:junit-4.12.jar StackTests.java
+	compilationMessage=$(javac -cp .:junit-4.12.jar StackTests.java)
 	if [ ! -f StackTests.class ]; then
-	    feedback --result failed --feedback "Compilation failed"
+	    feedback --result failed --feedback "Compilation of StackTests.java failed : $compilationMessage"
 	    exit 0
 	fi
 
@@ -37,7 +37,7 @@ do
 		feedback --result failed --feedback "Command timed out"
 		exit 0
 	elif [ "$output" = "254" ]; then
-	      feedback --result failed --feedback "An runtime error occured"
+	      feedback --result failed --feedback "Unfortunately, a runtime error occured"
 		exit 0
 	fi
 
