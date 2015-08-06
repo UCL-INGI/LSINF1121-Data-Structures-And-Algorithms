@@ -29,7 +29,7 @@ object InterpreterProps extends Properties("Interpreter") {
 			Prop.throws(classOf[ArithmeticException]) { interpreter.interpret(x + " " + y + " div pstack pop") }
 		else {
 			val result = interpreter.interpret(x + " " + y + " div pstack pop")
-			result.equals((x/y).toString) || result.equals(x/y.toDouble.toString)
+			result.equals((x/y).toString) || result.equals((x/y).toDouble.toString)
 		}
 	}
 
