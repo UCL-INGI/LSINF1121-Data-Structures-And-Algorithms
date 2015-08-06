@@ -75,7 +75,7 @@ if [ "$failOk" != "$(($tot-1))" ]; then
 fi
 
 if [ "$n" = "$tot" ]; then
-	feedback --result success --feedback "Congratulations, you passed all the tests!"
+	feedback --result success --feedback "Congratulations, you passed the $n tests!"
 else
 	feedback --result failed --feedback "Unfortunately, you passed only $n tests out of $tot : $feedback"
 fi
