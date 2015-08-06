@@ -8,9 +8,9 @@ if [ $cheat != "0" ]; then
 fi
 
 
-javac student/MyStack.java
+compilationMessage=$(javac student/MyStack.java)
 if [ ! -f student/MyStack.class ]; then
-    feedback --result failed --feedback "Compilation failed"
+    feedback --result failed --feedback "Compilation of MyStack.java failed : $compilationMessage"
     exit 0
 fi
 
