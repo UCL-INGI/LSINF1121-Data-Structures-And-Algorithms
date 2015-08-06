@@ -2,7 +2,7 @@
 getinput stack > student/MyStack.java
 
 cheat=$(cat student/MyStack.java | grep -c "import java.util.Stack")
-if [ $cheat != "0" ]; then
+if [ $cheat != "1" ]; then
 	feedback --result failed --feedback "You can't use java.util.Stack!"
     exit 0
 fi
