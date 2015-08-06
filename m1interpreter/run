@@ -1,10 +1,10 @@
 #! /bin/bash
 getinput interpreter > student/Interpreter.java
 
-javac student/Interpreter.java
+compilationMessage=$(javac student/Interpreter.java)
 
 if [ ! -f student/Interpreter.class ]; then
-    feedback --result failed --feedback "Compilation of Interpreter.java failed"
+    feedback --result failed --feedback "Compilation of Interpreter.java failed : $compilationMessage"
     exit 0
 fi
 
@@ -21,7 +21,7 @@ if [ "$output" = "252" ]; then
 elif [ "$output" = "253" ]; then
 	feedback --result failed --feedback "Command timed out"
 elif [ "$output" = "254" ]; then
-      feedback --result failed --feedback "An runtime error occured"
+      feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
     failed=$(echo "$output" | grep -c "Falsified")
 	passed=$(echo "$output" | grep -c "OK")
