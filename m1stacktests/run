@@ -51,10 +51,10 @@ done
 cd ..
 
 feedback=""
-if [ "$passOk" != 1 ]; then
+if [ "$passOk" != "1" ]; then
 	feedback="you detected an error in a correct stack"
 fi
-if [ "$failOk" != 9 ]; then
+if [ "$failOk" != "9" ]; then
 	if [ "$feedback" != "" ]; then
     	feedback="$feedback and "
     fi
@@ -62,8 +62,8 @@ if [ "$failOk" != 9 ]; then
 	feedback="you didn't detect errors in $lack incorrect implementations of stacks. "
 fi
 
-if [ "$n" = 7 ]; then
+if [ "$n" = "7" ]; then
 	feedback --result success --feedback "Congratulations, you passed all the tests!"
 else
-	feedback --result failed --feedback "$i Unfortunately, you passed only $n tests out of 10 : $feedback"
+	feedback --result failed --feedback "$i $passOk $failOk Unfortunately, you passed only $n tests out of 10 : $feedback"
 fi
