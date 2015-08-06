@@ -28,7 +28,7 @@ do
 
 	javac -d ./student Interpreter.java
 
-	compilationMessage=$(javac -cp .:junit-4.12.jar InterpreterTests.java)
+	compilationMessage=$(javac -cp .:junit-4.12.jar InterpreterTests.java 2>&1)
 	if [ ! -f InterpreterTests.class ]; then
 	    feedback --result failed --feedback "Compilation of InterpreterTests.java failed : $compilationMessage"
 	    exit 0
