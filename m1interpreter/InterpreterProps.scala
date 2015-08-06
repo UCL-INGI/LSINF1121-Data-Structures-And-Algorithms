@@ -23,13 +23,14 @@ object InterpreterProps extends Properties("Interpreter") {
 		result.equals((x*y).toString)
 	}
 
+	// NB : here we accept the result as a Double or as an Int so that the student doesn't get stucked because of that
 	property("div") = Prop.forAll { (x: Int, y: Int) =>
 		var interpreter = new Interpreter()
 		if (y == 0) // div by 0, must throw the appropriate exception !
 			Prop.throws(classOf[ArithmeticException]) { interpreter.interpret(x + " " + y + " div pstack pop") }
 		else {
 			val result = interpreter.interpret(x + " " + y + " div pstack pop")
-			(result.equals((x/y).toString) || result.equals((x/y).toDouble.toString))
+			(result.equals((x/y).toString) || result.equals((x.toDouble/y.toDouble).toString))
 		}
 	}
 
