@@ -1,10 +1,13 @@
 #! /bin/bash
 getinput interpreter > student/Interpreter.java
 
-compilationMessage=$(javac student/Interpreter.java 2>&1)
 
+# Compile the student code and parse it properly
+compilationMessage=$(javac student/Interpreter.java 2>&1)
+compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+compilationMessage=$(printf "Compilation of Interpreter.java failed :\n::\n\n $compilationMessage")
 if [ ! -f student/Interpreter.class ]; then
-    feedback --result failed --feedback "Compilation of Interpreter.java failed : $compilationMessage"
+    feedback --result failed --feedback "$compilationMessage"
     exit 0
 fi
 
