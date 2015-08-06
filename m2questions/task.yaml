@@ -9,6 +9,7 @@ limits:
 name: Mission 2 - Questions report [group]
 problems:
     report:
+        max_size: 5000000
         allowed_exts:
         - .pdf
         header: 'Please upload here your *questions report* for the mission 2. '
