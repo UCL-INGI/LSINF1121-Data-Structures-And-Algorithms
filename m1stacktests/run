@@ -23,7 +23,7 @@ fi
 for i in $(seq 1 $tot)
 do
 
-	compilationMessage=$(javac -cp .:junit-4.12.jar StackTests.java)
+	compilationMessage=$(javac -cp .:junit-4.12.jar StackTests.java 2>&1)
 	if [ ! -f StackTests.class ]; then
 	    feedback --result failed --feedback "Compilation of StackTests.java failed : $compilationMessage"
 	    exit 0
