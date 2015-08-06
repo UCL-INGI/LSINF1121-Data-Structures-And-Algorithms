@@ -2,17 +2,19 @@
 
 javac -d ./student MyStack.java MyBuggyStack1.java MyBuggyStack2.java MyBuggyStack3.java MyBuggyStack4.java MyBuggyStack5.java MyBuggyStack6.java MyBuggyStack7.java MyBuggyStack8.java MyBuggyStack9.java
 
+tot=10 # number of tests
+
 getinput stack_tests > student/StackTests.java
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
 cd student
 
-n=0 # number of tests passed (OK for MyStack, FAILURES for MyBuggyStacks)
 className="MyStack"
+n=0 # number of tests passed (OK for MyStack, FAILURES for MyBuggyStacks)
 passOk=0
 failOK=0
 
-for i in `seq 1 10`;
+for i in $(seq 1 $tot)
 do
 	javac -cp .:junit-4.12.jar StackTests.java
 	if [ ! -f StackTests.class ]; then
@@ -54,16 +56,16 @@ feedback=""
 if [ "$passOk" != "1" ]; then
 	feedback="you detected an error in a correct stack"
 fi
-if [ "$failOk" != "9" ]; then
+if [ "$failOk" != "$(($tot-1))" ]; then
 	if [ "$feedback" != "" ]; then
     	feedback="$feedback and "
     fi
-    lack=$((9-$failOk))
+    lack=$(($tot-1-$failOk))
 	feedback="you didn't detect errors in $lack incorrect implementations of stacks. "
 fi
 
-if [ "$n" = "7" ]; then
+if [ "$n" = "$tot" ]; then
 	feedback --result success --feedback "Congratulations, you passed all the tests!"
 else
-	feedback --result failed --feedback "$i $passOk $failOk Unfortunately, you passed only $n tests out of 10 : $feedback"
+	feedback --result failed --feedback "$i $passOk $failOk Unfortunately, you passed only $n tests out of $tot : $feedback"
 fi
