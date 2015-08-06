@@ -65,5 +65,5 @@ fi
 if [ "$n" = 7 ]; then
 	feedback --result success --feedback "Congratulations, you passed all the tests!"
 else
-	feedback --result failed --feedback "Unfortunately, you passed only $n tests out of 10 : $feedback"
+	feedback --result failed --feedback "$i Unfortunately, you passed only $n tests out of 10 : $feedback"
 fi
