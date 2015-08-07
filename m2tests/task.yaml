@@ -56,15 +56,14 @@ context: |-
 
         public class TreeTests {
 
-        // Use JavaScript to evaluate the derived expressions in a particular value in order to compare them easier
-        ScriptEngineManager manager = new ScriptEngineManager();
-        ScriptEngine engine = manager.getEngineByName("JavaScript");
-
+            // This template uses JavaScript to evaluate the derived expressions in a particular value, which allows to compare two derivatives easily.
+            ScriptEngineManager manager = new ScriptEngineManager();
+            ScriptEngine engine = manager.getEngineByName("JavaScript");
 
             @Test
             public void firstTest() {
-                String myResult = evaluate("(2*(x^2))", "7")
-                assertEquals(myResult, "28");
+                String myResult = evaluateDerivative("(2*(x^3))", "2");
+                assertEquals(myResult, "24.0");  // the eval function returns float numbers
             }
 
             @Test
@@ -72,17 +71,26 @@ context: |-
                 ...
             }
 
-            public String evaluate(String expression, String value) {
-                ExpressionTree tree = new ExpressionTree(expression);
-                ExpressionTree derivedTree = tree.derive();
-                String derivative = derivedTree.toString();
+            /* Derives 'expression' and evaluates it in 'value' */
+            public String evaluateDerivative(String expression, String value) {
                 String myResult = "";
                 try {
-                    Object result = engine.eval(derivative.replace("x", value).replace("sin", "Math.sin").replace("cos", "Math.cos").replace("--", "+"));
-                    myResult = result.toString();
-                } catch (ScriptException e) {
-                    // handle exception
+                    ExpressionTree tree = new ExpressionTree(expression);
+                    ExpressionTree derivedTree = tree.derive();
+                    String derivative = derivedTree.toString();
+                    ExpressionTree tempTree = new ExpressionTree(derivative);
+                    derivative = tempTree.toStringJs(); // toStringJs() does the same job as toString(), but prints "Math.pow(a, b)" instead of "a^b" (needed so that JavaScript can interpret it).
+                    try {
+                        // Do some replacements so that JavaScript can interpret everything correctly
+                        Object result = engine.eval(derivative.replace("x", value).replace("sin", "Math.sin").replace("cos", "Math.cos").replace("--", "+"));
+                        myResult = result.toString();
+                    } catch (ScriptException e) {
+                        System.out.println("Exception thrown : " + e);
+                    }
+                } catch (Exception e) {
+                    System.out.println("Exception thrown : " + e);
                 }
+                return myResult;
             }
         }
 environment: java8scala
