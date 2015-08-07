@@ -19,8 +19,6 @@ fi
 
 javac MyExpressionTree.java Generator.java
 output=$(run_student java Generator)
-feedback --result failed --feedback "Test"
-exit 0
 cd ..
 
 if [ "$output" = "252" ]; then
