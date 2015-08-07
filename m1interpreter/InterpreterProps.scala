@@ -93,7 +93,7 @@ object InterpreterProps extends Properties("Interpreter") {
 			result.equals((3.141592653*42*42).toString)
 	}
     
-    property("generator") {
+    property("generator") = {
         GeneratorPostScript g = new GeneratorPostScript(42)
     	for (i <- 1 to 100) {
         	String s = g.generate(30)
