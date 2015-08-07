@@ -1,19 +1,46 @@
 accessible: true
 author: Simon Hardy
 context: |-
-    Recall the Stack interface :
+    Recall the FormalExpressionTree interface :
 
     .. code-block:: java
 
-        public interface Stack<E> {
+    /**
+     * Un "FormalExpressionTree" est un arbre permettant de mémoriser
+     * et de manipuler une expression analytique.
+     *
+     * Une classe implémentant cette interface doit disposer d'un CONSTRUCTEUR
+     * prenant comme argument une chaîne de caractères (String) et construisant
+     * l'arbre associé.
+     * Cette chaîne est supposée correspondre à une expression analytique
+     * syntaxiquement correcte et complètement parenthésée.
+     * Une gestion d'exceptions doit être prévue lorsque cette précondition n'est pas vérifiée.
+     *
+     * Un CONSTRUCTEUR sans argument permet de construire un arbre élémentaire
+     * correspondant à l'expression vide "".
+     *
+     */
+    public interface FormalExpressionTree {
+      /**
+       * Cette méthode renvoie une chaîne de caractères correspondant à
+       * l'expression analytique représentée dans l'arbre.
+       *
+       * @pre  this représente une expression analytique syntaxiquement correcte
+       * @post une chaîne de caractères, correspondant à l'expression analytique
+       *       complètement parenthésée représentée par this, est renvoyée.
+       */
+      public String toString();
 
-            public boolean empty();
-
-            public E peek() throws EmptyStackException;
-
-            public E pop() throws EmptyStackException;
-
-            public E push(E item);
+      /**
+       * Cette méthode calcule le nouvel arbre correspondant à la dérivée formelle
+       * de l'arbre courant. L'arbre courant (this) n'est pas modifié.
+       *
+       * @pre   this représente une expression analytique syntaxiquement correcte.
+       * @post  Une référence à un nouvel arbre représentant la dérivée formelle
+       *        de this est renvoyée.
+       */
+      public FormalExpressionTree derive();
+    }
 
         }
 
@@ -44,18 +71,19 @@ context: |-
 
     NB : you can (should?) also write tests for other types than String !
 environment: java8scala
+groups: true
 limits:
     memory: '512'
-    time: '45'
     output: '100'
+    time: '45'
 name: Mission 1 - Unit tests for the stack [individual]
 problems:
     stack_tests:
-        allowed_exts:
-        - .java
+        name: Unit tests for the stack implementation
         type: code-file
         header: Upload your file here, with only one class named "StackTests". The
             class representing the stack under test is called *MyStack*, as written
             in the template !
-        name: Unit tests for the stack implementation
+        allowed_exts:
+        - .java
 weight: 1.0
