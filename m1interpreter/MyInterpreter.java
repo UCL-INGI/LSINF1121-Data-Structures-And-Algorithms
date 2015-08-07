@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class MyInterpreter {
 	
 	public Hashtable<String,Element> variables;
-	private MyStack<Element> stack;
+	private MyStack2<Element> stack;
 	
 	/**
 	 * Méthode principale
@@ -24,7 +24,7 @@ public class MyInterpreter {
 	}
 	
 	public MyInterpreter() {
-		stack = new MyStack<Element>();
+		stack = new MyStack2<Element>();
 		variables = new Hashtable<String,Element>();
 	}
 
@@ -57,12 +57,12 @@ public class MyInterpreter {
 		return output;
 	}
 
-	public static void pstack(MyStack<Element> stack, ArrayList<String> results, Hashtable<String,Element> variables) {
+	public static void pstack(MyStack2<Element> stack, ArrayList<String> results, Hashtable<String,Element> variables) {
 		String s = stack.toString();
 		results.add(s); 
 	}
 	
-	public static void add(MyStack<Element> stack, Hashtable<String,Element> variables) {
+	public static void add(MyStack2<Element> stack, Hashtable<String,Element> variables) {
 		Object o1 = null;
 		Object o2 = null;
 		try{
@@ -103,7 +103,7 @@ public class MyInterpreter {
 		}
 	}
 	
-	public static void sub(MyStack<Element> stack, Hashtable<String,Element> variables) {
+	public static void sub(MyStack2<Element> stack, Hashtable<String,Element> variables) {
 		Object o1 = null;
 		Object o2 = null;
 		try{
@@ -144,7 +144,7 @@ public class MyInterpreter {
 		}
 	}
 	
-	public static void mul(MyStack<Element> stack, Hashtable<String,Element> variables) {
+	public static void mul(MyStack2<Element> stack, Hashtable<String,Element> variables) {
 		Object o1 = null;
 		Object o2 = null;
 		try{
@@ -185,7 +185,7 @@ public class MyInterpreter {
 		}
 	}
 	
-	public static void div(MyStack<Element> stack, Hashtable<String,Element> variables) throws ArithmeticException {
+	public static void div(MyStack2<Element> stack, Hashtable<String,Element> variables) throws ArithmeticException {
 		Object o1 = null;
 		Object o2 = null;
 		try{
@@ -208,7 +208,7 @@ public class MyInterpreter {
 		
 	}
 	
-	public static void dup(MyStack<Element> stack, Hashtable<String,Element> variables) {
+	public static void dup(MyStack2<Element> stack, Hashtable<String,Element> variables) {
 		Element e;
 		try{
 			 e = stack.pop();
@@ -220,7 +220,7 @@ public class MyInterpreter {
 		stack.push(e);
 	}
 	
-	public static void exch(MyStack<Element> stack, Hashtable<String,Element> variables) {
+	public static void exch(MyStack2<Element> stack, Hashtable<String,Element> variables) {
 		Object o1 = null;
 		Object o2 = null;
 		try{
@@ -239,7 +239,7 @@ public class MyInterpreter {
 		stack.push(e1);
 	}
 	
-	public static void eq(MyStack<Element> stack, Hashtable<String,Element> variables) {
+	public static void eq(MyStack2<Element> stack, Hashtable<String,Element> variables) {
 		try{
 			String e1 = ""+stack.pop().interpret(stack, null, variables);
 			String e2 = ""+stack.pop().interpret(stack, null, variables);
@@ -250,7 +250,7 @@ public class MyInterpreter {
 		}
 	}
 	
-	public static void ne(MyStack<Element> stack, Hashtable<String,Element> variables) {
+	public static void ne(MyStack2<Element> stack, Hashtable<String,Element> variables) {
 		try{
 			String e1 = ""+stack.pop().interpret(stack, null, variables);
 			String e2 = ""+stack.pop().interpret(stack, null, variables);
@@ -261,7 +261,7 @@ public class MyInterpreter {
 		}
 	}
 	
-	public static void def(MyStack<Element> stack, Hashtable<String,Element> variables) {
+	public static void def(MyStack2<Element> stack, Hashtable<String,Element> variables) {
 		try{
 			Object o1 = stack.pop().interpret(stack, null, variables);
 			String o2 = (String) stack.pop().interpret(stack, null, variables);
@@ -274,18 +274,18 @@ public class MyInterpreter {
 		}
 	}
 	
-	public static void pop(MyStack<Element> stack, Hashtable<String,Element> variables) throws EmptyStackException {
+	public static void pop(MyStack2<Element> stack, Hashtable<String,Element> variables) throws EmptyStackException {
 		stack.pop(); 
 	}
 
 }
 
-class MyStack<E> { 
+class MyStack2<E> { 
 	
 	private Node<E> top;
 	private int size;
 	
-	public MyStack() {
+	public MyStack2() {
 		top = null;
 		size = 0;
 	}
@@ -450,7 +450,7 @@ class Element {
 		else type = TYPE_VARIABLE;
 	}
 	
-	public Object interpret(MyStack<Element> stack, ArrayList<String> results, Hashtable<String,Element> variables)
+	public Object interpret(MyStack2<Element> stack, ArrayList<String> results, Hashtable<String,Element> variables)
 	{
 		if (type == TYPE_OPERATOR)
 		{
