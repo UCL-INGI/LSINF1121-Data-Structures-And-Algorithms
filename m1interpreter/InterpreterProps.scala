@@ -92,5 +92,17 @@ object InterpreterProps extends Properties("Interpreter") {
 			val result = interpreter.interpret("/pi 3.141592653 def /radius 42 def pi radius dup mul mul pstack pop")
 			result.equals((3.141592653*42*42).toString)
 	}
+    
+    property("generator") {
+        GeneratorPostScript g = new GeneratorPostScript(42)
+    	for (i <- 1 to 100) {
+        	String s = g.generate(30)
+			var interpreter = new Interpreter()
+        	var myInterpreter = new MyInterpreter()
+        	val result = interpreter.interpret(s)
+        	val myResult = myInterpreter.interpret(s)
+        	result.equals(myResult)
+		}
+    }
 
 }
