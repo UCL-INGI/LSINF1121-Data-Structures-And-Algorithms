@@ -28,14 +28,12 @@ elif [ "$output" = "253" ]; then
 elif [ "$output" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
-    feedback --result failed --feedback "$output"
-    exit 0
 
     failed=$(echo "$output" | grep -c "KO")
 	passed=$(echo "$output" | grep -c "OK")
 	problem=$(echo "$output" | grep -c "PROBLEM")
 
-	IFS=':'
+	IFS=' '
 	array=( $output )
     totPos=${array[1]}
     okPos=${array[2]}
@@ -44,8 +42,8 @@ else
 
 	if [ "$passed" = "1" ]; then
 		feedback --result success --feedback "Congratulations, you passed the {{ $okPos + $okNeg }} tests!"
-	else if [ "$failed" = "1" ]; then
-		feedback --result failed --feedback "Unfortunately, you failed some tests : you got $okPos correct derivates out of $totPos, and you correctly threw $okNeg / $totNeg exceptions upon incorrect syntax"
+	elif [ "$failed" = "1" ]; then
+		feedback --result failed --feedback "Unfortunately, you failed some tests : you got $okPos correct derivates out of $totPos, and you correctly threw $okNeg out of  $totNeg exceptions upon incorrect syntax"
     else
 		feedback --result failed --feedback "Sorry, it seems that a bug occured in the grading script, please contact the course administrator. "
 	fi
