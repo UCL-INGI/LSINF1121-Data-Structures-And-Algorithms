@@ -1,20 +1,45 @@
 accessible: true
 author: Simon Hardy
 context: |-
-    Recall the Stack interface :
+    Recall the FormalExpressionTree interface :
 
     .. code-block:: java
 
-        public interface Stack<E> {
+        /**
+         * Un "FormalExpressionTree" est un arbre permettant de mémoriser
+         * et de manipuler une expression analytique.
+         *
+         * Une classe implémentant cette interface doit disposer d'un CONSTRUCTEUR
+         * prenant comme argument une chaîne de caractères (String) et construisant
+         * l'arbre associé.
+         * Cette chaîne est supposée correspondre à une expression analytique
+         * syntaxiquement correcte et complètement parenthésée.
+         * Une gestion d'exceptions doit être prévue lorsque cette précondition n'est pas vérifiée.
+         *
+         * Un CONSTRUCTEUR sans argument permet de construire un arbre élémentaire
+         * correspondant à l'expression vide "".
+         *
+         */
+        public interface FormalExpressionTree {
+          /**
+           * Cette méthode renvoie une chaîne de caractères correspondant à
+           * l'expression analytique représentée dans l'arbre.
+           *
+           * @pre  this représente une expression analytique syntaxiquement correcte
+           * @post une chaîne de caractères, correspondant à l'expression analytique
+           *       complètement parenthésée représentée par this, est renvoyée.
+           */
+          public String toString();
 
-            public boolean empty();
-
-            public E peek() throws EmptyStackException;
-
-            public E pop() throws EmptyStackException;
-
-            public E push(E item);
-
+          /**
+           * Cette méthode calcule le nouvel arbre correspondant à la dérivée formelle
+           * de l'arbre courant. L'arbre courant (this) n'est pas modifié.
+           *
+           * @pre   this représente une expression analytique syntaxiquement correcte.
+           * @post  Une référence à un nouvel arbre représentant la dérivée formelle
+           *        de this est renvoyée.
+           */
+          public FormalExpressionTree derive();
         }
 
     You are asked to write unit tests (using JUnit) in order to check wether a particular implementation of this interface is correct.
@@ -25,24 +50,41 @@ context: |-
 
         import org.junit.Test;
         import static org.junit.Assert.assertEquals;
-        public class StackTests {
+        import javax.script.ScriptEngineManager;
+        import javax.script.ScriptEngine;
+        import javax.script.ScriptException;
 
-            String element = "a";
-            MyStack<String> stack = new MyStack<String>();
+        public class TreeTests {
+
+        // Use JavaScript to evaluate the derived expressions in a particular value in order to compare them easier
+        ScriptEngineManager manager = new ScriptEngineManager();
+        ScriptEngine engine = manager.getEngineByName("JavaScript");
+
 
             @Test
             public void firstTest() {
-                stack.push(element);
-                assertEquals(element,stack.pop());
+                String myResult = evaluate("(2*(x^2))", "7")
+                assertEquals(myResult, "28");
             }
 
             @Test
             public void secondTest() {
                 ...
             }
-        }
 
-    NB : you can (should?) also write tests for other types than String !
+            public String evaluate(String expression, String value) {
+                ExpressionTree tree = new ExpressionTree(expression);
+                ExpressionTree derivedTree = tree.derive();
+                String derivative = derivedTree.toString();
+                String myResult = "";
+                try {
+                    Object result = engine.eval(derivative.replace("x", value).replace("sin", "Math.sin").replace("cos", "Math.cos").replace("--", "+"));
+                    myResult = result.toString();
+                } catch (ScriptException e) {
+                    // handle exception
+                }
+            }
+        }
 environment: java8scala
 groups: false
 limits:
