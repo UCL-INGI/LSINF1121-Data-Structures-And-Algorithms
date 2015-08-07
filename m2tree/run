@@ -28,10 +28,12 @@ elif [ "$output" = "253" ]; then
 elif [ "$output" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
-
+    feedback --result failed --feedback "TEST"
+    exit 0
     failed=$(echo "$output" | grep -c "KO")
 	passed=$(echo "$output" | grep -c "OK")
 	problem=$(echo "$output" | grep -c "PROBLEM")
+
 	IFS=':'
 	array=( $output )
     totPos=${array[1]}
