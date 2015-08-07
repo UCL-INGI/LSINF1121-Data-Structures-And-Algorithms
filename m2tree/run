@@ -1,28 +1,18 @@
 #! /bin/bash
-# FILE OF MISSION 1, TODO CHANGE IT
-getinput stack > student/MyStack.java
-
-cheat=$(cat student/MyStack.java | grep -c "import java.util.Stack")
-if [ $cheat != "1" ]; then
-	feedback --result failed --feedback "You can't use java.util.Stack!"
-    exit 0
-fi
+getinput tree > student/ExpressionTree.java
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac student/MyStack.java 2>&1)
+compilationMessage=$(javac student/ExpressionTree.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-compilationMessage=$(printf "Compilation of MyStack.java failed :\n::\n\n $compilationMessage")
-if [ ! -f student/MyStack.class ]; then
+compilationMessage=$(printf "Compilation of ExpressionTree.java failed :\n::\n\n $compilationMessage")
+if [ ! -f student/ExpressionTree.class ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 0
 fi
 
-# Copy everything in the 'student' directory for run_student
-cat StackProps.scala > student/StackProps.scala
-cp scalacheck.jar student/scalacheck.jar
+javac -d ./student MyExpressionTree.java Generator.java
 cd student
-scalac -cp .:scalacheck.jar StackProps.scala
-output=$(run_student scala -cp .:scalacheck.jar StackProps)
+output=$(run_student java Generator)
 cd ..
 
 if [ "$output" = "252" ]; then
@@ -32,7 +22,7 @@ elif [ "$output" = "253" ]; then
 elif [ "$output" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
-    failed=$(echo "$output" | grep -c "Falsified")
+    failed=$(echo "$output" | grep -c "KO")
 	passed=$(echo "$output" | grep -c "OK")
 
 	if [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
