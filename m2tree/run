@@ -12,10 +12,11 @@ if [ ! -f student/ExpressionTree.class ]; then
 fi
 
 javac -d ./student MyExpressionTree.java Generator.java
-feedback --result failed --feedback "Test"
-exit 0
+
 cd student
 output=$(run_student java Generator)
+feedback --result failed --feedback "Test"
+exit 0
 cd ..
 
 if [ "$output" = "252" ]; then
