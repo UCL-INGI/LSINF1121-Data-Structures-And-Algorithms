@@ -1,4 +1,5 @@
 #! /bin/bash
+
 getinput tree > student/ExpressionTree.java
 
 # Compile the student code and parse it properly
@@ -11,6 +12,8 @@ if [ ! -f student/ExpressionTree.class ]; then
 fi
 
 javac -d ./student MyExpressionTree.java Generator.java
+feedback --result failed --feedback "Test"
+exit 0
 cd student
 output=$(run_student java Generator)
 cd ..
@@ -22,6 +25,7 @@ elif [ "$output" = "253" ]; then
 elif [ "$output" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
+
     failed=$(echo "$output" | grep -c "KO")
 	passed=$(echo "$output" | grep -c "OK")
 	problem=$(echo "$output" | grep -c "PROBLEM")
