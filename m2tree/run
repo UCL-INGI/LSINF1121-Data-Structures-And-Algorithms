@@ -20,8 +20,7 @@ fi
 javac MyExpressionTree.java Generator.java
 output=$(run_student java Generator)
 cd ..
-    feedback --result failed --feedback "$output"
-    exit 0
+
 if [ "$output" = "252" ]; then
 	feedback --result failed --feedback "Command was killed due to an out-of-memory"
 elif [ "$output" = "253" ]; then
@@ -29,6 +28,8 @@ elif [ "$output" = "253" ]; then
 elif [ "$output" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
+    feedback --result failed --feedback "$output"
+    exit 0
 
     failed=$(echo "$output" | grep -c "KO")
 	passed=$(echo "$output" | grep -c "OK")
