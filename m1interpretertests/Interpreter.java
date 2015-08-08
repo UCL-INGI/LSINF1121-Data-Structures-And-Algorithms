@@ -6,21 +6,17 @@ import java.util.Arrays;
 
 
 /**
- * Classe principale : interpréteur PostScript
- * @author groupe 4
+ * Solution of Simon Hardy for the PostScript Interpreter (mission 1). 
  */
 public class Interpreter {
-	
 	public Hashtable<String,Element> variables;
 	private MyStack<Element> stack;
 	
-	/**
-	 * Méthode principale
-	 * @param args
-	 */
+	/* Main method, useless for the grading */
 	public static void main(String[] args) {
-		Interpreter interpreter = new Interpreter(); 
-		System.out.println(interpreter.interpret("1 1 add pstack")); 
+		/*Interpreter interpreter = new Interpreter(); 
+		//System.out.println(interpreter.interpret("true pstack pop")); 
+		System.out.println(interpreter.interpret("1 pop 969067502 592164476 995688456 eq 2143572209 pop 1 pop dup exch 726510756 true pop pop 1261490713 pstack")); */
 	}
 	
 	public Interpreter() {
@@ -44,6 +40,8 @@ public class Interpreter {
 				else if(o instanceof Double)
 					stack.push(new Element(""+(Double)o));
 				else if(o instanceof String)
+					stack.push(new Element(""+o));
+				else if (o instanceof Boolean)
 					stack.push(new Element(""+o));
 				
 		}
@@ -235,8 +233,8 @@ public class Interpreter {
 		}
 		Element e1 = new Element(""+o1);
 		Element e2 = new Element(""+o2);
-		stack.push(e2);
 		stack.push(e1);
+		stack.push(e2);
 	}
 	
 	public static void eq(MyStack<Element> stack, Hashtable<String,Element> variables) {
@@ -376,6 +374,7 @@ class Element {
 	private String element;
 	private double double_value;
 	private int int_value;
+	private boolean bool_value; 
 	
 	public Element(String elem)
 	{
@@ -442,10 +441,12 @@ class Element {
 		else if (elem.contains("true"))
 		{
 			type = TYPE_BOOLEAN;
+			bool_value = true; 
 		}
 		else if (elem.contains("false"))
 		{
 			type = TYPE_BOOLEAN;
+			bool_value = false; 
 		}
 		else type = TYPE_VARIABLE;
 	}
@@ -509,7 +510,7 @@ class Element {
 			return double_value;
 		}
 		else if (type == TYPE_BOOLEAN)
-			return null;
+			return bool_value; 
 		else if (type == TYPE_VARIABLE && element.contains("/"))
 			return element;
 		else if (type == TYPE_VARIABLE && !element.contains("/"))
