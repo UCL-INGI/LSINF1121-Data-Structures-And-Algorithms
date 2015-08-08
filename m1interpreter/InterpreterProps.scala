@@ -36,7 +36,7 @@ object InterpreterProps extends Properties("Interpreter") {
 
 	property("empty stack") = Prop.forAll { (x: Int) =>
 		var interpreter = new Interpreter()
-		Prop.throws(classOf[ArithmeticException]) { interpreter.interpret(x + " pop pop pstack") }
+		Prop.throws(classOf[EmptyStackException]) { interpreter.interpret(x + " pop pop pstack") }
 	}
 
 	property("stack empty") = Prop.forAll { (x: Int, y: Int) =>
@@ -72,7 +72,7 @@ object InterpreterProps extends Properties("Interpreter") {
 	property("exch") = Prop.forAll { (x: Int, y: Int) =>
 		var interpreter = new Interpreter()
 		val result = interpreter.interpret(x + " " + y + " exch sub pstack pop")
-		result.equals((x-y).toString)
+		result.equals((y-x).toString)
 	}
 
 	property("eq") = Prop.forAll { (x: Int, y: Int) =>
@@ -93,16 +93,29 @@ object InterpreterProps extends Properties("Interpreter") {
 			result.equals((3.141592653*42*42).toString)
 	}
     
-    property("generator") = {
-        GeneratorPostScript g = new GeneratorPostScript(42)
-    	for (i <- 1 to 100) {
-        	String s = g.generate(30)
+	property("generator") = {
+        	val g = new GeneratorPostScript(42)
+		var b = true
+    		for (i <- 1 to 100 if b) {
+        		val s = g.generate(20)
+			//println("Generation : " + s)
 			var interpreter = new Interpreter()
-        	var myInterpreter = new MyInterpreter()
-        	val result = interpreter.interpret(s)
-        	val myResult = myInterpreter.interpret(s)
-        	result.equals(myResult)
+        		val myInterpreter = new MyInterpreter()
+			if (Prop.throws(classOf[Exception]) { (new Interpreter()).interpret(s) } && Prop.throws(classOf[Exception]) { (new MyInterpreter()).interpret(s) }) {
+				// Ok
+			}
+			else if (Prop.throws(classOf[Exception]) { (new Interpreter()).interpret(s) } || Prop.throws(classOf[Exception]) { new MyInterpreter().interpret(s) }) {
+				b = false // Missing exception or unwanted exception
+			}
+			else {
+        			val result = interpreter.interpret(s)
+        			val myResult = myInterpreter.interpret(s)
+        			if (!result.equals(myResult)) {
+					b = false
+				}
+			}
 		}
-    }
+		b
+   	 }
 
 }

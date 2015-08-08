@@ -13,10 +13,13 @@ fi
 
 # Copy everything in the 'student' directory for run_student
 cat InterpreterProps.scala > student/InterpreterProps.scala
+cat GeneratorPostScript.java > student/GeneratorPostScript.java
+cat MyInterpreter.java > student/MyInterpreter.java
 cp scalacheck.jar student/scalacheck.jar
 cd student
+javac GeneratorPostScript.java MyInterpreter.java
 scalac -cp .:scalacheck.jar InterpreterProps.scala
-output=$(run_student scala -cp .:scalacheck.jar InterpreterProps)
+output=$(scala -cp .:scalacheck.jar InterpreterProps)
 cd ..
 
 if [ "$output" = "252" ]; then

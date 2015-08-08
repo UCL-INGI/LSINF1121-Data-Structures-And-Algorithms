@@ -7,12 +7,11 @@ import java.util.Arrays;
 
 /**
  * Classe principale : interpréteur PostScript
- * @author groupe 4
  */
 public class MyInterpreter {
 	
-	public Hashtable<String,Element> variables;
-	private MyStack2<Element> stack;
+	public Hashtable<String,MyElement> variables;
+	private MyStack2<MyElement> stack;
 	
 	/**
 	 * Méthode principale
@@ -20,31 +19,34 @@ public class MyInterpreter {
 	 */
 	public static void main(String[] args) {
 		MyInterpreter interpreter = new MyInterpreter(); 
-		System.out.println(interpreter.interpret("1 1 add pstack")); 
+		//System.out.println(interpreter.interpret("true pstack pop")); 
+		System.out.println(interpreter.interpret("1 pop 969067502 592164476 995688456 eq 2143572209 pop 1 pop dup exch 726510756 true pop pop 1261490713 pstack")); 
 	}
 	
 	public MyInterpreter() {
-		stack = new MyStack2<Element>();
-		variables = new Hashtable<String,Element>();
+		stack = new MyStack2<MyElement>();
+		variables = new Hashtable<String,MyElement>();
 	}
 
 	public String interpret(String instruction) {
 		ArrayList<String> instructions = new ArrayList<String>(Arrays.asList(instruction.split(" ")));
 		ArrayList<String> results = new ArrayList<String>(); 
 		for(int l = 0; l < instructions.size() ; l++) {
-			Element e = new Element(instructions.get(l));
+			MyElement e = new MyElement(instructions.get(l));
 			Object o = e.interpret(stack, results, variables);
 				
 				if (o == null)
 				{}
-				else if (o instanceof Element)
-					stack.push((Element)o);
+				else if (o instanceof MyElement)
+					stack.push((MyElement)o);
 				else if(o instanceof Integer)
-					stack.push(new Element(""+(Integer)o));
+					stack.push(new MyElement(""+(Integer)o));
 				else if(o instanceof Double)
-					stack.push(new Element(""+(Double)o));
+					stack.push(new MyElement(""+(Double)o));
 				else if(o instanceof String)
-					stack.push(new Element(""+o));
+					stack.push(new MyElement(""+o));
+				else if (o instanceof Boolean)
+					stack.push(new MyElement(""+o));
 				
 		}
 		String output = ""; 
@@ -57,12 +59,12 @@ public class MyInterpreter {
 		return output;
 	}
 
-	public static void pstack(MyStack2<Element> stack, ArrayList<String> results, Hashtable<String,Element> variables) {
+	public static void pstack(MyStack2<MyElement> stack, ArrayList<String> results, Hashtable<String,MyElement> variables) {
 		String s = stack.toString();
 		results.add(s); 
 	}
 	
-	public static void add(MyStack2<Element> stack, Hashtable<String,Element> variables) {
+	public static void add(MyStack2<MyElement> stack, Hashtable<String,MyElement> variables) {
 		Object o1 = null;
 		Object o2 = null;
 		try{
@@ -80,12 +82,12 @@ public class MyInterpreter {
 			if (o2 instanceof Integer)
 			{
 				int add = (Integer)o1 + (Integer)o2;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 			else
 			{
 				double add = (Integer)o1 + (Double)o2;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 		}
 		else if (o1 instanceof Double)
@@ -93,17 +95,17 @@ public class MyInterpreter {
 			if (o2 instanceof Integer)
 			{
 				double add = (Double)o1 + (Integer)o2;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 			else
 			{
 				double add = (Double)o1 + (Double)o2;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 		}
 	}
 	
-	public static void sub(MyStack2<Element> stack, Hashtable<String,Element> variables) {
+	public static void sub(MyStack2<MyElement> stack, Hashtable<String,MyElement> variables) {
 		Object o1 = null;
 		Object o2 = null;
 		try{
@@ -121,12 +123,12 @@ public class MyInterpreter {
 			if (o2 instanceof Integer)
 			{
 				int add =  (Integer)o2 - (Integer)o1;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 			else
 			{
 				double add = (Double)o2 - (Integer)o1;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 		}
 		else if (o1 instanceof Double)
@@ -134,17 +136,17 @@ public class MyInterpreter {
 			if (o2 instanceof Integer)
 			{
 				double add = (Integer)o2 - (Double)o1;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 			else
 			{
 				double add = (Double)o2 - (Double)o1;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 		}
 	}
 	
-	public static void mul(MyStack2<Element> stack, Hashtable<String,Element> variables) {
+	public static void mul(MyStack2<MyElement> stack, Hashtable<String,MyElement> variables) {
 		Object o1 = null;
 		Object o2 = null;
 		try{
@@ -162,12 +164,12 @@ public class MyInterpreter {
 			if (o2 instanceof Integer)
 			{
 				int add = (Integer)o1 * (Integer)o2;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 			else
 			{
 				double add = (Integer)o1 * (Double)o2;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 		}
 		else if (o1 instanceof Double)
@@ -175,17 +177,17 @@ public class MyInterpreter {
 			if (o2 instanceof Integer)
 			{
 				double add = (Double)o1 * (Integer)o2;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 			else
 			{
 				double add = (Double)o1 * (Double)o2;
-				stack.push(new Element(""+add));
+				stack.push(new MyElement(""+add));
 			}
 		}
 	}
 	
-	public static void div(MyStack2<Element> stack, Hashtable<String,Element> variables) throws ArithmeticException {
+	public static void div(MyStack2<MyElement> stack, Hashtable<String,MyElement> variables) throws ArithmeticException {
 		Object o1 = null;
 		Object o2 = null;
 		try{
@@ -203,13 +205,13 @@ public class MyInterpreter {
 		}
 		else {
 			double div = Double.valueOf(""+o2) / Double.valueOf(""+o1);
-			stack.push(new Element(""+div));
+			stack.push(new MyElement(""+div));
 		}
 		
 	}
 	
-	public static void dup(MyStack2<Element> stack, Hashtable<String,Element> variables) {
-		Element e;
+	public static void dup(MyStack2<MyElement> stack, Hashtable<String,MyElement> variables) {
+		MyElement e;
 		try{
 			 e = stack.pop();
 		}catch(EmptyStackException ex)
@@ -220,7 +222,7 @@ public class MyInterpreter {
 		stack.push(e);
 	}
 	
-	public static void exch(MyStack2<Element> stack, Hashtable<String,Element> variables) {
+	public static void exch(MyStack2<MyElement> stack, Hashtable<String,MyElement> variables) {
 		Object o1 = null;
 		Object o2 = null;
 		try{
@@ -230,51 +232,51 @@ public class MyInterpreter {
 		}catch(EmptyStackException e)
 		{
 			if (o1 != null)
-				stack.push(new Element(""+o1));
+				stack.push(new MyElement(""+o1));
 			return;
 		}
-		Element e1 = new Element(""+o1);
-		Element e2 = new Element(""+o2);
-		stack.push(e2);
+		MyElement e1 = new MyElement(""+o1);
+		MyElement e2 = new MyElement(""+o2);
 		stack.push(e1);
+		stack.push(e2);
 	}
 	
-	public static void eq(MyStack2<Element> stack, Hashtable<String,Element> variables) {
+	public static void eq(MyStack2<MyElement> stack, Hashtable<String,MyElement> variables) {
 		try{
 			String e1 = ""+stack.pop().interpret(stack, null, variables);
 			String e2 = ""+stack.pop().interpret(stack, null, variables);
-			stack.push(new Element(""+e1.equals(e2)));
+			stack.push(new MyElement(""+e1.equals(e2)));
 		}catch(EmptyStackException e)
 		{
-			stack.push(new Element(""+false));
+			stack.push(new MyElement(""+false));
 		}
 	}
 	
-	public static void ne(MyStack2<Element> stack, Hashtable<String,Element> variables) {
+	public static void ne(MyStack2<MyElement> stack, Hashtable<String,MyElement> variables) {
 		try{
 			String e1 = ""+stack.pop().interpret(stack, null, variables);
 			String e2 = ""+stack.pop().interpret(stack, null, variables);
-			stack.push(new Element(""+ !e1.equals(e2)));
+			stack.push(new MyElement(""+ !e1.equals(e2)));
 		}catch(EmptyStackException e)
 		{
-			stack.push(new Element(""+true));
+			stack.push(new MyElement(""+true));
 		}
 	}
 	
-	public static void def(MyStack2<Element> stack, Hashtable<String,Element> variables) {
+	public static void def(MyStack2<MyElement> stack, Hashtable<String,MyElement> variables) {
 		try{
 			Object o1 = stack.pop().interpret(stack, null, variables);
 			String o2 = (String) stack.pop().interpret(stack, null, variables);
 			o2 = (o2.substring(1));
-			variables.put(o2, new Element(""+o1));
+			variables.put(o2, new MyElement(""+o1));
 			
 		}catch(EmptyStackException e)
 		{
-			stack.push(new Element(""+true));
+			stack.push(new MyElement(""+true));
 		}
 	}
 	
-	public static void pop(MyStack2<Element> stack, Hashtable<String,Element> variables) throws EmptyStackException {
+	public static void pop(MyStack2<MyElement> stack, Hashtable<String,MyElement> variables) throws EmptyStackException {
 		stack.pop(); 
 	}
 
@@ -364,7 +366,7 @@ class Node<E> {
 
 }
 
-class Element {
+class MyElement {
 
 	private static String TYPE_OPERATOR = "Operator";
 	private static String TYPE_INT = "Int";
@@ -376,8 +378,9 @@ class Element {
 	private String element;
 	private double double_value;
 	private int int_value;
+	private boolean bool_value; 
 	
-	public Element(String elem)
+	public MyElement(String elem)
 	{
 		element = elem;
 		if(elem.contains("/"))
@@ -442,15 +445,17 @@ class Element {
 		else if (elem.contains("true"))
 		{
 			type = TYPE_BOOLEAN;
+			bool_value = true; 
 		}
 		else if (elem.contains("false"))
 		{
 			type = TYPE_BOOLEAN;
+			bool_value = false; 
 		}
 		else type = TYPE_VARIABLE;
 	}
 	
-	public Object interpret(MyStack2<Element> stack, ArrayList<String> results, Hashtable<String,Element> variables)
+	public Object interpret(MyStack2<MyElement> stack, ArrayList<String> results, Hashtable<String,MyElement> variables)
 	{
 		if (type == TYPE_OPERATOR)
 		{
@@ -509,12 +514,12 @@ class Element {
 			return double_value;
 		}
 		else if (type == TYPE_BOOLEAN)
-			return null;
+			return bool_value; 
 		else if (type == TYPE_VARIABLE && element.contains("/"))
 			return element;
 		else if (type == TYPE_VARIABLE && !element.contains("/"))
 		{
-			Element e = variables.get(element);
+			MyElement e = variables.get(element);
 			return e.interpret(stack, null, variables);
 		}
 		else return null;

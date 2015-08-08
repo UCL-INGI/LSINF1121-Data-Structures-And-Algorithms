@@ -237,7 +237,8 @@ public class GeneratorPostScript {
 	}
 		
 	public void generateNum(List<String> output) {
-		output.add(Integer.toString(rand.nextInt(Integer.MAX_VALUE)));
+		int num = rand.nextInt(Integer.MAX_VALUE); 
+		output.add(Integer.toString(num));
 	}
 
 	public void generateBool(List<String> output) {
