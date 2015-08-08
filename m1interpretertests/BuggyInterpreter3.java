@@ -55,6 +55,7 @@ public class Interpreter {
 		return output;
 	}
 
+	/* BUGGY METHOD PSTACK BECAUSE OF BUGGY TOSTRING ("+" instead of whitespaces " " */
 	public static void pstack(MyStack<Element> stack, ArrayList<String> results, Hashtable<String,Element> variables) {
 		String s = stack.toString();
 		results.add(s); 
@@ -272,10 +273,8 @@ public class Interpreter {
 		}
 	}
 	
-	/* BUGGY METHOD POP */
 	public static void pop(MyStack<Element> stack, Hashtable<String,Element> variables) throws EmptyStackException {
-		if (stack.size() < 3)
-			stack.pop(); 
+		stack.pop(); 
 	}
 
 }

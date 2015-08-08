@@ -218,6 +218,7 @@ public class Interpreter {
 		stack.push(e);
 	}
 	
+	/* BUGGY METHOD EXCH */
 	public static void exch(MyStack<Element> stack, Hashtable<String,Element> variables) {
 		Object o1 = null;
 		Object o2 = null;
@@ -234,7 +235,7 @@ public class Interpreter {
 		Element e1 = new Element(""+o1);
 		Element e2 = new Element(""+o2);
 		stack.push(e1);
-		stack.push(e2);
+		stack.push(e1); // bug here, e2 instead of e1
 	}
 	
 	public static void eq(MyStack<Element> stack, Hashtable<String,Element> variables) {
@@ -272,10 +273,8 @@ public class Interpreter {
 		}
 	}
 	
-	/* BUGGY METHOD POP */
 	public static void pop(MyStack<Element> stack, Hashtable<String,Element> variables) throws EmptyStackException {
-		if (stack.size() < 3)
-			stack.pop(); 
+		stack.pop(); 
 	}
 
 }

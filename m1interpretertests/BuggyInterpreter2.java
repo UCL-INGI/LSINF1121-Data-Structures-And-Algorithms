@@ -206,6 +206,7 @@ public class Interpreter {
 		
 	}
 	
+	/* BUGGY METHOD DUP */
 	public static void dup(MyStack<Element> stack, Hashtable<String,Element> variables) {
 		Element e;
 		try{
@@ -216,6 +217,7 @@ public class Interpreter {
 		}
 		stack.push(e);
 		stack.push(e);
+		stack.push(e); 
 	}
 	
 	public static void exch(MyStack<Element> stack, Hashtable<String,Element> variables) {
@@ -272,10 +274,8 @@ public class Interpreter {
 		}
 	}
 	
-	/* BUGGY METHOD POP */
 	public static void pop(MyStack<Element> stack, Hashtable<String,Element> variables) throws EmptyStackException {
-		if (stack.size() < 3)
-			stack.pop(); 
+		stack.pop(); 
 	}
 
 }

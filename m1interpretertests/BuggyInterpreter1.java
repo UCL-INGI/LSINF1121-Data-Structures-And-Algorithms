@@ -60,6 +60,7 @@ public class Interpreter {
 		results.add(s); 
 	}
 	
+	/* BUGGY METHOD ADD */
 	public static void add(MyStack<Element> stack, Hashtable<String,Element> variables) {
 		Object o1 = null;
 		Object o2 = null;
@@ -77,12 +78,13 @@ public class Interpreter {
 		{
 			if (o2 instanceof Integer)
 			{
-				int add = (Integer)o1 + (Integer)o2;
+				int add = (Integer)o1 + (Integer)o2 + new Integer(1);
+				System.out.println(add); 
 				stack.push(new Element(""+add));
 			}
 			else
 			{
-				double add = (Integer)o1 + (Double)o2;
+				double add = (Integer)o1 + (Double)o2 + new Integer(1);
 				stack.push(new Element(""+add));
 			}
 		}
@@ -90,12 +92,12 @@ public class Interpreter {
 		{
 			if (o2 instanceof Integer)
 			{
-				double add = (Double)o1 + (Integer)o2;
+				double add = (Double)o1 + (Integer)o2 + new Double(1.0);
 				stack.push(new Element(""+add));
 			}
 			else
 			{
-				double add = (Double)o1 + (Double)o2;
+				double add = (Double)o1 + (Double)o2 + new Double(1.0);
 				stack.push(new Element(""+add));
 			}
 		}
@@ -272,10 +274,8 @@ public class Interpreter {
 		}
 	}
 	
-	/* BUGGY METHOD POP */
 	public static void pop(MyStack<Element> stack, Hashtable<String,Element> variables) throws EmptyStackException {
-		if (stack.size() < 3)
-			stack.pop(); 
+		stack.pop(); 
 	}
 
 }

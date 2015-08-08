@@ -183,6 +183,7 @@ public class Interpreter {
 		}
 	}
 	
+	/* BUGGY METHOD DIV : doesn't throw the correct exception */
 	public static void div(MyStack<Element> stack, Hashtable<String,Element> variables) throws ArithmeticException {
 		Object o1 = null;
 		Object o2 = null;
@@ -197,7 +198,7 @@ public class Interpreter {
 				o2 = 0 ;
 		}
 		if (Double.valueOf(""+o1) == 0) {
-			throw new ArithmeticException();
+			throw new EmptyStackException();
 		}
 		else {
 			double div = Double.valueOf(""+o2) / Double.valueOf(""+o1);
@@ -272,10 +273,8 @@ public class Interpreter {
 		}
 	}
 	
-	/* BUGGY METHOD POP */
 	public static void pop(MyStack<Element> stack, Hashtable<String,Element> variables) throws EmptyStackException {
-		if (stack.size() < 3)
-			stack.pop(); 
+		stack.pop(); 
 	}
 
 }
