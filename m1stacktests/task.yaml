@@ -42,7 +42,7 @@ context: |-
             }
         }
 
-    NB : you can (should?) also write tests for other types than String !
+    NB : you can also write tests for other types than String !
 environment: java8scala
 groups: false
 limits:
