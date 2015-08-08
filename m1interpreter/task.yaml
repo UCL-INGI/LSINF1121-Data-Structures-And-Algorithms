@@ -19,10 +19,11 @@ context: |-
 
     Note that [group] means that only one student must submit the code for the entire group.
 environment: java8scala
+groups: false
 limits:
     memory: '512'
-    time: '30'
     output: '100'
+    time: '60'
 name: Mission 1 - PostScript Interpreter [group]
 problems:
     interpreter:
@@ -32,6 +33,6 @@ problems:
             public class named "Interpreter", that has at least an "interpret" method.
             Put additional classes inside "Interpreter", or just after it but then
             without the *public* key-word. '
-        name: PostScript interpreter
         type: code-file
+        name: PostScript interpreter
 weight: 1.0
