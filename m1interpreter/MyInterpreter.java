@@ -6,21 +6,19 @@ import java.util.Arrays;
 
 
 /**
- * Classe principale : interpréteur PostScript
+ * This is the "Interpreter" class that the students have to write, but renamed "MyInterpreter"
+ * in order to compare the results of the students with the correct (I hope for them ! :p) results. 
  */
 public class MyInterpreter {
 	
 	public Hashtable<String,MyElement> variables;
 	private MyStack2<MyElement> stack;
 	
-	/**
-	 * Méthode principale
-	 * @param args
-	 */
+	/* Main method, not used for the grading */
 	public static void main(String[] args) {
-		MyInterpreter interpreter = new MyInterpreter(); 
+		/*MyInterpreter interpreter = new MyInterpreter(); 
 		//System.out.println(interpreter.interpret("true pstack pop")); 
-		System.out.println(interpreter.interpret("1 pop 969067502 592164476 995688456 eq 2143572209 pop 1 pop dup exch 726510756 true pop pop 1261490713 pstack")); 
+		System.out.println(interpreter.interpret("1 pop 969067502 592164476 995688456 eq 2143572209 pop 1 pop dup exch 726510756 true pop pop 1261490713 pstack"));*/
 	}
 	
 	public MyInterpreter() {
