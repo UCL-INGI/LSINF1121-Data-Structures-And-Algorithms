@@ -5,17 +5,19 @@ context: |-
 
     Note that [group] means that only one student must submit the report for the entire group.
 environment: default
+groups: true
 limits:
     memory: '20'
-    time: '15'
     output: '2'
+    time: '15'
 name: Mission 1 - Questions report [group]
+order: 0
 problems:
     report:
-        max_size: 5000000
+        header: 'Please upload here your *questions report* for the mission 1. '
         allowed_exts:
         - .pdf
-        header: 'Please upload here your *questions report* for the mission 1. '
         type: code-file
+        max_size: 5000000
         name: Report
 weight: 1.0

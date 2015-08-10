@@ -42,12 +42,13 @@ context: |-
           public FormalExpressionTree derive();
         }
 environment: java8scala
-groups: false
+groups: true
 limits:
     memory: '512'
     output: '100'
     time: '30'
 name: Misson 2 - Formal expression tree [group]
+order: 8
 problems:
     tree:
         name: Formal expression tree

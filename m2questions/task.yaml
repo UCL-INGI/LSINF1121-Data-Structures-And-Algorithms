@@ -2,17 +2,19 @@ accessible: true
 author: Simon Hardy
 context: Answers to the different questions in the statement of the second mission.
 environment: default
+groups: true
 limits:
     memory: '20'
-    time: '15'
     output: '2'
+    time: '15'
 name: Mission 2 - Questions report [group]
+order: 6
 problems:
     report:
-        max_size: 5000000
+        header: 'Please upload here your *questions report* for the mission 2. '
         allowed_exts:
         - .pdf
-        header: 'Please upload here your *questions report* for the mission 2. '
         type: code-file
+        max_size: 5000000
         name: Report
 weight: 1.0

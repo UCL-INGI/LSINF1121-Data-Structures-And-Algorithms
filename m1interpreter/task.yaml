@@ -19,12 +19,13 @@ context: |-
 
     Note that [group] means that only one student must submit the code for the entire group.
 environment: java8scala
-groups: false
+groups: true
 limits:
     memory: '512'
     output: '100'
     time: '60'
 name: Mission 1 - PostScript Interpreter [group]
+order: 4
 problems:
     interpreter:
         allowed_exts:

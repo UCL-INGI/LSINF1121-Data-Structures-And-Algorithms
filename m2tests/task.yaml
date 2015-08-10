@@ -110,3 +110,4 @@ problems:
             class representing the tree under test is called *ExpressionTree*, as
             written in the template !
 weight: 1.0
+order: 7

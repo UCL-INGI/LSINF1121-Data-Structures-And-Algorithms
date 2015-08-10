@@ -56,6 +56,7 @@ limits:
     output: '100'
     time: '45'
 name: Mission 1 - Unit tests for the stack [individual]
+order: 1
 problems:
     stack_tests:
         name: Unit tests for the stack implementation
