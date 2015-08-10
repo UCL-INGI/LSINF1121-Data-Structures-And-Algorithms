@@ -666,7 +666,7 @@ public class ExpressionTree
 	       		strRoot = this.getExpression();
 	       	else {
 	       		if(this.getExpression() == null)
-	       			strRoot = Integer.toString(this.getValue());
+	       			strRoot = Integer.toString(this.getValue()+1);
 	       		else
 	       			strRoot = this.getExpression();
 	       	}
@@ -676,11 +676,11 @@ public class ExpressionTree
 		}
 		
 
-		if(parenthese) { // BUG HERE : FORGET FIRST "("
+		if(parenthese) {
 			if (strRoot.equals("sin") || strRoot.equals("cos"))
-				str = strLeft + strRoot + "(" + strRight + ")" + ")";	
+				str = "(" + strLeft + strRoot + "(" + strRight + ")" + ")";	
 			else
-				str = strLeft + strRoot + strRight + ")";
+				str = "(" + strLeft + strRoot + strRight + ")";
 
 		}
 		else {
@@ -712,7 +712,7 @@ public class ExpressionTree
 	       		strRoot = this.getExpression();
 	       	else {
 	       		if(this.getExpression() == null)
-	       			strRoot = Integer.toString(this.getValue());
+	       			strRoot = Integer.toString(this.getValue()+1);
 	       		else
 	       			strRoot = this.getExpression();
 	       	}
@@ -721,8 +721,8 @@ public class ExpressionTree
 		    strRight = this.right.toStringJs();	
 		}
 
-		//if (parenthese) // BUG HERE : FORGOT FIRST "("
-			//str = "("; 
+		if (parenthese)
+			str = "("; 
 		if (strRoot.equals("sin") || strRoot.equals("cos"))
 			str += strLeft + strRoot + "(" + strRight + ")";
 		else if (strRoot.equals("^"))
