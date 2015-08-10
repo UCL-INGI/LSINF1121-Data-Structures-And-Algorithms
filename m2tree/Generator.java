@@ -24,7 +24,7 @@ public class Generator {
 	 * G -> sin ( H )
 	 * G -> cos ( H )
 	 * G -> H
-	 * H -> ( E )
+	 * H -> E
 	 * H -> id
 	 * id -> "x" | "0" | ("1"-"9") {"0"-"9"}
 	 */
@@ -48,22 +48,70 @@ public class Generator {
 	
 	/* Grade the student in the method main */
 	public static void main(String[] args) {
+
+		// Start with basic checks
+		int modifyThis = 0; // checks if derive() modifies the current tree
+		int emptyConstructor = 0; // checks if constructor bewares well with no argument, "", "0". 
+		
+		ExpressionTree tree1 = new ExpressionTree("(x+2)");
+		ExpressionTree der1 = tree1.derive(); 
+		if (!tree1.toString().equals("(x+2)")
+			modifyThis++; 
+		
+		ExpressionTree tree2 = new ExpressionTree(); 
+		ExpressionTree tree3 = new ExpressionTree(""); 
+		ExpressionTree tree4 = new ExpressionTree("0"); 
+		if (!tree2.toString().equals("0") || !tree3.toString().equals("0") || !tree2.toString().equals("4"))
+			emptyConstructor++; 
+		
+
+		// Advanced tests now
+		String oneWrong = "nothing"; // will contain the expression corresponding to the first failed problem
 		Generator g = new Generator(42);
 		ScriptEngineManager manager = new ScriptEngineManager();
     		ScriptEngine engine = manager.getEngineByName("JavaScript");  
 
+		String [] firstBarrier = {
+			"10",
+			"(10+x)",
+			"sin(x)",
+			"((10*2)+(4-x))",
+			"(10*(x+sin(x)))",
+			"(x+cos((x+2)))",
+			"((x^3)/5)",
+
+			"-4",
+			"(x/12)",
+			"cos(x)",
+			"((10/x)+(2*x))",
+			"(x*(1-sin(x)))",
+			"((x*(sin(((x/10)+x))^3))-cos(x))",
+			"(y*cos(x))",
+			"(10^(x+20))"
+		};
+
+		String [] wrongFirstBarrier = {
+			"(x^4+sin((x+(2/x))))",
+			"((x^(-1))/6)",
+			"(x+)3+x))"
+		};
+
 		int totPos = 100; 
 		int okPos = 0; 
-		int totNeg = 10; 
+		int totNeg = 20; 
 		int okNeg = 0; 
 		int bug = 0; // unwanted exceptions with my own code, should not happen
 		int studentError = 0; // unwanted exceptions with the code of the student, means he failed
 
 		for (int i = 0 ; i < totPos ; i++) {
-			String[] res = g.generate(3); 
 			String expression = ""; 
-			for (int j = 0 ; j < res.length ; j++) {
-				expression += res[j]; 
+			if (i < 15)
+				expression = firstBarrier[i]; 
+			else {
+				String[] res = g.generate(15); 
+				for (int j = 0 ; j < res.length ; j++) {
+					expression += res[j]; 
+				}
 			}
 			//System.out.println("Expression : " + expression); 
 
@@ -100,28 +148,37 @@ public class Generator {
 					studentResult = result.toString(); 
 				} catch (ScriptException e) {
 					studentError++; 
+					if (oneWrong.equals("nothing") oneWrong = expression; 
 					//System.out.println("STUDENT : ScriptException"); 
 				}
 			} catch (Exception e) { // should be something like 'ParseException'
 				studentError++; 
+				if (oneWrong.equals("nothing") oneWrong = expression; 
 				//System.out.println("STUDENT : ParseException... " + e + "\n");
 			}
 			if (myResult.equals(studentResult))
 				okPos++; 
+			else
+				if (oneWrong.equals("nothing") oneWrong = expression; 
 		}
 
 		// Check if the student effectively throws an Exception upon wrong syntax
 		for (int i = 0 ; i < totNeg ; i++) {
-			String[] res = g.generateWrong(3); 
 			String expression = ""; 
-			for (int j = 0 ; j < res.length ; j++) {
-				expression += res[j]; 
+			if (i < 3)
+				expression = wrongFirstBarrier[i]; 
+			else {
+				String[] res = g.generateWrong(15); 
+				for (int j = 0 ; j < res.length ; j++) {
+					expression += res[j]; 
+				}
 			}
 			//System.out.println("Expression : " + expression); 
 
 			ExpressionTree tree;
 			try {
 				tree = new ExpressionTree(expression);
+				if (oneWrong.equals("nothing") oneWrong = expression; 
 			} catch (Exception e) {
 				okNeg++; 
 				//System.out.println("ParseException correctly thrown");
@@ -131,10 +188,10 @@ public class Generator {
 		// Compute the result of the student
 		if (bug != 0)
 			System.out.println("PROBLEM"); 
-		else if (okPos == totPos && okNeg == totNeg && studentError == 0)
+		else if (okPos == totPos && okNeg == totNeg && studentError == 0 && modifyThis == 0 && emptyConstructor == 0)
 			System.out.println("OK " + okPos + " " + okNeg); 
 		else
-			System.out.println("KO " + totPos + " " + okPos + " " + totNeg + " " + okNeg + " " + studentError); 
+			System.out.println("KO " + totPos + " " + okPos + " " + totNeg + " " + okNeg + " " + studentError + " " + modifyThis + " " + emptyConstructor + " " + oneWrong); 
 
 	}
 	
@@ -313,7 +370,7 @@ public class Generator {
 	}
 
 	public void generateH(List<String> output, int maxDepth, int currentDepth) {
-		//H -> ( E ) | id
+		//H -> E | id
 		if(currentDepth > maxDepth) { //prevent from exploding memory
 			generateId(output);
 		}
@@ -321,9 +378,7 @@ public class Generator {
 			int i = rand.nextInt(2);
 			switch(i) {
 				case 0 : {
-					output.add(LEFTPAR);
 					generateE(output, maxDepth, currentDepth + 1);
-					output.add(RIGHTPAR);
 					break;
 				}
 				case 1 : {
