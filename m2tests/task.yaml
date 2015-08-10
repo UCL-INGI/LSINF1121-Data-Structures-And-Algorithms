@@ -14,8 +14,7 @@ context: |-
          * l'arbre associé.
          * Cette chaîne est supposée correspondre à une expression analytique
          * syntaxiquement correcte et complètement parenthésée.
-         * Une gestion d'exceptions doit être prévue lorsque cette précondition n'est pas vérifiée.
-         *
+         * Lorsque cette précondition n'est pas vérifiée, une  ParseException (classe à implémenter) doit être lancée.
          * Un CONSTRUCTEUR sans argument permet de construire un arbre élémentaire
          * correspondant à l'expression vide "".
          *
@@ -100,6 +99,7 @@ limits:
     output: '100'
     time: '30'
 name: Mission 2 - Unit tests [individual]
+order: 7
 problems:
     tree_tests:
         allowed_exts:
@@ -110,4 +110,3 @@ problems:
             class representing the tree under test is called *ExpressionTree*, as
             written in the template !
 weight: 1.0
-order: 7
