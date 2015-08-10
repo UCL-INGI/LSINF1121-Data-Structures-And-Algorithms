@@ -159,7 +159,7 @@ public class Generator {
 					if (oneWrong.equals("nothing")) oneWrong = expression; 
 					//System.out.println("STUDENT : ScriptException"); 
 				}
-			} catch (Exception e) { // should be something like 'ParseException'
+			} catch (Exception e) {
 				studentError++; 
 				if (oneWrong.equals("nothing")) oneWrong = expression; 
 				//System.out.println("STUDENT : ParseException... " + e + "\n");
@@ -187,10 +187,12 @@ public class Generator {
 			try {
 				tree = new ExpressionTree(expression);
 				if (oneWrong.equals("nothing")) oneWrong = expression; 
-			} catch (Exception e) {
+			} catch (ParseException e) {
 				okNeg++; 
 				//System.out.println("ParseException correctly thrown");
-			}
+			} catch (Exception f) {
+            	// Not the right exception
+            }
 		}
 
 		// Compute the result of the student
