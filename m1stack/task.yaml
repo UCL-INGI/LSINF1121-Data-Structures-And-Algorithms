@@ -1,7 +1,9 @@
 accessible: true
 author: Simon Hardy
 context: |-
-    You are asked to implement the following interface, representing a stack, using a singly linked list. Note: using *java.util.Stack<E>* is forbidden!
+    You are asked to implement the following interface, representing a stack, using a singly linked list.
+
+    Note: using *java.util.Stack<E>* is forbidden!
 
     .. code-block:: java
 
