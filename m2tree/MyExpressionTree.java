@@ -4,41 +4,51 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
+
+/* Comparatif pour la mission 2, basé sur la solution de Simon Hardy */
 public class MyExpressionTree
 {
-	
 	private MyExpressionTree left;
 	private MyExpressionTree right;
 	private boolean isOperator;
 	private boolean isVariable;
 	private String expression;
 	private int value;
-	
-	/**
-	 * CONSTRUCTEUR
-	 */
-	
-	/* CONSTRUCTEUR
-	 * Construit un arbre élémentaire correspondant à l'expression vide "" 
-	 */
-	public MyExpressionTree() 
-	{
-		// est la valeur 0
-		this.isOperator = false; 
-		this.isVariable = false; 
-		this.value = 0;
-	}
 
 	/* Method main for some personal tests, not used in INGInious */
 	public static void main(String[] args) {
-		Generator g = new Generator(Integer.parseInt(args[0])); 
+
+		try {
+			MyExpressionTree tree = new MyExpressionTree("0");		
+			MyExpressionTree der = tree.derive();
+			System.out.println(der);
+		} catch (MyParseException e) {System.out.println(e);}
+
+		/*try {
+			Generator g = new Generator(42); 
+			for (int k = 0 ; k < 100 ; k++) {
+				String[] res = g.generateWrong(20); 
+				String expression = ""; 
+				for (int i = 0 ; i < res.length ; i++) {
+					expression += res[i]; 
+				}
+				//System.out.println(expression);
+				//String expression = "(((sin(5)^10)*50)-(5*cos(x)))"; 
+				MyExpressionTree tree = new MyExpressionTree(expression);
+				System.out.println("NOPE");
+			}
+		} catch (MyParseException e) {
+			//System.out.println("MyParseException : " + e + "\n");
+		}*/
+
+		/*Generator g = new Generator(Integer.parseInt(args[0])); 
 		String[] res = g.generate(1); 
 		String expression = ""; 
 		for (int i = 0 ; i < res.length ; i++) {
 			expression += res[i]; 
 		}
 		try {
-			expression = "x-cos(x)"; 
+			//expression = "(((5*x)))"; 
 
 			System.out.println("Expression: " + expression); 
 			MyExpressionTree tree = new MyExpressionTree(expression);
@@ -51,23 +61,106 @@ public class MyExpressionTree
 			ScriptEngineManager manager = new ScriptEngineManager();
     			ScriptEngine engine = manager.getEngineByName("js");  
 			try {     
-	    			Object result = engine.eval(expr.replace('x', '7').replace("sin", "Math.sin").replace("cos", "Math.cos").replace("--", "+"));
+    				Object result = engine.eval(expr.replace('x', '7'));
 				System.out.println("Evaluation of the derivative (x=7): " + result.toString()); 
 			} catch (ScriptException e) {
 				System.out.println("ScriptException"); 
 			}
 		} catch (MyParseException e) {
 			System.out.println(e + "\n");
-		}
+		}*/
 	}
+
+	/* Checks for parsing errors */
+	public void checkParsing(String expression) throws MyParseException {
+		Stack<String> stack = new Stack<String>(); 
+		for(int i = 0; i < expression.length(); i++)
+		{
+			char c = expression.charAt(i);
+			if (c == '(') {
+				if (stack.empty() || stack.pop().equals("id")) {
+					stack.push(")");
+					stack.push("id"); 
+					stack.push("op"); 
+					stack.push("id"); 
+				}
+			}
+			else if (c == ')') {
+				if (stack.empty() || !stack.pop().equals(")"))
+					throw new MyParseException("')' not expected");
+			}
+			else if (isOperator(c)) {
+				if(expression.length() >= 3 && i+3 <= expression.length() && (expression.substring(i, i+3).equals("sin") || expression.substring(i, i+3).equals("cos"))) {
+					i += 2;
+					if (stack.empty()) {
+						stack.push(")");
+						stack.push("id");
+						stack.push("(");
+					}
+					else if (stack.pop().equals("id")) {
+						stack.push(")");
+						stack.push("id");
+						stack.push("(");
+					}
+					else
+						throw new MyParseException("sin/cos not expected");
+				}
+				else if (stack.empty() || !stack.pop().equals("op"))
+					throw new MyParseException("operator not expected");
+			}
+			else if (isNumerical(c)) {
+				int j=0;
+				while(i+j < expression.length() && isNumerical(expression.charAt(i+j)))
+					j++;
+				if (!stack.empty() && !stack.pop().equals("id"))
+					throw new MyParseException("numerical not expected");
+				else if (stack.empty() && expression.length() != j) // not the only token in the expression
+					throw new MyParseException("numerical not expected here");
+				i+=j-1;
+			}
+			else if (isVariable(c)) {
+				if (!stack.empty() && !stack.pop().equals("id"))
+					throw new MyParseException("variable not expected");
+				else if (stack.empty() && expression.length() != 1) // not the only token (variable) in the expression
+					throw new MyParseException("variable not expected here");
+			}
+			else
+				throw new MyParseException("token not recognized");
+		}
+		if (!stack.empty())
+			throw new MyParseException("expression not complete");
+	}
+
 	
 	/* CONSTRUCTEUR
+	 * Construit un arbre élémentaire correspondant à l'expression "0"
+	 */
+	public MyExpressionTree()
+	{
+		// est la valeur 0
+		this.isOperator = false; 
+		this.isVariable = false; 
+		this.value = 0;
+	}
+
+
+	/* CONSTRUCTEUR
+
 	 * prenant comme argument une chaîne de caractères (String) et construisant l'arbre associé.
+
 	 * Cette chaîne est supposée correspondre à une expression analytique syntaxiquement correcte et complètement parenthèsée. 
-	 * TODO : Une gestion d'exceptions doit être prévue lorsque cette précondition n'est pas vérifiée. 
+	 * Une gestion d'exceptions doit être prévue lorsque cette précondition n'est pas vérifiée. 
 	 */
 	public MyExpressionTree(String expression) throws MyParseException
 	{
+		if (expression.length() == 0) {
+			// est la valeur 0
+			this.isOperator = false; 
+			this.isVariable = false; 
+			this.value = 0;
+			return;
+		}
+		checkParsing(expression); 
 		Stack<MyExpressionTree> stack = new Stack<MyExpressionTree>();
 		boolean depiler = false;
 		int parenthesesSinceLastOperator = 0;
@@ -183,6 +276,8 @@ public class MyExpressionTree
 					depiler = false;
 				}
 			}
+			else
+				throw new MyParseException("Erreur dans la ligne !");
 			
 		}
 		
@@ -596,12 +691,56 @@ public class MyExpressionTree
 		}
 		return str;
 	}
+
+	/* Duplicate of toString so that JavaScript can interpret a^b as Math.power(a,b) [unit tests] */
+	public String toStringJs() {
+		String str = "", strLeft = "", strRoot = "", strRight = "";
+		boolean parenthese = false;
+        
+	       	if (hasLeft()) {	            	
+		    strLeft = this.left.toStringJs();
+		    parenthese = true;
+		}	                
+
+	       	// "root" peut être :
+	 		//  - un opérateur
+	 		//  - une variable
+	 		//  - autre chose
+	       	if(this.isOperator())
+	       		strRoot = this.getExpression();
+	       	else if(this.isVariable())
+	       		strRoot = this.getExpression();
+	       	else {
+	       		if(this.getExpression() == null)
+	       			strRoot = Integer.toString(this.getValue());
+	       		else
+	       			strRoot = this.getExpression();
+	       	}
+	       
+		if (hasRight()) {
+		    strRight = this.right.toStringJs();	
+		}
+
+		if (parenthese)
+			str = "("; 
+		if (strRoot.equals("sin") || strRoot.equals("cos"))
+			str += strLeft + strRoot + "(" + strRight + ")";
+		else if (strRoot.equals("^"))
+			str += "Math.pow(" + strLeft + "," + strRight + ")"; 
+		else
+			str += strLeft + strRoot + strRight;
+
+		if (parenthese)
+			str += ")"; 
+		return str;
+	}
 }
+
 @SuppressWarnings("serial")
 class MyParseException extends Exception {
 
 	private String err;
-
+	
 	public MyParseException(String err) {
 		this.err = err;
 	}
@@ -609,4 +748,5 @@ class MyParseException extends Exception {
 	public String toString() {
 		return err;
 	}
+	
 }
