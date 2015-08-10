@@ -1,13 +1,15 @@
 #! /bin/bash
 
 # Reminder : 
-# BuggyExpressionTree1 : TODO
+# BuggyExpressionTree1 : forgot first "(" in toString method
+
 tot=2 # number of tests
 name="ExpressionTree"
 testName="TreeTests"
 word="tree"
+cp ParseException.java student/ParseException.java
 
-getinput tree_tests > student/TreeTests.java
+getinput tree_tests > "student/$testName.java"
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
 cd student
