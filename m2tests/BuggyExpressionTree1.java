@@ -194,7 +194,7 @@ public class ExpressionTree
 				{
 					i += 2;
 					ExpressionTree e = new ExpressionTree();
-					e.setExpression("sin");
+					e.setExpression("cos");
 					e.setIsOperator(true);
 					e.setIsVariable(false);
 					stack.push(e);
@@ -666,7 +666,7 @@ public class ExpressionTree
 	       		strRoot = this.getExpression();
 	       	else {
 	       		if(this.getExpression() == null)
-	       			strRoot = Integer.toString(this.getValue()+1);
+	       			strRoot = Integer.toString(this.getValue());
 	       		else
 	       			strRoot = this.getExpression();
 	       	}
@@ -712,7 +712,7 @@ public class ExpressionTree
 	       		strRoot = this.getExpression();
 	       	else {
 	       		if(this.getExpression() == null)
-	       			strRoot = Integer.toString(this.getValue()+1);
+	       			strRoot = Integer.toString(this.getValue());
 	       		else
 	       			strRoot = this.getExpression();
 	       	}
