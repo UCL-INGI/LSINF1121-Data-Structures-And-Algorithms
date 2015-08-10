@@ -39,6 +39,8 @@ context: |-
            */
           public FormalExpressionTree derive();
         }
+
+    NB : it's not necessary to simplify the derivatives. For example, for input "(2*x)", you can return "2", "((0*x)+(2*1))" and so on.
 environment: java8scala
 groups: true
 limits:
