@@ -1,6 +1,7 @@
 #! /bin/bash
 
 getinput tree > student/ExpressionTree.java
+getinput exception > student/ParseException.java
 
 cp MyExpressionTree.java ./student/MyExpressionTree.java
 cp Generator.java ./student/Generator.java
@@ -8,9 +9,9 @@ cp Generator.java ./student/Generator.java
 cd student
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac ExpressionTree.java 2>&1)
+compilationMessage=$(javac ExpressionTree.java ParseException.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-compilationMessage=$(printf "Compilation of ExpressionTree.java failed :\n::\n\n $compilationMessage")
+compilationMessage=$(printf "Compilation of ExpressionTree.java or ParseException.java failed :\n::\n\n $compilationMessage")
 if [ ! -f ExpressionTree.class ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 0
