@@ -14,7 +14,7 @@ context: |-
          * l'arbre associé.
          * Cette chaîne est supposée correspondre à une expression analytique
          * syntaxiquement correcte et complètement parenthésée.
-         * Une gestion d'exceptions doit être prévue lorsque cette précondition n'est pas vérifiée.
+         * Une gestion d'exceptions doit être prévue lorsque cette précondition n'est pas vérifiée
          *
          * Un CONSTRUCTEUR sans argument permet de construire un arbre élémentaire
          * correspondant à l'expression vide "".
