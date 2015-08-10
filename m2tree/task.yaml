@@ -14,7 +14,7 @@ context: |-
          * l'arbre associé.
          * Cette chaîne est supposée correspondre à une expression analytique
          * syntaxiquement correcte et complètement parenthésée.
-         * Une gestion d'exceptions doit être prévue lorsque cette précondition n'est pas vérifiée
+         * Lorsque cette précondition n'est pas vérifiée, une  ParseException (classe à implémenter) doit être lancée.
          * Un CONSTRUCTEUR sans argument ou avec l'expression vide "" comme argument
          * permet de construire un arbre élémentaire correspondant à l'expression "0"
          */
@@ -58,4 +58,12 @@ problems:
             your tree should be named *ExpressionTree*. If you need other classes,
             put them in the same file but without any *public* modifier. '
         type: code-file
+    exception:
+        type: code-file
+        allowed_exts:
+        - .java
+        max_size: 1000000
+        header: 'Upload the file containing your custom exception here. The class
+            should be named *ParseException*. '
+        name: ParseException
 weight: 1.0
