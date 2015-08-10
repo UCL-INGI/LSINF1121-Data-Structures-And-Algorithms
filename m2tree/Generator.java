@@ -116,7 +116,7 @@ public class Generator {
 			if (i < 13)
 				expression = firstBarrier[i]; 
 			else {
-				String[] res = g.generate(15);
+				String[] res = g.generate(10);
 				for (int j = 0 ; j < res.length ; j++) {
 					expression += res[j]; 
 				}
@@ -176,7 +176,7 @@ public class Generator {
 			if (i < 5)
 				expression = wrongFirstBarrier[i]; 
 			else {
-				String[] res = g.generateWrong(15); 
+				String[] res = g.generateWrong(10); 
 				for (int j = 0 ; j < res.length ; j++) {
 					expression += res[j]; 
 				}
