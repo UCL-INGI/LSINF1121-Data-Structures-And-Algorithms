@@ -53,16 +53,24 @@ public class Generator {
 		int modifyThis = 0; // checks if derive() modifies the current tree
 		int emptyConstructor = 0; // checks if constructor bewares well with no argument, "", "0". 
 		
-		ExpressionTree tree1 = new ExpressionTree("(x+2)");
-		ExpressionTree der1 = tree1.derive(); 
-		if (!tree1.toString().equals("(x+2)")
+		try {
+			ExpressionTree tree1 = new ExpressionTree("(x+2)");
+			ExpressionTree der1 = tree1.derive(); 
+			if (!tree1.toString().equals("(x+2)"))
+				modifyThis++; 
+		} catch (Exception e) {
 			modifyThis++; 
+		}
 		
-		ExpressionTree tree2 = new ExpressionTree(); 
-		ExpressionTree tree3 = new ExpressionTree(""); 
-		ExpressionTree tree4 = new ExpressionTree("0"); 
-		if (!tree2.toString().equals("0") || !tree3.toString().equals("0") || !tree2.toString().equals("4"))
-			emptyConstructor++; 
+		try {
+			ExpressionTree tree2 = new ExpressionTree(); 
+			ExpressionTree tree3 = new ExpressionTree(""); 
+			ExpressionTree tree4 = new ExpressionTree("0"); 
+			if (!tree2.toString().equals("0") || !tree3.toString().equals("0") || !tree2.toString().equals("0"))
+				emptyConstructor++; 
+		} catch (Exception e) {
+			emptyConstructor++;
+		}
 		
 
 		// Advanced tests now
@@ -80,23 +88,23 @@ public class Generator {
 			"(x+cos((x+2)))",
 			"((x^3)/5)",
 
-			"-4",
 			"(x/12)",
 			"cos(x)",
 			"((10/x)+(2*x))",
 			"(x*(1-sin(x)))",
 			"((x*(sin(((x/10)+x))^3))-cos(x))",
-			"(y*cos(x))",
 			"(10^(x+20))"
 		};
 
 		String [] wrongFirstBarrier = {
+			"-4",
+			"(y*cos(x))",
 			"(x^4+sin((x+(2/x))))",
 			"((x^(-1))/6)",
 			"(x+)3+x))"
 		};
 
-		int totPos = 100; 
+		int totPos = 100;
 		int okPos = 0; 
 		int totNeg = 20; 
 		int okNeg = 0; 
@@ -105,10 +113,10 @@ public class Generator {
 
 		for (int i = 0 ; i < totPos ; i++) {
 			String expression = ""; 
-			if (i < 15)
+			if (i < 13)
 				expression = firstBarrier[i]; 
 			else {
-				String[] res = g.generate(15); 
+				String[] res = g.generate(15);
 				for (int j = 0 ; j < res.length ; j++) {
 					expression += res[j]; 
 				}
@@ -148,24 +156,24 @@ public class Generator {
 					studentResult = result.toString(); 
 				} catch (ScriptException e) {
 					studentError++; 
-					if (oneWrong.equals("nothing") oneWrong = expression; 
+					if (oneWrong.equals("nothing")) oneWrong = expression; 
 					//System.out.println("STUDENT : ScriptException"); 
 				}
 			} catch (Exception e) { // should be something like 'ParseException'
 				studentError++; 
-				if (oneWrong.equals("nothing") oneWrong = expression; 
+				if (oneWrong.equals("nothing")) oneWrong = expression; 
 				//System.out.println("STUDENT : ParseException... " + e + "\n");
 			}
 			if (myResult.equals(studentResult))
 				okPos++; 
 			else
-				if (oneWrong.equals("nothing") oneWrong = expression; 
+				if (oneWrong.equals("nothing")) oneWrong = expression; 
 		}
 
 		// Check if the student effectively throws an Exception upon wrong syntax
 		for (int i = 0 ; i < totNeg ; i++) {
 			String expression = ""; 
-			if (i < 3)
+			if (i < 5)
 				expression = wrongFirstBarrier[i]; 
 			else {
 				String[] res = g.generateWrong(15); 
@@ -178,7 +186,7 @@ public class Generator {
 			ExpressionTree tree;
 			try {
 				tree = new ExpressionTree(expression);
-				if (oneWrong.equals("nothing") oneWrong = expression; 
+				if (oneWrong.equals("nothing")) oneWrong = expression; 
 			} catch (Exception e) {
 				okNeg++; 
 				//System.out.println("ParseException correctly thrown");
