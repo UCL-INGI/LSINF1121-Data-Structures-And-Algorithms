@@ -46,7 +46,7 @@ groups: true
 limits:
     memory: '512'
     output: '100'
-    time: '30'
+    time: '45'
 name: Misson 2 - Formal expression tree [group]
 order: 8
 problems:

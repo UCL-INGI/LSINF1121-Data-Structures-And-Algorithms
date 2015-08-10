@@ -1,0 +1,60 @@
+#! /bin/bash
+
+getinput tree > student/ExpressionTree.java
+
+cp MyExpressionTree.java ./student/MyExpressionTree.java
+cp Generator.java ./student/Generator.java
+
+cd student
+
+# Compile the student code and parse it properly
+compilationMessage=$(javac ExpressionTree.java 2>&1)
+compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+compilationMessage=$(printf "Compilation of ExpressionTree.java failed :\n::\n\n $compilationMessage")
+if [ ! -f ExpressionTree.class ]; then
+    feedback --result failed --feedback "$compilationMessage"
+    exit 0
+fi
+
+
+javac MyExpressionTree.java Generator.java
+output=$(java Generator)
+cd ..
+
+if [ "$output" = "252" ]; then
+	feedback --result failed --feedback "Command was killed due to an out-of-memory"
+elif [ "$output" = "253" ]; then
+	feedback --result failed --feedback "Command timed out"
+elif [ "$output" = "254" ]; then
+    feedback --result failed --feedback "Unfortunately, a runtime error occured"
+else
+
+    failed=$(echo "$output" | grep -c "KO")
+	passed=$(echo "$output" | grep -c "OK")
+	problem=$(echo "$output" | grep -c "PROBLEM")
+
+	IFS=' '
+	array=( $output )
+    totPos=${array[1]}
+    okPos=${array[2]}
+    totNeg=${array[3]}
+    okNeg=${array[4]}
+    
+    modifyThis=${array[6]}
+    emptyConstructor=${array[7]}
+    oneWrong=${array[8]}
+
+	if [ "$passed" = "1" ]; then
+		feedback --result success --feedback "Congratulations, you passed the {{ $totPos + $okPos }} tests!" # actually okPos means totNeg in this case
+	elif [ "$failed" = "1" ]; then
+    	if [ "$modifyThis" != "0" ]; then
+        	feedback --result failed --feedback "Unfortunately, you failed some tests : are you sure you don't modify the current tree when you derive it ?"
+        elif [ "$emptyConstructor" != "0" ]; then
+        	feedback --result failed --feedback "Unfortunately, you failed some tests : maybe think about the no-argument constructor, the empty string or just 0 as argument"
+        else
+			feedback --result failed --feedback "Unfortunately, you failed some tests : you got $okPos correct derivates out of $totPos, and you correctly threw $okNeg out of  $totNeg exceptions upon incorrect syntax. Think about the following expression: $oneWrong"
+        fi
+    else
+		feedback --result failed --feedback "Sorry, it seems that a bug occured in the grading script, please contact the course administrator. "
+	fi
+fi
