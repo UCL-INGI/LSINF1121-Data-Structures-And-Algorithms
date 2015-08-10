@@ -5,66 +5,106 @@ import java.util.EmptyStackException
 
 object StackProps extends Properties("Stack") {
 	property("empty") = Prop.forAll { (el: String) =>
-		val s = new MyStack[String]()
-		s.push(el)
-		s.pop()
-		s.empty()
-	}
-
-	property("not empty 1") = Prop.forAll { (el: String) =>
-		val s = new MyStack[String]()
-		s.push(el)
-		!s.empty()
-	}
-
-	property("not empty 2") = Prop.forAll { (el: String) =>
-		val s = new MyStack[String]()
-		s.push(el)
-		s.peek()
-		!s.empty()
-	}
-
-	property("double push") = Prop.forAll { (el1: String, el2: String) =>
-		val s = new MyStack[String]()
-		s.push(el1)
-		s.push(el2)
-		(s.pop().equals(el2) && s.peek().equals(el1) && !s.empty())
-	}
-
-	property("multiple push") = Prop.forAll { (el: String, n: Int) =>
-		val s = new MyStack[String]()
-		for (i <- 1 to n%100)
+		try {
+			val s = new MyStack[String]()
 			s.push(el)
-		for (i <- 1 to n%100)
 			s.pop()
-		s.empty()
+			s.empty()
+		} catch {
+			case e: Exception => false
+		}
 	}
 
-	property("pop exception") =  {
-		val s = new MyStack[String]()
-		Prop.throws(classOf[EmptyStackException]) {s.pop()}
+	property("not_empty") = Prop.forAll { (el: String) =>
+		try {
+			val s = new MyStack[String]()
+			s.push(el)
+			!s.empty()
+		} catch {
+			case e: Exception => false
+		}
 	}
 
-	property("peek exception") = {
-		val s = new MyStack[String]()
-		Prop.throws(classOf[EmptyStackException]) {s.peek()}
+	property("peek") = Prop.forAll { (el: String) =>
+		try {
+			val s = new MyStack[String]()
+			s.push(el)
+			s.peek()
+			!s.empty()
+		} catch {
+			case e: Exception => false
+		}
 	}
 
-	property("LIFO order") = Prop.forAll { ( elements: List[String]) =>
-		val s = new MyStack[String]()
-    	elements.foreach(el => s.push(el))
-    	elements.reverse.forall{_ == s.pop()}
+	property("double_push") = Prop.forAll { (el1: String, el2: String) =>
+		try {
+			val s = new MyStack[String]()
+			s.push(el1)
+			s.push(el2)
+			(s.pop().equals(el2) && s.peek().equals(el1) && !s.empty())
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("multiple_push") = Prop.forAll { (el: String, n: Int) =>
+		try {
+			val s = new MyStack[String]()
+			for (i <- 1 to n%100)
+				s.push(el)
+			for (i <- 1 to n%100)
+				s.pop()
+			s.empty()
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("pop_exception") =  {
+		try {
+			val s = new MyStack[String]()
+			Prop.throws(classOf[EmptyStackException]) {s.pop()}
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("peek_exception") = {
+		try {
+			val s = new MyStack[String]()
+			Prop.throws(classOf[EmptyStackException]) {s.peek()}
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("LIFO_order") = Prop.forAll { ( elements: List[String]) =>
+		try {
+			val s = new MyStack[String]()
+    			elements.foreach(el => s.push(el))
+    			elements.reverse.forall{_ == s.pop()}
+		} catch {
+			case e: Exception => false
+		}
   	}
-    
+
 	property("int") = Prop.forAll { (el: Int) =>
-		val s = new MyStack[Int]()
-		s.push(el)
-		(s.pop() == el && s.empty())
+		try {
+			val s = new MyStack[Int]()
+			s.push(el)
+			(s.pop() == el && s.empty())
+		} catch {
+			case e: Exception => false
+		}
 	}
     
     property("double") = Prop.forAll { (el: Double) =>
-		val s = new MyStack[Double]()
-		s.push(el)
-		(s.pop() == el && s.empty())
+		try {
+			val s = new MyStack[Double]()
+			s.push(el)
+			(s.pop() == el && s.empty())
+		} catch {
+			case e: Exception => false
+		}
 	}
 }

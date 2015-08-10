@@ -26,18 +26,19 @@ context: |-
             }
         }
 environment: java8scala
+groups: false
 limits:
     memory: '512'
-    time: '45'
     output: '100'
+    time: '45'
 name: Mission 1 - Unit tests for the interpreter [individual]
 problems:
     interpreter_tests:
-        type: code-file
         allowed_exts:
         - .java
         name: Unit tests for the interpreter
         header: 'Upload your file here, with only one class named "InterpreterTests".
             The class representing the interpreter under test is called *Interpreter*,
             as written in the template. '
+        type: code-file
 weight: 1.0
