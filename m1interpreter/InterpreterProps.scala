@@ -79,7 +79,7 @@ object InterpreterProps extends Properties("Interpreter") {
 		}
 	}
 
-	property("mul_add") = Prop.forAll { (x: Int, y: Int, z: Int) 
+	property("mul_add") = Prop.forAll { (x: Int, y: Int, z: Int) =>
     	try {
             var interpreter = new Interpreter()
             val result = interpreter.interpret(x + " " + y + " " + z + " mul add pstack pop")
