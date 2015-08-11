@@ -92,7 +92,7 @@ groups: false
 limits:
     memory: '512'
     output: '100'
-    time: '45'
+    time: '60'
 name: Mission 2 - Unit tests [individual]
 order: 7
 problems:
