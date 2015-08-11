@@ -15,9 +15,8 @@ context: |-
          * Cette chaîne est supposée correspondre à une expression analytique
          * syntaxiquement correcte et complètement parenthésée.
          * Lorsque cette précondition n'est pas vérifiée, une  ParseException (classe à implémenter) doit être lancée.
-         * Un CONSTRUCTEUR sans argument permet de construire un arbre élémentaire
-         * correspondant à l'expression vide "".
-         *
+         * Un CONSTRUCTEUR sans argument ou avec l'expression vide "" comme argument
+         * permet de construire un arbre élémentaire correspondant à l'expression "0"
          */
         public interface FormalExpressionTree {
           /**
