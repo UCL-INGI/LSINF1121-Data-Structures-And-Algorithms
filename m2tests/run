@@ -2,8 +2,15 @@
 
 # Reminder : 
 # BuggyExpressionTree1 : 'sin' replaced by 'cos'
+# BuggyExpressionTree2 : every value is incremented by 42
+# BuggyExpressionTree3 : '^' is always replaced by '*'
+# BuggyExpressionTree4 : the no-argument constructor creates "1" instead of "0"
+# BuggyExpressionTree5 : "/" is always replaced by "^"
+# BuggyExpressionTree6 : ParseException thrown without any reason with sin/cos
+# BuggyExpressionTree7 : no ParseException thrown when operator not expected
+# BuggyExpressionTree8 : no ParseException thrown when token not recognized
 
-tot=2 # number of tests
+tot=9 # number of tests
 name="ExpressionTree"
 testName="TreeTests"
 word="tree"
