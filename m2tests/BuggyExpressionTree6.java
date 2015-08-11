@@ -100,7 +100,8 @@ public class ExpressionTree
 					else if (stack.pop().equals("id")) {
 						stack.push(")");
 						stack.push("id");
-						stack.push(")"); // BUG HERE
+						stack.push("(");
+						throw new ParseException("sin/cos not expected"); // BUG HERE
 					}
 					else
 						throw new ParseException("sin/cos not expected");

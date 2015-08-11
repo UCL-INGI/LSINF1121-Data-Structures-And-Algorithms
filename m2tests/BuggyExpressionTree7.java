@@ -102,11 +102,13 @@ public class ExpressionTree
 						stack.push("id");
 						stack.push("(");
 					}
-					else
+					else {
 						throw new ParseException("sin/cos not expected");
+					}
 				}
-				else if (stack.empty() || !stack.pop().equals("op"))
-					//throw new ParseException("operator not expected"); BUG HERE
+				else if (stack.empty() || !stack.pop().equals("op")) {
+					throw new ParseException("operator not expected"); 
+				}
 			}
 			else if (isNumerical(c)) {
 				int j=0;
@@ -124,8 +126,9 @@ public class ExpressionTree
 				else if (stack.empty() && expression.length() != 1) // not the only token (variable) in the expression
 					throw new ParseException("variable not expected here");
 			}
-			else
+			else {
 				throw new ParseException("token not recognized");
+			}
 		}
 		if (!stack.empty())
 			throw new ParseException("expression not complete");
@@ -160,7 +163,7 @@ public class ExpressionTree
 			this.value = 0;
 			return;
 		}
-		checkParsing(expression); 
+		//checkParsing(expression); // BUG HERE
 		Stack<ExpressionTree> stack = new Stack<ExpressionTree>();
 		boolean depiler = false;
 		int parenthesesSinceLastOperator = 0;

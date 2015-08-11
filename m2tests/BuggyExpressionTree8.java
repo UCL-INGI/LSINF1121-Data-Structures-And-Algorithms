@@ -124,8 +124,8 @@ public class ExpressionTree
 				else if (stack.empty() && expression.length() != 1) // not the only token (variable) in the expression
 					throw new ParseException("variable not expected here");
 			}
-			//else
-				//throw new ParseException("token not recognized"); // BUG HERE
+			else
+				throw new ParseException("token not recognized"); 
 		}
 		if (!stack.empty())
 			throw new ParseException("expression not complete");
@@ -609,7 +609,7 @@ public class ExpressionTree
 	
 	public boolean isVariable(char c)
 	{
-		return c == 'x';
+		return Character.isLetter(c) && !isOperator(c); // BUG HERE
 	}
 	
 	public boolean isOperator(char c)
