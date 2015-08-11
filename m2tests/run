@@ -7,8 +7,8 @@
 # BuggyExpressionTree4 : the no-argument constructor creates "1" instead of "0"
 # BuggyExpressionTree5 : "/" is always replaced by "^"
 # BuggyExpressionTree6 : ParseException thrown without any reason with sin/cos (except if first operator)
-# BuggyExpressionTree7 : no ParseException thrown when operator not expected
-# BuggyExpressionTree8 : no ParseException thrown when token not recognized
+# BuggyExpressionTree7 : no ParseException thrown in general, except for parenthesis count errors
+# BuggyExpressionTree8 : no ParseException thrown when another letter than 'x' is used. 
 
 tot=9 # number of tests
 name="ExpressionTree"
