@@ -49,6 +49,7 @@ context: |-
 
         import org.junit.Test;
         import static org.junit.Assert.assertEquals;
+        import static org.junit.Assert.fail;
         import javax.script.ScriptEngineManager;
         import javax.script.ScriptEngine;
         import javax.script.ScriptException;
@@ -60,36 +61,30 @@ context: |-
             ScriptEngine engine = manager.getEngineByName("JavaScript");
 
             @Test
-            public void firstTest() {
-                String myResult = evaluateDerivative("(2*(x^3))", "2");
-                assertEquals(myResult, "24.0");  // the eval function returns float numbers
+            public void sinus() {
+                try {
+                    String myResult = evaluateDerivative("sin(x)", "0");
+                    assertEquals(Double.parseDouble(myResult), 1, 0.01);
+                } catch (ParseException e) {
+                    fail("ParseException not expected");
+                } catch (ScriptException e) {
+                    fail("Expression evaluation failed");
+                }
             }
-
             @Test
-            public void secondTest() {
+            public void incorrectSyntax() {
                 ...
             }
 
             /* Derives 'expression' and evaluates it in 'value' */
-            public String evaluateDerivative(String expression, String value) {
-                String myResult = "";
-                try {
-                    ExpressionTree tree = new ExpressionTree(expression);
-                    ExpressionTree derivedTree = tree.derive();
-                    String derivative = derivedTree.toString();
-                    ExpressionTree tempTree = new ExpressionTree(derivative);
-                    derivative = tempTree.toStringJs(); // toStringJs() does the same job as toString(), but prints "Math.pow(a, b)" instead of "a^b" (needed so that JavaScript can interpret it).
-                    try {
-                        // Do some replacements so that JavaScript can interpret everything correctly
-                        Object result = engine.eval(derivative.replace("x", value).replace("sin", "Math.sin").replace("cos", "Math.cos").replace("--", "+"));
-                        myResult = result.toString();
-                    } catch (ScriptException e) {
-                        System.out.println("Exception thrown : " + e);
-                    }
-                } catch (Exception e) {
-                    System.out.println("Exception thrown : " + e);
-                }
-                return myResult;
+            public String evaluateDerivative(String expression, String value) throws ParseException, ScriptException {
+                ExpressionTree tree = new ExpressionTree(expression);
+                ExpressionTree derivedTree = tree.derive();
+                String derivative = derivedTree.toStringJs(); // toStringJs() does the same job as toString(), but prints "Math.pow(a, b)" instead of "a^b" (needed so that JavaScript can interpret it).
+
+                // Do some replacements so that JavaScript can interpret everything correctly
+                Object result = engine.eval(derivative.replace("x", value).replace("sin", "Math.sin").replace("cos", "Math.cos").replace("--", "+"));
+                return result.toString();
             }
         }
 environment: java8scala
