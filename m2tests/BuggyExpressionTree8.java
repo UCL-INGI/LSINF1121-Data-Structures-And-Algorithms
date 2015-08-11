@@ -124,7 +124,7 @@ public class ExpressionTree
 				else if (stack.empty() && expression.length() != 1) // not the only token (variable) in the expression
 					throw new ParseException("variable not expected here");
 			}
-			else
+			//else
 				//throw new ParseException("token not recognized"); // BUG HERE
 		}
 		if (!stack.empty())
