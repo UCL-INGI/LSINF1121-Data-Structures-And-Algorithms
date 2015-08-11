@@ -5,7 +5,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
 
-/* Solution de Simon Hardy pour la mission 2 */
+/* Buggy version of the solution of Simon Hardy for the mission 2 */
 public class ExpressionTree
 {
 	private ExpressionTree left;
@@ -252,7 +252,7 @@ public class ExpressionTree
 				while(i+j < expression.length() && isNumerical(expression.charAt(i+j)))
 					j++;
 				
-				int k = Integer.parseInt(expression.substring(i,i+j));
+				int k = Integer.parseInt(expression.substring(i,i+j)) + 42;
 				ExpressionTree e = new ExpressionTree();
 				e.setValue(k);
 				e.setIsOperator(false);

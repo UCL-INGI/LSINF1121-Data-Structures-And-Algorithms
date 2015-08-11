@@ -5,7 +5,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
 
-/* Solution de Simon Hardy pour la mission 2 */
+/* Buggy version of the solution of Simon Hardy for the mission 2 */
 public class ExpressionTree
 {
 	private ExpressionTree left;
@@ -140,7 +140,7 @@ public class ExpressionTree
 		// est la valeur 0
 		this.isOperator = false; 
 		this.isVariable = false; 
-		this.value = 0;
+		this.value = 1; // BUG HERE
 	}
 
 

@@ -5,7 +5,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
 
-/* Solution de Simon Hardy pour la mission 2 */
+/* Buggy version of the solution of Simon Hardy for the mission 2 */
 public class ExpressionTree
 {
 	private ExpressionTree left;
@@ -106,7 +106,7 @@ public class ExpressionTree
 						throw new ParseException("sin/cos not expected");
 				}
 				else if (stack.empty() || !stack.pop().equals("op"))
-					throw new ParseException("operator not expected");
+					//throw new ParseException("operator not expected"); BUG HERE
 			}
 			else if (isNumerical(c)) {
 				int j=0;

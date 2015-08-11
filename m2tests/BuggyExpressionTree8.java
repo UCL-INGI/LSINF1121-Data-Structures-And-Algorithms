@@ -5,7 +5,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
 
-/* Solution de Simon Hardy pour la mission 2 */
+/* Buggy version of the solution of Simon Hardy for the mission 2 */
 public class ExpressionTree
 {
 	private ExpressionTree left;
@@ -125,7 +125,7 @@ public class ExpressionTree
 					throw new ParseException("variable not expected here");
 			}
 			else
-				throw new ParseException("token not recognized");
+				//throw new ParseException("token not recognized"); // BUG HERE
 		}
 		if (!stack.empty())
 			throw new ParseException("expression not complete");

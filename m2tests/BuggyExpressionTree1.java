@@ -5,7 +5,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
 
-/* Solution de Simon Hardy pour la mission 2 */
+/* Buggy version of the solution of Simon Hardy for the mission 2 */
 public class ExpressionTree
 {
 	private ExpressionTree left;
@@ -194,7 +194,7 @@ public class ExpressionTree
 				{
 					i += 2;
 					ExpressionTree e = new ExpressionTree();
-					e.setExpression("cos");
+					e.setExpression("cos"); // BUG HERE
 					e.setIsOperator(true);
 					e.setIsVariable(false);
 					stack.push(e);
@@ -481,6 +481,7 @@ public class ExpressionTree
 			f.setRight(this.getRight());
 			g.setLeft((ExpressionTree)this.getRight().derive());
 			g.setRight(f);
+			e.setLeft(new ExpressionTree()); // 0
 			e.setRight(g);
 			
 			return e;
@@ -735,3 +736,4 @@ public class ExpressionTree
 		return str;
 	}
 }
+

@@ -5,7 +5,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
 
-/* Solution de Simon Hardy pour la mission 2 */
+/* Buggy version of the solution of Simon Hardy for the mission 2 */
 public class ExpressionTree
 {
 	private ExpressionTree left;
@@ -231,7 +231,11 @@ public class ExpressionTree
 					}
 					
 					ExpressionTree e = new ExpressionTree();
-					e.setExpression("" + c);
+					// BUG HERE
+					if (c == '/')
+						e.setExpression("^");
+					else
+						e.setExpression("" + c);
 					e.setIsOperator(true);
 					e.setIsVariable(false);
 					stack.push(e);
