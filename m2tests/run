@@ -6,7 +6,7 @@
 # BuggyExpressionTree3 : '^' is always replaced by '*'
 # BuggyExpressionTree4 : the no-argument constructor creates "1" instead of "0"
 # BuggyExpressionTree5 : "/" is always replaced by "^"
-# BuggyExpressionTree6 : ParseException thrown without any reason with sin/cos
+# BuggyExpressionTree6 : ParseException thrown without any reason with sin/cos (except if first operator)
 # BuggyExpressionTree7 : no ParseException thrown when operator not expected
 # BuggyExpressionTree8 : no ParseException thrown when token not recognized
 
