@@ -30,3 +30,4 @@ problems:
             and implement the interface given above. '
         name: Spam filter
 weight: 1.0
+order: 11
