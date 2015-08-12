@@ -1,0 +1,26 @@
+accessible: true
+author: Simon Hardy
+context: |-
+    You are asked to implement the following interface, representing a Map.
+
+    Note: you can't rely on any existing Java class implementing Map.
+
+    .. code-block:: java
+
+        TODO
+environment: java8scala
+groups: false
+limits:
+    memory: '512'
+    output: '100'
+    time: '30'
+name: Mission 3 - Map [individual]
+problems:
+    map:
+        type: code-file
+        allowed_exts:
+        - .java
+        header: 'Upload the file containing your implementation here. The class representing
+            your map should be named *MyMap* ! '
+        name: Map
+weight: 1.0
