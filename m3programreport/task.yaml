@@ -1,0 +1,21 @@
+accessible: true
+author: Simon Hardy
+context: 'Report of 1-2 pages max. containing short explanations concerning the program
+    of the third mission. '
+environment: default
+groups: true
+limits:
+    memory: '20'
+    output: '2'
+    time: '15'
+name: Mission 3 - Program report [group]
+problems:
+    program_report:
+        type: code-file
+        header: 'Please upload here your *program report* for the mission 3. '
+        name: Program report
+        max_size: 5000000
+        allowed_exts:
+        - .pdf
+weight: 1.0
+order: 11
