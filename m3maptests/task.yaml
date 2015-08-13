@@ -47,13 +47,14 @@ context: |-
 
         import org.junit.Test;
         import static org.junit.Assert.assertEquals;
+        import static org.junit.Assert.assertTrue;
         public class MapTests {
 
             @Test
             public void firstTest() {
-                MyMap<String, Double> map = new MyMap<String, Double>();
-                map.put("a", 3.14);
-                assertEquals(map.get("a"), 3.14);
+                MyMap<String, Integer> map = new MyMap<String, Integer>();
+                map.put("a", 5);
+                assertEquals(map.get("a"), new Integer(5));
             }
 
             @Test
@@ -68,6 +69,7 @@ limits:
     output: '100'
     time: '45'
 name: Mission 3 - Unit tests for the Map [individual]
+order: 11
 problems:
     map_tests:
         allowed_exts:
@@ -78,4 +80,3 @@ problems:
             representing the map under test is called *MyMap*, as written in the template
             !
 weight: 1.0
-order: 11
