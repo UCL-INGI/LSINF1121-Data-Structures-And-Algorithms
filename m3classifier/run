@@ -43,7 +43,7 @@ else
 	elif [ "$passed" = "1" ] && [ "$failed" = "0" ]; then
 		feedback --result success --feedback "Congratulations, you passed all the tests! $output"
 	elif [ "$passed" = "0" ] && [ "$failed" != "0" ]; then
-        feedback --result failed --feedback "Unfortunately, you failed some tests : $output"
+        feedback --result failed --feedback "Unfortunately, you failed some tests :  $output"
 	else
     	feedback --result failed --feedback "Sorry, it seems that an error occured in the grading script, please contact the course administrator."
 	fi
