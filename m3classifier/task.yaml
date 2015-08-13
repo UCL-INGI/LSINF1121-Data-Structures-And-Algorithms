@@ -1,19 +1,27 @@
 accessible: true
 author: Simon Hardy
-context: |-
+context: |+
     For this mission, you have to write a spam filter (a class named "SpamFilter") implementing the following interface :
 
     .. code-block:: java
 
+        /* The constructor takes a String as argument, representing the path to the input file */
         public interface SpamFiltering {
 
-            @pre:
-            @post:
-            public String interpret(String instructions);
+            /* Returns a map (custom type MyMap) containing mappings between the Strings appearing in each sms of the input file, and objects of type Word (custom type too) containing correct informations about them (see below) */
+            public MyMap<String, Word> getWordsMap();
+
+            /* Returns a HashSet (java.util.HashSet) containing the stop words listed below */
+            public HashSet<String> getStopWords();
+
+            /* Computes the probability that 'message' is a spam sms, using the naive Bayes formula (see pdf of the mission) */
+            public double naiveBayes(String message);
+
+            /* Returns true if 'message' is classified as a spam sms, false otherwise (a sms is considered as spam if the probability is strictly greater than 50%) */
+            public boolean classify(String message);
 
         }
 
-    Don't forget to throw the different possible exceptions : think about java.util.EmptyStackException, java.lang.ArithmeticException...
 environment: java8scala
 groups: true
 limits:
@@ -21,6 +29,7 @@ limits:
     output: '100'
     time: '30'
 name: Mission 3 - Spam filter [group]
+order: 13
 problems:
     classifier:
         allowed_exts:
@@ -30,4 +39,3 @@ problems:
             and implement the interface given above. '
         name: Spam filter
 weight: 1.0
-order: 13
