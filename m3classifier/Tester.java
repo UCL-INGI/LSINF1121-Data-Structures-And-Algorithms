@@ -19,8 +19,8 @@ public class Tester {
 		spams = new ArrayList<String>();
 		readInput("src/SMSSpamCollection");
 		
-		SpamFilter spamFilter = new SpamFilter("src/SMSSpamCollection");
-		SpamFilter2 spamFilter2 = new SpamFilter2("src/SMSSpamCollection");
+		SpamFilter spamFilter = new SpamFilter("SMSSpamCollection");
+		SpamFilter2 spamFilter2 = new SpamFilter2("SMSSpamCollection");
 		
 		MyMap<String, Word> wordsMap = spamFilter.getWordsMap(); 
 		MyMap2<String, Word2> wordsMap2 = spamFilter2.getWordsMap();
