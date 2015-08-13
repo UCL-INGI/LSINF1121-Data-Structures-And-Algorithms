@@ -1,0 +1,80 @@
+accessible: true
+author: Simon Hardy
+context: |-
+    Recall the Map interface :
+
+    .. code-block:: java
+
+        import java.util.Map;
+        import java.util.Set;
+
+        /* Your class should be named MyMap<K, V> and have at least a no-argument constructor. */
+        public interface Map<K, V> {
+
+            /* Returns true if this map contains a mapping for the specified key. */
+            public boolean containsKey(K key);
+
+            /* Returns true if this map contains a mapping for the specified key. */
+            public boolean containsValue(V value);
+
+            /* Returns a Set view of the mappings contained in this map. */
+            public Set<Map.Entry<K, V>> entrySet();
+
+            /* Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key. */
+            public V get(K key);
+
+            /* Returns the hash code value for this map. */
+            public int hashCode();
+
+            /* Returns true if this map contains no key-value mappings. */
+            public boolean isEmpty();
+
+            /* Associates the specified value with the specified key in this map. */
+            public V put(K key, V value);
+
+            /* Removes the mapping for a key from this map if it is present. */
+            public V remove(K key);
+
+            /* Returns the number of key-value mappings in this map. */
+            public int size();
+        }
+
+    You are asked to write unit tests (using JUnit) in order to check wether a particular implementation of this interface is correct.
+
+    Here is a simple template you can use to write your tests:
+
+    .. code-block:: java
+
+        import org.junit.Test;
+        import static org.junit.Assert.assertEquals;
+        public class MapTests {
+
+            @Test
+            public void firstTest() {
+                MyMap<String, Double> map = new MyMap<String, Double>();
+                map.put("a", 3.14);
+                assertEquals(map.get("a"), 3.14);
+            }
+
+            @Test
+            public void secondTest() {
+                ...
+            }
+        }
+environment: java8scala
+groups: false
+limits:
+    memory: '100512'
+    output: '100'
+    time: '45'
+name: Mission 3 - Unit tests for the Map [individual]
+problems:
+    map_tests:
+        allowed_exts:
+        - .java
+        name: Unit tests for the Map implementation
+        type: code-file
+        header: Upload your file here, with only one class named "MapTests". The class
+            representing the map under test is called *MyMap*, as written in the template
+            !
+weight: 1.0

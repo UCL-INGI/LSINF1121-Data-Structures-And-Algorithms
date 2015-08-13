@@ -1,0 +1,82 @@
+#! /bin/bash
+
+javac -d ./student MyStack.java MyBuggyStack1.java MyBuggyStack2.java MyBuggyStack3.java MyBuggyStack4.java MyBuggyStack5.java MyBuggyStack6.java MyBuggyStack7.java MyBuggyStack8.java MyBuggyStack9.java
+
+tot=10 # number of tests
+
+getinput stack_tests > student/StackTests.java
+cp junit-4.12.jar student/junit-4.12.jar
+cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
+cd student
+
+className="MyStack"
+n=0 # number of tests passed (OK for MyStack, FAILURES for MyBuggyStacks)
+passOk=0
+failOK=0
+
+wrongName=$(cat StackTests.java | grep -c "$className")
+if [ "$wrongName" = "0" ]; then
+	feedback --result failed --feedback "The stack under test must be named MyStack !"
+	exit 0
+fi
+
+for i in $(seq 1 $tot)
+do
+
+	# Compile the student code and parse it properly
+	compilationMessage=$(javac -cp .:junit-4.12.jar StackTests.java 2>&1)
+	compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+	compilationMessage=$(printf "Compilation of StackTests.java failed :\n::\n\n $compilationMessage")
+	if [ ! -f StackTests.class ]; then
+		feedback --result failed --feedback "$compilationMessage"
+		exit 0
+	fi
+
+	output=$(run_student java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore StackTests)
+	if [ "$output" = "252" ]; then
+		feedback --result failed --feedback "Command was killed due to an out-of-memory"
+		exit 0
+	elif [ "$output" = "253" ]; then
+		feedback --result failed --feedback "Command timed out"
+		exit 0
+	elif [ "$output" = "254" ]; then
+	      feedback --result failed --feedback "Unfortunately, a runtime error occured"
+		exit 0
+	fi
+
+	failed=$(echo "$output" | grep -c "FAILURES")
+    passed=$(echo "$output" | grep -c "OK")
+
+	if [ "$i" = "1" ] && [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
+		((n++))
+		((passOk++))
+	fi
+
+	if [ "$i" != "1" ] && [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
+		((n++))
+		((failOk++))
+	fi
+	
+	replacement=$(printf "s/%s/MyBuggyStack%s/g" "$className" "$i")
+	sed -i -e "$replacement" ./StackTests.java # change the stack
+	className="MyBuggyStack$i"
+done
+cd ..
+
+feedback=""
+if [ "$passOk" != "1" ]; then
+	feedback="you detected an error in a correct stack"
+fi
+if [ "$failOk" != "$(($tot-1))" ]; then
+	if [ "$feedback" != "" ]; then
+    	feedback="$feedback and "
+    fi
+    lack=$(($tot-1-$failOk))
+	feedback="you didn't detect errors in $lack incorrect implementations of stacks. "
+fi
+
+if [ "$n" = "$tot" ]; then
+	feedback --result success --feedback "Congratulations, you passed the $n tests!"
+else
+	feedback --result failed --feedback "Unfortunately, you passed only $n tests out of $tot : $feedback"
+fi
