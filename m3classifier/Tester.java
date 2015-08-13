@@ -17,7 +17,7 @@ public class Tester {
 	public static void main(String[] args) {
 		hams = new ArrayList<String>();
 		spams = new ArrayList<String>();
-		readInput("src/SMSSpamCollection");
+		readInput("SMSSpamCollection");
 		
 		SpamFilter spamFilter = new SpamFilter("SMSSpamCollection");
 		SpamFilter2 spamFilter2 = new SpamFilter2("SMSSpamCollection");
