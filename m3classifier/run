@@ -1,25 +1,27 @@
 #! /bin/bash
 
-getinput tree > student/ExpressionTree.java
-getinput exception > student/ParseException.java
+getinput classifier > student/SpamFilter.java
+getinput word > student/Word.java
+getinput map > student/MyMap.java
 
-cp MyExpressionTree.java ./student/MyExpressionTree.java
-cp Generator.java ./student/Generator.java
+cp SpamFilter2.java ./student/SpamFilter2.java
+cp Word2.java ./student/Word2.java
+cp MyMap2.java ./student/MyMap2.java
 
 cd student
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac ExpressionTree.java ParseException.java 2>&1)
+compilationMessage=$(javac SpamFilter 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-compilationMessage=$(printf "Compilation of ExpressionTree.java or ParseException.java failed :\n::\n\n $compilationMessage")
-if [ ! -f ExpressionTree.class ]; then
+compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
+if [ ! -f SpamFilter.class ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 0
 fi
 
 
-javac MyExpressionTree.java Generator.java
-output=$(java Generator)
+javac Tester.java
+output=$(java Tester)
 cd ..
 
 if [ "$output" = "252" ]; then
