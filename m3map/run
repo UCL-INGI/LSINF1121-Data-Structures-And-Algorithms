@@ -1,27 +1,28 @@
 #! /bin/bash
-getinput stack > student/MyStack.java
+getinput map > student/MyMap.java
 
-cheat=$(cat student/MyStack.java | grep -c "import java.util.Stack")
+patterns="java.util.HashMap|java.util.ConcurrentHashMap|java.util.ConcurrentSkipListMap|java.util.EnumMap|java.util.Hashtable|java.util.IdentityHashMap|java.util.LinkedHashMap|java.util.TreeMap|java.util.WeakHashMap"
+cheat=$(cat student/MyMap.java | grep -c -E "$patterns")
 if [ $cheat != "0" ]; then
-	feedback --result failed --feedback "You can't use java.util.Stack!"
-    exit 0
+	#feedback --result failed --feedback "You can't use an exising Map implementation!"
+    #exit 0
 fi
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac student/MyStack.java 2>&1)
+compilationMessage=$(javac student/MyMap.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-compilationMessage=$(printf "Compilation of MyStack.java failed :\n::\n\n $compilationMessage")
-if [ ! -f student/MyStack.class ]; then
+compilationMessage=$(printf "Compilation of MyMap.java failed :\n::\n\n $compilationMessage")
+if [ ! -f student/MyMap.class ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 0
 fi
 
 # Copy everything in the 'student' directory for run_student
-cp StackProps.scala student/StackProps.scala
+cp MapProps.scala student/MapProps.scala
 cp scalacheck.jar student/scalacheck.jar
 cd student
-scalac -cp .:scalacheck.jar StackProps.scala
-output=$(run_student scala -cp .:scalacheck.jar StackProps)
+scalac -cp .:scalacheck.jar MapProps.scala
+output=$(run_student scala -cp .:scalacheck.jar MapProps)
 cd ..
 
 if [ "$output" = "252" ]; then
