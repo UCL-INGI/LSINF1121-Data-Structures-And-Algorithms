@@ -78,3 +78,4 @@ problems:
             representing the map under test is called *MyMap*, as written in the template
             !
 weight: 1.0
+order: 11

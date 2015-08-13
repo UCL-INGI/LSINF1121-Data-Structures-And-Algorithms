@@ -47,7 +47,7 @@ limits:
     output: '100'
     time: '30'
 name: Mission 3 - Map [individual]
-order: 11
+order: 12
 problems:
     map:
         type: code-file

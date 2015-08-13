@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Reminder : 
-# BuggyExpressionTree1 : TODO
+# BuggyMap1 : !isEmpty()
 
 tot=2 # number of tests
 name="MyMap"
