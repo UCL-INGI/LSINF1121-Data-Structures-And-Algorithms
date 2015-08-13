@@ -11,7 +11,7 @@ cp MyMap2.java ./student/MyMap2.java
 cd student
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac SpamFilter 2>&1)
+compilationMessage=$(javac SpamFilter.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
 if [ ! -f SpamFilter.class ]; then
