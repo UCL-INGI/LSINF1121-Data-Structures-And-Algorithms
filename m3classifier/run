@@ -8,6 +8,7 @@ cp SpamFilter2.java ./student/SpamFilter2.java
 cp Word2.java ./student/Word2.java
 cp MyMap2.java ./student/MyMap2.java
 cp Tester.java ./student/Tester.java
+cp SMSSpamCollection ./student/SMSSpamCollection
 
 cd student
 
