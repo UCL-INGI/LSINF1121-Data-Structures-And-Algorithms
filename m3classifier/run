@@ -34,7 +34,7 @@ elif [ "$output" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
 
-    failed=$(echo "$output" | grep -c "KO")
+    failed=$(echo "$output" | grep -c "ERROR")
 	passed=$(echo "$output" | grep -c "OK")
 	problem=$(echo "$output" | grep -c "EXCEPTION")
 
@@ -45,6 +45,6 @@ else
 	elif [ "$passed" = "0" ] && [ "$failed" != "0" ]; then
         feedback --result failed --feedback "Unfortunately, you failed some tests : $output"
 	else
-    	feedback --result failed --feedback "Sorry, it seems that an error occured in the grading script, please contact the course administrator. ($output)"
+    	feedback --result failed --feedback "Sorry, it seems that an error occured in the grading script, please contact the course administrator."
 	fi
 fi
