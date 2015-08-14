@@ -50,7 +50,7 @@ do
 	fi
 
 	failed=$(echo "$output" | grep -c "FAILURES")
-    	passed=$(echo "$output" | grep -c "OK")
+    passed=$(echo "$output" | grep -c "OK")
 
 	if [ "$i" = "1" ] && [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
 		((n++))
