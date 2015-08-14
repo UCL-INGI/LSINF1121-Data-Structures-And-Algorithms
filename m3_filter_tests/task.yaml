@@ -1,0 +1,92 @@
+accessible: true
+author: Simon Hardy
+context: |-
+    Recall the SpamFiltering interface :
+
+    .. code-block:: java
+
+    /* The constructor takes a String as argument, representing the path to the input file */
+    public interface SpamFiltering {
+
+        /* Returns a map (custom type MyMap) containing mappings
+         * between the Strings appearing in each sms of the input file,
+         * and objects of type Word (custom type too) containing
+         * correct informations about them (see below)
+         * Convention : use the regex "\\W+" to split the content of a message into words. */
+        public MyMap<String, Word> getWordsMap();
+
+        /* Returns a HashSet (java.util.HashSet) containing the stop words listed below */
+        public HashSet<String> getStopWords();
+
+        /* Computes the probability that 'message' is a spam sms, using the naive Bayes formula (see pdf of the mission) */
+        public double naiveBayes(String message);
+
+        /* Returns true if 'message' is classified as a spam sms, false otherwise (a sms is considered as spam if the probability is strictly greater than 50%) */
+        public boolean classify(String message);
+
+    }
+
+    You are asked to write unit tests (using JUnit) in order to check wether a particular implementation of this interface is correct.
+
+    Here is a simple template you can use to write your tests :
+
+    .. code-block:: java
+
+        TODO
+        import org.junit.Test;
+        import static org.junit.Assert.assertEquals;
+        import static org.junit.Assert.fail;
+        import javax.script.ScriptEngineManager;
+        import javax.script.ScriptEngine;
+        import javax.script.ScriptException;
+
+        public class TreeTests {
+
+            // This template uses JavaScript to evaluate the derived expressions in a particular value, which allows to compare two derivatives easily.
+            ScriptEngineManager manager = new ScriptEngineManager();
+            ScriptEngine engine = manager.getEngineByName("JavaScript");
+
+            @Test
+            public void sinus() {
+                try {
+                    String myResult = evaluateDerivative("sin(x)", "0");
+                    assertEquals(Double.parseDouble(myResult), 1, 0.01);
+                } catch (ParseException e) {
+                    fail("ParseException not expected");
+                } catch (ScriptException e) {
+                    fail("Expression evaluation failed");
+                }
+            }
+            @Test
+            public void incorrectSyntax() {
+                ...
+            }
+
+            /* Derives 'expression' and evaluates it in 'value' */
+            public String evaluateDerivative(String expression, String value) throws ParseException, ScriptException {
+                ExpressionTree tree = new ExpressionTree(expression);
+                ExpressionTree derivedTree = tree.derive();
+                String derivative = derivedTree.toStringJs(); // toStringJs() does the same job as toString(), but prints "Math.pow(a, b)" instead of "a^b" (needed so that JavaScript can interpret it).
+
+                // Do some replacements so that JavaScript can interpret everything correctly
+                Object result = engine.eval(derivative.replace("x", value).replace("sin", "Math.sin").replace("cos", "Math.cos").replace("--", "+"));
+                return result.toString();
+            }
+        }
+environment: java8scala
+groups: false
+limits:
+    memory: '512'
+    output: '100'
+    time: '60'
+name: Mission 3 - Unit tests for the spam filter [individual]
+problems:
+    filter_tests:
+        header: Upload your file here, with only one class named "SpamFilterTests".
+            The class representing the spam filter under test is called *SpamFilter*,
+            as written in the template !
+        allowed_exts:
+        - .java
+        type: code-file
+        name: Unit tests for the spam filter
+weight: 1.0
