@@ -1,27 +1,17 @@
 #! /bin/bash
 
-# Reminder : 
-# BuggyExpressionTree1 : 'sin' replaced by 'cos'
-# BuggyExpressionTree2 : every value is incremented by 42
-# BuggyExpressionTree3 : '^' is always replaced by '*'
-# BuggyExpressionTree4 : the no-argument constructor creates "1" instead of "0"
-# BuggyExpressionTree5 : "/" is always replaced by "^"
-# BuggyExpressionTree6 : ParseException thrown without any reason with sin/cos (except if first operator)
-# BuggyExpressionTree7 : no ParseException thrown in general, except for parenthesis count errors
-# BuggyExpressionTree8 : no ParseException thrown when another letter than 'x' is used. 
+tot=2 # number of tests
+name="SpamFilter"
+testName="SpamFilterTests"
+word="filter"
+getinput archive > unzip -d ./student
 
-tot=9 # number of tests
-name="ExpressionTree"
-testName="TreeTests"
-word="tree"
-cp ParseException.java student/ParseException.java
-
-getinput tree_tests > "student/$testName.java"
+getinput filter_tests > "student/$testName.java"
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
 cd student
 
-n=0 # number of tests passed (OK for Interpreter, FAILURES for BuggyInterpreters)
+n=0 # number of tests passed
 passOk=0
 failOk=0
 buggyName="Buggy$name"
