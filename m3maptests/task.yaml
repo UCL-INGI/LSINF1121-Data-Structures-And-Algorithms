@@ -65,7 +65,7 @@ context: |-
 environment: java8scala
 groups: false
 limits:
-    memory: '100512'
+    memory: '512'
     output: '100'
     time: '45'
 name: Mission 3 - Unit tests for the Map [individual]
