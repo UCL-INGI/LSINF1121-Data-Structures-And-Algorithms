@@ -12,7 +12,7 @@ context: |-
              * between the Strings appearing in each sms of the input file,
              * and objects of type Word (custom type too) containing
              * correct informations about them (see below)
-             * Convention : use the "\\W+" regex to split a message into words. */
+             * Convention : use the regex "\\W+" to split the content of a message into words. */
             public MyMap<String, Word> getWordsMap();
 
             /* Returns a HashSet (java.util.HashSet) containing the stop words listed below */
