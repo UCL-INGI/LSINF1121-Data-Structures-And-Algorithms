@@ -60,6 +60,7 @@ public class Word2 {
 	public void normalize(int length) {
 		this.spamProba = (double) this.spamProba / (TOTAL_NUMBER_OF_SMS*length); 
 		this.hamProba = (double) this.hamProba / (TOTAL_NUMBER_OF_SMS*length); 
+    }
 	
 	public void add(Word2 w) {
 		this.spamProba += w.spamProba; 
