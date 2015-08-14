@@ -1,6 +1,6 @@
 #! /bin/bash
 
-tot=2 # number of tests
+tot=7 # number of tests
 name="SpamFilter"
 testName="SpamFilterTests"
 word="filter"
