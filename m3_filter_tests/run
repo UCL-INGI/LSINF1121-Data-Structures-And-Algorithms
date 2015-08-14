@@ -4,7 +4,8 @@ tot=2 # number of tests
 name="SpamFilter"
 testName="SpamFilterTests"
 word="filter"
-getinput archive > unzip -d ./student
+getinput archive > arch.zip
+unzip arch.zip -d ./student
 
 getinput filter_tests > "student/$testName.java"
 cp junit-4.12.jar student/junit-4.12.jar
