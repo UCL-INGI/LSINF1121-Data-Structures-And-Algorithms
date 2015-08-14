@@ -3,7 +3,7 @@ getinput map > student/MyMap.java
 
 patterns="java.util.HashMap|java.util.ConcurrentHashMap|java.util.ConcurrentSkipListMap|java.util.EnumMap|java.util.Hashtable|java.util.IdentityHashMap|java.util.LinkedHashMap|java.util.TreeMap|java.util.WeakHashMap"
 cheat=$(cat student/MyMap.java | grep -c -E "$patterns")
-if [ $cheat != "0" ]; then
+if [ $cheat == "0" ]; then
 	feedback --result failed --feedback "You can't use an exising Map implementation!"
     exit 0
 fi

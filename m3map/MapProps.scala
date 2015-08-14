@@ -3,8 +3,14 @@ import org.scalacheck.Prop
 import org.scalacheck.Gen.{listOf, alphaStr, numChar, oneOf, choose}
 import java.util.HashMap
 import org.scalacheck.Gen
+import org.scalacheck.Arbitrary.arbitrary
+import math.abs
+import math.max
+import math.min
 
 object MapProps extends Properties("Map") {
+	val debug = false
+
 	property("put") = Prop.forAll { (key: String, value1: Int, value2: Int) =>
 		try {
 			val map = new MyMap[String, Int]()
@@ -162,6 +168,184 @@ object MapProps extends Properties("Map") {
 				}
 			} &&
 			bigMap.isEmpty() && bigMap.size() == 0
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("put_complexity") = {
+		try {
+			val qty = 1000000
+			val map = new MyMap[Int, Int]()
+			val hashMap = new HashMap[Int, Int]()
+			val t1 = System.nanoTime()
+			for (i <- 1 to qty)
+				hashMap.put(i, -i)
+			val t2 = System.nanoTime()
+			for (i <- 1 to qty)
+				map.put(i, -i)
+			val t3 = System.nanoTime()
+			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
+			max(t2-t1, t3-t2) <= 20*min(t2-t1, t3-t2)
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("get_complexity") = {
+		try {
+			val qty = 1000000
+			val map = new MyMap[Int, Int]()
+			val hashMap = new HashMap[Int, Int]()
+			val t1 = System.nanoTime()
+			for (i <- 1 to qty)
+				hashMap.put(i, -i)
+			for (i <- 1 to qty)
+				hashMap.get(i)
+			val t2 = System.nanoTime()
+			for (i <- 1 to qty)
+				map.put(i, -i)
+			for (i <- 1 to qty)
+				map.get(i)
+			val t3 = System.nanoTime()
+			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
+			max(t2-t1, t3-t2) <= 20*min(t2-t1, t3-t2)
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("remove_complexity") = {
+		try {
+			val qty = 1000000
+			val map = new MyMap[Int, Int]()
+			val hashMap = new HashMap[Int, Int]()
+			val t1 = System.nanoTime()
+			for (i <- 1 to qty)
+				hashMap.put(i, -i)
+			for (i <- 1 to qty)
+				hashMap.remove(i)
+			val t2 = System.nanoTime()
+			for (i <- 1 to qty)
+				map.put(i, -i)
+			for (i <- 1 to qty)
+				map.remove(i)
+			val t3 = System.nanoTime()
+			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
+			max(t2-t1, t3-t2) <= 20*min(t2-t1, t3-t2)
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("contains_key_complexity") = {
+		try {
+			val qty = 1000000
+			val map = new MyMap[Int, Int]()
+			val hashMap = new HashMap[Int, Int]()
+			val t1 = System.nanoTime()
+			for (i <- 1 to qty)
+				hashMap.put(i, -i)
+			for (i <- 1 to qty)
+				hashMap.containsKey(i)
+			val t2 = System.nanoTime()
+			for (i <- 1 to qty)
+				map.put(i, -i)
+			for (i <- 1 to qty)
+				map.containsKey(i)
+			val t3 = System.nanoTime()
+			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
+			max(t2-t1, t3-t2) <= 20*min(t2-t1, t3-t2)
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("contains_value_complexity") = {
+		try {
+			val qty = 10000
+			val map = new MyMap[Int, Int]()
+			val hashMap = new HashMap[Int, Int]()
+			val t1 = System.nanoTime()
+			for (i <- 1 to qty)
+				hashMap.put(i, -i)
+			for (i <- 1 to qty)
+				hashMap.containsValue(-i)
+			val t2 = System.nanoTime()
+			for (i <- 1 to qty)
+				map.put(i, -i)
+			for (i <- 1 to qty)
+				map.containsValue(-i)
+			val t3 = System.nanoTime()
+			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
+			max(t2-t1, t3-t2) <= 20*min(t2-t1, t3-t2)
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("entry_set_complexity") = {
+		try {
+			val qty = 1000000
+			val map = new MyMap[Int, Int]()
+			val hashMap = new HashMap[Int, Int]()
+			val t1 = System.nanoTime()
+			for (i <- 1 to qty)
+				hashMap.put(i, -i)
+			hashMap.entrySet()
+			val t2 = System.nanoTime()
+			for (i <- 1 to qty)
+				map.put(i, -i)
+			map.entrySet()
+			val t3 = System.nanoTime()
+			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
+			max(t2-t1, t3-t2) <= 20*min(t2-t1, t3-t2)
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("is_empty_complexity") = {
+		try {
+			val qty = 1000000
+			val map = new MyMap[Int, Int]()
+			val hashMap = new HashMap[Int, Int]()
+			val t1 = System.nanoTime()
+			for (i <- 1 to qty) {
+				hashMap.put(i, -i)
+				hashMap.isEmpty()
+			}
+			val t2 = System.nanoTime()
+			for (i <- 1 to qty) {
+				map.put(i, -i)
+				map.isEmpty()
+			}
+			val t3 = System.nanoTime()
+			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
+			max(t2-t1, t3-t2) <= 20*min(t2-t1, t3-t2)
+		} catch {
+			case e: Exception => false
+		}
+	}
+
+	property("size_complexity") = {
+		try {
+			val qty = 1000000
+			val map = new MyMap[Int, Int]()
+			val hashMap = new HashMap[Int, Int]()
+			val t1 = System.nanoTime()
+			for (i <- 1 to qty) {
+				hashMap.put(i, -i)
+				hashMap.size()
+			}
+			val t2 = System.nanoTime()
+			for (i <- 1 to qty) {
+				map.put(i, -i)
+				map.size()
+			}
+			val t3 = System.nanoTime()
+			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
+			max(t2-t1, t3-t2) <= 20*min(t2-t1, t3-t2)
 		} catch {
 			case e: Exception => false
 		}
