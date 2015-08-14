@@ -90,3 +90,4 @@ problems:
         type: code-file
         name: Unit tests for the spam filter
 weight: 1.0
+order: 13

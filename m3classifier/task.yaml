@@ -55,7 +55,7 @@ limits:
     output: '100'
     time: '30'
 name: Mission 3 - Spam filter [group]
-order: 13
+order: 14
 problems:
     classifier:
         allowed_exts:
