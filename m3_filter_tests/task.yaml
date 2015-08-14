@@ -5,8 +5,8 @@ context: |-
 
     .. code-block:: java
 
-    /* The constructor takes a String as argument, representing the path to the input file */
-    public interface SpamFiltering {
+        /* The constructor takes a String as argument, representing the path to the input file */
+        public interface SpamFiltering {
 
         /* Returns a map (custom type MyMap) containing mappings
          * between the Strings appearing in each sms of the input file,
@@ -80,6 +80,7 @@ limits:
     output: '100'
     time: '60'
 name: Mission 3 - Unit tests for the spam filter [individual]
+order: 13
 problems:
     filter_tests:
         header: Upload your file here, with only one class named "SpamFilterTests".
@@ -90,4 +91,3 @@ problems:
         type: code-file
         name: Unit tests for the spam filter
 weight: 1.0
-order: 13
