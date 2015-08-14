@@ -32,45 +32,28 @@ context: |-
 
     .. code-block:: java
 
-        TODO
         import org.junit.Test;
         import static org.junit.Assert.assertEquals;
-        import static org.junit.Assert.fail;
-        import javax.script.ScriptEngineManager;
-        import javax.script.ScriptEngine;
-        import javax.script.ScriptException;
+        import static org.junit.Assert.assertTrue;
 
-        public class TreeTests {
-
-            // This template uses JavaScript to evaluate the derived expressions in a particular value, which allows to compare two derivatives easily.
-            ScriptEngineManager manager = new ScriptEngineManager();
-            ScriptEngine engine = manager.getEngineByName("JavaScript");
+        /* input1.txt contains the following :
+         * ham    Hi Simon how are you today ?? */
+        public class SpamFilterTests {
 
             @Test
-            public void sinus() {
-                try {
-                    String myResult = evaluateDerivative("sin(x)", "0");
-                    assertEquals(Double.parseDouble(myResult), 1, 0.01);
-                } catch (ParseException e) {
-                    fail("ParseException not expected");
-                } catch (ScriptException e) {
-                    fail("Expression evaluation failed");
-                }
+            public void firstTest() {
+            SpamFilter spamFilter = new SpamFilter("input1.txt");
+            MyMap<String, Word> map = spamFilter.getWordsMap();
+                assertTrue(map.containsKey("hi"));
+                assertTrue(!map.containsKey("Hi"));
+                assertTrue(map.containsKey("today"));
+                assertTrue(!map.containsKey("ham"));
+                assertTrue(!map.containsKey("??"));
             }
+
             @Test
-            public void incorrectSyntax() {
+            public void secondTest() {
                 ...
-            }
-
-            /* Derives 'expression' and evaluates it in 'value' */
-            public String evaluateDerivative(String expression, String value) throws ParseException, ScriptException {
-                ExpressionTree tree = new ExpressionTree(expression);
-                ExpressionTree derivedTree = tree.derive();
-                String derivative = derivedTree.toStringJs(); // toStringJs() does the same job as toString(), but prints "Math.pow(a, b)" instead of "a^b" (needed so that JavaScript can interpret it).
-
-                // Do some replacements so that JavaScript can interpret everything correctly
-                Object result = engine.eval(derivative.replace("x", value).replace("sin", "Math.sin").replace("cos", "Math.cos").replace("--", "+"));
-                return result.toString();
             }
         }
 environment: java8scala
