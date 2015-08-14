@@ -41,10 +41,13 @@ else
 	if [ "$problem" != "0" ]; then # should never happen
     	feedback --result failed --feedback "Unfortunately, an exception occured during an I/O operation"
 	elif [ "$passed" = "1" ] && [ "$failed" = "0" ]; then
-		feedback --result success --feedback "Congratulations, you passed all the tests! $output"
+    	FEED=$(printf "Congratulations, you passed all the tests!\n $output")
+		feedback --result success --feedback "$FEED"
 	elif [ "$passed" = "0" ] && [ "$failed" != "0" ]; then
-        feedback --result failed --feedback "Unfortunately, you failed some tests :  $output"
+        FEED=$(printf "Unfortunately, you failed some tests : \n$output")
+        feedback --result failed --feedback "$FEED"
 	else
-    	feedback --result failed --feedback "Sorry, it seems that an error occured in the grading script, please contact the course administrator."
+    	FEED=$(printf "Sorry, it seems that an error occured in the grading script, please contact the course administrator.")
+        feedback --result failed --feedback "$FEED"
 	fi
 fi
