@@ -43,9 +43,9 @@ context: |-
 environment: java8scala
 groups: false
 limits:
-    memory: '512'
+    memory: '3000'
     output: '100'
-    time: '30'
+    time: '60'
 name: Mission 3 - Map [individual]
 order: 12
 problems:
