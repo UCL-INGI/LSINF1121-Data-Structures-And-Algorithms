@@ -90,4 +90,14 @@ problems:
         - .java
         type: code-file
         name: Unit tests for the spam filter
+    archive:
+        max_size: 5000000
+        name: Archive with inputs as text files
+        header: 'Upload the archive containing your .txt files here. It will be unzipped
+            in the same directory as you *SpamFilterTests* class. Don''t forget that
+            if you zip a directory (instead of your .txt files directly), then you
+            will have to write "dir/file.txt" in your tests instead of just "file.txt". '
+        allowed_exts:
+        - .zip
+        type: code-file
 weight: 1.0
