@@ -77,28 +77,29 @@ public class SpamFilter2 {
 		
 		// Fill a temporary map with words of this sms
 		MyMap2<String, Word2> current = new MyMap2<String, Word2>();
-		int length = words.length;
+		int length = 0; // length of a word (AFTER having removed the stop words)
 		for (String word : words) if (!stopWords.contains(word)) {
 			Word2 w = current.get(word); 
 			if (w == null)
 				w = new Word2(word); 
 			if (category.equals("ham")) {
-				w.incHamProba((double) 1/length);
+				w.incHamProba(1.0);
 				Word2.totalNumberOfHams++; 
 			}
 			else {
-				w.incSpamProba((double) 1/length);
+				w.incSpamProba(1.0);
 				Word2.totalNumberOfSpams++;
 			}
 			w.incOccurences();
 			current.put(word, w); // insert or replace
+            length++;
 		}
 		
 		// Copy everything in the new map, after normalization
 		Iterator<Map.Entry<String, Word2>> it = current.entrySet().iterator(); 
 		while (it.hasNext()) {
 			Map.Entry<String, Word2> pair = it.next(); 
-			pair.getValue().normalize(); 
+			pair.getValue().normalize(length); 
 			if (wordsMap.containsKey(pair.getKey()))
 				wordsMap.get(pair.getKey()).add(pair.getValue());
 			else

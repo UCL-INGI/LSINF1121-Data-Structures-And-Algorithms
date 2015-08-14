@@ -57,10 +57,9 @@ public class Word2 {
 		return totalNumberOfHams/(totalNumberOfSpams+totalNumberOfHams); 
 	}
 
-	public void normalize() {
-		this.spamProba = (double) this.spamProba / TOTAL_NUMBER_OF_SMS; 
-		this.hamProba = (double) this.hamProba / TOTAL_NUMBER_OF_SMS; 
-	}
+	public void normalize(int length) {
+		this.spamProba = (double) this.spamProba / (TOTAL_NUMBER_OF_SMS*length); 
+		this.hamProba = (double) this.hamProba / (TOTAL_NUMBER_OF_SMS*length); 
 	
 	public void add(Word2 w) {
 		this.spamProba += w.spamProba; 
