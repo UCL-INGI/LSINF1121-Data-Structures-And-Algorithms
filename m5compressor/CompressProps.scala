@@ -79,10 +79,10 @@ object CompressProps extends Properties("Compress") {
 
 	def compress_decompress(content: String): String = {
 
-		File("./data/input.txt").writeAll(content)
-		Compress.main(Array("./data/input.txt", "./data/compressed.txt"))
-		Decompress.main(Array("./data/compressed.txt", "./data/output.txt"))
-		val result = fromFile("./data/output.txt").mkString
+		File("./input.txt").writeAll(content)
+		Compress.main(Array("./input.txt", "./compressed.txt"))
+		Decompress.main(Array("./compressed.txt", "./output.txt"))
+		val result = fromFile("./output.txt").mkString
 
 		result
 	}
