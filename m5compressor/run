@@ -16,7 +16,7 @@ cp MapProps.scala student/MapProps.scala
 cp scalacheck.jar student/scalacheck.jar
 cd student
 scalac -cp .:scalacheck.jar MapProps.scala
-output=$(run_student scala -cp .:scalacheck.jar -J-Xmx2g -J-Xms2g MapProps)
+output=$(run_student scala -cp .:scalacheck.jar -J-Xmx2g -J-Xms2g CompressorProps)
 cd ..
 
 if [ "$output" = "252" ]; then
