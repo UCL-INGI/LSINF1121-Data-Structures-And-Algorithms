@@ -3,20 +3,20 @@ getinput compressor > student/Compressor.java
 getinput decompressor > student/Decompressor.java
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac student/MyMap.java 2>&1)
+compilationMessage=$(javac student/Compressor.java student/Decompressor.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-compilationMessage=$(printf "Compilation of MyMap.java failed :\n::\n\n $compilationMessage")
-if [ ! -f student/MyMap.class ]; then
+compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
+if [ ! -f student/Compressor.class ] || [ ! -f student/Decompressor.class ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 0
 fi
 
 # Copy everything in the 'student' directory for run_student
-cp MapProps.scala student/MapProps.scala
+cp CompressorProps.scala student/CompressorProps.scala
 cp scalacheck.jar student/scalacheck.jar
 cd student
-scalac -cp .:scalacheck.jar MapProps.scala
-output=$(run_student scala -cp .:scalacheck.jar -J-Xmx2g -J-Xms2g MapProps)
+scalac -cp .:scalacheck.jar CompressorProps.scala
+output=$(run_student scala -cp .:scalacheck.jar CompressorProps)
 cd ..
 
 if [ "$output" = "252" ]; then
