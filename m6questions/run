@@ -1,0 +1,5 @@
+#! /bin/bash
+
+getinput report > M6QuestionsReport.pdf
+
+feedback --result success --feedback "Questions report uploaded. "
