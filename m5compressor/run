@@ -1,22 +1,24 @@
 #! /bin/bash
-getinput compressor > student/Compressor.java
-getinput decompressor > student/Decompressor.java
+getinput compressor > student/Compress.java
+getinput decompressor > student/Decompress.java
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac student/Compressor.java student/Decompressor.java 2>&1)
+compilationMessage=$(javac student/Compress.java student/Decompress.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
-if [ ! -f student/Compressor.class ] || [ ! -f student/Decompressor.class ]; then
+if [ ! -f student/Compress.class ] || [ ! -f student/Decompress.class ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 0
 fi
 
 # Copy everything in the 'student' directory for run_student
-cp CompressorProps.scala student/CompressorProps.scala
+cp CompressProps.scala student/CompressProps.scala
+cp InputBitStream.class student/InputBitStream.class
+cp OutputBitStream.class student/OutputBitStream.class
 cp scalacheck.jar student/scalacheck.jar
 cd student
-scalac -cp .:scalacheck.jar CompressorProps.scala
-output=$(run_student scala -cp .:scalacheck.jar CompressorProps)
+scalac -cp .:scalacheck.jar CompressProps.scala
+output=$(run_student scala -cp .:scalacheck.jar CompressProps)
 cd ..
 
 if [ "$output" = "252" ]; then
