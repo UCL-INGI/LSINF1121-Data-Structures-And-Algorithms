@@ -1,0 +1,32 @@
+accessible: true
+author: Simon Hardy
+context: |-
+    For this mission, you are asked to write two programs : *Compress.java*, which compresses the file located at argv[0] and writes the result in a new file located at argv[1], and *Decompress.java*, which decompresses argv[0] and writes it in the file at argv[1].
+
+    You are free to use any representation for your frequency table, priority queue and Huffman tree but you **have to** justify your choices in your program report, and say why your choice is the best from a complexity point of view.
+environment: java8scala
+groups: true
+limits:
+    memory: '512'
+    output: '100'
+    time: '30'
+name: Mission 4 - Text compressor [group]
+order: 17
+problems:
+    compressor:
+        name: Text compressor
+        header: 'Upload your text compressor here. Your class should be named *Compressor*
+            and take two arguments as explained above. If you need other classes,
+            just put them at the end of this file (or at the end of the decompressor),
+            without the *public* modifier. '
+        type: code-file
+        allowed_exts:
+        - .java
+    decompressor:
+        type: code-file
+        allowed_exts:
+        - .java
+        name: Decompressor
+        header: 'Upload your decompressor here. Your class should be named *Decompressor*
+            and take two arguments as explained above. '
+weight: 1.0
