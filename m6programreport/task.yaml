@@ -1,21 +1,21 @@
 accessible: true
 author: Simon Hardy
 context: 'Report of 1-2 pages max. containing short explanations concerning the program
-    of the fifth mission. '
+    of the sixth mission. '
 environment: default
 groups: true
 limits:
     memory: '20'
     output: '2'
     time: '15'
-name: Mission 5 - Program report [group]
+name: Mission 6 - Program report [group]
 problems:
     program_report:
         type: code-file
-        header: 'Please upload here your *program report* for the mission 5. '
+        header: 'Please upload here your *program report* for the mission 6. '
         name: Program report
         max_size: 5000000
         allowed_exts:
         - .pdf
 weight: 1.0
-order: 19
+order: 21
