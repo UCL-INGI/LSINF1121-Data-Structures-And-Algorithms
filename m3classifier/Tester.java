@@ -76,7 +76,7 @@ public class Tester {
 		if (BCR < BCR2)
 			ok = false; 
 		
-		if (ok) System.out.println("OK : you got a BCR of " + BCR);
+		if (ok) System.out.println("OK : you got a BCR (Balanced Classification Rate) of " + BCR);
 		else {
 			if (key != null) System.out.println("ERROR : key '" + key + "' not found in your map. "); 
 			if (value != null) System.out.println("ERROR : word '" + value + "' incorrect. ");
