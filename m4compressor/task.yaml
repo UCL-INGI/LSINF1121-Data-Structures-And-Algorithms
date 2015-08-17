@@ -1,0 +1,19 @@
+accessible: true
+author: Simon Hardy
+context: 'For this mission, you have to write a text compressor... TODO. '
+environment: java8scala
+groups: true
+limits:
+    memory: '512'
+    output: '100'
+    time: '30'
+name: Mission 4 - Text compressor [group]
+problems:
+    compressor:
+        name: Text compressor
+        header: 'Upload your text compressor here... TODO. '
+        type: code-file
+        allowed_exts:
+        - .java
+weight: 1.0
+order: 17
