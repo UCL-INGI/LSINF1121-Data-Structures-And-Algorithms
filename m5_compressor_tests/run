@@ -1,18 +1,15 @@
 #! /bin/bash
 
-tot=7 # number of tests
-name="SpamFilter"
-testName="SpamFilterTests"
-word="filter"
-getinput archive > arch.zip
-unzip arch.zip -d ./student
+tot=2 # number of tests
+name="Compress"
+testName="CompressTests"
+word="compressor"
 
-getinput filter_tests > "student/$testName.java"
+getinput tests > "student/$testName.java"
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
-cp SpamFilter.java student/SpamFilter.java
-cp Word.java student/Word.java
-cp MyMap.java student/MyMap.java
+cp Compress.java student/Compress.java
+cp Decompress.java student/Decompress.java
 cd student
 
 n=0 # number of tests passed
