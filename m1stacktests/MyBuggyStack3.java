@@ -5,7 +5,7 @@ public class MyBuggyStack3<E> implements Stack  {
 	private int size; 
 	
 	public MyBuggyStack3() {
-		myStack = new new java.util.Stack<E>(); 
+		myStack = new java.util.Stack<E>(); 
 		size = 0; 
 	}
 	
