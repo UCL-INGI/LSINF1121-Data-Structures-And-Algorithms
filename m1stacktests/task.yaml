@@ -30,12 +30,11 @@ context: |-
 
             public class StackTests {
 
-
             @Test
             public void firstTest() {
                 Stack<Integer> stack = new MyStack<Integer>();
                 stack.push(1);
-                assertEquals(new Integer(1),stack.pop());
+                assertEquals(new Integer(1), stack.pop());
             }
 
             @Test
