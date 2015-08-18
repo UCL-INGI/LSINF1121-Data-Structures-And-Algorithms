@@ -1,4 +1,3 @@
-
 public class MyBuggyStack1<E> implements Stack<E> {
 
 	private java.util.Stack<E> myStack; 

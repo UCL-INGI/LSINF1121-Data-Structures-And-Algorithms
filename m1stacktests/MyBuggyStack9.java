@@ -1,7 +1,6 @@
-
 public class MyBuggyStack9<E> implements Stack<E> {
 
-	private Stack<E> java.util.myStack<E>; 
+	private java.util.Stack<E> myStack; 
 	private int size; 
 	
 	public MyBuggyStack9() {
