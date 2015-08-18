@@ -25,25 +25,25 @@ context: |-
 
     .. code-block:: java
 
-        import org.junit.Test;
-        import static org.junit.Assert.assertEquals;
+    import org.junit.Test;
+    import static org.junit.Assert.assertEquals;
 
-        public class StackTests {
+    public class StackTests {
 
-            String element = "a";
-            MyStack<String> stack = new MyStack<String>();
 
-            @Test
-            public void firstTest() {
-                stack.push(element);
-                assertEquals(element,stack.pop());
-            }
-
-            @Test
-            public void secondTest() {
-                ...
-            }
+        @Test
+        public void firstTest() {
+            Stack<Integer> stack = new MyStack<Integer>();
+            stack.push(1);
+            assertEquals(new Integer(1),stack.pop());
         }
+
+        @Test
+        public void secondTest() {
+            // ... TODO ...
+        }
+
+    }
 
     NB : to compile this, either use a built-in tool like Eclipse, or run the following Bash commands (download the JARs here https://github.com/junit-team/junit/wiki/Download-and-Install):
 
