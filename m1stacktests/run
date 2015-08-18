@@ -1,6 +1,6 @@
 #! /bin/bash
 
-javac -d ./student MyStack.java MyBuggyStack1.java MyBuggyStack2.java MyBuggyStack3.java MyBuggyStack4.java MyBuggyStack5.java MyBuggyStack6.java MyBuggyStack7.java MyBuggyStack8.java MyBuggyStack9.java
+javac -d ./student Stack.java MyStack.java MyBuggyStack1.java MyBuggyStack2.java MyBuggyStack3.java MyBuggyStack4.java MyBuggyStack5.java MyBuggyStack6.java MyBuggyStack7.java MyBuggyStack8.java MyBuggyStack9.java
 
 tot=10 # number of tests
 
