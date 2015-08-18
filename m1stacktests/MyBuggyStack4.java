@@ -1,9 +1,9 @@
-public class MyBuggyStack4<E> {
+public class MyBuggyStack4<E>  implements Stack {
 
 	private java.util.Stack<E> myStack; 
 	private int size; 
 	
-	public MyBuggyStack4() {
+	public MyBuggyStack4()   implements Stack<E> {
 		myStack = new java.util.Stack<E>(); 
 		size = 0; 
 	}

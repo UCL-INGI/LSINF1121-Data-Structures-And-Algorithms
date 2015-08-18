@@ -1,6 +1,6 @@
 import java.util.EmptyStackException;
 
-public class MyBuggyStack5<E> {
+public class MyBuggyStack5<E>  implements Stack<E> {
 
 	private java.util.Stack<E> myStack; 
 	
