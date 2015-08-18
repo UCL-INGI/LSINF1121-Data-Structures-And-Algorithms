@@ -3,7 +3,7 @@ public class MyBuggyStack1<E> implements Stack<E> {
 
 	private java.util.Stack<E> myStack; 
 	
-	public MyBuggyStack1()   implements Stack<E> {
+	public MyBuggyStack1() {
 		myStack = new java.util.Stack<E>(); 
 	}
 	
