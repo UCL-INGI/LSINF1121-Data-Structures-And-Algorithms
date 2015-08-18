@@ -10,7 +10,7 @@ getinput tests > "student/$testName.java"
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
 cp MyStack.java student/MyStack.java
-cp Stack.java student/Stack.Java
+cp Stack.java student/Stack.java
 cd student
 
 n=0 # number of tests passed

@@ -1,5 +1,3 @@
-
-
 public class MyStack<E> implements Stack<E> {
 
 	private java.util.Stack<E> myStack; 
