@@ -1,12 +1,10 @@
-import java.util.Stack; 
+public class MyBuggyStack2<E> implements Stack<E> {
 
-public class MyBuggyStack2<E> {
-
-	private Stack<E> myStack; 
+	private java.util.Stack<E> myStack; 
 	private int nbrOp; 	
 
 	public MyBuggyStack2() {
-		myStack = new Stack<E>(); 
+		myStack = new java.util.Stack<E>(); 
 		nbrOp = 0; 
 	}
 	
