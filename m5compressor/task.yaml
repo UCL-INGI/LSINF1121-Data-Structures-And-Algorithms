@@ -11,7 +11,7 @@ limits:
     output: '100'
     time: '30'
 name: Mission 5 - Text compressor [group]
-order: 19
+order: 20
 problems:
     compressor:
         name: Text compressor
