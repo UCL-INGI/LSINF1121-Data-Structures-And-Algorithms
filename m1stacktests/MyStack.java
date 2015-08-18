@@ -1,11 +1,11 @@
-import java.util.Stack; 
+
 
 public class MyStack<E> implements Stack<E> {
 
-	private Stack<E> myStack; 
+	private java.util.Stack<E> myStack; 
 	
 	public MyStack() {
-		myStack = new Stack<E>(); 
+		myStack = new java.util.Stack<E>(); 
 	}
 	
 	public boolean empty() {
