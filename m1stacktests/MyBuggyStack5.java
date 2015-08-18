@@ -1,12 +1,11 @@
-import java.util.Stack; 
 import java.util.EmptyStackException;
 
 public class MyBuggyStack5<E> {
 
-	private Stack<E> myStack; 
+	private java.util.Stack<E> myStack; 
 	
 	public MyBuggyStack5() {
-		myStack = new Stack<E>(); 
+		myStack = new java.util.Stack<E>(); 
 	}
 	
 	public boolean empty() {
