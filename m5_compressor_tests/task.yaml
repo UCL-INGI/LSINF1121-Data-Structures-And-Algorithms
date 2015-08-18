@@ -1,44 +1,50 @@
 accessible: true
 author: Simon Hardy
 context: |-
-    import org.junit.Test;
-    import static org.junit.Assert.assertEquals;
-    import static org.junit.Assert.assertTrue;
-    import static org.junit.Assert.fail;
-    import java.io.PrintWriter;
-    import java.util.Scanner;
-    import java.io.IOException;
-    import java.io.File;
+    For this task, you have to write unit tests using JUnit in order to check several implementations of compressors and decompressors. You are given two classes, *Compress* and *Decompress*, and you have to determine if they do their job correctly or not. We provide you a small template to begin writing your tests :
 
-    public class CompressTests {
+    .. code-block:: java
 
-        @Test
-        public void firstTest() {
-        try {
-            String str = "abcdefg";
-            assertEquals(compress_decompress(str), str);
-        } catch (Exception e) {
-            fail("Exception occured : " + e);
-        }
+        import org.junit.Test;
+        import static org.junit.Assert.assertEquals;
+        import static org.junit.Assert.assertTrue;
+        import static org.junit.Assert.fail;
+        import java.io.PrintWriter;
+        import java.util.Scanner;
+        import java.io.IOException;
+        import java.io.File;
+
+        public class CompressTests {
+
+            @Test
+            public void firstTest() {
+            try {
+                String str = "abcdefg";
+                assertEquals(compress_decompress(str), str);
+            } catch (Exception e) {
+                fail("Exception occured : " + e);
+            }
+            }
+
+            @Test
+            public void secondTest() {
+                ...
+            }
+
+            public String compress_decompress(String content) throws IOException {
+            PrintWriter writer = new PrintWriter("./input.txt");
+            writer.println(content);
+            writer.close();
+            Compress.main(new String[]{"./input.txt", "./compressed.txt"});
+            Decompress.main(new String[]{"./compressed.txt", "./output.txt"});
+            Scanner scanner = new Scanner(new File("./output.txt"));
+            String str = scanner.useDelimiter("\\Z").next();
+            scanner.close();
+            return str;
+            }
         }
 
-        @Test
-        public void secondTest() {
-            ...
-        }
-
-        public String compress_decompress(String content) throws IOException {
-        PrintWriter writer = new PrintWriter("./input.txt");
-        writer.println(content);
-        writer.close();
-        Compress.main(new String[]{"./input.txt", "./compressed.txt"});
-        Decompress.main(new String[]{"./compressed.txt", "./output.txt"});
-        Scanner scanner = new Scanner(new File("./output.txt"));
-        String str = scanner.useDelimiter("\\Z").next();
-        scanner.close();
-        return str;
-        }
-    }
+    NB : you don't know the internal representation of the compressed file, but you can still check some of its properties : for example, a long file with only high-frequency characters should have a pretty good compression rate.
 environment: java8scala
 groups: false
 limits:
