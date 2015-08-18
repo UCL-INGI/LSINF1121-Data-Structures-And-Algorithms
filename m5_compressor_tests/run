@@ -10,6 +10,8 @@ cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
 cp Compress.java student/Compress.java
 cp Decompress.java student/Decompress.java
+cp InputBitStream.class student/InputBitStream.class
+cp OutputBitStream.class student/OutputBitStream.class
 cd student
 
 n=0 # number of tests passed
