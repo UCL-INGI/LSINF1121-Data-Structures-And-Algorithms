@@ -1,0 +1,58 @@
+accessible: true
+author: Simon Hardy
+context: |-
+    import org.junit.Test;
+    import static org.junit.Assert.assertEquals;
+    import static org.junit.Assert.assertTrue;
+    import static org.junit.Assert.fail;
+    import java.io.PrintWriter;
+    import java.util.Scanner;
+    import java.io.IOException;
+    import java.io.File;
+
+    public class CompressTests {
+
+        @Test
+        public void firstTest() {
+        try {
+            String str = "abcdefg";
+            assertEquals(compress_decompress(str), str);
+        } catch (Exception e) {
+            fail("Exception occured : " + e);
+        }
+        }
+
+        @Test
+        public void secondTest() {
+            ...
+        }
+
+        public String compress_decompress(String content) throws IOException {
+        PrintWriter writer = new PrintWriter("./input.txt");
+        writer.println(content);
+        writer.close();
+        Compress.main(new String[]{"./input.txt", "./compressed.txt"});
+        Decompress.main(new String[]{"./compressed.txt", "./output.txt"});
+        Scanner scanner = new Scanner(new File("./output.txt"));
+        String str = scanner.useDelimiter("\\Z").next();
+        scanner.close();
+        return str;
+        }
+    }
+environment: java8scala
+groups: false
+limits:
+    memory: '512'
+    output: '100'
+    time: '60'
+name: Mission 5 - Unit tests [individual]
+problems:
+    tests:
+        type: code-file
+        name: Unit tests for the compressor
+        allowed_exts:
+        - .java
+        header: 'Upload your file here, with only one class named *CompressorTests*.
+            The classes representing the compressor and decompressor under test are
+            respectively named *Compress* and *Decompress*, as written in the template. '
+weight: 1.0
