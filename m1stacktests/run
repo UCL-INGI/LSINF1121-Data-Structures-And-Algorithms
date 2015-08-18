@@ -6,7 +6,7 @@ testName="StackTests"
 word="stack"
 buggyName="MyBuggyStack"
 
-getinput tests > "student/$testName.java"
+getinput stack_tests > "student/$testName.java"
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
 cp MyStack.java student/MyStack.java
