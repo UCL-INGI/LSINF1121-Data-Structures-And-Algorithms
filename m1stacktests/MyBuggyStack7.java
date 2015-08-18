@@ -1,11 +1,10 @@
-import java.util.Stack; 
 
 public class MyBuggyStack7<E> {
 
-	private Stack<E> myStack; 
+	private java.util.Stack<E> myStack; 
 	
 	public MyBuggyStack7() {
-		myStack = new Stack<E>(); 
+		myStack = new java.util.Stack<E>(); 
 	}
 	
 	public boolean empty() {

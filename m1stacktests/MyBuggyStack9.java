@@ -1,12 +1,11 @@
-import java.util.Stack; 
 
 public class MyBuggyStack9<E> {
 
-	private Stack<E> myStack; 
+	private Stack<E> java.util.myStack; 
 	private int size; 
 	
 	public MyBuggyStack9() {
-		myStack = new Stack<E>(); 
+		myStack = new java.util.Stack<E>(); 
 		size = 0; 
 	}
 	
