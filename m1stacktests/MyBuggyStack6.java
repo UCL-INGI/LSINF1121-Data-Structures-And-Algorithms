@@ -1,5 +1,5 @@
 
-public class MyBuggyStack6<E> {
+public class MyBuggyStack6<E> implements Stack<E> {
 
 	private java.util.Stack<E> myStack; 
 	

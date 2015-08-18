@@ -1,6 +1,6 @@
 import java.util.Stack; 
 
-public class MyBuggyStack8<E> {
+public class MyBuggyStack8<E>   implements Stack<E> {
 
 	private java.util.Stack<E> myStack; 
 	private int size; 
