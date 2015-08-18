@@ -5,6 +5,8 @@ context: |-
 
     .. code-block:: java
 
+        import java.util.EmptyStackException;
+
         public interface Stack<E> {
 
             public boolean empty();
@@ -25,6 +27,7 @@ context: |-
 
         import org.junit.Test;
         import static org.junit.Assert.assertEquals;
+
         public class StackTests {
 
             String element = "a";

@@ -1,6 +1,6 @@
 import java.util.Stack; 
 
-public class MyStack<E> {
+public class MyStack<E> implements Stack<E> {
 
 	private Stack<E> myStack; 
 	
