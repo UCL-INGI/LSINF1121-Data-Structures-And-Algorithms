@@ -3,7 +3,7 @@ getinput interpreter > student/Interpreter.java
 cp InterpreterInterface.java > student/InterpreterInterface.java
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac student/Interpreter.java 2>&1)
+compilationMessage=$(javac student/InterpreterInterface.java student/Interpreter.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 compilationMessage=$(printf "Compilation of Interpreter.java failed :\n::\n\n $compilationMessage")
 if [ ! -f student/Interpreter.class ]; then
