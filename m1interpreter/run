@@ -17,8 +17,8 @@ cp GeneratorPostScript.java student/GeneratorPostScript.java
 cp MyInterpreter.java student/MyInterpreter.java
 cp scalacheck.jar student/scalacheck.jar
 cd student
-a=$(javac GeneratorPostScript.java MyInterpreter.java)
-b=$(scalac -cp .:scalacheck.jar InterpreterProps.scala)
+javac GeneratorPostScript.java MyInterpreter.java
+scalac -cp .:scalacheck.jar InterpreterProps.scala
 output=$(run_student scala -cp .:scalacheck.jar InterpreterProps)
 cd ..
 
@@ -34,7 +34,7 @@ else
     infos=$(echo "$output" | grep -o '! \w*.\w*')
 
 	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then
-    	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. $output et $a et $b"
+    	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
 	elif [ "$failed" = "0" ]; then
 		feedback --result success --feedback "Congratulations, you passed the $passed tests!"
 	else
