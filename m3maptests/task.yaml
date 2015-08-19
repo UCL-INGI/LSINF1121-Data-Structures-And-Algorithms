@@ -5,7 +5,6 @@ context: |-
 
     .. code-block:: java
 
-        import java.util.Map;
         import java.util.Set;
 
         /* Your class should be named MyMap<K, V> and have at least a no-argument constructor. */
@@ -18,7 +17,7 @@ context: |-
             public boolean containsValue(V value);
 
             /* Returns a Set view of the mappings contained in this map. */
-            public Set<Map.Entry<K, V>> entrySet();
+            public Set<java.util.Map.Entry<K, V>> entrySet();
 
             /* Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key. */
             public V get(K key);

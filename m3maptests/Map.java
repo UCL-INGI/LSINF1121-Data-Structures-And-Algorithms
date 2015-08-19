@@ -11,7 +11,7 @@ public interface Map<K, V> {
     public boolean containsValue(V value);
 
     /* Returns a Set view of the mappings contained in this map. */
-    public Set<Map.Entry<K, V>> entrySet();
+    public Set<java.util.Map.Entry<K, V>> entrySet();
 
     /* Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key. */
     public V get(K key);
