@@ -100,7 +100,7 @@ public class SpamFilter implements SpamFiltering {
 			java.util.Map.Entry<String, Word> pair = it.next(); 
 			pair.getValue().normalize(length); 
 			if (wordsMap.containsKey(pair.getKey()))
-				wordsMap.get(pair.getKey()).add(pair.getValue());
+				((Word) wordsMap.get(pair.getKey())).add(pair.getValue());
 			else
 				wordsMap.put(pair.getKey(), pair.getValue());
 		}
