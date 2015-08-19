@@ -1,0 +1,63 @@
+accessible: true
+author: Simon Hardy
+context: |-
+    Recall the *BucketSort.sort* method :
+
+    .. code-block:: java
+        /*
+         * @pre 'tab' contains only positive integers, 'digit' belongs to [0, 9]
+         * @post 'tab' is not modified
+         * @returns a new table containing the elements of 'tab' sorted in increasing order
+         * on digit 'digit' (digit '0' for the unit, '1' for the decimal and so on).
+         * The algorithm must be stable ! (ordering of elements with the same keys is preserved)
+             */
+        public static int[] sort(int[] tab, int digit);
+
+    You are asked to write unit tests (using JUnit) in order to check wether a particular implementation of this interface is correct.
+
+    Here is a simple template you can use to write your tests:
+
+    .. code-block:: java
+
+        import org.junit.Test;
+        import static org.junit.Assert.assertEquals;
+        import static org.junit.Assert.assertTrue;
+        import static org.junit.Assert.assertArrayEquals;
+        import static org.junit.Assert.fail;
+
+        public class BucketSortTests {
+
+            @Test
+            public void firstTest() {
+            try {
+                int[] tab = {2, 1};
+                int[] expected = {1, 2};
+                int[] result = BucketSort.sort(tab, 0);
+                assertArrayEquals(expected, result);
+            } catch (Exception e) {
+                fail("Exception occured : " + e);
+            }
+            }
+
+            @Test
+            public void secondTest() {
+                // TODO...
+            }
+        }
+environment: java8scala
+groups: false
+limits:
+    memory: '512'
+    output: '100'
+    time: '45'
+name: Mission 6 - Unit tests for the Bucket-Sort
+problems:
+    bucketsort_tests:
+        allowed_exts:
+        - .java
+        header: 'Upload your file here, with only one class named "BucketSortTests".
+            You can suppose that the *sort* method to test is available under *BucketSort.sort(arg1,
+            arg2)* as written in the template. '
+        name: Unit tests for the Bucket-Sort
+        type: code-file
+weight: 1.0
