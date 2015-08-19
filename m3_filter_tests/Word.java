@@ -1,4 +1,4 @@
-public class Word {
+public class Word implements WordInterface {
 	private String word; 
 	private double spamProba; // probability that this words appears in spam messages
 	private double hamProba; // probability that this words appears in ham messages
