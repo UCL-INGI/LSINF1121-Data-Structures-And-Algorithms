@@ -9,7 +9,7 @@ import java.util.Iterator;
 
 public class SpamFilter2 {
 
-	private Map2<String, Word2> wordsMap;
+	private MyMap2<String, Word2> wordsMap;
 	private HashSet<String> stopWords; 
 	
 	private ArrayList<String> hams;
