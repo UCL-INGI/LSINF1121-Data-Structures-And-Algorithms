@@ -12,7 +12,7 @@ context: |-
         public class InterpreterTests {
 
             String instructions = "1 1 add pstack";
-            Interpreter interpreter = new Interpreter();
+            InterpreterInterface interpreter = new Interpreter();
 
             @Test
             public void firstTest() {
@@ -22,7 +22,7 @@ context: |-
 
             @Test
             public void secondTest() {
-                ...
+                // TODO...
             }
         }
 environment: java8scala
@@ -32,14 +32,14 @@ limits:
     output: '100'
     time: '45'
 name: Mission 1 - Unit tests for the interpreter [individual]
+order: 3
 problems:
     interpreter_tests:
         allowed_exts:
         - .java
         name: Unit tests for the interpreter
         header: 'Upload your file here, with only one class named "InterpreterTests".
-            The class representing the interpreter under test is called *Interpreter*,
-            as written in the template. '
+            The class representing the interpreter under test is called *Interpreter*
+            and implements *InterpreterInterface*, as written in the template. '
         type: code-file
 weight: 1.0
-order: 3
