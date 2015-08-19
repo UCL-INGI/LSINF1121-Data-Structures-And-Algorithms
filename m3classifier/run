@@ -51,7 +51,7 @@ else
         FEED=$(printf "Unfortunately, you failed some tests : \n$output")
         feedback --result failed --feedback "$FEED"
 	else
-    	FEED=$(printf "Sorry, it seems that an error occured in the grading script, please contact the course administrator.")
+    	FEED=$(printf "Sorry, it seems that an error occured in the grading script, please contact the course administrator. ")
         feedback --result failed --feedback "$FEED"
 	fi
 fi
