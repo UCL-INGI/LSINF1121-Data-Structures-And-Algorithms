@@ -13,6 +13,9 @@ cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
 cp SpamFilter.java student/SpamFilter.java
 cp Word.java student/Word.java
 cp MyMap.java student/MyMap.java
+cp Map.java student/Map.java
+cp WordInterface.java student/WordInterface.java
+cp SpamFiltering.java student/SpamFiltering.java
 cd student
 
 n=0 # number of tests passed
