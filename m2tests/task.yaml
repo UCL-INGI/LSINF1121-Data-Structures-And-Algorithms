@@ -77,8 +77,8 @@ context: |-
 
             /* Derives 'expression' and evaluates it in 'value' */
             public String evaluateDerivative(String expression, String value) throws ParseException, ScriptException {
-                ExpressionTree tree = new ExpressionTree(expression);
-                ExpressionTree derivedTree = tree.derive();
+                FormalExpressionTree tree = new ExpressionTree(expression);
+                FormalExpressionTree derivedTree = tree.derive();
                 String derivative = derivedTree.toStringJs(); // toStringJs() does the same job as toString(), but prints "Math.pow(a, b)" instead of "a^b" (needed so that JavaScript can interpret it).
 
                 // Do some replacements so that JavaScript can interpret everything correctly
@@ -101,6 +101,6 @@ problems:
         type: code-file
         name: Unit tests for the formal expression tree
         header: Upload your file here, with only one class named "TreeTests". The
-            class representing the tree under test is called *ExpressionTree*, as
-            written in the template !
+            class representing the tree under test is called *ExpressionTree* and
+            it implements *FormalExpressionTree*, as written in the template !
 weight: 1.0

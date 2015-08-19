@@ -47,7 +47,7 @@ else
     oneWrong=${array[8]}
 
 	if [ "$passed" = "1" ]; then
-		feedback --result success --feedback "Congratulations, you passed the {{ $totPos + $okPos }} tests!" # actually okPos means totNeg in this case
+		feedback --result success --feedback "Congratulations, you passed the $totPos + $okPos tests!" # actually okPos means totNeg in this case
 	elif [ "$failed" = "1" ]; then
     	if [ "$modifyThis" != "0" ]; then
         	feedback --result failed --feedback "Unfortunately, you failed some tests : are you sure you don't modify the current tree when you derive it ?"
