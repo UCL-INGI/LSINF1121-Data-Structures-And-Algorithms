@@ -64,7 +64,7 @@ problems:
     stack_tests:
         name: Unit tests for the stack implementation
         type: code-file
-        header: 'Upload your file here, with only one class named "StackTests". You
+        header: 'Upload your file here, with only one class named *StackTests*. You
             can suppose that the class representing the stack under test is called
             *MyStack*, and that the interface is available (named *Stack*) as written
             in the template. '

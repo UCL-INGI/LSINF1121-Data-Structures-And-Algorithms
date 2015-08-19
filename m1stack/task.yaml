@@ -31,7 +31,8 @@ order: 2
 problems:
     stack:
         header: 'Upload the file containing your implementation here. The class representing
-            your stack should be named *MyStack* and implement *Stack*.  '
+            your stack should be named *MyStack* and implement *Stack* (as usual,
+            the interface is available on INGInious).  '
         name: Stack
         allowed_exts:
         - .java
