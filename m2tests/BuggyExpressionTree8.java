@@ -6,7 +6,7 @@ import javax.script.ScriptException;
 
 
 /* Buggy version of the solution of Simon Hardy for the mission 2 */
-public class ExpressionTree
+public class ExpressionTree implements FormalExpressionTree
 {
 	private ExpressionTree left;
 	private ExpressionTree right;

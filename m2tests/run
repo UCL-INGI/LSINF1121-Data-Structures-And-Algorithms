@@ -15,6 +15,7 @@ name="ExpressionTree"
 testName="TreeTests"
 word="tree"
 cp ParseException.java student/ParseException.java
+cp FormalExpressionTree.java student/FormalExpressionTree.java
 
 getinput tree_tests > "student/$testName.java"
 cp junit-4.12.jar student/junit-4.12.jar
