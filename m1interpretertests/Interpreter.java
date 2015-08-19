@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * Solution of Simon Hardy for the PostScript Interpreter (mission 1). 
  */
-public class Interpreter {
+public class Interpreter implements InterpreterInterface {
 	public Hashtable<String,Element> variables;
 	private MyStack<Element> stack;
 	
