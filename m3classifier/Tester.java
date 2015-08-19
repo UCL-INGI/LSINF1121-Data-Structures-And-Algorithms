@@ -35,9 +35,9 @@ public class Tester {
 				ok = false; 
 				key = pair.getKey(); 
 			}
-			else if (!pair.getValue().myEquals(wordsMap.get(pair.getKey()))) {
+			else if (!pair.getValue().myEquals((Word) wordsMap.get(pair.getKey()))) {
 				ok = false; 
-				value = wordsMap.get(pair.getKey()); 
+				value = (Word) wordsMap.get(pair.getKey()); 
 			}
 		}
 		
