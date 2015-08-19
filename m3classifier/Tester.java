@@ -19,10 +19,10 @@ public class Tester {
 		readInput("SMSSpamCollection");
 		
 		SpamFiltering spamFilter = new SpamFilter("SMSSpamCollection");
-		SpamFiltering spamFilter2 = new SpamFilter2("SMSSpamCollection");
+		SpamFilter2 spamFilter2 = new SpamFilter2("SMSSpamCollection");
 		
 		Map<String, WordInterface> wordsMap = spamFilter.getWordsMap(); 
-		Map<String, WordInterface> wordsMap2 = spamFilter2.getWordsMap();
+		Map<String, Word2> wordsMap2 = spamFilter2.getWordsMap();
 		
 		/* Iterate on my map to compare the words */
 		Iterator<java.util.Map.Entry<String, Word2>> it = wordsMap2.entrySet().iterator(); 
@@ -30,7 +30,7 @@ public class Tester {
 		String key = null; 
 		Word value = null; 
 		while (it.hasNext() && ok) {
-			java.util.Map.Entry<String, WordInterface> pair = it.next(); 
+			java.util.Map.Entry<String, Word2> pair = it.next(); 
 			if (!wordsMap.containsKey(pair.getKey())) {
 				ok = false; 
 				key = pair.getKey(); 
@@ -45,7 +45,7 @@ public class Tester {
 		Iterator<java.util.Map.Entry<String, WordInterface>> newIt = wordsMap.entrySet().iterator(); 
 		String wrongKey = null; 
 		while (newIt.hasNext() && ok) {
-			java.util.Map.Entry<String, Word> pair = newIt.next(); 
+			java.util.Map.Entry<String, WordInterface> pair = newIt.next(); 
 			if (!wordsMap2.containsKey(pair.getKey())) {
 				ok = false; 
 				wrongKey = pair.getKey(); 

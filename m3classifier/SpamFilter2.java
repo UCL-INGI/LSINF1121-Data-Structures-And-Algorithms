@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class SpamFilter2 implements SpamFiltering {
+public class SpamFilter2 {
 
 	private Map<String, WordInterface> wordsMap;
 	private HashSet<String> stopWords; 
