@@ -45,7 +45,7 @@ context: |-
         }
 
 
-    NB : to compile this, either use a built-in tool like Eclipse, or run the following Bash commands (download the JARs here https://github.com/junit-team/junit/wiki/Download-and-Install):
+    NB : to compile this in local, either use a built-in tool like Eclipse, or run the following Bash commands (download the JARs here https://github.com/junit-team/junit/wiki/Download-and-Install):
 
     .. code-block::
 
@@ -64,9 +64,10 @@ problems:
     stack_tests:
         name: Unit tests for the stack implementation
         type: code-file
-        header: Upload your file here, with only one class named "StackTests". The
-            class representing the stack under test is called *MyStack*, as written
-            in the template !
+        header: 'Upload your file here, with only one class named "StackTests". You
+            can suppose that the class representing the stack under test is called
+            *MyStack*, and that the interface is available (named *Stack*) as written
+            in the template. '
         allowed_exts:
         - .java
 weight: 1.0
