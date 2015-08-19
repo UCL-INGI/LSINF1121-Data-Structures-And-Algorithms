@@ -1,6 +1,6 @@
 #! /bin/bash
 getinput interpreter > student/Interpreter.java
-
+cp InterpreterInterface.java > student/InterpreterInterface.java
 
 # Compile the student code and parse it properly
 compilationMessage=$(javac student/Interpreter.java 2>&1)

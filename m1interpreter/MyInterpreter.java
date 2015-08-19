@@ -9,7 +9,7 @@ import java.util.Arrays;
  * This is the "Interpreter" class that the students have to write, but renamed "MyInterpreter"
  * in order to compare the results of the students with the correct (I hope for them ! :p) results. 
  */
-public class MyInterpreter {
+public class MyInterpreter implements InterpreterInterface {
 	
 	public Hashtable<String,MyElement> variables;
 	private MyStack2<MyElement> stack;
