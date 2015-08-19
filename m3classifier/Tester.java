@@ -70,7 +70,7 @@ public class Tester {
 				break;
 			}
 		
-		double BCR = BCR(spamFilter);
+		double BCR = BCR((SpamFilter) spamFilter);
 		double BCR2 = BCR(spamFilter2); 
 		if (BCR < BCR2)
 			ok = false; 
