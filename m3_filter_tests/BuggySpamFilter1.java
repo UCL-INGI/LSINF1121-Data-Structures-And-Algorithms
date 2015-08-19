@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Map;
 
 public class SpamFilter implements SpamFiltering {
 
@@ -96,9 +95,9 @@ public class SpamFilter implements SpamFiltering {
 		}
 		
 		// Copy everything in the new map, after normalization
-		Iterator<Map.Entry<String, Word>> it = current.entrySet().iterator(); 
+		Iterator<java.util.Map.Entry<String, Word>> it = current.entrySet().iterator(); 
 		while (it.hasNext()) {
-			Map.Entry<String, Word> pair = it.next(); 
+			java.util.Map.Entry<String, Word> pair = it.next(); 
 			pair.getValue().normalize(length); 
 			if (wordsMap.containsKey(pair.getKey()))
 				wordsMap.get(pair.getKey()).add(pair.getValue());
