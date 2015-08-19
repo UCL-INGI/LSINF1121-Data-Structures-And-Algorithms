@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Map;
 
 
 public class Tester {
@@ -19,19 +18,19 @@ public class Tester {
 		spams = new ArrayList<String>();
 		readInput("SMSSpamCollection");
 		
-		SpamFilter spamFilter = new SpamFilter("SMSSpamCollection");
-		SpamFilter2 spamFilter2 = new SpamFilter2("SMSSpamCollection");
+		SpamFiltering spamFilter = new SpamFilter("SMSSpamCollection");
+		SpamFiltering spamFilter2 = new SpamFilter2("SMSSpamCollection");
 		
-		MyMap<String, Word> wordsMap = spamFilter.getWordsMap(); 
-		MyMap2<String, Word2> wordsMap2 = spamFilter2.getWordsMap();
+		Map<String, WordInterface> wordsMap = spamFilter.getWordsMap(); 
+		Map<String, WordInterface> wordsMap2 = spamFilter2.getWordsMap();
 		
 		/* Iterate on my map to compare the words */
-		Iterator<Map.Entry<String, Word2>> it = wordsMap2.entrySet().iterator(); 
+		Iterator<java.util.Map.Entry<String, Word2>> it = wordsMap2.entrySet().iterator(); 
 		boolean ok = true; 
 		String key = null; 
 		Word value = null; 
 		while (it.hasNext() && ok) {
-			Map.Entry<String, Word2> pair = it.next(); 
+			java.util.Map.Entry<String, WordInterface> pair = it.next(); 
 			if (!wordsMap.containsKey(pair.getKey())) {
 				ok = false; 
 				key = pair.getKey(); 
@@ -43,10 +42,10 @@ public class Tester {
 		}
 		
 		/* Iterate on the student's map to check for words that should not be there */
-		Iterator<Map.Entry<String, Word>> newIt = wordsMap.entrySet().iterator(); 
+		Iterator<java.util.Map.Entry<String, WordInterface>> newIt = wordsMap.entrySet().iterator(); 
 		String wrongKey = null; 
 		while (newIt.hasNext() && ok) {
-			Map.Entry<String, Word> pair = newIt.next(); 
+			java.util.Map.Entry<String, Word> pair = newIt.next(); 
 			if (!wordsMap2.containsKey(pair.getKey())) {
 				ok = false; 
 				wrongKey = pair.getKey(); 
