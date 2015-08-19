@@ -9,7 +9,7 @@ if [ $cheat != "0" ]; then
 fi
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac student/MyStack.java 2>&1)
+compilationMessage=$(javac student/Stack.java student/MyStack.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 compilationMessage=$(printf "Compilation of MyStack.java failed :\n::\n\n $compilationMessage")
 if [ ! -f student/MyStack.class ]; then
