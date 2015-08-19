@@ -5,6 +5,7 @@ getinput exception > student/ParseException.java
 
 cp MyExpressionTree.java ./student/MyExpressionTree.java
 cp Generator.java ./student/Generator.java
+cp FormalExpressionTree.java ./student/FormalExpressionTree.java
 
 cd student
 

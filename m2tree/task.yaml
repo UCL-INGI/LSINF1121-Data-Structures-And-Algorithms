@@ -51,12 +51,13 @@ name: Misson 2 - Formal expression tree [group]
 order: 8
 problems:
     tree:
-        name: Formal expression tree
+        name: Expression tree
         allowed_exts:
         - .java
         header: 'Upload the file containing your implementation here. The class representing
-            your tree should be named *ExpressionTree*. If you need other classes,
-            put them in the same file but without any *public* modifier. '
+            your tree should be named *ExpressionTree* and implement *FormalExpressionTree*.
+            If you need other classes, put them in the same file but without any *public*
+            modifier. '
         type: code-file
     exception:
         type: code-file

@@ -4,7 +4,7 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 
-public class MyExpressionTree
+public class MyExpressionTree implements FormalExpressionTree
 {
 	
 	private MyExpressionTree left;
