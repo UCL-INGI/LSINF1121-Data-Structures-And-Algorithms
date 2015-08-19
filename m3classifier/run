@@ -4,6 +4,10 @@ getinput classifier > student/SpamFilter.java
 getinput word > student/Word.java
 getinput map > student/MyMap.java
 
+cp Map.java student/Map.java
+cp WordInterface.java student/WordInterface.java
+cp SpamFiltering.java student/SpamFiltering.java
+
 cp SpamFilter2.java ./student/SpamFilter2.java
 cp Word2.java ./student/Word2.java
 cp MyMap2.java ./student/MyMap2.java

@@ -64,21 +64,21 @@ problems:
         - .java
         type: code-file
         header: 'Upload your spam filter here. Your class should be named "SpamFilter"
-            and implement the interface given above. '
+            and implement *SpamFiltering*. '
         name: Spam filter
     map:
         type: code-file
         allowed_exts:
         - .java
         header: 'Upload your map here. Your class should be named "MyMap" and implement
-            the interface given in the other part of the mission (it can be the same
-            as the map submitted for this other part). '
+            the interface *Map* given in the other part of the mission (it can be
+            the same as the map submitted for this other part). '
         name: Map
     word:
         type: code-file
         allowed_exts:
         - .java
         header: 'Upload your class Word here. It should be named "Word" and implement
-            the interface given above. '
+            *WordInterface*. '
         name: Word
 weight: 1.0
