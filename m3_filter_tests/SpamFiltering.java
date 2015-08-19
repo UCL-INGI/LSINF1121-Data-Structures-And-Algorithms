@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 /* The constructor takes a String as argument, representing the path to the input file */
 public interface SpamFiltering {
 

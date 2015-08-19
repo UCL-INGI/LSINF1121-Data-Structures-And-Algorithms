@@ -5,6 +5,8 @@ context: |-
 
     .. code-block:: java
 
+        import java.util.HashSet;
+
         /* The constructor takes a String as argument, representing the path to the input file */
         public interface SpamFiltering {
 
@@ -43,7 +45,7 @@ context: |-
             @Test
             public void firstTest() {
             SpamFiltering spamFilter = new SpamFilter("input1.txt");
-            Map<String, Word> map = spamFilter.getWordsMap();
+            Map<String, WordInterface> map = spamFilter.getWordsMap();
                 assertTrue(map.containsKey("hi"));
                 assertTrue(!map.containsKey("Hi"));
                 assertTrue(map.containsKey("today"));
