@@ -1,10 +1,9 @@
 import java.util.HashMap; 
-import java.util.Map;
 import java.util.Set;
 
 /* Buggy version of MyMap */
 
-public class MyMap<K, V> {
+public class MyMap<K, V> implements Map<K, V> {
 
 	private HashMap<K, V> map; 
 	
@@ -23,7 +22,7 @@ public class MyMap<K, V> {
 	}
 	
 	/* Returns a Set view of the mappings contained in this map. */
-	public Set<Map.Entry<K, V>> entrySet() {
+	public Set<java.util.Map.Entry<K, V>> entrySet() {
 		return map.entrySet();
 	}
 	

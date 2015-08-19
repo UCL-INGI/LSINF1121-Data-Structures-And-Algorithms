@@ -8,6 +8,7 @@ word="map"
 getinput map_tests > "student/$testName.java"
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
+cp Map.java student/Map.java
 cd student
 
 n=0 # number of tests passed (OK for MyMap, FAILURES for BuggyMaps)
