@@ -52,14 +52,14 @@ context: |-
 
             @Test
             public void firstTest() {
-                MyMap<String, Integer> map = new MyMap<String, Integer>();
+                Map<String, Integer> map = new MyMap<String, Integer>();
                 map.put("a", 5);
                 assertEquals(map.get("a"), new Integer(5));
             }
 
             @Test
             public void secondTest() {
-                ...
+                // TODO...
             }
         }
 environment: java8scala
@@ -77,6 +77,6 @@ problems:
         name: Unit tests for the Map implementation
         type: code-file
         header: Upload your file here, with only one class named "MapTests". The class
-            representing the map under test is called *MyMap*, as written in the template
-            !
+            representing the map under test is called *MyMap* and implements *Map*,
+            as written in the template !
 weight: 1.0
