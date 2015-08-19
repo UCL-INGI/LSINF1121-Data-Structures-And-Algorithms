@@ -42,8 +42,8 @@ context: |-
 
             @Test
             public void firstTest() {
-            SpamFilter spamFilter = new SpamFilter("input1.txt");
-            MyMap<String, Word> map = spamFilter.getWordsMap();
+            SpamFiltering spamFilter = new SpamFilter("input1.txt");
+            Map<String, Word> map = spamFilter.getWordsMap();
                 assertTrue(map.containsKey("hi"));
                 assertTrue(!map.containsKey("Hi"));
                 assertTrue(map.containsKey("today"));
@@ -67,8 +67,8 @@ order: 13
 problems:
     filter_tests:
         header: Upload your file here, with only one class named "SpamFilterTests".
-            The class representing the spam filter under test is called *SpamFilter*,
-            as written in the template !
+            The class representing the spam filter under test is called *SpamFilter*
+            and implements *SpamFiltering*, as written in the template !
         allowed_exts:
         - .java
         type: code-file
@@ -77,7 +77,7 @@ problems:
         max_size: 5000000
         name: Archive with inputs as text files
         header: 'Upload the archive containing your .txt files here. It will be unzipped
-            in the same directory as you *SpamFilterTests* class. Don''t forget that
+            in the same directory as your *SpamFilterTests* class. Don''t forget that
             if you zip a directory (instead of your .txt files directly), then you
             will have to write "dir/file.txt" in your tests instead of just "file.txt". '
         allowed_exts:
