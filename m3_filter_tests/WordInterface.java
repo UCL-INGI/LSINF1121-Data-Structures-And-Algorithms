@@ -1,5 +1,5 @@
 /* The constructor takes a String as argument, representing the corresponding English word */
-public interface Word {
+public interface WordInterface {
 
     /* Returns the English word represented by this object */
     public String getWord();
