@@ -115,7 +115,7 @@ public class SpamFilter implements SpamFiltering {
 		double pos = 0; 
 		double neg = 0; 
 		for (int i = 0 ; i < words.length ; i++) if (wordsMap.containsKey(words[i])){
-			double proba = wordsMap.get(words[i]).bayesProba(); 
+			double proba = ((Word) wordsMap.get(words[i])).bayesProba(); 
 			pos += Math.log(proba);
 			neg += Math.log(1-proba); 
 		}
