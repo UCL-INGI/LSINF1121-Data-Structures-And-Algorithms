@@ -23,7 +23,6 @@ do
 	
 	cp "../${name}.java" "./${oldName}.java"
 	name="${buggyName}${i}"
-
 	javac "${oldName}.java"
 
 	# Compile the student code and parse it properly

@@ -25,7 +25,6 @@ do
 	
 	cp "../$name" ./Interpreter.java
 	name="BuggyInterpreter${i}.java"
-
 	javac Interpreter.java
 
 	# Compile the student code and parse it properly
