@@ -1,4 +1,4 @@
-/**
+/** MODIFICATION HERE : add toStringJs
  * Un "FormalExpressionTree" est un arbre permettant de memoriser
  * et de manipuler une expression analytique.
  *
@@ -21,6 +21,8 @@ public interface FormalExpressionTree {
    *       completement parenthesee representee par this, est renvoyee.
    */
   public String toString();
+  
+  public String toStringJs();
 
   /**
    * Cette methode calcule le nouvel arbre correspondant a la derivee formelle

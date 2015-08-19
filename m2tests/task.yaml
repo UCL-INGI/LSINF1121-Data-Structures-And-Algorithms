@@ -1,7 +1,7 @@
 accessible: true
 author: Simon Hardy
 context: |-
-    Recall the FormalExpressionTree interface :
+    Recall the FormalExpressionTree interface (which has this time an additional toStringJs() method) :
 
     .. code-block:: java
 
@@ -28,6 +28,12 @@ context: |-
            *       complètement parenthésée représentée par this, est renvoyée.
            */
           public String toString();
+
+          /* toStringJs() does the same job as toString(),
+           * but prints "Math.pow(a, b)" instead of "a^b"
+           * (needed so that JavaScript can interpret it).
+           */
+          public String toStringJs();
 
           /**
            * Cette méthode calcule le nouvel arbre correspondant à la dérivée formelle
