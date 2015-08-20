@@ -9,7 +9,7 @@ context: |-
     - The input file format is valid.
     - The graph represented by the input file is connected.
     - All edges have a cost strictly greater than 0 (which means the number of edges will always be the number of nodes minus 1).
-    - There can be 2 edges with same end vertices.
+    - There can not be 2 edges with same end vertices.
     - The cities can be represented by any positive integer (not necessary consecutive).
 environment: java8scala
 groups: true
