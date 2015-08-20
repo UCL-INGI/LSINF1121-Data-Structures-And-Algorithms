@@ -1,0 +1,23 @@
+accessible: true
+author: Simon Hardy
+context: |-
+    For this mission, you are asked to write one program : *Kruskal.java*, which reads the file located at argv[0] and writes the result in a new file located at argv[1].
+
+    The output format must be the same as for the input.
+environment: java8scala
+groups: true
+limits:
+    memory: '512'
+    output: '100'
+    time: '30'
+name: Mission 6 - Minimum spanning tree [group]
+problems:
+    kruskal:
+        type: code-file
+        header: 'Upload your file here. Your class should be named *Kruskal* and take
+            two arguments as explained above. If you need other classes, just put
+            them at the end of this file, without the *public* modifier. '
+        allowed_exts:
+        - .java
+        name: Kruskal
+weight: 1.0
