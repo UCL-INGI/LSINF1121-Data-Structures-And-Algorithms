@@ -1,24 +1,20 @@
 #! /bin/bash
-getinput compressor > student/Compress.java
-getinput decompressor > student/Decompress.java
+getinput kruskal > student/Kruskal.java
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac student/Compress.java student/Decompress.java 2>&1)
+compilationMessage=$(javac student/Kruskal.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
-if [ ! -f student/Compress.class ] || [ ! -f student/Decompress.class ]; then
+if [ ! -f student/Kruskal.class ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 0
 fi
 
 # Copy everything in the 'student' directory for run_student
-cp CompressProps.scala student/CompressProps.scala
-cp InputBitStream.class student/InputBitStream.class
-cp OutputBitStream.class student/OutputBitStream.class
-cp scalacheck.jar student/scalacheck.jar
+cp KruskalTests.java student/KruskalTests.java
 cd student
-scalac -cp .:scalacheck.jar CompressProps.scala
-output=$(run_student scala -cp .:scalacheck.jar CompressProps)
+javac KruskalTests.java
+output=$(run_student java KruskalTests)
 cd ..
 
 if [ "$output" = "252" ]; then
@@ -28,15 +24,14 @@ elif [ "$output" = "253" ]; then
 elif [ "$output" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
-	failed=$(echo "$output" | grep -c "Falsified")
+	failed=$(echo "$output" | grep -c "KO")
 	passed=$(echo "$output" | grep -c "OK")
-	infos=$(echo "$output" | grep -o '! \w*.\w*')
 
 	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then
     	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
-	elif [ "$failed" = "0" ]; then
-		feedback --result success --feedback "Congratulations, you passed the $passed tests!"
+	elif [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
+		feedback --result success --feedback "Congratulations, you passed the $passed tests! $output"
 	else
-		feedback --result failed --feedback "Unfortunately, you failed $failed tests out of $(($passed+$failed)) : $infos"
+		feedback --result failed --feedback "Unfortunately, you failed some tests : $output"
 	fi
 fi
