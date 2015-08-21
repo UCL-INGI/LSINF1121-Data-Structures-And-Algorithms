@@ -3,7 +3,7 @@
 # 1 : costs of all edges are artificially incremented ==> not optimal
 # 2 : too many edges (1 more) ==> not optimal
 # 3 : too few edges (1 less) ==> not connected OR not enough nodes
-# 4 : 
+# 4 : one node was removed from the graph
 # 5 : 
 
 tot=2 # number of tests
