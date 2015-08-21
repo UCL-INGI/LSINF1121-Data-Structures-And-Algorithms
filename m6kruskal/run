@@ -31,7 +31,7 @@ else
 	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then
     	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
 	elif [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
-    	FEED=$(printf "Congratulations, you passed the $passed tests!\n $output")
+    	FEED=$(printf "Congratulations, you passed the $passed tests! \n$output")
 		feedback --result success --feedback "$FEED"
 	else
     	FEED=$(printf "Unfortunately, you failed some tests : \n$output")
