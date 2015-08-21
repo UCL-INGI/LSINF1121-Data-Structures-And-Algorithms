@@ -23,10 +23,10 @@ context: |-
             @Test
                 public void testSmallCities() {
                 try {
-                    String in = "./cities_small.txt";
-                    String out = "./cities_small_sol.txt";
-                    int numberOfNodes = 50; // number of nodes of this instance
-                    int optimalCost = 20522; // optimal cost for this instance
+                    String in = "TODO";
+                    String out = "TODO";
+                    int numberOfNodes = TODO; // number of nodes of this instance
+                    int optimalCost = TODO; // optimal cost for this instance
                     applyTest(in, out, numberOfNodes, optimalCost);
                 } catch (Exception e) {
                     fail("Exception occured : " + e);
@@ -42,8 +42,6 @@ context: |-
                 int nNodes = 0;
                 int nEdges = 0;
                 int cost = 0;
-                int cheat = 0;
-                int connected = 0;
                 Kruskal.main(new String[] {in, out}); // apply the algorithm under test
 
                 int[] result = readSol(out, numberOfNodes); // get the solution in 'result'
@@ -52,7 +50,7 @@ context: |-
                 assertEquals(result[1], numberOfNodes-1); // number of edges = number of nodes - 1 (it's a 'tree')
                 assertTrue(result[2] <= optimalCost); // the cost is optimal (it's a 'minimum' spanning tree)
 
-                // Assert that the graph is connected using Union/Find structures...
+                // TODO Assert that the graph is connected using Union/Find structures...
             }
 
             public static int[] readSol(String path, int numberOfNodes) {
