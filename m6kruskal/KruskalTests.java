@@ -19,8 +19,8 @@ public class KruskalTests {
 	}
 
 	public static void testSmallCities() {
-		String in = "./cities_small.txt";
-		String out = "./cities_small_sol.txt";
+		String in = "../cities_small.txt";
+		String out = "../cities_small_sol.txt";
 		int numberOfNodes = 50; // number of nodes of this instance
 		int optimalCost = 20522; // optimal cost for this instance
 		System.out.println("Problem 1 : small cities");
@@ -28,8 +28,8 @@ public class KruskalTests {
 	}
 	
 	public static void testBigCities() {
-		String in = "./cities.txt";
-		String out = "./cities_sol.txt";
+		String in = "../cities.txt";
+		String out = "../cities_sol.txt";
 		int numberOfNodes = 500; // number of nodes of this instance
 		int optimalCost = 149718; // optimal cost for this instance
 		System.out.println("Problem 2 : cities");
@@ -37,8 +37,8 @@ public class KruskalTests {
 	}
 	
 	public static void testCustomCities() {
-		String in = "./cities_custom.txt";
-		String out = "./cities_custom_sol.txt";
+		String in = "../cities_custom.txt";
+		String out = "../cities_custom_sol.txt";
 		int numberOfNodes = 3; // number of nodes of this instance
 		int optimalCost = 3; // optimal cost for this instance
 		System.out.println("Problem 3 : custom cities");
@@ -46,8 +46,8 @@ public class KruskalTests {
 	}
 	
 	public static void testCustomCities2() {
-		String in = "./cities_custom_2.txt";
-		String out = "./cities_custom_sol_2.txt";
+		String in = "../cities_custom_2.txt";
+		String out = "../cities_custom_sol_2.txt";
 		int numberOfNodes = 4; // number of nodes of this instance
 		int optimalCost = 11; // optimal cost for this instance
 		System.out.println("Problem 4 : custom cities 2");
@@ -55,8 +55,8 @@ public class KruskalTests {
 	}
 	
 	public static void testCustomCities3() {
-		String in = "./cities_custom_3.txt";
-		String out = "./cities_custom_sol_3.txt";
+		String in = "../cities_custom_3.txt";
+		String out = "../cities_custom_sol_3.txt";
 		int numberOfNodes = 5; // number of nodes of this instance
 		int optimalCost = 11; // optimal cost for this instance
 		System.out.println("Problem 5 : custom cities 3");
