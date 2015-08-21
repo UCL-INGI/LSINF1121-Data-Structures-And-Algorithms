@@ -1,4 +1,10 @@
 #! /bin/bash
+# BuggyKruskal : 
+# 1 : costs of all edges are artificially incremented ==> not optimal
+# 2 : 
+# 3 : 
+# 4 : 
+# 5 : 
 
 tot=2 # number of tests
 name="Kruskal"
