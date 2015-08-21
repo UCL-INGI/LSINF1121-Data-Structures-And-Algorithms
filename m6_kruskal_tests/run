@@ -1,7 +1,7 @@
 #! /bin/bash
 # BuggyKruskal : 
 # 1 : costs of all edges are artificially incremented ==> not optimal
-# 2 : too many edges (1 more) ==> not optimal
+# 2 : LinkedList instead of PriorityQueue ==> not optimal
 # 3 : too few edges (1 less) ==> not connected OR not enough nodes
 # 4 : one node was removed from the graph
 # 5 : removes one edge but adds the nodes and adds the cost in another edge (to keep optimality) ==> graph not connected (or just too few edges...)
