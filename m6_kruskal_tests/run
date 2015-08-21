@@ -4,7 +4,8 @@
 # 2 : too many edges (1 more) ==> not optimal
 # 3 : too few edges (1 less) ==> not connected OR not enough nodes
 # 4 : one node was removed from the graph
-# 5 : remove one edge but adds the nodes ==> graph not connected (or just too few edges...)
+# 5 : removes one edge but adds the nodes and adds the cost in another edge (to keep optimality) ==> graph not connected (or just too few edges...)
+# 6 : one edge was removed and replaced by an edge of the same cost which makes a cycle ==> graph not connected while right number of nodes, edges and optimal cost. 
 
 tot=2 # number of tests
 name="Kruskal"
