@@ -43,6 +43,8 @@ context: |-
             return str;
             }
         }
+
+    Note that you can either provide the input text files in an archive, or directly write them in your tests. You can even do both at the same time, but in all cases you have to submit an archive (which can be empty if you don't need it).
 environment: java8scala
 groups: false
 limits:
