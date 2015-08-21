@@ -1,11 +1,13 @@
 accessible: true
 author: Simon Hardy
 context: |-
-    For this mission, you are asked to write one program : *Kruskal.java*, which reads the file located at argv[0] and writes the result in a new file located at argv[1].
+    For this mission, you are asked to implement Kruskal algorithm in order to compute the minimum spanning tree corresponding to an input file. As a reminder, we impose two implementation details :
+    - The priority queue should be replaced by a Radix-Sort using one Bucket-Sort per digit as explained in the statement pdf,
+    - You have to use a Union/Find structure to handle the clusters (this doesn't change from the pseudo-code of the book).
 
-    The output format must be the same as for the input.
+    Concretely, you have to write one program : *Kruskal.java*, which reads the file located at argv[0] and writes the result in a new file located at argv[1]. The output format must be the same as for the input.
 
-    Informations :
+    Additional informations :
     - The input file format is valid.
     - The graph represented by the input file is connected.
     - All edges have a cost strictly greater than 0 (which means the number of edges will always be the number of nodes minus 1).
