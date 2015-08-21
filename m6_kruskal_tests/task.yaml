@@ -59,4 +59,14 @@ problems:
         header: 'Upload your file here, with only one class named *KruskalTests*.
             The class representing the implementation under test is called *Kruskal*,
             as written in the template. '
+    archive:
+        max_size: 5000000
+        name: Archive with inputs as text files
+        header: 'Upload the archive containing your .txt files here. It will be unzipped
+            in the same directory as your *KruskalTests* class. Don''t forget that
+            if you zip a directory (instead of your .txt files directly), then you
+            will have to write "dir/file.txt" in your tests instead of just "file.txt". '
+        allowed_exts:
+        - .zip
+        type: code-file
 weight: 1.0
