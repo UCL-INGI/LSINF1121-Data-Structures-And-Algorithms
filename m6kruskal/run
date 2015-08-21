@@ -12,6 +12,7 @@ fi
 
 # Copy everything in the 'student' directory for run_student
 cp KruskalTests.java student/KruskalTests.java
+cp *.txt ./student
 cd student
 javac KruskalTests.java
 output=$(run_student java KruskalTests)
