@@ -1,8 +1,8 @@
 #! /bin/bash
 # BuggyKruskal : 
 # 1 : costs of all edges are artificially incremented ==> not optimal
-# 2 : 
-# 3 : 
+# 2 : too many edges (1 more) ==> not optimal
+# 3 : too few edges (1 less) ==> not connected OR not enough nodes
 # 4 : 
 # 5 : 
 
