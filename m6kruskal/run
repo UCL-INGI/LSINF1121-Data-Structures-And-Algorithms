@@ -31,10 +31,10 @@ else
 	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then
     	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
 	elif [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
-    	FEED=$(printf "Congratulations, you passed the $passed tests! \n $output")
-		feedback --result success --feedback "$FEED"
+        FEED=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+		feedback --result success --feedback "Congratulations, you passed the $passed tests! \n::\n\n$FEED"
 	else
-    	FEED=$(printf "Unfortunately, you failed some tests : \n $output")
-		feedback --result failed --feedback "$FEED"
+    	FEED=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+		feedback --result failed --feedback "Unfortunately, you failed some tests : \n::\n\n$FEED"
 	fi
 fi
