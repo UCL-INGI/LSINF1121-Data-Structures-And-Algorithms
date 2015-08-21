@@ -4,10 +4,9 @@
 # 2 : LinkedList instead of PriorityQueue ==> not optimal
 # 3 : too few edges (1 less) ==> not connected OR not enough nodes
 # 4 : one node was removed from the graph
-# 5 : removes one edge but adds the nodes and adds the cost in another edge (to keep optimality) ==> graph not connected (or just too few edges...)
-# 6 : one edge was removed and replaced by an edge of the same cost which makes a cycle ==> graph not connected while right number of nodes, edges and optimal cost. 
+# 5 : disconnects the graph while keeping every other parameter identical. 
 
-tot=2 # number of tests
+tot=6 # number of tests
 name="Kruskal"
 testName="KruskalTests"
 word="kruskal"
