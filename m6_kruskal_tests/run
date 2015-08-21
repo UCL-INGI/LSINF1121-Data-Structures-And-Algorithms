@@ -9,7 +9,7 @@
 tot=6 # number of tests
 name="Kruskal"
 testName="KruskalTests"
-word="kruskal"
+word="Kruskal"
 getinput archive > arch.zip
 unzip arch.zip -d ./student
 
@@ -71,7 +71,7 @@ cd ..
 
 feedback=""
 if [ "$passOk" != 1 ]; then
-	feedback="you detected an error in a correct $word"
+	feedback="you detected an error in a correct $word implementation"
 fi
 if [ "$failOk" != "$(($tot-1))" ]; then
 	if [ "$feedback" != "" ]; then
