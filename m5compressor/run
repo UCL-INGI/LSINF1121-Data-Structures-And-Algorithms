@@ -1,4 +1,8 @@
 #! /bin/bash
+
+# To avoid problems with encoding
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
+
 getinput compressor > student/Compress.java
 getinput decompressor > student/Decompress.java
 
