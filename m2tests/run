@@ -10,6 +10,9 @@
 # BuggyExpressionTree7 : no ParseException thrown in general, except for parenthesis count errors
 # BuggyExpressionTree8 : no ParseException thrown when another letter than 'x' is used. 
 
+# To avoid problems with encoding
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
+
 tot=9 # number of tests
 name="ExpressionTree"
 testName="TreeTests"
