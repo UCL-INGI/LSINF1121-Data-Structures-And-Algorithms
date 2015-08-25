@@ -37,4 +37,4 @@ problems:
         - .java
         name: Kruskal
 weight: 1.0
-order: 26
+order: 28

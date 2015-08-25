@@ -53,6 +53,6 @@ problems:
         allowed_exts:
         - .java
         header: 'Upload the file containing your implementation here. The class representing
-            your map should be named *MyMap* and implement *Map*. ! '
+            your map should be named *MyMap* and implement *Map*. '
         name: Map
 weight: 1.0

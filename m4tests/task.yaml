@@ -1,0 +1,59 @@
+accessible: true
+author: Simon Hardy
+context: |-
+    For this task, you have to write unit tests using JUnit in order to check several OrderedMap implementations. You are given one class, *SearchTree*, and you have to determine if it does its job correctly or not. We provide you a template to begin writing your tests :
+
+    .. code-block:: java
+
+        import org.junit.Test;
+        import static org.junit.Assert.assertEquals;
+        import static org.junit.Assert.assertTrue;
+        import static org.junit.Assert.fail;
+        import java.util.Set;
+        import java.util.HashSet;
+
+        public class SearchTreeTests {
+
+            @Test
+            public void firstTest() {
+            try {
+                OrderedMap tree = new SearchTree();
+                String key = "Foo Fighters";
+                Set<String> value = new HashSet<String>();
+                value.add("The Pretender");
+                assertEquals(tree.put(key, value), null);
+                assertEquals(tree.size(), 1);
+                assertEquals(tree.isEmpty(), false);
+                Set<String> result = tree.get(key);
+                assertEquals(result.size(), 1);
+                assertTrue(result.contains("The Pretender"));
+            } catch (Exception e) {
+                fail("Exception occured : " + e);
+            }
+            }
+
+            @Test
+            public void secondTest() {
+                // TODO...
+            }
+        }
+
+    Note that you can't provide custom text files for this task, but the file *songs.txt* is available in the same folder as your tester.
+environment: java8scala
+groups: false
+limits:
+    memory: '512'
+    output: '100'
+    time: '60'
+name: Mission 4 - Unit tests [individual]
+problems:
+    tests:
+        type: code-file
+        name: Unit tests
+        allowed_exts:
+        - .java
+        header: 'Upload your file here, with only one class named *SearchTreeTests*.
+            The class representing the implementation under test is called *SearchTree*,
+            as written in the template. '
+weight: 1.0
+order: 17
