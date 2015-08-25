@@ -133,7 +133,7 @@ public class ExpressionTree implements FormalExpressionTree
 
 	
 	/* CONSTRUCTEUR
-	 * Construit un arbre élémentaire correspondant à l'expression "0"
+	 * Construit un arbre ?l?mentaire correspondant ? l'expression "0"
 	 */
 	public ExpressionTree()
 	{
@@ -146,10 +146,10 @@ public class ExpressionTree implements FormalExpressionTree
 
 	/* CONSTRUCTEUR
 
-	 * prenant comme argument une chaîne de caractères (String) et construisant l'arbre associé.
+	 * prenant comme argument une cha?ne de caract?res (String) et construisant l'arbre associ?.
 
-	 * Cette chaîne est supposée correspondre à une expression analytique syntaxiquement correcte et complètement parenthèsée. 
-	 * Une gestion d'exceptions doit être prévue lorsque cette précondition n'est pas vérifiée. 
+	 * Cette cha?ne est suppos?e correspondre ? une expression analytique syntaxiquement correcte et compl?tement parenth?s?e. 
+	 * Une gestion d'exceptions doit ?tre pr?vue lorsque cette pr?condition n'est pas v?rifi?e. 
 	 */
 	public ExpressionTree(String expression) throws ParseException
 	{
@@ -320,15 +320,15 @@ public class ExpressionTree implements FormalExpressionTree
 	 */
 	
 	/**
-	* Cette méthode calcule le nouvel arbre correspondant à la dérivée formelle de l'arbre courant. 
-	* L'arbre courant (this) n'est pas modifié.
+	* Cette m?thode calcule le nouvel arbre correspondant ? la d?riv?e formelle de l'arbre courant. 
+	* L'arbre courant (this) n'est pas modifi?.
 	* 
-	* @pre   this représente une expression analytique syntaxiquement correcte.
-	* @post  Une référence à un nouvel arbre représentant la dérivée formelle de this est renvoyée. 
+	* @pre   this repr?sente une expression analytique syntaxiquement correcte.
+	* @post  Une r?f?rence ? un nouvel arbre repr?sentant la d?riv?e formelle de this est renvoy?e. 
 	*/
 	
-	// Vérifier que l'arbre courant n'est pas modifié !
-	// La méthode dans l'interface n'a pas d'argument, correct quand même ?
+	// V?rifier que l'arbre courant n'est pas modifi? !
+	// La m?thode dans l'interface n'a pas d'argument, correct quand m?me ?
 	
 	public ExpressionTree derive()
 	{
@@ -509,15 +509,15 @@ public class ExpressionTree implements FormalExpressionTree
 			g.setIsOperator(true);
 			g.setIsVariable(false);
 			
-			// D�but modif Simon
+			// D?but modif Simon
 			ExpressionTree h = new ExpressionTree();
 			if (!this.getRight().isOperator() && !this.getRight().isVariable()) { // c'est une valeur
 				h.setValue((this.getRight().getValue())-1);
 				h.setIsOperator(false);
 				h.setIsVariable(false);
-				// on la d�cr�mente simplement
+				// on la d?cr?mente simplement
 			}
-			else { // c'est une variable ou un op�rateur
+			else { // c'est une variable ou un op?rateur
 				ExpressionTree i = new ExpressionTree(); // arbre de valeur 1
 				i.setValue(1);
 				i.setIsOperator(false);
@@ -646,12 +646,12 @@ public class ExpressionTree implements FormalExpressionTree
 	}
 	
 	/**
-	* Cette méthode renvoie une chaîne de caractères correspondant à
-	* l'expression analytique représentée dans l'arbre.
+	* Cette m?thode renvoie une cha?ne de caract?res correspondant ?
+	* l'expression analytique repr?sent?e dans l'arbre.
 	*  
-	* @pre  this représente une expression analytique syntaxiquement correcte
-	* @post une chaîne de caractères, correspondant à l'expression analytique 
-	*       complétement parenthésée représentée par this, est renvoyée.
+	* @pre  this repr?sente une expression analytique syntaxiquement correcte
+	* @post une cha?ne de caract?res, correspondant ? l'expression analytique 
+	*       compl?tement parenth?s?e repr?sent?e par this, est renvoy?e.
 	*/  
 	public String toString() {
 		String str = "", strLeft = "", strRoot = "", strRight = "";
@@ -662,8 +662,8 @@ public class ExpressionTree implements FormalExpressionTree
 		    parenthese = true;
 		}
 
-	       	// "root" peut être :
-	 		//  - un opérateur
+	       	// "root" peut ?tre :
+	 		//  - un op?rateur
 	 		//  - une variable
 	 		//  - autre chose
 	       	if(this.isOperator())
@@ -708,8 +708,8 @@ public class ExpressionTree implements FormalExpressionTree
 		    parenthese = true;
 		}	                
 
-	       	// "root" peut être :
-	 		//  - un opérateur
+	       	// "root" peut ?tre :
+	 		//  - un op?rateur
 	 		//  - une variable
 	 		//  - autre chose
 	       	if(this.isOperator())
