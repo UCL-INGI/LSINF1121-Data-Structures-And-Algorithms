@@ -46,7 +46,7 @@ else
 	if [ "$problem" != "0" ]; then
     	feedback --result failed --feedback "Unfortunately, an exception occured during the execution of your code. "
 	elif [ "$passed" != "0" ] && [ "$failed" = "0" ]; then
-    	FEED=$(printf "Congratulations, you passed all the tests!\n $output")
+    	FEED=$(printf "Congratulations, you passed all the tests!\n$output")
 		feedback --result success --feedback "$FEED"
 	elif [ "$failed" != "0" ]; then
         FEED=$(printf "Unfortunately, you failed some tests : \n$output")
