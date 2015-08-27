@@ -143,7 +143,7 @@ limits:
     output: '100'
     time: '60'
 name: Mission 6 - Unit tests for Kruskal
-order: 27
+order: 28
 problems:
     tests:
         type: code-file

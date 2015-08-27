@@ -62,4 +62,4 @@ problems:
             The classes representing the compressor and decompressor under test are
             respectively named *Compress* and *Decompress*, as written in the template. '
 weight: 1.0
-order: 21
+order: 22
