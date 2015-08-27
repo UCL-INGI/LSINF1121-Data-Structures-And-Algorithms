@@ -28,9 +28,8 @@ fi
 
 
 javac Tester.java
-output=$(run_student --time 1 java Tester)
+output=$(run_student java Tester)
 retval=$?
-echo $retval
 cd ..
 
 if [ "$retval" = "252" ]; then
