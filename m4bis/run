@@ -1,23 +1,24 @@
 #! /bin/bash
 
-getinput classifier > student/SpamFilter.java
-getinput word > student/Word.java
-getinput map > student/MyMap.java
+getinput plagiarism > student/Plagiarism.java
+getinput hashmap > student/HashMap.java
 
-cp Map.java student/Map.java
-cp WordInterface.java student/WordInterface.java
-cp SpamFiltering.java student/SpamFiltering.java
+cp HashMap.java student/HashMap.java
+cp Plagiarism.java student/Plagiarism.java
 
-cp SpamFilter2.java ./student/SpamFilter2.java
-cp Word2.java ./student/Word2.java
-cp MyMap2.java ./student/MyMap2.java
+cp MyHashMap.java student/MyHashMap.java
+cp MyPlagiarism.java student/MyPlagiarism.java
 cp Tester.java ./student/Tester.java
-cp SMSSpamCollection ./student/SMSSpamCollection
+cp ./*.txt ./student/
+cp -r ./corpus ./student
+cp -r ./corpus2 ./student
+cp -r ./corpus3 ./student
+cp -r ./corpus4 ./student
 
 cd student
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac SpamFilter.java 2>&1)
+compilationMessage=$(javac Plagiarism.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
 if [ ! -f SpamFilter.class ]; then
@@ -38,9 +39,9 @@ elif [ "$output" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
 
-    failed=$(echo "$output" | grep -c "ERROR")
-	passed=$(echo "$output" | grep -c "OK")
-	problem=$(echo "$output" | grep -c "EXCEPTION")
+    failed=$(echo "$output" | grep -c "failed :")
+	passed=$(echo "$output" | grep -c "passed")
+	problem=$(echo "$output" | grep -c "An error occured")
 
 	if [ "$problem" != "0" ]; then # should never happen
     	feedback --result failed --feedback "Unfortunately, an exception occured during an I/O operation"

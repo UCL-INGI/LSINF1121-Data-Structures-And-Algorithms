@@ -45,7 +45,7 @@ public class Tester {
 			Set<Entry<String, Integer>> hits = p.detect("document.txt");
 			Set<Entry<String, Integer>> myHits = myP.detect("document.txt");
 			success = compareEntries(myHits, hits);
-			if (!success) System.out.println("Test " + i + " failed : " + feedback);
+			if (!success) Snystem.out.println("Test " + i + " failed : " + feedback);
 			else System.out.println("Test " + i + " passed");
 			
 			i++;
@@ -79,7 +79,7 @@ public class Tester {
 			else if (t2-t1 > 2*(t3-t2)) System.out.println("Test " + i + " failed : your plagiarism detector was too slow. Make sure to use the incremental hash function !");
 			else System.out.println("Test " + i + " passed");
 		} catch (Exception e) {
-			feedback = "A error occured the execution of your code. "; 
+			feedback = "An error occured during the execution of your code. "; 
 		}
 	}
 	
