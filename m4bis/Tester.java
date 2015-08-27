@@ -79,7 +79,7 @@ public class Tester {
 			else if (t2-t1 > 2*(t3-t2)) System.out.println("Test " + i + " failed : your plagiarism detector was too slow. Make sure to use the incremental hash function !");
 			else System.out.println("Test " + i + " passed");
 		} catch (Exception e) {
-			feedback = "An error occured during the execution of your code. "; 
+			System.out.println("An error occured during the execution of your code. "); 
 		}
 	}
 	
