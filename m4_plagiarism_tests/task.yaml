@@ -1,0 +1,81 @@
+accessible: true
+author: Simon Hardy
+context: |
+    Recall the Map interface you used in your plagiarism detector :
+
+    .. code-block:: java
+
+        /* A Map creates mappings between Strings and objects of type V.
+         * A class implementing this interface should have at least one constructor
+         * with no argument, initializing the map.
+         */
+        public interface MapInterface<V> {
+
+            public V get(String key);
+
+            /* Same as 'get(key)', but instead of hashing 'key', the map will directly use 'hashCode'
+             * and check if there is indeed an entry with key 'key' */
+            public V get(String key, int hashCode);
+
+            public void put(String key, V value);
+
+            /* Same as 'put(key, value)', but instead of hashing 'key',
+             * it will directly use 'hashCode' */
+            public void put(String key, V value, int hashCode);
+
+            public int size();
+
+            /* Returns the hash of the String 'key'
+             * Complexity required : O(m) */
+            public int hashCode(String key);
+
+            /* Returns the hash of the String 'key' based on the previous hash 'lastHash'
+             * and on the previous character leading the sentence 'lastChar'
+             * Complexity required : O(1) */
+            public int incrementalHashCode(String key, int lastHash, int lastChar);
+
+        }
+
+    You are asked to write unit tests (using JUnit) in order to check wether a particular implementation of this interface is correct.
+
+    Here is a simple template you can use to write your tests :
+
+    .. code-block:: java
+
+        import org.junit.Test;
+        import static org.junit.Assert.assertEquals;
+        import static org.junit.Assert.assertTrue;
+
+        /* Partial solution to the tests of the HashMap */
+
+        public class HashMapTests {
+
+            @Test
+            public void firstTest() {
+                MapInterface<Integer> map = new HashMap<Integer>();
+                map.put("a", 1);
+                assertEquals(map.get("a"), new Integer(1));
+            }
+
+            @Test
+            public void secondTest() {
+                // TODO...
+            }
+        }
+environment: java8scala
+groups: false
+limits:
+    memory: '512'
+    output: '100'
+    time: '45'
+name: Mission 4 - Unit tests for the map of the plagiarism detector [individual]
+problems:
+    plagiarism_tests:
+        name: Unit tests
+        type: code-file
+        header: Upload your file here, with only one class named "HashMapTests". The
+            class representing the spam filter under test is called *HashMap* and
+            implements *MapInterface*, as written in the template !
+        allowed_exts:
+        - .java
+weight: 1.0
