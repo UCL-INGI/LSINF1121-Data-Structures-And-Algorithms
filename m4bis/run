@@ -21,7 +21,7 @@ cd student
 compilationMessage=$(javac Plagiarism.java PlagiarismInterface.java HashMap.java MapInterface.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
-if [ ! -f SpamFilter.class ]; then
+if [ ! -f Plagiarism.class ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 0
 fi
