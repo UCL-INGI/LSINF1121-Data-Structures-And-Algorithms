@@ -43,15 +43,15 @@ else
 	passed=$(echo "$output" | grep -c "passed")
 	problem=$(echo "$output" | grep -c "An error occured")
 
-	if [ "$problem" != "0" ]; then # should never happen
-    	feedback --result failed --feedback "Unfortunately, an exception occured during an I/O operation"
-	elif [ "$passed" = "1" ] && [ "$failed" = "0" ]; then
+	if [ "$problem" != "0" ]; then
+    	feedback --result failed --feedback "Unfortunately, an exception occured during the execution of your code. "
+	elif [ "$passed" != "0" ] && [ "$failed" = "0" ]; then
     	FEED=$(printf "Congratulations, you passed all the tests!\n $output")
 		feedback --result success --feedback "$FEED"
-	elif [ "$passed" = "0" ] && [ "$failed" != "0" ]; then
+	elif [ "$failed" != "0" ]; then
         FEED=$(printf "Unfortunately, you failed some tests : \n$output")
         feedback --result failed --feedback "$FEED"
-	else
+	else # should never happen
     	FEED=$(printf "Sorry, it seems that an error occured in the grading script, please contact the course administrator. ")
         feedback --result failed --feedback "$FEED"
 	fi
