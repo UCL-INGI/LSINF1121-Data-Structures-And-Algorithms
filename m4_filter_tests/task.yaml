@@ -65,7 +65,7 @@ limits:
     output: '100'
     time: '60'
 name: Mission 4 - Unit tests for the spam filter [individual]
-order: 13
+order: 17
 problems:
     filter_tests:
         header: Upload your file here, with only one class named "SpamFilterTests".

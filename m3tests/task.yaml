@@ -46,7 +46,7 @@ limits:
     output: '100'
     time: '60'
 name: Mission 3 - Unit tests [individual]
-order: 17
+order: 11
 problems:
     tests:
         type: code-file

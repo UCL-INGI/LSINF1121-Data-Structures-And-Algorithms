@@ -68,7 +68,7 @@ limits:
     output: '100'
     time: '45'
 name: Mission 4 - Unit tests for the Map [individual]
-order: 11
+order: 15
 problems:
     map_tests:
         allowed_exts:

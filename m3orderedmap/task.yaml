@@ -90,7 +90,7 @@ limits:
     output: '100'
     time: '30'
 name: Mission 3 - Ordered Map [group]
-order: 18
+order: 12
 problems:
     ordered_map:
         allowed_exts:
