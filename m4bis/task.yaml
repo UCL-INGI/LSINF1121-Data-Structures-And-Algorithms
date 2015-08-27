@@ -62,7 +62,7 @@ limits:
     output: '100'
     time: '30'
 name: Mission 4 - Plagiarism detector [group]
-order: 19
+order: 20
 problems:
     plagiarism:
         name: Plagiarism detector

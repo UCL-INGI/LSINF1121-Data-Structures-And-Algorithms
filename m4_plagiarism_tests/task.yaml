@@ -79,3 +79,4 @@ problems:
         allowed_exts:
         - .java
 weight: 1.0
+order: 19
