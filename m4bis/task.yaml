@@ -1,0 +1,80 @@
+accessible: true
+author: Simon Hardy
+context: |
+    For this mission, you have to write a plagiarism detector (a class named "Plagiarism") implementing the following interface :
+
+    .. code-block:: java
+
+        import java.util.Map.Entry;
+        import java.util.Set;
+
+        /* A class implementing this interface should have a constructor taking two arguments :
+         * - The path to the folder where lies the corpus of documents,
+         * - The number 'w' of characters from which we consider that a sentence is plagiarized. */
+        public interface PlagiarismInterface {
+
+            /* @pre : 'doc' is the path to a text file
+             * @post : searches for plagiarized sentences of at least 'w' characters between 'doc' and all text files in 'corpus'.
+             * returns a set of (document name, position) for each plagiarized sentence found in a corpus file
+             * ('position' is the position of the first character of that sentence in the corpus file, starting at 0) */
+            public Set<Entry<String, Integer>> detect(String doc);
+
+        }
+
+    In order to have an efficient detector, you will have to use Map (a class named "HashMap") implementing this interface :
+
+    .. code-block:: java
+
+        /* A Map creates mappings between Strings and objects of type V.
+         * A class implementing this interface should have at least one constructor
+         * with no argument, initializing the map.
+         */
+        public interface MapInterface<V> {
+
+            public V get(String key);
+
+            /* Same as 'get(key)', but instead of hashing 'key', the map will directly use 'hashCode'
+             * and check if there is indeed an entry with key 'key' */
+            public V get(String key, int hashCode);
+
+            public void put(String key, V value);
+
+            /* Same as 'put(key, value)', but instead of hashing 'key',
+             * it will directly use 'hashCode' */
+            public void put(String key, V value, int hashCode);
+
+            public int size();
+
+            /* Returns the hash of the String 'key'
+             * Complexity required : O(m) */
+            public int hashCode(String key);
+
+            /* Returns the hash of the String 'key' based on the previous hash 'lastHash'
+             * and on the previous character leading the sentence 'lastChar'
+             * Complexity required : O(1) */
+            public int incrementalHashCode(String key, int lastHash, int lastChar);
+
+        }
+environment: java8scala
+groups: true
+limits:
+    memory: '512'
+    output: '100'
+    time: '30'
+name: Mission 4 - Plagiarism detector [group]
+problems:
+    plagiarism:
+        name: Plagiarism detector
+        allowed_exts:
+        - .java
+        type: code-file
+        header: 'Upload your plagiarism detector here. Your class should be named
+            "Plagiarism" and implement *PlagiarismInterface*. '
+    hashmap:
+        type: code-file
+        header: 'Upload your map implementation here. Your class should be named "HashMap"
+            and implement *MapInterface*. '
+        allowed_exts:
+        - .java
+        name: HashMap
+weight: 1.0

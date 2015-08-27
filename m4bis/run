@@ -1,0 +1,57 @@
+#! /bin/bash
+
+getinput classifier > student/SpamFilter.java
+getinput word > student/Word.java
+getinput map > student/MyMap.java
+
+cp Map.java student/Map.java
+cp WordInterface.java student/WordInterface.java
+cp SpamFiltering.java student/SpamFiltering.java
+
+cp SpamFilter2.java ./student/SpamFilter2.java
+cp Word2.java ./student/Word2.java
+cp MyMap2.java ./student/MyMap2.java
+cp Tester.java ./student/Tester.java
+cp SMSSpamCollection ./student/SMSSpamCollection
+
+cd student
+
+# Compile the student code and parse it properly
+compilationMessage=$(javac SpamFilter.java 2>&1)
+compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
+if [ ! -f SpamFilter.class ]; then
+    feedback --result failed --feedback "$compilationMessage"
+    exit 0
+fi
+
+
+javac Tester.java
+output=$(java Tester)
+cd ..
+
+if [ "$output" = "252" ]; then
+	feedback --result failed --feedback "Command was killed due to an out-of-memory"
+elif [ "$output" = "253" ]; then
+	feedback --result failed --feedback "Command timed out"
+elif [ "$output" = "254" ]; then
+    feedback --result failed --feedback "Unfortunately, a runtime error occured"
+else
+
+    failed=$(echo "$output" | grep -c "ERROR")
+	passed=$(echo "$output" | grep -c "OK")
+	problem=$(echo "$output" | grep -c "EXCEPTION")
+
+	if [ "$problem" != "0" ]; then # should never happen
+    	feedback --result failed --feedback "Unfortunately, an exception occured during an I/O operation"
+	elif [ "$passed" = "1" ] && [ "$failed" = "0" ]; then
+    	FEED=$(printf "Congratulations, you passed all the tests!\n $output")
+		feedback --result success --feedback "$FEED"
+	elif [ "$passed" = "0" ] && [ "$failed" != "0" ]; then
+        FEED=$(printf "Unfortunately, you failed some tests : \n$output")
+        feedback --result failed --feedback "$FEED"
+	else
+    	FEED=$(printf "Sorry, it seems that an error occured in the grading script, please contact the course administrator. ")
+        feedback --result failed --feedback "$FEED"
+	fi
+fi
