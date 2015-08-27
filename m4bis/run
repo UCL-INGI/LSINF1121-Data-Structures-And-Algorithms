@@ -28,7 +28,7 @@ fi
 
 
 javac Tester.java
-output=$(run_student java Tester)
+output=$(run_student --time 1 java Tester)
 cd ..
 
 if [ "$output" = "252" ]; then

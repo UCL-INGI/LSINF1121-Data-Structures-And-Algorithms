@@ -60,7 +60,7 @@ groups: true
 limits:
     memory: '512'
     output: '100'
-    time: '5'
+    time: '10'
 name: Mission 4 - Plagiarism detector [group]
 order: 19
 problems:
