@@ -45,7 +45,7 @@ limits:
     memory: '3000'
     output: '100'
     time: '60'
-name: Mission 3 - Map [individual]
+name: Mission 4 - Map [individual]
 order: 12
 problems:
     map:

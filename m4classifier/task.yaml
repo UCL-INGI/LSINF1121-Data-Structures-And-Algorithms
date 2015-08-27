@@ -56,7 +56,7 @@ limits:
     memory: '512'
     output: '100'
     time: '30'
-name: Mission 3 - Spam filter [group]
+name: Mission 4 - Spam filter [group]
 order: 14
 problems:
     classifier:

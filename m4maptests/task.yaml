@@ -67,7 +67,7 @@ limits:
     memory: '512'
     output: '100'
     time: '45'
-name: Mission 3 - Unit tests for the Map [individual]
+name: Mission 4 - Unit tests for the Map [individual]
 order: 11
 problems:
     map_tests:

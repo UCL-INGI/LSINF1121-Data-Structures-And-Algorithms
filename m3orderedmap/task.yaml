@@ -89,7 +89,7 @@ limits:
     memory: '3000'
     output: '100'
     time: '30'
-name: Mission 4 - Ordered Map [group]
+name: Mission 3 - Ordered Map [group]
 order: 18
 problems:
     ordered_map:

@@ -45,7 +45,8 @@ limits:
     memory: '512'
     output: '100'
     time: '60'
-name: Mission 4 - Unit tests [individual]
+name: Mission 3 - Unit tests [individual]
+order: 17
 problems:
     tests:
         type: code-file
@@ -56,4 +57,3 @@ problems:
             The class representing the implementation under test is called *SearchTree*,
             as written in the template. '
 weight: 1.0
-order: 17

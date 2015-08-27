@@ -64,7 +64,7 @@ limits:
     memory: '512'
     output: '100'
     time: '60'
-name: Mission 3 - Unit tests for the spam filter [individual]
+name: Mission 4 - Unit tests for the spam filter [individual]
 order: 13
 problems:
     filter_tests:
