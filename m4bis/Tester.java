@@ -45,7 +45,7 @@ public class Tester {
 			Set<Entry<String, Integer>> hits = p.detect("document.txt");
 			Set<Entry<String, Integer>> myHits = myP.detect("document.txt");
 			success = compareEntries(myHits, hits);
-			if (!success) Snystem.out.println("Test " + i + " failed : " + feedback);
+			if (!success) System.out.println("Test " + i + " failed : " + feedback);
 			else System.out.println("Test " + i + " passed");
 			
 			i++;
