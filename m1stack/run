@@ -23,13 +23,14 @@ cp scalacheck.jar student/scalacheck.jar
 cd student
 scalac -cp .:scalacheck.jar StackProps.scala
 output=$(run_student scala -cp .:scalacheck.jar StackProps)
+retval=$?
 cd ..
 
-if [ "$output" = "252" ]; then
+if [ "$retval" = "252" ]; then
 	feedback --result failed --feedback "Command was killed due to an out-of-memory"
-elif [ "$output" = "253" ]; then
-	feedback --result failed --feedback "Command timed out"
-elif [ "$output" = "254" ]; then
+elif [ "$retval" = "253" ]; then
+	feedback --result timeout --feedback "Command timed out"
+elif [ "$retval" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
 	failed=$(echo "$output" | grep -c "Falsified")
