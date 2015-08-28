@@ -1,8 +1,6 @@
 #! /bin/bash
 ### Generic script to test a data structure (file named $class.java) implementing an interface (file named $interface.java) with ScalaCheck (file named ${interface}Props.scala). ###
 
-# TODO remettre cheat = 1
-
 ### Problem-specific data : 
 interface="Map"
 class="MyMap"
@@ -14,25 +12,25 @@ options="-J-Xmx2g -J-Xms2g"
 
 ### Generic script : 
 cheat=$(cat student/$class.java | grep -c -E "$forbiddenPatterns")
-if [ $cheat = "0" ]; then
+if [ $cheat != "0" ]; then
 	feedback --result failed --feedback "You can't use an exising $interface implementation!"
     exit 0
 fi
 
-cp $interface.java ./student
-# Compile the student code and parse it properly
-compilationMessage=$(javac student/$class.java 2>&1)
-compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-compilationMessage=$(printf "Compilation of $class.java failed :\n::\n\n $compilationMessage")
-if [ ! -f student/$class.class ]; then
-    feedback --result failed --feedback "$compilationMessage"
-    exit 0
-fi
-
 # Copy everything in the 'student' directory for run_student
+cp $interface.java ./student
 cp ${interface}Props.scala ./student
 cp scalacheck.jar ./student
 cd student
+
+# Compile the student code and parse it properly
+compilationMessage=$(javac $class.java $2>&1)
+compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+compilationMessage=$(printf "Compilation of $class.java failed :\n::\n\n $compilationMessage")
+if [ ! -f $class.class ]; then
+    feedback --result failed --feedback "$compilationMessage"
+    exit 0
+fi
 
 scalac -cp .:scalacheck.jar ${interface}Props.scala
 output=$(run_student scala -cp .:scalacheck.jar $options ${interface}Props)
