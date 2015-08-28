@@ -20,7 +20,6 @@ fi
 # Copy everything in the 'student' directory for run_student
 cp $interface.java ./student
 cp ${interface}Props.scala ./student
-cp scalacheck.jar ./student
 cd student
 
 # Compile the student code and parse it properly
@@ -33,7 +32,7 @@ if [ ! -f $class.class ]; then
 fi
 
 scalac -cp .:scalacheck.jar ${interface}Props.scala
-output=$(run_student scala -cp .:scalacheck.jar $options ${interface}Props)
+output=$(run_student scala -cp .:../scalacheck.jar $options ${interface}Props)
 retval=$?
 
 if [ "$retval" = "252" ]; then
