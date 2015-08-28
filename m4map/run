@@ -1,44 +1,53 @@
 #! /bin/bash
-getinput map > student/MyMap.java
-cp Map.java student/Map.java
+### Generic script to test a data structure (file named $class.java) implementing an interface (file named $interface.java) with ScalaCheck (file named ${interface}Props.scala). ###
 
-patterns="java.util.HashMap|java.util.ConcurrentHashMap|java.util.ConcurrentSkipListMap|java.util.EnumMap|java.util.Hashtable|java.util.IdentityHashMap|java.util.LinkedHashMap|java.util.TreeMap|java.util.WeakHashMap"
-cheat=$(cat student/MyMap.java | grep -c -E "$patterns")
-if [ $cheat != "0" ]; then
-	feedback --result failed --feedback "You can't use an exising Map implementation!"
+### Problem-specific data : 
+interface="Map"
+class="MyMap"
+getinput map > student/$class.java
+forbiddenPatterns="java.util.HashMap|java.util.ConcurrentHashMap|java.util.ConcurrentSkipListMap|java.util.EnumMap|java.util.Hashtable|java.util.IdentityHashMap|java.util.LinkedHashMap|java.util.TreeMap|java.util.WeakHashMap"
+# Execute with xmx/xms options only if you need to check complexity (allows more stable tests with less influence of GC)
+$options="-J-Xmx2g -J-Xms2g" # 
+
+
+### Generic script : 
+cheat=$(cat student/$class.java | grep -c -E "$forbiddenPatterns")
+if [ $cheat = "0" ]; then
+	feedback --result failed --feedback "You can't use an exising $interface implementation!"
     exit 0
 fi
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac student/MyMap.java student/Map.java 2>&1)
+compilationMessage=$(javac student/$class.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-compilationMessage=$(printf "Compilation of MyMap.java failed :\n::\n\n $compilationMessage")
-if [ ! -f student/MyMap.class ]; then
+compilationMessage=$(printf "Compilation of $class.java failed :\n::\n\n $compilationMessage")
+if [ ! -f student/$class.class ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 0
 fi
 
 # Copy everything in the 'student' directory for run_student
-cp MapProps.scala student/MapProps.scala
-cp scalacheck.jar student/scalacheck.jar
+cp $interface.java ./student
+cp ${interface}Props.scala ./student
+cp scalacheck.jar ./student
 cd student
-scalac -cp .:scalacheck.jar MapProps.scala
-output=$(run_student scala -cp .:scalacheck.jar -J-Xmx2g -J-Xms2g MapProps)
-r=$?
-cd ..
 
-if [ "$r" = "252" ]; then
+scalac -cp .:scalacheck.jar ${interface}Props.scala
+output=$(run_student scala -cp .:scalacheck.jar $options ${interface}Props)
+retval=$?
+
+if [ "$retval" = "252" ]; then
 	feedback --result failed --feedback "Command was killed due to an out-of-memory"
-elif [ "$r" = "253" ]; then
+elif [ "$retval" = "253" ]; then
 	feedback --result timeout --feedback "Command timed out"
-elif [ "$r" = "254" ]; then
+elif [ "$retval" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
 	failed=$(echo "$output" | grep -c "Falsified")
 	passed=$(echo "$output" | grep -c "OK")
-	infos=$(echo "$output" | grep -o '! \w*.\w*')
+	infos=$(echo "$output" | grep -o '! \w*.\w*') # names of failed properties
 
-	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then
+	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then # should never happen
     	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
 	elif [ "$failed" = "0" ]; then
 		feedback --result success --feedback "Congratulations, you passed the $passed tests!"
