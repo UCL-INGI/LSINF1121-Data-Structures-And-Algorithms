@@ -9,10 +9,9 @@ forbiddenPatterns="java.util.HashMap|java.util.ConcurrentHashMap|java.util.Concu
 # Execute with xmx/xms options only if you need to check complexity (allows more stable tests with less influence of GC)
 options="-J-Xmx2g -J-Xms2g"
 
-
 ### Generic script : 
 cheat=$(cat student/$class.java | grep -c -E "$forbiddenPatterns")
-if [ "$cheat" = "0" ]; then
+if [ "$cheat" != "0" ]; then
 	feedback --result failed --feedback "You can't use an exising $interface implementation!"
     exit 0
 fi
