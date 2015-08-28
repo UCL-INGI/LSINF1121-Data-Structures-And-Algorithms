@@ -16,13 +16,14 @@ cp *.txt ./student
 cd student
 javac KruskalTests.java
 output=$(run_student java KruskalTests)
+r=$?
 cd ..
 
-if [ "$output" = "252" ]; then
+if [ "$r" = "252" ]; then
 	feedback --result failed --feedback "Command was killed due to an out-of-memory"
-elif [ "$output" = "253" ]; then
-	feedback --result failed --feedback "Command timed out"
-elif [ "$output" = "254" ]; then
+elif [ "$r" = "253" ]; then
+	feedback --result timeout --feedback "Command timed out"
+elif [ "$r" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
 	failed=$(echo "$output" | grep -c "KO")
