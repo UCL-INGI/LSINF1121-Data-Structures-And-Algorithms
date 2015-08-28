@@ -19,6 +19,7 @@ if [ $cheat = "0" ]; then
     exit 0
 fi
 
+cp $interface.java ./student
 # Compile the student code and parse it properly
 compilationMessage=$(javac student/$class.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
@@ -29,7 +30,6 @@ if [ ! -f student/$class.class ]; then
 fi
 
 # Copy everything in the 'student' directory for run_student
-cp $interface.java ./student
 cp ${interface}Props.scala ./student
 cp scalacheck.jar ./student
 cd student
