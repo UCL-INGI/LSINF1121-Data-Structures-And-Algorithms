@@ -49,13 +49,15 @@ do
 	fi
 
 	output=$(run_student java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore "$testName")
-	if [ "$output" = "252" ]; then
+    r=$?
+    
+	if [ "$r" = "252" ]; then
 		feedback --result failed --feedback "Command was killed due to an out-of-memory"
 		exit 0
-	elif [ "$output" = "253" ]; then
-		feedback --result failed --feedback "Command timed out"
+	elif [ "$r" = "253" ]; then
+		feedback --result timeout --feedback "Command timed out"
 		exit 0
-	elif [ "$output" = "254" ]; then
+	elif [ "$r" = "254" ]; then
 	      feedback --result failed --feedback "Unfortunately, a runtime error occured"
 		exit 0
 	fi
