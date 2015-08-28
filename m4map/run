@@ -1,6 +1,8 @@
 #! /bin/bash
 ### Generic script to test a data structure (file named $class.java) implementing an interface (file named $interface.java) with ScalaCheck (file named ${interface}Props.scala). ###
 
+# TODO remettre cheat = 1
+
 ### Problem-specific data : 
 interface="Map"
 class="MyMap"
