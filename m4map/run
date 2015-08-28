@@ -7,7 +7,7 @@ class="MyMap"
 getinput map > student/$class.java
 forbiddenPatterns="java.util.HashMap|java.util.ConcurrentHashMap|java.util.ConcurrentSkipListMap|java.util.EnumMap|java.util.Hashtable|java.util.IdentityHashMap|java.util.LinkedHashMap|java.util.TreeMap|java.util.WeakHashMap"
 # Execute with xmx/xms options only if you need to check complexity (allows more stable tests with less influence of GC)
-$options="-J-Xmx2g -J-Xms2g" # 
+options="-J-Xmx2g -J-Xms2g"
 
 
 ### Generic script : 
@@ -33,7 +33,7 @@ cp scalacheck.jar ./student
 cd student
 
 scalac -cp .:scalacheck.jar ${interface}Props.scala
-output=$(run_student scala -cp .:scalacheck.jar "$options" "${interface}Props")
+output=$(run_student scala -cp .:scalacheck.jar $options ${interface}Props)
 retval=$?
 
 if [ "$retval" = "252" ]; then
