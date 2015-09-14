@@ -4,6 +4,7 @@ admins:
 - gegoa
 - sihardy
 - pschaus
+- faubry
 accessible: false
 registration: false
 registration_password: null
