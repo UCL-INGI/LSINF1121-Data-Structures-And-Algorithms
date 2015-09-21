@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |
     For this mission, you have to write a plagiarism detector (a class named "Plagiarism") implementing the following interface :
@@ -62,6 +62,7 @@ limits:
     output: '100'
     time: '20'
 name: Mission 4 - Plagiarism detector [group]
+network_grading: false
 order: 20
 problems:
     plagiarism:

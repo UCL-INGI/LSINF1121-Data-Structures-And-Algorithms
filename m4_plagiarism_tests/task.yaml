@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |
     Recall the Map interface you used in your plagiarism detector :
@@ -69,6 +69,8 @@ limits:
     output: '100'
     time: '45'
 name: Mission 4 - Unit tests for the map of the plagiarism detector [individual]
+network_grading: false
+order: 19
 problems:
     plagiarism_tests:
         name: Unit tests
@@ -79,4 +81,3 @@ problems:
         allowed_exts:
         - .java
 weight: 1.0
-order: 19

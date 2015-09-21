@@ -1,4 +1,4 @@
-accessible: true
+accessible: /2015-09-25 18:00:50
 author: Simon Hardy
 context: |-
     Recall the Stack interface :
@@ -59,6 +59,7 @@ limits:
     output: '100'
     time: '45'
 name: Mission 1 - Unit tests for the stack [individual]
+network_grading: false
 order: 1
 problems:
     stack_tests:

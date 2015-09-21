@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |-
     Recall the FormalExpressionTree interface (which has this time an additional toStringJs() method) :
@@ -99,6 +99,7 @@ limits:
     output: '100'
     time: '60'
 name: Mission 2 - Unit tests [individual]
+network_grading: false
 order: 7
 problems:
     tree_tests:

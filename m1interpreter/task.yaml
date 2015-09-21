@@ -1,4 +1,4 @@
-accessible: true
+accessible: /2015-10-02 18:00:00
 author: Simon Hardy
 context: |-
     You are asked to write a mini-PostScript interpreter as described in the *pdf* of the mission. Precisely, you must implement the following interface :
@@ -25,6 +25,7 @@ limits:
     output: '100'
     time: '60'
 name: Mission 1 - PostScript Interpreter [group]
+network_grading: false
 order: 4
 problems:
     interpreter:

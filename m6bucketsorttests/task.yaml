@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |-
     Recall the *BucketSort.sort* method :
@@ -51,6 +51,8 @@ limits:
     output: '100'
     time: '45'
 name: Mission 6 - Unit tests for the Bucket-Sort
+network_grading: false
+order: 27
 problems:
     bucketsort_tests:
         allowed_exts:
@@ -61,4 +63,3 @@ problems:
         name: Unit tests for the Bucket-Sort
         type: code-file
 weight: 1.0
-order: 27

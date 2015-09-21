@@ -1,4 +1,4 @@
-accessible: true
+accessible: /2015-10-02 06:00:00
 author: Simon Hardy
 context: |-
     Report of 1-2 pages max. containing short explanations concerning the programs of the first mission (stack, interpreter and tests).
@@ -11,6 +11,7 @@ limits:
     output: '2'
     time: '15'
 name: Mission 1 - Program report [group]
+network_grading: false
 order: 5
 problems:
     program_report:

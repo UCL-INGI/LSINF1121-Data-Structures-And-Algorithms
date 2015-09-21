@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |-
     For this task, you have to write unit tests using JUnit in order to check several Kruskal implementations. You are given one class, *Kruskal*, and you have to determine if it does its job correctly or not. We provide you a template to begin writing your tests :
@@ -143,6 +143,7 @@ limits:
     output: '100'
     time: '60'
 name: Mission 6 - Unit tests for Kruskal
+network_grading: false
 order: 29
 problems:
     tests:

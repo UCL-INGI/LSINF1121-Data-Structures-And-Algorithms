@@ -1,4 +1,4 @@
-accessible: true
+accessible: /2015-09-25 18:00:00
 author: Simon Hardy
 context: |-
     You are asked to implement the following interface, representing a stack, using a singly linked list.
@@ -27,6 +27,7 @@ limits:
     output: '100'
     time: '30'
 name: Mission 1 - Stack [individual]
+network_grading: false
 order: 2
 problems:
     stack:

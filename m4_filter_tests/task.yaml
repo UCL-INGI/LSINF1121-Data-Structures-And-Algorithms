@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |-
     Recall the SpamFiltering interface :
@@ -65,6 +65,7 @@ limits:
     output: '100'
     time: '60'
 name: Mission 4 - Unit tests for the spam filter [individual]
+network_grading: false
 order: 17
 problems:
     filter_tests:

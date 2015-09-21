@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |-
     For this mission, you are asked to write two programs : *Compress.java*, which compresses the file located at argv[0] and writes the result in a new file located at argv[1], and *Decompress.java*, which decompresses argv[0] and writes it in the file at argv[1].
@@ -11,6 +11,7 @@ limits:
     output: '100'
     time: '30'
 name: Mission 5 - Text compressor [group]
+network_grading: false
 order: 24
 problems:
     compressor:

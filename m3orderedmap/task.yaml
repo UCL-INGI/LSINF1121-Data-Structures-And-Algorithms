@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |-
     You are asked to implement the following interface, representing a custom Ordered Map (for more informations about the methods without comment listed below, refer to the official SortedMap interface of Java).
@@ -90,6 +90,7 @@ limits:
     output: '100'
     time: '30'
 name: Mission 3 - Ordered Map [group]
+network_grading: false
 order: 12
 problems:
     ordered_map:

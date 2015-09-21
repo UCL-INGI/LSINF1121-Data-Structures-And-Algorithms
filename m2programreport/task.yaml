@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: 'Report of 1-2 pages max. containing short explanations concerning the program
     of the second mission. '
@@ -9,6 +9,7 @@ limits:
     output: '2'
     time: '15'
 name: Mission 2 - Program report [group]
+network_grading: false
 order: 9
 problems:
     program_report:

@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: Answers to the different questions in the statement of the third mission.
 environment: default
@@ -8,6 +8,7 @@ limits:
     output: '2'
     time: '15'
 name: Mission 3 - Questions report [group]
+network_grading: false
 order: 10
 problems:
     report:

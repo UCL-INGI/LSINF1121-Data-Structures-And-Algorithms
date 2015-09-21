@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |-
     Recall the Map interface :
@@ -68,6 +68,7 @@ limits:
     output: '100'
     time: '45'
 name: Mission 4 - Unit tests for the Map [individual]
+network_grading: false
 order: 15
 problems:
     map_tests:

@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |-
     You are asked to implement the Bucket-Sort algorithm on a specific digit (identified by the second parameter) of an integer number (given as first parameter). Concretely, you have to create a class *BucketSort* with one static method *sort* with the following specifications :
@@ -22,6 +22,8 @@ limits:
     output: '100'
     time: '60'
 name: Mission 6 - Bucket Sort [individual]
+network_grading: false
+order: 28
 problems:
     bucketsort:
         type: code-file
@@ -31,4 +33,3 @@ problems:
         header: 'Upload the file containing your implementation here. Your class should
             be named *BucketSort* and have only one static method *sort*. '
 weight: 1.0
-order: 28

@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: Answers to the different questions in the statement of the fifth mission.
 environment: default
@@ -8,6 +8,8 @@ limits:
     output: '2'
     time: '15'
 name: Mission 5 - Questions report [group]
+network_grading: false
+order: 22
 problems:
     report:
         header: 'Please upload here your *questions report* for the mission 5. '
@@ -17,4 +19,3 @@ problems:
         max_size: 5000000
         name: Report
 weight: 1.0
-order: 22

@@ -1,4 +1,4 @@
-accessible: true
+accessible: /2015-10-02 18:00:00
 author: Simon Hardy
 context: |-
     You are asked to write unit tests (using JUnit) in order to check wether a particular interpreter does its job correctly (i.e. the method *interpret* follows its specifications).
@@ -32,6 +32,7 @@ limits:
     output: '100'
     time: '45'
 name: Mission 1 - Unit tests for the interpreter [individual]
+network_grading: false
 order: 3
 problems:
     interpreter_tests:

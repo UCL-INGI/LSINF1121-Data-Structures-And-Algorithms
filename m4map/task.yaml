@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |-
     You are asked to implement the following interface, representing a Map (for more informations about the methods listed below, refer to the official Map interface : http://docs.oracle.com/javase/7/docs/api/java/util/Map.html). You should use *quadratic probing* as collision handling scheme (this will not be checked by INGInious, but it's strongly recommended). Pay attention to your complexities !
@@ -46,6 +46,7 @@ limits:
     output: '100'
     time: '60'
 name: Mission 4 - Map [individual]
+network_grading: false
 order: 16
 problems:
     map:
