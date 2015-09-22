@@ -1,7 +1,7 @@
 accessible: /2015-09-25 18:00:00
 author: Simon Hardy
 context: |-
-    You are asked to implement the following interface, representing a stack, using a singly linked list.
+    You are asked to implement the following interface, representing a stack, using a singly linked list. You should at least have one constructor with no argument, creating an empty stack.
 
     Note: using *java.util.Stack<E>* is forbidden!
 
