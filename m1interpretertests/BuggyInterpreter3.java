@@ -55,7 +55,7 @@ public class Interpreter implements InterpreterInterface {
 		return output;
 	}
 
-	/* BUGGY METHOD PSTACK BECAUSE OF BUGGY TOSTRING ("+" instead of whitespaces " " */
+	/* BUGGY METHOD PSTACK BECAUSE OF BUGGY TOSTRING ("-" instead of whitespaces " " */
 	public static void pstack(MyStack<Element> stack, ArrayList<String> results, Hashtable<String,Element> variables) {
 		String s = stack.toString();
 		results.add(s); 
@@ -322,7 +322,7 @@ class MyStack<E> {
 		Node<E> tmp = top;
 		while (tmp != null)
 		{
-			if (!toString.equals("")) toString += " "; 
+			if (!toString.equals("")) toString += "-"; 
 			toString += tmp.toString(); 
 			tmp = tmp.getNext();
 		}
