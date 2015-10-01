@@ -24,7 +24,7 @@ groups: true
 limits:
     memory: '512'
     output: '100'
-    time: '60'
+    time: '70'
 name: Mission 1 - PostScript Interpreter [group]
 network_grading: false
 order: 4

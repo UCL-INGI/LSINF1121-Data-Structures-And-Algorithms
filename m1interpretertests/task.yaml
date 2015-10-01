@@ -30,7 +30,7 @@ groups: false
 limits:
     memory: '512'
     output: '100'
-    time: '45'
+    time: '65'
 name: Mission 1 - Unit tests for the interpreter [individual]
 network_grading: false
 order: 3
