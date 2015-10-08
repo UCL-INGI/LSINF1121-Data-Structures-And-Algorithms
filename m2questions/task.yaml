@@ -1,4 +1,4 @@
-accessible: /2015-10-10 23:59:51
+accessible: /2015-10-10 18:10:51
 author: Simon Hardy
 context: Answers to the different questions in the statement of the second mission.
 environment: default
@@ -7,7 +7,7 @@ limits:
     memory: '20'
     output: '2'
     time: '15'
-name: Mission 2 - Questions report [group]
+name: Mission 2 - Sorting - Questions report [group]
 network_grading: false
 order: 6
 problems:
