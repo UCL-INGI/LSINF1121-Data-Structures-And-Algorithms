@@ -26,7 +26,7 @@ public class SearchTree implements OrderedMap {
 	}
 	
 	public SearchTree(String file) {
-		tree = new TreeMap<String, Set<String>>(); // BUT HERE
+		tree = new TreeMap<String, Set<String>>(); // BUG HERE
 	}
 	
 	private void readInput(String filename, ArrayList<Song> songs) {

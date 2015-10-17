@@ -50,12 +50,14 @@ public class SearchTree implements OrderedMap {
 
 			String line = reader.readLine();
 			int i = 0; 
-			while(line != null) if (i <= 2) { // BUG HERE
-				String[] split = line.split("\t");
-				if (split.length != 2) System.out.println("Error in splitting");
-				else {
-					songs.add(new Song(split[0], split[1])); 
-				}
+			while(line != null) {
+               if (i <= 2) {
+					String[] split = line.split("\t");
+					if (split.length != 2) System.out.println("Error in splitting");
+					else {
+						songs.add(new Song(split[0], split[1])); 
+					}
+               }
 				line = reader.readLine();
 				i++;
 			}          
