@@ -38,7 +38,7 @@ context: |-
             }
         }
 
-    Note that you can't provide custom text files for this task, but the file *songs.txt* is available in the same folder as your tester.
+    Note that you can't provide custom text files for this task, but a small subset of the file *songs.txt* is available in the same folder as your tester, and under the same name. It contains only the 50 first lines of the original file.
 environment: java8scala
 groups: false
 limits:
