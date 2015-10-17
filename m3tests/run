@@ -3,7 +3,7 @@
 # 1 : !isEmpty()
 # 2 : remove doesn't remove anything
 # 3 : constructor with String argument does same as no argument constructor
-# 4 : constructor with String argument only treats the 100 first lines of the file
+# 4 : constructor with String argument only treats the 2 first lines of the file
 # 5 : ceilingEntry and floorEntry are inversed. 
 # 6 : firstEntry() actually returns the second entry. 
 # 7 : getOrdered doesn't sort the songs
