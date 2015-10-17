@@ -75,16 +75,11 @@ do
 done
 cd ..
 
-feedback=""
-if [ "$failOk" != "$(($tot-1))" ]; then
-    lack=$(($tot-1-$failOk))
-	feedback="you didn't detect errors in $lack incorrect ${word} implementations."
-fi
-
 if [ "$passOk" != "1" ]; then
 	feedback --result failed --feedback "you detected an error in a correct $word implementation"
 elif [ "$n" = "$tot" ]; then
 	feedback --result success --feedback "Congratulations, you passed the $n tests!"
 else
-	feedback --result failed --feedback "Unfortunately, you passed only $n tests out of $tot : $feedback"
+	lack=$(($tot-1-$failOk))
+	feedback --result failed --feedback "Unfortunately, you passed only $n tests out of $tot : you didn't detect errors in $lack incorrect ${word} implementations. "
 fi
