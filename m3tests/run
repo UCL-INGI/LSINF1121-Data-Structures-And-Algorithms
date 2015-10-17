@@ -80,6 +80,7 @@ if [ "$passOk" != "1" ]; then
 elif [ "$n" = "$tot" ]; then
 	feedback --result success --feedback "Congratulations, you passed the $n tests!"
 else
-	lack=$(($tot-1-$failOk))
-	feedback --result failed --feedback "Unfortunately, you passed only $n tests out of $tot : you didn't detect errors in $lack incorrect ${word} implementations. "
+    incorrect=$(($tot-1))
+	lack=$(($incorrect-$failOk))
+	feedback --result failed --feedback "Unfortunately, you didn't detect errors in $lack (out of $tot) incorrect ${word} implementations. "
 fi
