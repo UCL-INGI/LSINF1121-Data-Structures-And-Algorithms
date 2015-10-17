@@ -82,5 +82,5 @@ elif [ "$n" = "$tot" ]; then
 else
     incorrect=$(($tot-1))
 	lack=$(($incorrect-$failOk))
-	feedback --result failed --feedback "Unfortunately, you didn't detect errors in $lack (out of $tot) incorrect ${word} implementations. "
+	feedback --result failed --feedback "Unfortunately, you didn't detect errors in $lack (out of $incorrect) incorrect ${word} implementations. "
 fi
