@@ -88,7 +88,7 @@ groups: true
 limits:
     memory: '3000'
     output: '100'
-    time: '60'
+    time: '40'
 name: Mission 3 - Ordered Map [group]
 network_grading: false
 order: 12
