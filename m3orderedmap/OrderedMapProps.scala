@@ -227,10 +227,10 @@ object OrderedMapProps extends Properties("OrderedMap") {
 
 	property("toString") = {
 		try {
-  	     	val tree = new SearchTree("songs.txt")
-			val s = tree.toString()
-			val it = s.lines
-			it.next() == "[AC/DC] Back In Black" && it.next() == "[AC/DC] Dirty Deeds" && it.next() == "[AC/DC] Girls Got Rhythm"	
+            val tree = new SearchTree("songs.txt")
+            val s = tree.toString()
+			 val it = s.lines
+		 	it.next() == "[AC/DC] Back In Black" && it.next() == "[AC/DC] Dirty Deeds" && it.next() == "[AC/DC] Girls Got Rhythm"	
 		} catch {
 			case e: Exception => false
 		}
