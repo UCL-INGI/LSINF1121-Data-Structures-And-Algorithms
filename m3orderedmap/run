@@ -52,7 +52,7 @@ else
 	infos=$(echo "$output" | grep -o '! \w*.\w*')
 
 	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then
-    	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
+    	feedback --result failed --feedback "It seems like an internal error occured. Maybe a Stack Overflow ? If this persists, please contact your course administrator. "
 	elif [ "$failed" = "0" ]; then
 		feedback --result success --feedback "Congratulations, you passed the $passed tests! "
 	else
