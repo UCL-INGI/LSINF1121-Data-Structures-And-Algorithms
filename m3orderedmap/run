@@ -30,6 +30,12 @@ cp scalacheck.jar student/scalacheck.jar
 cp songs.txt student/songs.txt
 cd student
 scalac -cp .:scalacheck.jar OrderedMapProps.scala
+
+if [ ! -f OrderedMapProps.class ]; then
+    feedback --result failed --feedback "An error occured during the compilation of the test script. Make sure your class follows the specifications. "
+    exit 0
+fi
+
 output=$(run_student scala -cp .:scalacheck.jar -J-Xmx2g -J-Xms2g OrderedMapProps)
 r=$?
 cd ..
