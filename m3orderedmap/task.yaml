@@ -88,7 +88,7 @@ context: |-
 
     - Your OrderedMap should be ordered according to the natural ordering of its keys, i.e. the same as the Java String class.
 
-    - If you create your own Map.Entry implementation, don't forget to override the *equals* method so that two different objects representing the same entry are considered as equal.
+    - If you create your own Map.Entry implementation, don't forget to override the *equals* and *hashCode* methods so that two different objects representing the same entry are considered equal.
 environment: java8scala
 groups: true
 limits:
