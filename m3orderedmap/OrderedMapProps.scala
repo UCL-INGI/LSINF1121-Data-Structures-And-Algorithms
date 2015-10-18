@@ -117,11 +117,10 @@ object OrderedMapProps extends Properties("OrderedMap") {
 
 	/* OrderedMap ADT */
 
-	val tree = new SearchTree("songs.txt")
-	val emptyTree = new SearchTree()
-
 	property("firstEntry") = {
 		try {
+			val tree = new SearchTree("songs.txt")
+			val emptyTree = new SearchTree()
 			val pair = tree.firstEntry()
 			pair.getKey().equals("AC/DC") && pair.getValue().contains("Back In Black") && pair.getValue().contains("Live Wire") && pair.getValue().size() == 10 && 
 			Option(emptyTree.firstEntry()) == None
@@ -132,6 +131,8 @@ object OrderedMapProps extends Properties("OrderedMap") {
 
 	property("lastEntry") = {
 		try {
+			val tree = new SearchTree("songs.txt")
+			val emptyTree = new SearchTree()
 			val pair = tree.lastEntry()
 			pair.getKey().equals("Zombies") && pair.getValue().contains("Tell Her No") && pair.getValue().size() == 3 && 
 			Option(emptyTree.lastEntry()) == None
@@ -142,6 +143,8 @@ object OrderedMapProps extends Properties("OrderedMap") {
 
 	property("ceilingEntry") = {
 		try {
+			val tree = new SearchTree("songs.txt")
+			val emptyTree = new SearchTree()
 			val pair = tree.ceilingEntry("Genesis")
 			pair.getKey().equals("Genesis") && pair.getValue().contains("Abacab") && pair.getValue().contains("Follow You Follow Me") && pair.getValue().size() == 7 && 
 			pair.equals(tree.ceilingEntry("Gen")) && pair.equals(tree.ceilingEntry("Geneee")) && 
@@ -153,6 +156,8 @@ object OrderedMapProps extends Properties("OrderedMap") {
 
 	property("floorEntry") = {
 		try {
+			val tree = new SearchTree("songs.txt")
+			val emptyTree = new SearchTree()
 			val pair = tree.floorEntry("Genesis")
 			pair.getKey().equals("Genesis") && pair.getValue().contains("Abacab") && pair.getValue().contains("Follow You Follow Me") && pair.getValue().size() == 7 && 
 			pair.equals(tree.floorEntry("Genesiss")) && pair.equals(tree.floorEntry("Genzzz")) &&
@@ -164,6 +169,8 @@ object OrderedMapProps extends Properties("OrderedMap") {
 
 	property("lowerEntry") = {
 		try {
+			val tree = new SearchTree("songs.txt")
+			val emptyTree = new SearchTree()
 			val pair = tree.lowerEntry("Georgia Satellites")
 			pair.getKey().equals("Genesis") && pair.getValue().contains("Abacab") && pair.getValue().contains("Follow You Follow Me") && pair.getValue().size() == 7 && 
 			pair.equals(tree.lowerEntry("Genesiss")) && pair.equals(tree.lowerEntry("Genzzz")) && 
@@ -175,6 +182,8 @@ object OrderedMapProps extends Properties("OrderedMap") {
 
 	property("higherEntry") = {
 		try {
+			val tree = new SearchTree("songs.txt")
+			val emptyTree = new SearchTree()
 			val pair = tree.higherEntry("Garcia, Jerry")
 			pair.getKey().equals("Genesis") && pair.getValue().contains("Abacab") && pair.getValue().contains("Follow You Follow Me") && pair.getValue().size() == 7 && 
 			pair.equals(tree.higherEntry("Gen")) && pair.equals(tree.higherEntry("Geneee")) &&
@@ -188,6 +197,8 @@ object OrderedMapProps extends Properties("OrderedMap") {
 
 	property("getOrdered") = {
 		try {
+			val tree = new SearchTree("songs.txt")
+			val emptyTree = new SearchTree()
 			val tab = tree.getOrdered("Queen")
 			tab.length == 10 && tab(0).equals("Bohemian Rhapsody") && tab(2).equals("Fat Bottomed Girls") && tab(3).equals("Keep Yourself Alive") &&
 			tab(9).equals("You're My Best Friend") &&
@@ -199,6 +210,8 @@ object OrderedMapProps extends Properties("OrderedMap") {
 
 	property("entriesBetween") = {
 		try {
+			val tree = new SearchTree("songs.txt")
+			val emptyTree = new SearchTree()
 			val list = tree.entriesBetween("D", "Do")
 			val it = list.iterator()
 			val pair = it.next()
