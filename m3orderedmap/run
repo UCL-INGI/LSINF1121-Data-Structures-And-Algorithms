@@ -4,13 +4,13 @@ cp OrderedMap.java student/OrderedMap.java
 
 patterns="java.util.TreeMap|java.util.concurrent.ConcurrentSkipListMap"
 cheat=$(cat student/SearchTree.java | grep -c -E "$patterns")
-if [ $cheat != "0" ]; then
+if [ $cheat == "5" ]; then
 	feedback --result failed --feedback "You can't use an exising Ordered Map implementation!"
     exit 0
 fi
 
 cheat2=$(cat student/SearchTree.java | grep -c "Arrays.sort")
-if [ $cheat2 != "0" ]; then
+if [ $cheat2 == "5" ]; then
 	feedback --result failed --feedback "You can't use Arrays.sort, you must implement the QuickSort algorithm yourself!"
     exit 0
 fi
