@@ -39,6 +39,7 @@ if [ "$retval" = "252" ]; then
 	feedback --result failed --feedback "Command was killed due to an out-of-memory"
 elif [ "$retval" = "253" ]; then
 	feedback --result timeout --feedback "Command timed out"
+    echo $output
 elif [ "$retval" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
 else
