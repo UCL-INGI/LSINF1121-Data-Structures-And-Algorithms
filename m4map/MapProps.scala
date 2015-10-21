@@ -13,6 +13,7 @@ object MapProps extends Properties("Map") {
 
 	property("put") = Prop.forAll { (key: String, value1: Int, value2: Int) =>
 		try {
+        	if (debug) println("Start put")
 			val map = new MyMap[String, Int]()
 			map.put(key, value1)
 			map.put(key, value2) == value1
@@ -23,6 +24,7 @@ object MapProps extends Properties("Map") {
 
 	property("get") = Prop.forAll { (key: String, value: Int) =>
 		try {
+        	if (debug) println("Start get")
 			val map = new MyMap[String, Int]()
 			map.put(key, value)
 			map.get(key) == value
@@ -33,6 +35,7 @@ object MapProps extends Properties("Map") {
 
 	property("containsKey") = Prop.forAll { (key: String, value: Int) =>
 		try {
+        	if (debug) println("Start containsKey")
 			val map = new MyMap[String, Int]()
 			map.put(key, value)
 			map.containsKey(key)
@@ -43,6 +46,7 @@ object MapProps extends Properties("Map") {
 
 	property("containsValue") = Prop.forAll { (key: String, value: Int) =>
 		try {
+        	if (debug) println("Start containsValue")
 			val map = new MyMap[String, Int]()
 			map.put(key, value)
 			map.containsValue(value)
@@ -53,6 +57,7 @@ object MapProps extends Properties("Map") {
 
 	property("entrySet") = Prop.forAll { (key: Int, value: String) =>
 		try {
+        	if (debug) println("Start entrySet")
 			val map = new MyMap[Int, String]()
 			map.put(key, value)
 			val map2 = new HashMap[Int, String]()
@@ -69,6 +74,7 @@ object MapProps extends Properties("Map") {
 
 	property("entrySet_equals") = Prop.forAll { (key: Int, value: String) =>
 		try {
+        	if (debug) println("Start entrySet_equals")
 			val map = new MyMap[Int, String]()
 			map.put(key, value)
 			map.put(key+1, value)
@@ -85,6 +91,7 @@ object MapProps extends Properties("Map") {
 
 	property("hashCode") = Prop.forAll { (key: String, value: Int) =>
 		try {
+        	if (debug) println("Start hashCode")
 			val map = new MyMap[String, Int]()
 			val map2 = new MyMap[String, Int]()
 			map.put(key, value)
@@ -101,6 +108,7 @@ object MapProps extends Properties("Map") {
 
 	property("isEmpty") = Prop.forAll { (key: String, value: Double) =>
 		try {
+        	if (debug) println("Start isEmpty")
 			val map = new MyMap[String, Double]()
 			val cond = map.isEmpty()
 			map.put(key, value)
@@ -112,6 +120,7 @@ object MapProps extends Properties("Map") {
 
 	property("remove") = Prop.forAll { (key: String, value: Double) =>
 		try {
+        	if (debug) println("Start remove")
 			val map = new MyMap[String, Double]()
 			map.put(key, value)
 			map.remove(key) == value && map.isEmpty()
