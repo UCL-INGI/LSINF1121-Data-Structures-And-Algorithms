@@ -197,11 +197,14 @@ object MapProps extends Properties("Map") {
 					bigMap.remove(n) // doesn't remove anything
 					bigMap.size() == size
 				}
-			} &&
-			bigMap.isEmpty() && bigMap.size() == 0
-            if (debug) println("cond1:" + cond1)
-            if (debug) println("cond2:" + cond2)
-            cond1 && cond2
+			}
+            val cond3 = bigMap.isEmpty() && bigMap.size() == 0
+            if (debug) {
+            	if (!cond1) println("cond1")
+                if (!cond2) println("cond2")
+                if (!cond3) println("cond3")
+            }
+            cond1 && cond2 && cond3
 		} catch {
 			case e: Exception => false
 		}
