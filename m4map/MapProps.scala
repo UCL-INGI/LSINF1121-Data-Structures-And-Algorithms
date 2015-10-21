@@ -199,8 +199,8 @@ object MapProps extends Properties("Map") {
 				}
 			} &&
 			bigMap.isEmpty() && bigMap.size() == 0
-            if (debug) println(cond1)
-            if (debug) println(cond2)
+            if (debug) println("cond1:" + cond1)
+            if (debug) println("cond2:" + cond2)
             cond1 && cond2
 		} catch {
 			case e: Exception => false
