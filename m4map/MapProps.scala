@@ -9,7 +9,7 @@ import math.max
 import math.min
 
 object MapProps extends Properties("Map") {
-	val debug = false
+	val debug = true
 
 	property("put") = Prop.forAll { (key: String, value1: Int, value2: Int) =>
 		try {
