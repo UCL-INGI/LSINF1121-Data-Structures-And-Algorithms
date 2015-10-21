@@ -11,137 +11,157 @@ import math.min
 object MapProps extends Properties("Map") {
 	val debug = true
 
-	property("put") = Prop.forAll { (key: String, value1: Int, value2: Int) =>
-		try {
-        	if (debug) println("Start put")
-			val map = new MyMap[String, Int]()
-			map.put(key, value1)
-			map.put(key, value2) == value1
-		} catch {
-			case e: Exception => false
-		}
-	}
+	property("put") = {
+    	if (debug) println("Start put")
+        Prop.forAll { (key: String, value1: Int, value2: Int) =>
+            try {
+                val map = new MyMap[String, Int]()
+                map.put(key, value1)
+                map.put(key, value2) == value1
+            } catch {
+                case e: Exception => false
+            }
+        }
+    }
 
-	property("get") = Prop.forAll { (key: String, value: Int) =>
-		try {
-        	if (debug) println("Start get")
-			val map = new MyMap[String, Int]()
-			map.put(key, value)
-			map.get(key) == value
-		} catch {
-			case e: Exception => false
-		}
-	}
+	property("get") = {
+    	if (debug) println("Start get")
+    	Prop.forAll { (key: String, value: Int) =>
+            try {
+                val map = new MyMap[String, Int]()
+                map.put(key, value)
+                map.get(key) == value
+            } catch {
+                case e: Exception => false
+            }
+        }
+    }
 
-	property("containsKey") = Prop.forAll { (key: String, value: Int) =>
-		try {
-        	if (debug) println("Start containsKey")
-			val map = new MyMap[String, Int]()
-			map.put(key, value)
-			map.containsKey(key)
-		} catch {
-			case e: Exception => false
-		}
-	}
+	property("containsKey") = {
+    	if (debug) println("Start containsKey")
+    	Prop.forAll { (key: String, value: Int) =>
+            try {
+                val map = new MyMap[String, Int]()
+                map.put(key, value)
+                map.containsKey(key)
+            } catch {
+                case e: Exception => false
+            }
+        }
+    }
 
-	property("containsValue") = Prop.forAll { (key: String, value: Int) =>
-		try {
-        	if (debug) println("Start containsValue")
-			val map = new MyMap[String, Int]()
-			map.put(key, value)
-			map.containsValue(value)
-		} catch {
-			case e: Exception => false
-		}
-	}
+	property("containsValue") = {
+    	if (debug) println("Start containsValue")
+        Prop.forAll { (key: String, value: Int) =>
+            try {
+                val map = new MyMap[String, Int]()
+                map.put(key, value)
+                map.containsValue(value)
+            } catch {
+                case e: Exception => false
+            }
+        }
+    }
 
-	property("entrySet") = Prop.forAll { (key: Int, value: String) =>
-		try {
-        	if (debug) println("Start entrySet")
-			val map = new MyMap[Int, String]()
-			map.put(key, value)
-			val map2 = new HashMap[Int, String]()
-			map2.put(key, value)
-			val set = map.entrySet()
-			val it = set.iterator()
-			val pair = it.next()
-			set.size() == 1 && pair.getKey().equals(key) && pair.getValue().equals(value) && !it.hasNext() && 
-			set.equals(map2.entrySet())
-		} catch {
-			case e: Exception => false
-		}
-	}
+	property("entrySet") = {
+    	if (debug) println("Start entrySet")
+        Prop.forAll { (key: Int, value: String) =>
+            try {
+                val map = new MyMap[Int, String]()
+                map.put(key, value)
+                val map2 = new HashMap[Int, String]()
+                map2.put(key, value)
+                val set = map.entrySet()
+                val it = set.iterator()
+                val pair = it.next()
+                set.size() == 1 && pair.getKey().equals(key) && pair.getValue().equals(value) && !it.hasNext() && 
+                set.equals(map2.entrySet())
+            } catch {
+                case e: Exception => false
+            }
+        }
+    }
 
-	property("entrySet_equals") = Prop.forAll { (key: Int, value: String) =>
-		try {
-        	if (debug) println("Start entrySet_equals")
-			val map = new MyMap[Int, String]()
-			map.put(key, value)
-			map.put(key+1, value)
-			map.put(key+2, value)
-			val map2 = new HashMap[Int, String]()
-			map2.put(key+2, value)
-			map2.put(key, value)
-			map2.put(key+1, value)
-			map.entrySet().equals(map2.entrySet())
-		} catch {
-			case e: Exception => false
-		}
-	}
+	property("entrySet_equals") = {
+    	if (debug) println("Start entrySet_equals")
+    	Prop.forAll { (key: Int, value: String) =>
+            try {
+                val map = new MyMap[Int, String]()
+                map.put(key, value)
+                map.put(key+1, value)
+                map.put(key+2, value)
+                val map2 = new HashMap[Int, String]()
+                map2.put(key+2, value)
+                map2.put(key, value)
+                map2.put(key+1, value)
+                map.entrySet().equals(map2.entrySet())
+            } catch {
+                case e: Exception => false
+            }
+        }
+    }
 
-	property("hashCode") = Prop.forAll { (key: String, value: Int) =>
-		try {
-        	if (debug) println("Start hashCode")
-			val map = new MyMap[String, Int]()
-			val map2 = new MyMap[String, Int]()
-			map.put(key, value)
-			map2.put(key, value)
-			val cond = map.hashCode() == map2.hashCode()
-			map.put("autre", 42)
-			map2.put("autre", 42)
-			map.hashCode() == map2.hashCode() && cond
-			
-		} catch {
-			case e: Exception => false
-		}
-	}
+	property("hashCode") = {
+    	if (debug) println("Start hashCode")
+        Prop.forAll { (key: String, value: Int) =>
+            try {
+                val map = new MyMap[String, Int]()
+                val map2 = new MyMap[String, Int]()
+                map.put(key, value)
+                map2.put(key, value)
+                val cond = map.hashCode() == map2.hashCode()
+                map.put("autre", 42)
+                map2.put("autre", 42)
+                map.hashCode() == map2.hashCode() && cond
 
-	property("isEmpty") = Prop.forAll { (key: String, value: Double) =>
-		try {
-        	if (debug) println("Start isEmpty")
-			val map = new MyMap[String, Double]()
-			val cond = map.isEmpty()
-			map.put(key, value)
-			!map.isEmpty() && cond
-		} catch {
-			case e: Exception => false
-		}
-	}
+            } catch {
+                case e: Exception => false
+            }
+        }
+    }
 
-	property("remove") = Prop.forAll { (key: String, value: Double) =>
+	property("isEmpty") = {
+    	if (debug) println("Start isEmpty")
+    	Prop.forAll { (key: String, value: Double) =>
 		try {
-        	if (debug) println("Start remove")
-			val map = new MyMap[String, Double]()
-			map.put(key, value)
-			map.remove(key) == value && map.isEmpty()
-		} catch {
-			case e: Exception => false
-		}
-	}
+                val map = new MyMap[String, Double]()
+                val cond = map.isEmpty()
+                map.put(key, value)
+                !map.isEmpty() && cond
+            } catch {
+                case e: Exception => false
+            }
+        }
+    }
 
-	property("size") = Prop.forAll { (key: String, key2: String, value: Double) =>
-		try {
-			if (debug) println(List(1,2,3).forall{x: Int => x < 4})
-			val map = new MyMap[String, Double]()
-			val cond = (map.size() == 0)
-			map.put(key, value)
-			val cond2 = (map.size() == 1)
-			map.put(key2, value)
-			cond && cond2 && (map.size() == 2 || key.equals(key2))
-		} catch {
-			case e: Exception => false
-		}
+	property("remove") = {
+    	if (debug) println("Start remove")
+    	Prop.forAll { (key: String, value: Double) =>
+            try {
+                val map = new MyMap[String, Double]()
+                map.put(key, value)
+                map.remove(key) == value && map.isEmpty()
+            } catch {
+                case e: Exception => false
+            }
+        }
 	}
+    
+	property("size") = {
+    	if (debug) println(List(1,2,3).forall{x: Int => x < 4})
+        Prop.forAll { (key: String, key2: String, value: Double) =>
+            try {
+                val map = new MyMap[String, Double]()
+                val cond = (map.size() == 0)
+                map.put(key, value)
+                val cond2 = (map.size() == 1)
+                map.put(key2, value)
+                cond && cond2 && (map.size() == 2 || key.equals(key2))
+            } catch {
+                case e: Exception => false
+            }
+        }
+    }
 
 	property("collisions") = {
 		try {
@@ -161,10 +181,10 @@ object MapProps extends Properties("Map") {
 
 	
 	val numbersGen = listOf(choose(1, 100))
+    if (debug) println("Start multiple_operations")
 	property("multiple_operations") = Prop.forAll(numbersGen) { numbers =>
 		try {
 			val bigMap = new MyMap[Int, Int]()
-            if (debug) println("Start multiple_operations")
 			numbers.forall { n: Int =>
 				bigMap.put(n, -n)
 				bigMap.containsKey(n) && bigMap.containsValue(-n) && bigMap.get(n) == -n && !bigMap.isEmpty()
