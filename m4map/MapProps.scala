@@ -9,7 +9,7 @@ import math.max
 import math.min
 
 object MapProps extends Properties("Map") {
-	val debug = false
+	val debug = true
 
 	property("put") = {
     	if (debug) println("Start put")
