@@ -175,6 +175,7 @@ object MapProps extends Properties("Map") {
 
 	property("put_complexity") = {
 		try {
+        	if (debug) println("Start put_complexity")
 			val qty = 1000000
 			val map = new MyMap[Int, Int]()
 			val hashMap = new HashMap[Int, Int]()
@@ -194,6 +195,7 @@ object MapProps extends Properties("Map") {
 
 	property("get_complexity") = {
 		try {
+        	if (debug) println("Start get_complexity")
 			val qty = 1000000
 			val map = new MyMap[Int, Int]()
 			val hashMap = new HashMap[Int, Int]()
@@ -217,6 +219,7 @@ object MapProps extends Properties("Map") {
 
 	property("remove_complexity") = {
 		try {
+        	if (debug) println("Start remove_complexity")
 			val qty = 1000000
 			val map = new MyMap[Int, Int]()
 			val hashMap = new HashMap[Int, Int]()
@@ -240,6 +243,7 @@ object MapProps extends Properties("Map") {
 
 	property("contains_key_complexity") = {
 		try {
+        	if (debug) println("Start contains_key complexity")
 			val qty = 1000000
 			val map = new MyMap[Int, Int]()
 			val hashMap = new HashMap[Int, Int]()
@@ -263,6 +267,7 @@ object MapProps extends Properties("Map") {
 
 	property("contains_value_complexity") = {
 		try {
+        	if (debug) println("Start contains_value complexity")
 			val qty = 10000
 			val map = new MyMap[Int, Int]()
 			val hashMap = new HashMap[Int, Int]()
@@ -286,6 +291,7 @@ object MapProps extends Properties("Map") {
 
 	property("entry_set_complexity") = {
 		try {
+        	if (debug) println("Start entry_set_complexity")
 			val qty = 1000000
 			val map = new MyMap[Int, Int]()
 			val hashMap = new HashMap[Int, Int]()
@@ -307,6 +313,7 @@ object MapProps extends Properties("Map") {
 
 	property("is_empty_complexity") = {
 		try {
+        	if (debug) println("Start is_empty_complexity")
 			val qty = 1000000
 			val map = new MyMap[Int, Int]()
 			val hashMap = new HashMap[Int, Int]()
@@ -330,6 +337,7 @@ object MapProps extends Properties("Map") {
 
 	property("size_complexity") = {
 		try {
+        	if (debug) println("Start size_complexity")
 			val qty = 1000000
 			val map = new MyMap[Int, Int]()
 			val hashMap = new HashMap[Int, Int]()
