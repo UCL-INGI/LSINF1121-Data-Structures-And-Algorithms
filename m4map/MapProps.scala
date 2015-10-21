@@ -257,7 +257,8 @@ object MapProps extends Properties("Map") {
 	property("remove_complexity") = {
 		try {
         	if (debug) println("Start remove_complexity")
-			val qty = 1000000
+			//val qty = 1000000
+            val qty = 100000
 			val map = new MyMap[Int, Int]()
 			val hashMap = new HashMap[Int, Int]()
 			val t1 = System.nanoTime()
