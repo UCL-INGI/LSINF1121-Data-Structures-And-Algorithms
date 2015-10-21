@@ -185,11 +185,11 @@ object MapProps extends Properties("Map") {
 	property("multiple_operations") = Prop.forAll(numbersGen) { numbers =>
 		try {
 			val bigMap = new MyMap[Int, Int]()
-			numbers.forall { n: Int =>
+			val cond1 = numbers.forall { n: Int =>
 				bigMap.put(n, -n)
 				bigMap.containsKey(n) && bigMap.containsValue(-n) && bigMap.get(n) == -n && !bigMap.isEmpty()
-			} &&
-			numbers.forall { n: Int =>
+			}
+            val cond2 = numbers.forall { n: Int =>
 				val size = bigMap.size()
 				if (bigMap.containsKey(n)) 
 					bigMap.remove(n) == -n && bigMap.size() == size-1
@@ -199,6 +199,9 @@ object MapProps extends Properties("Map") {
 				}
 			} &&
 			bigMap.isEmpty() && bigMap.size() == 0
+            if (debug) println(cond1)
+            if (debug) println(cond2)
+            cond1 && cond2
 		} catch {
 			case e: Exception => false
 		}
@@ -266,7 +269,7 @@ object MapProps extends Properties("Map") {
 				map.remove(i)
 			val t3 = System.nanoTime()
 			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
-			max(t2-t1, t3-t2) <= 20*min(t2-t1, t3-t2)
+			max(t2-t1, t3-t2) <= 30*min(t2-t1, t3-t2)
 		} catch {
 			case e: Exception => false
 		}
