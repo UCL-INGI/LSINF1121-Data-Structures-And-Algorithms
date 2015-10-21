@@ -122,7 +122,7 @@ object MapProps extends Properties("Map") {
 
 	property("size") = Prop.forAll { (key: String, key2: String, value: Double) =>
 		try {
-			//println(List(1,2,3).forall{x: Int => x < 4})
+			if (debug) println(List(1,2,3).forall{x: Int => x < 4})
 			val map = new MyMap[String, Double]()
 			val cond = (map.size() == 0)
 			map.put(key, value)
@@ -136,6 +136,7 @@ object MapProps extends Properties("Map") {
 
 	property("collisions") = {
 		try {
+        	if (debug) println("Start collisions")
 			val bigMap = new MyMap[String, Double]()
 			var i = 0
 			Prop.forAll { (key: String, value: Double) =>
@@ -154,6 +155,7 @@ object MapProps extends Properties("Map") {
 	property("multiple_operations") = Prop.forAll(numbersGen) { numbers =>
 		try {
 			val bigMap = new MyMap[Int, Int]()
+            if (debug) println("Start multiple_operations")
 			numbers.forall { n: Int =>
 				bigMap.put(n, -n)
 				bigMap.containsKey(n) && bigMap.containsValue(-n) && bigMap.get(n) == -n && !bigMap.isEmpty()
