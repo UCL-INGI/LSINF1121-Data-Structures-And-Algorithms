@@ -44,7 +44,7 @@ groups: false
 limits:
     memory: '3000'
     output: '100'
-    time: '180'
+    time: '60'
 name: Mission 4 - Map [individual]
 network_grading: false
 order: 16
