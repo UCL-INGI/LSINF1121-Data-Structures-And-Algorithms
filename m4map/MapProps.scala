@@ -258,21 +258,32 @@ object MapProps extends Properties("Map") {
 		try {
         	if (debug) println("Start remove_complexity")
 			//val qty = 1000000
-            val qty = 15000
+            val qty1 = 5000
+            val qty2 = 10000
 			val map = new MyMap[Int, Int]()
 			val hashMap = new HashMap[Int, Int]()
 			val t1 = System.nanoTime()
-			for (i <- 1 to qty)
+			for (i <- 1 to qty1)
 				hashMap.put(i, -i)
-			for (i <- 1 to qty)
+			for (i <- 1 to qty1)
 				hashMap.remove(i)
 			val t2 = System.nanoTime()
-			for (i <- 1 to qty)
+			for (i <- 1 to qty1)
 				map.put(i, -i)
-			for (i <- 1 to qty)
+			for (i <- 1 to qty1)
 				map.remove(i)
 			val t3 = System.nanoTime()
-			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
+            for (i <- 1 to qty2)
+				hashMap.put(i, -i)
+			for (i <- 1 to qty2)
+				hashMap.remove(i)
+			val t4 = System.nanoTime()
+			for (i <- 1 to qty2)
+				map.put(i, -i)
+			for (i <- 1 to qty2)
+				map.remove(i)
+			val t5 = System.nanoTime()
+			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000 + (t4-t3)/1000000 + " " + (t5-t4)/1000000)
 			max(t2-t1, t3-t2) <= 60*min(t2-t1, t3-t2)
 		} catch {
 			case e: Exception => false
