@@ -9,7 +9,7 @@ import math.max
 import math.min
 
 object MapProps extends Properties("Map") {
-	val debug = true
+	val debug = false
 
 	property("put") = {
     	if (debug) println("Start put")
@@ -327,28 +327,29 @@ object MapProps extends Properties("Map") {
 		}
 	}
 
-	property("entry_set_complexity") = {
-		try {
-        	if (debug) println("Start entry_set_complexity")
-			//val qty = 1000000
-            val qty = 20000
-			val map = new MyMap[Int, Int]()
-			val hashMap = new HashMap[Int, Int]()
-			val t1 = System.nanoTime()
-			for (i <- 1 to qty)
-				hashMap.put(i, -i)
-			hashMap.entrySet()
-			val t2 = System.nanoTime()
-			for (i <- 1 to qty)
-				map.put(i, -i)
-			map.entrySet()
-			val t3 = System.nanoTime()
-			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
-			max(t2-t1, t3-t2) <= 20*min(t2-t1, t3-t2)
-		} catch {
-			case e: Exception => false
-		}
-	}
+	// Hashmap cheats a lot, don't think we ask the students to optimize so much
+	//property("entry_set_complexity") = {
+	//	try {
+    //    	if (debug) println("Start entry_set_complexity")
+	//		//val qty = 1000000
+    //        val qty = 20000
+	//		val map = new MyMap[Int, Int]()
+	//		val hashMap = new HashMap[Int, Int]()
+	//		val t1 = System.nanoTime()
+	//		for (i <- 1 to qty)
+	//			hashMap.put(i, -i)
+	//		hashMap.entrySet()
+	//		val t2 = System.nanoTime()
+	//		for (i <- 1 to qty)
+	//			map.put(i, -i)
+	//		map.entrySet()
+	//		val t3 = System.nanoTime()
+	//		if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000)
+	//		max(t2-t1, t3-t2) <= 20*min(t2-t1, t3-t2)
+	//	} catch {
+	//		case e: Exception => false
+	//	}
+	//}
 
 	property("is_empty_complexity") = {
 		try {
