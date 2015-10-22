@@ -42,6 +42,7 @@ do
 		exit 0
 	elif [ "$r" = "253" ]; then
 		feedback --result timeout --feedback "Command timed out"
+        echo $output
 		exit 0
 	elif [ "$r" = "254" ]; then
 	      feedback --result failed --feedback "Unfortunately, a runtime error occured"
