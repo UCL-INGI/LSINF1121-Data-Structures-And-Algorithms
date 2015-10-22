@@ -202,7 +202,7 @@ object MapProps extends Properties("Map") {
             if (debug) {
             	if (!cond1) println("cond1")
                 if (!cond2) println("cond2")
-                if (!cond3) println("cond3" + bigMap.size() + bigMap.entrySet().iterator.next().getKey())
+                if (!cond3) println("cond3 " + bigMap.size() + " " + bigMap.entrySet().iterator.next().getKey() + " " + numbers)
             }
             cond1 && cond2 && cond3
 		} catch {
