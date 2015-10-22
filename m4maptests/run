@@ -42,7 +42,6 @@ do
 		exit 0
 	elif [ "$r" = "253" ]; then
 		feedback --result timeout --feedback "Command timed out"
-        echo $output
 		exit 0
 	elif [ "$r" = "254" ]; then
 	      feedback --result failed --feedback "Unfortunately, a runtime error occured"
@@ -80,5 +79,4 @@ if [ "$n" = "$tot" ]; then
 	feedback --result success --feedback "Congratulations, you passed the $n tests!"
 else
 	feedback --result failed --feedback "Unfortunately, you passed only $n tests out of $tot : $feedback"
-    echo $output
 fi
