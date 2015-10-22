@@ -67,6 +67,7 @@ cd ..
 feedback=""
 if [ "$passOk" != 1 ]; then
 	feedback="you detected an error in a correct $word"
+    echo $output
 fi
 if [ "$failOk" != "$(($tot-1))" ]; then
 	if [ "$feedback" != "" ]; then
