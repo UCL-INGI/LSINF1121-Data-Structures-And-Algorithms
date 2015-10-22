@@ -284,7 +284,8 @@ object MapProps extends Properties("Map") {
 				map.remove(i)
 			val t5 = System.nanoTime()
 			if (debug) println((t2-t1)/1000000 + " " + (t3-t2)/1000000 + " " + (t4-t3)/1000000 + " " + (t5-t4)/1000000)
-			max(t2-t1, t3-t2) <= 60*min(t2-t1, t3-t2)
+			// max(t2-t1, t3-t2) <= 60*min(t2-t1, t3-t2)
+            (t5 - t4).toDouble / (t3 - t2).toDouble <= 4 * (t4 - t3).toDouble / (t2 - t1).toDouble
 		} catch {
 			case e: Exception => false
 		}
