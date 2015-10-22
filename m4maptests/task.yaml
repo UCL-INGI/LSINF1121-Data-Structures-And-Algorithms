@@ -13,7 +13,7 @@ context: |-
             /* Returns true if this map contains a mapping for the specified key. */
             public boolean containsKey(K key);
 
-            /* Returns true if this map contains a mapping for the specified key. */
+            /* Returns true if this map contains a mapping for the specified value. */
             public boolean containsValue(V value);
 
             /* Returns a Set view of the mappings contained in this map. */
