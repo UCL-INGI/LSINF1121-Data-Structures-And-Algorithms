@@ -89,6 +89,8 @@ context: |-
     - Your OrderedMap should be ordered according to the natural ordering of its keys, i.e. the same as the Java String class.
 
     - If you create your own Map.Entry implementation, don't forget to override the *equals* and *hashCode* methods so that two different objects representing the same entry are considered equal.
+
+    - For more information about the methods of the ADT, you can look at http://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html
 environment: java8scala
 groups: true
 limits:
