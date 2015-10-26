@@ -44,7 +44,7 @@ groups: false
 limits:
     memory: '512'
     output: '100'
-    time: '120'
+    time: '180'
 name: Mission 3 - Unit tests [individual]
 network_grading: false
 order: 11
