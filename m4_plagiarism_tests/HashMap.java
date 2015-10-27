@@ -33,11 +33,33 @@ class HashMap<V> implements MapInterface<V> {
 	public void put(String key, V value) {
 		put(key, value, hashCode(key));
 	}
-	public void put(String key, V value, int hashCode) {
+	/*public void put(String key, V value, int hashCode) {
 		int hash = Math.abs(hashCode) % capacity;
 		if (table[hash] == null)
 			table[hash] = new LinkedList<Entry<String, V>>();
 		table[hash].add(new SimpleEntry<String, V>(key, value));
+		n++;
+		if (n >= capacity/2)
+			rehash();
+	}*/
+	public void put(String key, V value, int hashCode) {
+		int hash = Math.abs(hashCode) % capacity;
+		Entry<String, V> entry = new SimpleEntry<String, V>(key, value);
+		if (table[hash] == null) {
+			table[hash] = new LinkedList<Entry<String, V>>();
+			table[hash].add(entry);
+		}
+		else {
+			boolean found = false;
+			for (int i = 0 ; !found && i < table[hash].size() ; i++) {
+				if (table[hash].get(i).getKey().equals(key)) {
+					table[hash].set(i, entry);
+					found = true;
+				}
+			}
+			if (!found)
+				table[hash].add(entry);
+		}
 		n++;
 		if (n >= capacity/2)
 			rehash();
