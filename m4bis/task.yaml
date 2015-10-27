@@ -55,6 +55,8 @@ context: |
             public int incrementalHashCode(String key, int lastHash, int lastChar);
 
         }
+
+    For more information about the unspecified methods of *MapInterface*, see the Java Map interface (http://docs.oracle.com/javase/7/docs/api/java/util/Map.html).
 environment: java8scala
 groups: true
 limits:
