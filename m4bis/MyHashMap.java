@@ -48,6 +48,7 @@ class MyHashMap<V> implements MapInterface<V> {
 		if (table[hash] == null) {
 			table[hash] = new LinkedList<Entry<String, V>>();
 			table[hash].add(entry);
+			n++;
 		}
 		else {
 			boolean found = false;
@@ -55,12 +56,14 @@ class MyHashMap<V> implements MapInterface<V> {
 				if (table[hash].get(i).getKey().equals(key)) {
 					table[hash].set(i, entry);
 					found = true;
+					// don't increment n
 				}
 			}
-			if (!found)
+			if (!found) {
 				table[hash].add(entry);
+				n++;
+			}
 		}
-		n++;
 		if (n >= capacity/2)
 			rehash();
 	}
