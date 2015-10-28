@@ -84,17 +84,18 @@ public class Tester {
 	}
 	
 	public static boolean compareEntries(Set<Entry<String, Integer>> myHits, Set<Entry<String, Integer>> studentHits) {
+    boolean ok = true;
 		for (Entry<String, Integer> entry : myHits)
 			if (!studentHits.contains(entry)) {
 				feedback = "entry " + entry + " not found in your set. ";
-				return false;
+				ok = false;
 			}
 		for (Entry<String, Integer> entry : studentHits)
 			if (!myHits.contains(entry)) {
 				feedback = "entry " + entry + " unexpected, but found in your set. ";
-				return false;
+				ok = false;
 			}
-		return true;
+		return ok;
 			
 	}
 
