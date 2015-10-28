@@ -86,11 +86,13 @@ public class Tester {
 	public static boolean compareEntries(Set<Entry<String, Integer>> myHits, Set<Entry<String, Integer>> studentHits) {
     boolean ok = true;
 		for (Entry<String, Integer> entry : myHits)
+        	System.out.println("My " + entry);
 			if (!studentHits.contains(entry)) {
 				feedback = "entry " + entry + " not found in your set. ";
 				ok = false;
 			}
 		for (Entry<String, Integer> entry : studentHits)
+            System.out.println("Stud " + entry);
 			if (!myHits.contains(entry)) {
 				feedback = "entry " + entry + " unexpected, but found in your set. ";
 				ok = false;
