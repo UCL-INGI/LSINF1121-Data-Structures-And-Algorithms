@@ -46,7 +46,6 @@ else
 
 	if [ "$problem" != "0" ]; then
     	feedback --result failed --feedback "Unfortunately, an exception occured during the execution of your code. "
-        echo $output
 	elif [ "$passed" != "0" ] && [ "$failed" = "0" ]; then
     	FEED=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
     	FEED=$(printf "Congratulations, you passed all the tests! \n::\n\n$FEED")

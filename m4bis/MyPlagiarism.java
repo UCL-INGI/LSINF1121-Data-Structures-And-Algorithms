@@ -65,7 +65,7 @@ public class MyPlagiarism implements PlagiarismInterface {
 	private void processInput(String file, String filename) {
 		int lastHash = 0; 
 		int lastChar = 0; 
-		for (int i = 0 ; i < file.length()-w ; i++) {
+		for (int i = 0 ; i <= file.length()-w ; i++) {
 			String key = file.substring(i, i+w);
 			if (i == 0) 
 				lastHash = map.hashCode(key); 
@@ -81,7 +81,7 @@ public class MyPlagiarism implements PlagiarismInterface {
 		int lastChar = 0; 
 		String document = readInput(doc);
 		Set<Map.Entry<String, Integer>> hits = new HashSet<Map.Entry<String, Integer>>();
-		for (int i = 0 ; i < document.length()-w ; i++) {
+		for (int i = 0 ; i <= document.length()-w ; i++) {
 			String key = document.substring(i, i+w);
 			Map.Entry<String, Integer> entry; 
 			if (i == 0) 
