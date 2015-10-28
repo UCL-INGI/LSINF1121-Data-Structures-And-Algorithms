@@ -93,6 +93,8 @@ context: |-
     - For more information about the methods of the two ADTs, you can look at :
         - http://docs.oracle.com/javase/7/docs/api/java/util/Map.html
         - http://docs.oracle.com/javase/7/docs/api/java/util/NavigableMap.html
+
+    - The Sets/Collections returned by your methods *don't* need to be backed by the map. (If you don't understand this, just forget about it.)
 environment: java8scala
 groups: true
 limits:
