@@ -72,12 +72,13 @@ problems:
         allowed_exts:
         - .java
         type: code-file
-        header: 'Upload your plagiarism detector here. Your class should be named
-            "Plagiarism" and implement *PlagiarismInterface*. '
+        header: Upload your plagiarism detector here. Your class should be named "Plagiarism"
+            and implement *PlagiarismInterface*. **Don't include the interface in
+            your submission.**
     hashmap:
         type: code-file
-        header: 'Upload your map implementation here. Your class should be named "HashMap"
-            and implement *MapInterface*. '
+        header: Upload your map implementation here. Your class should be named "HashMap"
+            and implement *MapInterface*. **Don't include the interface in your submission.**
         allowed_exts:
         - .java
         name: HashMap
