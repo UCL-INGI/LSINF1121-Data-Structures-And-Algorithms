@@ -1,5 +1,11 @@
 #! /bin/bash
 
+# 1) put(key, value) doesn't put anything
+# 2) get(key, hashCode) does the same as get
+# 3) size() returns always 0
+# 4) incrementalHashCode returns the wrong hash (inc by 1)
+# 5) get(key) returns the right element the first time, and then always this same (wrong) element
+
 tot=6 # number of tests
 name="HashMap"
 testName="HashMapTests"
