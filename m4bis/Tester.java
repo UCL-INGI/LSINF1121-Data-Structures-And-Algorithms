@@ -23,7 +23,7 @@ public class Tester {
 			Integer d = map.get("d", map.hashCode("d"));
 			int previousHash = map.hashCode("abc");
 			int hash = map.hashCode("bcd");
-			int incHash = map.incrementalHashCode("bcd", previousHash, (int) 'a');
+			int incHash = map.incrementalHashCode(3, (int) 'd', previousHash, (int) 'a');
 			if (a == null || a != 1)
 				System.out.println("Test " + i + " failed : put(key, value)/get(key) sequence doesn't work correctly");
 			else if (b == null || b != 2)
