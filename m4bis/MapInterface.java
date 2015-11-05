@@ -25,6 +25,6 @@ public interface MapInterface<V> {
 	/* Returns the hash of the String 'key' based on the previous hash 'lastHash'
 	 * and on the previous character leading the sentence 'lastChar' 
 	 * Complexity required : O(1) 
-	public int incrementalHashCode(String key, int lastHash, int lastChar);
+	public int incrementalHashCode(int keyLength, int lastKeyChar, int lastHash, int lastChar);
 	
 }

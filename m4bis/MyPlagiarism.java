@@ -70,7 +70,7 @@ public class MyPlagiarism implements PlagiarismInterface {
 			if (i == 0) 
 				lastHash = map.hashCode(key); 
 			else 
-				lastHash = map.incrementalHashCode(key, lastHash, lastChar);
+				lastHash = map.incrementalHashCode(key.length(), key.charAt(key.length()-1), lastHash, lastChar);
 			lastChar = (int) key.charAt(0);
 			map.put(key, new AbstractMap.SimpleEntry<>(filename, i), lastHash);
 		}
@@ -87,7 +87,7 @@ public class MyPlagiarism implements PlagiarismInterface {
 			if (i == 0) 
 				lastHash = map.hashCode(key); 
 			else 
-				lastHash = map.incrementalHashCode(key, lastHash, lastChar);
+				lastHash = map.incrementalHashCode(key.length(), key.charAt(key.length()-1), lastHash, lastChar);
 			lastChar = (int) key.charAt(0);
 			if ((entry = map.get(key, lastHash)) != null) {
 				hits.add(new AbstractMap.SimpleEntry<>(entry.getKey(), entry.getValue()));
