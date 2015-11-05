@@ -94,9 +94,8 @@ class MyHashMap<V> implements MapInterface<V> {
 		return hash;
 	}
 
-	public int incrementalHashCode(String key, int lastHash, int lastChar) {
-		//return hashCode(key); 
-		return 256*(lastHash - pow(256, key.length()-1) * lastChar) + (int) key.charAt(key.length()-1);
+	public int incrementalHashCode(int keyLength, int lastKeyChar, int lastHash, int lastChar) {
+		return 256*(lastHash - pow(256, keyLength-1) * lastChar) + (int) lastKeyChar;
 	}
 
 	private static int pow(int a, int b) {
