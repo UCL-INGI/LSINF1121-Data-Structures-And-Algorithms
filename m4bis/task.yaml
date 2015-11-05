@@ -21,7 +21,7 @@ context: |
 
         }
 
-    In order to have an efficient detector, you will have to use Map (a class named "HashMap") implementing this interface :
+    In order to have an efficient detector, you will have to use Map (a class named "HashMap") implementing this interface (be aware that the parameters of the *incrementalHashCode* method are a little bit different from the interface used for the unit tests):
 
     .. code-block:: java
 
