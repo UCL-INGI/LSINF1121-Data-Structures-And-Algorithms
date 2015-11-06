@@ -11,7 +11,7 @@ public class Tester {
 			feedback = ""; 
 			
 			int i = 1;
-			MapInterface<String, Integer> map = new HashMap<Integer>();
+			/*MapInterface<String, Integer> map = new HashMap<Integer>();
 			map.put("a", 1);
 			Integer a = map.get("a");
 			map.put("b",  2, 42);
@@ -39,7 +39,7 @@ public class Tester {
 			else
 				System.out.println("Test " + i + " passed");
 
-			i++;
+			i++;*/
 			PlagiarismInterface p = new Plagiarism("corpus", 10);
 			PlagiarismInterface myP = new MyPlagiarism("corpus", 10);
 			Set<Entry<String, Integer>> hits = p.detect("document.txt");
