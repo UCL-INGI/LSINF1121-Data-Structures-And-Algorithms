@@ -4,7 +4,7 @@ context: Answers to the different questions in the statement of the fourth missi
 environment: default
 groups: true
 limits:
-    memory: '20'
+    memory: '256'
     output: '2'
     time: '15'
 name: Mission 4 - Questions report [group]
