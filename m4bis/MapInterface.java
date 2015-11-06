@@ -1,4 +1,4 @@
-/* A Map creates mappings between Strings and objects of type V. 
+/* A Map creates mappings between objects of type K and V. 
  * A class implementing this interface should have at least one constructor 
  * with no argument, initializing the map. 
  */
@@ -18,7 +18,7 @@ public interface MapInterface<K, V> {
 	
 	public int size();
 	
-	/* Returns the hash of the String 'key' 
+	/* Returns the hash of the K 'key'
 	 * Complexity required : O(m) */
 	public int hashCode(K key);
 	
