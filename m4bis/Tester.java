@@ -11,7 +11,7 @@ public class Tester {
 			feedback = ""; 
 			
 			int i = 1;
-			MapInterface<Integer> map = new HashMap<Integer>();
+			MapInterface<String, Integer> map = new HashMap<Integer>();
 			map.put("a", 1);
 			Integer a = map.get("a");
 			map.put("b",  2, 42);

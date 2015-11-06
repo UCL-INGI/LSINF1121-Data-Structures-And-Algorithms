@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class MyPlagiarism implements PlagiarismInterface {
 	
-	private MapInterface<Map.Entry<String, Integer>> map; 
+	private MapInterface<String, Map.Entry<String, Integer>> map; 
 	private int w; // maximum length of the occurrences
 	
 	public MyPlagiarism(String folder, int w) {

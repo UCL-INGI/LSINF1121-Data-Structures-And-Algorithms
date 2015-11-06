@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Map.Entry;
 
-class MyHashMap<V> implements MapInterface<V> {
+public class MyHashMap<V> implements MapInterface<String, V> {
 
 	private int capacity = 2000;
 	private int n = 0;
