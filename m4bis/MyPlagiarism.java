@@ -20,7 +20,7 @@ public class MyPlagiarism implements PlagiarismInterface {
 		
 		File dir = new File(folder);
 		File[] listOfFiles = dir.listFiles();
-		
+		Arrays.sort(listOfFiles); 
 		for (File file : listOfFiles) {
 		    if (file.isFile()) {
 		        String s = readInput(folder + "/" + file.getName());
@@ -72,7 +72,8 @@ public class MyPlagiarism implements PlagiarismInterface {
 			else 
 				lastHash = map.incrementalHashCode(key.length(), key.charAt(key.length()-1), lastHash, lastChar);
 			lastChar = (int) key.charAt(0);
-			map.put(key, new AbstractMap.SimpleEntry<>(filename, i), lastHash);
+            if (map.get(key, lastHash) == null)
+				map.put(key, new AbstractMap.SimpleEntry<>(filename, i), lastHash);
 		}
 	}
 	
