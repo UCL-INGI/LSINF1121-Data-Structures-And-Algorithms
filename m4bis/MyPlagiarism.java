@@ -8,6 +8,7 @@ import java.util.AbstractMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.Arrays; 
 
 public class MyPlagiarism implements PlagiarismInterface {
 	
