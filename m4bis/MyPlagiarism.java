@@ -46,7 +46,7 @@ public class MyPlagiarism implements PlagiarismInterface {
 				if (first) s += line; 
                 else s += "\n" + line;
 				line = reader.readLine();
-                first = false
+                first = false;
 			}          
 
 		} catch (FileNotFoundException e) {
