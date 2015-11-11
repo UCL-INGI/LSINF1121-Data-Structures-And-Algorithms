@@ -28,7 +28,7 @@ failOk=0
 buggyName="Buggy$name"
 oldName="$name"
 count=0
-sequence="fail"
+sequence="fail :"
 for i in $(seq 1 $tot)
 do
 	count=count+1
@@ -70,7 +70,7 @@ do
 
 	if [ "$i" != "1" ] && [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
 		((n++))
-        sequence+=count+" "
+        sequence+="$count"+" "
         ((failOk++))
 	fi
 done
@@ -79,11 +79,11 @@ cd ..
 if [ "$n" = "0" ]; then
 	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
 elif [ "$passOk" != "1" ]; then
-	feedback --result failed --feedback "you detected an error in a correct $word implementation $sequence"
+	feedback --result failed --feedback "you detected an error in a correct $word implementation "
 elif [ "$n" = "$tot" ]; then
 	feedback --result success --feedback "Congratulations, you passed the $n tests!"
 else
     incorrect=$(($tot-1))
 	lack=$(($incorrect-$failOk))
-	feedback --result failed --feedback "Unfortunately, you didn't detect errors in $lack (out of $incorrect) incorrect ${word} implementations. "
+	feedback --result failed --feedback "Unfortunately, you didn't detect errors in $lack (out of $incorrect) incorrect ${word} implementations. $sequence"
 fi
