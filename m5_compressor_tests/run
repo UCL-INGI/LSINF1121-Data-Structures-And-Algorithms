@@ -27,11 +27,12 @@ passOk=0
 failOk=0
 buggyName="Buggy$name"
 oldName="$name"
-count=0
+count=1
 sequence="fail :"
 for i in $(seq 1 $tot)
 do
-	((count++))
+	
+    ((count++))
 	cp "../${name}.java" "./${oldName}.java"
 	name="${buggyName}${i}"
 
@@ -91,6 +92,7 @@ do
         	sequence+="Test $count You do not compare the old size and the newsize"
         fi
         ((failOk++))
+        
 	fi
 done
 cd ..
