@@ -71,28 +71,29 @@ do
 
 	if [ "$i" != "1" ] && [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
 		((n++))
-        if [ "$count" = "1" ]; then
-        	sequence+="Test $count wrong output"
+        ((failOk++))
+    else
+    	        if [ "$count" = "1" ]; then
+        	sequence+="Test $count wrong output ________ ________"
         	
         fi
         
         if [ "$count" = "2" ]; then
-        	sequence+="Test $count  wrong output"
+        	sequence+="Test $count  wrong output ________ ________"
         fi
         
         if [ "$count" = "3" ]; then
-        	sequence+="Test $count Exception not tested"
+        	sequence+="Test $count Exception not tested________ ________"
         fi
         
         if [ "$count" = "4" ]; then
-        	sequence+="Test $count Long files not tested"
+        	sequence+="Test $count Long files not tested________ ________"
         fi
         
         if [ "$count" = "5" ]; then
-        	sequence+="Test $count You do not compare the old size and the newsize"
+        	sequence+="Test $count You do not compare the old size and the newsize________ ________"
         fi
-        ((failOk++))
-        
+
 	fi
     ((count++))
 done
