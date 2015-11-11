@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.Arrays; 
+import java.util.Scanner; 
 
 public class MyPlagiarism implements PlagiarismInterface {
 	
@@ -24,13 +25,23 @@ public class MyPlagiarism implements PlagiarismInterface {
 		Arrays.sort(listOfFiles); 
 		for (File file : listOfFiles) {
 		    if (file.isFile()) {
-		        String s = readInput(folder + "/" + file.getName());
+		        String s = fileToString(file);
 		        processInput(s, file.getName());
 		    }
 		}
 	}
 
-	private static String readInput(String filename) {
+    private static String fileToString(File f) {
+        try {
+            return new Scanner(f).useDelimiter("\\Z").next();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred while reading the file: " + f.getName());
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+	/*private static String readInput(String filename) {
 		// Read the input file line by line  
 		FileInputStream fis = null;
 		BufferedReader reader = null;
@@ -64,7 +75,7 @@ public class MyPlagiarism implements PlagiarismInterface {
 			} 
 		}
 		return s;
-	}
+	}*/
 	
 	private void processInput(String file, String filename) {
 		int lastHash = 0; 
