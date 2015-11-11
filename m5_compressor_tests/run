@@ -32,8 +32,7 @@ sequence="fail :"
 for i in $(seq 1 $tot)
 do
 	
-    ((count++))
-	cp "../${name}.java" "./${oldName}.java"
+    cp "../${name}.java" "./${oldName}.java"
 	name="${buggyName}${i}"
 
 	javac "${oldName}.java"
@@ -66,28 +65,27 @@ do
 
 	if [ "$i" = "1" ] && [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
 		((n++))
-        sequence+="Test ok $count ___"
-        	
+        sequence+=" Correct implementation correctly tested . ________"
 		((passOk++))
 	fi
 
 	if [ "$i" != "1" ] && [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
 		((n++))
         if [ "$count" = "1" ]; then
-        	sequence+="Test $count wrong output \n"
+        	sequence+="Test $count wrong output"
         	
         fi
         
         if [ "$count" = "2" ]; then
-        	sequence+="Test $count  wrong output \n"
+        	sequence+="Test $count  wrong output"
         fi
         
         if [ "$count" = "3" ]; then
-        	sequence+="Test $count Exception not tested \n"
+        	sequence+="Test $count Exception not tested"
         fi
         
         if [ "$count" = "4" ]; then
-        	sequence+="Test $count Long files not tested \n"
+        	sequence+="Test $count Long files not tested"
         fi
         
         if [ "$count" = "5" ]; then
@@ -96,6 +94,7 @@ do
         ((failOk++))
         
 	fi
+    ((count++))
 done
 cd ..
 
