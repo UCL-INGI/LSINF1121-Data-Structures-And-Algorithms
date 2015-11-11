@@ -102,7 +102,7 @@ cd ..
 if [ "$n" = "0" ]; then
 	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
 elif [ "$passOk" != "1" ]; then
-	feedback --result failed --feedback "you detected an error in a correct $word implementation "
+	feedback --result failed --feedback "you detected an error in a correct $word implementation  $sequence"
 elif [ "$n" = "$tot" ]; then
 	feedback --result success --feedback "Congratulations, you passed the $n tests!"
 else
