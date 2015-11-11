@@ -31,7 +31,7 @@ count=0
 sequence="fail :"
 for i in $(seq 1 $tot)
 do
-	count=count+1
+	((count++))
 	cp "../${name}.java" "./${oldName}.java"
 	name="${buggyName}${i}"
 
