@@ -41,9 +41,12 @@ public class MyPlagiarism implements PlagiarismInterface {
 			reader = new BufferedReader(new InputStreamReader(fis));
 
 			String line = reader.readLine();
+            boolean first = true;
 			while(line != null){
-				s += line + "\n";
+				if (first) s += line; 
+                else s += "\n" + line;
 				line = reader.readLine();
+                first = false
 			}          
 
 		} catch (FileNotFoundException e) {
