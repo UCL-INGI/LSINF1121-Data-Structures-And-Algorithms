@@ -89,7 +89,6 @@ do
         if ["$count" = "5"]; then
         	sequence+="Test $count : \n Compressed file too large test\n "
         fi
-        sequence+="$count"+" "
         ((failOk++))
 	fi
 done
