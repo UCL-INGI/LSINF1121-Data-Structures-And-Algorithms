@@ -24,7 +24,7 @@ public class MyPlagiarism implements PlagiarismInterface {
 		Arrays.sort(listOfFiles); 
 		for (File file : listOfFiles) {
 		    if (file.isFile()) {
-		        String s = fileToString(file);
+		        String s = readInput(folder + "/" + file.getName());
 		        processInput(s, file.getName());
 		    }
 		}
