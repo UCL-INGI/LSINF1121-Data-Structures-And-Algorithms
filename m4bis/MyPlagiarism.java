@@ -42,7 +42,7 @@ public class MyPlagiarism implements PlagiarismInterface {
 
 			String line = reader.readLine();
 			while(line != null){
-				s += line;
+				s += line + "\n";
 				line = reader.readLine();
 			}          
 
