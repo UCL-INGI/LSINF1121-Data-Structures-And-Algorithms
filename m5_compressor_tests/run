@@ -66,6 +66,8 @@ do
 
 	if [ "$i" = "1" ] && [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
 		((n++))
+        sequence+="Test ok $count ___"
+        	
 		((passOk++))
 	fi
 
