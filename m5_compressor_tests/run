@@ -71,24 +71,24 @@ do
 	if [ "$i" != "1" ] && [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
 		((n++))
         if [ "$count" = "1" ]; then
-        	sequence="Test $count "
+        	sequence+="Test $count "
         	
         fi
         
         if [ "$count" = "2" ]; then
-        	sequence="Test $count  "
+        	sequence+="Test $count  "
         fi
         
         if [ "$count" = "3" ]; then
-        	sequence="Test $count "
+        	sequence+="Test $count "
         fi
         
         if [ "$count" = "4" ]; then
-        	sequence="Test $count "
+        	sequence+="Test $count "
         fi
         
         if [ "$count" = "5" ]; then
-        	sequence="Test $count "
+        	sequence+="Test $count "
         fi
         ((failOk++))
 	fi
