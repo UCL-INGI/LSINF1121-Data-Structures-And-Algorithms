@@ -83,7 +83,7 @@ do
         fi
         
         if [ "$count" = "3" ]; then
-        	sequence+="Test $count Exception not tested________ ________"
+        	sequence+="Test $count You do not compare the old size and the newsize________ ________"
         fi
         
         if [ "$count" = "4" ]; then
@@ -91,7 +91,8 @@ do
         fi
         
         if [ "$count" = "5" ]; then
-        	sequence+="Test $count You do not compare the old size and the newsize________ ________"
+        	sequence+="Test $count Exception not tested________ ________"
+
         fi
 
 	fi
