@@ -70,24 +70,25 @@ do
 
 	if [ "$i" != "1" ] && [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
 		((n++))
-        if ["$count" = "1"]; then
-        	sequence+="Test $count : \n Output not correctly tested \n"
+        if [ "$count" = "1" ]; then
+        	sequence="Test $count "
+        	
         fi
         
-        if ["$count" = "2"]; then
-        	sequence+="Test $count : \n Output not correctly tested \n "
+        if [ "$count" = "2" ]; then
+        	sequence="Test $count  "
         fi
         
-        if ["$count" = "3"]; then
-        	sequence+="Test $count : \n No test on exceptions\n"
+        if [ "$count" = "3" ]; then
+        	sequence="Test $count "
         fi
         
-        if ["$count" = "4"]; then
-        	sequence+="Test $count : \n Fail Long String test \n"
+        if [ "$count" = "4" ]; then
+        	sequence="Test $count "
         fi
         
-        if ["$count" = "5"]; then
-        	sequence+="Test $count : \n Compressed file too large test\n "
+        if [ "$count" = "5" ]; then
+        	sequence="Test $count "
         fi
         ((failOk++))
 	fi
