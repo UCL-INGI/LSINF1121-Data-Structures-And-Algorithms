@@ -74,12 +74,12 @@ do
         ((failOk++))
     else
     	        if [ "$count" = "1" ]; then
-        	sequence+="Test $count wrong output ________ ________"
+        	sequence+="Test $count Wrong output ________ ________"
         	
         fi
         
         if [ "$count" = "2" ]; then
-        	sequence+="Test $count  wrong output ________ ________"
+        	sequence+="Test $count  Wrong output ________ ________"
         fi
         
         if [ "$count" = "3" ]; then
@@ -91,7 +91,7 @@ do
         fi
         
         if [ "$count" = "5" ]; then
-        	            sequence+="Test $count You do not compare the old size and the newsize________ ________"
+        	            sequence+="Test $count You did not test if the size was really lowering (hint : you can re-open a file that was used in a compress_decrompress call)"
         fi
 
 	fi
