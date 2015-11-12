@@ -41,7 +41,7 @@ object CompressProps extends Properties("Compress") {
 		}
 	}
 
-	property("compression_length") = {
+	/*property("compression_length") = {
 		try {
 			var str = ""
 			for (i <- 1 to 10000)
@@ -57,7 +57,7 @@ object CompressProps extends Properties("Compress") {
 		} catch {
 			case e: Exception => false
 		}
-	}
+	}*/
 
 	property("compression_length_2") = {
 		try {
