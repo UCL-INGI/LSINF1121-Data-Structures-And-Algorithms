@@ -12,7 +12,7 @@ object CompressProps extends Properties("Compress") {
 	property("basic_file_equality") = {
 		try {
 			val s = compress_decompress("hello world")
-			s == "hello world\n"
+			s == "hello world" || s == "hello world\n"
 
 		} catch {
 			case e: Exception => false
