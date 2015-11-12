@@ -22,7 +22,7 @@ object CompressProps extends Properties("Compress") {
 	property("random_files_equality") = Prop.forAll { (el: String) =>
 		try {
            var s = ""
-           if (el == "") s = compress_decompress("a")
+           if (el == "") s = compress_decompress("a") // to avoid bugs with empty files
 			else s = compress_decompress(el)
 			s == el + "\n" || s == "a\n"
 
@@ -81,7 +81,7 @@ object CompressProps extends Properties("Compress") {
 
 	@throws(classOf[Exception])
 	def compress_decompress(content: String): String = {
-		File("./input.txt").writeAll(content + "\n")
+		File("./input.txt").writeAll(content + "\n") // to avoid bugs with no '\n' files
 		Compress.main(Array("./input.txt", "./compressed.txt"))
 		Decompress.main(Array("./compressed.txt", "./output.txt"))
 		val result = fromFile("./output.txt").mkString
