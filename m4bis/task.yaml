@@ -60,9 +60,9 @@ context: |
 environment: java8scala
 groups: true
 limits:
-    memory: '512'
+    memory: '1024'
     output: '100'
-    time: '20'
+    time: '40'
 name: Mission 4 - Plagiarism detector [group]
 network_grading: false
 order: 20
