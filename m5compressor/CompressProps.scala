@@ -31,7 +31,7 @@ object CompressProps extends Properties("Compress") {
 
 	val strGen = Gen.listOfN(1000, Gen.alphaChar).map(_.mkString)
 
-	/*property("long_files_equality") = Prop.forAll(strGen) { str =>
+	property("long_files_equality") = Prop.forAll(strGen) { str =>
 		try {
 			val s = compress_decompress(str)
 			s == str + "\n"
@@ -57,7 +57,7 @@ object CompressProps extends Properties("Compress") {
 		} catch {
 			case e: Exception => false
 		}
-	}*/
+	}
 
 	property("compression_length_2") = {
 		try {
