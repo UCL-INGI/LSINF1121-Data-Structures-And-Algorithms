@@ -77,13 +77,12 @@ object CompressProps extends Properties("Compress") {
 		}
 	}
 
+	@throws(classOf[Exception])
 	def compress_decompress(content: String): String = {
-
 		File("./input.txt").writeAll(content)
 		Compress.main(Array("./input.txt", "./compressed.txt"))
 		Decompress.main(Array("./compressed.txt", "./output.txt"))
 		val result = fromFile("./output.txt").mkString
-
 		result
 	}
 }
