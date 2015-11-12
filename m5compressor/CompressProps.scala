@@ -12,7 +12,7 @@ object CompressProps extends Properties("Compress") {
 	property("basic_file_equality") = {
 		try {
 			val s = compress_decompress("hello world")
-			s == "hello world" || s == "hello world\n"
+			s == "hello world\n"
 
 		} catch {
 			case e: Exception => false
@@ -79,7 +79,7 @@ object CompressProps extends Properties("Compress") {
 
 	@throws(classOf[Exception])
 	def compress_decompress(content: String): String = {
-		File("./input.txt").writeAll(content)
+		File("./input.txt").writeAll(content + "\n")
 		Compress.main(Array("./input.txt", "./compressed.txt"))
 		Decompress.main(Array("./compressed.txt", "./output.txt"))
 		val result = fromFile("./output.txt").mkString
