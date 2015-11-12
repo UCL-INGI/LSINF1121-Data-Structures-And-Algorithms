@@ -40,7 +40,7 @@ else
 	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then
     	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
 	elif [ "$failed" = "0" ]; then
-		feedback --result success --feedback "Congratulations, you passed the $passed tests! $output $failed $passed $infos"
+		feedback --result success --feedback "Congratulations, you passed the $passed tests!"
 	else
 		feedback --result failed --feedback "Unfortunately, you failed $failed tests out of $(($passed+$failed)) : $infos"
 	fi
