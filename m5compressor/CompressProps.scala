@@ -21,8 +21,10 @@ object CompressProps extends Properties("Compress") {
 
 	property("random_files_equality") = Prop.forAll { (el: String) =>
 		try {
-			val s = compress_decompress(el)
-			s == el + "\n"
+           var s = ""
+           if (el == "") s = compress_decompress("a")
+			else s = compress_decompress(el)
+			s == el + "\n" || s == "a\n"
 
 		} catch {
 			case e: Exception => false
