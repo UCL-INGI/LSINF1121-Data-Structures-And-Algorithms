@@ -4,15 +4,16 @@ context: |-
     For this task, you have to write unit tests using JUnit in order to check several implementations of compressors and decompressors. You are given two classes, *Compress* and *Decompress*, and you have to determine if they do their job correctly or not. We provide you a small template to begin writing your tests :
 
     The tests will give you some hints on what error you do not detect correctly, use those hints. Here are some other hints to help you not beeing stuck on the tests for too long :
-    -Try to test simple cases, then with "limit cases".
 
-    -Do not forget simply to test "what the program is designed for".
+    - Try to test simple cases, then with "limit cases".
 
-    -Do not dive into long "for loops", simple tests will give you a very fast success.
+    - Do not forget simply to test "what the program is designed for".
 
-    -You can reuse the files that are generated in the compress_decompress function, but don't change the code of that function.
+    - Do not dive into long "for loops", simple tests will give you a very fast success.
 
-    -DO NOT DO A TEST THAT THROWS ERROR RANDOMLY AND THEN SUBMIT IT 300 TIMES, HOPING IT WILL HOPEFULLY PASS ALL THE TESTS. YOU LEARN NOTHING BY DOING THAT. Moreover, when we will grade your participation to the course, we will check your codes and change the grades accordingly. If you "cheated" for the success, it won't be considered as a success and does not gives us a good image of what you are able to do.
+    - You can reuse the files that are generated in the compress_decompress function, but don't change the code of that function.
+
+    - DO NOT DO A TEST THAT THROWS ERROR RANDOMLY AND THEN SUBMIT IT 300 TIMES, HOPING IT WILL HOPEFULLY PASS ALL THE TESTS. YOU LEARN NOTHING BY DOING THAT. Moreover, when we will grade your participation to the course, we will check your codes and change the grades accordingly. If you "cheated" for the success, it won't be considered as a success and does not give us a good image of what you are able to do.
 
     - That could be useful : http://docs.oracle.com/javase/8/docs/api/java/io/File.html
 
