@@ -17,6 +17,8 @@ context: |-
 
     - That could be useful : http://docs.oracle.com/javase/8/docs/api/java/io/File.html
 
+    - You do not have to test empty files for this task.
+
 
     .. code-block:: java
 
