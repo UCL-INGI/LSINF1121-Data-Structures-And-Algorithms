@@ -8,7 +8,8 @@ import java.io.*;
 import java.util.Stack;
 import java.lang.Comparable;
 
-/* Buggy version of the solution of Simon Hardy for the compression (mission 5) */
+/* Buggy version of the solution of Simon Hardy for the compression (mission 5) 
+ * This one is harder : the bug that the compressed file is larger than the input file */
 
 public class Compress {
 
@@ -137,12 +138,10 @@ public class Compress {
 	public static String do_compression(BinaryTree bt, ParsedFile file)	{
 		String result = "";
 		ArrayList<String> content = file.getContent();
-		int j = 0; 
+
 		for(String line:content) {
-			for (int i = 0; i < line.length(); i++) {
-				if (j < 100) result += getCode(bt,line.charAt(i)); // BUG HERE : stops writing output after 100 characters
-				j++; 
-			}
+			for (int i = 0; i < line.length(); i++)
+				result += getCode(bt,line.charAt(i));
 
 			result += getCode(bt,'\n');
 		}
@@ -210,6 +209,9 @@ public class Compress {
 				else if (toOutput.charAt(i) == '0')
 					out.write(BIT_0); 
 			}
+			// BUG HERE : add useless bits at the end of the compressed file
+			for (int i = 0 ; i < textLength ; i++)
+				out.write('A');
 
 			// Fermeture du flux de sortie
 			out.close();

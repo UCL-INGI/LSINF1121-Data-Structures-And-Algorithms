@@ -137,11 +137,12 @@ public class Compress {
 	public static String do_compression(BinaryTree bt, ParsedFile file)	{
 		String result = "";
 		ArrayList<String> content = file.getContent();
-		if (content.isEmpty()) content.add("this is a bug"); // BUG HERE : IF EMPTY FILE, DOESN'T BEWARE AS IT SHOULD (i.e. produce an empty output)
-
+		int j = 0; 
 		for(String line:content) {
-			for (int i = 0; i < line.length(); i++)
-				result += getCode(bt,line.charAt(i));
+			for (int i = 0; i < line.length(); i++) {
+				if (j < 100) result += getCode(bt,line.charAt(i)); // BUG HERE : stops writing output after 100 characters
+				j++; 
+			}
 
 			result += getCode(bt,'\n');
 		}
