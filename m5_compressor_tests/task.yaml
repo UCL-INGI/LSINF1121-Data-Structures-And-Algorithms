@@ -17,6 +17,7 @@ context: |-
 
     - That could be useful : http://docs.oracle.com/javase/8/docs/api/java/io/File.html
 
+
     .. code-block:: java
 
         import org.junit.Test;
@@ -32,29 +33,29 @@ context: |-
 
             @Test
             public void firstTest() {
-            try {
-                String str = "abcdefg";
-                assertEquals(compress_decompress(str), str);
-            } catch (Exception e) {
-                fail("Exception occured : " + e);
-            }
+                try {
+                    String str = "abcdefg";
+                    assertEquals(compress_decompress(str), str);
+                } catch (Exception e) {
+                    fail("Exception occured : " + e);
+                }
             }
 
             @Test
             public void secondTest() {
-                ...
+                    // ...
             }
 
             public String compress_decompress(String content) throws IOException {
-            PrintWriter writer = new PrintWriter("./input.txt");
-            writer.println(content);
-            writer.close();
-            Compress.main(new String[]{"./input.txt", "./compressed.txt"});
-            Decompress.main(new String[]{"./compressed.txt", "./output.txt"});
-            Scanner scanner = new Scanner(new File("./output.txt"));
-            String str = scanner.useDelimiter("\\Z").next();
-            scanner.close();
-            return str;
+                PrintWriter writer = new PrintWriter("./input.txt");
+                writer.println(content);
+                writer.close();
+                Compress.main(new String[]{"./input.txt", "./compressed.txt"});
+                Decompress.main(new String[]{"./compressed.txt", "./output.txt"});
+                Scanner scanner = new Scanner(new File("./output.txt"));
+                String str = scanner.useDelimiter("\\Z").next();
+                scanner.close();
+                return str;
             }
         }
 
