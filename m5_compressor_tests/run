@@ -1,7 +1,7 @@
 #! /bin/bash
 # BuggyCompress1 : wrong output (only bits set to 1)
 # BuggyCompress2 : wrong output (first character missing)
-# BuggyCompress3 : returns an exception on empty file
+# BuggyCompress3 : wrong output for empty file
 # BuggyCompress4 : wrong output for long files (doesn't process input file after 100 characters)
 # BuggyCompress5 : compressed file too large (larger than input file !), but output correct
 
