@@ -11,7 +11,7 @@ groups: true
 limits:
     memory: '512'
     output: '100'
-    time: '30'
+    time: '120'
 name: Mission 5 - Text compressor [group]
 network_grading: false
 order: 24
