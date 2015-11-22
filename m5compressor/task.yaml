@@ -4,6 +4,8 @@ context: |-
     For this mission, you are asked to write two programs : *Compress.java*, which compresses the file located at argv[0] and writes the result in a new file located at argv[1], and *Decompress.java*, which decompresses argv[0] and writes it in the file at argv[1].
 
     You are free to use any representation for your frequency table, priority queue and Huffman tree but you **have to** justify your choices in your program report, and say why your choice is the best from a complexity point of view.
+
+    NB : all the files tested in this task end with a '\\\n', so make sure you don't skip it in your compressor !
 environment: java8scala
 groups: true
 limits:
