@@ -4,6 +4,7 @@ context: |-
     Recall the *BucketSort.sort* method :
 
     .. code-block:: java
+
         /*
          * @pre 'tab' contains only positive integers, 'digit' belongs to [0, 9]
          * @post 'tab' is not modified
@@ -50,7 +51,7 @@ limits:
     memory: '512'
     output: '100'
     time: '45'
-name: Mission 6 - Unit tests for the Bucket-Sort
+name: Mission 6 - Unit tests for the Bucket-Sort [individual]
 network_grading: false
 order: 27
 problems:
