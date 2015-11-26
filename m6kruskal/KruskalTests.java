@@ -94,29 +94,24 @@ public class KruskalTests {
 		Map<Integer, Triplet> edges = new HashMap<Integer, Triplet>(); 
 		try {
 			File f = new File (path);
-			FileReader fr = new FileReader (f);
-			BufferedReader br = new BufferedReader(fr);
+			Scanner s = new Scanner(f);
 
 			try {
-				String line = br.readLine();
-				while (line != null)
+				while (s.hasNextInt())
 				{
-					int v1 = firstNode(line); 
-					int v2 = secondNode(line); 
-					int cost = firstEdge(line); 
+					int v1 = s.nextInt(); 
+					int v2 = s.nextInt(); 
+					int cost = s.nextInt(); 
 
 					int key = Math.min(v1, v2) + numberOfNodes*Math.max(v1,  v2); 
 					Triplet value = new Triplet(Math.min(v1, v2), Math.max(v1, v2), cost); 
 					edges.put(key, value);
-
-					line = br.readLine();
 				}
 
-				br.close();
-				fr.close();
-			} catch (IOException exception)
+				s.close(); 
+			} catch (Exception e)
 			{
-				System.out.println ("Error occured while reading the file  : " + exception.getMessage());
+				System.out.println ("Error occured while reading the file  : " + e.getMessage());
 			}
 		} catch (FileNotFoundException exception) {
 			System.out.println ("File not found. ");
@@ -131,17 +126,14 @@ public class KruskalTests {
 		int totalCost = 0; // cost found by the student
 		int cheat = 0; // incremented if fake edge
 		try {
-			File f = new File (path);
-			FileReader fr = new FileReader (f);
-			BufferedReader br = new BufferedReader(fr);
-
+			File f = new File(path);
+			Scanner s = new Scanner(f); 
 			try {
-				String line = br.readLine();
-				while (line != null)
+				while (s.hasNextInt())
 				{
-					int v1 = firstNode(line); 
-					int v2 = secondNode(line); 
-					int cost = firstEdge(line); 
+					int v1 = s.nextInt();
+					int v2 = s.nextInt();
+					int cost = s.nextInt();
 					// Check that this line indeed exists in the original file
 					Triplet t = edges.get(Math.min(v1, v2) + numberOfNodes*Math.max(v1,  v2));
 					//System.out.println(t.v1 + " " + t.v2 + " " + t.cost);
@@ -151,65 +143,16 @@ public class KruskalTests {
 					totalCost += cost; 
 					nodes.add(v1); 
 					nodes.add(v2); 
-
-					line = br.readLine();
 				}
-
-				br.close();
-				fr.close();
-			} catch (IOException exception)
+				s.close();
+			} catch (NoSuchElementException e)
 			{
-				System.out.println ("Error occured while reading the file  : " + exception.getMessage());
+				System.out.println ("Error occured while reading the file  : " + e.getMessage());
 			}
 		} catch (FileNotFoundException exception) {
 			System.out.println ("File not found. ");
 		}
 		return new int[] {nodes.size(), numberOfEdges, totalCost, cheat}; 
-	}
-
-	/* Renvoie le premier noeud de la ligne */
-	public static int firstNode(String line) {
-		String number = ""; 
-		int i = 0;
-		char c = line.charAt(i); 
-		while (c != '\t') {
-			number += c; 
-			i++; 
-			c = line.charAt(i); 
-		}
-		return Integer.parseInt(number); 
-	}
-
-
-	/* Renvoie le second noeud de la ligne */
-
-	public static int secondNode(String line) {
-		String number = ""; 
-		int i = 0;
-		int count = 0; // pour tout skipper avant la premiere tabulation
-		char c = line.charAt(i); 
-		while (c != '\t' || count == 0) {
-			if (count == 1) number += c; 
-			i++; 
-			if (c == '\t') count++; 
-			c = line.charAt(i); 
-		}
-		return Integer.parseInt(number); 
-	}
-
-	/* Renvoie l'arete de la ligne */
-	public static int firstEdge(String line) {
-		String number = ""; 
-		int i = 0;
-		int count = 0; // pour tout skipper avant la 2eme tabulation
-		char c = line.charAt(i); 
-		while (i < line.length()) {
-			if (count == 2) number += c; 
-			i++; 
-			if (c == '\t') count++; 
-			if (i < line.length()) c = line.charAt(i); 
-		}
-		return Integer.parseInt(number); 
 	}
 }
 
@@ -242,7 +185,7 @@ class AdjacencyList {
 		E = new LinkedList<Edge>();
 	}
 
-	/* Construction sur base du du fichier dont le chemin est passe en argument
+	/* Construction sur base du fichier dont le chemin est passe en argument
 	 * NB : on considere ici que deux numeros differents correspondent
 	 * a deux aeroports differents (et donc deux noeuds differents) */
 	public AdjacencyList(String s) {
@@ -251,43 +194,41 @@ class AdjacencyList {
 		try
 		{
 			File f = new File (s);
-		    FileReader fr = new FileReader (f);
-		    BufferedReader br = new BufferedReader(fr);
+		    Scanner scan = new Scanner(f); 
 		 
 		    try {
-			String line = br.readLine();
-		 
-			while (line != null)
-			{
-			    Vertex one, two; 
-			    Vertex v; 
-			    Edge e; 
-			    if ((v = this.contains(firstNode(line))) == null) {
-			    	one = insertVertex(firstNode(line));
-			    }
-			    else {
-			    	one = v;
-			    }
-			    if ((v = this.contains(secondNode(line))) == null) {
-			    	two = insertVertex(secondNode(line)); 
-			    }
-			    else
-			    	two = v; 
-			    	// NB : on autorise 2 aretes avec les memes noeuds
-			    	e = insertEdge(one, two, firstEdge(line)); 
-			    	one.addToI(e);
-			    	e.setSrcEdges(one.getI());
-			    	two.addToI(e);
-			    	e.setDstEdges(two.getI());
-			    	line = br.readLine();
+				while (scan.hasNextInt())
+				{
+				    Vertex one, two; 
+				    Vertex v; 
+				    Edge e; 
+				    int n1 = scan.nextInt(); 
+				    int n2 = scan.nextInt();
+				    int e1 = scan.nextInt(); 
+				    if ((v = this.contains(n1)) == null) {
+				    	one = insertVertex(n1);
+				    }
+				    else {
+				    	one = v;
+				    }
+				    if ((v = this.contains(n2)) == null) {
+				    	two = insertVertex(n2); 
+				    }
+				    else
+				    	two = v; 
+				    	// NB : on autorise 2 aretes avec les memes noeuds
+				    	e = insertEdge(one, two, e1); 
+				    	one.addToI(e);
+				    	e.setSrcEdges(one.getI());
+				    	two.addToI(e);
+				    	e.setDstEdges(two.getI());
+				}
+			 
+				scan.close();
 			}
-		 
-			br.close();
-			fr.close();
-		    }
-		    catch (IOException exception)
+		    catch(Exception e)
 		    {
-			System.out.println ("Erreur lors de la lecture : " + exception.getMessage());
+			System.out.println ("Erreur lors de la lecture : " + e.getMessage());
 		    }
 		}
 		catch (FileNotFoundException exception)
@@ -383,51 +324,6 @@ class AdjacencyList {
 			i++; 
 		}
 		return null;
-	}
-
-	/* Renvoie le premier noeud de la ligne */
-	public int firstNode(String line) {
-		String number = ""; 
-		int i = 0;
-		char c = line.charAt(i); 
-		while (c != '\t') {
-			number += c; 
-			i++; 
-			c = line.charAt(i); 
-		}
-		return Integer.parseInt(number); 
-	}
-
-
-	/* Renvoie le second noeud de la ligne */
-
-	public int secondNode(String line) {
-		String number = ""; 
-		int i = 0;
-		int count = 0; // pour tout skipper avant la premiere tabulation
-		char c = line.charAt(i); 
-		while (c != '\t' || count == 0) {
-			if (count == 1) number += c; 
-			i++; 
-			if (c == '\t') count++; 
-			c = line.charAt(i); 
-		}
-		return Integer.parseInt(number); 
-	}
-
-	/* Renvoie l'arete de la ligne */
-	public int firstEdge(String line) {
-		String number = ""; 
-		int i = 0;
-		int count = 0; // pour tout skipper avant la 2eme tabulation
-		char c = line.charAt(i); 
-		while (i < line.length()) {
-			if (count == 2) number += c; 
-			i++; 
-			if (c == '\t') count++; 
-			if (i < line.length()) c = line.charAt(i); 
-		}
-		return Integer.parseInt(number); 
 	}
 
 	public boolean isConnected() {
@@ -598,6 +494,4 @@ class Edge implements Comparable<Edge> {
 	public void setPosition(int position) {
 		this.position = position;
 	}
-
-
 }
