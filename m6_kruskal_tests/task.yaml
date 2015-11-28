@@ -1,7 +1,7 @@
 accessible: false
 author: Simon Hardy
 context: |-
-    For this task, you have to write unit tests using JUnit in order to check several Kruskal implementations. You are given one class, *Kruskal*, and you have to determine if it does its job correctly or not. We provide you a template to begin writing your tests :
+    For this task, you have to write unit tests using JUnit in order to check several Kruskal implementations. You are given one class, *Kruskal*, and you have to determine if it does its job correctly or not. We provide you an optional template to begin writing your tests:
 
     .. code-block:: java
 
