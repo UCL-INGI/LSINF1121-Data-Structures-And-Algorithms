@@ -1,4 +1,4 @@
-accessible: false
+accessible: /2015-12-11 19:07:45
 author: Simon Hardy
 context: |-
     For this mission, you are asked to implement Kruskal algorithm in order to compute the minimum spanning tree corresponding to an input file. As a reminder, we impose one implementation detail (which won't be checked on INGInious, but manually by the tutors) :
