@@ -83,7 +83,7 @@ context: |-
 
     Note that you can either provide the input text files in an archive, or directly write them in your tests. You can even do both at the same time, but in all cases you have to submit an archive (which can be empty if you don't need it).
 
-    Hint : you should strictly respect the input format in your test files, i.e. one edge per line, tabulations as separators...
+    Hint : you should strictly respect the input format in your test files, i.e. one edge per line, *tabulations* as separators...
 environment: java8scala
 groups: false
 limits:
