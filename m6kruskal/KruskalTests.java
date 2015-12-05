@@ -135,9 +135,8 @@ public class KruskalTests {
 		int totalCost = 0; // cost found by the student
 		int cheat = 0; // incremented if fake edge
 		try {
-			File f = new File(path);
-			Scanner s = new Scanner(f); 
-			try {
+				File f = new File(path);
+				Scanner s = new Scanner(f); 
 				while (s.hasNextInt())
 				{
 					int v1 = s.nextInt();
@@ -154,12 +153,8 @@ public class KruskalTests {
 					nodes.add(v2); 
 				}
 				s.close();
-			} catch (NoSuchElementException e)
-			{
-				//System.out.println ("Error occured while reading the file  : " + e.getMessage());
-			}
-		} catch (FileNotFoundException exception) {
-			//System.out.println ("File not found. ");
+		} catch (Exception e) {
+    		System.out.println("KO: error while reading your solution : " + e);
 		}
 		return new int[] {nodes.size(), numberOfEdges, totalCost, cheat}; 
 	}
