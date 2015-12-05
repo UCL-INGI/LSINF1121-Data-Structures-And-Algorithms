@@ -61,6 +61,7 @@ public class KruskalTests {
 	}
 	
 	public static void applyTest(String in, String out, int numberOfNodes, int optimalCost) {
+    try {
 		int nNodes = 0; 
 		int nEdges = 0; 
 		int cost = 0; 
@@ -92,6 +93,9 @@ public class KruskalTests {
 		if (connected > 0) System.out.println("KO: your graph is not connected"); 
 		if (nEdges <= 0 && nNodes <= 0 && cost <= 0 && cheat <= 0 && connected <= 0) System.out.println("OK"); 
 		if (cost < 0) System.out.println("It seems like your solution is better than the optimal solution !?");
+	catch(Exception e) {
+    	System.out.println("KO: An exception occured : " + e);
+    }
 	}
 
 	public static Map<Integer, Triplet> fillMap(String path, int numberOfNodes) {
