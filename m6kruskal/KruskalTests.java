@@ -336,6 +336,7 @@ class TestAdjacencyList {
 	}
 
 	public boolean isConnected() {
+    	if (vertices().isEmpty()) return true; 
 		DFS(vertices().getFirst());
 		boolean result = true; 
 		for (TestVertex v : vertices()) {
