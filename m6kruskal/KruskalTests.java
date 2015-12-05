@@ -93,7 +93,7 @@ public class KruskalTests {
 		if (connected > 0) System.out.println("KO: your graph is not connected"); 
 		if (nEdges <= 0 && nNodes <= 0 && cost <= 0 && cheat <= 0 && connected <= 0) System.out.println("OK"); 
 		if (cost < 0) System.out.println("It seems like your solution is better than the optimal solution !?");
-	catch(Exception e) {
+	} catch(Exception e) {
     	System.out.println("KO: An exception occured : " + e);
     }
 	}
@@ -236,12 +236,12 @@ class TestAdjacencyList {
 			}
 		    catch(Exception e)
 		    {
-			System.out.println ("Erreur lors de la lecture : " + e.getMessage());
+			//System.out.println ("Erreur lors de la lecture : " + e.getMessage());
 		    }
 		}
 		catch (FileNotFoundException exception)
 		{
-		    System.out.println ("Le fichier n'a pas ete trouve");
+		    //System.out.println ("Le fichier n'a pas ete trouve");
 		}
 	}
 
