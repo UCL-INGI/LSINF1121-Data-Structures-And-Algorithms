@@ -95,6 +95,7 @@ public class KruskalTests {
 		if (cost < 0) System.out.println("It seems like your solution is better than the optimal solution !?");
 	} catch(Exception e) {
     	System.out.println("KO: An exception occured : " + e);
+        //e.printStackTrace(System.out);
     }
 	}
 
@@ -119,10 +120,10 @@ public class KruskalTests {
 				s.close(); 
 			} catch (Exception e)
 			{
-				System.out.println ("Error occured while reading the file  : " + e.getMessage());
+				//System.out.println ("Error occured while reading the file  : " + e.getMessage());
 			}
 		} catch (FileNotFoundException exception) {
-			System.out.println ("File not found. ");
+			//System.out.println ("File not found. ");
 		}
 
 		return edges; 
@@ -155,10 +156,10 @@ public class KruskalTests {
 				s.close();
 			} catch (NoSuchElementException e)
 			{
-				System.out.println ("Error occured while reading the file  : " + e.getMessage());
+				//System.out.println ("Error occured while reading the file  : " + e.getMessage());
 			}
 		} catch (FileNotFoundException exception) {
-			System.out.println ("File not found. ");
+			//System.out.println ("File not found. ");
 		}
 		return new int[] {nodes.size(), numberOfEdges, totalCost, cheat}; 
 	}
