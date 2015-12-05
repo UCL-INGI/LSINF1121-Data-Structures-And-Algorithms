@@ -1,6 +1,10 @@
 import java.io.*; 
 import java.util.*;
 
+/* NB : I had to rename my classes Vertex, Edge and AdjacencyList 
+   in TestVertex, TestEdge and TestAdjacencyList in order to avoid
+   name conflicts with student classes.   */
+
 public class KruskalTests {
 	
 	public static void main(String[] args) {
@@ -78,7 +82,7 @@ public class KruskalTests {
 		if (result[3] != 0) // the student didn't cheat : if an edge is part of his solution, it was in the input file
 			cheat++; 
 		
-		AdjacencyList studentSol = new AdjacencyList(out); // create the graph representing his solution
+		TestAdjacencyList studentSol = new TestAdjacencyList(out); // create the graph representing his solution
 		if (studentSol.isConnected() != true) // the result of the student is a connected graph
 			connected++; 
 		if (nEdges > 0) System.out.println("KO: your solution should involve N-1 edges (not a 'tree')");
@@ -175,22 +179,22 @@ class Triplet {
  * 
  * @author Simon Hardy
  */
-class AdjacencyList {
+class TestAdjacencyList {
 
-	private LinkedList<Vertex> V;
-	private LinkedList<Edge> E; 
+	private LinkedList<TestVertex> V;
+	private LinkedList<TestEdge> E; 
 
-	public AdjacencyList() {
-		V = new LinkedList<Vertex>(); 
-		E = new LinkedList<Edge>();
+	public TestAdjacencyList() {
+		V = new LinkedList<TestVertex>(); 
+		E = new LinkedList<TestEdge>();
 	}
 
 	/* Construction sur base du fichier dont le chemin est passe en argument
 	 * NB : on considere ici que deux numeros differents correspondent
 	 * a deux aeroports differents (et donc deux noeuds differents) */
-	public AdjacencyList(String s) {
-		V = new LinkedList<Vertex>(); 
-		E = new LinkedList<Edge>();
+	public TestAdjacencyList(String s) {
+		V = new LinkedList<TestVertex>(); 
+		E = new LinkedList<TestEdge>();
 		try
 		{
 			File f = new File (s);
@@ -199,9 +203,9 @@ class AdjacencyList {
 		    try {
 				while (scan.hasNextInt())
 				{
-				    Vertex one, two; 
-				    Vertex v; 
-				    Edge e; 
+				    TestVertex one, two; 
+				    TestVertex v; 
+				    TestEdge e; 
 				    int n1 = scan.nextInt(); 
 				    int n2 = scan.nextInt();
 				    int e1 = scan.nextInt(); 
@@ -238,19 +242,19 @@ class AdjacencyList {
 	}
 
 	/* Methodes de l'ADT */
-	public LinkedList<Vertex> vertices() {
+	public LinkedList<TestVertex> vertices() {
 		return V;
 	}
 
-	public LinkedList<Edge> edges() {
+	public LinkedList<TestEdge> edges() {
 		return E;
 	}
 
-	public LinkedList<Edge> incidentEdges(Vertex v) {
+	public LinkedList<TestEdge> incidentEdges(TestVertex v) {
 		return v.getI(); 
 	}
 
-	public Vertex opposite(Vertex v, Edge e) {
+	public TestVertex opposite(TestVertex v, TestEdge e) {
 		if (e.getSrc().getCity() == v.getCity()) return e.getDst();
 		else if (e.getDst().getCity() == v.getCity()) return e.getSrc(); 
 		else {
@@ -259,15 +263,15 @@ class AdjacencyList {
 		}
 	}
 
-	public ArrayList<Vertex> endVertices(Edge e) {
-		ArrayList<Vertex> array = new ArrayList<Vertex>(); 
+	public ArrayList<TestVertex> endVertices(TestEdge e) {
+		ArrayList<TestVertex> array = new ArrayList<TestVertex>(); 
 		array.add(e.getSrc()); 
 		array.add(e.getDst()); 
 		return array; 
 	}
 
-	public boolean AreAdjacent(Vertex v, Vertex w) {
-		LinkedList<Edge> edges = v.getI(); 
+	public boolean AreAdjacent(TestVertex v, TestVertex w) {
+		LinkedList<TestEdge> edges = v.getI(); 
 		for (int i = 0 ; !edges.isEmpty() ; i++) {
 			if (edges.get(i).getSrc().getCity() == v.getCity() || edges.get(i).getDst().getCity() == v.getCity())
 				return true; 
@@ -275,34 +279,34 @@ class AdjacencyList {
 		return false;
 	}
 
-	public void replace(Vertex v, int x) {
+	public void replace(TestVertex v, int x) {
 		v.setCity(x); 
 	}
 
-	public void replace(Edge e, int x) {
+	public void replace(TestEdge e, int x) {
 		e.setWeight(x);
 	}
 
-	public Vertex insertVertex(int x) {
-		Vertex c = new Vertex(x, V.size());
+	public TestVertex insertVertex(int x) {
+		TestVertex c = new TestVertex(x, V.size());
 		V.add(c); // a ameliorer
 		return c; 
 	}
 
-	public Edge insertEdge(Vertex v, Vertex w, int x) {
-		Edge c = new Edge(v, w, x, E.size());
+	public TestEdge insertEdge(TestVertex v, TestVertex w, int x) {
+		TestEdge c = new TestEdge(v, w, x, E.size());
 		E.add(c); // a ameliorer
 		return c; 
 	}
 
-	public void removeVertex(Vertex v) {
-		LinkedList<Edge> i = v.getI(); 
+	public void removeVertex(TestVertex v) {
+		LinkedList<TestEdge> i = v.getI(); 
 		while (!i.isEmpty())
 			E.remove(i.getFirst()); // on supprime toutes les arretes incidentes a ce noeud
 		V.remove(v.getPosition()); // a ameliorer
 	}
 
-	public void removeEdge(Edge e) {
+	public void removeEdge(TestEdge e) {
 		E.remove(e.getPosition()); // a ameliorer
 		// Enlever les references des I vers E ?
 	}
@@ -311,12 +315,12 @@ class AdjacencyList {
 
 	/* Si V contient un element dont la valeur est X, on le retourne. 
 	   Sinon, on retourne null. */
-	public Vertex contains(int x) {
+	public TestVertex contains(int x) {
 		if (V.isEmpty())
 			return null; 
 		int i = 0; 
 		int size = V.size();
-		Vertex c = null; 
+		TestVertex c = null; 
 		while (i < size) {
 			c = V.get(i); 
 			if (c.getCity() == x)
@@ -329,7 +333,7 @@ class AdjacencyList {
 	public boolean isConnected() {
 		DFS(vertices().getFirst());
 		boolean result = true; 
-		for (Vertex v : vertices()) {
+		for (TestVertex v : vertices()) {
 			if (v.visited)
 				v.visited = false; 
 			else
@@ -338,10 +342,10 @@ class AdjacencyList {
 		return result; 
 	}
 
-	public void DFS(Vertex v) {
+	public void DFS(TestVertex v) {
 		v.visited = true;
-		for (Edge e : v.getI()) {
-			Vertex opposite = opposite(v, e);
+		for (TestEdge e : v.getI()) {
+			TestVertex opposite = opposite(v, e);
 			if (!opposite.visited)
 				DFS(opposite);
 			// else there is a cycle
@@ -358,7 +362,7 @@ class AdjacencyList {
 
 	public int cost() {
 		int sum = 0; 
-		for (Edge e : edges())
+		for (TestEdge e : edges())
 			sum += e.getWeight(); 
 		return sum; 
 	}
@@ -369,23 +373,23 @@ class AdjacencyList {
  * 
  * @author Simon Hardy
  */
-class Vertex {
+class TestVertex {
 
 	private int city; 
-	private LinkedList<Edge> I;
+	private LinkedList<TestEdge> I;
 	private int position; // position dans V (devrait etre une reference !)
 	public boolean visited; // for DFS
 
-	public Vertex(int x) {
+	public TestVertex(int x) {
 		city = x;
-		I = new LinkedList<Edge>(); 
+		I = new LinkedList<TestEdge>(); 
 		position = 0;
 		visited = false;
 	}
 
-	public Vertex(int x, int pos) {
+	public TestVertex(int x, int pos) {
 		city = x;
-		I = new LinkedList<Edge>();
+		I = new LinkedList<TestEdge>();
 		position = pos;
 	}
 	public int getCity() {
@@ -394,13 +398,13 @@ class Vertex {
 	public void setCity(int city) {
 		this.city = city;
 	}
-	public LinkedList<Edge> getI() {
+	public LinkedList<TestEdge> getI() {
 		return I;
 	}
-	public void setI(LinkedList<Edge> i) {
+	public void setI(LinkedList<TestEdge> i) {
 		I = i;
 	}
-	public void addToI(Edge e) {
+	public void addToI(TestEdge e) {
 		I.add(e); 
 	}
 	public int getPosition() {
@@ -415,16 +419,16 @@ class Vertex {
  * Classe representant une arete du graphe
  * @author Simon Hardy
  **/
-class Edge implements Comparable<Edge> {
+class TestEdge implements Comparable<TestEdge> {
 
 	private int weight; 
-	private Vertex src; 
-	private Vertex dst; 
-	private LinkedList<Edge> srcEdges; // reference ! (redondant ?)
-	private LinkedList<Edge> dstEdges;  // reference ! (redondant ?)
+	private TestVertex src; 
+	private TestVertex dst; 
+	private LinkedList<TestEdge> srcEdges; // reference ! (redondant ?)
+	private LinkedList<TestEdge> dstEdges;  // reference ! (redondant ?)
 	private int position; // position dans V (devrait etre une reference !)
 
-	public Edge(Vertex src, Vertex dst, int x) {
+	public TestEdge(TestVertex src, TestVertex dst, int x) {
 		weight = x; 
 		this.src = src ; 
 		this.dst = dst; 
@@ -433,7 +437,7 @@ class Edge implements Comparable<Edge> {
 		position = 0;
 	}
 
-	public Edge(Vertex src, Vertex dst, int x, int pos) {
+	public TestEdge(TestVertex src, TestVertex dst, int x, int pos) {
 		weight = x; 
 		this.src = src ; 
 		this.dst = dst; 
@@ -442,7 +446,7 @@ class Edge implements Comparable<Edge> {
 		position = pos;
 	}
 
-	public int compareTo(Edge e)
+	public int compareTo(TestEdge e)
 	{
 		return this.getWeight() - e.getWeight();
 	}
@@ -455,35 +459,35 @@ class Edge implements Comparable<Edge> {
 		this.weight = weight;
 	}
 
-	public Vertex getSrc() {
+	public TestVertex getSrc() {
 		return src;
 	}
 
-	public void setSrc(Vertex src) {
+	public void setSrc(TestVertex src) {
 		this.src = src;
 	}
 
-	public Vertex getDst() {
+	public TestVertex getDst() {
 		return dst;
 	}
 
-	public void setDst(Vertex dst) {
+	public void setDst(TestVertex dst) {
 		this.dst = dst;
 	}
 
-	public LinkedList<Edge> getSrcEdges() {
+	public LinkedList<TestEdge> getSrcEdges() {
 		return srcEdges;
 	}
 
-	public void setSrcEdges(LinkedList<Edge> srcEdges) {
+	public void setSrcEdges(LinkedList<TestEdge> srcEdges) {
 		this.srcEdges = srcEdges;
 	}
 
-	public LinkedList<Edge> getDstEdges() {
+	public LinkedList<TestEdge> getDstEdges() {
 		return dstEdges;
 	}
 
-	public void setDstEdges(LinkedList<Edge> dstEdges) {
+	public void setDstEdges(LinkedList<TestEdge> dstEdges) {
 		this.dstEdges = dstEdges;
 	}
 
