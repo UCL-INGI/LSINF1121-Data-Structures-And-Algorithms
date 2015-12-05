@@ -92,7 +92,7 @@ public class KruskalTests {
 		if (cheat > 0) System.out.println("KO: well tried, but you must use edges given in the input file !");
 		if (connected > 0) System.out.println("KO: your graph is not connected"); 
 		if (nEdges <= 0 && nNodes <= 0 && cost <= 0 && cheat <= 0 && connected <= 0) System.out.println("OK"); 
-		if (cost < 0) System.out.println("It seems like your solution is better than the optimal solution !?");
+		//if (cost < 0) System.out.println("It seems like your solution is better than the optimal solution !?");
 	} catch(Exception e) {
     	System.out.println("KO: An exception occured : " + e);
         //e.printStackTrace(System.out);
