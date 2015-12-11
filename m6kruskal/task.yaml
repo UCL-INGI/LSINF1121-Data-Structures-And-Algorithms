@@ -17,7 +17,7 @@ context: |-
 
     - There can not be 2 edges with same end vertices.
 
-    - The cities can be represented by any positive integer (not necessary consecutive).
+    - The cities can be represented by any positive integer (not necessarily consecutive).
 environment: java8scala
 groups: true
 limits:
