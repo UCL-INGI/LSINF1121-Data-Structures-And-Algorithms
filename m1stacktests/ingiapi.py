@@ -16,44 +16,28 @@ def read_stream(stdout):
 
 def feedback_result(problem_id, result):
     Popen(
-        [
-            "feedback-result",
-            "-i", problem_id,
-            result
-        ],
+        "feedback-result -i" + problem_id + " " + result,
         shell=True
     )
 
 
 def feedback_grade(grade):
     Popen(
-        [
-            "feedback-grade",
-            grade
-        ],
+        "feedback-grade" + grade,
         shell=True
     )
 
 
 def feedback_msg(problem_id, msg):
     Popen(
-        [
-            "feedback-msg",
-            "-i", problem_id,
-            "-m", msg
-        ],
+        "feedback-msg -i " + problem_id + " -m " + msg,
         shell=True
     )
 
 
 def feedback_append_msg(problem_id, msg):
     Popen(
-        [
-            "feedback-msg",
-            "-i", problem_id,
-            "-a",
-            "-m", msg
-        ],
+        "feedback-msg -i " + problem_id + " -a -m" + msg,
         shell=True
     )
 
