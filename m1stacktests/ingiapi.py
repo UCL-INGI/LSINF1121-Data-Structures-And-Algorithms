@@ -52,8 +52,8 @@ def feedback_append_msg(problem_id, msg):
         ]
     )
 
+
 def feedback_and_exit(problem_id, msg, result):
     feedback_msg(problem_id, msg)
     feedback_result(problem_id, result)
-
     sys.exit(1)
