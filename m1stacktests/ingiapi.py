@@ -16,7 +16,7 @@ def feedback_result(problem_id, result):
 
 def feedback_grade(grade):
     Popen(
-        "feedback-grade" + grade,
+        "feedback-grade " + str(grade),
         shell=True
     )
 
