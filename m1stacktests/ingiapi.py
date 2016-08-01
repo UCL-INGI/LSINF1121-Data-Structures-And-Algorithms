@@ -44,7 +44,8 @@ def feedback_append_msg(problem_id, msg):
 
 def get_input(problem_id):
     result = Popen(
-        "getinput " + problem_id
+        "getinput " + problem_id,
+        shell=True
     )
     result.wait()
 

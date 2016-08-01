@@ -3,7 +3,7 @@
 from subprocess import Popen, PIPE, STDOUT
 from shutil import copyfile
 from os import chdir
-from ingiapi import feedback_and_exit, feedback_grade, feedback_append_msg, OVERFLOW, SUCCESS, FAILED, TIMEOUT, CRASH
+from ingiapi import feedback_and_exit, feedback_grade, OVERFLOW, SUCCESS, FAILED, TIMEOUT, CRASH, save_input
 
 
 def compile_and_run():
@@ -12,7 +12,7 @@ def compile_and_run():
     result.wait()
 
     if result.returncode != 1:
-        feedback_append_msg(problemId, result.stdout.readlines())
+        feedback_and_exit(problemId, result.stdout.readlines(), CRASH)
     
     # We compile and run the tests
     result = Popen(
