@@ -5,6 +5,7 @@ from shutil import copyfile
 from os import chdir
 from ingiapi import feedback_and_exit, feedback_grade, feedback_append_msg, OVERFLOW, SUCCESS, FAILED, TIMEOUT, CRASH
 
+
 def compile_and_run():
     # We compile the stack implement
     result = Popen(["javac", nameTestedStack + ".java"], stderr=STDOUT)
@@ -12,7 +13,7 @@ def compile_and_run():
 
     if result.returncode != 1:
         feedback_append_msg(problemId, result.stdout.readlines())
-
+    
     # We compile and run the tests
     result = Popen(
         [
@@ -58,6 +59,8 @@ nameTestedStack = "MyStack"
 nameWrongStack = "MyBuggyStack"
 nameTests = "StackTests"
 
+
+feedback_and_exit(problemId, "Test", SUCCESS)
 
 # We retrieve the tests of the user
 result = Popen(["getinput", problemId, "student/" + nameTests + ".java"])
