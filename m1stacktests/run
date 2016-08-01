@@ -53,7 +53,7 @@ def compile_and_run():
     passed = "OK" in junit_result
     return passed
 
-countBuggyTests = 10
+countBuggyTests = 9
 problemId = "stack_tests"
 nameCorrectStack = "MyStack"
 nameTestedStack = "MyStack"
@@ -75,16 +75,19 @@ if not result:
     # The correct implementation failed
     feedback_grade(0)
     feedback_and_exit(problemId, "You detected an error in a correct implement", FAILED)
-else:
-    feedback_grade(100)
-    feedback_and_exit(problemId, "You passed the test", SUCCESS)
 
 # We test the wrong implementations
-countOk = 0
 countFail = 0
 
+buggyTests = [
+    {
+        "name": "MyBuggyStack1",
+        "message": ""
+    }
+]
 
-result = Popen(["true", "-la"], stdout=PIPE)
-result.wait()
+# "1 +" is the correct implementation tested before
+countCorrect = 1 + countFail
+countTotal = 1 + countBuggyTests
 
-print(result.returncode)
+feedback_grade(round(countCorrect / countTotal))
