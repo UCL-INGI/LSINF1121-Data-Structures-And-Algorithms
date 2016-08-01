@@ -23,14 +23,14 @@ def feedback_grade(grade):
 
 def feedback_msg(problem_id, msg):
     Popen(
-        "feedback-msg -i " + problem_id + " -m " + msg,
+        "feedback-msg -i " + problem_id + " -m \"" + msg + "\"",
         shell=True
     )
 
 
 def feedback_append_msg(problem_id, msg):
     Popen(
-        "feedback-msg -i " + problem_id + " -a -m" + msg,
+        "feedback-msg -i " + problem_id + " -a -m \"" + msg + "\"",
         shell=True
     )
 
@@ -51,6 +51,7 @@ def save_input(problem_id, file_name):
     file = open(file_name, "w")
     file.write(input)
     file.close()
+
 
 def feedback_and_exit(problem_id, msg, result):
     feedback_msg(problem_id, msg)
