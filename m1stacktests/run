@@ -84,8 +84,6 @@ else:
 countOk = 0
 countFail = 0
 
-for i in range(0, countBuggyTests):
-
 
 result = Popen(["true", "-la"], stdout=PIPE)
 result.wait()
