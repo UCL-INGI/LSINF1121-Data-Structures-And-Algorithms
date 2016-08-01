@@ -42,6 +42,21 @@ def feedback_append_msg(problem_id, msg):
     )
 
 
+def get_input(problem_id):
+    result = Popen(
+        "getinput " + problem_id
+    )
+    result.wait()
+
+    return read_stream(result.stdout)
+
+
+def save_input(problem_id, file_name):
+    input = get_input(problem_id)
+    file = open(file_name, "w")
+    file.write(input)
+    file.close()
+
 def feedback_and_exit(problem_id, msg, result):
     feedback_msg(problem_id, msg)
     feedback_result(problem_id, result)
