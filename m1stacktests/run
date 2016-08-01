@@ -8,11 +8,11 @@ from ingiapi import feedback_and_exit, feedback_grade, OVERFLOW, SUCCESS, FAILED
 
 def compile_and_run():
     # We compile the stack implement
-    result = Popen(["javac", nameTestedStack + ".java"], stderr=STDOUT)
+    result = Popen(["javac", nameTestedStack + ".java"], stdout=PIPE, stderr=STDOUT)
     result.wait()
 
-    if result.returncode != 1:
-        feedback_and_exit(problemId, result.stdout.readlines(), CRASH)
+    if result.returncode != 0:
+        feedback_and_exit(problemId, result.stdout.read(), CRASH)
     
     # We compile and run the tests
     result = Popen(
@@ -24,6 +24,7 @@ def compile_and_run():
             "org.junit.runner.JUnitCore",
             nameTests + ".java"
         ],
+        stdout=PIPE,
         stderr=STDOUT
     )
     result.wait()
@@ -47,7 +48,7 @@ def compile_and_run():
             CRASH
         )
 
-    junit_result = result.stdout.readlines()
+    junit_result = result.stdout.read()
 
     passed = "OK" in junit_result
     return passed
