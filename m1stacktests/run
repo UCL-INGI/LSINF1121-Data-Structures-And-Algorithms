@@ -59,9 +59,6 @@ nameTestedStack = "MyStack"
 nameWrongStack = "MyBuggyStack"
 nameTests = "StackTests"
 
-
-feedback_and_exit(problemId, "Test", SUCCESS)
-
 # We retrieve the tests of the user
 result = Popen(["getinput", problemId, "student/" + nameTests + ".java"])
 result.wait()
