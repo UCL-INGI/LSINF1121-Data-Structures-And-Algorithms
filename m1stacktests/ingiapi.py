@@ -7,13 +7,6 @@ TIMEOUT = "timeout"
 OVERFLOW = "overflow"
 CRASH = "crash"
 
-def read_stream(stdout):
-    result = ""
-    for line in iter(stdout.read, ""):
-        result += line
-    return result
-
-
 def feedback_result(problem_id, result):
     Popen(
         "feedback-result -i" + problem_id + " " + result,
@@ -45,11 +38,12 @@ def feedback_append_msg(problem_id, msg):
 def get_input(problem_id):
     result = Popen(
         "getinput " + problem_id,
-        shell=True
+        shell=True,
+        stdout=PIPE
     )
     result.wait()
 
-    return read_stream(result.stdout)
+    return result.stdout.read()
 
 
 def save_input(problem_id, file_name):
