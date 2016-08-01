@@ -60,13 +60,13 @@ nameTestedStack = "MyStack"
 nameWrongStack = "MyBuggyStack"
 nameTests = "StackTests"
 
-feedback_and_exit(problemId, "You passed the test", SUCCESS)
 # We retrieve the tests of the user
 save_input(problemId, "student/" + nameTestedStack + ".java")
 copyfile("junit-4.12.jar", "student/junit-4.12.jar")
 copyfile("hamcrest-core-1.3.jar", "student/hamcrest-core-1.3.jar")
 copyfile("Stack.java", "student/Stack.java")
 
+feedback_and_exit(problemId, "You passed the test", SUCCESS)
 # We begin by the correct implementation
 copyfile(nameCorrectStack + ".java", "student/" + nameTestedStack + ".java")
 result = compile_and_run()
