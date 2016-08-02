@@ -1,5 +1,9 @@
 #! /bin/bash
 
+###################################
+# Test configuration
+###################################
+
 tot=10 # number of tests
 name="MyStack"
 testName="StackTests"
@@ -10,11 +14,15 @@ buggyFeedbacks=(
 	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
 	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
 	"Unit tests should also check if the implementation behaves correctly when it isn't used correctly"
-	"Not only the return values of methoes, but also their effect should be tested"
+	"Not only the return values of methods, but also their effects should be tested"
 	""
-	"Not only the effect of methods, but also their return values should be tested"
+	"Not only the effects of methods, but also their return values should be tested"
 	"The order in which the Stack ADT puts & pops elements is specific"
 )
+
+####################################
+# Execution of the tests
+####################################
 
 getinput stack_tests > "student/$testName.java"
 cp junit-4.12.jar student/junit-4.12.jar
@@ -30,8 +38,6 @@ oldName="$name"
 
 # This loop first checks with the correct implementation, and then
 # with the $tot incorrect ones
-feedbackMsg=""
-
 for i in $(seq 1 $tot)
 do
 	cp "../${name}.java" "./${oldName}.java"
@@ -91,7 +97,7 @@ cd ..
 if [ "$n" = "0" ]; then
 	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
 elif [ "$passOk" != "1" ]; then
-	feedback --result failed --feedback "you detected an error in a correct $word implementation"
+	feedback --result failed --feedback "You detected an error in a correct $word implementation"
 elif [ "$n" = "$tot" ]; then
 	feedback --grade 100 --result success --feedback "Congratulations, you passed the $n tests!"
 else
