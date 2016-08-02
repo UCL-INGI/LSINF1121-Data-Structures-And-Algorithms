@@ -1,5 +1,6 @@
 name: '[LSINF1121-2015] Algorithmique et structures de données'
 admins:
+- fkaczynski
 - gderval
 - gegoa
 - sihardy
@@ -11,7 +12,6 @@ admins:
 - gvanderschue
 - rhenneton
 - mkhong
-- fkaczynski
 accessible: true
 registration: 2015-09-21 11:37:36/2015-11-26 11:37:43
 registration_password: null
@@ -21,3 +21,4 @@ registration_ac: null
 registration_ac_list:
 - ''
 groups_student_choice: true
+use_classrooms: true
