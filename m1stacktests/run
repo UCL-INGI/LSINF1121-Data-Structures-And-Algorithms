@@ -104,7 +104,7 @@ elif [ "$n" = "$tot" ]; then
 	feedback --grade 100 --result success --feedback "Congratulations, you passed the $n tests!"
 else
 	incorrect=$(($tot-1))
-	errors=((incorrect - failOk))
+	errors=$((incorrect - failOk))
 	grade=$(( (100 * (failOk)) / $incorrect ))
 
 	feedback-grade $grade
@@ -112,9 +112,9 @@ else
 
 	# We only print the test feedbacks if the student has not more
 	# than 3 failed tests
-	if (( $errors <= 2 )); then
-		feedback-msg -ae -m ${feedbackMessages}
-	fi
+	#if (( $errors <= 2 )); then
+	#	feedback-msg -ae -m ${feedbackMessages}
+	#fi
 
 	feedback-msg -ae -m "You detected errors in only $failOk (out of $incorrect) incorrect implementations."
 fi
