@@ -67,7 +67,7 @@ do
 		((failOk++))
 	else
 		# We print the feedback message of this incorrect implementations
-		feedbackMsg=$feedbackMsg${buggyFeedbacks[$i-1]}
+		feedbackMsg="$feedbackMsg${buggyFeedbacks[$i-1]}\n"
 	fi
 done
 cd ..
@@ -81,5 +81,5 @@ elif [ "$n" = "$tot" ]; then
 else
     incorrect=$(($tot-1))
 	grade=$(( (100 * ($failOk)) / $incorrect ))
-	feedback --result failed --grade $grade --feedback "Unfortunately, you detected errors in $failOk (out of $incorrect) incorrect ${word} implementations. "
+	feedback --result failed --grade $grade --feedback "$feedbackMsgUnfortunately, you detected errors in $failOk (out of $incorrect) incorrect ${word} implementations. "
 fi
