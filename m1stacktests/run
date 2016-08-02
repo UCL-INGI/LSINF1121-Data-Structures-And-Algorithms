@@ -71,7 +71,7 @@ do
 			((failOk++))
 		else
 			# We add a feedback message for the user
-			index=((i - 1))
+			index=$((i - 1))
 			line="Test #${index}: ${buggyFeedbacks[${index}]}"
 			feedbackMsg="${feedbackMsg}${line}\n"
 		fi
