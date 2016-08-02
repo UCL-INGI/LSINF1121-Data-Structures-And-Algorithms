@@ -8,8 +8,8 @@ from os import chdir
 
 
 def feedback_and_exit(problem_id, msg, result):
-    feedback.set_problem_result(result, problem_id)
-    feedback.set_problem_feedback(msg, problem_id)
+    feedback.set_global_result(result)
+    feedback.set_global_feedback(msg)
     exit(1)
 
 
@@ -70,7 +70,6 @@ def compile_and_run():
         )
 
     junit_result = result.stdout.read()
-    print(junit_result)
 
     passed = "OK" in junit_result
     return passed
@@ -91,15 +90,13 @@ chdir("student/")
 
 # We begin by the correct implementation
 copyfile("../" + nameCorrectStack + ".java", nameTestedStack + ".java")
-print(open("StackTests.java", "r").read())
 result = compile_and_run()
-print(result)
 
 if not result:
     # The correct implementation failed
     feedback_and_exit(problemId, "You detected an error in a correct implementation", "failed")
 
-feedback_and_exit(problemId, "You passed the test", "success")
+#feedback_and_exit(problemId, "You passed the test", "success")
 
 # We test the wrong implementations
 countCorrectlyFail = 0
@@ -113,7 +110,7 @@ buggyTests = [
 
 for buggyTest in buggyTests:
     filename = buggyTest["name"]
-    copyfile(filename, "student/" + nameTestedStack + ".java")
+    copyfile("../" + filename + ".java", nameTestedStack + ".java")
 
     result = compile_and_run()
 
