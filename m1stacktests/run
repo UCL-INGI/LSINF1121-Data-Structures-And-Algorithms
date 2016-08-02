@@ -81,5 +81,5 @@ elif [ "$n" = "$tot" ]; then
 else
     incorrect=$(($tot-1))
 	grade=$(( (100 * ($failOk)) / $incorrect ))
-	feedback --result failed --grade $grade --feedback "$feedbackMsgUnfortunately, you detected errors in $failOk (out of $incorrect) incorrect ${word} implementations. "
+	feedback --result failed --grade $grade --feedback "${feedbackMsg}Unfortunately, you detected errors in $failOk (out of $incorrect) incorrect ${word} implementations. "
 fi
