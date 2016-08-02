@@ -112,7 +112,7 @@ else
 
 	# We only print the test feedbacks if the student has not more
 	# than 3 failed tests
-	if [ "$errors" -le "2" ]; then
+	if [ "$errors" -le "4" ]; then
 		feedback-msg -ae -m ${feedbackMessages}
 	fi
 
