@@ -71,6 +71,6 @@ elif [ "$n" = "$tot" ]; then
 else
     incorrect=$(($tot-1))
 	lack=$(($incorrect-$failOk))
-	grade=(100*($incorrect-$lack))/$incorrect
+	grade=$(( (100 * ($incorrect-$lack))/$incorrect ))
 	feedback --result --grade failed --feedback "Unfortunately, you didn't detect errors in $lack (out of $incorrect) incorrect ${word} implementations. "
 fi
