@@ -72,7 +72,7 @@ do
 		else
 			# We add a feedback message for the user
 			index=$((i - 1))
-			feedback-msg -ea "Test #${index}: ${buggyFeedbacks[${index}]}\n"
+			feedback-msg -ea "Test #${index}: ${buggyFeedbacks[$index]}"
 		fi
     fi
 done
