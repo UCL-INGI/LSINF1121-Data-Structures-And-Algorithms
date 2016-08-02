@@ -34,7 +34,7 @@ buggyFeedbacks=(
 cp songs.txt student/songs.txt
 
 #GENERAL
-getinput "$(problemId)" > "student/${testName}.java"
+getinput "${problemId}" > "student/${testName}.java"
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
 cp "${name}.java" "student/${name}.java"
