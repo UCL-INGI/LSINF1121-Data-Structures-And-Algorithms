@@ -103,8 +103,8 @@ elif [ "$passOk" != "1" ]; then
 elif [ "$n" = "$tot" ]; then
 	feedback --grade 100 --result success --feedback "Congratulations, you passed the $n tests!"
 else
-	incorrect=$(($tot-1))
-	errors=$((incorrect - failOk))
+	incorrect=$(( $tot-1 ))
+	errors=$(( incorrect - failOk ))
 	grade=$(( (100 * (failOk)) / $incorrect ))
 
 	feedback-grade $grade
