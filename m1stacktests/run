@@ -34,17 +34,17 @@ do
 	fi
 
 	output=$(java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore "$testName")
-    retval=$?
-	if [ "$retval" = "252" ]; then
-		feedback --result failed --feedback "Command was killed due to an out-of-memory"
-		exit 0
-	elif [ "$retval" = "253" ]; then
-		feedback --result timeout --feedback "Command timed out"
-		exit 0
-	elif [ "$retval" = "254" ]; then
-	      feedback --result failed --feedback "Unfortunately, a runtime error occured"
-		exit 0
-	fi
+    #retval=$?
+	#if [ "$retval" = "252" ]; then
+	#	feedback --result failed --feedback "Command was killed due to an out-of-memory"
+	#	exit 0
+	#elif [ "$retval" = "253" ]; then
+	#	feedback --result timeout --feedback "Command timed out"
+	#	exit 0
+	#elif [ "$retval" = "254" ]; then
+	#      feedback --result failed --feedback "Unfortunately, a runtime error occured"
+	#	exit 0
+	#fi
 
 	failed=$(echo "$output" | grep -c "FAILURES")
     passed=$(echo "$output" | grep -c "OK")
@@ -69,6 +69,6 @@ elif [ "$n" = "$tot" ]; then
 	feedback --grade 100 --result success --feedback "Congratulations, you passed the $n tests!"
 else
     incorrect=$(($tot-1))
-	grade=$(( (100 * ($failOk))/$incorrect ))
+	grade=$(( (100 * ($failOk)) / $incorrect ))
 	feedback --result failed --grade $grade --feedback "Unfortunately, you detected errors in $failOk (out of $incorrect) incorrect ${word} implementations. "
 fi
