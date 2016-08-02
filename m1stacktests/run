@@ -72,7 +72,7 @@ do
 		else
 			# We add a feedback message for the user
 			index=$((i - 1))
-			feedback-msg -ea "Test #${index}: ${buggyFeedbacks[$index]}"
+			feedback-msg -ae -m "Test #$index: ${buggyFeedbacks[$index]}\n"
 		fi
     fi
 done
@@ -90,5 +90,5 @@ else
 
 	feedback-grade $feedback-grade
 	feedback-result failed
-	feedback-msg -ea "You detected errors in only $failOk (out of $incorrect) incorrect ${word} implementations."
+	feedback-msg -ae -m "You detected errors in only $failOk (out of $incorrect) incorrect ${word} implementations."
 fi
