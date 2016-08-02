@@ -6,13 +6,14 @@ testName="StackTests"
 word="stack"
 buggyName="MyBuggyStack"
 buggyFeedbacks=(
-	"*All* methods of an implementation must be tested"
-	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
+	""
 	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
 	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
 	"Unit tests should also check if the implementation behaves correctly when it isn't used correctly"
+	"Not only the return values of methoes, but also their effect should be tested"
 	""
-	""
+	"Not only the effect of methods, but also their return values should be tested"
+	"The order in which the Stack ADT puts & pops elements is specific"
 )
 
 getinput stack_tests > "student/$testName.java"
