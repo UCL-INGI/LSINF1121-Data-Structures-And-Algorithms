@@ -69,7 +69,6 @@ elif [ "$n" = "$tot" ]; then
 	feedback --grade 100 --result success --feedback "Congratulations, you passed the $n tests!"
 else
     incorrect=$(($tot-1))
-	lack=$(($incorrect-$failOk))
-	grade=$(( (100 * ($incorrect-$lack))/$incorrect ))
-	feedback --result failed --grade $grade --feedback "Unfortunately, you didn't detect errors in $lack (out of $incorrect) incorrect ${word} implementations. "
+	grade=$(( (100 * ($failOk))/$incorrect ))
+	feedback --result failed --grade $grade --feedback "Unfortunately, you detected errors in $failOk (out of $incorrect) incorrect ${word} implementations. "
 fi
