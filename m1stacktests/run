@@ -36,6 +36,7 @@ n=0 # number of tests passed
 passOk=0
 failOk=0
 oldName="$name"
+feedbackMessages=""
 
 # This loop first checks with the correct implementation, and then
 # with the $tot incorrect ones
@@ -89,7 +90,7 @@ do
 			if [[ -z "$feedbackLine" ]]; then
 				feedbackLine="Failed test"
 			fi
-			feedback-msg -ae -m "Test #$index: $feedbackLine\n\n"
+			feedbackMessages="${feedbackMessages}Test #$index: $feedbackLine\n\n"
 		fi
 	fi
 done
@@ -103,9 +104,17 @@ elif [ "$n" = "$tot" ]; then
 	feedback --grade 100 --result success --feedback "Congratulations, you passed the $n tests!"
 else
 	incorrect=$(($tot-1))
+	errors=((incorrect - failOk))
 	grade=$(( (100 * (failOk)) / $incorrect ))
 
 	feedback-grade $grade
 	feedback-result failed
+
+	# We only print the test feedbacks if the student has not more
+	# than 3 failed tests
+	if [ $errors -le 2 ]; then
+		feedback-msg -ae -m ${feedbackMessages}
+	fi
+
 	feedback-msg -ae -m "You detected errors in only $failOk (out of $incorrect) incorrect implementations."
 fi
