@@ -6,8 +6,13 @@ testName="StackTests"
 word="stack"
 buggyName="MyBuggyStack"
 buggyFeedbacks=(
-	"*All* methods of an implementation must be tested",
+	"*All* methods of an implementation must be tested"
 	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
+	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
+	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
+	"Unit tests should also check if the implementation behaves correctly when it isn't used correctly"
+	""
+	""
 )
 
 getinput stack_tests > "student/$testName.java"
@@ -72,7 +77,11 @@ do
 		else
 			# We add a feedback message for the user
 			index=$((i - 1))
-			feedback-msg -ae -m "Test #$index: ${buggyFeedbacks[$index-1]}\n\n"
+			feedbackLine=${buggyFeedbacks[$index-1]}
+			if [[ -z "$feedbackLine" ]]; then
+				feedbackLine="Failed test"
+			fi
+			feedback-msg -ae -m "Test #$index: $feedbackLine\n\n"
 		fi
     fi
 done
@@ -88,7 +97,7 @@ else
     incorrect=$(($tot-1))
 	grade=$(( (100 * (failOk)) / $incorrect ))
 
-	feedback-grade $feedback-grade
+	feedback-grade $grade
 	feedback-result failed
 	feedback-msg -ae -m "You detected errors in only $failOk (out of $incorrect) incorrect ${word} implementations."
 fi
