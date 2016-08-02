@@ -5,9 +5,10 @@
 ###################################
 
 tot=10 # number of tests
+problemId="stack_tests"
 name="MyStack"
 testName="StackTests"
-word="stack"
+interfaceName="Stack"
 buggyName="MyBuggyStack"
 buggyFeedbacks=(
 	""
@@ -24,11 +25,11 @@ buggyFeedbacks=(
 # Execution of the tests
 ####################################
 
-getinput stack_tests > "student/$testName.java"
+getinput "${problemId}" > "student/$testName.java"
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
-cp MyStack.java student/MyStack.java
-cp Stack.java student/Stack.java
+cp "${name}.java" "student/${name}.java"
+cp "${interfaceName}.java" "student/${interfaceName}.java"
 cd student
 
 n=0 # number of tests passed
@@ -97,7 +98,7 @@ cd ..
 if [ "$n" = "0" ]; then
 	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
 elif [ "$passOk" != "1" ]; then
-	feedback --result failed --feedback "You detected an error in a correct $word implementation"
+	feedback --result failed --feedback "You detected an error in a correct implementation"
 elif [ "$n" = "$tot" ]; then
 	feedback --grade 100 --result success --feedback "Congratulations, you passed the $n tests!"
 else
@@ -106,5 +107,5 @@ else
 
 	feedback-grade $grade
 	feedback-result failed
-	feedback-msg -ae -m "You detected errors in only $failOk (out of $incorrect) incorrect ${word} implementations."
+	feedback-msg -ae -m "You detected errors in only $failOk (out of $incorrect) incorrect implementations."
 fi
