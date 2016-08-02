@@ -13,10 +13,9 @@ def feedback_and_exit(problem_id, msg, result):
     exit(1)
 
 
-def save_input(problem_id, filename):
+def save_input(problem_id, filename_save):
     problem_input = check_output(["getinput", problem_id])
-    file_input = open(filename, "w")
-    print(problem_input)
+    file_input = open(filename_save, "w")
     file_input.write(problem_input)
     file_input.close()
 
@@ -85,6 +84,7 @@ chdir("student/")
 
 # We begin by the correct implementation
 copyfile("../" + nameCorrectStack + ".java", nameTestedStack + ".java")
+print(open("StackTests.java", "r").read())
 result = compile_and_run()
 print(result)
 
