@@ -71,7 +71,7 @@ do
 			((failOk++))
 		else
 			# We add a feedback message for the user
-			index=$((i - 1))
+			index=$((i - 2))
 			feedback-msg -ae -m "Test #$index: ${buggyFeedbacks[$index]}\n\n"
 		fi
     fi
