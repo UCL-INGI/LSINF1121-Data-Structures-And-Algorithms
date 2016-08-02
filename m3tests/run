@@ -11,37 +11,53 @@
 # 9 : entriesBetween returns entries from 'lowest' (but to the max, not to 'highest')
 # 10 : toString format not respected
 
-tot=11 # number of tests
-name="SearchTree"
-testName="${name}Tests"
-word="OrderedMap"
+###################################
+# Test configuration
+###################################
 
-getinput tests > "student/$testName.java"
+tot=11 # number of tests
+problemId="tests"
+name="SearchTree"
+testName="SearchTreeTests"
+interfaceName="OrderedMap"
+word="OrderedMap"
+buggyName="BuggySearchTree"
+buggyFeedbacks=(
+	""
+)
+
+####################################
+# Execution of the tests
+####################################
+
+# SPECIFIC FOR THIS TEST
+cp songs.txt student/songs.txt
+
+#GENERAL
+getinput "$(problemId)" > "student/${testName}.java"
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
-cp OrderedMap.java student/OrderedMap.java
-cp songs.txt student/songs.txt
+cp "${name}.java" "student/${name}.java"
+cp "${interfaceName}.java" "student/${interfaceName}.java"
 cd student
 
 n=0 # number of tests passed
 passOk=0
 failOk=0
-buggyName="Buggy$name"
 oldName="$name"
+feedbackMessages=""
 
 for i in $(seq 1 $tot)
 do
-	
 	cp "../${name}.java" "./${oldName}.java"
 	name="${buggyName}${i}"
-
 	javac "${oldName}.java"
 
 	# Compile the student code and parse it properly
 	compilationMessage=$(javac -cp .:junit-4.12.jar "${testName}.java" 2>&1)
 	compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-	compilationMessage=$(printf "Compilation of $testName.java failed :\n::\n\n $compilationMessage")
-	if [ ! -f "$testName.class" ]; then
+	compilationMessage=$(printf "Compilation of ${testName}.java failed :\n::\n\n $compilationMessage")
+	if [ ! -f "${testName}.class" ]; then
     	feedback --result failed --feedback "$compilationMessage"
     	exit 0
 	fi
@@ -63,14 +79,27 @@ do
 	failed=$(echo "$output" | grep -c "FAILURES")
     passed=$(echo "$output" | grep -c "OK")
 
-	if [ "$i" = "1" ] && [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
-		((n++))
-		((passOk++))
-	fi
+	if [ "$i" = "1" ]; then
+		# This is the first test, we're testing against the correct implementation
+		if [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
+			((n++))
+			((passOk++))
+		fi
 
-	if [ "$i" != "1" ] && [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
-		((n++))
-		((failOk++))
+	else
+		# We're testing against an incorrect implementation
+		if [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
+			((n++))
+			((failOk++))
+		else
+			# We add a feedback message for the user
+			index=$((i - 1))
+			feedbackLine=${buggyFeedbacks[$index-1]}
+			if [[ -z "$feedbackLine" ]]; then
+				feedbackLine="Failed test"
+			fi
+			feedbackMessages="${feedbackMessages}Test #$index: $feedbackLine\n\n"
+		fi
 	fi
 done
 cd ..
@@ -78,11 +107,22 @@ cd ..
 if [ "$n" = "0" ]; then
 	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
 elif [ "$passOk" != "1" ]; then
-	feedback --result failed --feedback "you detected an error in a correct $word implementation"
+	feedback --result failed --feedback "You detected an error in a correct implementation"
 elif [ "$n" = "$tot" ]; then
-	feedback --result success --feedback "Congratulations, you passed the $n tests!"
+	feedback --grade 100 --result success --feedback "Congratulations, you passed the $n tests!"
 else
-    incorrect=$(($tot-1))
-	lack=$(($incorrect-$failOk))
-	feedback --result failed --feedback "Unfortunately, you didn't detect errors in $lack (out of $incorrect) incorrect ${word} implementations. "
+	incorrect=$(( $tot-1 ))
+	errors=$(( incorrect - failOk ))
+	grade=$(( (100 * (failOk)) / $incorrect ))
+
+	feedback-grade $grade
+	feedback-result failed
+
+	# We only print the test feedbacks if the student has not more
+	# than 3 failed tests
+	if [ "$errors" -le "4" ]; then
+		feedback-msg -ae -m "${feedbackMessages}"
+	fi
+
+	feedback-msg -ae -m "You detected errors in only $failOk (out of $incorrect) incorrect implementations."
 fi
