@@ -6,6 +6,19 @@ from sys import exit
 from inginious import feedback
 from os import chdir
 
+# Configuration des tests
+
+countBuggyTests = 9
+problemId = "stack_tests"
+nameCorrectStack = "MyStack"
+nameTestedStack = "MyStack"
+nameBuggyStack = "MyBuggyStack"
+nameTests = "StackTests"
+
+buggyFeedbacks = [
+    ""
+]
+
 
 def feedback_and_exit(problem_id, msg, result):
     feedback.set_global_result(result)
@@ -74,12 +87,6 @@ def compile_and_run():
     passed = "OK" in junit_result
     return passed
 
-countBuggyTests = 9
-problemId = "stack_tests"
-nameCorrectStack = "MyStack"
-nameTestedStack = "MyStack"
-nameWrongStack = "MyBuggyStack"
-nameTests = "StackTests"
 
 # We retrieve the tests of the user
 save_input(problemId, "student/" + nameTests + ".java")
@@ -96,25 +103,22 @@ if not result:
     # The correct implementation failed
     feedback_and_exit(problemId, "You detected an error in a correct implementation", "failed")
 
-#feedback_and_exit(problemId, "You passed the test", "success")
+feedback_and_exit(problemId, "You passed the test", "success")
 
 # We test the wrong implementations
 countCorrectlyFail = 0
 
-buggyTests = [
-    {
-        "name": "MyBuggyStack1",
-        "message": ""
-    }
-]
-
-for buggyTest in buggyTests:
-    filename = buggyTest["name"]
+for i in range(0, countBuggyTests):
+    filename = nameBuggyStack + str(i)
     copyfile("../" + filename + ".java", nameTestedStack + ".java")
 
     result = compile_and_run()
 
     if result:
+
+        if i < len(buggyFeedbacks):
+            feedback_msg = buggyFeedbacks[i]
+            feedback.set_global_feedback(feedback_msg, True)
         # The tests should have caught an error in this implementation
         countCorrectlyFail += 1
 
