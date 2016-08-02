@@ -47,7 +47,7 @@ oldName="$name"
 for i in $(seq 1 $tot)
 do
 	cp "../${name}.java" "./${oldName}.java"
-	name="${buggyName}${i}.java"
+	name="${buggyName}${i}"
 	javac "${oldName}.java"
 
 	# Compile the student code and parse it properly
