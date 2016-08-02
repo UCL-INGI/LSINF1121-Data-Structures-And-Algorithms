@@ -58,7 +58,7 @@ groups: false
 limits:
     memory: '512'
     output: '100'
-    time: '45'
+    time: '10'
 name: Mission 1 - Unit tests for the stack [individual]
 network_grading: false
 order: 1
