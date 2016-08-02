@@ -53,22 +53,24 @@ context: |-
         javac -cp .:junit-4.12.jar StackTests.java
         java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore StackTests
 environment: java8scala
+evaluate: best
 groups: false
 limits:
     memory: '512'
     output: '100'
-    time: '10'
+    time: '45'
 name: Mission 1 - Unit tests for the stack [individual]
 network_grading: false
 order: 1
 problems:
     stack_tests:
         name: Unit tests for the stack implementation
-        type: code-file
         header: 'Upload your file here, with only one class named *StackTests*. You
             can suppose that the class representing the stack under test is called
             *MyStack*, and that the interface is available (named *Stack*) as written
             in the template. '
         allowed_exts:
         - .java
+        type: code-file
+stored_submissions: 0
 weight: 1.0

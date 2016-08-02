@@ -8,7 +8,7 @@ from os import chdir
 
 # Configuration des tests
 
-countBuggyTests = 9
+countBuggyTests = 2
 problemId = "stack_tests"
 nameCorrectStack = "MyStack"
 nameTestedStack = "MyStack"
@@ -103,12 +103,12 @@ if not result:
     # The correct implementation failed
     feedback_and_exit(problemId, "You detected an error in a correct implementation", "failed")
 
-feedback_and_exit(problemId, "You passed the test", "success")
+#feedback_and_exit(problemId, "You passed the test", "success")
 
 # We test the wrong implementations
 countCorrectlyFail = 0
 
-for i in range(0, countBuggyTests):
+for i in range(1, countBuggyTests+1):
     filename = nameBuggyStack + str(i)
     copyfile("../" + filename + ".java", nameTestedStack + ".java")
 
