@@ -25,7 +25,7 @@ do
 	javac "${oldName}.java"
 
 	# Compile the student code and parse it properly
-	compilationMessage=$(run_student javac -cp .:junit-4.12.jar "${testName}.java" 2>&1)
+	compilationMessage=$(javac -cp .:junit-4.12.jar "${testName}.java" 2>&1)
 	compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 	compilationMessage=$(printf "Compilation of $testName.java failed :\n::\n\n $compilationMessage")
 	if [ ! -f "$testName.class" ]; then
