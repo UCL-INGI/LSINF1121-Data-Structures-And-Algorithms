@@ -21,13 +21,20 @@ def save_input(problem_id, filename_save):
 
 
 def compile_and_run():
-    # We compile the stack implement
+    # We compile the stack implementation
     result = Popen(["javac", nameTestedStack + ".java"], stdout=PIPE, stderr=STDOUT)
     result.wait()
 
     if result.returncode != 0:
         feedback_and_exit(problemId, result.stdout.read(), "crash")
-    
+
+    # We compile the tests of the student
+    result = Popen(["javac", "-cp", ".:junit-4.12.jar", nameTests + ".java"])
+    result.wait()
+
+    if result.returncode != 0:
+        feedback_and_exit(problemId, result.stdout.read(), "crash")
+
     # We compile and run the tests
     result = Popen(
         [
