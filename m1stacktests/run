@@ -57,19 +57,24 @@ do
 	failed=$(echo "$output" | grep -c "FAILURES")
     passed=$(echo "$output" | grep -c "OK")
 
-	if [ "$i" = "1" ] && [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
-		((n++))
-		((passOk++))
-	fi
+    if [ "$i" = "1" ]; then
+    	# This is the first test, we're testing against the correct implementation
+    	if [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
+    		((n++))
+			((passOk++))
+		fi
 
-	if [ "$i" != "1" ] && [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
-		((n++))
-		((failOk++))
 	else
-		# We print the feedback message of this incorrect implementations
-		line="Test #$i: ${buggyFeedbacks[$i-1]}"
-		feedbackMsg="$feedbackMsg${line}\n"
-	fi
+		# We're testing against an incorrect implementation
+		if [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
+			((n++))
+			((failOk++))
+		else
+			# We add a feedback message for the user
+			line="Test #$i: ${buggyFeedbacks[$i-1]}"
+			feedbackMsg="$feedbackMsg${line}\n"
+		fi
+    fi
 done
 cd ..
 
