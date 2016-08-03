@@ -29,9 +29,11 @@ fi
 cd student
 
 # We execute the tests
-output=$(run_student java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar ${testsName})
+output=$(run_student java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore "${testsName}")
 r=$?
 cd ..
+
+echo -e "${output}"
 
 if [ "$r" = "252" ]; then
 	feedback --result failed --feedback "Command was killed due to an out-of-memory"
