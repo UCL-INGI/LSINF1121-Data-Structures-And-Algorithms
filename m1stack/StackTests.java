@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class StackTests {
 
     public static void main(String[] args) {
-        Result result = JUnitCore.runClasses(InterpreterTests.class);
+        Result result = JUnitCore.runClasses(StackTests.class);
 
         int returnCode = 0;
         if (!result.wasSuccessful())
