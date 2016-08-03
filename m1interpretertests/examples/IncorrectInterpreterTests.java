@@ -4,6 +4,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+/**
+ *
+ * @author Frederic KACZYNSKI
+ */
 public class InterpreterTests {
 
     InterpreterInterface interpreter = new Interpreter();
