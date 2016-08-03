@@ -43,15 +43,7 @@ elif [ "$r" = "1" ]; then
 	# Some tests have failed
 	feedback-result failed
 
-	while read line
-	do
-		# We print 2 \n because RST needs 2 newlines to make a new paragraph
-		# (Like Latex)
-		echo -e "$line"
-	done <<<"$output"
-
-	feedback-msg -ae -m "${output}"
-	feedback-msg -ae -m "Unfortunately, you failed some tests"
+	feedback-msg -ae -m "${output}\nUnfortunately, you failed some tests"
 elif [ "$r" = "0" ]; then
 	# All tests passed !
 	feedback --result success --feedback "Congratulations, you passed the $passed tests!"
