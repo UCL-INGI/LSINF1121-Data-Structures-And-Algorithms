@@ -30,11 +30,9 @@ fi
 # Compile the student code and parse it properly
 compilationMessage=$(javac -cp .:junit-4.12.jar student/${interfaceName}.java student/${studentCodeName}.java student/${testsName}.java 2>&1)
 r=$?
-echo "$r"
-exit 0
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 compilationMessage=$(printf "Compilation of ${studentCodeName}.java failed :\n::\n\n $compilationMessage")
-if [ ! -f "student/${studentCodeName}.class" ]; then
+if [ "$r" = "1" ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 0
 fi
