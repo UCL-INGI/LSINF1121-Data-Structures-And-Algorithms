@@ -41,7 +41,9 @@ elif [ "$r" = "254" ]; then
       feedback --result failed --feedback "Unfortunately, a runtime error occured"
 elif [ "$r" = "1" ]; then
 	# Some tests have failed
-	feedback --result failed --feedback "Unfortunately, you failed some tests"
+	feedback-result failed
+	feedback-msg -ae -m "${output}"
+	feedback-msg -ae -m "Unfortunately, you failed some tests"
 elif [ "$r" = "0" ]; then
 	# All tests passed !
 	feedback --result success --feedback "Congratulations, you passed the $passed tests!"
