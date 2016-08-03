@@ -6,7 +6,8 @@ import org.junit.runner.notification.Failure;
 import static org.junit.Assert.assertEquals;
 
 public class InterpreterTests {
-    public static void main()
+
+    public static void main(String[] args)
     {
         Result result = JUnitCore.runClasses(InterpreterTests.class);
 
