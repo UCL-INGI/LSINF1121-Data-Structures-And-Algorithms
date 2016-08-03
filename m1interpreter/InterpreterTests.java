@@ -27,7 +27,7 @@ public class InterpreterTests {
     }
 
     @Test
-    public void testBasic() {
+    public void testAdd() {
         Interpreter interpreter = new Interpreter();
 
         String instr = "4 3 add pstack";
@@ -36,12 +36,12 @@ public class InterpreterTests {
     }
 
     @Test
-    public void testAdd()
+    public void testSub()
     {
         Interpreter interpreter = new Interpreter();
 
-        String instr = "2 2 add pstack";
+        String instr = "7 2 sub pstack";
         String failMessage = "Test \"" + instr + "\"";
-        assertEquals(failMessage, "4", interpreter.interpret(instr));
+        assertEquals(failMessage, "5", interpreter.interpret(instr));
     }
 }
