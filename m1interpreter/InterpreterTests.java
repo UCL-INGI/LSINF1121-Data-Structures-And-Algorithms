@@ -58,7 +58,7 @@ public class InterpreterTests {
 
     @Test
     public void testDef() {
-        test("Test of def", "/radius 2 def radius radius pstack", "2");
+        test("Test of def", "/radius 2 def radius pstack", "2");
 
         test("Test of def with operations inside", "/myvar 2 2 mul def myvar pstack", "4");
     }
