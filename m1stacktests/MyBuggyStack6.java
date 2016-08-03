@@ -15,11 +15,11 @@ public class MyStack<E> implements Stack<E> {
 	}
 
 	public E pop() {
-		return myStack.peek(); // never pops anything
+		return myStack.pop(); 
 	}
 	
 	public E push(E item) {
-		return myStack.push(item); 
+		return myStack.push(null); // pushes null instead of the right item
 	}
 	
 }

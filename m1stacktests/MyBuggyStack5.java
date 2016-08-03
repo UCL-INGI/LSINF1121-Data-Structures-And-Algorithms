@@ -1,6 +1,4 @@
-import java.util.EmptyStackException;
-
-public class MyStack<E>  implements Stack<E> {
+public class MyStack<E> implements Stack<E> {
 
 	private java.util.Stack<E> myStack; 
 	
@@ -17,11 +15,7 @@ public class MyStack<E>  implements Stack<E> {
 	}
 
 	public E pop() {
-		try {
-			return myStack.pop(); 
-		} catch (EmptyStackException e) {
-			return null; // FALSE : should throw the exception !
-		}
+		return myStack.peek(); // never pops anything
 	}
 	
 	public E push(E item) {

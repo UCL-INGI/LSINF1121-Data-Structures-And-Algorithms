@@ -1,11 +1,11 @@
-public class MyStack<E> implements Stack<E> {
+public class MyStack<E> implements Stack<E>  {
 
 	private java.util.Stack<E> myStack; 
-	private int nbrOp; 	
-
+	private int size; 
+	
 	public MyStack() {
 		myStack = new java.util.Stack<E>(); 
-		nbrOp = 0; 
+		size = 0; 
 	}
 	
 	public boolean empty() {
@@ -17,13 +17,13 @@ public class MyStack<E> implements Stack<E> {
 	}
 
 	public E pop() {
-		nbrOp++; 
+		size--; 
 		return myStack.pop(); 
 	}
 	
 	public E push(E item) {
-		nbrOp++; 
-		if (nbrOp > 10) myStack.push(item); 
+		if (size >= 5) return myStack.peek(); // doesn't push the element + return another one
+		size++; 
 		return myStack.push(item); 
 	}
 	

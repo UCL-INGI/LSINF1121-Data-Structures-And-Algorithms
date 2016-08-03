@@ -18,18 +18,20 @@ public class MyStack<E> implements Stack<E> {
 
 	public E pop() {
 		size--; 
-        if (size >= 3) {
-        	E temp = myStack.pop(); 
-            E toReturn = myStack.pop(); 
-            myStack.push(temp); 
-            return toReturn; 
-        }
 		return myStack.pop(); 
 	}
 	
-	public E push(E item) {
+	public E push(E item) { // add the element at the end instead of the top of the stack
+    	java.util.Stack<E> tempStack = new java.util.Stack<E>(); 
+    	for (int i = 0 ; i < size ; i++) {
+        	tempStack.push(myStack.pop()); 
+        }
+        E toRet = myStack.push(item); 
+    	for (int i = 0 ; i < size ; i++) {
+        	myStack.push(tempStack.pop());
+        }
 		size++; 
-		return myStack.push(item); 
+		return toRet; 
 	}
 	
 }

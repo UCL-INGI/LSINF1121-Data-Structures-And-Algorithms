@@ -12,7 +12,6 @@ interfaceName="Stack"
 buggyName="MyBuggyStack"
 buggyFeedbacks=(
 	""
-	""
 	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
 	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
 	"Unit tests should also check if the implementation behaves correctly when it isn't used correctly"
