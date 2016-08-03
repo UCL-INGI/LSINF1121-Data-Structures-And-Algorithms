@@ -28,7 +28,7 @@ public class InterpreterTests {
     public void test(String message, String instr, String expected) {
         Interpreter interpreter = new Interpreter();
 
-        assertEquals(message + " (" + instr + ")", expected, interpreter.interpret(instr));
+        assertEquals(message, expected, interpreter.interpret(instr));
     }
 
     @Test
@@ -67,6 +67,15 @@ public class InterpreterTests {
     public void testNoPstack() {
         // Since there's no pstack, nothing should be displayed
         test("Test without any pstack", "2 2 mul", "");
+    }
+
+    @Test
+    public void testComplexOperations() {
+        String instr = "2 2 mul 8 add dup pstack";
+        test("Test (" + instr + ")", instr, "12 12");
+
+        instr = "2 4 dup mul mul pstack";
+        test("Test (" + instr + ")", instr, "32");
     }
 }
 
