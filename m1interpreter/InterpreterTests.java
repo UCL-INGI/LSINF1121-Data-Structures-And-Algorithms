@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class InterpreterTests {
 
     public static void main(String[] args) {
-        Result result = JUnitCore.runClasses(InterpreterTests.class);
+        Result result = JUnitCore.runClasses(this.class);
 
         int returnCode = 0;
         if (!result.wasSuccessful())
@@ -78,4 +78,3 @@ public class InterpreterTests {
         test("Test (" + instr + ")", instr, "32");
     }
 }
-

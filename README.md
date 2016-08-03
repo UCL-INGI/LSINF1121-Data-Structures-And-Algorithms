@@ -2,7 +2,20 @@
 
 ## Structure
 
-Chaque dossier correspond à un problème sur INGInious; certains dossiers sont des essais de tests, mais n'ont pas été publiés sur INGInious.
+Chaque dossier correspond à une task sur INGInious; certains dossiers sont des essais de tests, mais n'ont pas été publiés sur INGInious. Ce qui suit ne concerne que les tasks demandant aux étudiants des implémentations de programmes ou des tests de programmes:
+
+* m1stacktests
+* m1stack
+* m1interpretertests
+* m1interpreter
+* m3tests
+* m3orderedmap
+* m4plagiarism_tests
+* m4bis
+* m5_compressor_tests
+* m5compressor
+* m6_kruskal_tests
+* m6kruskal
 
 ### run
 
