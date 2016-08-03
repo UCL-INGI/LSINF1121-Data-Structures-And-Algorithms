@@ -18,10 +18,19 @@ cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
 cp "${testsName}.java" "student/${testsName}.java"
 cp "${interfaceName}.java" "student/${interfaceName}.java"
 
-
+# We first check if the student didn't cheat
+if [ -n "${forbiddenClass}" ]; then
+	cheat=$(cat student/${studentCodeName}.java | grep -c "${forbiddenClass}")
+	if [ $cheat != "0" ]; then
+		feedback --result failed --feedback "We detected that you used ${forbiddenClass}, which is prohibited for this task."
+	    exit 1
+	fi
+fi
 
 # Compile the student code and parse it properly
 compilationMessage=$(javac -cp .:junit-4.12.jar student/${interfaceName}.java student/${studentCodeName}.java student/${testsName}.java 2>&1)
+r=$?
+echo "$r"
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 compilationMessage=$(printf "Compilation of ${studentCodeName}.java failed :\n::\n\n $compilationMessage")
 if [ ! -f "student/${studentCodeName}.class" ]; then
