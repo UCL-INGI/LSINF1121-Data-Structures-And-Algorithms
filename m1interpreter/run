@@ -12,6 +12,8 @@ testsName="InterpreterTests"
 # Execution of tests
 #################
 getinput "${problemId}" > "student/${studentCodeName}.java"
+cp junit-4.12.jar student/junit-4.12.jar
+cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
 cp "${testsName}.java" "student/${testsName}.java"
 cp "${interfaceName}.java" "student/${interfaceName}.java"
 
