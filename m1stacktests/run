@@ -33,6 +33,7 @@ cp "${name}.java" "student/${name}.java"
 cp "${interfaceName}.java" "student/${interfaceName}.java"
 cd student
 
+incorrect=$(( $tot-1 ))
 n=0 # number of tests passed
 passOk=0
 failOk=0
@@ -40,7 +41,7 @@ oldName="$name"
 feedbackMessages=""
 
 # This loop first checks with the correct implementation, and then
-# with the $tot incorrect ones
+# with the ${tot-1} incorrect ones
 for i in $(seq 1 $tot)
 do
 	cp "../${name}.java" "./${oldName}.java"
@@ -102,9 +103,8 @@ if [ "$n" = "0" ]; then
 elif [ "$passOk" != "1" ]; then
 	feedback --result failed --feedback "You detected an error in a correct implementation"
 elif [ "$n" = "$tot" ]; then
-	feedback --grade 100 --result success --feedback "Congratulations, you passed the $n tests!"
+	feedback --grade 100 --result success --feedback "Congratulations, you passed the ${incorrect} tests!"
 else
-	incorrect=$(( $tot-1 ))
 	errors=$(( incorrect - failOk ))
 	grade=$(( (100 * (failOk)) / $incorrect ))
 
@@ -113,7 +113,7 @@ else
 
 	# We only print the test feedbacks if the student has not more
 	# than 3 failed tests
-	if [ "$errors" -le "4" ]; then
+	if [ "$errors" -le "3" ]; then
 		feedback-msg -ae -m "${feedbackMessages}"
 	fi
 
