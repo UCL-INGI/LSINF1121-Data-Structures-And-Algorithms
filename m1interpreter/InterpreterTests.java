@@ -20,6 +20,7 @@ public class InterpreterTests {
                 // (like in Latex), we println again between each line
                 System.out.println(fail.getMessage());
                 System.out.println();
+                System.out.println();
             }
 
             returnCode = 1;
