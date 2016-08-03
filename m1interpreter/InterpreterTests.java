@@ -48,17 +48,19 @@ public class InterpreterTests {
 
     @Test
     public void testExch() {
-        test("Test of exch", "42 5 exch pstack", "5 42");
+        test("Test of exch", "42 5 exch pstack", "42 5");
     }
 
     @Test
     public void testDup() {
-        test("Test of dup", "42 5 dup pstack", "42 5 5");
+        test("Test of dup", "42 5 dup pstack", "5 5 42");
     }
 
     @Test
     public void testDef() {
-        test("Test of def", "/radius 2 def radius 4 mul pstack", "8");
+        test("Test of def", "/radius 2 def radius radius pstack", "2");
+
+        test("Test of def with operations inside", "/myvar 2 2 mul def myvar pstack", "4");
     }
 
     @Test
