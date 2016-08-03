@@ -24,6 +24,7 @@ word="OrderedMap"
 buggyName="BuggySearchTree"
 buggyFeedbacks=(
 	""
+<<<<<<< HEAD
 	""
 	"A file \"songs.txt\" is provided to you for this test"
 	"A file \"songs.txt\" containgin 50 songs is provided to you for this test"
