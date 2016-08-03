@@ -16,9 +16,7 @@ public class InterpreterTests {
         {
             for (Failure fail : result.getFailures())
             {
-                // Because RST needs 2 newlines to effectively make a new paragraph
-                // (like in Latex), we println again between each line
-                System.out.print(fail.getMessage() + "\n\n");
+                System.out.println(fail.getMessage() + "\n\n");
             }
 
             returnCode = 1;
