@@ -16,7 +16,7 @@ public class InterpreterTests {
         {
             for (Failure fail : result.getFailures())
             {
-                System.out.println(fail.getMessage() + "\n\n");
+                System.out.println(fail.getMessage());
             }
 
             returnCode = 1;
@@ -29,12 +29,12 @@ public class InterpreterTests {
     public void testBasic() {
         Interpreter interpreter = new Interpreter();
 
-        String instr = "2 2 add pstack";
+        String instr = "4 3 add pstack";
         String failMessage = "Test \"" + instr + "\"";
-        assertEquals(failMessage, "4", interpreter.interpret(instr));
-
-        instr = "4 3 add pstack";
-        failMessage = "Test \"" + instr + "\"";
         assertEquals(failMessage, "7", interpreter.interpret(instr));
+
+        instr = "2 2 add pstack";
+        failMessage = "Test \"" + instr + "\"";
+        assertEquals(failMessage, "4", interpreter.interpret(instr));
     }
 }
