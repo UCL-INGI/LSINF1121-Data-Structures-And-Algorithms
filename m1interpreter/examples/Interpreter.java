@@ -79,7 +79,7 @@ public class Interpreter implements InterpreterInterface {
 		{
 			if (o2 instanceof Integer)
 			{
-				int add = (Integer)o1 - (Integer)o2;
+				int add = (Integer)o1 + (Integer)o2;
 				stack.push(new MyElement(""+add));
 			}
 			else

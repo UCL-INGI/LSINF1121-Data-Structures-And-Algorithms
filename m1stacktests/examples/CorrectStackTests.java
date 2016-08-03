@@ -1,15 +1,60 @@
-package examples;
-
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
+/**
+ * Those unit tests successfuly detects all error
+ * @author Smon HARDY
+ */
 public class StackTests {
 
+    String element = "a";
+
     @Test
-    public void firstTest() {
+    public void testPushPop() {
         Stack<Integer> stack = new MyStack<Integer>();
-        stack.push(1);
-        assertFalse(stack.empty());
+
+        for (int i = 0;i < 15;i++) {
+            assertEquals((Integer) i, stack.push(i));
+        }
+        for (int i = 14;i >= 0;i--) {
+            assertEquals((Integer) i, stack.pop());
+        }
+
+        assertEquals(true, stack.empty());
+    }
+
+    @Test
+    public void testDoublePush() {
+        Stack<String> stack = new MyStack<String>();
+        stack.push(element);
+        stack.push("b");
+        assertEquals("b", stack.pop());
+        assertEquals(element, stack.pop());
+    }
+
+    @Test
+    public void testEmpty() {
+        Stack<String> stack = new MyStack<String>();
+        stack.push(element);
+        assertEquals(stack.empty(), false);
+        assertEquals(element, stack.peek());
+        assertEquals(element, stack.pop());
+        assertEquals(true, stack.empty());
+    }
+
+    @Test
+    public void testFail() {
+        Stack<String> stack = new MyStack<String>();
+
+        try {
+            stack.pop();
+            fail();
+        }
+        catch(Exception e)
+        {
+            assertTrue(true);
+        }
     }
 }
