@@ -5,8 +5,6 @@ import static org.junit.Assert.fail;
 import java.util.Set;
 import java.util.HashSet;
 
-/* Template for the tests of the mission 3, gets 2/11 */
-
 /**
  * Those unit tests only detect 1 buggy implementation - FK
  * @author Simon HARDY
