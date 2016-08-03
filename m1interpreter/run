@@ -47,7 +47,7 @@ elif [ "$r" = "1" ]; then
 	do
 		# We print 2 \n because RST needs 2 newlines to make a new paragraph
 		# (Like Latex)
-		echo -e "$line\n\n"
+		echo -e "$line"
 	done <<<"$output"
 
 	feedback-msg -ae -m "${output}"

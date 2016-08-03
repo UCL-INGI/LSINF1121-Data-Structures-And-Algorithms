@@ -17,6 +17,7 @@ public class InterpreterTests {
             for (Failure fail : result.getFailures())
             {
                 System.out.println(fail.getMessage());
+                System.out.println();
             }
 
             returnCode = 1;
@@ -32,9 +33,15 @@ public class InterpreterTests {
         String instr = "4 3 add pstack";
         String failMessage = "Test \"" + instr + "\"";
         assertEquals(failMessage, "7", interpreter.interpret(instr));
+    }
 
-        instr = "2 2 add pstack";
-        failMessage = "Test \"" + instr + "\"";
+    @Test
+    public void testAdd()
+    {
+        Interpreter interpreter = new Interpreter();
+
+        String instr = "2 2 add pstack";
+        String failMessage = "Test \"" + instr + "\"";
         assertEquals(failMessage, "4", interpreter.interpret(instr));
     }
 }
