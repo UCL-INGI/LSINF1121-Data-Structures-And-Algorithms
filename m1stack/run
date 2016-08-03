@@ -32,6 +32,7 @@ compilationMessage=$(javac -cp .:junit-4.12.jar student/${interfaceName}.java st
 r=$?
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 compilationMessage=$(printf "Compilation of ${studentCodeName}.java failed :\n::\n\n $compilationMessage")
+
 if [ "$r" != "0" ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 0
