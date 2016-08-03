@@ -14,7 +14,7 @@ tot=10 # number of tests
 problemId="plagiarism_tests"
 name="HashMap"
 testName="HashMapTests"
-interfaceName="map"
+interfaceName="MapInterface"
 buggyName="BuggyHashMap"
 buggyFeedbacks=(
 	""
