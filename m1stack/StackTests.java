@@ -5,6 +5,9 @@ import org.junit.runner.notification.Failure;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * @author Frederic KACZYNSKI
+ */
 public class StackTests {
 
     public static void main(String[] args) {
