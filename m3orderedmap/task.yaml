@@ -1,4 +1,4 @@
-accessible: /2015-10-30 18:03:14
+accessible: false
 author: Simon Hardy
 context: |-
     You are asked to implement the following interface, representing a custom Ordered Map (for more informations about the methods without comment listed below, refer to the official SortedMap interface of Java).
@@ -83,24 +83,12 @@ context: |-
             public String toString();
 
         }
-
-    Some final tips in order to pass this task :
-
-    - Your OrderedMap should be ordered according to the natural ordering of its keys, i.e. the same as the Java String class.
-
-    - If you create your own Map.Entry implementation, don't forget to override the *equals* and *hashCode* methods so that two different objects representing the same entry are considered equal.
-
-    - For more information about the methods of the two ADTs, you can look at :
-        - http://docs.oracle.com/javase/7/docs/api/java/util/Map.html
-        - http://docs.oracle.com/javase/7/docs/api/java/util/NavigableMap.html
-
-    - The Sets/Collections returned by your methods *don't* need to be backed by the map. (If you don't understand this, just forget about it.)
 environment: java8scala
 groups: true
 limits:
     memory: '3000'
     output: '100'
-    time: '40'
+    time: '30'
 name: Mission 3 - Ordered Map [group]
 network_grading: false
 order: 12

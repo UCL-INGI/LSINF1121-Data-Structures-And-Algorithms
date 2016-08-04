@@ -21,12 +21,11 @@ context: |-
 
         }
 environment: java8scala
-evaluate: best
 groups: false
 limits:
     memory: '512'
     output: '100'
-    time: '10'
+    time: '30'
 name: Mission 1 - Stack [individual]
 network_grading: false
 order: 2
@@ -36,8 +35,7 @@ problems:
             your stack should be named *MyStack* and implement *Stack* (as usual,
             the interface is available on INGInious).  '
         name: Stack
-        type: code-file
         allowed_exts:
         - .java
-stored_submissions: 0
+        type: code-file
 weight: 1.0

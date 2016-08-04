@@ -9,7 +9,7 @@ import java.util.Arrays;
  * This is the "Interpreter" class that the students have to write, but renamed "MyInterpreter"
  * in order to compare the results of the students with the correct (I hope for them ! :p) results. 
  */
-public class Interpreter implements InterpreterInterface {
+public class MyInterpreter implements InterpreterInterface {
 	
 	public Hashtable<String,MyElement> variables;
 	private MyStack2<MyElement> stack;
@@ -21,7 +21,7 @@ public class Interpreter implements InterpreterInterface {
 		System.out.println(interpreter.interpret("1 pop 969067502 592164476 995688456 eq 2143572209 pop 1 pop dup exch 726510756 true pop pop 1261490713 pstack"));*/
 	}
 	
-	public Interpreter() {
+	public MyInterpreter() {
 		stack = new MyStack2<MyElement>();
 		variables = new Hashtable<String,MyElement>();
 	}
@@ -459,47 +459,47 @@ class MyElement {
 		{
 			if (element.contains("pstack"))
 			{
-				Interpreter.pstack(stack, results, variables);
+				MyInterpreter.pstack(stack, results, variables);
 			}
 			else if (element.contains("add"))
 			{
-				Interpreter.add(stack, variables);
+				MyInterpreter.add(stack, variables);
 			}
 			else if (element.contains("sub"))
 			{
-				Interpreter.sub(stack, variables);
+				MyInterpreter.sub(stack, variables);
 			}
 			else if (element.contains("mul"))
 			{
-				Interpreter.mul(stack, variables);
+				MyInterpreter.mul(stack, variables);
 			}
 			else if (element.contains("div"))
 			{
-				Interpreter.div(stack, variables);
+				MyInterpreter.div(stack, variables);
 			}
 			else if (element.contains("dup"))
 			{
-				Interpreter.dup(stack, variables);
+				MyInterpreter.dup(stack, variables);
 			}
 			else if (element.contains("exch"))
 			{
-				Interpreter.exch(stack, variables);
+				MyInterpreter.exch(stack, variables);
 			}
 			else if (element.contains("eq"))
 			{
-				Interpreter.eq(stack, variables);
+				MyInterpreter.eq(stack, variables);
 			}
 			else if (element.contains("ne"))
 			{
-				Interpreter.ne(stack, variables);
+				MyInterpreter.ne(stack, variables);
 			}
 			else if (element.contains("def"))
 			{
-				Interpreter.def(stack, variables);
+				MyInterpreter.def(stack, variables);
 			}
 			else if (element.contains("pop"))
 			{
-				Interpreter.pop(stack, variables);
+				MyInterpreter.pop(stack, variables);
 			}
 			return null;
 		}
