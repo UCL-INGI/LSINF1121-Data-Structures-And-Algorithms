@@ -60,6 +60,7 @@ do
 	fi
 
 	output=$(run_student java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore "$testName")
+	printf "${output}"
 	retval=$?
 	echo -e "${retval}\n"
 	if [ "$retval" = "252" ]; then
