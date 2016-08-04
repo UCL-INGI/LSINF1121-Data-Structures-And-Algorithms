@@ -7,7 +7,7 @@ problemId="stack"
 studentCodeName="MyStack"
 interfaceName="Stack"
 testsName="StackTests"
-forbiddenClass="java.util.Stack"
+forbiddenClasses=( "java.util.Stack" )
 
 #################
 # Execution of tests
@@ -19,13 +19,14 @@ cp "${testsName}.java" "student/${testsName}.java"
 cp "${interfaceName}.java" "student/${interfaceName}.java"
 
 # We first check if the student didn't cheat
-if [ -n "${forbiddenClass}" ]; then
+for forbiddenClass in "${forbiddenClasses[@]}"
+do
 	cheat=$(cat student/${studentCodeName}.java | grep -c "${forbiddenClass}")
 	if [ $cheat != "0" ]; then
 		feedback --result failed --feedback "We detected that you used ${forbiddenClass}, which is prohibited for this task."
 	    exit 1
 	fi
-fi
+done
 
 # Compile the student code and parse it properly
 compilationMessage=$(javac -cp .:junit-4.12.jar student/${interfaceName}.java student/${studentCodeName}.java student/${testsName}.java 2>&1)
