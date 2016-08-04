@@ -4,7 +4,7 @@
 # Test configuration
 ###################################
 
-tot=10 # number of tests
+tot=9 # number of tests
 problemId="stack_tests"
 name="MyStack"
 testName="StackTests"
