@@ -112,20 +112,21 @@ public class OrderedMapTests {
     public void namedTest() {
 
         try {
+            String hint = "Test with songs.txt";
 
             OrderedMap tree = new SearchTree("songs.txt");
 
-            assertEquals(tree.size(), 36);
-            assertEquals(tree.isEmpty(), false);
+            assertEquals(hint, tree.size(), 215);
+            assertEquals(hint, tree.isEmpty(), false);
 
             Set<String> result = tree.get("Van Halen");
 
-            assertEquals(result.size(), 1);
-            assertTrue(result.contains("You Really Got Me"));
+            assertEquals(hint, result.size(), 1);
+            assertTrue(hint, result.contains("You Really Got Me"));
 
             List<Map.Entry<String, Set<String>>> resultBetween = tree.entriesBetween("Who", "ZZ Top");
 
-            assertEquals(resultBetween.size(), 3);
+            assertEquals(hint, resultBetween.size(), 3);
 
 
 
