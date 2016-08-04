@@ -20,7 +20,7 @@ cp "${interfaceName}.java" "student/${interfaceName}.java"
 # We check if the student cheated
 for $forbiddenClass in "${forbiddenClasses[@]}"
 do
-	cheat=$(cat student/${studentCodeName}.java | grep -c "${forbiddenClass}")
+	cheat=$(cat "student/${studentCodeName}.java" | grep -c "${forbiddenClass}")
 	echo -e "${cheat}"
 	if [ "$cheat" != "0" ]; then
 		feedback --result failed --feedback "We detected the use of ${forbiddenClass}, which is prohibited for this test."
