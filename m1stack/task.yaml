@@ -21,21 +21,23 @@ context: |-
 
         }
 environment: java8scala
+evaluate: best
 groups: false
 limits:
-    memory: '512'
     output: '100'
-    time: '30'
+    time: '10'
+    memory: '512'
 name: Mission 1 - Stack [individual]
 network_grading: false
 order: 2
 problems:
     stack:
-        header: 'Upload the file containing your implementation here. The class representing
-            your stack should be named *MyStack* and implement *Stack* (as usual,
-            the interface is available on INGInious).  '
         name: Stack
         allowed_exts:
         - .java
+        header: 'Upload the file containing your implementation here. The class representing
+            your stack should be named *MyStack* and implement *Stack* (as usual,
+            the interface is available on INGInious).  '
         type: code-file
+stored_submissions: 0
 weight: 1.0

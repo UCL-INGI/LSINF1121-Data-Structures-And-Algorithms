@@ -43,7 +43,7 @@ scalac -cp .:scalacheck.jar ${testsName}.scala
 if [ "$?" != 0 ]; then
 	feedback-result crash
 	feedback-msg -m "Error while compiling the tests. If it persists, contact the administrator of the course."
-	exit 1;
+	exit 1
 fi
 
 # We run the tests
