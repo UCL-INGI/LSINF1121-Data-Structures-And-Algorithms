@@ -71,19 +71,16 @@ do
 		exit 0
 	fi
 
-	failed=$(echo "$output" | grep -c "FAILURES")
-	passed=$(echo "$output" | grep -c "OK")
-
 	if [ "$i" != "0" ]; then
 		# This is the first test, we're testing against the correct implementation
-		if [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
+		if [ "$retval" = "0" ]; then
 			((n++))
 			((passOk++))
 		fi
 
 	else
 		# We're testing against an incorrect implementation
-		if [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
+		if [ "$retval" != "0" ]; then
 			((n++))
 			((failOk++))
 		else
