@@ -10,7 +10,7 @@
 # Test configuration
 ###################################
 
-tot=10 # number of tests
+tot=6 # number of tests
 problemId="plagiarism_tests"
 name="HashMap"
 testName="HashMapTests"
