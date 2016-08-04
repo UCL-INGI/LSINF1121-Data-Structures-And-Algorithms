@@ -63,11 +63,12 @@ context: |-
 
     NB : you don't know the internal representation of the compressed file, but you can still check some of its properties : for example, a long file with only high-frequency characters should have a pretty good compression rate.
 environment: java8scala
+evaluate: best
 groups: false
 limits:
     memory: '512'
     output: '100'
-    time: '60'
+    time: '30'
 name: Mission 5 - Unit tests [individual]
 network_grading: false
 order: 23
@@ -80,4 +81,5 @@ problems:
         header: 'Upload your file here, with only one class named *CompressTests*.
             The classes representing the compressor and decompressor under test are
             respectively named *Compress* and *Decompress*, as written in the template. '
+stored_submissions: 0
 weight: 1.0
