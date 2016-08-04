@@ -5,103 +5,124 @@
 # BuggyCompress5 : compressed file too large (larger than input file !), but output correct
 
 # To avoid problems with encoding
-export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
+
+###################################
+# Test configuration
+###################################
 
 tot=5 # number of tests
-name="Compress"
+problemId="tests"
 testName="CompressTests"
-word="compressor"
+name="Compress"
+interfaceName=""
+buggyName="BuggyCompress"
+buggyFeedbacks=(
+	"Wrong output ________ ________"
+	"Wrong output ________ ________"
+	"Long files not tested________ ________"
+	"You did not test if the size was really lowering (hint : you can re-open a file that was used in a compress_decrompress call)"
+)
 
-getinput tests > "student/$testName.java"
-cp junit-4.12.jar student/junit-4.12.jar
-cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
-cp Compress.java student/Compress.java
+# SPECIFIC FOR THIS TEST
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 cp Decompress.java student/Decompress.java
 cp InputBitStream.class student/InputBitStream.class
 cp OutputBitStream.class student/OutputBitStream.class
+
+####################################
+# Execution of the tests
+####################################
+getinput "${problemId}" > "student/$testName.java"
+cp junit-4.12.jar student/junit-4.12.jar
+cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
+cp "${name}.java" "student/${name}.java"
+if [ -n "${interfaceName}" ]; then
+	cp "${interfaceName}.java" "student/${interfaceName}.java"
+fi
 cd student
 
+incorrect=$(( $tot-1 ))
 n=0 # number of tests passed
 passOk=0
 failOk=0
-buggyName="Buggy$name"
 oldName="$name"
-count=0
-sequence="fail :"
+feedbackMessages=""
+
+# This loop first checks with the correct implementation, and then
+# with the ${tot-1} incorrect ones
 for i in $(seq 1 $tot)
 do
-	
-    cp "../${name}.java" "./${oldName}.java"
+	cp "../${name}.java" "./${oldName}.java"
 	name="${buggyName}${i}"
-
 	javac "${oldName}.java"
 
 	# Compile the student code and parse it properly
 	compilationMessage=$(javac -cp .:junit-4.12.jar "${testName}.java" 2>&1)
+	r=$?
 	compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 	compilationMessage=$(printf "Compilation of $testName.java failed :\n::\n\n $compilationMessage")
-	if [ ! -f "$testName.class" ]; then
-    	feedback --result failed --feedback "$compilationMessage"
-    	exit 0
+	if [ "$r" = "1" ]; then
+		feedback --result failed --feedback "$compilationMessage"
+		exit 0
 	fi
 
 	output=$(run_student java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore "$testName")
-    r=$?
-    
-	if [ "$r" = "252" ]; then
+	retval=$?
+	echo -e "${output}\n"
+	echo -e "Return value of JUnit: ${retval}\n"
+	if [ "$retval" = "252" ]; then
 		feedback --result failed --feedback "Command was killed due to an out-of-memory"
 		exit 0
-	elif [ "$r" = "253" ]; then
+	elif [ "$retval" = "253" ]; then
 		feedback --result timeout --feedback "Command timed out"
 		exit 0
-	elif [ "$r" = "254" ]; then
-	      feedback --result failed --feedback "Unfortunately, a runtime error occured"
+	elif [ "$retval" = "254" ]; then
+		  feedback --result failed --feedback "Unfortunately, a runtime error occured"
 		exit 0
 	fi
 
-	failed=$(echo "$output" | grep -c "FAILURES")
-    passed=$(echo "$output" | grep -c "OK")
-
-	if [ "$i" = "1" ] && [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
-		((n++))
-        sequence+=" Correct implementation correctly tested . ________"
-		((passOk++))
+	if [ "$i" = "1" ]; then
+		# This is the first test, we're testing against the correct implementation
+		if [ "$retval" = "0" ]; then
+			((n++))
+			((passOk++))
+		fi
+	else
+		# We're testing against an incorrect implementation
+		if [ "$retval" != "0" ]; then
+			((n++))
+			((failOk++))
+		else
+			# We add a feedback message for the user
+			index=$((i - 1))
+			feedbackLine=${buggyFeedbacks[$index-1]}
+			if [[ -z "$feedbackLine" ]]; then
+				feedbackLine="Failed test"
+			fi
+			feedbackMessages="${feedbackMessages}Test #$index: $feedbackLine\n\n"
+		fi
 	fi
-
-	if [ "$i" != "1" ] && [ "$failed" = "1" ] && [ "$passed" = "0" ]; then
-		((n++))
-        ((failOk++))
-    else
-    	        if [ "$count" = "1" ]; then
-        	sequence+="Test $count Wrong output ________ ________"
-        	
-        fi
-        
-        if [ "$count" = "2" ]; then
-        	sequence+="Test $count  Wrong output ________ ________"
-        fi
-        
-        if [ "$count" = "3" ]; then
-        	sequence+="Test $count Long files not tested________ ________"
-        fi
-        
-        if [ "$count" = "4" ]; then
-        	            sequence+="Test $count You did not test if the size was really lowering (hint : you can re-open a file that was used in a compress_decrompress call)"
-        fi
-
-	fi
-    ((count++))
 done
 cd ..
 
 if [ "$n" = "0" ]; then
 	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
 elif [ "$passOk" != "1" ]; then
-	feedback --result failed --feedback "you detected an error in a correct $word implementation  $sequence"
+	feedback --result failed --feedback "You detected an error in a correct implementation"
 elif [ "$n" = "$tot" ]; then
-	feedback --result success --feedback "Congratulations, you passed the $n tests!"
+	feedback --grade 100 --result success --feedback "Congratulations, you passed the ${incorrect} tests!"
 else
-    incorrect=$(($tot-1))
-	lack=$(($incorrect-$failOk))
-	feedback --result failed --feedback "Unfortunately, you didn't detect errors in $lack (out of $incorrect) incorrect ${word} implementations. $sequence"
+	errors=$(( incorrect - failOk ))
+	grade=$(( (100 * (failOk)) / $incorrect ))
+
+	feedback-grade $grade
+	feedback-result failed
+
+	# We only print the test feedbacks if the student has not more
+	# than 3 failed tests
+	if [ "$errors" -le "3" ]; then
+		feedback-msg -ae -m "${feedbackMessages}"
+	fi
+
+	feedback-msg -ae -m "You detected errors in only $failOk (out of $incorrect) incorrect implementations."
 fi

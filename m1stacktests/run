@@ -28,7 +28,9 @@ getinput "${problemId}" > "student/$testName.java"
 cp junit-4.12.jar student/junit-4.12.jar
 cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
 cp "${name}.java" "student/${name}.java"
-cp "${interfaceName}.java" "student/${interfaceName}.java"
+if [ -n "${interfaceName}" ]; then
+	cp "${interfaceName}.java" "student/${interfaceName}.java"
+fi
 cd student
 
 incorrect=$(( $tot-1 ))
@@ -58,7 +60,8 @@ do
 
 	output=$(run_student java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore "$testName")
 	retval=$?
-	echo -e "${retval}\n"
+	echo -e "${output}\n"
+	echo -e "Return value of JUnit: ${retval}\n"
 	if [ "$retval" = "252" ]; then
 		feedback --result failed --feedback "Command was killed due to an out-of-memory"
 		exit 0
