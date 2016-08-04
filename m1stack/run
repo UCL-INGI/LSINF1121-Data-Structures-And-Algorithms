@@ -18,8 +18,7 @@ getinput "${problemId}" > "student/${studentCodeName}.java"
 cp "${interfaceName}.java" "student/${interfaceName}.java"
 
 # We check if the student cheated
-for $forbiddenClass in "${forbiddenClasses[@]}"
-do
+for forbiddenClass in "${forbiddenClasses[@]}"; do
 	cheat=$(cat "student/${studentCodeName}.java" | grep -c "${forbiddenClass}")
 	echo -e "${cheat}"
 	if [ "$cheat" != "0" ]; then
@@ -29,10 +28,10 @@ do
 done
 
 # Compile the student code
-compilationMessage=$(javac student/Stack.java student/MyStack.java 2>&1)
+compilationMessage=$(javac student/${interfaceName}.java student/${studentCodeName}.java 2>&1)
 retval=$?
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-compilationMessage=$(printf "Compilation of MyStack.java failed :\n::\n\n $compilationMessage")
+compilationMessage=$(printf "Compilation of ${studentCodeName}.java failed :\n::\n\n $compilationMessage")
 if [ "${retval}" != "0" ]; then
     feedback --result failed --feedback "$compilationMessage"
     exit 1
