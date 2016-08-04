@@ -73,7 +73,7 @@ else
 	# Scalacheck returns the number of failed test
 	feedback-result failed
 	feedback-msg -ae -m "Unfortunatley, you failed ${retval} tests: \n\n"
-	feedback-msg -ae -m "${infos}"
+	feedback-msg -ae -m "${output}"
 	#feedback-msg
 	#feedback --result failed --feedback "Unfortunately, you failed $retval tests: $infos"
 fi
