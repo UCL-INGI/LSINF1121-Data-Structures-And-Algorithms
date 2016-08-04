@@ -36,6 +36,13 @@ public class OrderedMapTests {
     }
 
     @Test
+    public void testSize() {
+        String hint = "Test of size()";
+
+        SearchTree tree = new SearchTree();
+    }
+
+    @Test
     public void firstTest() {
 
         try {
