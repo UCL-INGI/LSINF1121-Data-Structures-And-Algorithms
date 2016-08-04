@@ -75,30 +75,30 @@ public class OrderedMapTests {
             value.add("Dynamite");
             value.add("Poltron");
 
-            assertEquals(tree.put("ACDC", value), null);
+            assertEquals(null, tree.put("ACDC", value));
 
             value = new HashSet<>();
             value.add("Autre musique");
 
-            assertEquals(tree.put("Autre groupe", value), null);
+            assertEquals(null, tree.put("Autre groupe", value));
 
-            assertEquals(tree.size(), 2);
-            assertEquals(tree.isEmpty(), false);
+            assertEquals(2, tree.size());
+            assertEquals(false, tree.isEmpty());
 
             Set<String> result = tree.get("Autre groupe");
 
-            assertEquals(result.size(), 1);
+            assertEquals(1, result.size());
             assertTrue(result.contains("Autre musique"));
 
             result = tree.firstEntry().getValue();
 
-            assertEquals(result.size(), 2);
+            assertEquals(2, result.size());
             assertTrue(result.contains("Dynamite"));
             assertTrue(result.contains("Poltron"));
 
             result = tree.lastEntry().getValue();
 
-            assertEquals(result.size(), 1);
+            assertEquals(1, result.size());
             assertTrue(result.contains("Autre musique"));
 
         } catch (Exception e) {
@@ -116,17 +116,17 @@ public class OrderedMapTests {
 
             OrderedMap tree = new SearchTree("songs.txt");
 
-            assertEquals(hint, tree.size(), 215);
-            assertEquals(hint, tree.isEmpty(), false);
+            assertEquals(hint, 215, tree.size());
+            assertEquals(hint, false, tree.isEmpty());
 
             Set<String> result = tree.get("Van Halen");
 
-            assertEquals(hint, result.size(), 1);
+            assertEquals(hint, 12, result.size());
             assertTrue(hint, result.contains("You Really Got Me"));
 
             List<Map.Entry<String, Set<String>>> resultBetween = tree.entriesBetween("Who", "ZZ Top");
 
-            assertEquals(hint, resultBetween.size(), 3);
+            assertEquals(hint, 9, resultBetween.size());
 
 
 
