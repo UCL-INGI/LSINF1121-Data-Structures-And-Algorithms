@@ -144,8 +144,8 @@ object InterpreterProps extends Properties("Interpreter") {
 	property("def") = {
 		try {
 			var interpreter = new Interpreter()
-			val result = interpreter.interpret("/pi 3.141592653 def /radius 42 def pi radius dup mul mul pstack pop")
-			result.equals((3.141592653*42*42).toString)
+			val result = interpreter.interpret("/nearpi 3 def /radius 42 def pi radius dup mul mul pstack pop")
+			result.equals((3*42*42).toString)
 		} catch {
 			case e: Exception => false
 		}
