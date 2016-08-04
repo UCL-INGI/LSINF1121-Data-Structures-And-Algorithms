@@ -15,13 +15,17 @@ forbiddenClasses=(
 # Execution of the tests
 ##################
 getinput "${problemId}" > "student/${studentCodeName}.java"
-cp "${interfaceName}" "student/${interfaceName}.java"
+cp "${interfaceName}.java" "student/${interfaceName}.java"
 
-cheat=$(cat student/${studentCodeName}.java | grep -c "")
-if [ $cheat != "0" ]; then
-	feedback --result failed --feedback "You can't use java.util.Stack!"
-    exit 0
-fi
+# We check if the student cheated
+for $forbiddenClass in ${forbiddenClasses[@]}
+do
+	cheat=$(cat student/${studentCodeName}.java | grep -c "${forbiddenClass}")
+	if [ "$cheat" != "0" ]; then
+		feedback --result failed --feedback "We detected the use of ${forbiddenClass}, which is prohibited for this test."
+	    exit 1
+	fi
+done
 
 # Compile the student code
 compilationMessage=$(javac student/Stack.java student/MyStack.java 2>&1)
@@ -30,7 +34,7 @@ compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%
 compilationMessage=$(printf "Compilation of MyStack.java failed :\n::\n\n $compilationMessage")
 if [ "${retval}" != "0" ]; then
     feedback --result failed --feedback "$compilationMessage"
-    exit 0
+    exit 1
 fi
 
 # Copy everything in the 'student' directory for run_student

@@ -24,20 +24,20 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
-    output: '100'
-    time: '10'
     memory: '512'
+    output: '100'
+    time: '30'
 name: Mission 1 - Stack [individual]
 network_grading: false
 order: 2
 problems:
     stack:
-        name: Stack
+        type: code-file
         allowed_exts:
         - .java
+        name: Stack
         header: 'Upload the file containing your implementation here. The class representing
             your stack should be named *MyStack* and implement *Stack* (as usual,
             the interface is available on INGInious).  '
-        type: code-file
 stored_submissions: 0
 weight: 1.0
