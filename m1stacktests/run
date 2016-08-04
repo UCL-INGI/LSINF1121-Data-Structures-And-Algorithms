@@ -70,7 +70,7 @@ do
 		exit 0
 	fi
 
-	if [ "$i" = "0" ]; then
+	if [ "$i" = "1" ]; then
 		# This is the first test, we're testing against the correct implementation
 		if [ "$retval" = "0" ]; then
 			((n++))
@@ -78,7 +78,7 @@ do
 		fi
 	else
 		# We're testing against an incorrect implementation
-		if [ "$retval" = "1" ]; then
+		if [ "$retval" != "0" ]; then
 			((n++))
 			((failOk++))
 		else
