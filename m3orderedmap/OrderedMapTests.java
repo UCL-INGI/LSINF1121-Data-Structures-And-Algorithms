@@ -39,24 +39,23 @@ public class OrderedMapTests {
     public void firstTest() {
 
         try {
-
             OrderedMap tree = new SearchTree();
 
-            assertTrue(tree.isEmpty());
-            assertEquals(tree.size(), 0);
+            assertTrue("Test of isEmpty()", tree.isEmpty());
+            assertEquals("Test of size()", 0, tree.size());
 
             Set<String> value = new HashSet<>();
             value.add("The Pretender");
 
-            assertEquals(tree.put("Foo Fighters", value), null);
+            assertEquals("Test of put()", tree.put("Foo Fighters", value), null);
 
-            assertEquals(tree.size(), 1);
-            assertEquals(tree.isEmpty(), false);
+            assertEquals(1, tree.size());
+            assertEquals(false, tree.isEmpty());
 
             Set<String> result = tree.get("Foo Fighters");
 
-            assertEquals(result.size(), 1);
-            assertTrue(result.contains("The Pretender"));
+            assertEquals("Test of get()", 1, result.size());
+            assertTrue("Test of get()", result.contains("The Pretender"));
 
         } catch (Exception e) {
             fail("Exception occured : " + e);
@@ -69,6 +68,7 @@ public class OrderedMapTests {
 
         try {
 
+            String hint = "";
             OrderedMap tree = new SearchTree();
 
             Set<String> value = new HashSet<>();
@@ -85,27 +85,28 @@ public class OrderedMapTests {
             assertEquals(2, tree.size());
             assertEquals(false, tree.isEmpty());
 
+            hint = "Test of get";
             Set<String> result = tree.get("Autre groupe");
 
-            assertEquals(1, result.size());
-            assertTrue(result.contains("Autre musique"));
+            assertEquals(hint, 1, result.size());
+            assertTrue(hint, result.contains("Autre musique"));
 
+            hint = "Test of firstEntry()";
             result = tree.firstEntry().getValue();
 
-            assertEquals(2, result.size());
-            assertTrue(result.contains("Dynamite"));
-            assertTrue(result.contains("Poltron"));
+            assertEquals(hint, 2, result.size());
+            assertTrue(hint, result.contains("Dynamite"));
+            assertTrue(hint, result.contains("Poltron"));
 
+            hint = "Test of lastEntry()";
             result = tree.lastEntry().getValue();
 
-            assertEquals(1, result.size());
-            assertTrue(result.contains("Autre musique"));
+            assertEquals(hint, 1, result.size());
+            assertTrue(hint, result.contains("Autre musique"));
 
         } catch (Exception e) {
             fail("Exception occured : " + e);
         }
-
-
     }
 
     @Test
@@ -127,9 +128,6 @@ public class OrderedMapTests {
             List<Map.Entry<String, Set<String>>> resultBetween = tree.entriesBetween("Who", "ZZ Top");
 
             assertEquals(hint, 9, resultBetween.size());
-
-
-
         } catch (Exception e) {
             fail("Exception occured : " + e);
         }
