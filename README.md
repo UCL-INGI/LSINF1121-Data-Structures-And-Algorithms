@@ -1,5 +1,3 @@
-
-
 ## Structure
 
 Chaque dossier correspond à une task sur INGInious; certains dossiers sont des essais de tests, mais n'ont pas été publiés sur INGInious. Ce qui suit ne concerne que les tasks demandant aux étudiants des implémentations de programmes ou des tests de programmes:
@@ -22,9 +20,15 @@ Ces tâches demandent à l'étudiant de fournir une batterie de tests qui seront
 * m5_compressor_tests
 * m6_kruskal_tests
 
+Il existe d'autres dossiers pour d'autres missions, mais ce ne sont que des ébauches, et ne sont pas utilisés ou donnés aux étudiants. (Y'as rien pour la mission 2, par exemple)
+
+### common
+
+Dans le dossier "common/" se trouve des scripts communs à chaque tâche. Le script "build" permet de copier ces scripts dans les différents dossiers des différentes tâches. (Il faut les copier/coller car lorsque INGInious crée le container Docker, celui-ci n'a plus accès au repertoire parent, et donc à "common/")
+
 ### run
 
-Le fichier "run" correspond au fichier .bash executés par INGInious lorsqu'une soumission est envoyée. Ce fichier est divisé en 2 partie: "Configuration" et "Execution des tests". Cette deuxième partie est commune à toutes les missions du même style (tests ou implémentations).
+Chaque tâche contient un fichier "run" qui correspond aux fichier executé par INGInious lors de la soumission d'une tâche. La plupart de ces fichiers "run" utilisent les scripts copiés de "common/".
 
 ### examples
 
