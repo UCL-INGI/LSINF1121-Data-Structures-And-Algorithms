@@ -23,13 +23,6 @@ public class CompressTests {
 
             assertTrue(this.getSizeCompressed(str) < str.length());
             assertEquals(this.compressDecompress(str), str);
-
-
-        } catch (Exception e) {
-            fail("Exception occured : " + e);
-        }
-
-        try {
         } catch (Exception e) {
             fail("Exception occured : " + e);
         }

@@ -3,10 +3,10 @@
 ################
 # Configuration
 ################
-problemId="ordered_map"
-studentCodeName="SearchTree"
-interfaceName="OrderedMap"
-testsName="OrderedMapProps"
+problemId="compressor"
+studentCodeName="Compress"
+interfaceName=""
+testsName="CompressProps"
 forbiddenClasses=(
 	"java.util.TreeMap"
 	"java.util.concurrent.ConcurrentSkipListMap"
@@ -15,11 +15,11 @@ forbiddenClasses=(
 
 # Specific for this test
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
+getinput decompressor > student/Decompress.java
 
 # To avoid problems with encoding
 n=5 # number of tests in CompressProps.scala, don't forget to change this variable if you modify it !
 getinput compressor > student/Compress.java
-getinput decompressor > student/Decompress.java
 
 # Compile the student code and parse it properly
 compilationMessage=$(javac student/Compress.java student/Decompress.java 2>&1)
