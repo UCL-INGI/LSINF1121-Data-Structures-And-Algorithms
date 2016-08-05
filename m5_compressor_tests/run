@@ -25,7 +25,8 @@ buggyFeedbacks=(
 
 # SPECIFIC FOR THIS TEST
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
-cp Decompress.java student/Decompress.java
+javac Decompress.java
+cp Decompress.class student/Decompress.class
 cp InputBitStream.class student/InputBitStream.class
 cp OutputBitStream.class student/OutputBitStream.class
 
