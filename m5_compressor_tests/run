@@ -30,4 +30,4 @@ cp InputBitStream.class student/InputBitStream.class
 cp OutputBitStream.class student/OutputBitStream.class
 
 . ./execute_test
-execute_test $tot $problemId $testName $interfaceName $name $buggyName buggyFeedbacks
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks"
