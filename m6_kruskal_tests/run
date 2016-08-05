@@ -28,4 +28,4 @@ getinput archive > arch.zip
 unzip arch.zip -d ./student
 
 . ./execute_test
-execute_test $tot $problemId $testName $interfaceName $name $buggyName buggyFeedbacks
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks"
