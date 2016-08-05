@@ -45,10 +45,11 @@ cp scalacheck.jar student/scalacheck.jar
 cd student
 
 # We compile the tests
-scalac -cp .:scalacheck.jar ${testsName}.scala
+output=$(scalac -cp .:scalacheck.jar "${testsName}.scala")
 if [ "$?" != 0 ]; then
 	feedback-result failed
-	feedback-msg -m "Error while compiling the tests. If it persists, contact the administrator of the course."
+	feedback-msg -ae -m "Error while compiling the tests. If it persists, contact the administrator of the course.\n\n"
+	feedback-msg -ae -m "${output}"
 	exit 1
 fi
 
