@@ -73,11 +73,8 @@ elif [ "$retval" = "0" ]; then
 	# The student implementation passed the test
 	feedback --result success --feedback "Congratulations, your implementation passed the tests!"
 else
-	infos=$(echo "$output" | grep -o '! \w*.\w*')
-	# Scalacheck returns the number of failed test
+	# The return code of scalacheck is the number of fail tests
 	feedback-result failed
-	feedback-msg -ae -m "Unfortunatley, you failed ${retval} tests: \n\n"
-	feedback-msg -ae -m "${output}"
-	#feedback-msg
-	#feedback --result failed --feedback "Unfortunately, you failed $retval tests: $infos"
+	feedback-msg -ae -m "Unfortunatley, you failed ${retval} tests:\n\n"
+	feedback-msg -ae -m "${output}\n\n"
 fi
