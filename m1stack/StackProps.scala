@@ -41,7 +41,7 @@ object StackProps extends Properties("Stack") {
 			val s = new MyStack[String]()
 			val firstPushReturn = s.push(el1)
 			val secondPushreturn = s.push(el2)
-			(firstPushReturn.equals(e1) && secondPushreturn.equals(e2) && s.pop().equals(el2) && s.peek().equals(el1) && !s.empty())
+			(firstPushReturn.equals(el1) && secondPushreturn.equals(el2) && s.pop().equals(el2) && s.peek().equals(el1) && !s.empty())
 		} catch {
 			case e: Exception => false
 		}
