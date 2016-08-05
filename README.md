@@ -24,7 +24,7 @@ Ces tâches demandent à l'étudiant de fournir une batterie de tests qui seront
 
 ### run
 
-Le fichier "run" correspond au fichier .bash executés par INGInious lorsqu'une soumission est envoyée. La première partie est la configuration du test, la deuxième est l'execution du test. Normalement, la deuxième partie est commune à toutes les missions, on peut donc normalement copier-coller cette partie dans les autres dossiers (Faut juste y penser, et penser à une solution pour ne pas devoir faire ça)
+Le fichier "run" correspond au fichier .bash executés par INGInious lorsqu'une soumission est envoyée. Ce fichier est divisé en 2 partie: "Configuration" et "Execution des tests". Cette deuxième partie est commune à toutes les missions du même style (tests ou implémentations).
 
 ### examples
 
