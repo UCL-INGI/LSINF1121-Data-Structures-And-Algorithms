@@ -8,7 +8,7 @@
 # 4 - Name of the interface implemented by the $5 class
 # 5 - Name of the implementation that the tests run against
 # 6 - Prefix of the buggy implementations (="MyBuggyStack" for "MyBuggyStack1.java", ...)
-# 7 - Name of an array that contains feedbacks messages for each bugg implementations
+# 7 - Name of an array that contains feedbacks messages for each buggy implementations
 
 function execute_test {
 	local tot="$1"
