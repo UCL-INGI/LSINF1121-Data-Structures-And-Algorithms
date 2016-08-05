@@ -39,9 +39,9 @@ object StackProps extends Properties("Stack") {
 	property("double_push") = Prop.forAll { (el1: String, el2: String) =>
 		try {
 			val s = new MyStack[String]()
-			s.push(el1)
-			s.push(el2)
-			(s.pop().equals(el2) && s.peek().equals(el1) && !s.empty())
+			val firstPushReturn = s.push(el1)
+			val secondPushreturn = s.push(el2)
+			(firstPushReturn.equals(e1) && secondPushreturn.equals(e2) && s.pop().equals(el2) && s.peek().equals(el1) && !s.empty())
 		} catch {
 			case e: Exception => false
 		}
@@ -97,7 +97,7 @@ object StackProps extends Properties("Stack") {
 			case e: Exception => false
 		}
 	}
-    
+
     property("double") = Prop.forAll { (el: Double) =>
 		try {
 			val s = new MyStack[Double]()
