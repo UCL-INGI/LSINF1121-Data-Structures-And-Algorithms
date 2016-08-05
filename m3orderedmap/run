@@ -78,10 +78,12 @@ elif [ "$retval" = "0" ]; then
 	# The student implementation passed the test
 	feedback --result success --feedback "Congratulations, your implementation passed the tests!"
 else
-	infos=$(echo "$output" | grep -o '! \w*.\w*')
 	# Scalacheck returns the number of failed test
 	feedback-result failed
 	feedback-msg -ae -m "Unfortunatley, you failed ${retval} tests: \n\n"
+	# We add 4 spaces before each line so that INGInious displays the output
+	# in a raw-box
+	output=$(echo "${output}" | sed 's/^/    /')
 	feedback-msg -ae -m "${output}"
 	#feedback-msg
 	#feedback --result failed --feedback "Unfortunately, you failed $retval tests: $infos"
