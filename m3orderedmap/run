@@ -84,8 +84,8 @@ else
 	feedback-msh -ae -m "::\n\n"
 	# We add 4 spaces before each line so that INGInious displays the output
 	# in a raw-box
-	output=$(echo "${output}" | sed -e 's/^/    /')
-	feedback-msg -ae -m "${output}"
+	output=$(echo "${output}" | sed '/^\s*$/d' | sed 's/^/    /')
+	feedback-msg -ae -m "${output}\n\n"
 	#feedback-msg
 	#feedback --result failed --feedback "Unfortunately, you failed $retval tests: $infos"
 fi
