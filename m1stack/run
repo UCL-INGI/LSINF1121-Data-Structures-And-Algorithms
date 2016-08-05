@@ -1,29 +1,62 @@
 #! /bin/bash
-getinput stack > student/MyStack.java
-cp Stack.java student/Stack.java
 
-cheat=$(cat student/MyStack.java | grep -c "java.util.Stack")
-if [ $cheat != "0" ]; then
-	feedback --result failed --feedback "You can't use java.util.Stack!"
-    exit 0
-fi
+################
+# Configuration
+################
+problemId="stack"
+studentCodeName="MyStack"
+interfaceName="Stack"
+testsName="StackProps"
+forbiddenClasses=(
+	"java.util.Stack"
+)
 
-# Compile the student code and parse it properly
-compilationMessage=$(javac student/Stack.java student/MyStack.java 2>&1)
+##################
+# Execution of the tests
+##################
+getinput "${problemId}" > "student/${studentCodeName}.java"
+cp "${interfaceName}.java" "student/${interfaceName}.java"
+
+# We check if the student cheated
+for forbiddenClass in "${forbiddenClasses[@]}"
+do
+	cheat=$(cat "student/${studentCodeName}.java" | grep -c "${forbiddenClass}")
+	echo -e "${cheat}"
+	if [ "$cheat" != "0" ]; then
+		feedback --result failed --feedback "We detected the use of ${forbiddenClass}, which is prohibited for this test."
+	    exit 1
+	fi
+done
+
+# Compile the student code
+compilationMessage=$(javac student/${interfaceName}.java student/${studentCodeName}.java 2>&1)
+retval=$?
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-compilationMessage=$(printf "Compilation of MyStack.java failed :\n::\n\n $compilationMessage")
-if [ ! -f student/MyStack.class ]; then
+compilationMessage=$(printf "Compilation of ${studentCodeName}.java failed :\n::\n\n $compilationMessage")
+if [ "${retval}" != "0" ]; then
     feedback --result failed --feedback "$compilationMessage"
-    exit 0
+    exit 1
 fi
 
 # Copy everything in the 'student' directory for run_student
-cp StackProps.scala student/StackProps.scala
+cp ${testsName}.scala student/${testsName}.scala
 cp scalacheck.jar student/scalacheck.jar
 cd student
-scalac -cp .:scalacheck.jar StackProps.scala
-output=$(run_student scala -cp .:scalacheck.jar StackProps)
+
+# We compile the tests
+scalac -cp .:scalacheck.jar ${testsName}.scala
+if [ "$?" != 0 ]; then
+	feedback-result failed
+	feedback-msg -m "Error while compiling the tests. If it persists, contact the administrator of the course."
+	exit 1
+fi
+
+# We run the tests
+output=$(run_student scala -cp .:scalacheck.jar ${testsName})
 retval=$?
+echo -e "${output}\n"
+echo -e "Scalacheck returned the value: ${retval}\n"
+
 cd ..
 
 if [ "$retval" = "252" ]; then
@@ -32,16 +65,15 @@ elif [ "$retval" = "253" ]; then
 	feedback --result timeout --feedback "Command timed out"
 elif [ "$retval" = "254" ]; then
     feedback --result failed --feedback "Unfortunately, a runtime error occured"
+elif [ "$retval" = "0" ]; then
+	# The student implementation passed the test
+	feedback --result success --feedback "Congratulations, your implementation passed the tests!"
 else
-	failed=$(echo "$output" | grep -c "Falsified")
-	passed=$(echo "$output" | grep -c "OK")
 	infos=$(echo "$output" | grep -o '! \w*.\w*')
-
-	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then
-    	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
-	elif [ "$failed" = "0" ]; then
-		feedback --result success --feedback "Congratulations, you passed the $passed tests!"
-	else
-		feedback --result failed --feedback "Unfortunately, you failed $failed tests out of $(($passed+$failed)) : $infos"
-	fi
+	# Scalacheck returns the number of failed test
+	feedback-result failed
+	feedback-msg -ae -m "Unfortunatley, you failed ${retval} tests: \n\n"
+	feedback-msg -ae -m "${output}"
+	#feedback-msg
+	#feedback --result failed --feedback "Unfortunately, you failed $retval tests: $infos"
 fi
