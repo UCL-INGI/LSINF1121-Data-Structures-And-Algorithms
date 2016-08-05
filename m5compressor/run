@@ -1,7 +1,22 @@
 #! /bin/bash
 
-# To avoid problems with encoding
+################
+# Configuration
+################
+problemId="ordered_map"
+studentCodeName="SearchTree"
+interfaceName="OrderedMap"
+testsName="OrderedMapProps"
+forbiddenClasses=(
+	"java.util.TreeMap"
+	"java.util.concurrent.ConcurrentSkipListMap"
+	"Arrays.sort"
+)
+
+# Specific for this test
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
+
+# To avoid problems with encoding
 n=5 # number of tests in CompressProps.scala, don't forget to change this variable if you modify it !
 getinput compressor > student/Compress.java
 getinput decompressor > student/Decompress.java

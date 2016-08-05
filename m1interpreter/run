@@ -15,13 +15,14 @@ forbiddenClasses=(
 # Execution of the tests
 ##################
 getinput "${problemId}" > "student/${studentCodeName}.java"
-cp "${interfaceName}.java" "student/${interfaceName}.java"
+if [ -n "${interfaceName}" ];then
+	cp "${interfaceName}.java" "student/${interfaceName}.java"
+fi
 
 # We check if the student cheated
-for $forbiddenClass in "${forbiddenClasses[@]}"
-do
+for forbiddenClass in "${forbiddenClasses[@]}"; do
 	cheat=$(cat "student/${studentCodeName}.java" | grep -c "${forbiddenClass}")
-	echo -e "${cheat}"
+	echo -e "Cheat check for ${forbiddenClass}: ${cheat}"
 	if [ "$cheat" != "0" ]; then
 		feedback --result failed --feedback "We detected the use of ${forbiddenClass}, which is prohibited for this test."
 	    exit 1
@@ -44,10 +45,13 @@ cp scalacheck.jar student/scalacheck.jar
 cd student
 
 # We compile the tests
-scalac -cp .:scalacheck.jar ${testsName}.scala
-if [ "$?" != 0 ]; then
+output=$(scalac -cp .:scalacheck.jar "${testsName}.scala" 2>&1)
+retval=$?
+output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+if [ "$retval" != 0 ]; then
 	feedback-result failed
-	feedback-msg -m "Error while compiling the tests. If it persists, contact the administrator of the course."
+	feedback-msg -ae -m "Error while compiling the tests. If it persists, contact the administrator of the course.\n\n"
+	feedback-msg -ae -m "${output}"
 	exit 1
 fi
 

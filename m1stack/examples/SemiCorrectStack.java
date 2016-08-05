@@ -15,14 +15,14 @@ public class MyStack<E> implements Stack<E> {
     }
 
     public boolean empty() {
-        return !(size == 0);
+        return size == 0;
     }
 
     public E push(E element) {
         Node<E> newNode = new Node<E>(element, top);
         top = newNode;
         size++;
-        return element;
+        return null; // Bug, returns null instead of the element
     }
 
     public E peek() throws EmptyStackException {
