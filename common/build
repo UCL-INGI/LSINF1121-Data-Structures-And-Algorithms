@@ -6,11 +6,9 @@
 cp execute_implementation ../m1stack
 cp execute_implementation ../m1interpreter
 cp execute_implementation ../m3orderedmap
-cp execute_implementation ../m4bis
-cp execute_implementation ../m5compressor
-cp execute_implementation ../m6_kruskal_tests
 
 cp execute_test ../m1stacktests
+cp execute_test ../m1interpretertests
 cp execute_test ../m3tests
 cp execute_test ../m4_plagiarism_tests
 cp execute_test ../m5_compressor_tests
