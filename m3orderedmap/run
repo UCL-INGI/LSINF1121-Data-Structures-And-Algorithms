@@ -13,6 +13,9 @@ forbiddenClasses=(
 	"Arrays.sort"
 )
 
+# Specific fo rthis tests
+cp songs.txt student/songs.txt
+
 ##################
 # Execution of the tests
 ##################
