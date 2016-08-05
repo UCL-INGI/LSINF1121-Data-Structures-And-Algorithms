@@ -14,7 +14,7 @@ tot=5 # number of tests
 problemId="tests"
 testName="CompressTests"
 name="Compress"
-interfaceName=""
+interfaceName="roflmao"
 buggyName="BuggyCompress"
 buggyFeedbacks=(
 	"Wrong output ________ ________"
