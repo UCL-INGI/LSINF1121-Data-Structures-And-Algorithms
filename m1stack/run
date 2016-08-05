@@ -15,7 +15,9 @@ forbiddenClasses=(
 # Execution of the tests
 ##################
 getinput "${problemId}" > "student/${studentCodeName}.java"
-cp "${interfaceName}.java" "student/${interfaceName}.java"
+if [ -n "${interfaceName}" ];then
+	cp "${interfaceName}.java" "student/${interfaceName}.java"
+fi
 
 # We check if the student cheated
 for forbiddenClass in "${forbiddenClasses[@]}"; do
@@ -45,11 +47,7 @@ cd student
 # We compile the tests
 scalac -cp .:scalacheck.jar ${testsName}.scala
 if [ "$?" != 0 ]; then
-<<<<<<< HEAD
 	feedback-result failed
-=======
-	feedback-result crash
->>>>>>> c85b6f279bd3674150a3e12b2270aa02e38ee091
 	feedback-msg -m "Error while compiling the tests. If it persists, contact the administrator of the course."
 	exit 1
 fi
