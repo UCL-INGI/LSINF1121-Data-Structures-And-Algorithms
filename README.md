@@ -4,18 +4,23 @@
 
 Chaque dossier correspond à une task sur INGInious; certains dossiers sont des essais de tests, mais n'ont pas été publiés sur INGInious. Ce qui suit ne concerne que les tasks demandant aux étudiants des implémentations de programmes ou des tests de programmes:
 
-* m1stacktests
+Ces tâches demandent à l'étudiant de fournir une implémentation d'une interface:
+
 * m1stack
-* m1interpretertests
 * m1interpreter
-* m3tests
 * m3orderedmap
-* m4plagiarism_tests
 * m4bis
-* m5_compressor_tests
 * m5compressor
-* m6_kruskal_tests
 * m6kruskal
+
+Ces tâches demandent à l'étudiant de fournir une batterie de tests qui seront appliqués sur des implémentations parfois correctes parfois incorrectes:
+
+* m1stacktests
+* m1interpretertests
+* m3tests
+* m4plagiarism_tests
+* m5_compressor_tests
+* m6_kruskal_tests
 
 ### run
 
