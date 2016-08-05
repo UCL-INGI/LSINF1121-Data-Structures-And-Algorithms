@@ -83,7 +83,7 @@ else
 	feedback-msg -ae -m "Unfortunatley, you failed ${retval} tests:\n\n"
 	# We add 4 spaces before each line so that INGInious displays the output
 	# in a raw-box
-	output=$(echo "${output}" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+	output=$(echo "${output}" | sed -e 's/^/\t/')
 	feedback-msg -ae -m "${output}"
 	#feedback-msg
 	#feedback --result failed --feedback "Unfortunately, you failed $retval tests: $infos"
