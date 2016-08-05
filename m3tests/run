@@ -37,4 +37,4 @@ buggyFeedbacks=(
 cp songs.txt student/songs.txt
 
 . ./execute_test
-execute_test $tot $problemId $testName $interfaceName $name $buggyName buggyFeedbacks
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks"

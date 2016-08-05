@@ -20,6 +20,7 @@ public class CompressTests {
                 builder.append("abracadabra");
             }
             str = builder.toString();
+            System.out.println("lol");
 
             assertTrue(this.getSizeCompressed(str) < str.length());
             assertEquals(this.compressDecompress(str), str);
