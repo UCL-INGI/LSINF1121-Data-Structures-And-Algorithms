@@ -22,10 +22,11 @@ buggyFeedbacks=(
 	"How many nodes are there in a MST compared to the original graph ?"
 	"What can be said about the connectivity of a MST if the original graph is connected ?"
 )
+countBeforeHints=2
 
 # SPECIFIC FOR THIS TEST
 getinput archive > arch.zip
 unzip arch.zip -d ./student
 
 . ./execute_test
-execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks"
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints

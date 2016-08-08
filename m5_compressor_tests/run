@@ -22,6 +22,7 @@ buggyFeedbacks=(
 	"Long files not tested________ ________"
 	"You did not test if the size was really lowering (hint : you can re-open a file that was used in a compress_decrompress call)"
 )
+countBeforeHints=2
 
 # SPECIFIC FOR THIS TEST
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
@@ -30,4 +31,4 @@ cp InputBitStream.class student/InputBitStream.class
 cp OutputBitStream.class student/OutputBitStream.class
 
 . ./execute_test
-execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks"
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints

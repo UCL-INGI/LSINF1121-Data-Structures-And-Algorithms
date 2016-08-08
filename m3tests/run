@@ -33,8 +33,9 @@ buggyFeedbacks=(
 	"Unit tests should check if the set returned by a method doesn't contain more values than it should"
 	"toString() failed test"
 )
+countBeforeHints=3
 
 cp songs.txt student/songs.txt
 
 . ./execute_test
-execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks"
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints

@@ -23,6 +23,7 @@ buggyFeedbacks=(
 	"Failed incrementalHashCode() test"
 	"Methods should be tested multiple times with different elements to make sure there are no side-effects between calls"
 )
+countBeforeHints=2
 
 . ./execute_test
-execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks"
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints

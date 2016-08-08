@@ -28,6 +28,7 @@ buggyFeedbacks=(
 	""
 	""
 )
+countBeforeHints=3
 
 . ./execute_test
-execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks"
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints
