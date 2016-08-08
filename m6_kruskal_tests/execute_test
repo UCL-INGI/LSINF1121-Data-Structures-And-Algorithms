@@ -9,6 +9,7 @@
 # 5 - Name of the implementation that the tests run against
 # 6 - Prefix of the buggy implementations (="MyBuggyStack" for "MyBuggyStack1.java", ...)
 # 7 - Name of an array that contains feedbacks messages for each buggy implementations
+# 8 - Count of errors before we show feedbacks to user
 
 function execute_test {
 	local tot="$1"
@@ -18,6 +19,7 @@ function execute_test {
 	local name="$5"
 	local buggyName="$6"
 	local -n buggyFeedbacks=$7
+	local countBeforeHints=$8
 
 	getinput "${problemId}" > "student/$testName.java"
 	cp junit-4.12.jar student/junit-4.12.jar
@@ -107,7 +109,7 @@ function execute_test {
 
 		# We only print the test feedbacks if the student has not more
 		# than 3 failed tests
-		if [ "$errors" -le "3" ]; then
+		if [ "$errors" -le "${countBeforeHints}" ]; then
 			feedback-msg -ae -m "${feedbackMessages}"
 		fi
 
