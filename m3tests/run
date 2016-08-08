@@ -25,7 +25,7 @@ buggyFeedbacks=(
 	""
 	""
 	"A file \"songs.txt\" is provided to you for this test"
-	"A file \"songs.txt\" containgin 50 songs is provided to you for this test"
+	"A file \"songs.txt\" containing 50 songs is provided to you for this test"
 	"ceilingEntry() failed test"
 	"firstEntry() failed test"
 	"getOrdered() failed test"
@@ -33,7 +33,7 @@ buggyFeedbacks=(
 	"Unit tests should check if the set returned by a method doesn't contain more values than it should"
 	"toString() failed test"
 )
-countBeforeHints=3
+countBeforeHints=3th
 
 cp songs.txt student/songs.txt
 
