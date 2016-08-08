@@ -21,7 +21,7 @@ buggyFeedbacks=(
 	""
 	""
 	"Failed incrementalHashCode() test"
-	"Methods should be tested multiple times with different elements to make there are no side-effects between calls"
+	"Methods should be tested multiple times with different elements to make sure there are no side-effects between calls"
 )
 
 . ./execute_test

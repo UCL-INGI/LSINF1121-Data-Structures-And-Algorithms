@@ -20,7 +20,7 @@ buggyFeedbacks=(
 	""
 	"How many edges are there in a MST compared to the original graph ?"
 	"How many nodes are there in a MST compared to the original graph ?"
-	""
+	"What can be said about the connectivity of a MST if the original graph is connected ?"
 )
 
 # SPECIFIC FOR THIS TEST
