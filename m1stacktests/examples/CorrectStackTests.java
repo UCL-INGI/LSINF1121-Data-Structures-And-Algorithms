@@ -5,7 +5,7 @@ import static org.junit.Assert.fail;
 
 /**
  * Those unit tests successfuly detects all error
- * @author Smon HARDY
+ * @author Simon HARDY
  */
 public class StackTests {
 
