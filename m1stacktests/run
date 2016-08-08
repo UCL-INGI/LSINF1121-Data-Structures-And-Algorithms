@@ -14,7 +14,7 @@ buggyFeedbacks=(
 	""
 	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
 	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
-	"Unit tests should also check if the implementation behaves correctly when it isn't used correctly"
+	"Unit tests should also check if the implementation behaves correctly when it isn't used properly"
 	"Not only the return values of methods, but also their effects should be tested"
 	""
 	"Not only the effects of methods, but also their return values should be tested"
