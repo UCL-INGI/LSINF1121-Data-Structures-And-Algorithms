@@ -1,3 +1,4 @@
+
 public class BreadthFirstShortestPaths {
 
     private static final int INFINITY = Integer.MAX_VALUE;
