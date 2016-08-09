@@ -1,6 +1,6 @@
 accessible: false
 author: Frédéric Kaczynski
-context: |-
+context: |+
     Consider this class, ``BreadthFirstShortestPaths``, that computes the shortest path between multiple node sources and any node in an undirected graph.
 
     .. code-block:: java
@@ -52,6 +52,20 @@ context: |-
         }
 
     As a reminder, here is the specification of the ``Graph`` class
+
+    =====  =====  ======
+       Inputs     Output
+    ------------  ------
+      A      B    A or B
+    =====  =====  ======
+    False  False  False
+    True   False  True
+    False  True   True
+    True   True   True
+    =====  =====  ======
+
+    .. code-block:: java
+
 environment: java8scala
 evaluate: best
 groups: false
