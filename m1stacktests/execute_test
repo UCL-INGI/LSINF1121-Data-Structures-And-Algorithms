@@ -72,9 +72,14 @@ function execute_test {
 
 		if [ "$i" = "1" ]; then
 			# This is the first test, we're testing against the correct implementation
+			# Therefore, the test should say this is a correct implementation
 			if [ "$retval" = "0" ]; then
 				((n++))
 				((passOk++))
+			else
+				feedback-result failed
+				feedback-msg -ae -m "You detected an error in a correct implementation\n\n"
+				feedback-msg -ae -m "${output}"
 			fi
 		else
 			# We're testing against an incorrect implementation
