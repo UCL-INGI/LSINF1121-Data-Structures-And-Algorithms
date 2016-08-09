@@ -2,7 +2,7 @@
 
 name="BreadthFirstShortestPaths"
 
-parsetemplate --output "student/${name}.java" template.java
+parsetemplate --output "student/${name}.java" "student/${name}.java"
 
 cd student/
 
