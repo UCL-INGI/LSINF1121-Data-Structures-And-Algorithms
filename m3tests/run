@@ -33,7 +33,7 @@ buggyFeedbacks=(
 	"Unit tests should check if the set returned by a method doesn't contain more values than it should"
 	"toString() failed test"
 )
-countBeforeHints=3th
+countBeforeHints=3
 
 cp songs.txt student/songs.txt
 

@@ -1,0 +1,9 @@
+#! /bin/batch
+
+name="BreadthFirstShortestPaths"
+
+parsetemplate --output "${name}.java" template.java
+output=$(cat "template.java")
+
+output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+feedback-msg -ae -m "${output}"
