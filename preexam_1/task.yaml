@@ -12,7 +12,29 @@ name: Pré-Examen
 network_grading: false
 problems:
     question1:
-        header: ''
+        header: |-
+            Consider this class, BreadthFirstShortestPaths, that computes the shortest path between multiple node sources and any node in an undirected graph.
+
+            .. code-block:: java
+
+                import org.junit.Test;
+                import static org.junit.Assert.assertEquals;
+                public class InterpreterTests {
+
+                    String instructions = "1 1 add pstack";
+                    InterpreterInterface interpreter = new Interpreter();
+
+                    @Test
+                    public void firstTest() {
+                        String result = interpreter.interpret(instructions);
+                        assertEquals(result,"2");
+                    }
+
+                    @Test
+                    public void secondTest() {
+                        // TODO...
+                    }
+                }
         name: BreadthFirstShortestPaths
         language: java
         type: code
