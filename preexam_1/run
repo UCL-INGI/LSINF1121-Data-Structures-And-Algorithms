@@ -1,0 +1,10 @@
+#! /bin/bash
+
+name="BreadthFirstShortestPaths"
+
+parsetemplate --output "${name}.java" template.java
+output=$(cat "template.java")
+
+output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+feedback-msh -ae -m "Compilation error:\n..\n\n"
+feedback-msg -ae -m "${output}"
