@@ -30,6 +30,10 @@ fi
 
 output=$(run_student java BFSTests)
 retval=$?
+
+feedback-msg -ae -m "Return value: ${retval}"
+feedback-msg -ae -m "Output: ${output}"
+
 if [ "$retval" = "0" ]; then
     feedback-result success
     feedback-msg -ae -m "Your implementation passed the tests !"

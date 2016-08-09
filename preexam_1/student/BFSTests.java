@@ -8,5 +8,6 @@ public class BFSTests {
     public void test()
     {
         assertTrue(true);
+        assertTrue(true);
     }
 }
