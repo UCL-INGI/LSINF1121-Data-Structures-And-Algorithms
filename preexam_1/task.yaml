@@ -1,0 +1,20 @@
+accessible: false
+author: Frédéric Kaczynski
+context: ''
+environment: java8scala
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: Pré-Examen
+network_grading: false
+problems:
+    question1:
+        header: ''
+        name: BreadthFirstShortestPaths
+        language: java
+        type: code
+stored_submissions: 0
+weight: 0.0
