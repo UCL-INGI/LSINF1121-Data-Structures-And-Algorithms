@@ -21,7 +21,7 @@ public class BreadthFirstShortestPaths {
 
      // Breadth-first search from multiple sources
      private void bfs(Graph G, Iterable<Integer> sources) {
-         // TODO
+         @    @question1@@
      }
 
      /**
@@ -30,7 +30,7 @@ public class BreadthFirstShortestPaths {
       * @return true if there is a path, and false otherwise
       */
      public boolean hasPathTo(int v) {
-         // TODO
+         @    @question3@@
      }
 
      /**
@@ -40,6 +40,6 @@ public class BreadthFirstShortestPaths {
       * @return the number of edges in a shortest path
       */
      public int distTo(int v) {
-         // TODO
+         @    @question2@@
      }
 }
