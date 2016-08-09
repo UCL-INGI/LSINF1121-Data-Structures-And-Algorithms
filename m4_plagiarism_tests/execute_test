@@ -88,7 +88,7 @@ function execute_test {
 				if [[ -z "$feedbackLine" ]]; then
 					feedbackLine="Failed test"
 				fi
-				feedbackMessages="${feedbackMessages}<b>Test #$index:</b> $feedbackLine\n\n"
+				feedbackMessages="${feedbackMessages}**Test #$index:** $feedbackLine\n\n"
 			fi
 		fi
 	done
@@ -99,7 +99,7 @@ function execute_test {
 	elif [ "$passOk" != "1" ]; then
 		feedback --result failed --feedback "You detected an error in a correct implementation"
 	elif [ "$n" = "$tot" ]; then
-		feedback --grade 100 --result success --feedback "Congratulations, you passed the ${incorrect} tests!"
+		feedback --grade 100 --result success --feedback "Congratulations, you passed the **${incorrect}** tests!"
 	else
 		errors=$(( incorrect - failOk ))
 		grade=$(( (100 * (failOk)) / $incorrect ))
@@ -113,6 +113,6 @@ function execute_test {
 			feedback-msg -ae -m "${feedbackMessages}"
 		fi
 
-		feedback-msg -ae -m "You detected errors in only $failOk (out of $incorrect) incorrect implementations."
+		feedback-msg -ae -m "You detected errors in only **$failOk** (out of **$incorrect**) incorrect implementations."
 	fi
 }
