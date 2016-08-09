@@ -32,7 +32,6 @@ function execute_test {
 
 	incorrect=$(( $tot-1 ))
 	n=0 # number of tests passed
-	passOk=0
 	failOk=0
 	oldName="$name"
 	feedbackMessages=""
@@ -75,11 +74,12 @@ function execute_test {
 			# Therefore, the test should say this is a correct implementation
 			if [ "$retval" = "0" ]; then
 				((n++))
-				((passOk++))
 			else
 				feedback-result failed
-				feedback-msg -ae -m "You detected an error in a correct implementation\n\n"
+				feedback-msg -ae -m "You detected an error in a correct implementation:\n::\n\n"
+				output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 				feedback-msg -ae -m "${output}"
+				exit 1
 			fi
 		else
 			# We're testing against an incorrect implementation
@@ -100,9 +100,7 @@ function execute_test {
 	cd ..
 
 	if [ "$n" = "0" ]; then
-		feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
-	elif [ "$passOk" != "1" ]; then
-		feedback --result failed --feedback "You detected an error in a correct implementation"
+		feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator."
 	elif [ "$n" = "$tot" ]; then
 		feedback --grade 100 --result success --feedback "Congratulations, you passed the **${incorrect}** tests!"
 	else
