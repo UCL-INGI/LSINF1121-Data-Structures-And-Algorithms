@@ -90,11 +90,11 @@ problems:
 
                 // Breadth-first search from multiple sources
                 private void bfs(Graph G, Iterable<Integer> sources)
-        name: BreadthFirstShortestPaths
+        name: ''
         type: code
     question2:
-        answer: ''
-        type: match
+        type: code
+        language: java
         header: ''
         name: ''
 stored_submissions: 0
