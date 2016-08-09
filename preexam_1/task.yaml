@@ -63,7 +63,11 @@ name: Pré-Examen
 network_grading: false
 problems:
     question1:
-        header: ''
+        header: |-
+            .. code-block:: java
+
+                // Breadth-first search from multiple sources
+                private void bfs(Graph G, Iterable<Integer> sources)
         name: BreadthFirstShortestPaths
         language: java
         type: code
