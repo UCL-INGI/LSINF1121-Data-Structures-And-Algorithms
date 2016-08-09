@@ -36,7 +36,7 @@ context: |-
               * @param v the vertex
               * @return true if there is a path, and false otherwise
               */
-             private boolean hasPathTo(int v) {
+             public boolean hasPathTo(int v) {
                  // TODO
              }
 
@@ -72,7 +72,7 @@ context: |-
             public String toString() { }
         }
 
-    **Note:** The following questions will ask you to implement the function left out. You don't need to put the brackets (``{ }``) in your answer.
+    **Note:** The following questions will ask you to implement the function left out. You don't need to put the brackets (``{ }``) surrounding the function body in your answer.
 environment: java8scala
 evaluate: best
 groups: false
@@ -84,18 +84,31 @@ name: Pré-Examen
 network_grading: false
 problems:
     question1:
+        name: ''
         language: java
         header: |-
             .. code-block:: java
 
                 // Breadth-first search from multiple sources
                 private void bfs(Graph G, Iterable<Integer> sources)
-        name: ''
         type: code
     question2:
+        header: |-
+            .. code-block:: java
+
+                // Breadth-first search from multiple sources
+                public boolean hasPathTo(int v)
         type: code
         language: java
-        header: ''
         name: ''
+    question3:
+        header: |-
+            .. code-block:: java
+
+                // Breadth-first search from multiple sources
+                public int distTo(int v)
+        language: java
+        name: ''
+        type: code
 stored_submissions: 0
 weight: 0.0
