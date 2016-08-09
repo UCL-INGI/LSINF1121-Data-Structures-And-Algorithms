@@ -88,7 +88,7 @@ function execute_test {
 				if [[ -z "$feedbackLine" ]]; then
 					feedbackLine="Failed test"
 				fi
-				feedbackMessages="${feedbackMessages}Test #$index: $feedbackLine\n\n"
+				feedbackMessages="${feedbackMessages}<b>Test #$index:</b> $feedbackLine\n\n"
 			fi
 		fi
 	done
