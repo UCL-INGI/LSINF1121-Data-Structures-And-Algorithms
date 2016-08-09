@@ -1,7 +1,6 @@
 
 public class BreadthFirstShortestPaths {
-
-    private static final int INFINITY = Integer.MAX_VALUE;
+    public static final int INFINITY = Integer.MAX_VALUE;
     private boolean[] marked; // marked[v] = is there an s-v path
     private int[] distTo;     // distTo[v] = number of edges shortest s-v path
 
