@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # This script copies all the necessary components in the right folder
-#
 
 cp execute_implementation ../m1stack
 cp execute_implementation ../m1interpreter
