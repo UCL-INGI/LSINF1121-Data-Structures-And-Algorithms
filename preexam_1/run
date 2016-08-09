@@ -2,9 +2,15 @@
 
 name="BreadthFirstShortestPaths"
 
-parsetemplate --output "${name}.java" template.java
-output=$(cat "template.java")
+parsetemplate --output "student/${name}.java" template.java
 
-output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-feedback-msh -ae -m "Compilation error:\n..\n\n"
-feedback-msg -ae -m "${output}"
+cd student/
+
+output=$(javac "${name}.java" 2>&1)
+retval=$?
+if [ "$retval" != "0" ]; then
+    output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+    feedback-msg -ae -m "Compilation of ${name} failed:\n::\n\n"
+    feedback-msg -ae -m "$output"
+    exit 1
+fi
