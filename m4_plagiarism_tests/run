@@ -17,7 +17,6 @@ testName="HashMapTests"
 interfaceName="MapInterface"
 buggyName="BuggyHashMap"
 buggyFeedbacks=(
-<<<<<<< HEAD
 	"Failed put() test"
 	"Failed get() test"
 	"Failed size() test"
