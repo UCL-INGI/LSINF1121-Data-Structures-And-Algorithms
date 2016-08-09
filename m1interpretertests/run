@@ -20,13 +20,13 @@ testName="InterpreterTests"
 interfaceName="InterpreterInterface"
 buggyName="BuggyInterpreter"
 buggyFeedbacks=(
-	""
-	""
-	""
+	"Failed add test"
+	"Failed dup test"
+	"Failed pstack test"
 	"Unit tests should also cover error case i.e. if an implementation behaves correctly when wrong input has been given"
-	""
-	""
-	""
+	"Failed exch test"
+	"Failed pop test"
+	"Failed def test"
 )
 countBeforeHints=3
 

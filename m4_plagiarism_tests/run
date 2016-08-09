@@ -17,9 +17,9 @@ testName="HashMapTests"
 interfaceName="MapInterface"
 buggyName="BuggyHashMap"
 buggyFeedbacks=(
-	""
-	""
-	""
+	"Failed put() test"
+	"Failed get() test"
+	"Failed size() test"
 	"Failed incrementalHashCode() test"
 	"Methods should be tested multiple times with different elements to make sure there are no side-effects between calls"
 )
