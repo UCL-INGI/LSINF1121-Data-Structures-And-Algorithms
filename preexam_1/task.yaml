@@ -51,12 +51,11 @@ context: |-
              }
         }
 
-    As a reminder, here is the specification of the ``Graph`` class
+    The class ``Graph`` is already implemented. As a reminder, here is its specification:
 
     .. code-block:: java
 
         public class Graph {
-
             // @return the number of vertices
             public int V() { }
 
@@ -72,6 +71,8 @@ context: |-
             // @return a string representation
             public String toString() { }
         }
+
+    **Note:** The following questions will ask you to implement the function left out. You don't need to put the brackets (``{ }``) in your answer.
 environment: java8scala
 evaluate: best
 groups: false
@@ -83,13 +84,18 @@ name: Pré-Examen
 network_grading: false
 problems:
     question1:
+        language: java
         header: |-
             .. code-block:: java
 
                 // Breadth-first search from multiple sources
                 private void bfs(Graph G, Iterable<Integer> sources)
         name: BreadthFirstShortestPaths
-        language: java
         type: code
+    question2:
+        answer: ''
+        type: match
+        header: ''
+        name: ''
 stored_submissions: 0
 weight: 0.0
