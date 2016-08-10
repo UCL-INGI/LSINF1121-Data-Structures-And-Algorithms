@@ -25,9 +25,9 @@ public class Tests {
     public void testSortOdd()
     {
         String message = "Test [1 4 3 8 6]";
-        int[] arr = new int[]{1 4 3 8 6};
+        int[] arr = new int[]{1, 4, 3, 8, 6};
 
         MergeSort.sort(arr);
-        assertArrayEquals(message, {1 3 4 6 8}, arr);
+        assertArrayEquals(message, {1, 3, 4, 6, 8}, arr);
     }
 }
