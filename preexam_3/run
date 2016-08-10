@@ -1,9 +1,5 @@
 #!/bin/bash
 
-feedback-msg -ae -m "lol"
-feedback-result failed
-exit 1
-
 name="DepthFirstPaths"
 
 . ./execute_preexam
