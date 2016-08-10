@@ -82,7 +82,7 @@ limits:
     output: '2'
     time: '30'
     memory: '100'
-name: Pré-Examen
+name: Pré-examen - Breadth First Search
 network_grading: false
 problems:
     import:

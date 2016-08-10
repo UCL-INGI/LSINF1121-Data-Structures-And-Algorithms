@@ -1,0 +1,23 @@
+accessible: true
+author: ''
+context: ''
+environment: pythia1compat
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: Pré-examen - MergeSort
+network_grading: false
+problems:
+    question1:
+        header: ''
+        name: ''
+        type: code
+        language: java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
