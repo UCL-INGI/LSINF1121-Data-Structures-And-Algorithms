@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Frédéric Kaczynski
 context: |-
     Consider the (top-down) sorting algorithm ``Merge Sort``
@@ -51,8 +51,9 @@ limits:
     time: '30'
     output: '2'
     memory: '100'
-name: Pré-examen - MergeSort
+name: Pré-examen - Merge Sort
 network_grading: false
+order: 33
 problems:
     question1:
         header: |-
