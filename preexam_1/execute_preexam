@@ -19,7 +19,7 @@ function execute_preexam {
     fi
 
     # We compile the JUnit tests
-    output=$(javac -cp .:junit-4.12.jar Tests.java 2>&1)
+    output=$(javac -cp .:junit-4.12.jar RunTests.java Tests.java 2>&1)
     retval=$?
     if [ "$retval" != "0" ]; then
         output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
@@ -29,7 +29,7 @@ function execute_preexam {
         exit 1
     fi
 
-    output=$(run_student java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar Tests 2>&1)
+    output=$(run_student java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar RunTests 2>&1)
     retval=$?
 
     if [ "$retval" = "0" ]; then

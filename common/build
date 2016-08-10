@@ -13,6 +13,14 @@ cp execute_test ../m4_plagiarism_tests
 cp execute_test ../m5_compressor_tests
 cp execute_test ../m6_kruskal_tests
 
-cp execute_preexam ../preexam_1
-cp execute_preexam ../preexam_2
-cp execute_preexam ../preexam_3
+preexams=(
+    "preexam_1"
+    "preexam_2"
+    "preexam_3"
+)
+
+for folder in "${preexams[@]}"
+do
+    cp execute_preexam "../${folder}"
+    cp RunTests.java "../${folder}/student"
+done
