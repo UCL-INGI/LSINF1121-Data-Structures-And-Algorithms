@@ -5,6 +5,8 @@ context: |-
 
     .. code-block:: java
 
+        // TODO
+
         public class BreadthFirstShortestPaths {
 
             private static final int INFINITY = Integer.MAX_VALUE;
@@ -87,7 +89,10 @@ problems:
         type: code
         language: java
         name: ''
-        header: ''
+        header: |-
+            You can use this to import additional classes your code may need.
+
+            **Note:** This is only asked so that your code can be compiled and tested. During the exam, you won't need to provide this and you will be able to use pseudo-classes like ``Queue``.
     question1:
         header: |-
             .. code-block:: java

@@ -1,4 +1,4 @@
-import java.util.Queue;
+@       @import@@
 
 public class BreadthFirstShortestPaths {
     public static final int INFINITY = Integer.MAX_VALUE;
