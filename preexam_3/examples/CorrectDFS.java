@@ -10,7 +10,7 @@ for (int i = 0; i < marked.length;i++) {
 
 Stack<Integer> stack = new Stack<Integer>();
 stack.push(v);
-while (stack.empty()) {
+while (!stack.empty()) {
     int n = stack.pop();
     marked[n] = true;
 
