@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 
 # This script copies all the necessary components in the right folder
 
@@ -12,3 +12,6 @@ cp execute_test ../m3tests
 cp execute_test ../m4_plagiarism_tests
 cp execute_test ../m5_compressor_tests
 cp execute_test ../m6_kruskal_tests
+
+cp execute_preexam ../preexam_1
+cp execute_preexam ../preexam_2
