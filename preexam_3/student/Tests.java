@@ -36,13 +36,13 @@ public class Tests {
 
         DepthFirstPaths dfs = new DepthFirstPaths(graph, 1);
 
-        assertTrue(message, true, dfs.hasPathTo(0));
-        assertTrue(message, true, dfs.hasPathTo(1));
-        assertTrue(message, true, dfs.hasPathTo(2));
-        assertTrue(message, true, dfs.hasPathTo(3));
-        assertTrue(message, true, dfs.hasPathTo(4));
+        assertTrue(message, dfs.hasPathTo(0));
+        assertTrue(message, dfs.hasPathTo(1));
+        assertTrue(message, dfs.hasPathTo(2));
+        assertTrue(message, dfs.hasPathTo(3));
+        assertTrue(message, dfs.hasPathTo(4));
 
-        assertEquals(message, 2, bfs.pathTo(3).size());
+        assertEquals(message, 2, dfs.pathTo(3).size());
     }
 
     public void testDisconnected()
@@ -54,12 +54,7 @@ public class Tests {
         graph.addEdge(1, 2);
         graph.addEdge(3, 4);
 
-        DepthFirstPaths bfs = new DepthFirstPaths(graph, 1);
-        assertEquals(message, 1, bfs.distTo(0));
-        assertEquals(message, 1, bfs.distTo(2));
-
-        assertEquals(message, BreadthFirstShortestPaths.INFINITY, bfs.distTo(3));
-        assertEquals(message, BreadthFirstShortestPaths.INFINITY, bfs.distTo(4));
+        DepthFirstPaths dfs = new DepthFirstPaths(graph, 1);
     }
 
     public void testLoop()
@@ -74,13 +69,7 @@ public class Tests {
         graph.addEdge(4, 5);
         graph.addEdge(5, 0);
 
-        DepthFirstPaths bfs = new DepthFirstPaths(graph, 0);
-        assertEquals(message, 0, bfs.distTo(0));
-        assertEquals(message, 1, bfs.distTo(1));
-        assertEquals(message, 2, bfs.distTo(2));
-        assertEquals(message, 3, bfs.distTo(3));
-        assertEquals(message, 2, bfs.distTo(4));
-        assertEquals(message, 1, bfs.distTo(5));
+        DepthFirstPaths dfs = new DepthFirstPaths(graph, 0);
     }
 
     public void testMultipleSources()
@@ -94,12 +83,6 @@ public class Tests {
         graph.addEdge(3, 4);
         graph.addEdge(4, 5);
 
-        BreadthFirstShortestPaths bfs = new BreadthFirstShortestPaths(graph, Arrays.asList(1, 5));
-        assertEquals(message, 1, bfs.distTo(0));
-        assertEquals(message, 0, bfs.distTo(1));
-        assertEquals(message, 1, bfs.distTo(2));
-        assertEquals(message, 2, bfs.distTo(3));
-        assertEquals(message, 1, bfs.distTo(4));
-        assertEquals(message, 0, bfs.distTo(5));
+        DepthFirstPaths dfs = new DepthFirstPaths(graph, 1);
     }
 }
