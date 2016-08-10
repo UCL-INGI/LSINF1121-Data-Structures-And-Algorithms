@@ -38,7 +38,7 @@ context: |-
             /**
              * Rearranges the array in ascending order, using the natural order
              */
-            private static void sort(Comparable[] a) {
+            public static void sort(Comparable[] a) {
                 // TODO
             }
         }
@@ -68,7 +68,7 @@ problems:
         header: |-
             .. code-block:: java
 
-                private static void sort(Comparable[] a)
+                public static void sort(Comparable[] a)
         name: ''
 stored_submissions: 0
 submission_limit:

@@ -27,7 +27,7 @@ public class MergeSort {
     /**
      * Rearranges the array in ascending order, using the natural order
      */
-    private static void sort(Comparable[] a) {
+    public static void sort(Comparable[] a) {
         @       @question2@@
     }
 }
