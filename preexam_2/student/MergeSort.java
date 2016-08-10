@@ -6,7 +6,7 @@ public class MergeSort {
 
         int i = lo;
         int j = mid + 1;
-        for (int k = 0; k <= hi; k++) {
+        for (int k = lo; k <= hi; k++) {
             if (i > mid) {
                 a[k] = aux[j++];
             } else if (j > hi) {
