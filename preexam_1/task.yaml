@@ -84,28 +84,36 @@ name: Pré-Examen
 network_grading: false
 problems:
     question1:
-        name: ''
-        language: java
         header: |-
             .. code-block:: java
 
                 private void bfs(Graph G, Iterable<Integer> sources)
+        name: ''
         type: code
+        language: java
     question2:
+        type: code
+        language: java
         header: |-
             .. code-block:: java
 
                 public boolean hasPathTo(int v)
+        name: ''
+    question3:
         type: code
         language: java
         name: ''
-    question3:
         header: |-
             .. code-block:: java
 
                 public int distTo(int v)
-        language: java
-        name: ''
+    import:
         type: code
+        name: ''
+        language: java
+        header: ''
 stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 0.0
