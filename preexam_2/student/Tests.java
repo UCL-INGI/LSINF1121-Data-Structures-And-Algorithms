@@ -6,7 +6,7 @@ import org.junit.runner.notification.Failure;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertArrayEquals;
 
-public class BFSTests {
+public class Tests {
 
     public static void main(String[] args) {
         JUnitCore junit = new JUnitCore();
