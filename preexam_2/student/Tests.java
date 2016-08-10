@@ -17,7 +17,7 @@ public class Tests {
             for (Failure fail : result.getFailures()) {
                 // Only displays the exception thrown if it is not a "normal" exception thrown by JUnit
                 // for a failed test
-                if (fail.getException() instanceof AssertionFailedError) {
+                if (fail.getException() instanceof AssertionError) {
                     System.out.println(fail.getMessage());
                 } else {
                     fail.getException().printStackTrace();
