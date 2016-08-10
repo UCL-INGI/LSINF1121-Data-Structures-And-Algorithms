@@ -5,13 +5,13 @@ public class MergeSort {
         }
 
         int i = lo;
-        int j = mid + hi;
-        for (int k = 0; k <= hi; k++) {
+        int j = mid + 1;
+        for (int k = lo; k <= hi; k++) {
             if (i > mid) {
                 a[k] = aux[j++];
             } else if (j > hi) {
                 a[k] = aux[i++];
-            } else if (aux[i].compareTo(aux[j]) < 0) {
+            } else if (aux[j].compareTo(aux[i]) < 0) {
                 a[k] = aux[j++];
             } else {
                 a[k] = aux[i++];
@@ -27,7 +27,7 @@ public class MergeSort {
     /**
      * Rearranges the array in ascending order, using the natural order
      */
-    private static void sort(Comparable[] a) {
+    public static void sort(Comparable[] a) {
         @       @question2@@
     }
 }

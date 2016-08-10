@@ -1,3 +1,4 @@
+import junit.framework.AssertionFailedError;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
@@ -6,7 +7,7 @@ import org.junit.runner.notification.Failure;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertArrayEquals;
 
-public class BFSTests {
+public class Tests {
 
     public static void main(String[] args) {
         JUnitCore junit = new JUnitCore();
@@ -14,7 +15,13 @@ public class BFSTests {
 
         if (!result.wasSuccessful()) {
             for (Failure fail : result.getFailures()) {
-                System.out.println(fail.getMessage());
+                // Only displays the exception thrown if it is not a "normal" exception thrown by JUnit
+                // for a failed test
+                if (fail.getException() instanceof AssertionError) {
+                    System.out.println(fail.getMessage());
+                } else {
+                    fail.getException().printStackTrace();
+                }
             }
         }
 
@@ -25,9 +32,9 @@ public class BFSTests {
     public void testSortOdd()
     {
         String message = "Test [1 4 3 8 6]";
-        int[] arr = new int[]{1 4 3 8 6};
+        Integer[] arr = new Integer[]{1, 4, 3, 8, 6};
 
         MergeSort.sort(arr);
-        assertArrayEquals(message, {1 3 4 6 8}, arr);
+        assertArrayEquals(message, new Integer[]{1, 3, 4, 6, 8}, arr);
     }
 }
