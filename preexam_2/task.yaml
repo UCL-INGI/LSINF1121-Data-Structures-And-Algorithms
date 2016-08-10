@@ -51,8 +51,9 @@ limits:
     time: '30'
     output: '2'
     memory: '100'
-name: Pré-examen - MergeSort
+name: Pré-examen - Merge Sort
 network_grading: false
+order: 33
 problems:
     question1:
         header: |-
@@ -75,4 +76,3 @@ submission_limit:
     amount: -1
     period: -1
 weight: 0.0
-order: 33
