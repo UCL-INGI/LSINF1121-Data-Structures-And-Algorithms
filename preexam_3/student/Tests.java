@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 public class Tests {
 
@@ -32,9 +33,10 @@ public class Tests {
         //assertEquals(message, 2, dfs.pathTo(3).size());
     }
 
+    @Test
     public void testDisconnected()
     {
-        String message = "Test [0-1, 1-2, 3-4] with [1] as sources";
+        String message = "Test [0-1, 1-2, 3-4] with 1 as sources";
         Graph graph = new Graph(5);
 
         graph.addEdge(0, 1);
@@ -42,34 +44,27 @@ public class Tests {
         graph.addEdge(3, 4);
 
         DepthFirstPaths dfs = new DepthFirstPaths(graph, 1);
+
+        assertTrue(message, dfs.hasPathTo(0));
+        assertTrue(message, dfs.hasPathTo(2));
+        assertFalse(message, dfs.hasPathTo(3));
+        assertFalse(message, dfs.hasPathTo(4));
     }
 
+    @Test
     public void testLoop()
     {
-        String message = "Test [0-1, 1-2, 2-3, 3-4, 4-5, 5-0] with [0] as sources";
+        String message = "Test [0-1, 1-2, 2-3, 3-4, 4-0] with 0 as sources";
         Graph graph = new Graph(6);
 
         graph.addEdge(0, 1);
         graph.addEdge(1, 2);
         graph.addEdge(2, 3);
         graph.addEdge(3, 4);
-        graph.addEdge(4, 5);
-        graph.addEdge(5, 0);
+        graph.addEdge(4, 0);
 
         DepthFirstPaths dfs = new DepthFirstPaths(graph, 0);
-    }
 
-    public void testMultipleSources()
-    {
-        String message = "Test [0-1, 1-2, 2-3, 3-4, 4-5] with [1, 5] as sources";
-        Graph graph = new Graph(6);
-
-        graph.addEdge(0, 1);
-        graph.addEdge(1, 2);
-        graph.addEdge(2, 3);
-        graph.addEdge(3, 4);
-        graph.addEdge(4, 5);
-
-        DepthFirstPaths dfs = new DepthFirstPaths(graph, 1);
+        assertTrue(message, dfs.hasPathTo(4));
     }
 }
