@@ -27,6 +27,7 @@ public class Tests {
         String message = "Test [1 4 3 8 6]";
         Integer[] arr = new Integer[]{1, 4, 3, 8, 6};
 
+        assertEquals("lol", arr.length, arr.length + 1);
         MergeSort.sort(arr);
         assertArrayEquals(message, new Integer[]{1, 3, 4, 6, 8}, arr);
     }
