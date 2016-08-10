@@ -15,3 +15,4 @@ cp execute_test ../m6_kruskal_tests
 
 cp execute_preexam ../preexam_1
 cp execute_preexam ../preexam_2
+cp execute_preexam ../preexam_3

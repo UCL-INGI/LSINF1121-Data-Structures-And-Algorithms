@@ -1,0 +1,6 @@
+#!/bin/bash
+
+name="DepthFirstPaths"
+
+. ./execute_preexam
+execute_preexam "$name"
