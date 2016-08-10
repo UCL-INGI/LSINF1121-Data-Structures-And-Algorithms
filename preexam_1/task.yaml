@@ -83,6 +83,11 @@ limits:
 name: Pré-Examen
 network_grading: false
 problems:
+    import:
+        type: code
+        language: java
+        name: ''
+        header: ''
     question1:
         header: |-
             .. code-block:: java
@@ -107,11 +112,6 @@ problems:
             .. code-block:: java
 
                 public int distTo(int v)
-    import:
-        type: code
-        name: ''
-        language: java
-        header: ''
 stored_submissions: 0
 submission_limit:
     amount: -1
