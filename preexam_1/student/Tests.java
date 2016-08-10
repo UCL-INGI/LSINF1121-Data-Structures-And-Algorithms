@@ -11,7 +11,7 @@ public class BFSTests {
 
     public static void main(String[] args) {
         JUnitCore junit = new JUnitCore();
-        Result result = junit.run(BFSTests.class);
+        Result result = junit.run(Tests.class);
 
         if (!result.wasSuccessful()) {
             for (Failure fail : result.getFailures()) {

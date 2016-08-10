@@ -1,0 +1,6 @@
+#!/bin/bash
+
+name="MergeSort"
+
+. ./execute_preexam
+execute_preexam "$name"
