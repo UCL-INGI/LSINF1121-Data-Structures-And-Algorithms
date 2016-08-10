@@ -8,20 +8,6 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 
 public class Tests {
-
-    public static void main(String[] args) {
-        JUnitCore junit = new JUnitCore();
-        Result result = junit.run(Tests.class);
-
-        if (!result.wasSuccessful()) {
-            for (Failure fail : result.getFailures()) {
-                System.out.println(fail.getMessage());
-            }
-        }
-
-        System.exit(result.wasSuccessful() ? 0 : 1);
-    }
-
     @Test
     public void testSimple()
     {

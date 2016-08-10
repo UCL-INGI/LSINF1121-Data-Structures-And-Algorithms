@@ -24,7 +24,7 @@ function execute_preexam {
     if [ "$retval" != "0" ]; then
         output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
         feedback-result failed
-        feedback-msg -ae -m "Compilation of ${name} failed:\n::\n\n"
+        feedback-msg -ae -m "Compilation of JUnit tests failed:\n::\n\n"
         feedback-msg -ae -m "$output"
         exit 1
     fi
