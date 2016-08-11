@@ -1,0 +1,23 @@
+accessible: true
+author: Frédéric Kaczynski
+context: ''
+environment: verilog
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: Pré-examen - Heap
+network_grading: false
+problems:
+    heap1:
+        type: match
+        name: ''
+        answer: ''
+        header: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 0.0

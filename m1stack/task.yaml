@@ -1,5 +1,5 @@
 accessible: /2015-09-25 18:00:00
-author: Simon Hardy
+author: Simon Hardy, Frédéric Kaczynski
 context: |-
     You are asked to implement the following interface, representing a stack, using a singly linked list. You should at least have one constructor with no argument, creating an empty stack.
 
@@ -25,19 +25,22 @@ evaluate: best
 groups: false
 limits:
     output: '100'
-    memory: '512'
     time: '45'
+    memory: '512'
 name: Mission 1 - Stack [individual]
 network_grading: false
 order: 3
 problems:
     stack:
+        allowed_exts:
+        - .java
         name: Stack
+        type: code-file
         header: 'Upload the file containing your implementation here. The class representing
             your stack should be named *MyStack* and implement *Stack* (as usual,
             the interface is available on INGInious).  '
-        allowed_exts:
-        - .java
-        type: code-file
 stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0
