@@ -2,20 +2,25 @@ accessible: /2015-10-10 18:10:51
 author: Simon Hardy
 context: Answers to the different questions in the statement of the second mission.
 environment: default
+evaluate: best
 groups: true
 limits:
-    memory: '20'
     output: '2'
     time: '15'
-name: Mission 2 - Sorting - Questions report [group]
+    memory: '20'
+name: Mission 2 - Questions report [group]
 network_grading: false
 order: 7
 problems:
     report:
         header: 'Please upload here your *questions report* for the mission 2. '
+        max_size: 5000000
+        name: Report
         allowed_exts:
         - .pdf
         type: code-file
-        max_size: 5000000
-        name: Report
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0

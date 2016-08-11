@@ -92,7 +92,7 @@ limits:
     memory: '3000'
 name: Mission 3 - Ordered Map [group]
 network_grading: false
-order: 13
+order: 11
 problems:
     ordered_map:
         type: code-file

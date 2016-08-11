@@ -50,7 +50,7 @@ limits:
     memory: '512'
 name: '[Old] Mission 2 - Formal expression tree [group]'
 network_grading: false
-order: 9
+order: 35
 problems:
     tree:
         type: code-file

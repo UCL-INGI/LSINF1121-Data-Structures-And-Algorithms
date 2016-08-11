@@ -10,7 +10,7 @@ limits:
     time: '15'
 name: Mission 6 - Program report [group]
 network_grading: false
-order: 32
+order: 24
 problems:
     program_report:
         type: code-file

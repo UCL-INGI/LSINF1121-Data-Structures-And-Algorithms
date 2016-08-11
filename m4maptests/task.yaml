@@ -68,9 +68,9 @@ limits:
     output: '100'
     memory: '512'
     time: '45'
-name: Mission 4 - Unit tests for the Map [individual]
+name: '[Old] Mission 4 - Unit tests for the Map [individual]'
 network_grading: false
-order: 16
+order: 36
 problems:
     map_tests:
         type: code-file

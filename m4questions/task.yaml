@@ -9,7 +9,7 @@ limits:
     time: '15'
 name: Mission 4 - Questions report [group]
 network_grading: false
-order: 15
+order: 13
 problems:
     report:
         header: 'Please upload here your *questions report* for the mission 4. '

@@ -59,31 +59,36 @@ context: |-
             }
         }
 environment: java8scala
+evaluate: best
 groups: false
 limits:
-    memory: '512'
     output: '100'
     time: '60'
-name: Mission 4 - Unit tests for the spam filter [individual]
+    memory: '512'
+name: '[Old] Mission 4 - Unit tests for the spam filter [individual]'
 network_grading: false
-order: 18
+order: 38
 problems:
     filter_tests:
+        type: code-file
+        allowed_exts:
+        - .java
         header: Upload your file here, with only one class named "SpamFilterTests".
             The class representing the spam filter under test is called *SpamFilter*
             and implements *SpamFiltering*, as written in the template !
-        allowed_exts:
-        - .java
-        type: code-file
         name: Unit tests for the spam filter
     archive:
         max_size: 5000000
         name: Archive with inputs as text files
+        allowed_exts:
+        - .zip
         header: 'Upload the archive containing your .txt files here. It will be unzipped
             in the same directory as your *SpamFilterTests* class. Don''t forget that
             if you zip a directory (instead of your .txt files directly), then you
             will have to write "dir/file.txt" in your tests instead of just "file.txt". '
-        allowed_exts:
-        - .zip
         type: code-file
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0
