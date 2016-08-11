@@ -19,7 +19,7 @@ limits:
     time: '30'
     output: '2'
     memory: '100'
-name: Pré-examen - Questions à choix multiples
+name: Pré-examen - QCM
 network_grading: false
 order: 35
 problems:
