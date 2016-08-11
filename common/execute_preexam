@@ -30,17 +30,29 @@ function execute_preexam {
     fi
 
     output=$(run_student java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar RunTests 2>&1)
+    #output=$(run_student java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore "Tests" 2>&1)
     retval=$?
+    output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 
     if [ "$retval" = "0" ]; then
         feedback-result success
         feedback-msg -ae -m "Your implementation passed all the tests !"
     else
-        output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
-        feedback-msg -ae -m "\n::\n\n${output}\n\n"
-
         feedback-result failed
-        feedback-msg -ae -m "Your implementation didn't pass all the tests"
+        if [ "$retval" = "252" ]; then
+            feedback-msg -ae -m "The execution was killed due to an out-of-memory (Could it be because of an infinite loop ?)"
+        elif [ "$retval" = "253" ]; then
+            feedback-msg -ae -m "The execution timed out"
+        elif [ "$retval" = "254" ]; then
+            feedback-msg -ae -m "An error occured while running the proxy"
+        else
+            feedback-msg -ae -m "Your implementation didn't pass all the tests"
+        fi
+
+        # Sometime output only contains spaces, so we must trim them
+        if [ -z "${output// }" ]; then
+            feedback-msg -ae -m "\n::\n\n${output}\n\n"
+        fi
     fi
 
 }

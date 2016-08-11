@@ -29,14 +29,12 @@ public class Tests {
         assertTrue(message, dfs.hasPathTo(2));
         assertTrue(message, dfs.hasPathTo(3));
         assertTrue(message, dfs.hasPathTo(4));
-
-        //assertEquals(message, 2, dfs.pathTo(3).size());
     }
 
     @Test
     public void testDisconnected()
     {
-        String message = "Test [0-1, 1-2, 3-4] with 1 as sources";
+        String message = "Test [0-1, 1-2, 3-4] with 1 as source";
         Graph graph = new Graph(5);
 
         graph.addEdge(0, 1);
@@ -54,7 +52,7 @@ public class Tests {
     @Test
     public void testLoop()
     {
-        String message = "Test [0-1, 1-2, 2-3, 3-4, 4-0] with 0 as sources";
+        String message = "Test [0-1, 1-2, 2-3, 3-4, 4-0] with 0 as source";
         Graph graph = new Graph(6);
 
         graph.addEdge(0, 1);
