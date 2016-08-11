@@ -1,4 +1,4 @@
 def func():
-    @       @question1@@
+    @       @hello@@
 
     func()
