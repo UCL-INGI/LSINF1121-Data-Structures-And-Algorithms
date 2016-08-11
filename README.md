@@ -20,6 +20,15 @@ Ces tâches demandent à l'étudiant de fournir une batterie de tests qui seront
 * m5_compressor_tests
 * m6_kruskal_tests
 
+Ces tâches demandent des choses divers et variés (QCM, simple réponse, code, ...):
+
+* preexam_1
+* preexam_2
+* preexam_3
+* preexam_heap
+* preexam_redblacktree
+* preexam_treeqcm
+
 Il existe d'autres dossiers pour d'autres missions, mais ce ne sont que des ébauches, et ne sont pas utilisés ou donnés aux étudiants. (Y'as rien pour la mission 2, par exemple)
 
 ### common

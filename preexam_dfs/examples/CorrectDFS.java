@@ -5,7 +5,7 @@ import java.util.Stack;
 // 2)
 for (int i = 0; i < marked.length;i++) {
     marked[i] = false;
-    edgeTo[i] = false;
+    edgeTo[i] = -1;
 }
 
 Stack<Integer> stack = new Stack<Integer>();
@@ -21,7 +21,6 @@ while (!stack.empty()) {
         }
     }
 }
-
 
 // 3)
 return marked[v];
