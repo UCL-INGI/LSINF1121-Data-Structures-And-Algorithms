@@ -22,18 +22,48 @@ environment: verilog
 evaluate: best
 groups: false
 limits:
+    time: '30'
     output: '2'
     memory: '100'
-    time: '30'
 name: Pré-examen - Heap
 network_grading: false
 order: 38
 problems:
     heap1:
         type: match
+        header: 'We add ``5`` to the ``Heap``, the array containing the ``Heap`` is:'
         name: ''
-        answer: ''
-        header: ''
+        answer: '5'
+    heap2:
+        header: 'We add ``1`` to the ``Heap``, the array containing the ``Heap`` is:'
+        name: ''
+        answer: 1 5
+        type: match
+    heap3:
+        header: 'We add ``9`` to the ``Heap``, the array containing the ``Heap`` is:'
+        name: ''
+        type: match
+        answer: 9 1 5
+    heap4:
+        answer: 9 3 5 1
+        header: 'We add ``3`` to the ``Heap``, the array containing the ``Heap`` is:'
+        name: ''
+        type: match
+    heap5:
+        name: ''
+        header: 'We add ``8`` to the ``Heap``, the array containing the ``Heap`` is:'
+        type: match
+        answer: 9 8 5 1 3
+    heap6:
+        answer: 9 8 6 1 3 5
+        type: match
+        header: 'We add ``6`` to the ``Heap``, the array containing the ``Heap`` is:'
+        name: ''
+    heap7:
+        name: ''
+        type: match
+        answer: 9 8 6 1 3 5 4
+        header: 'We add ``4`` to the ``Heap``, the array containing the ``Heap`` is:'
 stored_submissions: 0
 submission_limit:
     amount: -1
