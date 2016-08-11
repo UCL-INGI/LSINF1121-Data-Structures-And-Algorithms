@@ -21,8 +21,8 @@ name: Pré-examen - Union find
 network_grading: false
 problems:
     unionfind1:
-        header: ''
-        answer: je suis un test
+        header: After we execute ``3-8``, ``id[] =``
+        answer: 0 1 2 8 4 5 6 7 8 9
         type: match
         name: ''
 stored_submissions: 0
