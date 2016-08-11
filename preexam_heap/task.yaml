@@ -18,7 +18,7 @@ context: |-
     ::
 
         9 5 8 4 3
-environment: verilog
+environment: mcq
 evaluate: best
 groups: false
 limits:
@@ -37,7 +37,7 @@ problems:
     heap2:
         header: 'We add ``1`` to the ``Heap``, the array containing the ``Heap`` is:'
         name: ''
-        answer: 1 5
+        answer: 5 1
         type: match
     heap3:
         header: 'We add ``9`` to the ``Heap``, the array containing the ``Heap`` is:'
