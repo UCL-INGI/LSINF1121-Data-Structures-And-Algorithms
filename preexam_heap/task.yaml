@@ -3,15 +3,15 @@ author: Frédéric Kaczynski
 context: |-
     Consider an empty ``Heap`` in which we progressively add numbers.
 
-    The following questions will ask you to write a representation of the heap as we add objects in it. You must write the heap as if it was stored in an array. For example, if your answer is:
+    The following questions will ask you to write a representation of the ``Heap`` as we add objects in it. You must write the ``Heap`` as if it was stored in an array. For example, if your answer is:
 
     ::
 
-           9
-          / \
-         5   8
-        / \
-        4 3
+            9
+           / \
+          5   8
+         / \
+        4   3
 
     You would write:
 
