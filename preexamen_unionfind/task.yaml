@@ -1,14 +1,15 @@
 accessible: true
-author: ''
-context: |4-
-
-    Consider a graph made of 10 disjoit nodes (numbered from 0 to 9). We use a union-find data structure to represent this graph. At first, each node is contained in a partition named after the node. Thus, the representation of the graph is:
+author: Frédéric Kaczynski
+context: |-
+    Consider a graph made of 10 disjoit nodes (numbered from 0 to 9). We use a union-find data structure to represent this graph. At first, each node is contained in a partition named after the node. Thus, the representation of the graph in the array ``id[]`` is:
 
     ::
 
         0 1 2 3 4 5 6 7 8 9
 
-    The following questions will ask you to represent
+    The following questions will ask you to type the representation of the graph after we use the **quick-find** algorithm to add an edge between 2 nodes. You must type this representation in the same way it was typed above.
+
+    **Note:** When we join ``p-q`` with the quick-find algorithm, the convention is to change ``id[p]`` (and potentially other entries) but not ``id[q]``.
 environment: mcq
 evaluate: best
 groups: false
@@ -28,4 +29,4 @@ stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
-weight: 1.0
+weight: 0.0
