@@ -42,30 +42,35 @@ context: |-
 
     NB : it's not necessary to simplify the derivatives. For example, for input "(2*x)", you can return "2" or "((0*x)+(2*1))".
 environment: java8scala
+evaluate: best
 groups: true
 limits:
-    memory: '512'
     output: '100'
     time: '45'
-name: Misson 2 - Formal expression tree [group]
+    memory: '512'
+name: '[Old] Mission 2 - Formal expression tree [group]'
 network_grading: false
 order: 9
 problems:
     tree:
-        name: Expression tree
-        allowed_exts:
-        - .java
+        type: code-file
         header: 'Upload the file containing your implementation here. The class representing
             your tree should be named *ExpressionTree* and implement *FormalExpressionTree*.
             If you need other classes, put them in the same file but without any *public*
             modifier. '
-        type: code-file
+        name: Expression tree
+        allowed_exts:
+        - .java
     exception:
         type: code-file
         allowed_exts:
         - .java
-        max_size: 1000000
+        name: ParseException
         header: 'Upload the file containing your custom exception here. The class
             should be named *ParseException*. '
-        name: ParseException
+        max_size: 1000000
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0
