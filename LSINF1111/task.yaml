@@ -12,11 +12,11 @@ name: Fonction constante
 network_grading: false
 order: 0
 problems:
-    const2:
-        type: code-single-line
-        name: Fonction constante (2)
-        header: 'f(x) = '
-        language: java
+    question1:
+        language: python
+        type: code
+        name: Let's print it
+        header: 'def func():'
 stored_submissions: 0
 submission_limit:
     amount: -1

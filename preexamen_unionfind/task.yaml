@@ -1,7 +1,7 @@
 accessible: false
 author: Frédéric Kaczynski
 context: |-
-    Consider a graph made of 10 disjoit nodes (numbered from 0 to 9). We use a union-find data structure to represent this graph. At first, each node is contained in a partition named after the node. Thus, the representation of the graph in the array ``id[]`` is:
+    Consider a graph made of 10 disjoint nodes (numbered from 0 to 9). We use a union-find data structure to represent this graph. At first, each node is contained in a partition named after the node. Thus, the representation of the graph in the array ``id[]`` is:
 
     ::
 
@@ -19,6 +19,7 @@ limits:
     memory: '100'
 name: Pré-examen - Union find
 network_grading: false
+order: 37
 problems:
     unionfind1:
         name: ''
@@ -70,4 +71,3 @@ submission_limit:
     amount: -1
     period: -1
 weight: 0.0
-order: 37

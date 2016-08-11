@@ -1,10 +1,10 @@
 #! /bin/bash
 
 # This line parses the template and put the result in studentcode.py
-parsetemplate --output studentcode.py template.py
+parsetemplate --output studentcode.java template.java
 
 # Verify the output of the code...
-output=$(run_student python studentcode.py)
+output=$(run_student javac studentcode.java)
 if [ "$output" = "Hello World!" ]; then
         # The student succeeded
         feedback --result success --feedback "You solved this difficult task!"
