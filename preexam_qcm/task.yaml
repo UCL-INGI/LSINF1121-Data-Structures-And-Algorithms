@@ -12,7 +12,7 @@ context: |-
         1   3   6   7
 
     Nous parcourons cet arbre et nous affichons la valeur du noeud lorsqu'on le visite.
-environment: verilog
+environment: mcq
 evaluate: best
 groups: false
 limits:
@@ -32,12 +32,14 @@ problems:
         header: Si l'algorithme réalise un parcours infixe, quel sera la chaîne de
             caractère affiché après le parcours ?
         name: ''
+        limit: 0
     qcm2:
         choices:
         -   text: '``1 2 3 4 5 6 7``'
         -   text: '``4 2 1 3 5 6 7``'
             valid: true
         -   text: '``7 6 5 3 1 2 4``'
+        limit: 0
         name: ''
         type: multiple-choice
         header: Si l'algorithme réalise un parcours préfixe, quel sera la chaîne de
@@ -49,6 +51,7 @@ problems:
         -   text: '``7 6 5 3 1 2 4``'
             valid: true
         type: multiple-choice
+        limit: 0
         name: ''
         header: Si l'algorithme réalise un parcours postfixe ou suffixe, quel sera
             la chaîne de caractère affiché après le parcours ?
