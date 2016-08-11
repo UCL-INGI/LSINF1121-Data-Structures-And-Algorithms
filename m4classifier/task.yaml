@@ -59,7 +59,7 @@ limits:
     memory: '512'
 name: '[Old] Mission 4 - Spam filter [group]'
 network_grading: false
-order: 39
+order: 37
 problems:
     classifier:
         allowed_exts:

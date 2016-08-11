@@ -48,7 +48,7 @@ limits:
     memory: '3000'
 name: '[Old] Mission 4 - Map [individual]'
 network_grading: false
-order: 37
+order: 35
 problems:
     map:
         type: code-file

@@ -101,7 +101,7 @@ limits:
     memory: '512'
 name: '[Old] Mission 2 - Unit tests [individual]'
 network_grading: false
-order: 34
+order: 32
 problems:
     tree_tests:
         type: code-file
