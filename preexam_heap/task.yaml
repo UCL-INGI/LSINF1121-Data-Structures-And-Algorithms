@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Frédéric Kaczynski
 context: ''
 environment: verilog
@@ -10,6 +10,7 @@ limits:
     time: '30'
 name: Pré-examen - Heap
 network_grading: false
+order: 38
 problems:
     heap1:
         type: match

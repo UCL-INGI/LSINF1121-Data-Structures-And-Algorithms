@@ -1,5 +1,5 @@
 accessible: /2015-10-25 23:59:55
-author: Simon Hardy
+author: Simon Hardy, Frédéric Kaczynski
 context: |-
     For this task, you have to write unit tests using JUnit in order to check several OrderedMap implementations (the interface of OrderedMap is available in the next task). You are given one class, *SearchTree*, and you have to determine if it does its job correctly or not. We provide you a template to begin writing your tests :
 
@@ -40,21 +40,26 @@ context: |-
 
     Note that you can't provide custom text files for this task, but a small subset of the file *songs.txt* is available in the same folder as your tester, and under the same name. It contains only the 50 first lines of the original file.
 environment: java8scala
+evaluate: best
 groups: false
 limits:
-    memory: '512'
     output: '100'
     time: '180'
+    memory: '512'
 name: Mission 3 - Unit tests [individual]
 network_grading: false
 order: 12
 problems:
     tests:
-        type: code-file
-        name: Unit tests
         allowed_exts:
         - .java
         header: 'Upload your file here, with only one class named *SearchTreeTests*.
             The class representing the implementation under test is called *SearchTree*,
             as written in the template. '
+        type: code-file
+        name: Unit tests
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0

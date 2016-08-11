@@ -1,5 +1,5 @@
 accessible: false
-author: Simon Hardy
+author: Simon Hardy, Frédéric Kaczynski
 context: |-
     Recall the Map interface :
 
@@ -62,21 +62,26 @@ context: |-
             }
         }
 environment: java8scala
+evaluate: best
 groups: false
 limits:
-    memory: '512'
     output: '100'
+    memory: '512'
     time: '45'
 name: Mission 4 - Unit tests for the Map [individual]
 network_grading: false
 order: 16
 problems:
     map_tests:
-        allowed_exts:
-        - .java
-        name: Unit tests for the Map implementation
         type: code-file
+        name: Unit tests for the Map implementation
         header: Upload your file here, with only one class named "MapTests". The class
             representing the map under test is called *MyMap* and implements *Map*,
             as written in the template !
+        allowed_exts:
+        - .java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0
