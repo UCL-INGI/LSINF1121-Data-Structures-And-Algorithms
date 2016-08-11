@@ -24,18 +24,55 @@ environment: verilog
 evaluate: best
 groups: false
 limits:
-    output: '2'
     time: '30'
     memory: '100'
+    output: '2'
 name: Pré-examen - Red Black Tree
 network_grading: false
 order: 39
 problems:
     redblacktree1:
-        answer: ''
-        header: ''
+        answer: '1'
+        header: 'We add ``1`` to the ``Red-Black Tree``. The representation of the
+            tree is:'
         name: ''
         type: match
+    redblacktree2:
+        name: ''
+        answer: ''
+        type: match
+        header: 'We add ``6`` to the ``Red-Black Tree``. The representation of the
+            tree is:'
+    redblacktree3:
+        type: match
+        answer: ''
+        name: ''
+        header: 'We add ``4`` to the ``Red-Black Tree``. The representation of the
+            tree is:'
+    redblacktree4:
+        answer: ''
+        header: 'We add ``7`` to the ``Red-Black Tree``. The representation of the
+            tree is:'
+        type: match
+        name: ''
+    redblacktree5:
+        answer: ''
+        header: 'We add ``3`` to the ``Red-Black Tree``. The representation of the
+            tree is:'
+        name: ''
+        type: match
+    redblacktree6:
+        type: match
+        header: 'We add ``5`` to the ``Red-Black Tree``. The representation of the
+            tree is:'
+        answer: ''
+        name: ''
+    redblacktree7:
+        answer: ''
+        type: match
+        header: 'We add ``2`` to the ``Red-Black Tree``. The representation of the
+            tree is:'
+        name: ''
 stored_submissions: 0
 submission_limit:
     amount: -1
