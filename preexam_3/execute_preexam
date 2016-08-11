@@ -49,7 +49,8 @@ function execute_preexam {
             feedback-msg -ae -m "Your implementation didn't pass all the tests"
         fi
 
-        if [ -n "$output" ]; then
+        # Sometime output only contains spaces, so we must trim them
+        if [ -z "${output// }" ]; then
             feedback-msg -ae -m "\n::\n\n${output}\n\n"
         fi
     fi
