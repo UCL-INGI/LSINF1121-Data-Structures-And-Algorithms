@@ -1,0 +1,24 @@
+accessible: false
+author: ''
+context: ''
+environment: verilog
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: ''
+network_grading: false
+problems:
+    redblacktree1:
+        answer: ''
+        header: ''
+        name: ''
+        type: match
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
+order: 39
