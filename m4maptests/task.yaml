@@ -69,7 +69,7 @@ limits:
     time: '45'
 name: Mission 4 - Unit tests for the Map [individual]
 network_grading: false
-order: 15
+order: 16
 problems:
     map_tests:
         allowed_exts:

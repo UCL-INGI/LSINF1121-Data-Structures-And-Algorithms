@@ -14,7 +14,7 @@ limits:
     time: '30'
 name: Mission 5 - Text compressor [group]
 network_grading: false
-order: 24
+order: 25
 problems:
     compressor:
         name: Text compressor

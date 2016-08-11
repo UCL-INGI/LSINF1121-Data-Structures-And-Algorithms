@@ -9,7 +9,7 @@ limits:
     time: '15'
 name: Mission 2 Sort - Program report [group]
 network_grading: false
-order: 9
+order: 10
 problems:
     program_report:
         type: code-file

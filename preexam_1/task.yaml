@@ -84,7 +84,7 @@ limits:
     memory: '100'
 name: Pré-examen - Breadth First Search
 network_grading: false
-order: 32
+order: 33
 problems:
     import:
         type: code

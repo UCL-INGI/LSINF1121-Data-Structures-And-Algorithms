@@ -61,7 +61,7 @@ limits:
     time: '60'
 name: Mission 1 - Unit tests for the stack [individual]
 network_grading: false
-order: 1
+order: 2
 problems:
     stack_tests:
         name: Unit tests for the stack implementation

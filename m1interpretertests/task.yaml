@@ -33,7 +33,7 @@ limits:
     time: '65'
 name: Mission 1 - Unit tests for the interpreter [individual]
 network_grading: false
-order: 3
+order: 4
 problems:
     interpreter_tests:
         allowed_exts:

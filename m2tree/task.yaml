@@ -49,7 +49,7 @@ limits:
     time: '45'
 name: Misson 2 - Formal expression tree [group]
 network_grading: false
-order: 8
+order: 9
 problems:
     tree:
         name: Expression tree

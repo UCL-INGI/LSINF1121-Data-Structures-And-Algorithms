@@ -100,7 +100,7 @@ limits:
     time: '60'
 name: Mission 2 - Unit tests [individual]
 network_grading: false
-order: 7
+order: 8
 problems:
     tree_tests:
         allowed_exts:

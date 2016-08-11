@@ -58,7 +58,7 @@ limits:
     time: '30'
 name: Mission 4 - Spam filter [group]
 network_grading: false
-order: 18
+order: 19
 problems:
     classifier:
         allowed_exts:

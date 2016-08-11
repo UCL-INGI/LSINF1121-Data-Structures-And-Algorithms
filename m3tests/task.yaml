@@ -47,7 +47,7 @@ limits:
     time: '180'
 name: Mission 3 - Unit tests [individual]
 network_grading: false
-order: 11
+order: 12
 problems:
     tests:
         type: code-file
