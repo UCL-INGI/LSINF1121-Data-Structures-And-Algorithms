@@ -20,7 +20,7 @@ context: |-
         6 24 7 1 3 5 9
 
     Note how the 2-3 node composed of ``2`` and ``4`` is written in a merged way (``24``).
-environment: verilog
+environment: mcq
 evaluate: best
 groups: false
 limits:

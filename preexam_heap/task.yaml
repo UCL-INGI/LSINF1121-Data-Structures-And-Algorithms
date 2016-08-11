@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Frédéric Kaczynski
 context: |-
     Consider an empty ``Heap`` in which we progressively add numbers.
