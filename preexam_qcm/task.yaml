@@ -5,19 +5,19 @@ context: |-
 
     ::
 
-           4
-          / \
-         2   5
-        / \ / \
-        1 3 6 7
+              4
+            /   \
+          2       5
+         / \     / \
+        1   3   6   7
 
     Nous parcourons cet arbre et nous affichons la valeur du noeud lorsqu'on le visite.
 environment: verilog
 evaluate: best
 groups: false
 limits:
-    output: '2'
     time: '30'
+    output: '2'
     memory: '100'
 name: Pré-examen - Questions à choix multiples
 network_grading: false
@@ -42,6 +42,16 @@ problems:
         type: multiple-choice
         header: Si l'algorithme réalise un parcours préfixe, quel sera la chaîne de
             caractère affiché après le parcours ?
+    qcm3:
+        choices:
+        -   text: '``1 2 3 4 5 6 7``'
+        -   text: '``4 2 1 3 5 6 7``'
+        -   text: '``7 6 5 3 1 2 4``'
+            valid: true
+        type: multiple-choice
+        name: ''
+        header: Si l'algorithme réalise un parcours postfixe ou suffixe, quel sera
+            la chaîne de caractère affiché après le parcours ?
 stored_submissions: 0
 submission_limit:
     amount: -1

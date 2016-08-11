@@ -1,21 +1,22 @@
 accessible: false
 author: Maxime Hanot
-context: 'Crée les différentes fonctions suivantes :'
-environment: java7
+context: In this task, you will have to write a python script that displays 'Hello
+    World!'.
+environment: default
 evaluate: best
 groups: false
 limits:
     output: '2'
-    time: '30'
-    memory: '100'
-name: Créer ses premières fonctions
+    time: '10'
+    memory: '50'
+name: Hello World!
 network_grading: false
 problems:
-    constante:
-        answer: '2'
-        header: Ecris la fonction constante f(x) = 2
-        type: match
-        name: Fonction constante
+    hello:
+        name: Let's print it
+        type: code
+        header: 'def func():'
+        language: python
 stored_submissions: 0
 submission_limit:
     amount: -1
