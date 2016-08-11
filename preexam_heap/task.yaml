@@ -27,7 +27,7 @@ limits:
     memory: '100'
 name: Pré-examen - Heap
 network_grading: false
-order: 38
+order: 34
 problems:
     heap1:
         type: match
