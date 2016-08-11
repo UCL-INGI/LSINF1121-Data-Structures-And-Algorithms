@@ -39,24 +39,24 @@ problems:
         type: match
     redblacktree2:
         name: ''
-        answer: ''
+        answer: '16'
         type: match
         header: 'We add ``6`` to the ``Red-Black Tree``. The representation of the
             tree is:'
     redblacktree3:
         type: match
-        answer: ''
+        answer: 4 1 6
         name: ''
         header: 'We add ``4`` to the ``Red-Black Tree``. The representation of the
             tree is:'
     redblacktree4:
-        answer: ''
+        answer: 4 1 67
         header: 'We add ``7`` to the ``Red-Black Tree``. The representation of the
             tree is:'
         type: match
         name: ''
     redblacktree5:
-        answer: ''
+        answer: 4 13 67
         header: 'We add ``3`` to the ``Red-Black Tree``. The representation of the
             tree is:'
         name: ''
@@ -65,10 +65,10 @@ problems:
         type: match
         header: 'We add ``5`` to the ``Red-Black Tree``. The representation of the
             tree is:'
-        answer: ''
+        answer: 46 13 5 7
         name: ''
     redblacktree7:
-        answer: ''
+        answer: 4 2 6 1 3 5 7
         type: match
         header: 'We add ``2`` to the ``Red-Black Tree``. The representation of the
             tree is:'
