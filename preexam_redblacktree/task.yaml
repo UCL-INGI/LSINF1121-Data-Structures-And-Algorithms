@@ -1,6 +1,25 @@
 accessible: false
-author: ''
-context: ''
+author: Frédéric Kaczynski
+context: |-
+    Consider an empty ``Red-Black Tree`` in which we progressively add numbers.
+
+    The following questions will ask you to write a representation of the ``Red-Black Tree`` as we add objects in it. Write it as if you were reading from left to right and from top to bottom (ignoring the possible blanks). For example, if your answer is:
+
+    ::
+
+            6
+          /   \
+        (2 4)  7
+        / | \   \
+        1 3 5   9
+
+    You would write:
+
+    ::
+
+        6 24 7 1 3 5 9
+
+    Note how the 2-3 node composed of ``2`` and ``4`` is written in a merged way (``24``).
 environment: verilog
 evaluate: best
 groups: false
@@ -8,8 +27,9 @@ limits:
     output: '2'
     time: '30'
     memory: '100'
-name: ''
+name: Pré-examen - Red Black Tree
 network_grading: false
+order: 39
 problems:
     redblacktree1:
         answer: ''
@@ -20,5 +40,4 @@ stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
-weight: 1.0
-order: 39
+weight: 0.0
