@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Frédéric Kaczynski
 context: |-
     Consider a graph made of 10 disjoit nodes (numbered from 0 to 9). We use a union-find data structure to represent this graph. At first, each node is contained in a partition named after the node. Thus, the representation of the graph in the array ``id[]`` is:
@@ -14,19 +14,60 @@ environment: mcq
 evaluate: best
 groups: false
 limits:
-    output: '2'
     time: '30'
+    output: '2'
     memory: '100'
 name: Pré-examen - Union find
 network_grading: false
 problems:
     unionfind1:
-        header: After we execute ``3-8``, ``id[] =``
-        answer: 0 1 2 8 4 5 6 7 8 9
+        name: ''
+        answer: 0 9 2 3 4 5 6 7 8 9
+        type: match
+        header: After we add the edge ``1-9``, ``id[] =``
+    unionfind2:
+        header: After we add the edge ``3-8``, ``id[] =``
+        answer: 0 9 2 8 4 5 6 7 8 9
+        name: ''
+        type: match
+    unionfind3:
         type: match
         name: ''
+        header: After we add the edge ``1-0``, ``id[] =``
+        answer: 0 0 2 8 4 5 6 7 8 0
+    unionfind4:
+        header: After we add the edge ``6-7``, ``id[] =``
+        answer: 0 0 2 8 4 5 7 7 8 0
+        name: ''
+        type: match
+    unionfind5:
+        type: match
+        name: ''
+        answer: 7 7 2 8 4 5 7 7 8 7
+        header: After we add the edge ``0-6``, ``id[] =``
+    unionfind6:
+        name: ''
+        type: match
+        answer: 7 7 2 8 8 5 7 7 8 7
+        header: After we add the edge ``4-8``, ``id[] =``
+    unionfind7:
+        header: After we add the edge ``8-5``, ``id[] =``
+        name: ''
+        answer: 7 7 2 5 5 5 7 7 5 7
+        type: match
+    unionfind8:
+        name: ''
+        header: After we add the edge ``2-7``, ``id[] =``
+        answer: 7 7 7 5 5 5 7 7 5 7
+        type: match
+    unionfind9:
+        header: After we add the edge ``7-5``, ``id[] =``
+        name: ''
+        type: match
+        answer: 5 5 5 5 5 5 5 5 5 5
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
 weight: 0.0
+order: 37

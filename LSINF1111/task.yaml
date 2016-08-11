@@ -1,7 +1,6 @@
 accessible: false
 author: Maxime Hanot
-context: In this task, you will have to write a python script that displays 'Hello
-    World!'.
+context: Dans cette mission, tu vas écrire ta première fonction.
 environment: default
 evaluate: best
 groups: false
@@ -9,15 +8,15 @@ limits:
     output: '2'
     time: '10'
     memory: '50'
-name: Hello World!
+name: Fonction constante
 network_grading: false
 order: 0
 problems:
-    hello:
-        name: Let's print it
-        type: code
-        header: 'def func():'
-        language: python
+    const2:
+        type: code-single-line
+        name: Fonction constante (2)
+        header: 'f(x) = '
+        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
