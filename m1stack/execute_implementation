@@ -61,6 +61,7 @@ function execute_implementation {
     # We run the tests
     output=$(run_student scala -cp .:scalacheck.jar ${testsName})
     retval=$?
+    output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
     echo -e "${output}\n"
     echo -e "Scalacheck returned the value: ${retval}\n"
 
@@ -79,6 +80,6 @@ function execute_implementation {
     	# The return code of scalacheck is the number of fail tests
     	feedback-result failed
     	feedback-msg -ae -m "Unfortunatley, you failed ${retval} tests:\n\n"
-    	feedback-msg -ae -m "${output}\n\n"
+    	feedback-msg -ae -m "::\n\n${output}\n\n"
     fi
 }
