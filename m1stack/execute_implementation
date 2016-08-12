@@ -61,7 +61,7 @@ function execute_implementation {
     # We run the tests
     output=$(run_student scala -cp .:scalacheck.jar ${testsName})
     retval=$?
-    output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+    output=$(echo "$output" | sed -e 's/^/\t/' | sed -e '/^$/d')
     echo -e "${output}\n"
     echo -e "Scalacheck returned the value: ${retval}\n"
 
