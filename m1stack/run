@@ -12,7 +12,7 @@ forbiddenClasses=(
 )
 
 feedback-msg -ae -m "test\n\n"
-feedback-msh -ae "<img src=\"https://inginious.info.ucl.ac.be/static/common/images/header.png\" />"
+feedback-msg -ae -m ".. raw:: html\n\n\t <img src=\"https://inginious.info.ucl.ac.be/static/common/images/header.png\" />\n\n"
 
 . ./execute_implementation
 execute_implementation $problemId $studentCodeName $interfaceName forbiddenClasses $testsName
