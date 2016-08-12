@@ -69,18 +69,18 @@ limits:
     output: '100'
     time: '30'
     memory: '512'
-name: Mission 5 - Unit tests [individual]
+name: Mission 5 - Unit tests for the text compressor [individual]
 network_grading: false
 order: 18
 problems:
     tests:
-        allowed_exts:
-        - .java
         header: 'Upload your file here, with only one class named *CompressTests*.
             The classes representing the compressor and decompressor under test are
             respectively named *Compress* and *Decompress*, as written in the template. '
         type: code-file
         name: Unit tests for the compressor
+        allowed_exts:
+        - .java
 stored_submissions: 0
 submission_limit:
     amount: -1
