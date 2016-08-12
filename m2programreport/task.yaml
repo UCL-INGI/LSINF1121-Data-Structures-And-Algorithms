@@ -2,20 +2,25 @@ accessible: /2015-10-17 11:55:55
 author: Simon Hardy
 context: Report of Mission 2
 environment: default
+evaluate: best
 groups: true
 limits:
-    memory: '20'
     output: '2'
     time: '15'
-name: Mission 2 Sort - Program report [group]
+    memory: '20'
+name: Mission 2 - Program report [group]
 network_grading: false
-order: 10
+order: 8
 problems:
     program_report:
-        type: code-file
         header: 'Please upload here your *program report* for the mission 2. '
-        name: Program report
         max_size: 5000000
         allowed_exts:
         - .pdf
+        type: code-file
+        name: Program report
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0

@@ -93,21 +93,26 @@ context: |-
             }
         }
 environment: java8scala
+evaluate: best
 groups: false
 limits:
-    memory: '512'
     output: '100'
     time: '60'
-name: Mission 2 - Unit tests [individual]
+    memory: '512'
+name: '[Old] Mission 2 - Unit tests [individual]'
 network_grading: false
-order: 8
+order: 32
 problems:
     tree_tests:
-        allowed_exts:
-        - .java
         type: code-file
         name: Unit tests for the formal expression tree
+        allowed_exts:
+        - .java
         header: Upload your file here, with only one class named "TreeTests". The
             class representing the tree under test is called *ExpressionTree* and
             it implements *FormalExpressionTree*, as written in the template !
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0

@@ -26,7 +26,7 @@ limits:
     time: '30'
 name: Mission 6 - Minimum spanning tree [group]
 network_grading: false
-order: 31
+order: 23
 problems:
     kruskal:
         type: code-file

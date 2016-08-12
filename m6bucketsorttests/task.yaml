@@ -46,21 +46,26 @@ context: |-
             }
         }
 environment: java8scala
+evaluate: best
 groups: false
 limits:
-    memory: '512'
     output: '100'
     time: '45'
-name: Mission 6 - Unit tests for the Bucket-Sort [individual]
+    memory: '512'
+name: '[Old] Mission 6 - Unit tests for the Bucket-Sort [individual]'
 network_grading: false
-order: 28
+order: 38
 problems:
     bucketsort_tests:
-        allowed_exts:
-        - .java
+        type: code-file
+        name: Unit tests for the Bucket-Sort
         header: 'Upload your file here, with only one class named "BucketSortTests".
             You can suppose that the *sort* method to test is available under *BucketSort.sort(arg1,
             arg2)* as written in the template. '
-        name: Unit tests for the Bucket-Sort
-        type: code-file
+        allowed_exts:
+        - .java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0

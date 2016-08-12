@@ -48,7 +48,7 @@ limits:
     memory: '512'
 name: Mission 3 - Unit tests [individual]
 network_grading: false
-order: 12
+order: 10
 problems:
     tests:
         allowed_exts:

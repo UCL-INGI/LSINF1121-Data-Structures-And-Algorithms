@@ -16,20 +16,25 @@ context: |-
 
     Beware that you Bucket-Sort implementation should run in *linear* time !
 environment: java8scala
+evaluate: best
 groups: false
 limits:
-    memory: '3000'
     output: '100'
     time: '60'
-name: Mission 6 - Bucket Sort [individual]
+    memory: '3000'
+name: '[Old] Mission 6 - Bucket Sort [individual]'
 network_grading: false
-order: 29
+order: 39
 problems:
     bucketsort:
         type: code-file
+        name: BucketSort
         allowed_exts:
         - .java
-        name: BucketSort
         header: 'Upload the file containing your implementation here. Your class should
             be named *BucketSort* and have only one static method *sort*. '
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0

@@ -40,20 +40,25 @@ context: |-
             public int size();
         }
 environment: java8scala
+evaluate: best
 groups: false
 limits:
-    memory: '3000'
     output: '100'
     time: '60'
-name: Mission 4 - Map [individual]
+    memory: '3000'
+name: '[Old] Mission 4 - Map [individual]'
 network_grading: false
-order: 17
+order: 35
 problems:
     map:
         type: code-file
+        name: Map
         allowed_exts:
         - .java
         header: 'Upload the file containing your implementation here. The class representing
             your map should be named *MyMap* and implement *Map*. '
-        name: Map
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0
