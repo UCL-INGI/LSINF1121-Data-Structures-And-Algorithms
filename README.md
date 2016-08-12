@@ -22,9 +22,9 @@ Ces tâches demandent à l'étudiant de fournir une batterie de tests qui seront
 
 Ces tâches demandent des choses divers et variés (QCM, simple réponse, code, ...):
 
-* preexam_1
-* preexam_2
-* preexam_3
+* preexam_bfs
+* preexam_merge_sort
+* preexam_dfs
 * preexam_heap
 * preexam_redblacktree
 * preexam_treeqcm

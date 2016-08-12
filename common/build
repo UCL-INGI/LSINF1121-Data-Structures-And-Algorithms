@@ -14,9 +14,9 @@ cp execute_test ../m5_compressor_tests
 cp execute_test ../m6_kruskal_tests
 
 preexams=(
-    "preexam_1"
-    "preexam_2"
-    "preexam_3"
+    "preexam_bfs"
+    "preexam_dfs"
+    "preexam_merge_sort"
 )
 
 for folder in "${preexams[@]}"
