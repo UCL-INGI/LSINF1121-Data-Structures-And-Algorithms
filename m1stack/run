@@ -13,7 +13,7 @@ forbiddenClasses=(
 
 
 feedback-msg -ae -m "test\n\n"
-feedback-msg -ae -m ".. image:: https://inginious.info.ucl.ac.be/static/common/images/header.png"
+rst-image https://inginious.info.ucl.ac.be/static/common/images/header.png | feedback -ae
 
 . ./execute_implementation
 execute_implementation $problemId $studentCodeName $interfaceName forbiddenClasses $testsName
