@@ -11,5 +11,9 @@ forbiddenClasses=(
 	"java.util.Stack"
 )
 
+
+feedback-msg -ae -m "test\n\n"
+feedback-msg -ae -m ".. image:: https://inginious.info.ucl.ac.be/static/common/images/header.png"
+
 . ./execute_implementation
 execute_implementation $problemId $studentCodeName $interfaceName forbiddenClasses $testsName
