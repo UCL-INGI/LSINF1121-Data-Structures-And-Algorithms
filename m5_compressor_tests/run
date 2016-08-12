@@ -14,12 +14,12 @@ tot=5 # number of tests
 problemId="tests"
 testName="CompressTests"
 name="Compress"
-interfaceName="roflmao"
+interfaceName=""
 buggyName="BuggyCompress"
 buggyFeedbacks=(
-	"Wrong output ________ ________"
-	"Wrong output ________ ________"
-	"Long files not tested________ ________"
+	""
+	""
+	"Long files not tested"
 	"You did not test if the size was really lowering (hint : you can re-open a file that was used in a compress_decrompress call)"
 )
 countBeforeHints=2
