@@ -33,7 +33,7 @@ Il existe d'autres dossiers pour d'autres missions, mais ce ne sont que des éba
 
 ### common
 
-Dans le dossier "common/" se trouve des scripts communs à chaque tâche. Le script "build" permet de copier ces scripts dans les différents dossiers des différentes tâches. (Il faut les copier/coller car lorsque INGInious crée le container Docker, celui-ci n'a plus accès au repertoire parent, et donc à "common/")
+Dans le dossier "common/" se trouve des scripts communs à chaque tâche. Le script "build" permet de copier ces scripts dans les différents dossiers des différentes tâches. (Il faut les copier car lorsque INGInious crée le container Docker, celui-ci n'a plus accès au repertoire parent, et donc à "common/")
 
 ### run
 
@@ -41,4 +41,4 @@ Chaque tâche contient un fichier "run" qui correspond aux fichier executé par 
 
 ### examples
 
-Le dossier "examples" contient des exemples de tests ou d'implémentation, pour pouvoir vérifier si la mission fonctionne correctement. Normalement, y'as une petite description du résultat attendu dans les premières lignes du fichier.
+Le dossier "examples" contient des exemples de tests ou d'implémentations. Ca permet de rapidement vérifier si une tâche fonctionne comme il faut pour les cas les plus basiques.
