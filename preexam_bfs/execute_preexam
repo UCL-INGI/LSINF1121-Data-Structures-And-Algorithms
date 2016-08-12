@@ -50,11 +50,7 @@ function execute_preexam {
         fi
 
         # Sometime output only contains spaces, so we must trim them
-<<<<<<< HEAD
         if [[ ! -z "${output// }" ]]; then
-=======
-        if [ ! -z "${output// }" ]; then
->>>>>>> f9aa4f76795c101477bdf7d7b5d36a3de751f8f6
             feedback-msg -ae -m "\n::\n\n${output}\n\n"
         fi
     fi
