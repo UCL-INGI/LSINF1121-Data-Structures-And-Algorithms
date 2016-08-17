@@ -9,8 +9,10 @@ function execute {
     # We check if one of the forbidden classes where used
     # i.e. if the student cheated
     for forbiddenClass in "${forbiddenClasses[@]}"; do
+        feedback -ae -m "lol"
         for name in "${names[@]}"; do
         	cheat=$(cat "student/${name}.java" | grep -c "${forbiddenClass}")
+            feedback -ae -m "$forbiddenClass $name $cheat"
         	echo -e "Cheat check for ${forbiddenClass}: ${cheat}"
         	if [ "$cheat" != "0" ]; then
         		feedback --result failed --feedback "We detected the use of ${forbiddenClass}, which is prohibited for this test."
