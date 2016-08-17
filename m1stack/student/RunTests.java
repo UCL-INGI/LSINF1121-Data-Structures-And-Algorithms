@@ -36,9 +36,6 @@
                         fail.getException().printStackTrace();
                     }
                 }
-
-                Process p = Runtime.getRuntime().exec("feedback-grade " + ((100 * succeed) / total));
-                p.waitFor();
             }
 
             System.exit(result.wasSuccessful() ? 0 : 1);
