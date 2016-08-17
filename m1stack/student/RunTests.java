@@ -18,10 +18,9 @@ public class RunTests {
 
         if (!result.wasSuccessful()) {
             int succeed = result.getRunCount() - result.getFailureCount();
-            System.out.println("You passed **" + succeed + "** out of " + result.getRunCount() + " tests");
+            System.out.println("You passed **" + succeed + "** out of **" + result.getRunCount() + "** tests");
             System.out.println();
-            System.out.println("::");
-            System.out.println();
+            System.out.print("::\n\n");
 
             for (Failure fail : result.getFailures()) {
                 // Only displays the exception thrown if it is not a "normal" exception thrown by JUnit
