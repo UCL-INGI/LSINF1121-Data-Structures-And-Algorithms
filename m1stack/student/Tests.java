@@ -37,4 +37,13 @@ public class Tests {
         MyStack stack = new MyStack();
         assertEquals(message, "test", stack.push("test"));
     }
+
+    @Test
+    public void testDoublePush()
+    {
+        String message = "Test de push";
+        MyStack stack = new MyStack();
+        assertEquals(message, "test", stack.push("test"));
+        assertEquals(message, "testBis", stack.push("testBis"));
+    }
 }
