@@ -52,7 +52,7 @@ function execute {
         feedback-result success
         feedback-msg -ae -m "Your implementation passed all the tests !"
     else
-        feedback-result failed
+        #feedback-result failed
         if [ "$retval" = "252" ]; then
             feedback-msg -ae -m "The execution was killed due to an out-of-memory (Could it be because of an infinite loop ?)"
         elif [ "$retval" = "253" ]; then

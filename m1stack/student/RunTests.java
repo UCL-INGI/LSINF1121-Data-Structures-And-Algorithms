@@ -22,7 +22,7 @@
             if (!result.wasSuccessful()) {
                 int total = result.getRunCount();
                 int succeed = total - result.getFailureCount();
-                System.out.println("You passed **" + succeed + "** out of **" + result.getRunCount() + "** tests");
+                System.out.println("You passed **" + succeed + "** out of **" + total + "** tests");
                 System.out.println();
                 System.out.println("::");
                 System.out.println();
