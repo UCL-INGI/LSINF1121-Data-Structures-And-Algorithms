@@ -3,6 +3,12 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
+/**
+ * This is a special class that runs the JUnit test and produce readable output.
+ * We use this instead of the traditionnal JUnit Runner because the output it
+ * produces is sometimes too much for what the students need.
+ * @author Frederic KACZYNSKI
+ */
 public class RunTests {
 
     public static void main(String[] args) {

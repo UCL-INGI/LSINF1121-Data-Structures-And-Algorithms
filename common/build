@@ -2,6 +2,9 @@
 
 # This script copies all the necessary components in the right folder
 
+cp execute ../m1stack
+cp RunTests.java ../m1stack
+
 cp execute_implementation ../m1stack
 cp execute_implementation ../m1interpreter
 cp execute_implementation ../m3orderedmap

@@ -3,13 +3,14 @@
 ################
 # Configuration
 ################
-problemId="stack"
-studentCodeName="MyStack"
-interfaceName="Stack"
-testsName="StackProps"
+names=(
+    "MyStack"
+)
 forbiddenClasses=(
 	"java.util.Stack"
 )
 
-. ./execute_implementation
-execute_implementation $problemId $studentCodeName $interfaceName forbiddenClasses $testsName
+getinput "stack" > "student/MyStack.java"
+
+. ./execute
+execute names forbiddenClasses
