@@ -29,4 +29,12 @@ public class Tests {
         stack.push("test");
         assertFalse(message, stack.empty());
     }
+
+    @Test
+    public void testPush()
+    {
+        String message = "Test de push";
+        MyStack stack = new MyStack();
+        assertEquals(message, "test", stack.push("test"));
+    }
 }
