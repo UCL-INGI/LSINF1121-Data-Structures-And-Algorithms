@@ -4,6 +4,7 @@
     import org.junit.runner.notification.Failure;
     import java.io.IOException;
     import java.lang.Process;
+    import java.lang.InterruptedException;
 
     /**
      * This is a special class that runs the JUnit test and produce readable output.
@@ -13,7 +14,7 @@
      */
     public class RunTests {
 
-        public static void main(String[] args) throws IOException {
+        public static void main(String[] args) throws IOException, InterruptedException {
             JUnitCore junit = new JUnitCore();
             Result result = junit.run(Tests.class);
 
