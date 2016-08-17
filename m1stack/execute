@@ -61,11 +61,11 @@ function execute {
             feedback-msg -ae -m "An error occured while running the proxy"
         else
             feedback-msg -ae -m "Your implementation didn't pass all the tests"
-        fi
 
-        # Sometime output only contains spaces, so we must trim them
-        if [[ ! -z "${output// }" ]]; then
-            feedback-msg -ae -m "\n::\n\n${output}\n\n"
+            # Sometime output only contains spaces, so we must trim them
+            if [[ ! -z "${output// }" ]]; then
+                feedback-msg -ae -m "\n\n${output}\n\n"
+            fi
         fi
     fi
 }
