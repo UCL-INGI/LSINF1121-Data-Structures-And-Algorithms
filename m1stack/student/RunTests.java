@@ -2,6 +2,7 @@
     import org.junit.runner.JUnitCore;
     import org.junit.runner.Result;
     import org.junit.runner.notification.Failure;
+    import java.io.IOException;
 
     /**
      * This is a special class that runs the JUnit test and produce readable output.
@@ -11,13 +12,14 @@
      */
     public class RunTests {
 
-        public static void main(String[] args) {
+        public static void main(String[] args) throws IOException {
             JUnitCore junit = new JUnitCore();
             Result result = junit.run(Tests.class);
 
 
             if (!result.wasSuccessful()) {
-                int succeed = result.getRunCount() - result.getFailureCount();
+                int total = result.getRunCount();
+                int succeed = total - result.getFailureCount();
                 System.out.println("You passed **" + succeed + "** out of **" + result.getRunCount() + "** tests");
                 System.out.println();
                 System.out.println("::");
@@ -32,6 +34,8 @@
                         fail.getException().printStackTrace();
                     }
                 }
+
+                Runtime.getRuntime().exec("feedback-grade " + ((100 * succeed) / total));
             }
 
             System.exit(result.wasSuccessful() ? 0 : 1);
