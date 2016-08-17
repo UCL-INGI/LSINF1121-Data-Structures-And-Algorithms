@@ -3,6 +3,7 @@
     import org.junit.runner.Result;
     import org.junit.runner.notification.Failure;
     import java.io.IOException;
+    import java.lang.Process;
 
     /**
      * This is a special class that runs the JUnit test and produce readable output.
@@ -35,7 +36,8 @@
                     }
                 }
 
-                Runtime.getRuntime().exec("feedback-grade " + ((100 * succeed) / total));
+                Process p = Runtime.getRuntime().exec("feedback-grade " + ((100 * succeed) / total));
+                p.waitFor();
             }
 
             System.exit(result.wasSuccessful() ? 0 : 1);
