@@ -14,7 +14,7 @@ public class Tests {
     @Test
     public void testEmpty()
     {
-        String message = "Test d'empty";
+        String message = "Test of empty;";
         MyStack stack = new MyStack();
         stack.push("test");
         stack.pop();
@@ -24,7 +24,7 @@ public class Tests {
     @Test
     public void testNotEmpty()
     {
-        String message = "Test d'empty";
+        String message = "Test of empty;";
         MyStack stack = new MyStack();
         stack.push("test");
         assertFalse(message, stack.empty());
@@ -33,7 +33,7 @@ public class Tests {
     @Test
     public void testPush()
     {
-        String message = "Test de push";
+        String message = "Test of push;";
         MyStack stack = new MyStack();
         assertEquals(message, "test", stack.push("test"));
     }
@@ -41,9 +41,19 @@ public class Tests {
     @Test
     public void testDoublePush()
     {
-        String message = "Test de push";
+        String message = "Test of push (twice);";
         MyStack stack = new MyStack();
         assertEquals(message, "test", stack.push("test"));
         assertEquals(message, "testBis", stack.push("testBis"));
+    }
+
+    @Test
+    public void testPeek()
+    {
+        String message = "Test of peek;";
+        MyStack stack = new MyStack();
+        stack.push("elem");
+        assertEquals(message, "elem", stack.peek());
+        assertFalse(message, stack.empty());
     }
 }
