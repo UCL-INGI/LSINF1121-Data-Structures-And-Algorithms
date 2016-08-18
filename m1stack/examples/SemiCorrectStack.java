@@ -15,7 +15,7 @@ public class MyStack<E> implements Stack<E> {
     }
 
     public boolean empty() {
-        return !(size == 0); // Bug, returns the opposite
+        return size == 0;
     }
 
     public E push(E element) {
