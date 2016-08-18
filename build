@@ -11,12 +11,12 @@ implementations=(
 
 for folder in "${implementations[@]}"
 do
-    cp execute ../${folder}
-    cp RunTests.java ../${folder}/student/
+    cp common/execute ${folder}
+    cp common/RunTests.java ${folder}/student/
 done
 
-cp execute_implementation ../m1interpreter
-cp execute_implementation ../m3orderedmap
+cp common/execute_implementation m1interpreter
+cp common/execute_implementation m3orderedmap
 
 tests=(
     "m1stacktests"
@@ -29,5 +29,5 @@ tests=(
 
 for folder in "${tests[@]}"
 do
-    cp execute_test ../${folder}
+    cp common/execute_test ${folder}
 done
