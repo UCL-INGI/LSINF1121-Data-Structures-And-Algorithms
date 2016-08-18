@@ -28,6 +28,7 @@ public class RunTests {
             System.out.println();
             System.out.println("::");
             System.out.println();
+            String output;
 
             for (Failure fail : result.getFailures()) {
                 // Only displays the exception thrown if it is not a "normal" exception thrown by JUnit
@@ -35,7 +36,13 @@ public class RunTests {
                 if (fail.getException() instanceof AssertionError) {
                     System.out.println("\t" + fail.getMessage());
                 } else {
-                    fail.getException().printStackTrace();
+                    System.out.println("\t" + fail.getException());
+
+                    StringBuilder sb = new StringBuilder();
+                    for (StackTraceElement element : fail.getException().getStackTrace()) {
+                        sb.append("\t" + element.toString() + "\n");
+                    }
+                    System.out.println(sb.toString());
                 }
             }
         }
