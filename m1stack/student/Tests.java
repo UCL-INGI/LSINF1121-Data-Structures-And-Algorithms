@@ -8,6 +8,8 @@ import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
+import java.util.EmptyStackException;
 
 public class Tests {
 
@@ -68,7 +70,7 @@ public class Tests {
         }
 
         for (int i = 100;i >= 0;i--) {
-            assertEquals(message, i, stack.pop(i));
+            assertEquals(message, i, stack.pop());
         }
 
         assertTrue(message, stack.empty());
@@ -95,7 +97,7 @@ public class Tests {
         MyStack stack = new MyStack();
 
         try {
-            stack.eek();
+            stack.peek();
             fail(message);
         } catch (EmptyStackException e) {
             // Ok
