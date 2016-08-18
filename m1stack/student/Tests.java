@@ -56,4 +56,49 @@ public class Tests {
         assertEquals(message, "elem", stack.peek());
         assertFalse(message, stack.empty());
     }
+
+    @Test
+    public void testMultiplePush()
+    {
+        String message = "Test of push (mulitple);";
+        MyStack stack = new MyStack();
+
+        for (int i = 0;i <= 100;i++) {
+            assertEquals(message, i, stack.push(i));
+        }
+
+        for (int i = 100;i >= 0;i--) {
+            assertEquals(message, i, stack.pop(i));
+        }
+
+        assertTrue(message, stack.empty());
+    }
+
+    @Test
+    public void testPopException()
+    {
+        String message = "Test of pop when empty;";
+        MyStack stack = new MyStack();
+
+        try {
+            stack.pop();
+            fail(message);
+        } catch (EmptyStackException e) {
+            // Ok
+        }
+    }
+
+    @Test
+    public void testPeekException()
+    {
+        String message = "Test of peek when empty;";
+        MyStack stack = new MyStack();
+
+        try {
+            stack.eek();
+            fail(message);
+        } catch (EmptyStackException e) {
+            // Ok
+        }
+    }
 }
