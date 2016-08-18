@@ -44,10 +44,11 @@ public class RunTests {
                     e.printStackTrace(new PrintWriter(errors));
 
                     // We must put a \t behind each line for INGInious formatting
+                    // We also limit the number of lines
                     String[] lines = errors.toString().split("\n");
                     StringBuilder sb = new StringBuilder();
-                    for (String line : lines) {
-                        sb.append("\t" + line + "\n");
+                    for (int i = 0;i < totalStacktrace;i++) {
+                        sb.append("\t" + lines[i] + "\n");
                     }
                     System.out.println(sb.toString());
                 }
