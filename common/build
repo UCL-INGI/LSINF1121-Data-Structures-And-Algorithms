@@ -2,28 +2,32 @@
 
 # This script copies all the necessary components in the right folder
 
-cp execute ../m1stack
-cp RunTests.java ../m1stack
-
-cp execute_implementation ../m1stack
-cp execute_implementation ../m1interpreter
-cp execute_implementation ../m3orderedmap
-
-cp execute_test ../m1stacktests
-cp execute_test ../m1interpretertests
-cp execute_test ../m3tests
-cp execute_test ../m4_plagiarism_tests
-cp execute_test ../m5_compressor_tests
-cp execute_test ../m6_kruskal_tests
-
-preexams=(
+implementations=(
+    "m1stack"
     "preexam_bfs"
     "preexam_dfs"
     "preexam_merge_sort"
 )
 
-for folder in "${preexams[@]}"
+for folder in "${implementations[@]}"
 do
-    cp execute_preexam "../${folder}"
-    cp RunTests.java "../${folder}/student"
+    cp execute ../${folder}
+    cp RunTests.java ../${folder}/student/
+done
+
+cp execute_implementation ../m1interpreter
+cp execute_implementation ../m3orderedmap
+
+tests=(
+    "m1stacktests"
+    "m1interpretertests"
+    "m3tests"
+    "m4_plagiarism_tests"
+    "m5_compressor_tests"
+    "m6_kruskal_tests"
+)
+
+for folder in "${tests[@]}"
+do
+    cp execute_test ../${folder}
 done

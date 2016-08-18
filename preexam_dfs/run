@@ -1,6 +1,12 @@
 #!/bin/bash
 
-name="DepthFirstPaths"
+names=(
+    "DepthFirstPaths"
+)
+forbiddenClasses=(
+)
 
-. ./execute_preexam
-execute_preexam "$name"
+parsetemplate --output "student/${names[0]}.java" "student/${names[0]}.java"
+
+. ./execute
+execute names forbiddenClasses
