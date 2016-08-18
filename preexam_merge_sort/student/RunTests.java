@@ -36,7 +36,7 @@ public class RunTests {
                 if (fail.getException() instanceof AssertionError) {
                     System.out.println("\t" + fail.getMessage());
                 } else {
-                    System.out.println("\t" + fail.getException().getMessage());
+                    System.out.println("\t" + fail.getException().toString());
 
                     StringBuilder sb = new StringBuilder();
                     StackTraceElement[] trace = fail.getException().getStackTrace();
