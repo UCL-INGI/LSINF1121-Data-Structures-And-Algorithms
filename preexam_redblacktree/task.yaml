@@ -34,8 +34,8 @@ problems:
     redblacktree1:
         name: ''
         type: match
-        header: 'We add ``1`` to the ``Red-Black Tree``. The representation of the
-            tree is:'
+        header: 'Starting with an empty ``Red-Black Tree``, we add ``1`` to the ``Red-Black
+            Tree``. The representation of the tree is:'
         answer: '1'
     redblacktree2:
         name: ''
