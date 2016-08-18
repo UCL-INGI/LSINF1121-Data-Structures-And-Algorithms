@@ -14,7 +14,7 @@ import java.lang.InterruptedException;
  */
 public class RunTests {
 
-    public int maxErrorsForHints = 3;
+    public static int totalStacktrace = 10;
 
     public static void main(String[] args) throws IOException, InterruptedException {
         JUnitCore junit = new JUnitCore();
@@ -36,11 +36,12 @@ public class RunTests {
                 if (fail.getException() instanceof AssertionError) {
                     System.out.println("\t" + fail.getMessage());
                 } else {
-                    System.out.println("\t" + fail.getException());
+                    System.out.println("\t" + fail.getException().getMessage());
 
                     StringBuilder sb = new StringBuilder();
-                    for (StackTraceElement element : fail.getException().getStackTrace()) {
-                        sb.append("\t" + element.toString() + "\n");
+                    StackTraceElement[] trace = fail.getException().getStackTrace();
+                    for (int i = 0;i < totalStacktrace;i++) {
+                        sb.append("\t\t" + trace[i].toString() + "\n");
                     }
                     System.out.println(sb.toString());
                 }
