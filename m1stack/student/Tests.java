@@ -62,7 +62,7 @@ public class Tests {
     @Test
     public void testMultiplePush()
     {
-        String message = "Test of push (mulitple);";
+        String message = "Test of push (multiple);";
         MyStack stack = new MyStack();
 
         for (int i = 0;i <= 100;i++) {
