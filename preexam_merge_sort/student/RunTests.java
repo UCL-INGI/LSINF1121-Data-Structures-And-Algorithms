@@ -5,6 +5,8 @@ import org.junit.runner.notification.Failure;
 import java.io.IOException;
 import java.lang.Process;
 import java.lang.InterruptedException;
+import java.io.StringWriter;
+import java.io.PrintWriter;
 
 /**
  * This is a special class that runs the JUnit test and produce readable output.
@@ -36,12 +38,16 @@ public class RunTests {
                 if (fail.getException() instanceof AssertionError) {
                     System.out.println("\t" + fail.getMessage());
                 } else {
-                    System.out.println("\t" + fail.getException().toString());
+                    Throwable e = fail.getException();
 
+                    StringWriter errors = new StringWriter();
+                    e.printStackTrace(new PrintWriter(errors));
+
+                    // We must put a \t behind each line for INGInious formatting
+                    String[] lines = errors.toString().split("\n");
                     StringBuilder sb = new StringBuilder();
-                    StackTraceElement[] trace = fail.getException().getStackTrace();
-                    for (int i = 0;i < totalStacktrace;i++) {
-                        sb.append("\t\t" + trace[i].toString() + "\n");
+                    for (String line : lines) {
+                        sb.append("\t" + line + "\n");
                     }
                     System.out.println(sb.toString());
                 }
