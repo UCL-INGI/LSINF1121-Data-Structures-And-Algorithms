@@ -17,4 +17,4 @@ registration_ac: null
 registration_ac_list:
 - ''
 groups_student_choice: true
-use_classrooms: true
+use_classrooms: false
