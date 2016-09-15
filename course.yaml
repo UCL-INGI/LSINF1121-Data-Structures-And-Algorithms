@@ -1,9 +1,7 @@
-name: '[LSINF1121-2015] Algorithmique et structures de données'
+name: '[LSINF1121] Algorithmique et structures de données'
 admins:
 - fkaczynski
 - gderval
-- gegoa
-- sihardy
 - pschaus
 - faubry
 - thomascha
@@ -12,7 +10,7 @@ admins:
 - dethisea
 - gmaudoux
 accessible: true
-registration: 2015-09-21 11:37:36/2015-11-26 11:37:43
+registration: 2016-09-19 12:00:00/2016-11-19 12:00:00
 registration_password: null
 groups: false
 tutors: []
