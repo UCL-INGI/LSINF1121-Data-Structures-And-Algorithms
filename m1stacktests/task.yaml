@@ -1,4 +1,4 @@
-accessible: /2015-09-25 18:00:50
+accessible: /2016-09-25 18:00:50
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     Recall the Stack interface :
@@ -64,14 +64,14 @@ network_grading: false
 order: 2
 problems:
     stack_tests:
-        name: Unit tests for the stack implementation
-        allowed_exts:
-        - .java
-        type: code-file
         header: 'Upload your file here, with only one class named *StackTests*. You
             can suppose that the class representing the stack under test is called
             *MyStack*, and that the interface is available (named *Stack*) as written
             in the template. '
+        name: Unit tests for the stack implementation
+        type: code-file
+        allowed_exts:
+        - .java
 stored_submissions: 0
 submission_limit:
     amount: -1
