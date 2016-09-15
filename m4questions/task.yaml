@@ -1,7 +1,8 @@
-accessible: /2015-11-06 18:58:43
+accessible: false
 author: Simon Hardy
 context: Answers to the different questions in the statement of the fourth mission.
 environment: default
+evaluate: best
 groups: true
 limits:
     memory: '256'
@@ -12,10 +13,14 @@ network_grading: false
 order: 13
 problems:
     report:
-        header: 'Please upload here your *questions report* for the mission 4. '
+        type: code-file
+        name: Report
         allowed_exts:
         - .pdf
-        type: code-file
         max_size: 5000000
-        name: Report
+        header: 'Please upload here your *questions report* for the mission 4. '
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0

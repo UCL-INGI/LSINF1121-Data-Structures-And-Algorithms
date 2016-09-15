@@ -1,4 +1,4 @@
-accessible: /2015-12-11 19:07:45
+accessible: false
 author: Simon Hardy
 context: |-
     For this mission, you are asked to implement Kruskal algorithm in order to compute the minimum spanning tree corresponding to an input file. As a reminder, we impose one implementation detail (which won't be checked on INGInious, but manually by the tutors) :
@@ -19,6 +19,7 @@ context: |-
 
     - The cities can be represented by any positive integer (not necessarily consecutive).
 environment: java8scala
+evaluate: best
 groups: true
 limits:
     memory: '512'
@@ -29,11 +30,15 @@ network_grading: false
 order: 23
 problems:
     kruskal:
+        allowed_exts:
+        - .java
         type: code-file
         header: 'Upload your file here. Your class should be named *Kruskal* and take
             two arguments as explained above. If you need other classes, just put
             them at the end of this file, without the *public* modifier. '
-        allowed_exts:
-        - .java
         name: Kruskal
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0

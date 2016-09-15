@@ -1,4 +1,4 @@
-accessible: /2015-11-13 19:04:29
+accessible: false
 author: Simon Hardy
 context: |
     For this mission, you have to write a plagiarism detector (a class named "Plagiarism") implementing the following interface :
@@ -58,6 +58,7 @@ context: |
 
     For more information about the unspecified methods of *MapInterface*, see the Java Map interface (http://docs.oracle.com/javase/7/docs/api/java/util/Map.html).
 environment: java8scala
+evaluate: best
 groups: true
 limits:
     memory: '512'
@@ -68,18 +69,22 @@ network_grading: false
 order: 15
 problems:
     plagiarism:
-        name: Plagiarism detector
-        allowed_exts:
-        - .java
         type: code-file
         header: Upload your plagiarism detector here. Your class should be named "Plagiarism"
             and implement *PlagiarismInterface*. **Don't include the interface in
             your submission.**
+        allowed_exts:
+        - .java
+        name: Plagiarism detector
     hashmap:
-        type: code-file
-        header: Upload your map implementation here. Your class should be named "HashMap"
-            and implement *MapInterface*. **Don't include the interface in your submission.**
         allowed_exts:
         - .java
         name: HashMap
+        type: code-file
+        header: Upload your map implementation here. Your class should be named "HashMap"
+            and implement *MapInterface*. **Don't include the interface in your submission.**
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0

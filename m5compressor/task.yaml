@@ -1,4 +1,4 @@
-accessible: /2015-11-27 19:37:14
+accessible: false
 author: Simon Hardy
 context: |-
     For this mission, you are asked to write two programs : *Compress.java*, which compresses the file located at argv[0] and writes the result in a new file located at argv[1], and *Decompress.java*, which decompresses argv[0] and writes it in the file at argv[1].
@@ -7,6 +7,7 @@ context: |-
 
     NB : all the files tested in this task end with a '\\\n', so make sure you don't skip it in your compressor !
 environment: java8scala
+evaluate: best
 groups: true
 limits:
     memory: '512'
@@ -17,19 +18,23 @@ network_grading: false
 order: 19
 problems:
     compressor:
-        name: Text compressor
+        type: code-file
+        allowed_exts:
+        - .java
         header: 'Upload your text compressor here. Your class should be named *Compress*
             and take two arguments as explained above. If you need other classes,
             just put them at the end of this file (or at the end of the decompress),
             without the *public* modifier. '
-        type: code-file
-        allowed_exts:
-        - .java
+        name: Text compressor
     decompressor:
-        type: code-file
         allowed_exts:
         - .java
-        name: Decompressor
         header: 'Upload your decompressor here. Your class should be named *Decompress*
             and take two arguments as explained above. '
+        type: code-file
+        name: Decompressor
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0

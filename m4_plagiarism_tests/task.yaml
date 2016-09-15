@@ -1,4 +1,4 @@
-accessible: /2015-11-09 08:03:57
+accessible: false
 author: Simon Hardy
 context: |
     Recall the Map interface you used in your plagiarism detector :
@@ -63,6 +63,7 @@ context: |
             }
         }
 environment: java8scala
+evaluate: best
 groups: false
 limits:
     memory: '512'
@@ -73,11 +74,15 @@ network_grading: false
 order: 14
 problems:
     plagiarism_tests:
-        name: Unit tests
-        type: code-file
+        allowed_exts:
+        - .java
         header: Upload your file here, with only one class named "HashMapTests". The
             class representing the spam filter under test is called *HashMap* and
             implements *MapInterface*, as written in the template !
-        allowed_exts:
-        - .java
+        name: Unit tests
+        type: code-file
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
 weight: 1.0

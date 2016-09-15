@@ -1,4 +1,4 @@
-accessible: /2015-12-04 18:09:27
+accessible: false
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     For this task, you have to write unit tests using JUnit in order to check several Kruskal implementations. You are given one class, *Kruskal*, and you have to determine if it does its job correctly or not. We provide you an optional template to begin writing your tests:
@@ -88,32 +88,32 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
+    memory: '512'
     output: '100'
     hard_time: '420'
     time: '120'
-    memory: '512'
 name: Mission 6 - Unit tests for Kruskal [individual]
 network_grading: false
 order: 22
 problems:
     tests:
-        allowed_exts:
-        - .java
         header: 'Upload your file here, with only one class named *KruskalTests*.
             The class representing the implementation under test is called *Kruskal*,
             as written in the template. '
         type: code-file
         name: Unit tests for Kruskal
+        allowed_exts:
+        - .java
     archive:
-        max_size: 5000000
-        name: Archive with inputs as text files
         allowed_exts:
         - .zip
+        name: Archive with inputs as text files
+        type: code-file
+        max_size: 5000000
         header: 'Upload the archive containing your .txt files here. It will be unzipped
             in the same directory as your *KruskalTests* class. Don''t forget that
             if you zip a directory (instead of your .txt files directly), then you
             will have to write "dir/file.txt" in your tests instead of just "file.txt". '
-        type: code-file
 stored_submissions: 0
 submission_limit:
     amount: -1
