@@ -22,8 +22,5 @@ buggyFeedbacks=(
 )
 countBeforeHints=3
 
-feedback-msg -ae -m "test\n\n"
-feedback-msg -ae -m ".. image:: https://inginious.info.ucl.ac.be/static/common/images/header.png"
-
 . ./execute_test
 execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints
