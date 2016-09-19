@@ -65,23 +65,23 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
-    output: '100'
     memory: '512'
+    output: '100'
     time: '45'
 name: '[Old] Mission 4 - Unit tests for the Map [individual]'
 network_grading: false
 order: 34
 problems:
     map_tests:
-        type: code-file
-        name: Unit tests for the Map implementation
+        allowed_exts:
+        - .java
         header: Upload your file here, with only one class named "MapTests". The class
             representing the map under test is called *MyMap* and implements *Map*,
             as written in the template !
-        allowed_exts:
-        - .java
+        name: Unit tests for the Map implementation
+        type: code-file
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
-weight: 1.0
+weight: 0.0

@@ -43,9 +43,9 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
+    memory: '3000'
     output: '100'
     time: '60'
-    memory: '3000'
 name: '[Old] Mission 4 - Map [individual]'
 network_grading: false
 order: 35
@@ -61,4 +61,4 @@ stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
-weight: 1.0
+weight: 0.0
