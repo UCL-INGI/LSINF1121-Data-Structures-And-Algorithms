@@ -54,37 +54,37 @@ environment: java8scala
 evaluate: best
 groups: true
 limits:
+    memory: '512'
     output: '100'
     time: '30'
-    memory: '512'
 name: '[Old] Mission 4 - Spam filter [group]'
 network_grading: false
 order: 37
 problems:
     classifier:
-        allowed_exts:
-        - .java
         header: 'Upload your spam filter here. Your class should be named "SpamFilter"
             and implement *SpamFiltering*. '
-        type: code-file
         name: Spam filter
+        allowed_exts:
+        - .java
+        type: code-file
     map:
         type: code-file
         name: Map
-        allowed_exts:
-        - .java
         header: 'Upload your map here. Your class should be named "MyMap" and implement
             the interface *Map* given in the other part of the mission (it can be
             the same as the map submitted for this other part). '
-    word:
         allowed_exts:
         - .java
-        name: Word
+    word:
         type: code-file
         header: 'Upload your class Word here. It should be named "Word" and implement
             *WordInterface*. '
+        allowed_exts:
+        - .java
+        name: Word
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
-weight: 1.0
+weight: 0.0
