@@ -17,11 +17,11 @@ context: |-
 
     Exemple de ce qui est interdit :
 
-    - Tu as mis quoi à la réponse à la question 1 ?
+        Tu as mis quoi à la réponse à la question 1 ?
 
     Exemple de ce qui est autorisé :
 
-    - J’hésite entre la méthode 1 et la méthode 2 pour réaliser l’objectif 1, je pense que la méthode 1 est meilleure pour la raison x, que penses-tu de cet argument ?
+        J’hésite entre la méthode 1 et la méthode 2 pour réaliser l’objectif 1, je pense que la méthode 1 est meilleure pour la raison x, que penses-tu de cet argument ?
 
     Pourquoi ?
     -------------
