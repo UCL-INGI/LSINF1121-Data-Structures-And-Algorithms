@@ -40,7 +40,7 @@ context: |-
     Tout manquement à un de ces points sera sanctionné comme un acte de tricherie et sera dès lors reporté au président des jurys.  Pour rappel, en cas de tricherie, l'étudiant peut se voir attribuer un zéro pour le cours, voire se voir attribuer zéro pour l'ensemble des cours de la session.
 
     Vos codes sont analysés par des outils de détection de plagiat. Un étudiant averti en vaut deux.
-environment: pythia0compat
+environment: mcq
 evaluate: best
 groups: false
 limits:
