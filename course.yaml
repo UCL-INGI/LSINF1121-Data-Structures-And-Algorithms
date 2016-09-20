@@ -8,8 +8,8 @@ admins:
 - xgillard
 - dethisea
 - gmaudoux
-accessible: false
-registration: false
+accessible: true
+registration: true
 registration_password: null
 groups: false
 tutors: []
