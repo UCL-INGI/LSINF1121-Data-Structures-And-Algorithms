@@ -10,12 +10,12 @@ function execute {
     # i.e. if the student cheated
     for forbiddenClass in "${forbiddenClasses[@]}"; do
         for name in "${names[@]}"; do
-        	cheat=$(cat "${name}.java" | grep -c "${forbiddenClass}")
-        	echo -e "Cheat check for ${forbiddenClass}: ${cheat}"
-        	if [ "$cheat" != "0" ]; then
-        		feedback --result failed --feedback "We detected the use of ``${forbiddenClass}``, which is prohibited for this test."
-        	    exit 1
-        	fi
+            cheat=$(cat "${name}.java" | grep -c "${forbiddenClass}")
+            echo -e "Cheat check for ${forbiddenClass}: ${cheat}"
+            if [ "$cheat" != "0" ]; then
+                feedback --result failed --feedback "We detected the use of ${forbiddenClass}, which is prohibited for this test."
+                exit 1
+           fi
         done
     done
 
