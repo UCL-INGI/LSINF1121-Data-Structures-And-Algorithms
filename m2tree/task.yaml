@@ -45,32 +45,32 @@ environment: java8scala
 evaluate: best
 groups: true
 limits:
+    memory: '512'
     output: '100'
     time: '45'
-    memory: '512'
 name: '[Old] Mission 2 - Formal expression tree [group]'
 network_grading: false
 order: 33
 problems:
     tree:
         type: code-file
+        name: Expression tree
+        allowed_exts:
+        - .java
         header: 'Upload the file containing your implementation here. The class representing
             your tree should be named *ExpressionTree* and implement *FormalExpressionTree*.
             If you need other classes, put them in the same file but without any *public*
             modifier. '
-        name: Expression tree
-        allowed_exts:
-        - .java
     exception:
-        type: code-file
-        allowed_exts:
-        - .java
-        name: ParseException
         header: 'Upload the file containing your custom exception here. The class
             should be named *ParseException*. '
+        name: ParseException
+        allowed_exts:
+        - .java
+        type: code-file
         max_size: 1000000
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
-weight: 1.0
+weight: 0.0
