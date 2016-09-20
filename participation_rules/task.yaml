@@ -1,0 +1,63 @@
+accessible: true
+author: ''
+context: |-
+    Ce qui est interdit
+    -----------------------
+
+    Il est interdit de partager son code avec un autre groupe et même avec son propre groupe pour les parties individuelles des missions.
+
+    Il est interdit de publier son code de manière publique (``GitHub``, ``Bitbucket``, etc) pendant et après le quadrimestre.  Nous vous fournirons un repository ``Git`` pour vos travaux de groupes, qui sera seulement visible par les membres de votre groupe.
+
+    Il est interdit de prendre le code de quelqu’un d’autre (même partiellement), y compris du code disponible sur le web. Seul le code fourni dans le livre de référence peut être utilisé.
+
+    Ce qui est autorisé
+    ------------------------------
+
+    Échanger et discuter des idées avec des collègues (y compris d’un autre groupe) est autorisé (oralement autour d’un tableau, sur un forum, etc). Mais il est interdit de demander et/ou fournir une réponse toute faite ou du code source.
+
+    Exemple de ce qui est interdit :
+
+    - Tu as mis quoi à la réponse à la question 1 ?
+
+    Exemple de ce qui est autorisé :
+
+    - J’hésite entre la méthode 1 et la méthode 2 pour réaliser l’objectif 1, je pense que la méthode 1 est meilleure pour la raison x, que penses-tu de cet argument ?
+
+    Pourquoi ?
+    -------------
+
+    Car le matériel pédagogique mis en place s’améliore chaque année et prend beaucoup de temps à développer. Le copyright de celui-ci appartient d’ailleurs à l’UCL et non aux étudiants.
+
+    Contourner les outils pédagogiques mis en place (par exemple en empruntant du code déjà écrit) ne vous rend pas service. C’est même le meilleur moyen d’échouer à l’examen qui visera précisément à évaluer les compétences acquises: programmation, réponses aux questions, etc.
+
+    En partageant du code ou des réponses (dans le meilleur des cas approximativement correctes...) vous inciteriez certains étudiants à ne pas réfléchir par eux-mêmes, voir pire, à apprendre des réponses potentiellement erronées.
+
+    La note de participation ne vise pas l’exactitude des productions (réponses, codes) mais l’attitude et la motivation de l’étudiant à s’améliorer et acquérir les compétences visées.
+
+    Risque
+    ---------
+
+    Tout manquement à un de ces points sera sanctionné comme un acte de tricherie et sera dès lors reporté au président des jurys.  Pour rappel, en cas de tricherie, l'étudiant peut se voir attribuer un zéro pour le cours, voire se voir attribuer zéro pour l'ensemble des cours de la session.
+
+    Vos codes sont analysés par des outils de détection de plagiat. Un étudiant averti en vaut deux.
+environment: mcq
+evaluate: best
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: Règles de participation aux cours
+network_grading: false
+problems:
+    read_and_approved:
+        type: match
+        name: ''
+        header: Merci de prendre connaissance du règlement du cours ci-dessus et d'écrire
+            la mention ``Lu et approuvé`` dans l'encadré ci-dessous
+        answer: Lu et approuvé
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 0.0
