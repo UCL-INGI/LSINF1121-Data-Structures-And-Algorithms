@@ -10,17 +10,17 @@ groups: true
 limits:
     output: '2'
     time: '15'
-    memory: '20'
+    memory: '200'
 name: Mission 1 - Questions report [group]
 network_grading: false
 order: 1
 problems:
     report:
-        max_size: 5000000
         type: code-file
+        max_size: 5000000
+        header: 'Please upload here your *questions report* for the mission 1. '
         allowed_exts:
         - .pdf
-        header: 'Please upload here your *questions report* for the mission 1. '
         name: Report
 stored_submissions: 0
 submission_limit:
