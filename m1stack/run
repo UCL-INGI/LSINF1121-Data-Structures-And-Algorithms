@@ -8,6 +8,7 @@ names=(
 )
 forbiddenClasses=(
 	"java.util.Stack"
+    "java.util.LinkedList"
 )
 
 getinput "stack" > "student/MyStack.java"
