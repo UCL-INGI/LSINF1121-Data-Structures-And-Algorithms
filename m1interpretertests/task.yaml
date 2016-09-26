@@ -1,4 +1,4 @@
-accessible: /2016-09-29 11:59:59
+accessible: /2016-09-29 23:59:59
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     You are asked to write unit tests (using JUnit) in order to check wether a particular interpreter does its job correctly (i.e. the method *interpret* follows its specifications).
