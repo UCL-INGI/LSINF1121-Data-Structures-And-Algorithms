@@ -1,4 +1,4 @@
-accessible: /2016-09-30 18:00:00
+accessible: /2016-09-29 23:59:59
 author: Simon Hardy
 context: |-
     You are asked to write a mini-PostScript interpreter as described in the *pdf* of the mission. Precisely, you must implement the following interface :
@@ -23,20 +23,20 @@ environment: java8scala
 evaluate: best
 groups: true
 limits:
+    time: '70'
     memory: '512'
     output: '100'
-    time: '70'
 name: Mission 1 - PostScript Interpreter [group]
 network_grading: false
 order: 5
 problems:
     interpreter:
-        name: PostScript interpreter
-        type: code-file
         header: 'Upload your interpreter here. Your file should contain exactly one
             public class named *Interpreter* and implementing *InterpreterInterface*.
             Put additional classes inside *Interpreter*, or just after it in the same
             file but then without the *public* key-word. '
+        name: PostScript interpreter
+        type: code-file
         allowed_exts:
         - .java
 stored_submissions: 0

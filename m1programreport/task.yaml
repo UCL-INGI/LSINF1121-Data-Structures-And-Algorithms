@@ -1,4 +1,4 @@
-accessible: /2016-09-30 18:00:00
+accessible: /2016-09-29 11:59:59
 author: Simon Hardy
 context: |-
     Report of 1-2 pages max. containing short explanations concerning the programs of the first mission (stack, interpreter and tests).
@@ -8,20 +8,20 @@ environment: default
 evaluate: best
 groups: true
 limits:
+    memory: '20'
     output: '2'
     time: '15'
-    memory: '20'
 name: Mission 1 - Program report [group]
 network_grading: false
 order: 6
 problems:
     program_report:
-        allowed_exts:
-        - .pdf
-        max_size: 5000000
         header: 'Please upload here your *program report* for the mission 1. '
         name: Program report
         type: code-file
+        max_size: 5000000
+        allowed_exts:
+        - .pdf
 stored_submissions: 0
 submission_limit:
     amount: -1
