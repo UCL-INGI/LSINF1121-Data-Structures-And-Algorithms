@@ -23,7 +23,7 @@ buggyFeedbacks=(
 	"Failed add test"
 	"Failed dup test"
 	"Failed pstack test"
-	"Unit tests should also cover error case i.e. if an implementation behaves correctly when wrong input has been given"
+	"Unit tests should also cover error case i.e. if an implementation behaves correctly when wrong input has been given (such as undefined arithmetic calculations)"
 	"Failed exch test"
 	"Failed pop test"
 	"Failed def test"
