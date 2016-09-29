@@ -8,18 +8,18 @@ environment: default
 evaluate: best
 groups: true
 limits:
-    memory: '20'
     output: '2'
+    memory: '200'
     time: '15'
 name: Mission 1 - Program report [group]
 network_grading: false
 order: 6
 problems:
     program_report:
-        header: 'Please upload here your *program report* for the mission 1. '
         name: Program report
         type: code-file
         max_size: 5000000
+        header: 'Please upload here your *program report* for the mission 1. '
         allowed_exts:
         - .pdf
 stored_submissions: 0
