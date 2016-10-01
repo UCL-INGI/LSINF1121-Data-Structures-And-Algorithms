@@ -22,7 +22,7 @@ function execute_implementation {
     local problemId="$1"
     local studentCodeName="$2"
     local interfaceName="$3"
-    local -n forbiddenClasses=$4
+    local forbiddenClasses=$4
     local testsName="$5"
 
     getinput "${problemId}" > "student/${studentCodeName}.java"
@@ -52,7 +52,7 @@ function execute_implementation {
 
     # Copy everything in the 'student' directory for run_student
     # 01-10-2016 : XGI : J'ai remplacé les tests en scala par la testsuite JUnit.
-    cp ${testsName}.java student/${testsName}.scala
+    cp ${testsName}.java student/${testsName}.java
     cp junit-4.12.jar student/junit-4.12.jar
     cp hamcrest-core-1.3.jar student/hamcrest-core-1.3.jar
     cd student
