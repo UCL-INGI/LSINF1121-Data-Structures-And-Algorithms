@@ -30,7 +30,7 @@ public class InterpreterTests {
         Assert.assertEquals("", i.interpret("pop"));
     }
     
-    //	Qq on décide ? toute division -> double ou semantique Java
+    //	Qq on decide ? toute division -> double ou semantique Java
     //	@Test
     //	public void testSlackEx(){
     //		Assert.assertEquals("2.5", i.interpret("5 2 div pstack"));
