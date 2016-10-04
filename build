@@ -16,7 +16,6 @@ do
     cp common/RunTests.java ${folder}/student/
 done
 
-cp common/execute_implementation m1interpreter
 cp common/execute_implementation m3orderedmap
 
 tests=(
