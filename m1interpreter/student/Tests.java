@@ -16,7 +16,6 @@ public class Tests {
     {
         String message = "Test of add;";
         Interpreter interpreter = new Interpreter();
-        assertEquals(message, x+y, interpreter.interpret(x + " " + y + " add pstack pop")
-        assertTrue(message, stack.empty());
+        assertEquals(message, "6", interpreter.interpret(5 + " " + 1 + " add pstack pop"));
     }
 }
