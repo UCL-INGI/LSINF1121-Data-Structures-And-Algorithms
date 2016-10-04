@@ -1,4 +1,4 @@
-accessible: false
+accessible: /2016-10-07 08:00:00
 author: Simon Hardy
 context: Answers to the different questions in the statement of the second mission.
 environment: default
@@ -13,12 +13,12 @@ network_grading: false
 order: 7
 problems:
     report:
-        type: code-file
-        name: Report
+        header: 'Please upload here your *questions report* for the mission 2. '
         allowed_exts:
         - .pdf
+        name: Report
         max_size: 5000000
-        header: 'Please upload here your *questions report* for the mission 2. '
+        type: code-file
 stored_submissions: 0
 submission_limit:
     amount: -1
