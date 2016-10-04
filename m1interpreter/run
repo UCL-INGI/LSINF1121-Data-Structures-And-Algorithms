@@ -7,7 +7,7 @@
 #                    Ajout de la classe interdite java.util.Stack
 ################
 names=(
-    "MyStack"
+    "Interpreter"
 )
 forbiddenClasses=(
 	"java.util.Stack"
