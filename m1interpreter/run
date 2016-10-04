@@ -6,14 +6,14 @@
 # 01-10-2016 : XGI : Remplacement des tests unitaires en Scala par ceux implém avec JUnit.
 #                    Ajout de la classe interdite java.util.Stack
 ################
-problemId="interpreter"
-studentCodeName="Interpreter"
-interfaceName="InterpreterInterface"
-testsName="InterpreterTests"
+names=(
+    "MyStack"
+)
 forbiddenClasses=(
-  "java.util.Stack"
+	"java.util.Stack"
 )
 
-. ./execute_implementation
-execute_implementation $problemId $studentCodeName $interfaceName forbiddenClasses $testsName
+getinput "interpreter" > "student/Interpreter.java"
 
+. ./execute
+execute names forbiddenClasses

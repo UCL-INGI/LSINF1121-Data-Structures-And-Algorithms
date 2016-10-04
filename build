@@ -4,6 +4,7 @@
 
 implementations=(
     "m1stack"
+    "m1interpreter"
     "preexam_bfs"
     "preexam_dfs"
     "preexam_merge_sort"
