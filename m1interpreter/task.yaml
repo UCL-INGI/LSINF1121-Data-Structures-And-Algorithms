@@ -1,4 +1,4 @@
-accessible: /2016-09-30 11:59:59
+accessible: true
 author: Simon Hardy
 context: |-
     You are asked to write a mini-PostScript interpreter as described in the *pdf* of the mission. Precisely, you must implement the following interface :
@@ -35,10 +35,10 @@ problems:
             public class named *Interpreter* and implementing *InterpreterInterface*.
             Put additional classes inside *Interpreter*, or just after it in the same
             file but then without the *public* key-word. '
-        name: PostScript interpreter
-        type: code-file
         allowed_exts:
         - .java
+        type: code-file
+        name: PostScript interpreter
 stored_submissions: 0
 submission_limit:
     amount: -1

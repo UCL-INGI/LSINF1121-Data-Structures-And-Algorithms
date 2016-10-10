@@ -1,4 +1,4 @@
-accessible: /2016-09-30 11:59:59
+accessible: true
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     You are asked to write unit tests (using JUnit) in order to check wether a particular interpreter does its job correctly (i.e. the method *interpret* follows its specifications).
@@ -37,11 +37,11 @@ network_grading: false
 order: 4
 problems:
     interpreter_tests:
-        type: code-file
         header: 'Upload your file here, with only one class named "InterpreterTests".
             The class representing the interpreter under test is called *Interpreter*
             and implements *InterpreterInterface*, as written in the template. '
         name: Unit tests for the interpreter
+        type: code-file
         allowed_exts:
         - .java
 stored_submissions: 0
