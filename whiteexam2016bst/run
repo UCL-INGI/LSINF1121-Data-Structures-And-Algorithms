@@ -1,2 +1,5 @@
 #! /bin/python3
 
+parsetemplate -o student/StudentAnswer.java StudentAnswer.java
+cp Main.java student/
+cp Node.java student/
