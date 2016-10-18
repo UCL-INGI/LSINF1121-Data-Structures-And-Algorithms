@@ -1,0 +1,23 @@
+accessible: false
+author: ''
+context: ''
+environment: sekexe
+evaluate: best
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: Examen blanc 2016 - Arbre de recherche binaires
+network_grading: false
+problems:
+    q:
+        language: java
+        type: code
+        name: ''
+        header: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
