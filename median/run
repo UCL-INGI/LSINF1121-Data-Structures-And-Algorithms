@@ -39,6 +39,21 @@ if [ -s output/run.err ]; then # error in main()
 	exit
 fi
 
+
+if [[ `grep 'java.util' Median.java` ]];then
+	feedback-grade 0
+	feedback-result failed
+	feedback-msg -ae -m "interdit d'utiliser java.util \n"
+    exit
+fi
+
+if [[ `grep 'new' Median.java` ]];then
+	feedback-grade 0
+	feedback-result failed
+	feedback-msg -ae -m "interdit d'appeler new \n"
+    exit
+fi
+
 if [[ `grep 'OK (3 tests)' output/junit.out` ]];then
    feedback-grade 100.0
    feedback-result success
