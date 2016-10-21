@@ -21,14 +21,15 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
-    time: '30'
     output: '2'
-    memory: '100'
+    memory: '900'
+    time: '30'
 name: Examen blanc 2016 - Median
 network_grading: false
 problems:
     question1:
         name: Votre code
+        language: java
         header: |-
             Vous devez implémenter une méthode qui a la signature suivante:
 
@@ -54,7 +55,6 @@ problems:
                 public class Median {
                     // votre code sera substitué ici
                 }
-        language: java
         type: code
 stored_submissions: 0
 submission_limit:
