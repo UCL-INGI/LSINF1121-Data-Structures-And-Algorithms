@@ -29,10 +29,23 @@ network_grading: false
 problems:
     question1:
         name: Votre code
-        header: |4-
+        header: |-
+            Vous devez implémenter une méthode qui a la signature suivante:
+            Cette méthode calcule ma médiane du vector a entre les potition lo et hi (incluse). Il n'est pas interdit d'interchanger des elements du vecteur a.
+            Grading (sur 10 points): bonne valeur de retour 3 points, bonne valeur de retour et complexité O(n log n) 5 points, bonne valeur de retour et complexité O(n) expected, 10 points.
+            Il est interdit de faire appel à d'autres méthodes de la librairie Java. Il est interdit de faire un "new".
 
+            .. code-block:: java
+
+             public static int median(Vector a, int lo, int hi)
+
+
+            Tout le code que vous écrivez dans le champ texte sera substitué à l'endroit indiqué ci-dessous. Vous êtes libre d'implémenter évantuellement d'autres méthodes.
+
+            .. code-block:: java
 
             public class Median {
+                // votre code sera placé ici
             }
         language: java
         type: code
