@@ -27,6 +27,7 @@ if [ $? -eq 0 ]; then
             feedback-result failed
             feedback-grade 0
             feedback-msg -m "Votre programme a lancé une exception."
+            echo $content | rst-code | feedback-msg -a
         elif [ "$content" == "ko" ]; then
             feedback-result failed
             feedback-grade 0
