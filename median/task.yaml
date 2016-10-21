@@ -31,22 +31,29 @@ problems:
         name: Votre code
         header: |-
             Vous devez implémenter une méthode qui a la signature suivante:
-            Cette méthode calcule ma médiane du vector a entre les potition lo et hi (incluse). Il n'est pas interdit d'interchanger des elements du vecteur a.
-            Grading (sur 10 points): bonne valeur de retour 3 points, bonne valeur de retour et complexité O(n log n) 5 points, bonne valeur de retour et complexité O(n) expected, 10 points.
-            Il est interdit de faire appel à d'autres méthodes de la librairie Java. Il est interdit de faire un "new".
 
             .. code-block:: java
 
              public static int median(Vector a, int lo, int hi)
 
 
-            Tout le code que vous écrivez dans le champ texte sera substitué à l'endroit indiqué ci-dessous. Vous êtes libre d'implémenter évantuellement d'autres méthodes.
+
+            Cette méthode calcule ma médiane du vector "a" entre les potitions "lo" et "hi" (incluse). Il n'est pas interdit de modifier ou d'interchanger des elements du vecteur "a" durant le calcul. Il est interdit de faire appel à d'autres méthodes de la librairie standard Java. Il est également interdit de faire un "new".
+
+            L'évaluation porte sur sur 10 points:
+            - bonne valeur de retour 3 points,
+            - bonne valeur de retour et complexité O(n log n) 5 points,
+            - bonne valeur de retour et complexité O(n) expected: 10 points.
+
+
+            Tout le code que vous écrivez dans le champ texte sera substitué à l'endroit indiqué ci-dessous.
+            Vous êtes libre d'implémenter évantuellement d'autres méthodes pour vous aider dans cette classe mais la méthode "median" donnée ci-dessus doit au moins y figurer.
 
             .. code-block:: java
 
-            public class Median {
-                // votre code sera placé ici
-            }
+                public class Median {
+                    // votre code sera substitué ici
+                }
         language: java
         type: code
 stored_submissions: 0
