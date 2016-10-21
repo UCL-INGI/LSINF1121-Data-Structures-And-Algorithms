@@ -6,7 +6,11 @@ cp Node.java student/
 cd student
 javac Main.java Node.java StudentAnswer.java &> ../compile
 if [ $? -eq 0 ]; then
-    echo OK
+   content=`run_student java Main`
+   feedback-result failed
+   feedback-grade 10
+   feedback-msg -e -m "Worked\n\n"
+   echo $content | rst-code | feedback-msg -a
 else
     feedback-result failed
     feedback-grade 0
