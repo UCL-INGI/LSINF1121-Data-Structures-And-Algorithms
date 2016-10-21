@@ -28,8 +28,12 @@ name: Examen blanc 2016 - Median
 network_grading: false
 problems:
     question1:
-        name: ''
-        header: ''
+        name: Votre code
+        header: |4-
+
+
+            public class Median {
+            }
         language: java
         type: code
 stored_submissions: 0
