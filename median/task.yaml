@@ -1,6 +1,9 @@
 accessible: false
 author: Pierre Schaus
 context: |-
+    Nous vous donnons l'API d'une classe Vector permettant l'accéder, modifier et interchanger deux élements en temps constant.
+    Votre tâche est d'implémenter une méthode permettant de calculer la médiane d'un Vecteur.
+
     .. code-block:: java
 
         public interface Vector {
