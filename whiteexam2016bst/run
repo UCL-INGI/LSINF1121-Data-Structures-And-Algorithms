@@ -1,4 +1,4 @@
-#! /bin/python3
+#! /bin/bash
 
 parsetemplate -o student/StudentAnswer.java StudentAnswer.java
 cp Main.java student/
