@@ -39,19 +39,19 @@ if [ -s output/run.err ]; then # error in main()
 	exit
 fi
 
-if [[ 'grep 'OK (3 tests)' output/junit.out' ]];then
+if [[ `grep 'OK (3 tests)' output/junit.out` ]];then
    feedback-grade 100.0
    feedback-result success
    feedback-msg -ae -m "congratulation"
 else
-   if [[ 'grep 'testMedianOk' output/junit.out' ]];then
+   if [[ `grep 'testMedianOk' output/junit.out` ]];then
       feedback-grade 0.0
    else
-      if [[ 'grep 'testComplexityNLogNOk' output/junit.out' ]];then
+      if [[ `grep 'testComplexityNLogNOk' output/junit.out` ]];then
          feedback-grade 30.0
          feedback-msg -ae -m "bonne mediane, mauvaise complexite"
       else
-         if [[ 'grep 'testComplexityNOk' output/junit.out' ]];then
+         if [[ `grep 'testComplexityNOk' output/junit.out` ]];then
             feedback-grade 50.0
             feedback-msg -ae -m "bonne mediane, complexite pas encore O(n)"
          fi
