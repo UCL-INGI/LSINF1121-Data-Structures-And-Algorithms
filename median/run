@@ -39,16 +39,24 @@ if [ -s output/run.err ]; then # error in main()
 	exit
 fi
 
-NO_FAIL=$(wc -l output/junit.out | awk -F" " '{print $1}')
-NO_SUCC=$(expr $NO_TESTS - $NO_FAIL)
-
-if [ $NO_FAIL -eq 0 ]; then
-	feedback-result success
-	feedback-msg -ae -m "Vous avez réussi tout les tests."
+if [[ 'grep 'OK (3 tests)' output/junit.out' ]];then
+   feedback-grade 100.0
+   feedback-result success
+   feedback-msg -ae -m "congratulation"
 else
-	feedback-result failed
-	feedback-msg -ae -m "Votre programme n'a pas passé tous les tests. Ces tests ont échoués :\n"
-	cat output/junit.out | rst-code | feedback-msg -a
+   if [[ 'grep 'testMedianOk' output/junit.out' ]];then
+      feedback-grade 0.0
+   else
+      if [[ 'grep 'testComplexityNLogNOk' output/junit.out' ]];then
+         feedback-grade 30.0
+         feedback-msg -ae -m "bonne mediane, mauvaise complexite"
+      else
+         if [[ 'grep 'testComplexityNOk' output/junit.out' ]];then
+            feedback-grade 50.0
+            feedback-msg -ae -m "bonne mediane, complexite pas encore O(n)"
+         fi
+      fi 
+   fi
 fi
 
 
