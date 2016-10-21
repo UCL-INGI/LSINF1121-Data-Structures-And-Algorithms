@@ -17,7 +17,7 @@ context: |-
             public void swap(int i, int j);
 
         }
-environment: java7
+environment: java8scala
 evaluate: best
 groups: false
 limits:
