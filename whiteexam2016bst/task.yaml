@@ -1,6 +1,28 @@
 accessible: false
-author: ''
-context: ''
+author: Guillaume Derval
+context: |-
+    Etant donné un arbre de recherche binaire, dont les noeuds implémentent l'interface Node:
+
+    .. code-block:: java
+
+        interface Node {
+            /**
+              * @return la valeur contenue dans ce noeud
+              */
+            int getValue();
+
+            /**
+             * @return Le noeud situe a gauche (dont la valeur est < que la valeur actuelle) s'il existe, null sinon
+             */
+            Node getLeft();
+
+            /**
+              * @return Le noeud situe a droite (dont la valeur est > que la valeur actuelle) s'il existe, null sinon
+              */
+            Node getRight();
+        }
+
+    L'on vous demande de fournir le **corps** de la fonction *ceil*, qui trouve dans l'arbre le plus petit élément plus grand ou égal à `value` (donc soit l'élément lui-même soit l'élément situé directement après par ordre de grandeur). Si un tel élément n'existe pas, elle doit retourner `null`.
 environment: java8scala
 evaluate: best
 groups: false
@@ -12,7 +34,12 @@ name: Examen blanc 2016 - Arbre de recherche binaires
 network_grading: false
 problems:
     q:
-        header: ''
+        header: |
+            Fournissez ici le **corps** de la fonction `ceil`:
+
+            .. code-block:: java
+
+                Integer ceil(Node root, int value)
         type: code
         name: ''
         language: java
