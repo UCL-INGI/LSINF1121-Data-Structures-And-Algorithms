@@ -15,7 +15,7 @@ parsetemplate Median.java
 
 javac -cp junit-4.12.jar:. Test.java 2> output/comp.err 
 
-java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar Test 2> output/run.err > output/junit.out
+ java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore Test 2> output/run.err > output/junit.out
 
 
 # add files to archive
