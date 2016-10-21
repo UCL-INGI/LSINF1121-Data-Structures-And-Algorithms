@@ -1,0 +1,36 @@
+accessible: false
+author: Pierre Schaus
+context: |-
+    .. code-block:: java
+
+        public interface Vector {
+
+            public int size();
+
+            public void set(int i, int v);
+
+            public int get(int i);
+
+            public void swap(int i, int j);
+
+        }
+environment: java7
+evaluate: best
+groups: false
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: Examen blanc 2016 - Median
+network_grading: false
+problems:
+    question1:
+        name: ''
+        header: ''
+        language: java
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 10.0
