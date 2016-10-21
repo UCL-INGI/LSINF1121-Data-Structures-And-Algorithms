@@ -61,17 +61,17 @@ public class Test extends TestCase {
 
     public void testMedianOk() {
         for (int i = 100; i < 1000; i += 100) {
-            Vector v = Median.randomVector(i+1);
+            Vector v = randomVector(i+1);
             assertTrue("correct median value computed",median(v,0,v.size()-1) == Median.median(v,0,v.size()-1));
         }
     }
 
     public void testComplexityNLogNOk() {
         for (int i = 100; i < 2000000; i += 100000) {
-            Vector v1 = Median.randomVector(i+1);
+            Vector v1 = randomVector(i+1);
             Median.median(v1,0,v1.size()-1);
 
-            Vector v2 = Median.randomVector(i+1);
+            Vector v2 = randomVector(i+1);
             sort(v2,0,v2.size()-1);
 
             assertTrue("complexity larger than O(n.log(n))",v1.nOp() <= v2.nOp()*3);
@@ -80,10 +80,10 @@ public class Test extends TestCase {
 
     public void testComplexityNOk() {
         for (int i = 100; i < 2000000; i += 100000) {
-            Vector v1 = Median.randomVector(i+1);
+            Vector v1 = randomVector(i+1);
             Median.median(v1,0,v1.size()-1);
 
-            Vector v2 = Median.randomVector(i+1);
+            Vector v2 = randomVector(i+1);
             median(v2,0,v2.size()-1);
 
             assertTrue("complexity larger than O(n) expected",v1.nOp() <= v2.nOp()*3);
