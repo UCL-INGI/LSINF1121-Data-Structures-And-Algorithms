@@ -58,14 +58,14 @@ public class Test extends TestCase {
 
     }
 
-
+    @org.junit.Test
     public void testMedianOk() {
         for (int i = 100; i < 1000; i += 100) {
             Vector v = randomVector(i+1);
             assertTrue("correct median value computed",median(v,0,v.size()-1) == Median.median(v,0,v.size()-1));
         }
     }
-
+    @org.junit.Test
     public void testComplexityNLogNOk() {
         for (int i = 100; i < 2000000; i += 100000) {
             Vector v1 = randomVector(i+1);
@@ -77,7 +77,7 @@ public class Test extends TestCase {
             assertTrue("complexity larger than O(n.log(n))",v1.nOp() <= v2.nOp()*3);
         }
     }
-
+    @org.junit.Test
     public void testComplexityNOk() {
         for (int i = 100; i < 2000000; i += 100000) {
             Vector v1 = randomVector(i+1);
