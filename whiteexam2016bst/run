@@ -6,14 +6,26 @@ cp Node.java student/
 cd student
 javac Main.java Node.java StudentAnswer.java &> ../compile
 if [ $? -eq 0 ]; then
-   content=`run_student java Main`
-   feedback-result failed
-   feedback-grade 10
-   feedback-msg -e -m "Worked\n\n"
-   echo $content | rst-code | feedback-msg -a
+	content=`run_student java Main`
+    retval=$?
+    if [ $retval -eq 252 ]; then
+        feedback-result overflow
+        feedback-grade 0
+    elif [ $retval -eq 253 ]; then
+        feedback-result timeout
+        feedback-grade 0
+    elif [ $retval -eq 0 ]; then
+    	feedback-result failed
+        feedback-grade 0
+        feedback-msg -e -m "Presque"
+    else
+        feedback-result crash
+        feedback-grade 0
+        feedback-msg -e -m "Une erreur inconnue s'est produite"
+    fi
 else
     feedback-result failed
     feedback-grade 0
-    feedback-msg -e -m "Compilation error\n\n"
+    feedback-msg -e -m "Erreur à la compilation:\n\n"
     cat ../compile | rst-code | feedback-msg -a
 fi
