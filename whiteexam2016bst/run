@@ -3,3 +3,13 @@
 parsetemplate -o student/StudentAnswer.java StudentAnswer.java
 cp Main.java student/
 cp Node.java student/
+cd student
+javac Main.java Node.java StudentAnswer.java &> ../compile
+if [ $? -eq 0 ]; then
+    echo OK
+else
+    feedback-result failed
+    feedback-grade 0
+    feedback-msg -e -m "Compilation error\n\n"
+    cat ../compile | rst-code | feedback-msg -a
+fi
