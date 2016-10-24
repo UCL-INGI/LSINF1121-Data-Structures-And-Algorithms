@@ -39,7 +39,13 @@ problems:
 
 
 
-            Cette méthode calcule ma médiane du vector "a" entre les potitions "lo" et "hi" (incluse). Il n'est pas interdit de modifier ou d'interchanger des elements du vecteur "a" durant le calcul (avec les methode get/set/swap). Il est interdit de faire appel à d'autres méthodes de la librairie standard Java. Il est également interdit de faire un "new".
+            Cette méthode calcule ma médiane du vector "a" entre les potitions "lo" et "hi" (incluse).
+
+
+            Pour vous aider, un projet eclipse avec un test minimaliste pour vérifier si votre code calcule la bonne valeur médiane est donné. En effet, il n'est pas conseillé de débugger son code via Inginious.
+
+
+            Il n'est pas interdit de modifier ou d'interchanger des elements du vecteur "a" durant le calcul (avec les methode get/set/swap). Il est interdit de faire appel à d'autres méthodes de la librairie standard Java. Il est également interdit de faire un "new".
 
             L'évaluation porte sur sur 10 points:
 
