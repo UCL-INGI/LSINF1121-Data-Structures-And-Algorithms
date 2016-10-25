@@ -13,12 +13,12 @@ network_grading: false
 problems:
     qcm01:
         choices:
-        -   text: $O(N\times log N)$
+        -   text: \\(O(N\\times\\log N)\\)
             valid: true
-        -   text: $O(N)$
-        -   text: $O(N^2)$
-        -   text: $O(\frac{N^2}{2})$
-        -   text: $O(Log N)$
+        -   text: \\(O(N)\\)
+        -   text: \\(O(N^2)\\)
+        -   text: \\(O(\frac{N^2}{2})\\)
+        -   text: \\(O(\\log N)\\)
         type: multiple-choice
         name: Complexité de l'algorithme QuickSort
         limit: 0
@@ -30,11 +30,11 @@ problems:
             suivantes :'
         choices:
         -   valid: true
-            text: $O(Log N)$ et $O(N)$
-        -   text: $O(Log N)$ et $O(\frac{N^2}{2})$
-        -   text: $O(N)$ et $O(N)$
-        -   text: $O(\frac{N^2}{2})$ et $O(N)$
-        -   text: $O(N^2)$ et $O(N)$
+            text: \\(O(\\log N)\\) et \\(O(N)\\)
+        -   text: \\(O(\log N)\\) et \\(O(\frac{N^2}{2})\\)
+        -   text: \\(O(N)\\) et \\(O(N)\\)
+        -   text: \\(O(\frac{N^2}{2})\\) et \\(O(N)\\)
+        -   text: \\(O(N^2)\\) et \\(O(N)\\)
         limit: 0
         type: multiple-choice
         name: Complexité des opérations pour BinarySearchST
