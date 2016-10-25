@@ -72,7 +72,7 @@ problems:
             valid: true
         -   valid: true
             text: Le *3-Way Quick Sort* n’est pas stable et est en place.
-        -   text: Le *Shell Sort* n’est pas stable et est en place.
+        -   text: Le *Shell Sort* est stable et est en place.
         name: Propriétés des algorithmes de tri
         limit: 0
         header: Quelles affirmations suivantes sont exactes ?
