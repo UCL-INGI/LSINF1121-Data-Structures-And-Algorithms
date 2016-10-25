@@ -1,7 +1,7 @@
 accessible: false
 author: Antoine Cailliau
 context: ''
-environment: verilog
+environment: mcq
 evaluate: last
 groups: false
 limits:
