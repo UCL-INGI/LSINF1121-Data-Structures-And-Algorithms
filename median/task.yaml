@@ -37,34 +37,34 @@ problems:
 
 
 
-            Cette méthode calcule ma médiane du vector "a" entre les potitions "lo" et "hi" (incluse).
+            Cette méthode calcule la médiane du vector "a" entre les positions "lo" et "hi" (incluses).
 
+            Vous pouvez considérer que le vector "a" a toujours une taille impaire.
 
             Pour vous aider, un projet eclipse avec un test minimaliste pour vérifier si votre code calcule la bonne valeur médiane est donné. En effet, il n'est pas conseillé de débugger son code via Inginious.
-
 
             Il n'est pas interdit de modifier ou d'interchanger des elements du vecteur "a" durant le calcul (avec les methode get/set/swap). Il est interdit de faire appel à d'autres méthodes de la librairie standard Java. Il est également interdit de faire un "new".
 
             L'évaluation porte sur sur 10 points:
 
-            - bonne valeur de retour 3 points,
+            - bonne valeur de retour: 3 points,
 
-            - bonne valeur de retour et complexité O(n log n) 5 points,
+            - bonne valeur de retour et complexité O(n log n): 5 points,
 
             - bonne valeur de retour et complexité O(n) expected: 10 points.
 
 
             Tout le code que vous écrivez dans le champ texte sera substitué à l'endroit indiqué ci-dessous.
-            Vous êtes libre d'implémenter évantuellement d'autres méthodes pour vous aider dans cette classe mais la méthode "median" donnée ci-dessus doit au moins y figurer.
+            Vous êtes libre d'implémenter éventuellement d'autres méthodes pour vous aider dans cette classe mais la méthode "median" donnée ci-dessus doit au moins y figurer.
 
             .. code-block:: java
 
                 public class Median {
                     // votre code sera substitué ici
                 }
+        language: java
         name: Votre code
         type: code
-        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
