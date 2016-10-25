@@ -1,19 +1,19 @@
 accessible: false
 author: Pierre Schaus
 context: |-
-    Nous vous donnons l'API d'une classe Vector permettant l'accéder, modifier et interchanger deux élements en temps constant.
+    Nous vous donnons l'API d'une classe Vector permettant d'accéder, modifier et interchanger deux élements en temps constant.
     Votre tâche est d'implémenter une méthode permettant de calculer la médiane d'un Vecteur.
 
     .. code-block:: java
 
         public interface Vector {
-             // taille du vecteur
+            // taille du vecteur
             public int size();
-            // met la valeur v a l'indice i du vecteur
+            // mets la valeur v à l'indice i du vecteur
             public void set(int i, int v);
-             // valeur a l'indice i du vecteur
+            // renvoie la valeur à l'indice i du vecteur
             public int get(int i);
-            // echange les valeurs aux position i et j
+            // échange les valeurs aux positions i et j
             public void swap(int i, int j);
 
         }
@@ -21,15 +21,13 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
-    output: '2'
     memory: '900'
+    output: '2'
     time: '30'
 name: Examen blanc 2016 - Median
 network_grading: false
 problems:
     question1:
-        name: Votre code
-        language: java
         header: |-
             Vous devez implémenter une méthode qui a la signature suivante:
 
@@ -64,7 +62,9 @@ problems:
                 public class Median {
                     // votre code sera substitué ici
                 }
+        name: Votre code
         type: code
+        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
