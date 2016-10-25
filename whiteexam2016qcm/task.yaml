@@ -17,7 +17,7 @@ problems:
             valid: true
         -   text: \\(O(N)\\)
         -   text: \\(O(N^2)\\)
-        -   text: \\(O(\frac{N^2}{2})\\)
+        -   text: \\(O(\\frac{N^2}{2})\\)
         -   text: \\(O(\\log N)\\)
         type: multiple-choice
         name: Complexité de l'algorithme QuickSort
@@ -31,9 +31,9 @@ problems:
         choices:
         -   valid: true
             text: \\(O(\\log N)\\) et \\(O(N)\\)
-        -   text: \\(O(\log N)\\) et \\(O(\frac{N^2}{2})\\)
+        -   text: \\(O(\\log N)\\) et \\(O(\\frac{N^2}{2})\\)
         -   text: \\(O(N)\\) et \\(O(N)\\)
-        -   text: \\(O(\frac{N^2}{2})\\) et \\(O(N)\\)
+        -   text: \\(O(\\frac{N^2}{2})\\) et \\(O(N)\\)
         -   text: \\(O(N^2)\\) et \\(O(N)\\)
         limit: 0
         type: multiple-choice
@@ -42,22 +42,22 @@ problems:
         header: Le coût, dans le pire cas, d’un `get` dans un arbre *red-black* est
             de 
         choices:
-        -   text: $O(\frac{N}{2})$
-        -   text: $O(log N)$
+        -   text: \\(O(\\frac{N}{2})\\)
+        -   text: \\(O(\\log N)\\)
             valid: true
-        -   text: $O(1.39\times log N)$
-        -   text: $O(\frac{N^2}{2})$
-        -   text: $O(N\times log N)$
+        -   text: \\(O(1.39\\times \\log N)\\)
+        -   text: \\(O(\\frac{N^2}{2})\\)
+        -   text: \\(O(N\\times log N)\\)
         name: Complexité des opérations de arbres Red-black
         type: multiple-choice
         limit: 0
     qcm04:
         choices:
-        -   text: $O(N)$
+        -   text: \\(O(N)\\)
             valid: true
-        -   text: $O(log N)$
-        -   text: $O(N\times log N)$
-        -   text: $O(N^2)$
+        -   text: \\(O(\\log N)\\)
+        -   text: \\(O(N\\times \\log N)\\)
+        -   text: \\(O(N^2)\\)
         type: multiple-choice
         name: Complexité des opérations de arbres binaires
         limit: 0
