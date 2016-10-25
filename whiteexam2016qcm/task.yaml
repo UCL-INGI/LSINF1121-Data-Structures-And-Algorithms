@@ -13,12 +13,12 @@ network_grading: false
 problems:
     qcm01:
         choices:
-        -   text: O(N log N)
+        -   text: \[O(N\times log N)\]
             valid: true
-        -   text: O(N)
-        -   text: O(N^2)
-        -   text: O(N^2/2)
-        -   text: O(Log N)
+        -   text: $O(N)$
+        -   text: $O(N^2)$
+        -   text: $O(\frac{N^2}{2})$
+        -   text: $O(Log N)$
         type: multiple-choice
         name: Complexité de l'algorithme QuickSort
         limit: 0
