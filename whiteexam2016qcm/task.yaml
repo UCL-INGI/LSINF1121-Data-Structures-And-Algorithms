@@ -36,6 +36,17 @@ problems:
         name: "1.\tDans le pire des cas, les opérations get et put dans BinarySearchST
             (une recherche dichotomique dans une liste ordonnée) ont les complexités
             suivantes :"
+    qcm03:
+        choices:
+        -   text: O(N / 2)
+        -   text: O(Log N)
+            valid: true
+        -   text: O(1.39 log N)
+        -   text: O(N^2/2)
+        -   text: O(N Log N)
+        header: ''
+        name: Le coût, dans le pire cas, d’un get dans un arbre red-black est de 
+        type: multiple-choice
 stored_submissions: 1
 submission_limit:
     amount: 1
