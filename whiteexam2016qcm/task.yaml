@@ -1,0 +1,43 @@
+accessible: false
+author: Antoine Cailliau
+context: ''
+environment: verilog
+evaluate: last
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: Examen blanc 2016 - Questions à choix multiples
+network_grading: false
+problems:
+    qcm01:
+        name: "1.\tEn moyenne, l’algorithme QuickSort utilise [reponse] comparaisons
+            pour trier un tableau de longueur N où les clés sont distinctes."
+        choices:
+        -   text: O(N log N)
+            valid: true
+        -   text: O(N)
+        -   text: O(N^2)
+        -   text: O(N^2/2)
+        -   text: O(Log N)
+        type: multiple-choice
+        header: ''
+    qcm02:
+        header: ''
+        choices:
+        -   valid: true
+            text: O(Log N) et O(N)
+        -   text: O(Log N) et O(N^2/2)
+        -   text: O(N) et O(N)
+        -   text: O(N^2/2) et O(N)
+        -   text: O(N^2) et O(N)
+        type: multiple-choice
+        name: "1.\tDans le pire des cas, les opérations get et put dans BinarySearchST
+            (une recherche dichotomique dans une liste ordonnée) ont les complexités
+            suivantes :"
+stored_submissions: 1
+submission_limit:
+    amount: 1
+    period: -1
+weight: 1.0
