@@ -13,7 +13,7 @@ network_grading: false
 problems:
     qcm01:
         choices:
-        -   text: \[O(N\times log N)\]
+        -   text: \(O(N\times log N)\)
             valid: true
         -   text: $O(N)$
         -   text: $O(N^2)$
