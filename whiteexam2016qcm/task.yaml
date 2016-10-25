@@ -20,9 +20,10 @@ problems:
         -   text: O(N^2/2)
         -   text: O(Log N)
         type: multiple-choice
-        name: "1.\tEn moyenne, l’algorithme QuickSort utilise [reponse] comparaisons
-            pour trier un tableau de longueur N où les clés sont distinctes."
-        header: ''
+        name: Complexité de l'algorithme QuickSort
+        limit: 0
+        header: En moyenne, l’algorithme *QuickSort* utilise [reponse] comparaisons
+            pour trier un tableau de longueur N où les clés sont distinctes.
     qcm02:
         header: ''
         choices:
@@ -32,6 +33,7 @@ problems:
         -   text: O(N) et O(N)
         -   text: O(N^2/2) et O(N)
         -   text: O(N^2) et O(N)
+        limit: 0
         type: multiple-choice
         name: 'Dans le pire des cas, les opérations get et put dans BinarySearchST
             (une recherche dichotomique dans une liste ordonnée) ont les complexités
@@ -47,6 +49,7 @@ problems:
         -   text: O(N Log N)
         name: Le coût, dans le pire cas, d’un get dans un arbre red-black est de 
         type: multiple-choice
+        limit: 0
     qcm04:
         choices:
         -   text: O(N)
@@ -57,6 +60,7 @@ problems:
         type: multiple-choice
         name: Quelle est la complexité pour énumérer en ordre croissant toutes les
             clés d’un arbre binaire ?
+        limit: 0
         header: ''
     qcm05:
         choices:
@@ -69,11 +73,13 @@ problems:
             text: Le 3-Way Quick Sort n’est pas stable et est en place.
         -   text: Le Shell Sort n’est pas stable et est en place.
         name: Quelles affirmations suivantes sont exactes ?
+        limit: 0
         header: ''
         multiple: true
         type: multiple-choice
     qcm06:
         header: ''
+        limit: 0
         choices:
         -   text: '[2, 3, 4, 5] [1, 6, 7, 8]'
             valid: true
@@ -92,6 +98,7 @@ problems:
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a3.png'
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a4.png'
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a5.png'
+        limit: 0
         header: ''
         type: multiple-choice
         name: Quel arbre red-black correspond à l’arbre construit à partir de la séquence
