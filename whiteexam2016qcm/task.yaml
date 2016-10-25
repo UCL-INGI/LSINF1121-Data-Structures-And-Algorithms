@@ -86,8 +86,12 @@ problems:
         type: multiple-choice
     qcm07:
         choices:
-        -   text: '.. image:: http://res.cloudinary.com/urbandictionary/image/upload/a_exif,c_fit,h_200,w_200/v1421526525/tj7gukeidrt8giwgivpl.jpg'
+        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a1.png'
             valid: true
+        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a2.png'
+        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a3.png'
+        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a4.png'
+        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a5.png'
         header: ''
         type: multiple-choice
         name: Quel arbre red-black correspond à l’arbre construit à partir de la séquence
