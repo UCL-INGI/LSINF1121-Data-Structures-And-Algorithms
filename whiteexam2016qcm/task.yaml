@@ -6,14 +6,12 @@ evaluate: last
 groups: false
 limits:
     memory: '100'
-    output: '2'
     time: '30'
+    output: '2'
 name: Examen blanc 2016 - Questions à choix multiples
 network_grading: false
 problems:
     qcm01:
-        name: "1.\tEn moyenne, l’algorithme QuickSort utilise [reponse] comparaisons
-            pour trier un tableau de longueur N où les clés sont distinctes."
         choices:
         -   text: O(N log N)
             valid: true
@@ -22,6 +20,8 @@ problems:
         -   text: O(N^2/2)
         -   text: O(Log N)
         type: multiple-choice
+        name: "1.\tEn moyenne, l’algorithme QuickSort utilise [reponse] comparaisons
+            pour trier un tableau de longueur N où les clés sont distinctes."
         header: ''
     qcm02:
         header: ''
@@ -33,10 +33,11 @@ problems:
         -   text: O(N^2/2) et O(N)
         -   text: O(N^2) et O(N)
         type: multiple-choice
-        name: "1.\tDans le pire des cas, les opérations get et put dans BinarySearchST
+        name: 'Dans le pire des cas, les opérations get et put dans BinarySearchST
             (une recherche dichotomique dans une liste ordonnée) ont les complexités
-            suivantes :"
+            suivantes :'
     qcm03:
+        header: ''
         choices:
         -   text: O(N / 2)
         -   text: O(Log N)
@@ -44,9 +45,53 @@ problems:
         -   text: O(1.39 log N)
         -   text: O(N^2/2)
         -   text: O(N Log N)
-        header: ''
         name: Le coût, dans le pire cas, d’un get dans un arbre red-black est de 
         type: multiple-choice
+    qcm04:
+        choices:
+        -   text: O(N)
+            valid: true
+        -   text: O(Log N)
+        -   text: O(N Log N)
+        -   text: O(N^2)
+        type: multiple-choice
+        name: Quelle est la complexité pour énumérer en ordre croissant toutes les
+            clés d’un arbre binaire ?
+        header: ''
+    qcm05:
+        choices:
+        -   valid: true
+            text: Le Selection Sort n’est pas stable et est en-place.
+        -   text: Le Quick Sort est stable et en-place.
+        -   text: Le Merge Sort est stable et n’est pas en-place.
+            valid: true
+        -   valid: true
+            text: Le 3-Way Quick Sort n’est pas stable et est en place.
+        -   text: Le Shell Sort n’est pas stable et est en place.
+        name: Quelles affirmations suivantes sont exactes ?
+        header: ''
+        multiple: true
+        type: multiple-choice
+    qcm06:
+        header: ''
+        choices:
+        -   text: '[2, 3, 4, 5] [1, 6, 7, 8]'
+            valid: true
+        -   text: '[2, 3] [4, 5] [1, 6] [7, 8]'
+        -   text: '[1, 2, 3, 4, 5] [7, 8, 9]'
+        -   text: '[3, 5] [4, 2, 1, 7, 8, 6]'
+        multiple: true
+        name: Quel état du tableau correspond à une étape valide lors d’un Merge Sort
+            pour le tableau [3, 5, 4, 2, 1, 7, 8, 6] ?
+        type: multiple-choice
+    qcm07:
+        choices:
+        -   text: '.. image:: http://res.cloudinary.com/urbandictionary/image/upload/a_exif,c_fit,h_200,w_200/v1421526525/tj7gukeidrt8giwgivpl.jpg'
+            valid: true
+        header: ''
+        type: multiple-choice
+        name: Quel arbre red-black correspond à l’arbre construit à partir de la séquence
+            3, 5, 4, 2, 1, 7, 8, 6 ?
 stored_submissions: 1
 submission_limit:
     amount: 1
