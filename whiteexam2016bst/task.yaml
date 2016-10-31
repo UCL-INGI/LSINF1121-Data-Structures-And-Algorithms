@@ -23,13 +23,15 @@ context: |-
         }
 
     L'on vous demande de fournir le **corps** de la fonction *ceil*, qui trouve dans l'arbre le plus petit élément plus grand ou égal à `value` (donc soit l'élément lui-même soit l'élément situé directement après par ordre de grandeur). Si un tel élément n'existe pas, elle doit retourner `null`.
+
+    `Un projet Eclipse contenant des tests basiques vous est fourni en cliquant sur ce lien. <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016bst/project.zip>`_
 environment: java8scala
 evaluate: best
 groups: false
 limits:
     output: '2'
-    memory: '100'
     time: '30'
+    memory: '100'
 name: Examen blanc 2016 - Arbre de recherche binaires
 network_grading: false
 problems:
@@ -40,9 +42,9 @@ problems:
             .. code-block:: java
 
                 Integer ceil(Node root, int value)
-        type: code
         name: ''
         language: java
+        type: code
 stored_submissions: 0
 submission_limit:
     amount: -1

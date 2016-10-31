@@ -17,17 +17,20 @@ context: |-
             public void swap(int i, int j);
 
         }
+
+    `Un projet Eclipse contenant des tests basiques vous est fourni en cliquant sur ce lien. <https://inginious.info.ucl.ac.be/course/LSINF1121-2016/median/project.zip>`_
 environment: java8scala
 evaluate: best
 groups: false
 limits:
-    memory: '900'
     output: '2'
     time: '30'
+    memory: '900'
 name: Examen blanc 2016 - Median
 network_grading: false
 problems:
     question1:
+        name: Votre code
         header: |-
             Vous devez implémenter une méthode qui a la signature suivante:
 
@@ -63,7 +66,6 @@ problems:
                     // votre code sera substitué ici
                 }
         language: java
-        name: Votre code
         type: code
 stored_submissions: 0
 submission_limit:
