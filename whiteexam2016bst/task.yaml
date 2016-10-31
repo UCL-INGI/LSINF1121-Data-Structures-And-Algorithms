@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2016-10-31 14:55:32/2016-11-30 14:55:34
 author: Guillaume Derval
 context: |-
     Etant donné un arbre de recherche binaire, dont les noeuds implémentent l'interface Node:

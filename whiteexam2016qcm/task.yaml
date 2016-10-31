@@ -1,17 +1,19 @@
-accessible: false
+accessible: 2016-10-31 14:55:53/2016-11-30 14:55:55
 author: Antoine Cailliau
 context: ''
 environment: mcq
 evaluate: last
 groups: false
 limits:
-    memory: '100'
-    time: '30'
     output: '2'
+    time: '30'
+    memory: '100'
 name: Examen blanc 2016 - Questions à choix multiples
 network_grading: false
 problems:
     qcm01:
+        header: En moyenne, l’algorithme *QuickSort* utilise [reponse] comparaisons
+            pour trier un tableau de longueur N où les clés sont distinctes.
         choices:
         -   text: \\(O(N\\times\\log N)\\)
             valid: true
@@ -19,15 +21,10 @@ problems:
         -   text: \\(O(N^2)\\)
         -   text: \\(O(\\frac{N^2}{2})\\)
         -   text: \\(O(\\log N)\\)
-        type: multiple-choice
-        name: Complexité de l'algorithme QuickSort
         limit: 0
-        header: En moyenne, l’algorithme *QuickSort* utilise [reponse] comparaisons
-            pour trier un tableau de longueur N où les clés sont distinctes.
+        name: Complexité de l'algorithme QuickSort
+        type: multiple-choice
     qcm02:
-        header: 'Dans le pire des cas, les opérations `get` et `put` dans `BinarySearchST`
-            (une recherche dichotomique dans une liste ordonnée) ont les complexités
-            suivantes :'
         choices:
         -   valid: true
             text: \\(O(\\log N)\\) et \\(O(N)\\)
@@ -35,12 +32,16 @@ problems:
         -   text: \\(O(N)\\) et \\(O(N)\\)
         -   text: \\(O(\\frac{N^2}{2})\\) et \\(O(N)\\)
         -   text: \\(O(N^2)\\) et \\(O(N)\\)
-        limit: 0
+        header: 'Dans le pire des cas, les opérations `get` et `put` dans `BinarySearchST`
+            (une recherche dichotomique dans une liste ordonnée) ont les complexités
+            suivantes :'
         type: multiple-choice
+        limit: 0
         name: Complexité des opérations pour BinarySearchST
     qcm03:
         header: Le coût, dans le pire cas, d’un `get` dans un arbre *red-black* est
             de 
+        limit: 0
         choices:
         -   text: \\(O(\\frac{N}{2})\\)
         -   text: \\(O(\\log N)\\)
@@ -50,46 +51,45 @@ problems:
         -   text: \\(O(N\\times log N)\\)
         name: Complexité des opérations de arbres Red-black
         type: multiple-choice
-        limit: 0
     qcm04:
         choices:
-        -   text: \\(O(N)\\)
-            valid: true
+        -   valid: true
+            text: \\(O(N)\\)
         -   text: \\(O(\\log N)\\)
         -   text: \\(O(N\\times \\log N)\\)
         -   text: \\(O(N^2)\\)
-        type: multiple-choice
-        name: Complexité des opérations de arbres binaires
         limit: 0
         header: Quelle est la complexité pour énumérer en ordre croissant toutes les
             clés d’un arbre binaire ?
+        type: multiple-choice
+        name: Complexité des opérations de arbres binaires
     qcm05:
         choices:
         -   valid: true
             text: Le *Selection Sort* n’est pas stable et est en-place.
         -   text: Le *Quick Sort* est stable et en-place.
-        -   text: Le *Merge Sort* est stable et n’est pas en-place.
-            valid: true
+        -   valid: true
+            text: Le *Merge Sort* est stable et n’est pas en-place.
         -   valid: true
             text: Le *3-Way Quick Sort* n’est pas stable et est en place.
         -   text: Le *Shell Sort* est stable et est en place.
+        type: multiple-choice
         name: Propriétés des algorithmes de tri
         limit: 0
         header: Quelles affirmations suivantes sont exactes ?
         multiple: true
-        type: multiple-choice
     qcm06:
-        header: Quel état du tableau correspond à une étape valide lors d’un *Merge
-            Sort* pour le tableau [3, 5, 4, 2, 1, 7, 8, 6] ?
-        limit: 0
         choices:
-        -   text: '[2, 3, 4, 5] [1, 6, 7, 8]'
-            valid: true
+        -   valid: true
+            text: '[2, 3, 4, 5] [1, 6, 7, 8]'
         -   text: '[2, 3] [4, 5] [1, 6] [7, 8]'
         -   text: '[1, 2, 3, 4, 5] [7, 8, 9]'
         -   text: '[3, 5] [4, 2, 1, 7, 8, 6]'
         multiple: true
         name: Algorithme de tri MergeSort
+        limit: 0
+        header: Quel état du tableau correspond à une étape valide lors d’un *Merge
+            Sort* pour le tableau [3, 5, 4, 2, 1, 7, 8, 6] ?
         type: multiple-choice
     qcm07:
         choices:
@@ -99,11 +99,11 @@ problems:
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a3.png'
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a4.png'
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a5.png'
+        name: Algorithme de construction d'un arbre red-black
         limit: 0
         header: Quel arbre red-black correspond à l’arbre construit à partir de la
             séquence 3, 5, 4, 2, 1, 7, 8, 6 ?
         type: multiple-choice
-        name: Algorithme de construction d'un arbre red-black
 stored_submissions: 1
 submission_limit:
     amount: 1
