@@ -33,7 +33,7 @@ problems:
         -   text: \\(O(\\frac{N^2}{2})\\) et \\(O(N)\\)
         -   text: \\(O(N^2)\\) et \\(O(N)\\)
         header: 'Dans le pire des cas, les opérations `get` et `put` dans `BinarySearchST`
-            (une recherche dichotomique dans une liste ordonnée) ont les complexités
+            (une recherche dichotomique dans un tableau ordonné) ont les complexités
             suivantes :'
         type: multiple-choice
         limit: 0
