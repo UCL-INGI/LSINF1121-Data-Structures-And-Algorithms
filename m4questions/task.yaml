@@ -1,24 +1,24 @@
-accessible: false
+accessible: 2016-10-30 14:34:36/2016-11-04 07:55:55
 author: Simon Hardy
 context: Answers to the different questions in the statement of the fourth mission.
 environment: default
 evaluate: best
 groups: true
 limits:
-    memory: '256'
     output: '2'
     time: '15'
+    memory: '256'
 name: Mission 4 - Questions report [group]
 network_grading: false
 order: 13
 problems:
     report:
-        type: code-file
-        name: Report
-        allowed_exts:
-        - .pdf
         max_size: 5000000
         header: 'Please upload here your *questions report* for the mission 4. '
+        name: Report
+        type: code-file
+        allowed_exts:
+        - .pdf
 stored_submissions: 0
 submission_limit:
     amount: -1
