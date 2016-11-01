@@ -13,7 +13,8 @@ network_grading: false
 problems:
     qcm01:
         header: En moyenne, l’algorithme *QuickSort* utilise [reponse] comparaisons
-            pour trier un tableau de longueur N où les clés sont distinctes.
+            pour trier un tableau de longueur N où les clés sont distinctes et mélangées
+            aléatoirement initialement.
         choices:
         -   text: \\(O(N\\times\\log N)\\)
             valid: true
