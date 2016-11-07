@@ -23,14 +23,16 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
-    output: '2'
-    time: '30'
     memory: '900'
+    time: '30'
+    output: '2'
 name: Examen blanc 2016 - Median
 network_grading: false
 problems:
     question1:
         name: Votre code
+        type: code
+        language: java
         header: |-
             Vous devez implémenter une méthode qui a la signature suivante:
 
@@ -54,7 +56,7 @@ problems:
 
             - bonne valeur de retour et complexité O(n log n): 5 points,
 
-            - bonne valeur de retour et complexité O(n) expected: 10 points.
+            - bonne valeur de retour et complexité O(n) expected (cas moyen sur une distribution uniforme aléatoire): 10 points.
 
 
             Tout le code que vous écrivez dans le champ texte sera substitué à l'endroit indiqué ci-dessous.
@@ -65,8 +67,6 @@ problems:
                 public class Median {
                     // votre code sera substitué ici
                 }
-        language: java
-        type: code
 stored_submissions: 0
 submission_limit:
     amount: -1
