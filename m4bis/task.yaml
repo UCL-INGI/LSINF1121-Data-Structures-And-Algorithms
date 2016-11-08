@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2016-11-08 13:07:49/2016-11-11 08:00:00
 author: Simon Hardy
 context: |
     For this mission, you have to write a plagiarism detector (a class named "Plagiarism") implementing the following interface :

@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2016-11-08 13:08:23/2016-11-11 08:00:00
 author: Simon Hardy
 context: 'Report of 1-2 pages max. containing short explanations concerning the program
     of the fourth mission. '
@@ -15,11 +15,11 @@ order: 16
 problems:
     program_report:
         type: code-file
-        name: Program report
         allowed_exts:
         - .pdf
-        max_size: 5000000
         header: 'Please upload here your *program report* for the mission 3. '
+        max_size: 5000000
+        name: Program report
 stored_submissions: 0
 submission_limit:
     amount: -1
