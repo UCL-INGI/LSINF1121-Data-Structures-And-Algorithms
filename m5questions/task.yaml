@@ -1,11 +1,11 @@
-accessible: false
+accessible: 2016-11-16 13:55:39/2016-11-18 08:00:00
 author: Simon Hardy
 context: Answers to the different questions in the statement of the fifth mission.
 environment: default
 evaluate: best
 groups: true
 limits:
-    memory: '20'
+    memory: '200'
     output: '2'
     time: '15'
 name: Mission 5 - Questions report [group]
@@ -13,12 +13,12 @@ network_grading: false
 order: 17
 problems:
     report:
+        max_size: 5000000
         type: code-file
         name: Report
+        header: 'Please upload here your *questions report* for the mission 5. '
         allowed_exts:
         - .pdf
-        max_size: 5000000
-        header: 'Please upload here your *questions report* for the mission 5. '
 stored_submissions: 0
 submission_limit:
     amount: -1

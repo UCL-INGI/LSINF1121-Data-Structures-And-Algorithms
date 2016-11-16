@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2016-11-16 13:54:55/2016-11-18 08:00:00
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     For this task, you have to write unit tests using JUnit in order to check several implementations of compressors and decompressors. You are given two classes, *Compress* and *Decompress*, and you have to determine if they do their job correctly or not. We provide you a small template to begin writing your tests :
@@ -74,10 +74,10 @@ network_grading: false
 order: 18
 problems:
     tests:
+        name: Unit tests for the compressor
         header: 'Upload your file here, with only one class named *CompressTests*.
             The classes representing the compressor and decompressor under test are
             respectively named *Compress* and *Decompress*, as written in the template. '
-        name: Unit tests for the compressor
         type: code-file
         allowed_exts:
         - .java
