@@ -68,7 +68,7 @@ groups: false
 limits:
     memory: '512'
     output: '100'
-    time: '30'
+    time: '60'
 name: Mission 5 - Unit tests for the text compressor [individual]
 network_grading: false
 order: 18
