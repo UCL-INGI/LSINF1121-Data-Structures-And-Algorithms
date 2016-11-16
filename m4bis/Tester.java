@@ -57,14 +57,14 @@ public class Tester {
 			if (!success) System.out.println("Test " + i + " failed : " + feedback);
 			else System.out.println("Test " + i + " passed");
 			
-			i++;
+			/*i++;
 			p = new Plagiarism("corpus3", 50);
 			myP = new MyPlagiarism("corpus3", 50);
 			hits = p.detect("document3.txt");
 			myHits = myP.detect("document3.txt");
 			success = compareEntries(myHits, hits);
 			if (!success) System.out.println("Test " + i + " failed : " + feedback);
-			else System.out.println("Test " + i + " passed");
+			else System.out.println("Test " + i + " passed");*/
 			
 			i++;
 			long t1 = System.nanoTime();
