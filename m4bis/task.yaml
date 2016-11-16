@@ -1,4 +1,4 @@
-accessible: 2016-11-08 13:07:49/2016-11-11 08:00:00
+accessible: true
 author: Simon Hardy
 context: |
     For this mission, you have to write a plagiarism detector (a class named "Plagiarism") implementing the following interface :
@@ -62,27 +62,27 @@ evaluate: best
 groups: true
 limits:
     memory: '512'
-    time: '20'
     output: '100'
+    time: '20'
 name: Mission 4 - Plagiarism detector [group]
 network_grading: false
 order: 15
 problems:
     plagiarism:
+        allowed_exts:
+        - .java
         header: Upload your plagiarism detector here. Your class should be named "Plagiarism"
             and implement *PlagiarismInterface*. **Don't include the interface in
             your submission.**
         type: code-file
-        allowed_exts:
-        - .java
         name: Plagiarism detector
     hashmap:
-        allowed_exts:
-        - .java
-        header: Upload your map implementation here. Your class should be named "HashMap"
-            and implement *MapInterface*. **Don't include the interface in your submission.**
         name: HashMap
         type: code-file
+        header: Upload your map implementation here. Your class should be named "HashMap"
+            and implement *MapInterface*. **Don't include the interface in your submission.**
+        allowed_exts:
+        - .java
 stored_submissions: 0
 submission_limit:
     amount: -1
