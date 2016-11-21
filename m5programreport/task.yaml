@@ -8,7 +8,7 @@ groups: true
 limits:
     output: '2'
     time: '15'
-    memory: '20'
+    memory: '200'
 name: Mission 5 - Program report [group]
 network_grading: false
 order: 20
