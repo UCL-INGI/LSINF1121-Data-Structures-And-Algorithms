@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2016-11-28 10:30:00/2016-12-02 08:00:00
 author: Simon Hardy
 context: Answers to the different questions in the statement of the sixth mission.
 environment: default
@@ -13,12 +13,12 @@ network_grading: false
 order: 21
 problems:
     report:
+        max_size: 5000000
         type: code-file
         name: Report
+        header: 'Please upload here your *questions report* for the mission 6. '
         allowed_exts:
         - .pdf
-        max_size: 5000000
-        header: 'Please upload here your *questions report* for the mission 6. '
 stored_submissions: 0
 submission_limit:
     amount: -1
