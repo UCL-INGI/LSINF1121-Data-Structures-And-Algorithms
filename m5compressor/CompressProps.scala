@@ -68,7 +68,7 @@ object CompressProps extends Properties("Compress") {
 				str += "01"
 			val s = compress_decompress(str)
 
-			val compressed = new java.io.File("./data/compressed.txt")
+			val compressed = new java.io.File("./compressed.txt")
 			val fileSize = compressed.length
 			//println(fileSize)
 			//println((new java.io.File("./data/input.txt")).length)
