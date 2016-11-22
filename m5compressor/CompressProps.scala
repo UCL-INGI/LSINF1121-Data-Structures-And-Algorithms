@@ -68,7 +68,7 @@ object CompressProps extends Properties("Compress") {
 				str += "01"
 			val s = compress_decompress(str)
 
-			val compressed = new java.io.File("./compressed.txt")
+			val compressed = new java.io.File("./data/compressed.txt")
 			val fileSize = compressed.length
 			//println(fileSize)
 			//println((new java.io.File("./data/input.txt")).length)
@@ -82,9 +82,9 @@ object CompressProps extends Properties("Compress") {
 	@throws(classOf[Exception])
 	def compress_decompress(content: String): String = {
 		File("./input.txt").writeAll(content + "\n") // to avoid bugs with no '\n' files
-		Compress.main(Array("./input.txt", "./compressed.txt"))
-		Decompress.main(Array("./compressed.txt", "./output.txt"))
-		val result = fromFile("./output.txt").mkString
+		Compress.main(Array("./data/input.txt", "./data/compressed.txt"))
+		Decompress.main(Array("./data/compressed.txt", "./data/output.txt"))
+		val result = fromFile("./data/output.txt").mkString
 		result
 	}
 }
