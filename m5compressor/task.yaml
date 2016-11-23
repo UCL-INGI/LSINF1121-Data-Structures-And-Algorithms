@@ -10,8 +10,8 @@ environment: java8scala
 evaluate: best
 groups: true
 limits:
-    memory: '512'
-    time: '30'
+    memory: '1024'
+    time: '45'
     output: '100'
 name: Mission 5 - Text compressor [group]
 network_grading: false
