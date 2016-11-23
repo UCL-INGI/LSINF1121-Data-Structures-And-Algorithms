@@ -51,8 +51,12 @@ object CompressProps extends Properties("Compress") {
 			val s = compress_decompress(str)
 
 			val compressed = new java.io.File("./compressed.txt")
-			val fileSize = compressed.length
-			s == str + "\n" && fileSize < 1350 // length of my solution is 1313
+			if (compressed.exists()) {
+				val fileSize = compressed.length
+				s == str + "\n" && fileSize < 1350 // length of my solution is 1313
+			} else {
+            	false
+            }
 
 		} catch {
 			case e: Exception => false
@@ -80,7 +84,7 @@ object CompressProps extends Properties("Compress") {
 
 	@throws(classOf[Exception])
 	def compress_decompress(content: String): String = {
-		File("./data/input.txt").writeAll(content + "\n") // to avoid bugs with no '\n' files
+		File("./input.txt").writeAll(content + "\n") // to avoid bugs with no '\n' files
 		Compress.main(Array("./input.txt", "./compressed.txt"))
 		Decompress.main(Array("./compressed.txt", "./output.txt"))
 		val result = fromFile("./output.txt").mkString
