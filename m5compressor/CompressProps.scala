@@ -52,8 +52,6 @@ object CompressProps extends Properties("Compress") {
 
 			val compressed = new java.io.File("./data/compressed.txt")
 			val fileSize = compressed.length
-			//println(fileSize)
-			//println((new java.io.File("./data/input.txt")).length)
 			s == str + "\n" && fileSize < 1350 // length of my solution is 1313
 
 		} catch {
@@ -70,8 +68,6 @@ object CompressProps extends Properties("Compress") {
 
 			val compressed = new java.io.File("./data/compressed.txt")
 			val fileSize = compressed.length
-			//println(fileSize)
-			//println((new java.io.File("./data/input.txt")).length)
 			s == str + "\n" && fileSize < 3900 // length of my solution is 3853
 
 		} catch {
