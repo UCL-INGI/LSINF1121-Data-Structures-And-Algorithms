@@ -18,7 +18,7 @@ export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
 getinput decompressor > student/Decompress.java
 
 # To avoid problems with encoding
-n=5 # number of tests in CompressProps.scala, don't forget to change this variable if you modify it !
+n=4 # number of tests in CompressProps.scala, don't forget to change this variable if you modify it !
 getinput compressor > student/Compress.java
 
 # Compile the student code and parse it properly
