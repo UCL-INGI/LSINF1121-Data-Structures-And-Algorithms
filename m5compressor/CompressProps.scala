@@ -19,7 +19,7 @@ object CompressProps extends Properties("Compress") {
 		}
 	}
 
-	property("random_files_equality") = Prop.forAll { (el: String) =>
+	/*property("random_files_equality") = Prop.forAll { (el: String) =>
 		try {
            var s = ""
            if (el == "") s = compress_decompress("a") // to avoid bugs with empty files
@@ -29,7 +29,7 @@ object CompressProps extends Properties("Compress") {
 		} catch {
 			case e: Exception => false
 		}
-	}
+	}*/
 
 	val strGen = Gen.listOfN(1000, Gen.alphaChar).map(_.mkString)
 
