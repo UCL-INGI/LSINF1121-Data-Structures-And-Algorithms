@@ -5,20 +5,20 @@ environment: default
 evaluate: best
 groups: true
 limits:
-    memory: '20'
-    output: '2'
     time: '15'
+    memory: '200'
+    output: '2'
 name: Mission 6 - Questions report [group]
 network_grading: false
 order: 21
 problems:
     report:
         max_size: 5000000
-        type: code-file
-        name: Report
-        header: 'Please upload here your *questions report* for the mission 6. '
         allowed_exts:
         - .pdf
+        type: code-file
+        header: 'Please upload here your *questions report* for the mission 6. '
+        name: Report
 stored_submissions: 0
 submission_limit:
     amount: -1
