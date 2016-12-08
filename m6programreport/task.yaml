@@ -7,19 +7,19 @@ evaluate: best
 groups: true
 limits:
     output: '2'
+    memory: '200'
     time: '15'
-    memory: '20'
 name: Mission 6 - Program report [group]
 network_grading: false
 order: 24
 problems:
     program_report:
-        type: code-file
+        name: Program report
         max_size: 5000000
         header: 'Please upload here your *program report* for the mission 6. '
         allowed_exts:
         - .pdf
-        name: Program report
+        type: code-file
 stored_submissions: 0
 submission_limit:
     amount: -1
