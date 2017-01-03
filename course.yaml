@@ -8,6 +8,7 @@ admins:
 - xgillard
 - dethisea
 - gmaudoux
+- ogoletti
 accessible: true
 registration: true
 registration_password: null
@@ -18,3 +19,4 @@ registration_ac_list:
 - ''
 groups_student_choice: true
 use_classrooms: false
+allow_unregister: true
