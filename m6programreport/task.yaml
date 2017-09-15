@@ -1,4 +1,4 @@
-accessible: 2016-12-05 10:30:00/2016-12-09 08:00:00
+accessible: false
 author: Simon Hardy
 context: 'Report of 1-2 pages max. containing short explanations concerning the program
     of the sixth mission. '
@@ -7,19 +7,19 @@ evaluate: best
 groups: true
 limits:
     output: '2'
-    memory: '200'
     time: '15'
+    memory: '200'
 name: Mission 6 - Program report [group]
 network_grading: false
 order: 24
 problems:
     program_report:
         name: Program report
-        max_size: 5000000
         header: 'Please upload here your *program report* for the mission 6. '
+        type: code-file
         allowed_exts:
         - .pdf
-        type: code-file
+        max_size: 5000000
 stored_submissions: 0
 submission_limit:
     amount: -1

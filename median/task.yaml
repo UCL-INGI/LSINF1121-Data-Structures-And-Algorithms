@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Pierre Schaus
 context: |-
     Nous vous donnons l'API d'une classe Vector permettant d'accéder, modifier et interchanger deux élements en temps constant.
@@ -24,14 +24,15 @@ evaluate: best
 groups: false
 limits:
     output: '2'
-    memory: '900'
     time: '30'
+    memory: '900'
 name: Examen blanc 2016 - Median
 network_grading: false
+order: 26
 problems:
     question1:
+        language: java
         type: code
-        name: Votre code
         header: |-
             Vous devez implémenter une méthode qui a la signature suivante:
 
@@ -66,10 +67,9 @@ problems:
                 public class Median {
                     // votre code sera substitué ici
                 }
-        language: java
+        name: Votre code
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
 weight: 10.0
-order: 26
