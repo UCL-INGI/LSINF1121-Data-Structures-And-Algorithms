@@ -8,6 +8,7 @@ admins:
 - steugels
 - nbockstael
 - vanderschuea
+- jaoga
 accessible: true
 registration: true
 registration_password: null
