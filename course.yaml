@@ -1,14 +1,13 @@
 name: '[LSINF1121] Algorithmique et structures de données'
 admins:
 - ancailliau
-- fkaczynski
 - gderval
 - pschaus
-- thomascha
 - xgillard
-- dethisea
-- gmaudoux
 - ogoletti
+- steugels
+- nbockstael
+- vanderschuea
 accessible: true
 registration: true
 registration_password: null
