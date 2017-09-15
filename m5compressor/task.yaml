@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |-
     For this mission, you are asked to write two programs : *Compress.java*, which compresses the file located at argv[0] and writes the result in a new file located at argv[1], and *Decompress.java*, which decompresses argv[0] and writes it in the file at argv[1].
@@ -18,20 +18,20 @@ network_grading: false
 order: 19
 problems:
     compressor:
-        allowed_exts:
-        - .java
         header: 'Upload your text compressor here. Your class should be named *Compress*
             and take two arguments as explained above. If you need other classes,
             just put them at the end of this file (or at the end of the decompress),
             without the *public* modifier. '
-        name: Text compressor
         type: code-file
-    decompressor:
-        header: 'Upload your decompressor here. Your class should be named *Decompress*
-            and take two arguments as explained above. '
         allowed_exts:
         - .java
+        name: Text compressor
+    decompressor:
         type: code-file
+        allowed_exts:
+        - .java
+        header: 'Upload your decompressor here. Your class should be named *Decompress*
+            and take two arguments as explained above. '
         name: Decompressor
 stored_submissions: 0
 submission_limit:

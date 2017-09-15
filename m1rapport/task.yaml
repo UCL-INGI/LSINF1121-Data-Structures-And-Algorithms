@@ -1,4 +1,4 @@
-accessible: 2015-09-21 11:39:37/2016-09-23 18:00:00
+accessible: false
 author: Simon Hardy
 context: |-
     Answers to the different questions in the statement of the first mission.
@@ -16,12 +16,12 @@ network_grading: false
 order: 1
 problems:
     report:
-        type: code-file
+        name: Report
         max_size: 5000000
         header: 'Please upload here your *questions report* for the mission 1. '
+        type: code-file
         allowed_exts:
         - .pdf
-        name: Report
 stored_submissions: 0
 submission_limit:
     amount: -1

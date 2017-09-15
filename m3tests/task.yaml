@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     For this task, you have to write unit tests using JUnit in order to check several OrderedMap implementations (the interface of OrderedMap is available in the next task). You are given one class, *SearchTree*, and you have to determine if it does its job correctly or not. We provide you a template to begin writing your tests :
@@ -43,21 +43,21 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
-    memory: '512'
-    time: '180'
     output: '100'
+    time: '180'
+    memory: '512'
 name: Mission 3 - Unit tests [individual]
 network_grading: false
 order: 10
 problems:
     tests:
+        type: code-file
         allowed_exts:
         - .java
+        name: Unit tests
         header: 'Upload your file here, with only one class named *SearchTreeTests*.
             The class representing the implementation under test is called *SearchTree*,
             as written in the template. '
-        name: Unit tests
-        type: code-file
 stored_submissions: 0
 submission_limit:
     amount: -1

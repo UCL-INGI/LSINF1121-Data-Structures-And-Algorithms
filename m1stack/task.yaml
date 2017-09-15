@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     You are asked to implement the following interface, representing a stack, using a singly linked list. You should at least have one constructor with no argument, creating an empty stack.
@@ -24,9 +24,9 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
-    time: '45'
-    memory: '512'
     output: '100'
+    memory: '512'
+    time: '45'
 name: Mission 1 - Stack [individual]
 network_grading: false
 order: 3
@@ -34,12 +34,12 @@ problems:
     stack:
         allowed_exts:
         - .java
-        type: code-file
+        name: Stack
         header: |-
             Upload the file containing your implementation here. The class representing your stack should be named *MyStack* and implement *Stack* (as usual, the interface is available on INGInious).
 
             **Note:** You should **not** put your class in a java package. In other words, you should **not** use the ``package`` keyword.
-        name: Stack
+        type: code-file
 stored_submissions: 0
 submission_limit:
     amount: -1
