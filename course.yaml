@@ -9,6 +9,7 @@ admins:
 - nbockstael
 - vanderschuea
 - jaoga
+- guest6
 accessible: true
 registration: true
 registration_password: null
