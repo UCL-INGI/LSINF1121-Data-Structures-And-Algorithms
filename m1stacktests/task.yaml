@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     Recall the Stack interface :

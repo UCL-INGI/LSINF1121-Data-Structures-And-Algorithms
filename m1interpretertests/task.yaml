@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     You are asked to write unit tests (using JUnit) in order to check wether a particular interpreter does its job correctly (i.e. the method *interpret* follows its specifications).

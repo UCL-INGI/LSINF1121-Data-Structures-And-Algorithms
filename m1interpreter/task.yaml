@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: Simon Hardy
 context: |-
     You are asked to write a mini-PostScript interpreter as described in the *pdf* of the mission. Precisely, you must implement the following interface :

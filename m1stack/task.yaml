@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     You are asked to implement the following interface, representing a stack, using a singly linked list. You should at least have one constructor with no argument, creating an empty stack.
