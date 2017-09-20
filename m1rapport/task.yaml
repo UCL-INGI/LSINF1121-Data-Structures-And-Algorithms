@@ -1,9 +1,6 @@
 accessible: /2017-09-22 08:00:00
 author: Simon Hardy
-context: |-
-    Answers to the different questions in the statement of the first mission.
-
-    Note that [group] means that only one student must submit the report for the entire group.
+context: Answers to the different questions in the statement of the first mission.
 environment: default
 evaluate: best
 groups: false
