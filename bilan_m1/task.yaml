@@ -1,6 +1,54 @@
 accessible: true
 author: ''
-context: ''
+context: |+
+    Context
+    ==================================================
+
+
+
+    .. code-block:: java
+
+       public class NodeQueue<E> implements Queue<E> {
+
+           // Variables d’instance
+
+           private Node<E> marker;
+           private int size;
+
+
+           @Override
+           public int size() {
+               // TODO
+               return 0;
+           }
+
+           @Override
+           public boolean isEmpty() {
+               // TODO
+               return true;
+           }
+
+           @Override
+           public E front() throws QueueEmptyException {
+               // TODO
+               return null;
+           }
+
+           @Override
+           public void enqueue(E element) {
+               // TODO
+
+           }
+
+           @Override
+           public E dequeue() throws QueueEmptyException {
+               // TODO
+               return null;
+           }
+       }
+
+
+
 environment: pythia0compat
 evaluate: best
 groups: false
