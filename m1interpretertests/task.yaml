@@ -29,21 +29,21 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
+    time: '65'
     output: '100'
     memory: '512'
-    time: '65'
 name: Mission 1 - Unit tests for the interpreter [individual]
 network_grading: false
 order: 4
 problems:
     interpreter_tests:
+        allowed_exts:
+        - .java
+        type: code-file
+        name: Unit tests for the interpreter
         header: 'Upload your file here, with only one class named "InterpreterTests".
             The class representing the interpreter under test is called *Interpreter*
             and implements *InterpreterInterface*, as written in the template. '
-        allowed_exts:
-        - .java
-        name: Unit tests for the interpreter
-        type: code-file
 stored_submissions: 0
 submission_limit:
     amount: -1

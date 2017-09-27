@@ -73,6 +73,9 @@ public class Interpreter implements InterpreterInterface {
             return ()-> stackply(this::mul, stack.pop(), stack.pop());
         if(token.equals("div"))
             return ()-> stackply(this::div, stack.pop(), stack.pop());
+
+        if(token.equals("idiv"))
+            return ()-> stackply(this::idiv, stack.pop(), stack.pop());
         
         // Logic
         if(token.equals("eq"))
@@ -260,6 +263,28 @@ public class Interpreter implements InterpreterInterface {
         
         throw new UnsupportedOperationException();
     }
+
+    /**
+     * Implements the binary division operation (in infix notation).
+     * The resulting element will be an Element<Integer> iff a and b are
+     * Element<Integer>. Otherwise, if one or both arguments are floats, returns
+     * an Element<Double>.
+     *
+     * Anyhow, the resulting value will ALWAYS be a float (double) value.
+     *
+     * In the (unlikely) event where a or b wouldnt be a number, an
+     * IllegalArgumentException is raised.
+     */
+    public Element<?> idiv(Element<?> a, Element<?> b){
+        if(a.isNumeric() && b.isNumeric())
+            if(b.iVal() == 0)
+                throw new ArithmeticException("Integer division by zero");
+            else
+                return new Element<Integer>(a.iVal() / b.iVal());
+
+        throw new UnsupportedOperationException();
+    }
+
     /** Implements a binary equality test operation */
     public Element<?> eq(Element<?> a, Element<?> b){
         return new Element<Boolean>(a.value.equals(b.value));
