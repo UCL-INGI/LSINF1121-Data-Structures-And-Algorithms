@@ -143,22 +143,22 @@ public class Tests {
         i.interpret("-3 add ");
         Assert.fail("Calling add when there is only one item on the stack must throw an EmptyStackException");
     }
-    @Test(expected=UnsupportedOperationException.class)
+    @Test(expected=Exception.class)
     public void boolDontSupportAddition(){
         i.interpret("true false add");
         Assert.fail("Boolean don't support addition");
     }
-    @Test(expected=UnsupportedOperationException.class)
+    @Test(expected=Exception.class)
     public void boolDontSupportSubtraction(){
         i.interpret("true false sub");
         Assert.fail("Boolean don't support subtraction");
     }
-    @Test(expected=UnsupportedOperationException.class)
+    @Test(expected=Exception.class)
     public void boolDontSupportMultiplication(){
         i.interpret("true false mul");
         Assert.fail("Boolean don't support multiplication");
     }
-    @Test(expected=UnsupportedOperationException.class)
+    @Test(expected=Exception.class)
     public void boolDontSupportDivision(){
         i.interpret("true false div");
         Assert.fail("Boolean don't support division");
