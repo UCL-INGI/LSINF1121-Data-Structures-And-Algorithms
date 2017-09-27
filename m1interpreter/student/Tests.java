@@ -27,6 +27,17 @@ public class Tests {
         Assert.assertEquals("", i.interpret("pop"));
     }
     
+    
+    @Test
+    public void trueIsAValidToken(){
+        Assert.assertEquals("true", i.interpret("true pstack"));
+    }
+
+    @Test
+    public void falseIsAValidToken(){
+        Assert.assertEquals("false", i.interpret("false pstack"));
+    }
+    
     //	Qq on decide ? toute division -> double ou semantique Java
     //	@Test
     //	public void testSlackEx(){
