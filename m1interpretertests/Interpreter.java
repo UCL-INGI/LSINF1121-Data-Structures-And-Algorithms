@@ -245,16 +245,14 @@ public class Interpreter implements InterpreterInterface {
     }
     /**
      * Implements the binary division operation (in infix notation).
-     * The resulting element will be an Element<Integer> iff a and b are
-     * Element<Integer>. Otherwise, if one or both arguments are floats, returns
-     * an Element<Double>.
+     * The resulting element Element<Double>.
      *
      * Anyhow, the resulting value will ALWAYS be a float (double) value.
      *
      * In the (unlikely) event where a or b wouldnt be a number, an
      * IllegalArgumentException is raised.
      */
-    public Element<?> div(Element<?> a, Element<?> b){
+    public Element<Double> div(Element<?> a, Element<?> b){
         if(a.isNumeric() && b.isNumeric())
             if(b.fVal() == 0.0)
                 throw new ArithmeticException("Integer division by zero");
@@ -265,7 +263,7 @@ public class Interpreter implements InterpreterInterface {
     }
 
     /**
-     * Implements the binary division operation (in infix notation).
+     * Implements the binary integer division operation (in infix notation).
      * The resulting element will be an Element<Integer> iff a and b are
      * Element<Integer>. Otherwise, if one or both arguments are floats, returns
      * an Element<Double>.
@@ -275,8 +273,8 @@ public class Interpreter implements InterpreterInterface {
      * In the (unlikely) event where a or b wouldnt be a number, an
      * IllegalArgumentException is raised.
      */
-    public Element<?> idiv(Element<?> a, Element<?> b){
-        if(a.isNumeric() && b.isNumeric())
+    public Element<Integer> idiv(Element<?> a, Element<?> b){
+        if(a.isInt() && b.isInt())
             if(b.iVal() == 0)
                 throw new ArithmeticException("Integer division by zero");
             else
