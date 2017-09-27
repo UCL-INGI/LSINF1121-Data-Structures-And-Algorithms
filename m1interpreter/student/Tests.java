@@ -4,7 +4,7 @@ import java.util.EmptyStackException;
 
 import org.junit.*;
 
-public class InterpreterTests {
+public class Tests {
     
     private InterpreterInterface i;
     
