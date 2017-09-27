@@ -1,0 +1,43 @@
+accessible: true
+author: ''
+context: ''
+environment: pythia0compat
+evaluate: best
+groups: false
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: 'Bilan M1: Circular LinkedList'
+network_grading: false
+problems:
+    size:
+        language: java
+        type: code
+        name: size
+        header: ''
+    isEmpty:
+        language: java
+        header: ''
+        type: code
+        name: isEmpty
+    front:
+        type: code
+        header: ''
+        language: java
+        name: front
+    enqueue:
+        type: code
+        language: java
+        name: enqueue
+        header: ''
+    dequeue:
+        language: java
+        header: ''
+        type: code
+        name: dequeue
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
