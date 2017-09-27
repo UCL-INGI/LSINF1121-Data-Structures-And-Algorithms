@@ -4,7 +4,12 @@ context: |+
     Context
     ==================================================
 
-    `Enonce <bilan_m1/bilan_m1.pdf>`_
+    `Description <bilan_m1/bilan_m1.pdf>`_ of the implementation exercise and interesting questions to improve your skills.
+
+    Fill-in the body of each method (TODO) below in the corresponding textfield.
+    grade: 50% for the correctness of your implementation (correct or not), 50% for the efficiency (efficient or not).
+
+
 
     .. code-block:: java
 
