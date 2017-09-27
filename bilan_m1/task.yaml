@@ -1,5 +1,5 @@
-accessible: true
-author: ''
+accessible: false
+author: Pierre Schaus
 context: |+
     Context
     ==================================================
@@ -54,13 +54,13 @@ context: |+
 
 
 
-environment: pythia0compat
+environment: java8scala
 evaluate: best
 groups: false
 limits:
     output: '2'
     memory: '100'
-    time: '30'
+    time: '10'
 name: 'Bilan M1: Circular LinkedList'
 network_grading: false
 problems:
