@@ -45,7 +45,7 @@ public class NodeQueueTest {
 
 
     public boolean testCorrect() {
-        java.util.Queue<Integer> javaQueue = new ArrayDeque<Integer>();
+        java.util.Queue<Integer> javaQueue = new ArrayDeque<>();
         Queue<Integer> queue = new NodeQueue<Integer>();
         Random r = new java.util.Random();
 
@@ -87,7 +87,7 @@ public class NodeQueueTest {
 
     public boolean testTime() {
 
-        java.util.Queue<Integer> javaQueue = new ArrayDeque<Integer>();
+        java.util.Queue<Integer> javaQueue = new ArrayDeque<>();
 
         long t0 = System.currentTimeMillis();
         int nb = 10000000;
