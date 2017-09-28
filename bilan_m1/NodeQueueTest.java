@@ -73,7 +73,7 @@ public class NodeQueueTest {
             boolean exceptionOk = false;
             try {
                 queue.front();
-            } catch (EmptyStackException e) {
+            } catch (QueueEmptyException e) {
                 exceptionOk = true;
             }
             return exceptionOk;
