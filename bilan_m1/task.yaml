@@ -58,8 +58,8 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
-    output: '100'
-    memory: '100'
+    output: '2'
+    memory: '1500'
     time: '10'
 name: 'Bilan M1: Circular LinkedList'
 network_grading: false
