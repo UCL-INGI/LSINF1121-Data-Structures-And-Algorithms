@@ -59,7 +59,7 @@ evaluate: best
 groups: false
 limits:
     output: '2'
-    memory: '1500'
+    memory: '100'
     time: '50'
 name: 'Bilan M1: Circular LinkedList'
 network_grading: false
