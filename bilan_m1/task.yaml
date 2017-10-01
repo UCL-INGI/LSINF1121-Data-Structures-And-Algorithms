@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: Pierre Schaus
 context: |+
     Context
@@ -63,6 +63,7 @@ limits:
     time: '300'
 name: 'Bilan M1: Circular LinkedList'
 network_grading: false
+order: 7
 problems:
     size:
         language: java

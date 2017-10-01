@@ -21,7 +21,7 @@ limits:
     time: '30'
 name: Pré-examen - QCM
 network_grading: false
-order: 30
+order: 31
 problems:
     qcm2:
         choices:

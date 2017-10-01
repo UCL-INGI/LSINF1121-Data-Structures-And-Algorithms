@@ -71,7 +71,7 @@ limits:
     time: '45'
 name: Mission 4 - Unit tests for the map of the plagiarism detector [individual]
 network_grading: false
-order: 14
+order: 15
 problems:
     plagiarism_tests:
         name: Unit tests
