@@ -140,6 +140,7 @@ public class NodeQueueTest {
         System.out.println(message);
         try {
             Runtime.getRuntime().exec(new String[]{"feedback-msg", "-ae", "-m", "\n" + message + "\n"}).waitFor();
+            Runtime.getRuntime().exec("feedback-grade "+grade).waitFor();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
