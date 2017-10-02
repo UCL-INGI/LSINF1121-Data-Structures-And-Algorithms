@@ -136,11 +136,14 @@ public class NodeQueueTest {
         }
     }
 
-    private void feedback(String message, int grade) {
+    private void feedback(String message, int grade, boolean ok) {
         System.out.println(message);
         try {
             Runtime.getRuntime().exec(new String[]{"feedback-msg", "-ae", "-m", "\n" + message + "\n"}).waitFor();
             Runtime.getRuntime().exec("feedback-grade "+grade).waitFor();
+            
+            if (ok ) Runtime.getRuntime().exec("feedback-result success").waitFor();
+            else Runtime.getRuntime().exec("feedback-result failed").waitFor();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -158,18 +161,19 @@ public class NodeQueueTest {
 
                 if (testTime()) {
                     score += 50;
+                    feedback("All is correct!", score, true);
+                    return;
                 }  else {
-                feedback("incorrect time complexity :-50", score);
+                feedback("incorrect time complexity :-50", score, false);
                     return;
                 }
             } else {
-                feedback("incorrect behavior :-100", score);
+                feedback("incorrect behavior :-100", score, false);
                 return;
             }
         } catch (Exception e) {
 
         }
-		feedback("All is correct!", score);
     }
 
     public static void main(String[] args) {
