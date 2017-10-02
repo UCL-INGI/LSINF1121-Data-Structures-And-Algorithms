@@ -1,4 +1,4 @@
-accessible: /2017-09-24 18:00:00
+accessible: true
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     Recall the Stack interface :
@@ -57,21 +57,21 @@ evaluate: best
 groups: false
 limits:
     time: '60'
-    output: '100'
     memory: '512'
+    output: '100'
 name: Mission 1 - Unit tests for the stack [individual]
 network_grading: false
 order: 2
 problems:
     stack_tests:
+        type: code-file
         allowed_exts:
         - .java
-        type: code-file
-        name: Unit tests for the stack implementation
         header: |-
             Upload your file here, with only one class named *StackTests*. You can suppose that the class representing the stack under test is called *MyStack*, and that the interface is available (named *Stack*) as written in the template.
 
             **Note:** You should **not** put your class in a java package. In other words, you should **not** use the ``package`` keyword.
+        name: Unit tests for the stack implementation
 stored_submissions: 0
 submission_limit:
     amount: -1
