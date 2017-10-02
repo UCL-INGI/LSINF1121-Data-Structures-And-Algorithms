@@ -136,7 +136,7 @@ public class NodeQueueTest {
         }
     }
 
-    private void feedback(String message) {
+    private void feedback(String message, int grade) {
         System.out.println(message);
         try {
             Runtime.getRuntime().exec(new String[]{"feedback-msg", "-ae", "-m", "\n" + message + "\n"}).waitFor();
@@ -158,15 +158,17 @@ public class NodeQueueTest {
                 if (testTime()) {
                     score += 50;
                 }  else {
-                feedback("incorrect time complexity :-50");
+                feedback("incorrect time complexity :-50", score);
+                    return;
                 }
             } else {
-                feedback("incorrect behavior :-100");
+                feedback("incorrect behavior :-100", score);
+                return;
             }
         } catch (Exception e) {
 
         }
-
+		feedback("All is correct!", score);
     }
 
     public static void main(String[] args) {
