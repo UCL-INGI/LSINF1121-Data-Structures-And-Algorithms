@@ -156,7 +156,7 @@ public class NodeQueueTest {
     public void testGrade() {
         int score = 0;
 
-        //try {
+        try {
             if (testCorrect()) {
                 score += 50;
 
@@ -165,16 +165,16 @@ public class NodeQueueTest {
                     feedback("All is correct!", score, true);
                     return;
                 }  else {
-                feedback("incorrect time complexity :-50", score, false);
+                feedback("Incorrect time complexity :-50", score, false);
                     return;
                 }
             } else {
-                feedback("incorrect behavior :-100", score, false);
+                feedback("Incorrect behavior :-100", score, false);
                 return;
             }
-        //} catch (Exception e) {
-		//	feedback("incorrect behavior :-100", score, false);
-        //}
+        } catch (Exception e) {
+			feedback("Incorrect behavior:-100", score, false);
+        }
     }
 
     public static void main(String[] args) {
