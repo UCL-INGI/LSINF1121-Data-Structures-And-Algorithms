@@ -119,6 +119,7 @@ public class NodeQueueTest {
 
                     }
                 } catch (Exception e) {
+                    feedback("bad idea 1!", -100, false);
                 }
             }
         }.run((t1 - t0) * 5);
@@ -172,7 +173,7 @@ public class NodeQueueTest {
                 return;
             }
         } catch (Exception e) {
-
+			feedback("something happened!"+e.getMessage(), -100, false);
         }
     }
 
