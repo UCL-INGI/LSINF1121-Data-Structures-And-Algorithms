@@ -172,8 +172,8 @@ public class NodeQueueTest {
                 feedback("incorrect behavior :-100", score, false);
                 return;
             }
-        } catch (java.lang.NullPointerException e) {
-			feedback("something happened!", score, false);
+        } catch (Exception e) {
+			feedback("incorrect behavior :-100", score, false);
         }
     }
 
