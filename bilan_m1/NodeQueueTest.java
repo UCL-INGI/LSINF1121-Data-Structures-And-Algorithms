@@ -173,7 +173,7 @@ public class NodeQueueTest {
                 return;
             }
         } catch (Exception e) {
-			feedback("something happened!"+e.getMessage(), -100, false);
+			feedback("something happened!"+e.getMessage(), score, false);
         }
     }
 
