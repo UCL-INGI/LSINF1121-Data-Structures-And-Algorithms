@@ -156,7 +156,7 @@ public class NodeQueueTest {
     public void testGrade() {
         int score = 0;
 
-        try {
+        //try {
             if (testCorrect()) {
                 score += 50;
 
@@ -172,10 +172,9 @@ public class NodeQueueTest {
                 feedback("incorrect behavior :-100", score, false);
                 return;
             }
-        } catch (Exception e) {
-            System.out.println("hummmm");
-			feedback("something happened!"+e.getMessage(), score, false);
-        }
+        //} catch (Exception e) {
+			//feedback("something happened!", score, false);
+        //}
     }
 
     public static void main(String[] args) {
