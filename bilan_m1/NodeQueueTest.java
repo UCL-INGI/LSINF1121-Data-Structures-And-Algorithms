@@ -173,6 +173,7 @@ public class NodeQueueTest {
                 return;
             }
         } catch (Exception e) {
+            System.out.println("hummmm");
 			feedback("something happened!"+e.getMessage(), score, false);
         }
     }
