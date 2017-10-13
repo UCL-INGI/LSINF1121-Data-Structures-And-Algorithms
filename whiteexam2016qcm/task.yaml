@@ -10,7 +10,7 @@ limits:
     memory: '100'
 name: Bilan M3 - Questions à choix multiples
 network_grading: false
-order: 30
+order: 18
 problems:
     qcm02:
         header: 'Dans le pire des cas, les opérations `get` et `put` dans `BinarySearchST`

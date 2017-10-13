@@ -34,7 +34,7 @@ limits:
     memory: '100'
 name: Bilan M3 - Binary Search Tree
 network_grading: false
-order: 31
+order: 19
 problems:
     q:
         header: |
