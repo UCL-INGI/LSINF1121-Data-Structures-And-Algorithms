@@ -16,22 +16,20 @@ context: |+
 
     represented in the array here under:
 
-    .. image:: global_warming/matrix.png
+    .. image:: bilan_m2_global_warming/matrix.png
                     :width: 200px
                     :align: center
                     :alt: matrix example
 
     Each entry of the matrix represents an altitude.
-    The objective is to implement a class `GlobalWarmingImpl` that implements all the methods described in `GlobalWarming` given next.
+    The objective is to implement a class `GlobalWarmingImpl` that the method described in `GlobalWarming` given next.
 
-    A global water level specified in the constructor models the fact that all the positions of the matrix with a value <= the water level are flooded (under the water) and thus unsafe.
-    In the above example, the water level is 3, all the safe points are green.
+    Given a global water level, all the positions of the matrix with a value <= the water level are flooded (under the water) and thus unsafe. So assuming the water level is 3, all the safe points are green.
 
     The methods you must implement is
 
     * the computations of the number of safe-points given a specified water level
 
-    we assume that points are **only connected vertially or horizontally**.
 
     .. code-block:: java
 
@@ -113,6 +111,7 @@ network_grading: false
 problems:
     nbSafePoints:
         type: match
+        answer: '14'
         header: |-
             What would be the result of
 
@@ -122,8 +121,41 @@ problems:
 
 
             expected: a number
-        answer: '14'
         name: nbSafePoints
+    implementation:
+        header: |+
+            Copy-paste and complete the code below.
+            Be careful with the expected time-complexity in each method.
+            To meet these time-complexity some precomputation should already be done in the constructor. Don't hesitate to create inner classes in GlobalWarmingImpl to facilitate your implementation.
+            Feel free to use any method or data-structure available in the Java language and API.
+
+            .. code-block:: java
+
+               import java.util.*;
+
+               public class GlobalWarmingImpl extends GlobalWarming {
+
+                   public GlobalWarmingImpl(int[][] altitude) {
+                       super(altitude);
+                       // expected pre-processing time in the constructror : O(n^2 log(n^2))
+                       // TODO
+                   }
+
+
+                   public int nbSafePoints(int waterLevel) {
+                       // TODO
+                       // expected time complexity O(log(n^2))
+                       return 0;
+                   }
+
+               }
+
+
+
+
+        name: ''
+        type: code
+        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
