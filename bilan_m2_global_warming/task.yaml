@@ -93,10 +93,6 @@ context: |+
                                   {1,1,1,6,3}};
         GlobalWarming gw = new MyGlobalWarming(tab);
 
-    .. image:: global_warming/matrix.png
-                    :width: 200px
-                    :align: center
-                    :alt: matrix example
 
 
 environment: java8scala
