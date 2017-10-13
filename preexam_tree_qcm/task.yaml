@@ -16,12 +16,12 @@ environment: mcq
 evaluate: best
 groups: false
 limits:
-    memory: '100'
-    output: '2'
     time: '30'
-name: Pré-examen - QCM
+    output: '2'
+    memory: '100'
+name: Bilan M3 - QCM Binary Trees
 network_grading: false
-order: 33
+order: 34
 problems:
     qcm2:
         choices:
@@ -31,31 +31,31 @@ problems:
         -   text: '``7 6 5 3 1 2 4``'
         header: If the algorithm makes an prefix traversal, what will be the printed
             output ?
-        type: multiple-choice
+        name: ''
         limit: 0
-        name: ''
+        type: multiple-choice
     qcm1:
-        name: ''
         choices:
-        -   valid: true
-            text: '``1 2 3 4 5 6 7``'
+        -   text: '``1 2 3 4 5 6 7``'
+            valid: true
         -   text: '``4 2 1 3 5 6 7``'
         -   text: '``7 6 5 3 1 2 4``'
-        type: multiple-choice
         header: If the algorithm makes an infix traversal, what will be the printed
             output ?
         limit: 0
-    qcm3:
         type: multiple-choice
-        header: If the algorithm makes an postfix (or suffix) traversal, what will
-            be the printed output ?
+        name: ''
+    qcm3:
         choices:
         -   text: '``1 2 3 4 5 6 7``'
         -   text: '``4 2 1 3 5 6 7``'
-        -   valid: true
-            text: '``7 6 5 3 1 2 4``'
-        name: ''
+        -   text: '``7 6 5 3 1 2 4``'
+            valid: true
+        header: If the algorithm makes an postfix (or suffix) traversal, what will
+            be the printed output ?
         limit: 0
+        type: multiple-choice
+        name: ''
 stored_submissions: 0
 submission_limit:
     amount: -1

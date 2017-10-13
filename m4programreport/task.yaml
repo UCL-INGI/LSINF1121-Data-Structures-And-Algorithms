@@ -11,7 +11,7 @@ limits:
     memory: '200'
 name: Mission 4 - Program report [group]
 network_grading: false
-order: 20
+order: 21
 problems:
     program_report:
         name: Program report
