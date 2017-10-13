@@ -207,7 +207,7 @@ public class GlobalWarmingTest {
                     // do some computation here
                     long t0 = System.currentTimeMillis();
 
-                    for (int i = 0; i < 1000) {
+                    for (int i = 0; i < 1000; i++) {
                         g.nbSafePoints(1000000);
                     }
 
