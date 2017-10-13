@@ -29,15 +29,14 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
-    output: '2'
     time: '30'
+    output: '2'
     memory: '100'
-name: Examen blanc 2016 - Arbre de recherche binaires
+name: Bilan M3 - Binary Search Tree
 network_grading: false
 order: 31
 problems:
     q:
-        language: java
         header: |
             Fournissez ici le **corps** de la fonction `ceil`:
 
@@ -46,6 +45,7 @@ problems:
                 Integer ceil(Node root, int value)
         type: code
         name: ''
+        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
