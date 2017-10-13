@@ -51,26 +51,26 @@ limits:
     time: '30'
     output: '2'
     memory: '100'
-name: Pré-examen - Merge Sort
+name: Bilan M2 - Merge Sort
 network_grading: false
 order: 32
 problems:
     question1:
+        name: ''
         header: |-
             .. code-block:: java
 
                 private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi)
-        name: ''
+        type: code
         language: java
-        type: code
     question2:
-        type: code
         language: java
         header: |-
             .. code-block:: java
 
                 public static void sort(Comparable[] a)
         name: ''
+        type: code
 stored_submissions: 0
 submission_limit:
     amount: -1
