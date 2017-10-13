@@ -15,7 +15,7 @@ limits:
     time: '45'
 name: Mission 5 - Text compressor [group]
 network_grading: false
-order: 20
+order: 22
 problems:
     compressor:
         header: 'Upload your text compressor here. Your class should be named *Compress*
