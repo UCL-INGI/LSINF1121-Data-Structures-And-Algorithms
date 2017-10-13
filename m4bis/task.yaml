@@ -66,7 +66,7 @@ limits:
     time: '20'
 name: Mission 4 - Plagiarism detector [group]
 network_grading: false
-order: 18
+order: 19
 problems:
     plagiarism:
         allowed_exts:
