@@ -196,7 +196,7 @@ public class GlobalWarmingTest {
     public boolean timeComplexityNbSafePoints() {
         try {
 
-            final int [][] matrix = getRandomMatrix(500,2000000);
+            final int [][] matrix = getRandomMatrix(100,2000000);
             final GlobalWarming g = new GlobalWarmingImpl(matrix);
 
             boolean timeOk = new TimeLimitedCodeBlock() {
@@ -207,7 +207,9 @@ public class GlobalWarmingTest {
                     // do some computation here
                     long t0 = System.currentTimeMillis();
 
-                    g.nbSafePoints(1000000);
+                    for (int i = 0; i < 1000) {
+                        g.nbSafePoints(1000000);
+                    }
 
                     /*
                     int n = matrix.length;
@@ -280,7 +282,7 @@ public class GlobalWarmingTest {
                 }
 
             } else {
-                feedback("test correctness all methods and constructor :-10");
+                feedback("test correctness all methods and constructor :-30");
             }
 
 
@@ -294,7 +296,7 @@ public class GlobalWarmingTest {
                 }
 
             } else {
-                feedback("test correctness NbSafePoints on random graphs:-30");
+                feedback("test correctness NbSafePoints on random matrices:-60");
             }
 
         } catch (Exception e) {
