@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: Pierre Schaus
 context: |-
     Nous vous donnons l'API d'une classe Vector permettant d'accéder, modifier et interchanger deux élements en temps constant.

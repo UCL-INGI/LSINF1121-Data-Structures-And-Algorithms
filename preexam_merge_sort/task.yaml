@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: Frédéric Kaczynski
 context: |-
     Consider the (top-down) sorting algorithm ``Merge Sort``
