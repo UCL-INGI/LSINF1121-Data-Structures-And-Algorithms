@@ -1,4 +1,4 @@
-accessible: false
+accessible: /2017-10-29 20:30:00
 author: Simon Hardy
 context: |-
     You are asked to implement the following interface, representing a custom Ordered Map (for more informations about the methods without comment listed below, refer to the official SortedMap interface of Java).
@@ -88,19 +88,19 @@ evaluate: best
 groups: true
 limits:
     output: '100'
-    time: '45'
     memory: '3000'
+    time: '45'
 name: Mission 3 - Ordered Map [group]
 network_grading: false
 order: 15
 problems:
     ordered_map:
-        type: code-file
         name: SearchTree
-        header: 'Upload the file containing your implementation here. The class representing
-            your ordered map should be named *SearchTree* and implement *OrderedMap*. '
         allowed_exts:
         - .java
+        type: code-file
+        header: 'Upload the file containing your implementation here. The class representing
+            your ordered map should be named *SearchTree* and implement *OrderedMap*. '
 stored_submissions: 0
 submission_limit:
     amount: -1
