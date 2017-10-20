@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2017-10-30 10:47:22/2018-10-20 10:47:26
 author: Frédéric Kaczynski
 context: |-
     Consider an empty ``Red-Black Tree`` in which we progressively add numbers.
@@ -32,41 +32,41 @@ network_grading: false
 order: 20
 problems:
     redblacktree1:
-        name: ''
-        answer: '1'
         header: 'Starting with an empty ``Red-Black Tree``, we add ``1`` to the ``Red-Black
             Tree``. The representation of the tree is:'
         type: match
+        name: ''
+        answer: '1'
     redblacktree2:
+        name: ''
         answer: '16'
         header: 'We add ``6`` to the ``Red-Black Tree``. The representation of the
             tree is:'
-        name: ''
         type: match
     redblacktree3:
         header: 'We add ``4`` to the ``Red-Black Tree``. The representation of the
             tree is:'
-        type: match
         name: ''
+        type: match
         answer: 4 1 6
     redblacktree4:
-        type: match
         header: 'We add ``7`` to the ``Red-Black Tree``. The representation of the
             tree is:'
         answer: 4 1 67
         name: ''
-    redblacktree5:
-        name: ''
         type: match
+    redblacktree5:
+        answer: 4 13 67
+        name: ''
         header: 'We add ``3`` to the ``Red-Black Tree``. The representation of the
             tree is:'
-        answer: 4 13 67
+        type: match
     redblacktree6:
-        answer: 46 13 5 7
         name: ''
+        type: match
         header: 'We add ``5`` to the ``Red-Black Tree``. The representation of the
             tree is:'
-        type: match
+        answer: 46 13 5 7
     redblacktree7:
         header: 'We add ``2`` to the ``Red-Black Tree``. The representation of the
             tree is:'

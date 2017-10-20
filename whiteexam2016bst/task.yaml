@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2017-10-30 08:46:14/2018-10-20 10:46:23
 author: Guillaume Derval
 context: |-
     Etant donné un arbre de recherche binaire, dont les noeuds implémentent l'interface Node:
@@ -30,22 +30,22 @@ evaluate: best
 groups: false
 limits:
     time: '30'
-    output: '2'
     memory: '100'
+    output: '2'
 name: Bilan M3 - Binary Search Tree
 network_grading: false
 order: 19
 problems:
     q:
+        language: java
+        type: code
+        name: ''
         header: |
             Fournissez ici le **corps** de la fonction `ceil`:
 
             .. code-block:: java
 
                 Integer ceil(Node root, int value)
-        type: code
-        name: ''
-        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
