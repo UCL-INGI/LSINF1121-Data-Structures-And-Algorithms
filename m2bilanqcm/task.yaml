@@ -5,8 +5,8 @@ environment: mcq
 evaluate: last
 groups: false
 limits:
-    time: '30'
     output: '2'
+    time: '30'
     memory: '100'
 name: 'Bilan M2: QCM'
 network_grading: false
@@ -14,16 +14,16 @@ order: 12
 problems:
     qcm01:
         choices:
-        -   text: \\(O(N\\times\\log N)\\)
-            valid: true
+        -   valid: true
+            text: \\(O(N\\times\\log N)\\)
         -   text: \\(O(N)\\)
         -   text: \\(O(N^2)\\)
         -   text: \\(O(\\frac{N^2}{2})\\)
         -   text: \\(O(\\log N)\\)
+        name: Complexité de l'algorithme QuickSort
         header: En moyenne, l’algorithme *QuickSort* utilise [reponse] comparaisons
             pour trier un tableau de longueur N où les clés sont distinctes et mélangées
             aléatoirement initialement.
-        name: Complexité de l'algorithme QuickSort
         type: multiple-choice
         limit: 0
     qcm05:
@@ -36,11 +36,11 @@ problems:
         -   valid: true
             text: Le *3-Way Quick Sort* n’est pas stable et est en place.
         -   text: Le *Shell Sort* est stable et est en place.
-        name: Propriétés des algorithmes de tri
         type: multiple-choice
+        limit: 0
         multiple: true
         header: Quelles affirmations suivantes sont exactes ?
-        limit: 0
+        name: Propriétés des algorithmes de tri
     qcm06:
         choices:
         -   text: '[2, 3, 4, 5] [1, 6, 7, 8]'
@@ -48,12 +48,12 @@ problems:
         -   text: '[2, 3] [4, 5] [1, 6] [7, 8]'
         -   text: '[1, 2, 3, 4, 5] [7, 8, 9]'
         -   text: '[3, 5] [4, 2, 1, 7, 8, 6]'
-        multiple: true
         name: Algorithme de tri MergeSort
         type: multiple-choice
-        limit: 0
+        multiple: true
         header: Quel état du tableau correspond à une étape valide lors d’un *Merge
-            Sort* pour le tableau [3, 5, 4, 2, 1, 7, 8, 6] ?
+            Sort* (Top-down) pour le tableau [3, 5, 4, 2, 1, 7, 8, 6] ?
+        limit: 0
 stored_submissions: 1
 submission_limit:
     amount: 1
