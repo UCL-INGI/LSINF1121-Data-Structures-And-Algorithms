@@ -26,10 +26,13 @@ public class NodeQueueTest {
             try {
                 future.get(time, TimeUnit.MILLISECONDS);
             } catch (InterruptedException ie) {
+                feedback("InterruptedException!"+ie, -100, false);
                 ok = false;
             } catch (ExecutionException ee) {
+                feedback("ExecutionException!"+ee, -100, false);
                 ok = false;
             } catch (TimeoutException te) {
+                feedback("ExecutionException!"+te, -100, false);
                 ok = false;
             }
             if (!executor.isTerminated()) {
@@ -165,7 +168,7 @@ public class NodeQueueTest {
                     feedback("All is correct!", score, true);
                     return;
                 }  else {
-                feedback("nicorrect time complexity :-50", score, false);
+                feedback("Incorrect time complexity :-50", score, false);
                     return;
                 }
             } else {
