@@ -32,7 +32,7 @@ public class NodeQueueTest {
                 feedback("ExecutionException!"+ee, -100, false);
                 ok = false;
             } catch (TimeoutException te) {
-                feedback("TimeoutException!"+te, -100, false);
+                feedback("TimeoutException!"+te.message(), -100, false);
                 ok = false;
             }
             if (!executor.isTerminated()) {
