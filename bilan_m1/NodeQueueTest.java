@@ -122,7 +122,7 @@ public class NodeQueueTest {
                     feedback("bad idea 1!", -100, false);
                 }
             }
-        }.run((t1 - t0) * 5);
+        }.run((t1 - t0) * 10);
         return timeOk;
     }
 
