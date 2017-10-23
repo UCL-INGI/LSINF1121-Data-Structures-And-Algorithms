@@ -1,4 +1,4 @@
-accessible: 2017-09-11 10:33:34/2017-10-22 20:30:00
+accessible: 2017-09-11 10:33:34/2017-10-25 20:30:00
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     For this task, you have to write unit tests using JUnit in order to check several OrderedMap implementations (the interface of OrderedMap is available in the next task). You are given one class, *SearchTree*, and you have to determine if it does its job correctly or not. We provide you a template to begin writing your tests :
