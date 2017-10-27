@@ -68,28 +68,28 @@ problems:
     size:
         language: java
         header: ''
-        name: size
         type: code
+        name: size
     isEmpty:
         language: java
+        header: ''
         type: code
         name: isEmpty
-        header: ''
     front:
-        name: front
-        language: java
-        type: code
         header: ''
+        language: java
+        name: front
+        type: code
     enqueue:
+        type: code
         name: enqueue
         language: java
         header: ''
-        type: code
     dequeue:
-        type: code
-        name: dequeue
         header: ''
+        name: dequeue
         language: java
+        type: code
 stored_submissions: 0
 submission_limit:
     amount: -1

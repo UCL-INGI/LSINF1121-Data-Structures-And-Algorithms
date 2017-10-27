@@ -93,7 +93,7 @@ public class NodeQueueTest {
         java.util.Queue<Integer> javaQueue = new ArrayDeque<>();
 
         long t0 = System.currentTimeMillis();
-        int nb = 10000000;
+        int nb = 5000000;
         for (int i = 0; i < nb; i++) {
             javaQueue.add(i);
             javaQueue.peek();
