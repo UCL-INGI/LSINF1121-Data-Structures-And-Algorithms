@@ -150,7 +150,9 @@ problems:
                     int f1(Object o) { return o.hashCode() * 41 % 2; } 
                     int f2(Object o) { return o.hashCode() * 31 % 3; }
                     // snip ... 
-                }"
+                }
+                
+            "
       - text: "
             .. code::
               
@@ -158,7 +160,9 @@ problems:
                     int f1(Object o) { return o.hashCode() * 41 % 97; } 
                     int f2(Object o) { return o.hashCode() * 31 % 97; }
                     // snip ... 
-                }"
+                }
+                
+            "
       - text: "
             .. code::
               
@@ -166,7 +170,9 @@ problems:
                     int f1(Object o) { return o.hashCode() * 41 % 31; } 
                     int f2(Object o) { return o.hashCode() * 31 % 31; }
                     // snip ... 
-                }"
+                }
+                
+            "
         valid: true
       - text: "
             .. code::
@@ -175,7 +181,9 @@ problems:
                     int f1(Object o) { return o.hashCode() * 41 % 32; } 
                     int f2(Object o) { return o.hashCode() * 31 % 32; }
                     // snip ... 
-                }"
+                }
+                
+            "
     header: ""
     limit: 0
     multiple: true
