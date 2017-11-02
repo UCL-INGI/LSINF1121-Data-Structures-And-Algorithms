@@ -74,26 +74,26 @@ problems:
     type: multiple-choice
   complexite_spatiale: 
     choices: 
-      - text: "math:`BloomFilter <= HashMap <= SinglyLinked <= RedBlack`"
-      - text: "math:`BloomFilter <= HashMap <= RedBlack <= SinglyLinked`"
-      - text: "math:`HashMap <= BloomFilter <= SinglyLinked <= RedBlack`"
-      - text: "math:`BloomFilter <= SinglyLinked <= HashMap <= RedBlack`"
-      - text: "math:`BloomFilter <= RedBlack <= SinglyLinked <= HashMap`"
+      - text: ":math:`BloomFilter <= HashMap <= SinglyLinked <= RedBlack`"
+      - text: ":math:`BloomFilter <= HashMap <= RedBlack <= SinglyLinked`"
+      - text: ":math:`HashMap <= BloomFilter <= SinglyLinked <= RedBlack`"
+      - text: ":math:`BloomFilter <= SinglyLinked <= HashMap <= RedBlack`"
+      - text: ":math:`BloomFilter <= RedBlack <= SinglyLinked <= HashMap`"
     header: ""
     limit: 0
     name: "Classez par ordre croissant de complexité spatiale. Singly-Linked List, BloomFilter, Red-Black Tree, HashMap."
     type: multiple-choice
   complexite_temp_ajout: 
     choices: 
-      - text: "math:`O(1)`"
-      - text: "math:`\\Omega(1)`"
-      - text: "math:`\\Theta(1)`"
-      - text: "math:`O(n)`"
-      - text: "math:`\\Omega(n)`"
-      - text: "math:`\\Theta(n)`"
-      - text: "math:`O(k)`"
-      - text: "math:`\\Omega(k)`"
-      - text: "math:`\\Theta(k)`"
+      - text: ":math:`O(1)`"
+      - text: ":math:`\\Omega(1)`"
+      - text: ":math:`\\Theta(1)`"
+      - text: ":math:`O(n)`"
+      - text: ":math:`\\Omega(n)`"
+      - text: ":math:`\\Theta(n)`"
+      - text: ":math:`O(k)`"
+      - text: ":math:`\\Omega(k)`"
+      - text: ":math:`\\Theta(k)`"
         valid: true
       - text: "On ne peut pas ajouter un élément à un filtre de Bloom."
     header: ""
@@ -102,15 +102,15 @@ problems:
     type: multiple-choice
   complexite_temp_suppression: 
     choices: 
-      - text: "math:`O(1)`"
-      - text: "math:`\\Omega(1)`"
-      - text: "math:`\\Theta(1)`"
-      - text: "math:`O(n)`"
-      - text: "math:`\\Omega(n)`"
-      - text: "math:`\\Theta(n)`"
-      - text: "math:`O(k)`"
-      - text: "math:`\\Omega(k)`"
-      - text: "math:`\\Theta(k)`"
+      - text: ":math:`O(1)`"
+      - text: ":math:`\\Omega(1)`"
+      - text: ":math:`\\Theta(1)`"
+      - text: ":math:`O(n)`"
+      - text: ":math:`\\Omega(n)`"
+      - text: ":math:`\\Theta(n)`"
+      - text: ":math:`O(k)`"
+      - text: ":math:`\\Omega(k)`"
+      - text: ":math:`\\Theta(k)`"
       - text: "On ne peut pas ajouter un élément à un filtre de Bloom."
         valid: true
     header: ""
@@ -119,12 +119,12 @@ problems:
     type: multiple-choice
   différence: 
     choices: 
-      - text: "math:`A + B`"
-      - text: "math:`A - B`"
-      - text: "math:`A * B`"
-      - text: "math:`A | B`"
-      - text: "math:`A & B`"
-      - text: "math:`A ^ B`"
+      - text: ":math:`A + B`"
+      - text: ":math:`A - B`"
+      - text: ":math:`A * B`"
+      - text: ":math:`A | B`"
+      - text: ":math:`A & B`"
+      - text: ":math:`A ^ B`"
       - text: "Aucune de ces propositions"
         valid: true
     header: ""
@@ -170,13 +170,13 @@ problems:
     type: multiple-choice
   intersection: 
     choices: 
-      - text: "math:`A + B`"
-      - text: "math:`A - B`"
-      - text: "math:`A * B`"
-      - text: "math:`A | B`"
-      - text: "math:`A & B`"
+      - text: ":math:`A + B`"
+      - text: ":math:`A - B`"
+      - text: ":math:`A * B`"
+      - text: ":math:`A | B`"
+      - text: ":math:`A & B`"
         valid: true
-      - text: "math:`A ^ B`"
+      - text: ":math:`A ^ B`"
       - text: "Aucune de ces propositions"
     header: ""
     limit: 0
@@ -261,13 +261,13 @@ problems:
     type: multiple-choice
   union: 
     choices: 
-      - text: "math:`A + B`"
-      - text: "math:`A - B`"
-      - text: "math:`A * B`"
-      - text: "math:`A | B`"
+      - text: ":math:`A + B`"
+      - text: ":math:`A - B`"
+      - text: ":math:`A * B`"
+      - text: ":math:`A | B`"
         valid: true
-      - text: "math:`A & B`"
-      - text: "math:`A ^ B`"
+      - text: ":math:`A & B`"
+      - text: ":math:`A ^ B`"
       - text: "Aucune de ces propositions"
     header: ""
     limit: 0
