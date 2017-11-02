@@ -211,7 +211,7 @@ problems:
       - text: "Si on utilise uniquement *h1* alors :math:`\\epsilon = 1 - x (1 - \\frac{1}{n})`. Si on utilise *h1* et *h2* alors :math:`\\epsilon = 1 - x^2 (1 - \\frac{1}{n})`."
     header: ""
     limit: 0
-    name: "Si h1 et h2 sont deux fonctions de hachage qui sélectionnent avec une même probabilité 1/n chacune des 'n' positions du bitvector utilisé pour implémenter un filtre de Bloom, et si x éléments ont étés ajoutés au filtre, comment évolue le risque `epsilon` de faux positif ?"
+    name: "Si h1 et h2 sont deux fonctions de hachage qui sélectionnent avec une même probabilité 1/n chacune des 'n' positions du bitvector utilisé pour implémenter un filtre de Bloom, et si x éléments ont étés ajoutés au filtre, comment évolue le risque ϵ de faux positif ?"
     type: multiple-choice
   propositions: 
     choices: 
