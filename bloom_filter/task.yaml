@@ -60,15 +60,15 @@ network_grading: false
 problems:
     complexite_temp_ajout:
         choices:
-        -   text: $O(1)$
-        -   text: $\Omega(1)$
-        -   text: $\Theta(1)$
-        -   text: $O(n)$
-        -   text: $\Omega(n)$
-        -   text: $\Theta(n)$
-        -   text: $O(k)$
-        -   text: $\Omega(k)$
-        -   text: $\Theta(k)$
+        -   text: :math:`O(1)`
+        -   text: :math:`\Omega(1)`
+        -   text: :math:`\Theta(1)`
+        -   text: :math:`O(n)`
+        -   text: :math:`\Omega(n)`
+        -   text: :math:`\Theta(n)`
+        -   text: :math:`O(k)`
+        -   text: :math:`\Omega(k)`
+        -   text: :math:`\Theta(k)`
             valid: true
         -   text: On ne peut pas ajouter un élément à un filtre de Bloom.
         header: ''
