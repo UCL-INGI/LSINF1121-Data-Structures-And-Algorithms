@@ -125,12 +125,12 @@ problems:
       - text: ":math:`A * B`"
       - text: ":math:`A | B`"
       - text: ":math:`A & B`"
-      - text: ":math:`A ^ B`"
+      - text: ":math:`A \\hat{~} B`"
       - text: "Aucune de ces propositions"
         valid: true
     header: ""
     limit: 0
-    name: "La *différence* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même set de fonctions de hachage) peut s'implémenter comme"
+    name: "La différence de deux filtres de Bloom A et B (ayant la même taille et le même set de fonctions de hachage) peut s'implémenter comme"
     type: multiple-choice
   hashtable_est_k1: 
     choices: 
@@ -181,12 +181,12 @@ problems:
       - text: "Aucune de ces propositions"
     header: ""
     limit: 0
-    name: "L'*intersection* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même set de fonctions de hachage) peut s'implémenter comme"
+    name: "L'intersection de deux filtres de Bloom A et B (ayant la même taille et le même set de fonctions de hachage) peut s'implémenter comme"
     type: multiple-choice
   limitation: 
     choices: 
-      - text: "son blocking factor. En effet, plus il y a d'éléments dans le filtre, plus il est difficile d'en ajouter de nouveaux."
-      - text: "son load factor. En effet, plus il y a d'éléments dans le filtre plus il y a de chance que le test d'appartenance renvoie un faux positif."
+      - text: "Son blocking factor. En effet, plus il y a d'éléments dans le filtre, plus il est difficile d'en ajouter de nouveaux."
+      - text: "Son load factor. En effet, plus il y a d'éléments dans le filtre plus il y a de chance que le test d'appartenance renvoie un faux positif."
         valid: true
     header: ""
     limit: 0
@@ -200,18 +200,18 @@ problems:
         valid: true
     header: ""
     limit: 0
-    name: "Quel est l'intérêt d'utiliser :math:`k \\ge 1` plutôt que :amth:`k=1` ?"
+    name: "Quel est l'intérêt d'utiliser k >= 1 plutôt que k = 1 ?"
     type: multiple-choice
   proba_collisions: 
     choices: 
       - text: "Si on utilise uniquement *h1* alors :math:`\\epsilon = 1 - (1 - \\frac{1}{n})^x`. Si on utilise *h1* et *h2* alors :math:`\\epsilon = \\left( 1 - (1 - \\frac{1}{n})^2x \\right)^2`."
         valid: true
-      - text: "Si on utilise uniquement *h1* alors :math:`\\epsilon = 1 - (1 - \\frac{1}{n})^x`. Si on utilise *h1* et *h2* alors :math:`\\epsilon = 1 - (1 - \\frac{1}{n})^x^2`."
+      - text: "Si on utilise uniquement *h1* alors :math:`\\epsilon = 1 - (1 - \\frac{1}{n})^x`. Si on utilise *h1* et *h2* alors :math:`\\epsilon = 1 - (1 - \\frac{1}{n})^{x^2}`."
       - text: "Si on utilise uniquement *h1* alors :math:`\\epsilon = 1 - x (1 - \\frac{1}{n})`. Si on utilise *h1* et *h2* alors :math:`\\epsilon = 1 - 2x (1 - \\frac{1}{n})`."
       - text: "Si on utilise uniquement *h1* alors :math:`\\epsilon = 1 - x (1 - \\frac{1}{n})`. Si on utilise *h1* et *h2* alors :math:`\\epsilon = 1 - x^2 (1 - \\frac{1}{n})`."
     header: ""
     limit: 0
-    name: "Si *h1* et *h2* sont deux fonctions de hachage qui sélectionnent avec une même probabilité :math:`\\frac{1}{n}` chacune des :math:`n` positions du bitvector utilisé pour implémenter un filtre de Bloom, et si :math:`x` éléments ont étés ajoutés au filtre, comment évolue le risque :math:`\\epsilon` de faux positif ?"
+    name: "Si h1 et h2 sont deux fonctions de hachage qui sélectionnent avec une même probabilité 1/n chacune des 'n' positions du bitvector utilisé pour implémenter un filtre de Bloom, et si x éléments ont étés ajoutés au filtre, comment évolue le risque `epsilon` de faux positif ?"
     type: multiple-choice
   propositions: 
     choices: 
@@ -268,11 +268,11 @@ problems:
       - text: ":math:`A | B`"
         valid: true
       - text: ":math:`A & B`"
-      - text: ":math:`A ^ B`"
+      - text: ":math:`A \\hat{~} B`"
       - text: "Aucune de ces propositions"
     header: ""
     limit: 0
-    name: "L'*union* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même set de fonctions de hachage) peut s'implémenter comme"
+    name: "L'union de deux filtres de Bloom A et B (ayant la même taille et le même set de fonctions de hachage) peut s'implémenter comme"
     type: multiple-choice
 stored_submissions: 0
 submission_limit: 
