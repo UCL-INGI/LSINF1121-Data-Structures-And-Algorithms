@@ -76,6 +76,22 @@ problems:
         limit: 0
         name: Quelle est la complexité d'un ajout d'un élément dans le filtre de Bloom
             ?
+    propositions:
+        choices:
+        -   text: Une HashMap stocke la valeur associée à chacune des clés.
+            valid: true
+        -   text: Un filtre de Bloom stocke la valeur associée à chacune des clés
+        -   text: Malgré le risque de collision pour chacune des k fonctions de hachage,
+                un filtre de Bloom permet de partager certains bits entre les clés
+                associés à différents items car la probabilité de collision est réduite.
+            valid: true
+        -   text: Grâce au separate chaining, une HashMap peut partager certains bits
+                entre différentes clés sans impacter la complexité d'un test d'appartenance.
+        type: multiple-choice
+        limit: 0
+        header: ''
+        name: 'Sélectionne les propositions qui sont vraies:'
+        multiple: true
 stored_submissions: 0
 submission_limit:
     amount: -1
