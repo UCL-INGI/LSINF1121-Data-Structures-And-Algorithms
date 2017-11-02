@@ -1,325 +1,361 @@
+--- 
 accessible: false
-author: Xavier Gillard, Pierre Schaus
+author: "Xavier Gillard, Pierre Schaus"
 context: |-
     Les filtres de Bloom
     --------------------
     Un filtre de Bloom, est une structure de donnée très compacte et efficace qui permet d'implémenter un test d'appartenance rapide (:code:`.contains()`) à un très grand *ensemble*. Cependant, contrairement au test d'appartenance à un ensemble tel qu'implémenté à l'aide d'une HashMap, le test d'appartenance implémenté via un filtre de bloom peut renvoyer un résultat erroné (faux positifs possibles mais pas de faux négatifs) dans certains cas et cela, avec une faible probabilité.
-
+    
     L'efficacité de cette structure, et le fait qu'elle ne requière qu'une quantité très faible (et constante !) de mémoire quel que soit le nombre d'éléments contenus dans l'ensemble en ont fait une structure de choix pour un très grand nombre d'applications. A titre d'exemple, on mentionnera le fait que les filtres de Bloom sont utilisés par certains devices réseaux pour faire du *Deep Packet Inspection*, ou encore que les bases de données *Google Big Table*, *Apache Cassandra* ou encore *Postgresql* utilisent cette structure de donnée afin de tester si une donnée se trouve en cache ou non.
-
+    
     En effet la recherche de la donnée étant généralement coûteuse,
     un filtre de Bloom est utilisé pour éviter de faire une recherche
     si la donnée n'est pas présente. Par contre comme les erreurs de type faux-positifs sont possibles, le filtre de Bloom peut dire que la donnée s'y trouve alors que ça n'est pas vrai. Dans ce cas, il faudra effectuer la recherche pour vérifier et payer le coût de celle recherche (par exemple une recherche linéaire avec des accès
     sur le disque).
-
+    
     Concrètement
     ------------
     Concrètement, un filtre de bloom consiste en un vecteur :math:`V = v_1..v_n` de bit et d'un ensemble :math:`F = f_1..f_k` de fonctions de hachage
-
+    
     Pour ajouter un élément :math:`X` dans le set, on applique successivement chacune des fonctions :math:`f_i \in F` de hachage. L'application de chacune de ses fonctions à l'élément :math:`X` renvoie n nombre :math:`h_i \in \left[0..n\right]`. Pour marquer l'ajout de :math:`X` aufiltre de bloom, on sette simplement chacun des :math:`v_{h_i}` bits dans :math:`V`.
-
+    
     De façon similaire, pour tester l'appartenance d'un élément :math:`X` au set, on vérifie que le :math:`h_i` ème bit :math:`\in V` correspondant à :math:`f_i(X)` est setté à `on`. Le test d'appartenance ne renverra `true` que ssi, cette condition est vérifiée pour chacune des :math:`f_i \in F`.
-
+    
     Exemples
     ~~~~~~~~
     En supposant qu'on ait un filtre de Bloom représenté par 1 byte et 3 fonctions de hachage telles que:
-
+    
     .. code::
-
+    
         f1("Salut") = 0
         f2("Salut") = 1
         f3("Salut") = 2
-
+    
         et
-
+    
         f1("1121") = 0
         f2("1121") = 1
         f3("1121") = 4
-
+    
     L'ajout de "Salut" au filtre 00000000 transforme celui-ci en 11100000. Si par la suite on veut tester que "Salut" est bien présent dans le filtre, on s'assure que les bits v1, v2 et v3 sont bien == 1.
-
+    
     En continuant sur le même exemple, on voit que la chaine "1121" n'est pas présente dans la structure puisque le 4eme bit est 'off'.
-
+    
     Autre exemple d'utilisation
     ---------------------------
     Outre le caching, les filtres de Bloom sont aussi utilisés pour donner une estimation du nombre d'éléments contenus dans un ensemble.
-
+    
     On calcule cette estimation (:math:`n^*`) comme suit:
     :math:`n^* = -\frac{n}{k} ln \left( 1 - \frac{X}{n} \right)`
-
+    
     avec n = la taille du filtre de Bloom, k = le nombre de fonctions de hachage différentes utilisées et X = le nombre des bits `on` dans le filtre.
 environment: python3
 evaluate: best
 groups: false
-limits:
-    output: '2'
-    time: '30'
-    memory: '100'
-name: Pré-examen - Bloom Filters
+limits: 
+  memory: "100"
+  output: "2"
+  time: "30"
+name: "Pré-examen - Bloom Filters"
 network_grading: false
-problems:
-    complexite_temp_ajout:
-        type: multiple-choice
-        header: ''
-        limit: 0
-        name: Quelle est la complexité temporelle d'un ajout d'un élément dans le filtre de Bloom ?
-        choices:
-        -   text: :math:`O(1)`
-        -   text: :math:`\Omega(1)`
-        -   text: :math:`\Theta(1)`
-        -   text: :math:`O(n)`
-        -   text: :math:`\Omega(n)`
-        -   text: :math:`\Theta(n)`
-        -   text: :math:`O(k)`
-        -   text: :math:`\Omega(k)`
-        -   text: :math:`\Theta(k)`
-            valid: true
-        -   text: On ne peut pas ajouter un élément à un filtre de Bloom.
-    complexite_temp_suppression:
-        type: multiple-choice
-        header: ''
-        limit: 0
-        name: Quelle est la complexité temporelle de la suppression d'un élément dans le filtre de Bloom ?
-        choices:
-        -   text: :math:`O(1)`
-        -   text: :math:`\Omega(1)`
-        -   text: :math:`\Theta(1)`
-        -   text: :math:`O(n)`
-        -   text: :math:`\Omega(n)`
-        -   text: :math:`\Theta(n)`
-        -   text: :math:`O(k)`
-        -   text: :math:`\Omega(k)`
-        -   text: :math:`\Theta(k)`
-        -   text: On ne peut pas ajouter un élément à un filtre de Bloom.
-            valid: true  
-    union:
-        type: multiple-choice
-        header: ''
-        limit: 0
-        name: L'*union* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même 
-          set de fonctions de hachage) peut s'implémenter comme
-        choices:
-        -   text: :math:`A + B`
-        -   text: :math:`A - B`
-        -   text: :math:`A * B`
-        -   text: :math:`A | B`
-            valid: true
-        -   text: :math:`A & B`
-        -   text: :math:`A ^ B`  
-        -   text:  Aucune de ces propositions
-    intersection:
-        type: multiple-choice
-        header: ''
-        limit: 0
-        name: L'*intersection* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même 
-          set de fonctions de hachage) peut s'implémenter comme
-        choices:
-        -   text: :math:`A + B`
-        -   text: :math:`A - B`
-        -   text: :math:`A * B`
-        -   text: :math:`A | B`
-        -   text: :math:`A & B`
-            valid: true
-        -   text: :math:`A ^ B`  
-        -   text:  Aucune de ces propositions
-    différence:
-        type: multiple-choice
-        header: ''
-        limit: 0
-        name: La *différence* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même 
-          set de fonctions de hachage) peut s'implémenter comme
-        choices:
-        -   text: :math:`A + B`
-        -   text: :math:`A - B`
-        -   text: :math:`A * B`
-        -   text: :math:`A | B`
-        -   text: :math:`A & B`
-        -   text: :math:`A ^ B`  
-        -   text:  Aucune de ces propositions
-            valid: true  
-    hashtable_est_k1:
-        type: multiple-choice
-        header: ''
-        limit: 0
-        name: Une table de hachage est un Bloom filter avec k=1 ? 
-        choices:
-        -   text: Vrai
-            valid: true
-        -   text: Faux
-    pourquoi_k_pg_1:
-        type: multiple-choice
-        header: ''
-        limit: 0
-        name: Quel est l'intérêt d'utiliser :math:`k \ge 1` plutôt que :amth:`k=1` ?
-        choices:
-        -   text: Il n'y en a pas
-        -   text: Cela permet de résister aux corruptions de la mémoire, on peut utiliser les 
-            autres bits comme un code de détection d'erreur
-        -   text: Cela permet de réduire le risque de faux-positifs malgré le fait que les même
-            bits soient utilisés pour détecter la présence de plusieurs éléments différents
-            valid: true
-    propositions:
-        type: multiple-choice
-        multiple: true
-        limit: 0
-        header: ''
-        name: 'Sélectionne les propositions qui sont vraies:'
-        choices:
-        -   text: Une HashMap stocke la valeur associée à chacune des clés.
-            valid: true
-        -   text: Un filtre de Bloom stocke la valeur associée à chacune des clés
-        -   text: Malgré le risque de collision pour chacune des k fonctions de hachage,
-                un filtre de Bloom permet de partager certains bits entre les clés
-                associés à différents items car la probabilité de collision est réduite.
-            valid: true
-        -   text: Grâce au separate chaining, une HashMap peut partager certains bits
-                entre différentes clés sans impacter la complexité d'un test d'appartenance.
-    complexite_spatiale:
-        type: multiple-choice
-        header: ''
-        limit: 0
-        name: Classez par ordre croissant de complexité spatiale. Singly-Linked List, 
-          BloomFilter, Red-Black Tree, HashMap.
-        choices:
-        -   text: :math:`BloomFilter <= HashMap <= SinglyLinked <= RedBlack`
-        -   text: :math:`BloomFilter <= HashMap <= RedBlack <= SinglyLinked`
-        -   text: :math:`HashMap <= BloomFilter <= SinglyLinked <= RedBlack`
-        -   text: :math:`BloomFilter <= SinglyLinked <= HashMap <= RedBlack`
-        -   text: :math:`BloomFilter <= RedBlack <= SinglyLinked <= HashMap`
-    proba_collisions:
-      type: multiple-choice
-      header: ''
-      limit: 0
-      name: Si *h1* et *h2* sont deux fonctions de hachage qui sélectionnent avec une même 
-        probabilité :math:`\frac{1}{n}` chacune des :math:`n` positions du bitvector utilisé pour 
-        implémenter un filtre de Bloom, et si :math:`x` éléments ont étés ajoutés au filtre,
-        comment évolue le risque :math:`\epsilon` de faux positif ?
-      choices:
-      -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x`.
-               Si on utilise *h1* et *h2* alors :math:`\epsilon = \left( 1 - (1 - \frac{1}{n})^2x \right)^2`.
-          valid: true
-      -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x`.
-             Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x^2`.
-      -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - x (1 - \frac{1}{n})`.
-             Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - 2x (1 - \frac{1}{n})`.
-      -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - x (1 - \frac{1}{n})`.
-             Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - x^2 (1 - \frac{1}{n})`.
-    bloom_vs_hashmap:
-      type: multiple-choice
-      multiple: true
-      header: ''
-      limit: 0
-      name: L'utilisation d'un Bloom filter vs une HashMap est plus indiqué lorsque
-      choices:
-      -   text: Le nombre de clés possibles est connu à l'avance
-      -   text: Il est impossible de prédire le nombre de clés possibles
-          valid: true
-      -   text: Il y a un trop grand nombre de clés possibles que pour pouvoir les garder toutes en mémoire
-          valid: true
-      -   text: Il n'y a aucune raison de préférer une structure en particulier plutôt qu'une autre
-    limitation:
-      type: multiple-choice
-      header: ''
-      limit: 0
-      name: Qu'est-ce qui limite l'utilité de cette structure
-      choices:
-      -   text: son blocking factor: en effet, plus il y a d'éléments dans le filtre, plus il est difficile d'en ajouter de nouveaux.
-      -   text: son load factor: en effet, plus il y a d'éléments dans le filtre plus il y a de chance que le test d'appartenance renvoie un faux positif.
-          valid: true
-    recovery:
-      type: multiple-choice
-      multiple: true
-      header: ''
-      limit: 0
-      name: En cas de collision, quelle(s) stratégie(s) peut-on implémenter pour résoudre le conflit ?
-      choices:
-      -   text: Linear Probing
-      -   text: Separate Chaining
-      -   text: Redimensioner le bit vector
-      -   text: Aucune
-          valid: true
-    twitter_exact:
-      type: multiple-choice
-      header: ''
-      limit: 0
-      name: Si Twitter voulait compter de manière exacte (avec un HashSet) le nombre 
-        d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle est (parmi 
-        les propositions suivantes) la quantité minimale de mémoire qui serait 
-        nécessaire pour implémenter ce comptage; sachant que le réseau social compte 
-        328 millions d'utilisateurs actifs ? (Par simplicité, on fait ici l'hypothèse 
-        que chacune des entrées du HashSet ne requiert qu'un seul bit).
-      choices:
-      -   text: 300 KB
-      -   text: 10  MB
-      -   text: 39  MB
-          valid: true
-      -   text: 2   GB
-    twitter_approx:
-      type: multiple-choice
-      header: ''
-      limit: 0
-      name: Si Twitter voulait compter de manière approximative (avec un BloomFilter) le 
-        nombre  d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle 
-        est (parmi les propositions suivantes) la quantité minimale de mémoire qui 
-        serait nécessaire pour implémenter ce comptage; sachant que le réseau social 
-        compte 328 millions d'utilisateurs actifs ? 
-      choices:
-      -   text: 300 KB
-          valid: true
-      -   text: 10  MB
-      -   text: 39  MB
-      -   text: 2   GB
-    implem:
-      type: multiple-choice
-      multiple: true
-      header: ''
-      limit: 0
-      name: Choisissez la ou les implémentations des filtres de Bloom qui vous semblent utiles
-      choices:
-      -   text: .. code:: 
-        
-                  public class BloomFilter {
-                    int bitmask;
-                    
-                    int f1(Object o) { return o.hashCode() * 41 % 2; }
-                    int f2(Object o) { return o.hashCode() * 31 % 3; }
-                    
-                    // snip ...
-                  }
-      -   text: .. code:: 
-        
-                  public class BloomFilter {
-                    int bitmask;
-                    
-                    int f1(Object o) { return o.hashCode() * 41 % 97; }
-                    int f2(Object o) { return o.hashCode() * 31 % 97; }
-                    
-                    // snip ...
-                  }
-      -   text: .. code:: 
-        
-                  public class BloomFilter {
-                    int bitmask;
-                    
-                    int f1(Object o) { return o.hashCode() * 41 % 31; }
-                    int f2(Object o) { return o.hashCode() * 31 % 31; }
-                    
-                    // snip ...
-                  }
-          
-          valid: true
-      -   text: .. code:: 
-        
-                  public class BloomFilter {
-                    int bitmask;
-                    
-                    int f1(Object o) { return o.hashCode() * 41 % 32; }
-                    int f2(Object o) { return o.hashCode() * 31 % 32; }
-                    
-                    // snip ...
-                  }
+problems: 
+  bloom_vs_hashmap: 
+    choices: 
+      - 
+        text: "Le nombre de clés possibles est connu à l'avance"
+      - 
+        text: "Il est impossible de prédire le nombre de clés possibles"
+        valid: true
+      - 
+        text: "Il y a un trop grand nombre de clés possibles que pour pouvoir les garder toutes en mémoire"
+        valid: true
+      - 
+        text: "Il n'y a aucune raison de préférer une structure en particulier plutôt qu'une autre"
+    header: ""
+    limit: 0
+    multiple: true
+    name: "L'utilisation d'un Bloom filter vs une HashMap est plus indiqué lorsque"
+    type: multiple-choice
+  complexite_spatiale: 
+    choices: 
+      - 
+        text: !ruby/symbol "math:`BloomFilter <= HashMap <= SinglyLinked <= RedBlack`"
+      - 
+        text: !ruby/symbol "math:`BloomFilter <= HashMap <= RedBlack <= SinglyLinked`"
+      - 
+        text: !ruby/symbol "math:`HashMap <= BloomFilter <= SinglyLinked <= RedBlack`"
+      - 
+        text: !ruby/symbol "math:`BloomFilter <= SinglyLinked <= HashMap <= RedBlack`"
+      - 
+        text: !ruby/symbol "math:`BloomFilter <= RedBlack <= SinglyLinked <= HashMap`"
+    header: ""
+    limit: 0
+    name: "Classez par ordre croissant de complexité spatiale. Singly-Linked List, BloomFilter, Red-Black Tree, HashMap."
+    type: multiple-choice
+  complexite_temp_ajout: 
+    choices: 
+      - 
+        text: !ruby/symbol "math:`O(1)`"
+      - 
+        text: !ruby/symbol "math:`\\Omega(1)`"
+      - 
+        text: !ruby/symbol "math:`\\Theta(1)`"
+      - 
+        text: !ruby/symbol "math:`O(n)`"
+      - 
+        text: !ruby/symbol "math:`\\Omega(n)`"
+      - 
+        text: !ruby/symbol "math:`\\Theta(n)`"
+      - 
+        text: !ruby/symbol "math:`O(k)`"
+      - 
+        text: !ruby/symbol "math:`\\Omega(k)`"
+      - 
+        text: !ruby/symbol "math:`\\Theta(k)`"
+        valid: true
+      - 
+        text: "On ne peut pas ajouter un élément à un filtre de Bloom."
+    header: ""
+    limit: 0
+    name: "Quelle est la complexité temporelle d'un ajout d'un élément dans le filtre de Bloom ?"
+    type: multiple-choice
+  complexite_temp_suppression: 
+    choices: 
+      - 
+        text: !ruby/symbol "math:`O(1)`"
+      - 
+        text: !ruby/symbol "math:`\\Omega(1)`"
+      - 
+        text: !ruby/symbol "math:`\\Theta(1)`"
+      - 
+        text: !ruby/symbol "math:`O(n)`"
+      - 
+        text: !ruby/symbol "math:`\\Omega(n)`"
+      - 
+        text: !ruby/symbol "math:`\\Theta(n)`"
+      - 
+        text: !ruby/symbol "math:`O(k)`"
+      - 
+        text: !ruby/symbol "math:`\\Omega(k)`"
+      - 
+        text: !ruby/symbol "math:`\\Theta(k)`"
+      - 
+        text: "On ne peut pas ajouter un élément à un filtre de Bloom."
+        valid: true
+    header: ""
+    limit: 0
+    name: "Quelle est la complexité temporelle de la suppression d'un élément dans le filtre de Bloom ?"
+    type: multiple-choice
+  différence: 
+    choices: 
+      - 
+        text: !ruby/symbol "math:`A + B`"
+      - 
+        text: !ruby/symbol "math:`A - B`"
+      - 
+        text: !ruby/symbol "math:`A * B`"
+      - 
+        text: !ruby/symbol "math:`A | B`"
+      - 
+        text: !ruby/symbol "math:`A & B`"
+      - 
+        text: !ruby/symbol "math:`A ^ B`"
+      - 
+        text: "Aucune de ces propositions"
+        valid: true
+    header: ""
+    limit: 0
+    name: "La *différence* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même set de fonctions de hachage) peut s'implémenter comme"
+    type: multiple-choice
+  hashtable_est_k1: 
+    choices: 
+      - 
+        text: Vrai
+        valid: true
+      - 
+        text: Faux
+    header: ""
+    limit: 0
+    name: "Une table de hachage est un Bloom filter avec k=1 ?"
+    type: multiple-choice
+  implem: 
+    choices: 
+      - 
+        text: |-
+            .. code::
+            public class BloomFilter { int bitmask;
+            int f1(Object o) { return o.hashCode() * 41 % 2; } int f2(Object o) { return o.hashCode() * 31 % 3; }
+            // snip ... }
+      - 
+        text: |-
+            .. code::
+            public class BloomFilter { int bitmask;
+            int f1(Object o) { return o.hashCode() * 41 % 97; } int f2(Object o) { return o.hashCode() * 31 % 97; }
+            // snip ... }
+      - 
+        text: |-
+            .. code::
+            public class BloomFilter { int bitmask;
+            int f1(Object o) { return o.hashCode() * 41 % 31; } int f2(Object o) { return o.hashCode() * 31 % 31; }
+            // snip ... }
+        valid: true
+      - 
+        text: |-
+            .. code::
+            public class BloomFilter { int bitmask;
+            int f1(Object o) { return o.hashCode() * 41 % 32; } int f2(Object o) { return o.hashCode() * 31 % 32; }
+            // snip ... }
+    header: ""
+    limit: 0
+    multiple: true
+    name: "Choisissez la ou les implémentations des filtres de Bloom qui vous semblent utiles"
+    type: multiple-choice
+  intersection: 
+    choices: 
+      - 
+        text: !ruby/symbol "math:`A + B`"
+      - 
+        text: !ruby/symbol "math:`A - B`"
+      - 
+        text: !ruby/symbol "math:`A * B`"
+      - 
+        text: !ruby/symbol "math:`A | B`"
+      - 
+        text: !ruby/symbol "math:`A & B`"
+        valid: true
+      - 
+        text: !ruby/symbol "math:`A ^ B`"
+      - 
+        text: "Aucune de ces propositions"
+    header: ""
+    limit: 0
+    name: "L'*intersection* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même set de fonctions de hachage) peut s'implémenter comme"
+    type: multiple-choice
+  limitation: 
+    choices: 
+      - 
+        text: "son blocking factor. En effet, plus il y a d'éléments dans le filtre, plus il est difficile d'en ajouter de nouveaux."
+      - 
+        text: "son load factor. En effet, plus il y a d'éléments dans le filtre plus il y a de chance que le test d'appartenance renvoie un faux positif."
+        valid: true
+    header: ""
+    limit: 0
+    name: "Qu'est-ce qui limite l'utilité de cette structure"
+    type: multiple-choice
+  pourquoi_k_pg_1: 
+    choices: 
+      - 
+        text: "Il n'y en a pas"
+      - 
+        text: "Cela permet de résister aux corruptions de la mémoire, on peut utiliser les autres bits comme un code de détection d'erreur"
+      - 
+        text: "Cela permet de réduire le risque de faux-positifs malgré le fait que les même bits soient utilisés pour détecter la présence de plusieurs éléments différents"
+        valid: true
+    header: ""
+    limit: 0
+    name: "Quel est l'intérêt d'utiliser :math:`k \\ge 1` plutôt que :amth:`k=1` ?"
+    type: multiple-choice
+  proba_collisions: 
+    choices: 
+      - 
+        text: "Si on utilise uniquement *h1* alors :math:`\\epsilon = 1 - (1 - \\frac{1}{n})^x`. Si on utilise *h1* et *h2* alors :math:`\\epsilon = \\left( 1 - (1 - \\frac{1}{n})^2x \\right)^2`."
+        valid: true
+      - 
+        text: "Si on utilise uniquement *h1* alors :math:`\\epsilon = 1 - (1 - \\frac{1}{n})^x`. Si on utilise *h1* et *h2* alors :math:`\\epsilon = 1 - (1 - \\frac{1}{n})^x^2`."
+      - 
+        text: "Si on utilise uniquement *h1* alors :math:`\\epsilon = 1 - x (1 - \\frac{1}{n})`. Si on utilise *h1* et *h2* alors :math:`\\epsilon = 1 - 2x (1 - \\frac{1}{n})`."
+      - 
+        text: "Si on utilise uniquement *h1* alors :math:`\\epsilon = 1 - x (1 - \\frac{1}{n})`. Si on utilise *h1* et *h2* alors :math:`\\epsilon = 1 - x^2 (1 - \\frac{1}{n})`."
+    header: ""
+    limit: 0
+    name: "Si *h1* et *h2* sont deux fonctions de hachage qui sélectionnent avec une même probabilité :math:`\\frac{1}{n}` chacune des :math:`n` positions du bitvector utilisé pour implémenter un filtre de Bloom, et si :math:`x` éléments ont étés ajoutés au filtre, comment évolue le risque :math:`\\epsilon` de faux positif ?"
+    type: multiple-choice
+  propositions: 
+    choices: 
+      - 
+        text: "Une HashMap stocke la valeur associée à chacune des clés."
+        valid: true
+      - 
+        text: "Un filtre de Bloom stocke la valeur associée à chacune des clés"
+      - 
+        text: "Malgré le risque de collision pour chacune des k fonctions de hachage, un filtre de Bloom permet de partager certains bits entre les clés associés à différents items car la probabilité de collision est réduite."
+        valid: true
+      - 
+        text: "Grâce au separate chaining, une HashMap peut partager certains bits entre différentes clés sans impacter la complexité d'un test d'appartenance."
+    header: ""
+    limit: 0
+    multiple: true
+    name: "Sélectionne les propositions qui sont vraies:"
+    type: multiple-choice
+  recovery: 
+    choices: 
+      - 
+        text: "Linear Probing"
+      - 
+        text: "Separate Chaining"
+      - 
+        text: "Redimensioner le bit vector"
+      - 
+        text: Aucune
+        valid: true
+    header: ""
+    limit: 0
+    multiple: true
+    name: "En cas de collision, quelle(s) stratégie(s) peut-on implémenter pour résoudre le conflit ?"
+    type: multiple-choice
+  twitter_approx: 
+    choices: 
+      - 
+        text: "300 KB"
+        valid: true
+      - 
+        text: "10  MB"
+      - 
+        text: "39  MB"
+      - 
+        text: "2   GB"
+    header: ""
+    limit: 0
+    name: "Si Twitter voulait compter de manière approximative (avec un BloomFilter) le nombre  d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle est (parmi les propositions suivantes) la quantité minimale de mémoire qui serait nécessaire pour implémenter ce comptage; sachant que le réseau social compte 328 millions d'utilisateurs actifs ?"
+    type: multiple-choice
+  twitter_exact: 
+    choices: 
+      - 
+        text: "300 KB"
+      - 
+        text: "10  MB"
+      - 
+        text: "39  MB"
+        valid: true
+      - 
+        text: "2   GB"
+    header: ""
+    limit: 0
+    name: "Si Twitter voulait compter de manière exacte (avec un HashSet) le nombre d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle est (parmi les propositions suivantes) la quantité minimale de mémoire qui serait nécessaire pour implémenter ce comptage; sachant que le réseau social compte 328 millions d'utilisateurs actifs ? (Par simplicité, on fait ici l'hypothèse que chacune des entrées du HashSet ne requiert qu'un seul bit)."
+    type: multiple-choice
+  union: 
+    choices: 
+      - 
+        text: !ruby/symbol "math:`A + B`"
+      - 
+        text: !ruby/symbol "math:`A - B`"
+      - 
+        text: !ruby/symbol "math:`A * B`"
+      - 
+        text: !ruby/symbol "math:`A | B`"
+        valid: true
+      - 
+        text: !ruby/symbol "math:`A & B`"
+      - 
+        text: !ruby/symbol "math:`A ^ B`"
+      - 
+        text: "Aucune de ces propositions"
+    header: ""
+    limit: 0
+    name: "L'*union* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même set de fonctions de hachage) peut s'implémenter comme"
+    type: multiple-choice
 stored_submissions: 0
-submission_limit:
-    amount: -1
-    period: -1
+submission_limit: 
+  amount: -1
+  period: -1
 weight: 1.0
