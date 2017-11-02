@@ -112,7 +112,7 @@ problems:
         header: ''
         limit: 0
         name: L'*intersection* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même 
-        	set de fonctions de hachage) peut s'implémenter comme
+          set de fonctions de hachage) peut s'implémenter comme
         choices:
         -   text: :math:`A + B`
         -   text: :math:`A - B`
@@ -127,7 +127,7 @@ problems:
         header: ''
         limit: 0
         name: La *différence* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même 
-        	set de fonctions de hachage) peut s'implémenter comme
+          set de fonctions de hachage) peut s'implémenter comme
         choices:
         -   text: :math:`A + B`
         -   text: :math:`A - B`
@@ -154,9 +154,9 @@ problems:
         choices:
         -   text: Il n'y en a pas
         -   text: Cela permet de résister aux corruptions de la mémoire: on peut utiliser les 
-        		autres bits comme un code de détection d'erreur
+            autres bits comme un code de détection d'erreur
         -   text: Cela permet de réduire le risque de faux-positifs malgré le fait que les même
-        		bits soient utilisés pour détecter la présence de plusieurs éléments différents
+            bits soient utilisés pour détecter la présence de plusieurs éléments différents
             valid: true
     propositions:
         type: multiple-choice
@@ -179,7 +179,7 @@ problems:
         header: ''
         limit: 0
         name: Classez par ordre croissant de complexité spatiale: Singly-Linked List, 
-        	BloomFilter, Red-Black Tree, HashMap.
+          BloomFilter, Red-Black Tree, HashMap.
         choices:
         -   text: :math:`BloomFilter <= HashMap <= SinglyLinked <= RedBlack`
         -   text: :math:`BloomFilter <= HashMap <= RedBlack <= SinglyLinked`
@@ -191,19 +191,19 @@ problems:
       header: ''
       limit: 0
       name: Si *h1* et *h2* sont deux fonctions de hachage qui sélectionnent avec une même 
-      	probabilité :math:`\frac{1}{n}` chacune des :math:`n` positions du bitvector utilisé pour 
-      	implémenter un filtre de Bloom, et si :math:`x` éléments ont étés ajoutés au filtre,
-      	comment évolue le risque :math:`\epsilon` de faux positif ?
+        probabilité :math:`\frac{1}{n}` chacune des :math:`n` positions du bitvector utilisé pour 
+        implémenter un filtre de Bloom, et si :math:`x` éléments ont étés ajoutés au filtre,
+        comment évolue le risque :math:`\epsilon` de faux positif ?
       choices:
       -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x`.
-      	       Si on utilise *h1* et *h2* alors :math:`\epsilon = \left( 1 - (1 - \frac{1}{n})^2x \right)^2`.
+               Si on utilise *h1* et *h2* alors :math:`\epsilon = \left( 1 - (1 - \frac{1}{n})^2x \right)^2`.
           valid: true
       -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x`.
-      	     Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x^2`.
+             Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x^2`.
       -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - x (1 - \frac{1}{n})`.
-      	     Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - 2x (1 - \frac{1}{n})`.
+             Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - 2x (1 - \frac{1}{n})`.
       -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - x (1 - \frac{1}{n})`.
-      	     Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - x^2 (1 - \frac{1}{n})`.
+             Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - x^2 (1 - \frac{1}{n})`.
     bloom_vs_hashmap:
       type: multiple-choice
       multiple: true
@@ -244,10 +244,10 @@ problems:
       limit: 0
       name: Si Twitter voulait compter de manière exacte (avec un HashSet) le nombre 
         d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle est (parmi 
-      	les propositions suivantes) la quantité minimale de mémoire qui serait 
-      	nécessaire pour implémenter ce comptage; sachant que le réseau social compte 
-      	328 millions d'utilisateurs actifs ? (Par simplicité, on fait ici l'hypothèse 
-      	que chacune des entrées du HashSet ne requiert qu'un seul bit).
+        les propositions suivantes) la quantité minimale de mémoire qui serait 
+        nécessaire pour implémenter ce comptage; sachant que le réseau social compte 
+        328 millions d'utilisateurs actifs ? (Par simplicité, on fait ici l'hypothèse 
+        que chacune des entrées du HashSet ne requiert qu'un seul bit).
       choices:
       -   text: 300 KB
       -   text: 10  MB
@@ -259,10 +259,10 @@ problems:
       header: ''
       limit: 0
       name: Si Twitter voulait compter de manière approximative (avec un BloomFilter) le 
-      	nombre  d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle 
-      	est (parmi les propositions suivantes) la quantité minimale de mémoire qui 
-      	serait nécessaire pour implémenter ce comptage; sachant que le réseau social 
-      	compte 328 millions d'utilisateurs actifs ? 
+        nombre  d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle 
+        est (parmi les propositions suivantes) la quantité minimale de mémoire qui 
+        serait nécessaire pour implémenter ce comptage; sachant que le réseau social 
+        compte 328 millions d'utilisateurs actifs ? 
       choices:
       -   text: 300 KB
           valid: true
@@ -279,45 +279,45 @@ problems:
       -   text: .. code:: 
         
                   public class BloomFilter {
-                		int bitmask;
-                		
-                		int f1(Object o) { return o.hashCode() * 41 % 2; }
-                		int f2(Object o) { return o.hashCode() * 31 % 3; }
-                		
-                		// snip ...
-              	  }
+                    int bitmask;
+                    
+                    int f1(Object o) { return o.hashCode() * 41 % 2; }
+                    int f2(Object o) { return o.hashCode() * 31 % 3; }
+                    
+                    // snip ...
+                  }
       -   text: .. code:: 
         
                   public class BloomFilter {
-                		int bitmask;
-                		
-                		int f1(Object o) { return o.hashCode() * 41 % 97; }
-                		int f2(Object o) { return o.hashCode() * 31 % 97; }
-                		
-                		// snip ...
-              	  }
+                    int bitmask;
+                    
+                    int f1(Object o) { return o.hashCode() * 41 % 97; }
+                    int f2(Object o) { return o.hashCode() * 31 % 97; }
+                    
+                    // snip ...
+                  }
       -   text: .. code:: 
         
                   public class BloomFilter {
-                		int bitmask;
-                		
-                		int f1(Object o) { return o.hashCode() * 41 % 31; }
-                		int f2(Object o) { return o.hashCode() * 31 % 31; }
-                		
-                		// snip ...
-              	  }
+                    int bitmask;
+                    
+                    int f1(Object o) { return o.hashCode() * 41 % 31; }
+                    int f2(Object o) { return o.hashCode() * 31 % 31; }
+                    
+                    // snip ...
+                  }
           
           valid: true
       -   text: .. code:: 
         
                   public class BloomFilter {
-                		int bitmask;
-                		
-                		int f1(Object o) { return o.hashCode() * 41 % 32; }
-                		int f2(Object o) { return o.hashCode() * 31 % 32; }
-                		
-                		// snip ...
-              	  }
+                    int bitmask;
+                    
+                    int f1(Object o) { return o.hashCode() * 41 % 32; }
+                    int f2(Object o) { return o.hashCode() * 31 % 32; }
+                    
+                    // snip ...
+                  }
 stored_submissions: 0
 submission_limit:
     amount: -1
