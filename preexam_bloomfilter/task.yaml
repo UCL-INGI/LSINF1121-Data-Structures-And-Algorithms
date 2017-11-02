@@ -141,58 +141,6 @@ problems:
     limit: 0
     name: "Une table de hachage est un Bloom filter avec k=1 ?"
     type: multiple-choice
-  implem: 
-    choices: 
-      - text: "
-            .. code-block:: java
-            
-                public class BloomFilter { 
-                    int bitmask;
-                    int f1(Object o) { return o.hashCode() * 41 % 2; } 
-                    int f2(Object o) { return o.hashCode() * 31 % 3; }
-                    // snip ... 
-                }
-                
-            "
-      - text: "
-            .. code-block:: java
-            
-                public class BloomFilter { 
-                    int bitmask;
-                    int f1(Object o) { return o.hashCode() * 41 % 97; } 
-                    int f2(Object o) { return o.hashCode() * 31 % 97; }
-                    // snip ... 
-                }
-                
-            "
-      - text: "
-            .. code-block:: java
-            
-                public class BloomFilter { 
-                    int bitmask;
-                    int f1(Object o) { return o.hashCode() * 41 % 31; } 
-                    int f2(Object o) { return o.hashCode() * 31 % 31; }
-                    // snip ... 
-                }
-                
-            "
-        valid: true
-      - text: "
-            .. code-block:: java
-            
-                public class BloomFilter { 
-                    int bitmask;
-                    int f1(Object o) { return o.hashCode() * 41 % 32; } 
-                    int f2(Object o) { return o.hashCode() * 31 % 32; }
-                    // snip ... 
-                }
-                
-            "
-    header: ""
-    limit: 0
-    multiple: true
-    name: "Choisissez la ou les implémentations des filtres de Bloom qui vous semblent utiles"
-    type: multiple-choice
   intersection: 
     choices: 
       - text: ":code:`A + B`"
