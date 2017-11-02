@@ -97,7 +97,7 @@ problems:
         header: ''
         limit: 0
         name: L'*union* de deux filtres de Bloom *A* et *B* (ayant la même taille et le même 
-        	set de fonctions de hachage) peut s'implémenter comme
+          set de fonctions de hachage) peut s'implémenter comme
         choices:
         -   text: :math:`A + B`
         -   text: :math:`A - B`
