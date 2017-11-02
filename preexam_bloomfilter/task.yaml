@@ -118,7 +118,7 @@ problems:
     limit: 0
     name: "Quelle est la complexité temporelle de la suppression d'un élément dans le filtre de Bloom ?"
     type: multiple-choice
-  différence: 
+  difference: 
     choices: 
       - text: ":math:`A + B`"
       - text: ":math:`A - B`"
