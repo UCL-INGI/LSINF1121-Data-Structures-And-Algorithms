@@ -17,7 +17,7 @@ context: |-
     ------------
     Concrètement, un filtre de bloom consiste en un vecteur :math:`V = v_1..v_n` de bit et d'un ensemble :math:`F = f_1..f_k` de fonctions de hachage
     
-    Pour ajouter un élément :math:`X` dans le set, on applique successivement chacune des fonctions :math:`f_i \in F` de hachage. L'application de chacune de ses fonctions à l'élément :math:`X` renvoie n nombre :math:`h_i \in \left[0..n\right]`. Pour marquer l'ajout de :math:`X` aufiltre de bloom, on sette simplement chacun des :math:`v_{h_i}` bits dans :math:`V`.
+    Pour ajouter un élément :math:`X` dans le set, on applique successivement chacune des fonctions :math:`f_i \in F` de hachage. L'application de chacune de ses fonctions à l'élément :math:`X` renvoie un nombre :math:`h_i \in \left[0..n\right]`. Pour marquer l'ajout de :math:`X` au filtre de bloom, on sette simplement chacun des :math:`v_{h_i}` bits dans :math:`V`.
     
     De façon similaire, pour tester l'appartenance d'un élément :math:`X` au set, on vérifie que le :math:`h_i` ème bit :math:`\in V` correspondant à :math:`f_i(X)` est setté à `on`. Le test d'appartenance ne renverra `true` que ssi, cette condition est vérifiée pour chacune des :math:`f_i \in F`.
     
