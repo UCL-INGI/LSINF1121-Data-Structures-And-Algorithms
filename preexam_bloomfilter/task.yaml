@@ -153,7 +153,7 @@ problems:
         name: Quel est l'intérêt d'utiliser :math:`k \ge 1` plutôt que :amth:`k=1` ?
         choices:
         -   text: Il n'y en a pas
-        -   text: Cela permet de résister aux corruptions de la mémoire: on peut utiliser les 
+        -   text: Cela permet de résister aux corruptions de la mémoire, on peut utiliser les 
             autres bits comme un code de détection d'erreur
         -   text: Cela permet de réduire le risque de faux-positifs malgré le fait que les même
             bits soient utilisés pour détecter la présence de plusieurs éléments différents
@@ -178,7 +178,7 @@ problems:
         type: multiple-choice
         header: ''
         limit: 0
-        name: Classez par ordre croissant de complexité spatiale: Singly-Linked List, 
+        name: Classez par ordre croissant de complexité spatiale. Singly-Linked List, 
           BloomFilter, Red-Black Tree, HashMap.
         choices:
         -   text: :math:`BloomFilter <= HashMap <= SinglyLinked <= RedBlack`
