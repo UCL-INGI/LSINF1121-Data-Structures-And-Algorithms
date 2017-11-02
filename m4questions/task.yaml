@@ -1,4 +1,4 @@
-accessible: false
+accessible: /2017-11-04 20:00:00
 author: Simon Hardy
 context: Answers to the different questions in the statement of the fourth mission.
 environment: default
@@ -6,8 +6,8 @@ evaluate: best
 groups: true
 limits:
     output: '2'
-    time: '15'
     memory: '256'
+    time: '15'
 name: Mission 4 - Questions report [group]
 network_grading: false
 order: 21

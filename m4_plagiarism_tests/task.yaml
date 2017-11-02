@@ -67,20 +67,20 @@ evaluate: best
 groups: false
 limits:
     output: '100'
-    memory: '512'
     time: '45'
+    memory: '512'
 name: Mission 4 - Unit tests for the map of the plagiarism detector [individual]
 network_grading: false
 order: 22
 problems:
     plagiarism_tests:
-        name: Unit tests
-        type: code-file
         allowed_exts:
         - .java
         header: Upload your file here, with only one class named "HashMapTests". The
             class representing the spam filter under test is called *HashMap* and
             implements *MapInterface*, as written in the template !
+        name: Unit tests
+        type: code-file
 stored_submissions: 0
 submission_limit:
     amount: -1
