@@ -124,7 +124,7 @@ problems:
       - text: ":math:`A - B`"
       - text: ":math:`A * B`"
       - text: ":math:`A | B`"
-      - text: ":math:`A & B`"
+      - text: "A & B"
       - text: ":math:`A \\hat{~} B`"
       - text: "Aucune de ces propositions"
         valid: true
@@ -175,7 +175,7 @@ problems:
       - text: ":math:`A - B`"
       - text: ":math:`A * B`"
       - text: ":math:`A | B`"
-      - text: ":math:`A & B`"
+      - text: "A & B"
         valid: true
       - text: ":math:`A ^ B`"
       - text: "Aucune de ces propositions"
@@ -267,7 +267,7 @@ problems:
       - text: ":math:`A * B`"
       - text: ":math:`A | B`"
         valid: true
-      - text: ":math:`A & B`"
+      - text: "A & B"
       - text: ":math:`A \\hat{~} B`"
       - text: "Aucune de ces propositions"
     header: ""
