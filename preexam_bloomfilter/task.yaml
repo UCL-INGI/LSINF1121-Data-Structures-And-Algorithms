@@ -120,12 +120,12 @@ problems:
     type: multiple-choice
   difference: 
     choices: 
-      - text: ":math:`A + B`"
-      - text: ":math:`A - B`"
-      - text: ":math:`A * B`"
-      - text: ":math:`A | B`"
-      - text: ":math:`A & B`"
-      - text: ":math:`A \\hat{~} B`"
+      - text: ":code:`A + B`"
+      - text: ":code:`A - B`"
+      - text: ":code:`A * B`"
+      - text: ":code:`A | B`"
+      - text: ":code:`A & B`"
+      - text: ":code:`A ^ B`"
       - text: "Aucune de ces propositions"
         valid: true
     header: ""
@@ -171,13 +171,13 @@ problems:
     type: multiple-choice
   intersection: 
     choices: 
-      - text: ":math:`A + B`"
-      - text: ":math:`A - B`"
-      - text: ":math:`A * B`"
-      - text: ":math:`A | B`"
-      - text: ":math:`A & B`"
+      - text: ":code:`A + B`"
+      - text: ":code:`A - B`"
+      - text: ":code:`A * B`"
+      - text: ":code:`A | B`"
+      - text: ":code:`A & B`"
         valid: true
-      - text: ":math:`A ^ B`"
+      - text: ":code:`A ^ B`"
       - text: "Aucune de ces propositions"
     header: ""
     limit: 0
