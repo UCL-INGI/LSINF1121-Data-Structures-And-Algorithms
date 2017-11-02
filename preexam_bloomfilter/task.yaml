@@ -49,7 +49,7 @@ context: |-
     :math:`n^* = -\frac{n}{k} ln \left( 1 - \frac{X}{n} \right)`
     
     avec n = la taille du filtre de Bloom, k = le nombre de fonctions de hachage différentes utilisées et X = le nombre des bits `on` dans le filtre.
-environment: python3
+environment: mcq
 evaluate: best
 groups: false
 limits: 
@@ -112,7 +112,7 @@ problems:
       - text: ":math:`O(k)`"
       - text: ":math:`\\Omega(k)`"
       - text: ":math:`\\Theta(k)`"
-      - text: "On ne peut pas ajouter un élément à un filtre de Bloom."
+      - text: "On ne peut pas supprimer un élément d'un filtre de Bloom."
         valid: true
     header: ""
     limit: 0
