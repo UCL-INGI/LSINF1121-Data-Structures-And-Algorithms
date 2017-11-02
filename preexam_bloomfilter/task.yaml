@@ -145,7 +145,6 @@ problems:
     choices: 
       - text: "
             .. code-block:: java
-              
                 public class BloomFilter { int bitmask;
                     int f1(Object o) { return o.hashCode() * 41 % 2; } 
                     int f2(Object o) { return o.hashCode() * 31 % 3; }
@@ -155,7 +154,6 @@ problems:
             "
       - text: "
             .. code-block:: java
-              
                 public class BloomFilter { int bitmask;
                     int f1(Object o) { return o.hashCode() * 41 % 97; } 
                     int f2(Object o) { return o.hashCode() * 31 % 97; }
@@ -165,7 +163,6 @@ problems:
             "
       - text: "
             .. code-block:: java
-              
                 public class BloomFilter { int bitmask;
                     int f1(Object o) { return o.hashCode() * 41 % 31; } 
                     int f2(Object o) { return o.hashCode() * 31 % 31; }
@@ -176,7 +173,6 @@ problems:
         valid: true
       - text: "
             .. code-block:: java
-              
                 public class BloomFilter { int bitmask;
                     int f1(Object o) { return o.hashCode() * 41 % 32; } 
                     int f2(Object o) { return o.hashCode() * 31 % 32; }
