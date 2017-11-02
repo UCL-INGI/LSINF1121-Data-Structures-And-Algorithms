@@ -74,11 +74,12 @@ problems:
     type: multiple-choice
   complexite_spatiale: 
     choices: 
-      - text: ":math:`BloomFilter <= HashMap <= SinglyLinked <= RedBlack`"
-      - text: ":math:`BloomFilter <= HashMap <= RedBlack <= SinglyLinked`"
-      - text: ":math:`HashMap <= BloomFilter <= SinglyLinked <= RedBlack`"
-      - text: ":math:`BloomFilter <= SinglyLinked <= HashMap <= RedBlack`"
-      - text: ":math:`BloomFilter <= RedBlack <= SinglyLinked <= HashMap`"
+      - text: ":math:`BloomFilter \\le HashMap \\le SinglyLinked \\le RedBlack`"
+        valid: true
+      - text: ":math:`BloomFilter \\le HashMap \\le RedBlack \\le SinglyLinked`"
+      - text: ":math:`HashMap \\le BloomFilter \\le SinglyLinked \\le RedBlack`"
+      - text: ":math:`BloomFilter \\le SinglyLinked \\le HashMap \\le RedBlack`"
+      - text: ":math:`BloomFilter \\le RedBlack \\le SinglyLinked \\le HashMap`"
     header: ""
     limit: 0
     name: "Classez par ordre croissant de complexité spatiale. Singly-Linked List, BloomFilter, Red-Black Tree, HashMap."
