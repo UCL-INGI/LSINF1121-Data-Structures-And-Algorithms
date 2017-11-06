@@ -102,9 +102,10 @@ problems:
         -   text: On ne peut pas ajouter un élément à un filtre de Bloom.
         limit: 0
         type: multiple-choice
-        header: ''
-        name: Quelle est la complexité temporelle d'un ajout d'un élément dans le
-            filtre de Bloom ?
+        header: Quelle est la complexité temporelle d'un ajout d'un élément dans le
+            filtre de Bloom ? (On fait ici l'hypothèse que chacune des fonctions de
+            hachage est calculée en temps constant)
+        name: 'Complexité temporelle d''un ajout au filtre '
     complexite_temp_suppression:
         choices:
         -   text: :math:`O(1)`
@@ -118,9 +119,10 @@ problems:
         -   text: :math:`\Theta(k)`
         -   valid: true
             text: On ne peut pas supprimer un élément d'un filtre de Bloom.
-        header: ''
-        name: Quelle est la complexité temporelle de la suppression d'un élément dans
-            le filtre de Bloom ?
+        header: Quelle est la complexité temporelle de la suppression d'un élément
+            dans le filtre de Bloom ? (On fait ici l'hypothèse que chacune des fonctions
+            de hachage est calculée en temps constant)
+        name: Complexité temporelle de la suppression d'un élément
         type: multiple-choice
         limit: 0
     difference:
@@ -133,9 +135,9 @@ problems:
         -   text: :code:`A ^ B`
         -   valid: true
             text: Aucune de ces propositions
-        header: ''
-        name: La différence de deux filtres de Bloom A et B (ayant la même taille
-            et le même set de fonctions de hachage) peut s'implémenter comme
+        header: 'La différence de deux filtres de Bloom A et B (ayant la même taille
+            et le même set de fonctions de hachage) peut s''implémenter comme: '
+        name: Différence de deux sets
         type: multiple-choice
         limit: 0
     hashtable_est_k1:
