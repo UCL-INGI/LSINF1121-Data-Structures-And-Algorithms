@@ -80,15 +80,16 @@ environment: java8scala
 evaluate: best
 groups: false
 limits:
-    time: '120'
-    output: '100'
     memory: '750'
+    output: '100'
+    time: '120'
 name: 'Bilan M3: Global Warming'
 network_grading: false
+order: 17
 problems:
     nbSafePoints:
         type: match
-        answer: '14'
+        name: nbSafePoints
         header: |-
             What would be the result of
 
@@ -98,8 +99,11 @@ problems:
 
 
             expected: a number
-        name: nbSafePoints
+        answer: '14'
     implementation:
+        name: ''
+        language: java
+        type: code
         header: |+
             Copy-paste and complete the code below.
             Be careful with the expected time-complexity in each method.
@@ -130,12 +134,8 @@ problems:
 
 
 
-        name: ''
-        type: code
-        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
 weight: 1.0
-order: 17

@@ -196,7 +196,7 @@ public class GlobalWarmingTest {
     public boolean timeComplexityNbSafePoints() {
         try {
 
-            final int [][] matrix = getRandomMatrix(100,2000000);
+            final int [][] matrix = getRandomMatrix(1000,2000000);
             final GlobalWarming g = new GlobalWarmingImpl(matrix);
 
             boolean timeOk = new TimeLimitedCodeBlock() {
@@ -208,7 +208,7 @@ public class GlobalWarmingTest {
                     long t0 = System.currentTimeMillis();
 
                     for (int i = 0; i < 1000; i++) {
-                        g.nbSafePoints(1000000);
+                        g.nbSafePoints(i*1000);
                     }
 
                     /*
@@ -225,7 +225,7 @@ public class GlobalWarmingTest {
 
 
                 }
-            }.run(10);
+            }.run(50);
             if (!timeOk) return false;
             //Assert.assertTrue("correct time complexity", g.nCallsAdj < 3 * g.V());
 
