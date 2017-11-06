@@ -73,7 +73,7 @@ context: |
           }
 
         }
-environment: python3
+environment: mcq
 evaluate: best
 groups: false
 limits:
