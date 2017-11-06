@@ -69,9 +69,10 @@ problems:
                 garder toutes en mémoire
         -   text: Il n'y a aucune raison de préférer une structure en particulier
                 plutôt qu'une autre
-        header: ''
+        header: 'L''utilisation d''un Bloom filter vs une HashMap est plus indiqué
+            lorsque: '
         limit: 0
-        name: L'utilisation d'un Bloom filter vs une HashMap est plus indiqué lorsque
+        name: Bloom Filter vs HashMap
         type: multiple-choice
     complexite_spatiale:
         choices:
@@ -81,11 +82,11 @@ problems:
         -   text: :math:`HashMap \le BloomFilter \le SinglyLinked \le RedBlack`
         -   text: :math:`BloomFilter \le SinglyLinked \le HashMap \le RedBlack`
         -   text: :math:`BloomFilter \le RedBlack \le SinglyLinked \le HashMap`
-        name: Classez par ordre croissant de complexité spatiale. Singly-Linked List,
-            BloomFilter, Red-Black Tree, HashMap.
+        name: Complexité Spatiale
         limit: 0
         type: multiple-choice
-        header: ''
+        header: Classez par ordre croissant de complexité spatiale. Singly-Linked
+            List, BloomFilter, Red-Black Tree, HashMap.
     complexite_temp_ajout:
         choices:
         -   text: :math:`O(1)`
