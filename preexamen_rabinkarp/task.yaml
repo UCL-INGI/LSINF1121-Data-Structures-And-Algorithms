@@ -77,45 +77,45 @@ environment: python3
 evaluate: best
 groups: false
 limits:
-    memory: '100'
     output: '2'
     time: '30'
+    memory: '100'
 name: Pre-examen - Rabin Karp
 network_grading: false
 order: 25
 problems:
-    lasvegas_montecarlo:
-        name: Parmi les affirmations ci-dessous, sélectionne celles qui sont correctes
+    propositions:
         choices:
-        -   text: La version ``Monte Carlo`` de la recherche de sous-chaine basée
-                sur le finger printing de Rabin-Karp s'exécute en un temps linéaire
-                et renvoie un résultat qui est très probablement correct.
+        -   text: La complexité de cet algorithme est :math:`O(nm)`
+            feedback: :math:`O(nm)` est la complexité d'une recherche brute force.
+                Cette implémentation est dite `Monte Carlo` et sa complexité est :math:`O(n)`
+        -   text: La complexité de cet algorithme est :math:`O(n)`
             valid: true
+        -   text: La complexité de cet algorithme est :math:`O\left(n~log_2(m)\right)`
+            feedback: Le logarithme n'a aucune raison d'être. Cette implémentation
+                est dite `Monte Carlo` et sa complexité est :math:`O(n)`
+        -   feedback: Il n'y a aucune raison pour qu'n apparaise en exposant. Cette
+                implémentation est dite `Monte Carlo` et sa complexité est :math:`O(n)`
+            text: La complexité de cet algorithme est :math:`O(m^n)`
+        -   text: Cet implémentation renvoie toujours un résultat correct
+            feedback: C'est faux, puisqu'il ne vérifie pas que la sous-chaine trouvée
+                correspond effectivement au pattern recherché, on dit que ce bout
+                de code implémente la variante `Monte Carlo` de l'algorithme de Rabin
+                Karp. Cet algorithme est très probablement correct, mais il y a une
+                faible probabilité pour qu'il renvoie un résultat erroné (du a une
+                collision sur les hash).
         -   valid: true
-            text: La version ``Las Vegas`` de la recherche de sous-chaine basée sur
-                le finger printing de Rabin-Karp renvoie un résultat correct et s'exécute
-                en un temps très probablement linéaire.
-        -   text: La version ``Monte Carlo`` de la recherche de sous-chaine basée
-                sur le finger printing de Rabin-Karp renvoie un résultat correct et
-                s'exécute en un temps très probablement linéaire.
-        -   text: La version ``Las Vegas`` de la recherche de sous-chaine basée sur
-                le finger printing de Rabin-Karp s'exécute en un temps linéaire et
-                renvoie un résultat qui est très probablement correct.
+            text: Cet implémentation peut renvoyer un résultat incorrect.
         type: multiple-choice
-        header: ''
+        header: |
+            .. note::
+
+               Dans toutes les propositions, on suppose que:
+                 * `n` dénote la longueur du texte dans lequel on recherche le pattern
+                 * `m` dénote la longueur du pattern à trouver dans le texte
         limit: 0
+        name: Sélectionnez les propositions correctes
         multiple: true
-    nb_comparaisons:
-        header: |+
-            De combien de comparaisons a-t-on besoin pour rechercher la première occurence de la sous-chaine "SINF1121" dans le texte suivant si on applique l'algorithme de Rabin-Karp (variante Monte Carlo). Donnez un nombre unique.
-
-            .. code::
-
-                Je suis prêt pour mon examen de SINF1121, donc je vais le réussir.
-
-        answer: '33'
-        type: match
-        name: ''
 stored_submissions: 0
 submission_limit:
     amount: 1
