@@ -136,6 +136,65 @@ problems:
         multiple: true
         name: En cas de collision, quelle(s) stratégie(s) peut-on implémenter pour
             résoudre le conflit ?
+    hashtable_est_k1:
+        choices:
+        -   valid: true
+            text: Vrai
+        -   text: Faux
+        type: multiple-choice
+        name: Une table de hachage est un Bloom filter avec k=1 ?
+        limit: 0
+        header: ''
+    pourquoi_k_pg_1:
+        limit: 0
+        choices:
+        -   text: Il n'y en a pas
+        -   text: Cela permet de résister aux corruptions de la mémoire, on peut utiliser
+                les autres bits comme un code de détection d'erreur
+        -   valid: true
+            text: Cela permet de réduire le risque de faux-positifs malgré le fait
+                que les même bits soient utilisés pour détecter la présence de plusieurs
+                éléments différents
+        header: ''
+        name: Quel est l'intérêt d'utiliser k >= 1 plutôt que k = 1 ?
+        type: multiple-choice
+    propositions:
+        choices:
+        -   text: Une HashMap stocke la valeur associée à chacune des clés.
+            valid: true
+        -   text: Un filtre de Bloom stocke la valeur associée à chacune des clés
+        -   valid: true
+            text: Malgré le risque de collision pour chacune des k fonctions de hachage,
+                un filtre de Bloom permet de partager certains bits entre les clés
+                associés à différents items car la probabilité de collision est réduite.
+        -   text: Grâce au separate chaining, une HashMap peut partager certains bits
+                entre différentes clés sans impacter la complexité d'un test d'appartenance.
+        limit: 0
+        type: multiple-choice
+        header: ''
+        name: 'Sélectionne les propositions qui sont vraies:'
+        multiple: true
+    proba_collisions:
+        limit: 0
+        choices:
+        -   valid: true
+            text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x`.
+                Si on utilise *h1* et *h2* alors :math:`\epsilon = \left( 1 - (1 -
+                \frac{1}{n})^2x \right)^2`.
+        -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x`.
+                Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^{x^2}`.
+        -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - x (1 -
+                \frac{1}{n})`. Si on utilise *h1* et *h2* alors :math:`\epsilon =
+                1 - 2x (1 - \frac{1}{n})`.
+        -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - x (1 -
+                \frac{1}{n})`. Si on utilise *h1* et *h2* alors :math:`\epsilon =
+                1 - x^2 (1 - \frac{1}{n})`.
+        type: multiple-choice
+        name: Collisions
+        header: Si h1 et h2 sont deux fonctions de hachage qui sélectionnent avec
+            une même probabilité 1/n chacune des 'n' positions du bitvector utilisé
+            pour implémenter un filtre de Bloom, et si x éléments ont étés ajoutés
+            au filtre, comment évolue le risque ϵ de faux positif ?
     difference:
         choices:
         -   text: :code:`A + B`
@@ -167,6 +226,7 @@ problems:
         name: Intersection de deux sets
         type: multiple-choice
     union:
+        limit: 0
         choices:
         -   text: :code:`A + B`
         -   text: :code:`A - B`
@@ -180,7 +240,6 @@ problems:
             le même set de fonctions de hachage) peut s''implémenter comme: '
         type: multiple-choice
         name: Union de deux sets
-        limit: 0
     complexite_spatiale:
         choices:
         -   text: :math:`BloomFilter \le HashMap \le SinglyLinked \le RedBlack`
@@ -226,65 +285,6 @@ problems:
             mémoire qui serait nécessaire pour implémenter ce comptage; sachant que
             le réseau social compte 328 millions d'utilisateurs actifs ?
         type: multiple-choice
-    hashtable_est_k1:
-        choices:
-        -   valid: true
-            text: Vrai
-        -   text: Faux
-        type: multiple-choice
-        name: Une table de hachage est un Bloom filter avec k=1 ?
-        limit: 0
-        header: ''
-    pourquoi_k_pg_1:
-        limit: 0
-        choices:
-        -   text: Il n'y en a pas
-        -   text: Cela permet de résister aux corruptions de la mémoire, on peut utiliser
-                les autres bits comme un code de détection d'erreur
-        -   valid: true
-            text: Cela permet de réduire le risque de faux-positifs malgré le fait
-                que les même bits soient utilisés pour détecter la présence de plusieurs
-                éléments différents
-        header: ''
-        name: Quel est l'intérêt d'utiliser k >= 1 plutôt que k = 1 ?
-        type: multiple-choice
-    proba_collisions:
-        choices:
-        -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x`.
-                Si on utilise *h1* et *h2* alors :math:`\epsilon = \left( 1 - (1 -
-                \frac{1}{n})^2x \right)^2`.
-            valid: true
-        -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x`.
-                Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^{x^2}`.
-        -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - x (1 -
-                \frac{1}{n})`. Si on utilise *h1* et *h2* alors :math:`\epsilon =
-                1 - 2x (1 - \frac{1}{n})`.
-        -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - x (1 -
-                \frac{1}{n})`. Si on utilise *h1* et *h2* alors :math:`\epsilon =
-                1 - x^2 (1 - \frac{1}{n})`.
-        limit: 0
-        type: multiple-choice
-        name: Collisions
-        header: Si h1 et h2 sont deux fonctions de hachage qui sélectionnent avec
-            une même probabilité 1/n chacune des 'n' positions du bitvector utilisé
-            pour implémenter un filtre de Bloom, et si x éléments ont étés ajoutés
-            au filtre, comment évolue le risque ϵ de faux positif ?
-    propositions:
-        choices:
-        -   text: Une HashMap stocke la valeur associée à chacune des clés.
-            valid: true
-        -   text: Un filtre de Bloom stocke la valeur associée à chacune des clés
-        -   valid: true
-            text: Malgré le risque de collision pour chacune des k fonctions de hachage,
-                un filtre de Bloom permet de partager certains bits entre les clés
-                associés à différents items car la probabilité de collision est réduite.
-        -   text: Grâce au separate chaining, une HashMap peut partager certains bits
-                entre différentes clés sans impacter la complexité d'un test d'appartenance.
-        limit: 0
-        type: multiple-choice
-        header: ''
-        name: 'Sélectionne les propositions qui sont vraies:'
-        multiple: true
 stored_submissions: 0
 submission_limit:
     amount: -1
