@@ -53,8 +53,8 @@ evaluate: best
 groups: false
 limits:
     time: '30'
-    output: '2'
     memory: '100'
+    output: '2'
 name: Pré-examen - Bloom Filters
 network_grading: false
 order: 26
@@ -100,9 +100,9 @@ problems:
         header: Quelle est la complexité temporelle d'un ajout d'un élément dans le
             filtre de Bloom ? (On fait ici l'hypothèse que chacune des fonctions de
             hachage est calculée en temps constant)
+        limit: 0
         type: multiple-choice
         name: 'Complexité temporelle d''un ajout au filtre '
-        limit: 0
     complexite_temp_suppression:
         choices:
         -   text: :math:`O(1)`
@@ -142,10 +142,10 @@ problems:
         -   text: Faux
         type: multiple-choice
         name: HashSet - CollisionResolutionStrategy == BloomFilter with k = 1 ?
+        limit: 0
         header: On peut toujours remplacer une implémentation d'un hash set qui n'incorpore
             aucune stratégie de résolution de collision (*pas de separate-chaining
             ni de linear probing*) par un bloom filter avec k = 1 ?
-        limit: 0
     pourquoi_k_pg_1:
         limit: 0
         choices:
@@ -169,9 +169,9 @@ problems:
                 associés à différents items car la probabilité de collision est réduite.
         -   text: Grâce au separate chaining, une HashMap peut partager certains bits
                 entre différentes clés sans impacter la complexité d'un test d'appartenance.
-        type: multiple-choice
         limit: 0
         header: ''
+        type: multiple-choice
         name: 'Sélectionne les propositions qui sont vraies:'
         multiple: true
     union_faux_positifs:
@@ -192,6 +192,7 @@ problems:
                 b` (il n'y a pas de nouveaux faux-positifs)
         multiple: true
         limit: 0
+        name: Sélectionnez la/les proposition(s) correcte(s)
         header: |
             Soient `a` et `b` deux vecteurs de bits utilisés pour représenter deux filtres de Bloom utilisant un même ensemble F de fonctions de hachage. Si `c` est le vecteur de bit représentant un filtre de Bloom obtenu par `c = a | b`.
 
@@ -199,52 +200,6 @@ problems:
 
               Dans les propositions suivantes, on utilisera le nom du bit
               vector pour désigner le filtre de Bloom auquel il se rapporte.
-        name: Sélectionnez la/les proposition(s) correcte(s)
-    difference:
-        choices:
-        -   text: :code:`A + B`
-        -   text: :code:`A - B`
-        -   text: :code:`A * B`
-        -   text: :code:`A | B`
-        -   text: :code:`A & B`
-        -   text: :code:`A ^ B`
-        -   valid: true
-            text: Aucune de ces propositions
-        header: 'La différence de deux filtres de Bloom A et B (ayant la même taille
-            et le même set de fonctions de hachage) peut s''implémenter comme: '
-        limit: 0
-        name: Différence de deux sets
-        type: multiple-choice
-    intersection:
-        choices:
-        -   text: :code:`A + B`
-        -   text: :code:`A - B`
-        -   text: :code:`A * B`
-        -   text: :code:`A | B`
-        -   valid: true
-            text: :code:`A & B`
-        -   text: :code:`A ^ B`
-        -   text: Aucune de ces propositions
-        header: L'intersection de deux filtres de Bloom A et B (ayant la même taille
-            et le même set de fonctions de hachage) peut s'implémenter comme
-        limit: 0
-        name: Intersection de deux sets
-        type: multiple-choice
-    union:
-        choices:
-        -   text: :code:`A + B`
-        -   text: :code:`A - B`
-        -   text: :code:`A * B`
-        -   valid: true
-            text: :code:`A | B`
-        -   text: :code:`A & B`
-        -   text: :code:`A ^ B`
-        -   text: Aucune de ces propositions
-        header: 'L''union de deux filtres de Bloom A et B (ayant la même taille et
-            le même set de fonctions de hachage) peut s''implémenter comme: '
-        name: Union de deux sets
-        type: multiple-choice
-        limit: 0
     complexite_spatiale:
         choices:
         -   text: :math:`BloomFilter \le HashMap \le SinglyLinked \le RedBlack`
@@ -255,9 +210,11 @@ problems:
         -   text: :math:`BloomFilter \le RedBlack \le SinglyLinked \le HashMap`
         name: Complexité Spatiale
         limit: 0
-        header: Classez par ordre croissant de complexité spatiale. Singly-Linked
-            List, BloomFilter, Red-Black Tree, HashMap.
         type: multiple-choice
+        header: |-
+            *A reformuler*
+
+            Classez par ordre croissant de complexité spatiale. Singly-Linked List, BloomFilter, Red-Black Tree, HashMap.
     twitter_exact:
         choices:
         -   text: 300 KB
@@ -265,13 +222,10 @@ problems:
         -   text: 39  MB
             valid: true
         -   text: 2   GB
-        header: Si Twitter voulait compter de manière exacte (avec un `HashSet`) le
-            nombre d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle
-            est (parmi les propositions suivantes) la quantité minimale de mémoire
-            qui serait nécessaire pour implémenter ce comptage; sachant que le réseau
-            social compte 328 millions d'utilisateurs actifs ? (Par simplicité, on
-            fait ici l'hypothèse que chacune des entrées du HashSet ne requiert qu'un
-            seul bit).
+        header: |-
+            *A reformuler*
+
+            Si Twitter voulait compter de manière exacte (avec un `HashSet`) le nombre d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle est (parmi les propositions suivantes) la quantité minimale de mémoire qui serait nécessaire pour implémenter ce comptage; sachant que le réseau social compte 328 millions d'utilisateurs actifs ? (Par simplicité, on fait ici l'hypothèse que chacune des entrées du HashSet ne requiert qu'un seul bit).
         type: multiple-choice
         name: Comptage exact
         limit: 0
@@ -282,16 +236,20 @@ problems:
         -   text: 10  MB
         -   text: 39  MB
         -   text: 2   GB
-        limit: 0
-        header: Si Twitter voulait compter de manière approximative (avec un BloomFilter)
-            le nombre  d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui,
-            quelle est (parmi les propositions suivantes) la quantité minimale de
-            mémoire qui serait nécessaire pour implémenter ce comptage; sachant que
-            le réseau social compte 328 millions d'utilisateurs actifs ?
         name: Comptage approximatif
+        limit: 0
+        header: |-
+            *A reformuler*
+
+            Si Twitter voulait compter de manière approximative (avec un BloomFilter) le nombre  d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle est (parmi les propositions suivantes) la quantité minimale de mémoire qui serait nécessaire pour implémenter ce comptage; sachant que le réseau social compte 328 millions d'utilisateurs actifs ?
         type: multiple-choice
     implem_utile:
-        limit: 0
+        choices:
+        -   text: Solution A
+        -   text: Solution B
+        -   text: Solution C
+            valid: true
+        -   text: Solution D
         header: |+
             Parmi les propositions suivantes, la- ou lesquelles vous semblent être des implémentations utiles ?
 
@@ -348,15 +306,10 @@ problems:
                 }
 
 
-        choices:
-        -   text: Solution A
-        -   text: Solution B
-        -   text: Solution C
-            valid: true
-        -   text: Solution D
         type: multiple-choice
-        name: Implémentation(s) utile(s)
+        limit: 0
         multiple: true
+        name: Implémentation(s) utile(s)
 stored_submissions: 0
 submission_limit:
     amount: 1
