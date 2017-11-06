@@ -62,8 +62,8 @@ problems:
         multiple: true
         choices:
         -   text: Le nombre de clés possibles est connu à l'avance
-        -   text: Il est impossible de prédire le nombre de clés possibles
-            valid: true
+        -   valid: true
+            text: Il est impossible de prédire le nombre de clés possibles
         -   valid: true
             text: Il y a un trop grand nombre de clés possibles que pour pouvoir les
                 garder toutes en mémoire
@@ -74,19 +74,17 @@ problems:
         limit: 0
         name: Bloom Filter vs HashMap
         type: multiple-choice
-    complexite_spatiale:
+    limitation:
         choices:
-        -   text: :math:`BloomFilter \le HashMap \le SinglyLinked \le RedBlack`
-            valid: true
-        -   text: :math:`BloomFilter \le HashMap \le RedBlack \le SinglyLinked`
-        -   text: :math:`HashMap \le BloomFilter \le SinglyLinked \le RedBlack`
-        -   text: :math:`BloomFilter \le SinglyLinked \le HashMap \le RedBlack`
-        -   text: :math:`BloomFilter \le RedBlack \le SinglyLinked \le HashMap`
-        name: Complexité Spatiale
-        limit: 0
+        -   text: Son blocking factor. En effet, plus il y a d'éléments dans le filtre,
+                plus il est difficile d'en ajouter de nouveaux.
+        -   valid: true
+            text: Son load factor. En effet, plus il y a d'éléments dans le filtre
+                plus il y a de chance que le test d'appartenance renvoie un faux positif.
+        name: Qu'est-ce qui limite l'utilité de cette structure
         type: multiple-choice
-        header: Classez par ordre croissant de complexité spatiale. Singly-Linked
-            List, BloomFilter, Red-Black Tree, HashMap.
+        limit: 0
+        header: ''
     complexite_temp_ajout:
         choices:
         -   text: :math:`O(1)`
@@ -140,15 +138,6 @@ problems:
         name: Différence de deux sets
         type: multiple-choice
         limit: 0
-    hashtable_est_k1:
-        choices:
-        -   valid: true
-            text: Vrai
-        -   text: Faux
-        type: multiple-choice
-        name: Une table de hachage est un Bloom filter avec k=1 ?
-        limit: 0
-        header: ''
     intersection:
         choices:
         -   text: :code:`A + B`
@@ -159,20 +148,46 @@ problems:
             text: :code:`A & B`
         -   text: :code:`A ^ B`
         -   text: Aucune de ces propositions
-        header: ''
-        limit: 0
-        name: L'intersection de deux filtres de Bloom A et B (ayant la même taille
+        header: L'intersection de deux filtres de Bloom A et B (ayant la même taille
             et le même set de fonctions de hachage) peut s'implémenter comme
+        limit: 0
+        name: Intersection de deux sets
         type: multiple-choice
-    limitation:
+    union:
+        limit: 0
         choices:
-        -   text: Son blocking factor. En effet, plus il y a d'éléments dans le filtre,
-                plus il est difficile d'en ajouter de nouveaux.
-        -   valid: true
-            text: Son load factor. En effet, plus il y a d'éléments dans le filtre
-                plus il y a de chance que le test d'appartenance renvoie un faux positif.
-        name: Qu'est-ce qui limite l'utilité de cette structure
+        -   text: :code:`A + B`
+        -   text: :code:`A - B`
+        -   text: :code:`A * B`
+        -   text: :code:`A | B`
+            valid: true
+        -   text: :code:`A & B`
+        -   text: :code:`A ^ B`
+        -   text: Aucune de ces propositions
+        header: 'L''union de deux filtres de Bloom A et B (ayant la même taille et
+            le même set de fonctions de hachage) peut s''implémenter comme: '
         type: multiple-choice
+        name: Union de deux sets
+    complexite_spatiale:
+        choices:
+        -   text: :math:`BloomFilter \le HashMap \le SinglyLinked \le RedBlack`
+            valid: true
+        -   text: :math:`BloomFilter \le HashMap \le RedBlack \le SinglyLinked`
+        -   text: :math:`HashMap \le BloomFilter \le SinglyLinked \le RedBlack`
+        -   text: :math:`BloomFilter \le SinglyLinked \le HashMap \le RedBlack`
+        -   text: :math:`BloomFilter \le RedBlack \le SinglyLinked \le HashMap`
+        header: Classez par ordre croissant de complexité spatiale. Singly-Linked
+            List, BloomFilter, Red-Black Tree, HashMap.
+        name: Complexité Spatiale
+        limit: 0
+        type: multiple-choice
+    hashtable_est_k1:
+        choices:
+        -   valid: true
+            text: Vrai
+        -   text: Faux
+        type: multiple-choice
+        name: Une table de hachage est un Bloom filter avec k=1 ?
         limit: 0
         header: ''
     pourquoi_k_pg_1:
@@ -189,11 +204,12 @@ problems:
         name: Quel est l'intérêt d'utiliser k >= 1 plutôt que k = 1 ?
         type: multiple-choice
     proba_collisions:
+        limit: 0
         choices:
-        -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x`.
+        -   valid: true
+            text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x`.
                 Si on utilise *h1* et *h2* alors :math:`\epsilon = \left( 1 - (1 -
                 \frac{1}{n})^2x \right)^2`.
-            valid: true
         -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^x`.
                 Si on utilise *h1* et *h2* alors :math:`\epsilon = 1 - (1 - \frac{1}{n})^{x^2}`.
         -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - x (1 -
@@ -202,7 +218,6 @@ problems:
         -   text: Si on utilise uniquement *h1* alors :math:`\epsilon = 1 - x (1 -
                 \frac{1}{n})`. Si on utilise *h1* et *h2* alors :math:`\epsilon =
                 1 - x^2 (1 - \frac{1}{n})`.
-        limit: 0
         type: multiple-choice
         name: Si h1 et h2 sont deux fonctions de hachage qui sélectionnent avec une
             même probabilité 1/n chacune des 'n' positions du bitvector utilisé pour
@@ -226,6 +241,7 @@ problems:
         name: 'Sélectionne les propositions qui sont vraies:'
         multiple: true
     recovery:
+        type: multiple-choice
         choices:
         -   text: Linear Probing
         -   text: Separate Chaining
@@ -235,7 +251,6 @@ problems:
         limit: 0
         name: En cas de collision, quelle(s) stratégie(s) peut-on implémenter pour
             résoudre le conflit ?
-        type: multiple-choice
         multiple: true
         header: ''
     twitter_approx:
@@ -269,21 +284,6 @@ problems:
             social compte 328 millions d'utilisateurs actifs ? (Par simplicité, on
             fait ici l'hypothèse que chacune des entrées du HashSet ne requiert qu'un
             seul bit).
-        limit: 0
-    union:
-        choices:
-        -   text: :code:`A + B`
-        -   text: :code:`A - B`
-        -   text: :code:`A * B`
-        -   valid: true
-            text: :code:`A | B`
-        -   text: :code:`A & B`
-        -   text: :code:`A ^ B`
-        -   text: Aucune de ces propositions
-        header: ''
-        name: L'union de deux filtres de Bloom A et B (ayant la même taille et le
-            même set de fonctions de hachage) peut s'implémenter comme
-        type: multiple-choice
         limit: 0
 stored_submissions: 0
 submission_limit:
