@@ -120,8 +120,8 @@ problems:
         header: Quelle est la complexité temporelle de la suppression d'un élément
             dans le filtre de Bloom ? (On fait ici l'hypothèse que chacune des fonctions
             de hachage est calculée en temps constant)
-        name: Complexité temporelle de la suppression d'un élément
         type: multiple-choice
+        name: Complexité temporelle de la suppression d'un élément
         limit: 0
     difference:
         choices:
@@ -176,10 +176,42 @@ problems:
         -   text: :math:`HashMap \le BloomFilter \le SinglyLinked \le RedBlack`
         -   text: :math:`BloomFilter \le SinglyLinked \le HashMap \le RedBlack`
         -   text: :math:`BloomFilter \le RedBlack \le SinglyLinked \le HashMap`
-        header: Classez par ordre croissant de complexité spatiale. Singly-Linked
-            List, BloomFilter, Red-Black Tree, HashMap.
         name: Complexité Spatiale
         limit: 0
+        type: multiple-choice
+        header: Classez par ordre croissant de complexité spatiale. Singly-Linked
+            List, BloomFilter, Red-Black Tree, HashMap.
+    twitter_exact:
+        choices:
+        -   text: 300 KB
+        -   text: 10  MB
+        -   text: 39  MB
+            valid: true
+        -   text: 2   GB
+        header: Si Twitter voulait compter de manière exacte (avec un `HashSet`) le
+            nombre d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle
+            est (parmi les propositions suivantes) la quantité minimale de mémoire
+            qui serait nécessaire pour implémenter ce comptage; sachant que le réseau
+            social compte 328 millions d'utilisateurs actifs ? (Par simplicité, on
+            fait ici l'hypothèse que chacune des entrées du HashSet ne requiert qu'un
+            seul bit).
+        type: multiple-choice
+        name: Comptage exact
+        limit: 0
+    twitter_approx:
+        choices:
+        -   text: 300 KB
+            valid: true
+        -   text: 10  MB
+        -   text: 39  MB
+        -   text: 2   GB
+        name: Comptage approximatif
+        limit: 0
+        header: Si Twitter voulait compter de manière approximative (avec un BloomFilter)
+            le nombre  d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui,
+            quelle est (parmi les propositions suivantes) la quantité minimale de
+            mémoire qui serait nécessaire pour implémenter ce comptage; sachant que
+            le réseau social compte 328 millions d'utilisateurs actifs ?
         type: multiple-choice
     hashtable_est_k1:
         choices:
@@ -192,6 +224,7 @@ problems:
         header: ''
     pourquoi_k_pg_1:
         limit: 0
+        name: Quel est l'intérêt d'utiliser k >= 1 plutôt que k = 1 ?
         choices:
         -   text: Il n'y en a pas
         -   text: Cela permet de résister aux corruptions de la mémoire, on peut utiliser
@@ -201,7 +234,6 @@ problems:
                 que les même bits soient utilisés pour détecter la présence de plusieurs
                 éléments différents
         header: ''
-        name: Quel est l'intérêt d'utiliser k >= 1 plutôt que k = 1 ?
         type: multiple-choice
     proba_collisions:
         limit: 0
@@ -253,38 +285,6 @@ problems:
             résoudre le conflit ?
         multiple: true
         header: ''
-    twitter_approx:
-        choices:
-        -   text: 300 KB
-            valid: true
-        -   text: 10  MB
-        -   text: 39  MB
-        -   text: 2   GB
-        name: Si Twitter voulait compter de manière approximative (avec un BloomFilter)
-            le nombre  d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui,
-            quelle est (parmi les propositions suivantes) la quantité minimale de
-            mémoire qui serait nécessaire pour implémenter ce comptage; sachant que
-            le réseau social compte 328 millions d'utilisateurs actifs ?
-        limit: 0
-        header: ''
-        type: multiple-choice
-    twitter_exact:
-        choices:
-        -   text: 300 KB
-        -   text: 10  MB
-        -   text: 39  MB
-            valid: true
-        -   text: 2   GB
-        header: ''
-        type: multiple-choice
-        name: Si Twitter voulait compter de manière exacte (avec un HashSet) le nombre
-            d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle est
-            (parmi les propositions suivantes) la quantité minimale de mémoire qui
-            serait nécessaire pour implémenter ce comptage; sachant que le réseau
-            social compte 328 millions d'utilisateurs actifs ? (Par simplicité, on
-            fait ici l'hypothèse que chacune des entrées du HashSet ne requiert qu'un
-            seul bit).
-        limit: 0
 stored_submissions: 0
 submission_limit:
     amount: -1
