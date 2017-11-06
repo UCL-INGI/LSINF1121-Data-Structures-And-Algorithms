@@ -1,0 +1,39 @@
+accessible: true
+author: Xavier Gillard
+context: ''
+environment: python3
+evaluate: best
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: Pre-examen - Rabin Karp
+network_grading: false
+problems:
+    lasvegas_montecarlo:
+        name: Parmi les affirmations ci-dessous, sélectionne celles qui sont correctes
+        choices:
+        -   text: La version ``Monte Carlo`` de la recherche de sous-chaine basée
+                sur le finger printing de Rabin-Karp s'exécute en un temps linéaire
+                et renvoie un résultat qui est très probablement correct.
+            valid: true
+        -   valid: true
+            text: La version ``Las Vegas`` de la recherche de sous-chaine basée sur
+                le finger printing de Rabin-Karp renvoie un résultat correct et s'exécute
+                en un temps très probablement linéaire.
+        -   text: La version ``Monte Carlo`` de la recherche de sous-chaine basée
+                sur le finger printing de Rabin-Karp renvoie un résultat correct et
+                s'exécute en un temps très probablement linéaire.
+        -   text: La version ``Las Vegas`` de la recherche de sous-chaine basée sur
+                le finger printing de Rabin-Karp s'exécute en un temps linéaire et
+                renvoie un résultat qui est très probablement correct.
+        type: multiple-choice
+        limit: 0
+        multiple: true
+        header: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
