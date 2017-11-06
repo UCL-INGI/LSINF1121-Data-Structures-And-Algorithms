@@ -1,6 +1,6 @@
 accessible: /2017-11-11 08:00:05
 author: Simon Hardy
-context: |
+context: |-
     For this mission, you have to write a plagiarism detector (a class named "Plagiarism") implementing the following interface :
 
     .. code-block:: java
@@ -57,6 +57,8 @@ context: |
         }
 
     For more information about the unspecified methods of *MapInterface*, see the Java Map interface (http://docs.oracle.com/javase/7/docs/api/java/util/Map.html).
+
+    Note that your implementation of `MapInterface` must use `String` as key type: `public class HashMap<V> implements MapInterface<String, V>` should be the signature of your class.
 environment: java8scala
 evaluate: best
 groups: true
