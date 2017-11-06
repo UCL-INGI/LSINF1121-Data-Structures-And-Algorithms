@@ -10,7 +10,7 @@ limits:
     memory: '200'
 name: Mission 6 - Questions report [group]
 network_grading: false
-order: 29
+order: 30
 problems:
     report:
         name: Report

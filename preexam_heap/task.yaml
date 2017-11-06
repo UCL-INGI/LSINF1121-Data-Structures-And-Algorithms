@@ -27,7 +27,7 @@ limits:
     output: '2'
 name: Pré-examen - Heap
 network_grading: false
-order: 34
+order: 35
 problems:
     heap1:
         answer: '5'
