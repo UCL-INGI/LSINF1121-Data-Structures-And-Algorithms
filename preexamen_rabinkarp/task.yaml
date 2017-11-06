@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Xavier Gillard
 context: ''
 environment: python3
@@ -29,11 +29,22 @@ problems:
                 le finger printing de Rabin-Karp s'exécute en un temps linéaire et
                 renvoie un résultat qui est très probablement correct.
         type: multiple-choice
+        header: ''
         limit: 0
         multiple: true
-        header: ''
+    nb_comparaisons:
+        header: |+
+            De combien de comparaisons a-t-on besoin pour rechercher la première occurence de la sous-chaine "SINF1121" dans le texte suivant si on applique l'algorithme de Rabin-Karp (variante Monte Carlo). Donnez un nombre unique.
+
+            .. code::
+
+                Je suis prêt pour mon examen de SINF1121, donc je vais le réussir.
+
+        answer: '33'
+        type: match
+        name: ''
 stored_submissions: 0
 submission_limit:
-    amount: -1
+    amount: 1
     period: -1
 weight: 1.0
