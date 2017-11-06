@@ -158,22 +158,6 @@ problems:
         header: ''
         name: Quel est l'intérêt d'utiliser k >= 1 plutôt que k = 1 ?
         type: multiple-choice
-    propositions:
-        choices:
-        -   text: Une HashMap stocke la valeur associée à chacune des clés.
-            valid: true
-        -   text: Un filtre de Bloom stocke la valeur associée à chacune des clés
-        -   valid: true
-            text: Malgré le risque de collision pour chacune des k fonctions de hachage,
-                un filtre de Bloom permet de partager certains bits entre les clés
-                associés à différents items car la probabilité de collision est réduite.
-        -   text: Grâce au separate chaining, une HashMap peut partager certains bits
-                entre différentes clés sans impacter la complexité d'un test d'appartenance.
-        limit: 0
-        type: multiple-choice
-        header: ''
-        name: 'Sélectionne les propositions qui sont vraies:'
-        multiple: true
     proba_collisions:
         limit: 0
         choices:
@@ -195,6 +179,22 @@ problems:
             une même probabilité 1/n chacune des 'n' positions du bitvector utilisé
             pour implémenter un filtre de Bloom, et si x éléments ont étés ajoutés
             au filtre, comment évolue le risque ϵ de faux positif ?
+    propositions:
+        choices:
+        -   text: Une HashMap stocke la valeur associée à chacune des clés.
+            valid: true
+        -   text: Un filtre de Bloom stocke la valeur associée à chacune des clés
+        -   valid: true
+            text: Malgré le risque de collision pour chacune des k fonctions de hachage,
+                un filtre de Bloom permet de partager certains bits entre les clés
+                associés à différents items car la probabilité de collision est réduite.
+        -   text: Grâce au separate chaining, une HashMap peut partager certains bits
+                entre différentes clés sans impacter la complexité d'un test d'appartenance.
+        limit: 0
+        type: multiple-choice
+        header: ''
+        name: 'Sélectionne les propositions qui sont vraies:'
+        multiple: true
     difference:
         choices:
         -   text: :code:`A + B`
