@@ -57,22 +57,21 @@ limits:
     memory: '100'
 name: Pré-examen - Bloom Filters
 network_grading: false
+order: 26
 problems:
     bloom_vs_hashmap:
         multiple: true
         choices:
         -   text: Le nombre de clés possibles est connu à l'avance
-        -   text: Il est impossible de prédire le nombre de clés possibles
-            valid: true
         -   valid: true
             text: Il y a un trop grand nombre de clés possibles que pour pouvoir les
                 garder toutes en mémoire
         -   text: Il n'y a aucune raison de préférer une structure en particulier
                 plutôt qu'une autre
-        header: 'L''utilisation d''un Bloom filter vs une HashMap est plus indiqué
-            lorsque: '
+        header: 'Pour implémenter un test d''appartenance, il est préférable d''utiliser
+            un Bloom filter plutôt qu''un HashSet lorsque: '
         limit: 0
-        name: Bloom Filter vs HashMap
+        name: Bloom Filter vs HashSet
         type: multiple-choice
     limitation:
         type: multiple-choice
@@ -357,4 +356,3 @@ submission_limit:
     amount: 1
     period: -1
 weight: 1.0
-order: 26
