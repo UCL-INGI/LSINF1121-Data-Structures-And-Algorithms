@@ -150,12 +150,11 @@ problems:
         limit: 0
         choices:
         -   text: Il n'y en a pas
-        -   text: Cela permet de résister aux corruptions de la mémoire, on peut utiliser
-                les autres bits comme un code de détection d'erreur
+        -   text: Les fonctions :math:`f_2 \cdots f_k` servent à corriger de potentielles
+                erreurs de calcul dans :math:`f_1`
         -   valid: true
-            text: Cela permet de réduire le risque de faux-positifs malgré le fait
-                que les même bits soient utilisés pour détecter la présence de plusieurs
-                éléments différents
+            text: Cela permet de réduire le risque de faux-positifs malgré les collisions
+                qui peuvent se produire pour chacune des fonctions de hash.
         header: ''
         name: Quel est l'intérêt d'utiliser k >= 1 plutôt que k = 1 ?
         type: multiple-choice
