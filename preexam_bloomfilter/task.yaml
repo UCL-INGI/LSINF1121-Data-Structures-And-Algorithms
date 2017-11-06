@@ -141,9 +141,11 @@ problems:
             text: Vrai
         -   text: Faux
         type: multiple-choice
-        name: Une table de hachage est un Bloom filter avec k=1 ?
+        name: HashSet - CollisionResolutionStrategy == BloomFilter with k = 1 ?
         limit: 0
-        header: ''
+        header: On peut toujours remplacer une implémentation d'un hash set qui n'incorpore
+            aucune stratégie de résolution de collision (*pas de separate-chaining
+            ni de linear probing*) par un bloom filter avec k = 1 ?
     pourquoi_k_pg_1:
         limit: 0
         choices:
