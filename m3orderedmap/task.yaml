@@ -1,4 +1,4 @@
-accessible: /2017-10-29 20:30:00
+accessible: true
 author: Simon Hardy
 context: |-
     You are asked to implement the following interface, representing a custom Ordered Map (for more informations about the methods without comment listed below, refer to the official SortedMap interface of Java).
