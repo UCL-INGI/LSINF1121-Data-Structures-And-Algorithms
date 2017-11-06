@@ -177,8 +177,8 @@ problems:
         name: Collisions
         header: Si h1 et h2 sont deux fonctions de hachage qui sélectionnent avec
             une même probabilité 1/n chacune des 'n' positions du bitvector utilisé
-            pour implémenter un filtre de Bloom, et si x éléments ont étés ajoutés
-            au filtre, comment évolue le risque ϵ de faux positif ?
+            pour implémenter un filtre de Bloom, et si :math:`x > 0` éléments ont
+            étés ajoutés au filtre, comment évolue le risque ϵ de faux positif ?
     propositions:
         choices:
         -   text: Une HashMap stocke la valeur associée à chacune des clés.
