@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: Xavier Gillard
 context: |
     A la page 777 du livre "Algorithms" 4th edition, on vous propose l'implémentation suivante de l'algorithme de Rabin Karp.
@@ -80,7 +80,7 @@ limits:
     output: '2'
     time: '30'
     memory: '100'
-name: Pre-examen - Rabin Karp
+name: Bilan M4 - Rabin Karp
 network_grading: false
 order: 26
 problems:
