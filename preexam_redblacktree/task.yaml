@@ -29,7 +29,7 @@ limits:
     output: '2'
 name: Bilan M3 - Red Black Tree
 network_grading: false
-order: 21
+order: 20
 problems:
     redblacktree1:
         header: 'Starting with an empty ``Red-Black Tree``, we add ``1`` to the ``Red-Black

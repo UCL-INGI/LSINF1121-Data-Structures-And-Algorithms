@@ -61,9 +61,9 @@ limits:
     output: '2'
     time: '300'
     memory: '1500'
-name: 'Bilan M1: Circular LinkedList'
+name: Bilan M1 - Circular LinkedList
 network_grading: false
-order: 8
+order: 7
 problems:
     size:
         language: java

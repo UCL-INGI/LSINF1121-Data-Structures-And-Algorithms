@@ -1,4 +1,4 @@
-accessible: false
+accessible: true
 author: Pierre Schaus
 context: |+
     La fonction de Hash calculée sur le sous tableau t[from,...,from+M-1] est calculée comme suit:
@@ -18,8 +18,9 @@ limits:
     output: '2'
     memory: '100'
     time: '30'
-name: 'Bilan M4: Incremental Hash'
+name: Bilan M4 - Incremental Hash
 network_grading: false
+order: 25
 problems:
     TODO1:
         language: java
@@ -90,4 +91,3 @@ submission_limit:
     amount: -1
     period: -1
 weight: 1.0
-order: 0

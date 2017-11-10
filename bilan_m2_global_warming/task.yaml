@@ -83,9 +83,9 @@ limits:
     memory: '750'
     output: '100'
     time: '120'
-name: 'Bilan M3: Global Warming'
+name: Bilan M3 - Global Warming
 network_grading: false
-order: 18
+order: 17
 problems:
     nbSafePoints:
         type: match
