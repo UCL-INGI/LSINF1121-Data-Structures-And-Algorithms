@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2017-11-27 08:00:00/2018-11-27 08:00:00
 author: Frédéric Kaczynski
 context: |-
     Consider a graph made of 10 disjoint nodes (numbered from 0 to 9). We use a union-find data structure to represent this graph. At first, each node is contained in a partition named after the node. Thus, the representation of the graph in the array ``id[]`` is:
@@ -14,56 +14,56 @@ environment: mcq
 evaluate: best
 groups: false
 limits:
-    time: '30'
     output: '2'
+    time: '30'
     memory: '100'
-name: Pré-examen - Union find
+name: Bilan M5 - Union find
 network_grading: false
 order: 34
 problems:
     unionfind1:
-        name: ''
         answer: 0 9 2 3 4 5 6 7 8 9
-        type: match
         header: After we add the edge ``1-9``, ``id[] =``
-    unionfind2:
-        header: After we add the edge ``3-8``, ``id[] =``
-        answer: 0 9 2 8 4 5 6 7 8 9
+        type: match
         name: ''
+    unionfind2:
+        name: ''
+        answer: 0 9 2 8 4 5 6 7 8 9
+        header: After we add the edge ``3-8``, ``id[] =``
         type: match
     unionfind3:
-        type: match
         name: ''
         header: After we add the edge ``1-0``, ``id[] =``
+        type: match
         answer: 0 0 2 8 4 5 6 7 8 0
     unionfind4:
-        header: After we add the edge ``6-7``, ``id[] =``
         answer: 0 0 2 8 4 5 7 7 8 0
         name: ''
+        header: After we add the edge ``6-7``, ``id[] =``
         type: match
     unionfind5:
-        type: match
         name: ''
         answer: 7 7 2 8 4 5 7 7 8 7
+        type: match
         header: After we add the edge ``0-6``, ``id[] =``
     unionfind6:
-        name: ''
-        type: match
-        answer: 7 7 2 8 8 5 7 7 8 7
         header: After we add the edge ``4-8``, ``id[] =``
+        answer: 7 7 2 8 8 5 7 7 8 7
+        type: match
+        name: ''
     unionfind7:
         header: After we add the edge ``8-5``, ``id[] =``
-        name: ''
         answer: 7 7 2 5 5 5 7 7 5 7
         type: match
+        name: ''
     unionfind8:
+        answer: 7 7 7 5 5 5 7 7 5 7
         name: ''
         header: After we add the edge ``2-7``, ``id[] =``
-        answer: 7 7 7 5 5 5 7 7 5 7
         type: match
     unionfind9:
-        header: After we add the edge ``7-5``, ``id[] =``
         name: ''
+        header: After we add the edge ``7-5``, ``id[] =``
         type: match
         answer: 5 5 5 5 5 5 5 5 5 5
 stored_submissions: 0
