@@ -1,0 +1,48 @@
+#!/bin/bash
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+
+#produce the output directory
+mkdir output
+
+# parse templates
+parsetemplate Huffman.java
+
+# run sur un seul exemple pour les erreurs de compilation etc
+
+javac -Xlint:none -cp . HuffmanTest.java 2> output/comp.err 
+
+java -cp . HuffmanTest 2> output/run.err > output/std.out
+
+
+# add files to archive
+#archive -a Median.java
+#for f in $(ls output); do
+#archive -a output/$f
+#done
+
+# run feedback
+if [ -s output/comp.err ] && grep -Fq "error" output/comp.err; then # compilation error
+    echo "compilation error"
+	feedback-result failed
+	feedback-msg -ae -m "Il y a eu une erreur de compilation : \n"
+	cat output/comp.err | rst-code | feedback-msg -a
+	exit
+fi
+
+
+
+
+
+if [ -s output/run.err ]; then # error in main()
+   echo "runtime error"
+   feedback-grade 0
+   feedback-result failed
+   feedback-msg -ae -m "Il y a eu une erreur lors de l'exécution : \n"
+   cat output/run.err | rst-code | feedback-msg -a
+   exit
+fi
+echo "testing ok"
+
