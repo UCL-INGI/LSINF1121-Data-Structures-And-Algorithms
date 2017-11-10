@@ -48,7 +48,7 @@ function execute_implementation {
     cd student
 
     # We compile the tests
-    output=$(scalac -cp .:scalacheck.jar "${testsName}.scala" 2>&1)
+    output=$(scalac -cp .:scalacheck.jar:iobitstream.jar "${testsName}.scala" 2>&1)
     retval=$?
     output=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
     if [ "$retval" != 0 ]; then
@@ -59,7 +59,7 @@ function execute_implementation {
     fi
 
     # We run the tests
-    output=$(run_student scala -cp .:scalacheck.jar ${testsName})
+    output=$(run_student scala -cp .:scalacheck.jar::iobitstream.jar ${testsName})
     retval=$?
     echo -e "${output}\n"
     echo -e "Scalacheck returned the value: ${retval}\n"

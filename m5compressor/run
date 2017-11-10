@@ -32,8 +32,7 @@ fi
 
 # Copy everything in the 'student' directory for run_student
 cp CompressProps.scala student/CompressProps.scala
-cp InputBitStream.class student/InputBitStream.class
-cp OutputBitStream.class student/OutputBitStream.class
+cp iobitstream.jar student/.
 cp scalacheck.jar student/scalacheck.jar
 cd student
 scalac -cp .:scalacheck.jar CompressProps.scala
