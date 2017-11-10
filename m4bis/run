@@ -28,7 +28,7 @@ fi
 
 
 javac Tester.java
-output=$(run_student java Tester)
+output=$(run_student java Tester 2>&1)
 retval=$?
 cd ..
 
@@ -63,7 +63,8 @@ else
       feedback --result failed --feedback "$FEED"
    else # should never happen
       echo "exception grading script"
-    	FEED=$(printf "Sorry, it seems that an error occurred in the grading script, please contact the course administrator. $output")
+    	FEED=$(printf "Sorry, it seems that an error occurred in the grading script, please contact the course administrator.")
       feedback --result failed --feedback "$FEED"
+      echo $output | rst-code -l java | feedback-msg -a
    fi
 fi
