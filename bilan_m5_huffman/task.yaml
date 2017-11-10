@@ -1,4 +1,4 @@
-accessible: true
+accessible: 2017-11-27 08:00:00/2018-11-10 15:17:15
 author: ''
 context: |-
     Vous devez calculer un arbre de Huffman au départ de la fréquence donnée pour chacune des R lettres (characters).
@@ -18,7 +18,7 @@ context: |-
         :width: 500px
         :align: center
         :alt: Huffman tree
-environment: python3
+environment: java8scala
 evaluate: best
 groups: false
 limits:
