@@ -59,7 +59,7 @@ limits:
     time: '30'
 name: '[Old] Mission 4 - Spam filter [group]'
 network_grading: false
-order: 45
+order: 46
 problems:
     classifier:
         header: 'Upload your spam filter here. Your class should be named "SpamFilter"

@@ -24,7 +24,7 @@ limits:
     time: '60'
 name: '[Old] Mission 6 - Bucket Sort [individual]'
 network_grading: false
-order: 47
+order: 48
 problems:
     bucketsort:
         header: 'Upload the file containing your implementation here. Your class should

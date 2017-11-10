@@ -82,7 +82,7 @@ limits:
     memory: '100'
 name: Pre-examen - Rabin Karp
 network_grading: false
-order: 25
+order: 26
 problems:
     propositions:
         choices:

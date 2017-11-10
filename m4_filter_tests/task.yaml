@@ -67,7 +67,7 @@ limits:
     time: '60'
 name: '[Old] Mission 4 - Unit tests for the spam filter [individual]'
 network_grading: false
-order: 44
+order: 45
 problems:
     filter_tests:
         allowed_exts:

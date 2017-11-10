@@ -71,7 +71,7 @@ limits:
     memory: '512'
 name: Mission 5 - Unit tests for the text compressor [individual]
 network_grading: false
-order: 28
+order: 29
 problems:
     tests:
         type: code-file
