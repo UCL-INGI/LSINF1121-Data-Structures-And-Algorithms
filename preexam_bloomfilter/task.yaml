@@ -213,10 +213,29 @@ problems:
         -   text: 39  MB
             valid: true
         -   text: 2   GB
-        header: |-
-            *A reformuler*
+        header: |+
+            Si on souhaite compter le nombre de personnes ayant tweeté un jour donné, on peut utiliser un code semblable à celui donné ci-dessous. Sachant que le réseau social Twitter compte 328 millions d'utilisateurs actifs, choisis parmi les solutions données, la quantité minimiale de mémoire qui est nécessaire pour compter le
+            nombre d'utilisateurs uniques ayant tweeté un jour donné (si on utilise le code donné). On fait ici l'hypothèse que la clé utilisée pour identifier chaque utilisateur est un entier (int).
 
-            Si Twitter voulait compter de manière exacte (avec un `HashSet`) le nombre d'utilisateurs ayant tweeté (au moins une fois) aujourd'hui, quelle est (parmi les propositions suivantes) la quantité minimale de mémoire qui serait nécessaire pour implémenter ce comptage; sachant que le réseau social compte 328 millions d'utilisateurs actifs ? (Par simplicité, on fait ici l'hypothèse que chacune des entrées du HashSet ne requiert qu'un seul bit).
+            .. code::
+
+                // Ce compteur est incrémenté chaque fois qu'on détecte qu'une nouvelle
+                // personne a tweeté.
+                long compteur = 0L;
+
+                // Cet ensemble stocke l'identifiant de chacun des utilisateurs ayant
+                // déjà tweeté aujourd'hui.
+                HashSet aTweete = new HashSet();
+
+                // ... snip ...
+
+                // Ce fragment de code est exécuté à chaque fois qu'un tweet est émis par
+                // un utilisateur. (On ne se soucie pas ici des race-conditions possibles)
+                if ( !aTweete.contains( tweet.userId() ) ) {
+                    aTweete.add(tweet.userId());
+                    compteur += 1;
+                }
+
         type: multiple-choice
         name: Comptage exact
         limit: 0
