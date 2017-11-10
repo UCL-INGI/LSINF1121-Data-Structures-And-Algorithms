@@ -63,7 +63,7 @@ else
       feedback --result failed --feedback "$FEED"
    else # should never happen
       echo "exception grading script"
-    	FEED=$(printf "Sorry, it seems that an error occurred in the grading script, please contact the course administrator. ")
+    	FEED=$(printf "Sorry, it seems that an error occurred in the grading script, please contact the course administrator. $output")
       feedback --result failed --feedback "$FEED"
    fi
 fi
