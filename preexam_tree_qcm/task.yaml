@@ -21,7 +21,7 @@ limits:
     memory: '100'
 name: Bilan M3 - QCM Binary Trees
 network_grading: false
-order: 38
+order: 40
 problems:
     qcm2:
         choices:

@@ -27,7 +27,7 @@ limits:
     memory: '512'
 name: Mission 6 - Minimum spanning tree [group]
 network_grading: false
-order: 34
+order: 37
 problems:
     kruskal:
         name: Kruskal
