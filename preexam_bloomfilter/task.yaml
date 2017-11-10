@@ -1,6 +1,6 @@
 accessible: false
 author: Xavier Gillard, Pierre Schaus
-context: |-
+context: |
     Les filtres de Bloom
     --------------------
     Un filtre de Bloom, est une structure de donnée très compacte et efficace qui permet d'implémenter un test d'appartenance rapide (:code:`.contains()`) à un très grand *ensemble*. Cependant, contrairement au test d'appartenance à un ensemble tel qu'implémenté à l'aide d'une HashMap, le test d'appartenance implémenté via un filtre de bloom peut renvoyer un résultat erroné (faux positifs possibles mais pas de faux négatifs) dans certains cas et cela, avec une faible probabilité.
@@ -39,15 +39,6 @@ context: |-
     L'ajout de "Salut" au filtre 00000000 transforme celui-ci en 11100000. Si par la suite on veut tester que "Salut" est bien présent dans le filtre, on s'assure que les bits v1, v2 et v3 sont bien == 1.
 
     En continuant sur le même exemple, on voit que la chaine "1121" n'est pas présente dans la structure puisque le 4eme bit est 'off'.
-
-    Autre exemple d'utilisation
-    ---------------------------
-    Outre le caching, les filtres de Bloom sont aussi utilisés pour donner une estimation du nombre d'éléments contenus dans un ensemble.
-
-    On calcule cette estimation (:math:`n^*`) comme suit:
-    :math:`n^* = -\frac{n}{k} ln \left( 1 - \frac{X}{n} \right)`
-
-    avec n = la taille du filtre de Bloom, k = le nombre de fonctions de hachage différentes utilisées et X = le nombre des bits `on` dans le filtre.
 environment: mcq
 evaluate: best
 groups: false
@@ -61,6 +52,7 @@ order: 27
 problems:
     bloom_vs_hashmap:
         multiple: true
+        name: Bloom Filter vs HashSet
         choices:
         -   text: Le nombre de clés possibles est connu à l'avance
         -   valid: true
@@ -71,7 +63,6 @@ problems:
         header: 'Pour implémenter un test d''appartenance, il est préférable d''utiliser
             un Bloom filter plutôt qu''un HashSet lorsque: '
         limit: 0
-        name: Bloom Filter vs HashSet
         type: multiple-choice
     limitation:
         type: multiple-choice
@@ -116,10 +107,10 @@ problems:
         -   text: :math:`\Theta(k)`
         -   valid: true
             text: On ne peut pas supprimer un élément d'un filtre de Bloom.
+        name: Complexité temporelle de la suppression d'un élément
         header: Quelle est la complexité temporelle de la suppression d'un élément
             dans le filtre de Bloom ? (On fait ici l'hypothèse que chacune des fonctions
             de hachage est calculée en temps constant)
-        name: Complexité temporelle de la suppression d'un élément
         limit: 0
         type: multiple-choice
     recovery:
@@ -192,7 +183,6 @@ problems:
                 b` (il n'y a pas de nouveaux faux-positifs)
         multiple: true
         limit: 0
-        name: Sélectionnez la/les proposition(s) correcte(s)
         header: |
             Soient `a` et `b` deux vecteurs de bits utilisés pour représenter deux filtres de Bloom utilisant un même ensemble F de fonctions de hachage. Si `c` est le vecteur de bit représentant un filtre de Bloom obtenu par `c = a | b`.
 
@@ -200,21 +190,22 @@ problems:
 
               Dans les propositions suivantes, on utilisera le nom du bit
               vector pour désigner le filtre de Bloom auquel il se rapporte.
+        name: Sélectionnez la/les proposition(s) correcte(s)
     complexite_spatiale:
         choices:
-        -   text: :math:`BloomFilter \le HashMap \le SinglyLinked \le RedBlack`
+        -   text: :math:`BloomFilter \le HashSet \le SinglyLinked \le RedBlack`
             valid: true
-        -   text: :math:`BloomFilter \le HashMap \le RedBlack \le SinglyLinked`
-        -   text: :math:`HashMap \le BloomFilter \le SinglyLinked \le RedBlack`
-        -   text: :math:`BloomFilter \le SinglyLinked \le HashMap \le RedBlack`
-        -   text: :math:`BloomFilter \le RedBlack \le SinglyLinked \le HashMap`
+        -   text: :math:`BloomFilter \le HashSet \le RedBlack \le SinglyLinked`
+        -   text: :math:`HashSet \le BloomFilter \le SinglyLinked \le RedBlack`
+        -   text: :math:`BloomFilter \le SinglyLinked \le HashSet \le RedBlack`
+        -   text: :math:`BloomFilter \le RedBlack \le SinglyLinked \le HashSet`
         name: Complexité Spatiale
+        header: |-
+            Pour représenter un ensemble comprenant 3000 éléments, on dispose d'un certain nombre d'options. Parmi celles-ci on compte les Singly-Linked List, BloomFilter (avec n = 3000), Red-Black Tree, HashSet.
+
+            Trie chacune des ces représentations possibles par ordre croissant de mémoire utilisée.
         limit: 0
         type: multiple-choice
-        header: |-
-            *A reformuler*
-
-            Classez par ordre croissant de complexité spatiale. Singly-Linked List, BloomFilter, Red-Black Tree, HashMap.
     twitter_exact:
         choices:
         -   text: 300 KB

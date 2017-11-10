@@ -22,7 +22,7 @@ n=4 # number of tests in CompressProps.scala, don't forget to change this variab
 getinput compressor > student/Compress.java
 
 # Compile the student code and parse it properly
-compilationMessage=$(javac student/Compress.java student/Decompress.java 2>&1)
+compilationMessage=$(javac -cp .:iobitstream.jar student/Compress.java student/Decompress.java 2>&1)
 compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
 compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
 if [ ! -f student/Compress.class ] || [ ! -f student/Decompress.class ]; then
@@ -35,7 +35,7 @@ cp CompressProps.scala student/CompressProps.scala
 cp iobistream.jar student/iobistream.jar
 cp scalacheck.jar student/scalacheck.jar
 cd student
-scalac -cp .:scalacheck.jar CompressProps.scala
+scalac -cp .:scalacheck.jar:iobitstream.jar CompressProps.scala
 output=$(run_student scala -cp .:scalacheck.jar CompressProps)
 r=$?
 cd ..

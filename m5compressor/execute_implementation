@@ -59,7 +59,7 @@ function execute_implementation {
     fi
 
     # We run the tests
-    output=$(run_student scala -cp .:scalacheck.jar::iobitstream.jar ${testsName})
+    output=$(run_student scala -cp .:scalacheck.jar:iobitstream.jar ${testsName})
     retval=$?
     echo -e "${output}\n"
     echo -e "Scalacheck returned the value: ${retval}\n"
