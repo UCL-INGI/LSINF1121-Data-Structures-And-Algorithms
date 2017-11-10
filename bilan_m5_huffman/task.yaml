@@ -7,14 +7,14 @@ context: |-
 
     Par exemple, étant donné les fréquences suivantes:
 
-    .. image:: Huffman/huffmanin.png
+    .. image:: bilan_m5_huffman/huffmanin.png
         :width: 500px
         :align: center
         :alt: Input frequencies
 
     un arbre de Huffman pourrait être:
 
-    .. image:: Huffman/huffmanout.png
+    .. image:: bilan_m5_huffman/huffmanout.png
         :width: 500px
         :align: center
         :alt: Huffman tree
