@@ -3,7 +3,7 @@ author: Xavier Gillard
 context: |
     A la page 777 du livre "Algorithms" 4th edition, on vous propose l'implémentation suivante de l'algorithme de Rabin Karp.
 
-    .. code::
+    .. code-block:: java
 
         public class RabinKarp {
           private String pat;      // the pattern  // needed only for Las Vegas
