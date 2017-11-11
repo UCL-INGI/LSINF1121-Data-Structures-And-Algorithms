@@ -253,6 +253,7 @@ problems:
             Si on souhaite compter de façon approximative le nombre de personnes ayant tweeté un jour donné, on peut utiliser un code semblable à celui donné ci-dessous. Sachant que le réseau social Twitter compte 328 millions d'utilisateurs actifs, choisis parmi les solutions données, la quantité minimiale de mémoire qui est nécessaire pour compter le nombre d'utilisateurs uniques ayant tweeté un jour donné (si on utilise le code donné). On fait ici l'hypothèse que la clé utilisée pour identifier chaque utilisateur est un entier (int).
 
             .. code::
+                java
 
                 // Ce compteur est incrémenté chaque fois qu'on détecte qu'une nouvelle
                 // personne a tweeté.
@@ -286,6 +287,7 @@ problems:
             Solution A
             ~~~~~~~~~~
             .. code::
+                java
 
                 public class BloomFilter {
                     int bitmask;
@@ -299,6 +301,7 @@ problems:
             Solution B
             ~~~~~~~~~~
             .. code::
+                java
 
                 public class BloomFilter {
                     int bitmask;
@@ -312,6 +315,7 @@ problems:
             Solution C
             ~~~~~~~~~~
             .. code::
+                java
 
                 public class BloomFilter {
                     int bitmask;
@@ -325,6 +329,7 @@ problems:
             Solution D
             ~~~~~~~~~~
             .. code::
+                java
 
                 public class BloomFilter {
                     int bitmask;
