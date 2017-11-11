@@ -218,6 +218,7 @@ problems:
             nombre d'utilisateurs uniques ayant tweeté un jour donné (si on utilise le code donné). On fait ici l'hypothèse que la clé utilisée pour identifier chaque utilisateur est un entier (int).
 
             .. code::
+                 java
 
                 // Ce compteur est incrémenté chaque fois qu'on détecte qu'une nouvelle
                 // personne a tweeté.
