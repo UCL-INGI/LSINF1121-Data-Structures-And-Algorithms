@@ -18,8 +18,10 @@ problems:
             text: ok
         -   text: ko
         limit: 0
-        header: Etant donné une fonction de hachage :math:`h(\left[v_0 \cdots v_n
-            \right]) = \sum_{i=0}^{n} v_i R^{(n-i-1)} \% M`
+        header: |-
+            Etant donné une fonction de hachage :math:`h(\left[v_0 \cdots v_n \right]) = \sum_{i=0}^{n} v_i R^{(n-i-1)} \% M` dans laquelle :math:`\left[v_0 \cdots v_n \right]` dénote un vecteur de bit et :math:`R` et :math:`M` sont des facteurs constants.
+
+            Quelle portion de la clé est utilisée si on pose :math:`R=31` et `M=16` ?
         name: 'Fraction de la clé utilisée '
 stored_submissions: 0
 submission_limit:
