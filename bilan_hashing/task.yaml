@@ -13,17 +13,29 @@ name: Bilan Hashing
 network_grading: false
 problems:
     nombre_pair:
+        type: multiple-choice
+        limit: 0
         choices:
         -   text: Uniquement les bits :math:`\left[v_0 \cdots v_{1023} \right]`
         -   text: Tous les bits de la clé
         -   text: Uniquement les bits :math:`\left[v_{n-1024} \cdots v_{n} \right]`
         -   text: Uniquement les deux derniers bits
             valid: true
-        type: multiple-choice
-        limit: 0
         header: Quelle portion de la clé est utilisée si on pose :math:`R=32` et `M=1024`
             ?
         name: Fraction de la clé utilisée (1)
+    mult_trois:
+        type: multiple-choice
+        choices:
+        -   text: Tous les bits de la clé
+        -   text: Uniquement les bits :math:`\left[v_0 \cdots v_{80} \right]`
+        -   text: Uniquement les bits :math:`\left[v_{n-81} \cdots v_{n} \right]`
+        -   valid: true
+            text: Uniquement les quatre derniers bits
+        limit: 0
+        header: Quelle portion de la clé est utilisée si on pose :math:`R=3` et `M=81`
+            ?
+        name: Fraction de la clé utilisée (2)
 stored_submissions: 0
 submission_limit:
     amount: -1
