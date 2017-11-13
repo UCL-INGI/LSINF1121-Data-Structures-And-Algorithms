@@ -1,0 +1,27 @@
+accessible: false
+author: xgillard
+context: ''
+environment: python3
+evaluate: best
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: Bilan Hashing
+network_grading: false
+problems:
+    nombre_pair:
+        type: multiple-choice
+        choices:
+        -   valid: true
+            text: ok
+        -   text: ko
+        limit: 0
+        header: :math:`\sum_{i=0}^{n} v_i R^{n-i-1} \% M`
+        name: 'Fraction de la clé utilisée '
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
