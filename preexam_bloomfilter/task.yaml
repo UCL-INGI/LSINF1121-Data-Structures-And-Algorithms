@@ -16,9 +16,9 @@ context: |
     ------------
     Concrètement, un filtre de bloom consiste en un vecteur :math:`V = v_1..v_n` de bit et d'un ensemble :math:`F = f_1..f_k` de fonctions de hachage
 
-    Pour ajouter un élément :math:`X` dans le set, on applique successivement chacune des fonctions :math:`f_i \in F` de hachage. L'application de chacune de ces fonctions à l'élément :math:`X` renvoie un nombre :math:`h_i \in \left[0..n-1\right]`. Pour marquer l'ajout de :math:`X` au filtre de bloom, on set (mettre à 1) simplement chacun des :math:`v_{h_i}` bits dans :math:`V`.
+    Pour ajouter un élément :math:`X` dans le set, on applique successivement chacune des fonctions :math:`f_i \in F` de hachage. L'application de chacune de ces fonctions à l'élément :math:`X` renvoie un nombre :math:`h_i \in \left[0..n-1\right]`. Pour marquer l'ajout de :math:`X` au filtre de bloom, on met à 1 simplement chacun des :math:`v_{h_i}` bits dans :math:`V`.
 
-    De façon similaire, pour tester l'appartenance d'un élément :math:`X` au set, on vérifie que le :math:`h_i` ème bit :math:`\in V` correspondant à :math:`f_i(X)` est setté à `on`. Le test d'appartenance ne renverra `true` que ssi, cette condition est vérifiée pour chacune des :math:`f_i \in F`.
+    De façon similaire, pour tester l'appartenance d'un élément :math:`X` au set, on vérifie que le :math:`h_i` ème bit :math:`\in V` correspondant à :math:`f_i(X)` est égal à 1. Le test d'appartenance ne renverra `true` que ssi, cette condition est vérifiée pour chacune des :math:`f_i \in F`.
 
     Exemples
     ~~~~~~~~
@@ -36,9 +36,9 @@ context: |
         f2("1121") = 1
         f3("1121") = 4
 
-    L'ajout de "Salut" au filtre 00000000 transforme celui-ci en 11100000. Si par la suite on veut tester que "Salut" est bien présent dans le filtre, on s'assure que les bits v1, v2 et v3 sont bien == 1.
+    L'ajout de "Salut" au filtre 00000000 transforme celui-ci en 11100000. Si par la suite on veut tester que "Salut" est bien présent dans le filtre, on s'assure que les bits v1, v2 et v3 sont bien égaux à 1.
 
-    En continuant sur le même exemple, on voit que la chaine "1121" n'est pas présente dans la structure puisque le 4eme bit est 'off'.
+    En continuant sur le même exemple, on voit que la chaine "1121" n'est pas présente dans la structure puisque le 4eme bit est égal à 0.
 environment: mcq
 evaluate: best
 groups: false
