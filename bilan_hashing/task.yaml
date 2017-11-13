@@ -18,7 +18,8 @@ problems:
             text: ok
         -   text: ko
         limit: 0
-        header: :math:`\sum_{i=0}^{n} v_i R^{n-i-1} \% M`
+        header: Etant donné une fonction de hachage :math:`h(\left[v_0 \cdots v_n
+            \right]) = \sum_{i=0}^{n} v_i R^{(n-i-1)} \% M`
         name: 'Fraction de la clé utilisée '
 stored_submissions: 0
 submission_limit:
