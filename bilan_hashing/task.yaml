@@ -23,7 +23,7 @@ problems:
         limit: 0
         header: Quelle portion de la clé est utilisée si on pose :math:`R=32` et `M=1024`
             ?
-        name: 'Fraction de la clé utilisée '
+        name: Fraction de la clé utilisée (1)
 stored_submissions: 0
 submission_limit:
     amount: -1
