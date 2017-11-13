@@ -88,12 +88,12 @@ problems:
         -   text: :math:`\Theta(k)`
             valid: true
         -   text: On ne peut pas ajouter un élément à un filtre de Bloom.
+        type: multiple-choice
         header: Quelle est la complexité temporelle d'un ajout d'un élément dans le
             filtre de Bloom ? (On fait ici l'hypothèse que chacune des fonctions de
             hachage est calculée en temps constant)
-        limit: 0
-        type: multiple-choice
         name: 'Complexité temporelle d''un ajout au filtre '
+        limit: 0
     complexite_temp_suppression:
         choices:
         -   text: :math:`O(1)`
@@ -107,12 +107,12 @@ problems:
         -   text: :math:`\Theta(k)`
         -   valid: true
             text: On ne peut pas supprimer un élément d'un filtre de Bloom.
-        name: Complexité temporelle de la suppression d'un élément
         header: Quelle est la complexité temporelle de la suppression d'un élément
             dans le filtre de Bloom ? (On fait ici l'hypothèse que chacune des fonctions
             de hachage est calculée en temps constant)
-        limit: 0
+        name: Complexité temporelle de la suppression d'un élément
         type: multiple-choice
+        limit: 0
     recovery:
         choices:
         -   text: Linear Probing
@@ -122,8 +122,8 @@ problems:
             valid: true
         name: En cas de collision, quelle(s) stratégie(s) peut-on implémenter pour
             résoudre le conflit ?
-        type: multiple-choice
         limit: 0
+        type: multiple-choice
         header: ''
         multiple: true
     hashtable_est_k1:
@@ -133,21 +133,34 @@ problems:
         -   text: Faux
         type: multiple-choice
         name: HashSet - CollisionResolutionStrategy == BloomFilter with k = 1 ?
-        limit: 0
         header: On peut toujours remplacer une implémentation d'un hash set qui n'incorpore
             aucune stratégie de résolution de collision (*pas de separate-chaining
             ni de linear probing*) par un bloom filter avec k = 1 ?
+        limit: 0
     pourquoi_k_pg_1:
         limit: 0
         choices:
-        -   text: Il n'y en a pas
-        -   text: Les fonctions :math:`f_2 \cdots f_k` servent à corriger de potentielles
-                erreurs de calcul dans :math:`f_1`
-        -   valid: true
-            text: Cela permet de réduire le risque de faux-positifs malgré les collisions
-                qui peuvent se produire pour chacune des fonctions de hash.
-        header: ''
-        name: Quel est l'intérêt d'utiliser k >= 1 plutôt que k = 1 ?
+        -   feedback: 'Il y a un tradeoff, augmenter k pour n fixé va remplir plus
+                vite le tableau avec des 1 et le risque lorsque tout est à 1 est de
+                n''avoir plus que des collisions. D''un autre côté, avoir un plus
+                grand k (lorsqu''il y a peu d''élements) réduit la probabilité de
+                collision. En pratique pour peut déduire la formule k=(n/m) ln 2. '
+            valid: true
+            text: Intuitivement, si pour m constant, on avait travaillé avec un tableau
+                de bits plus grand (n) alors k (le nombre de bits optimal qui minimise
+                la probabilité de collision) devrait aussi augmenter.
+        -   feedback: 'Il y a un tradeoff, augmenter k pour n fixé va remplir plus
+                vite le tableau avec des 1 et le risque lorsque tout est à 1 est de
+                n''avoir plus que des collisions. D''un autre côté, avoir un plus
+                grand k (lorsqu''il y a peu d''élements) réduit la probabilité de
+                collision. En pratique pour peut déduire la formule k=(n/m) ln 2. '
+            text: Intuitivement, si pour m constant, on avait travaillé avec un tableau
+                de bits plus grand (n) alors k (le nombre de bits optimal qui minimise
+                la probabilité de collision) devrait diminuer.
+        multiple: true
+        name: Quel est l'intérêt d'utiliser k >= 1 ?
+        header: |
+            Soit n le nombre de bits et m le nombre d'éléments insérés dans le filtre. On s'intéresse à k, le nombre de fonctions de hash qui minimise la probabilité de faux positifs.
         type: multiple-choice
     propositions:
         choices:
@@ -247,8 +260,6 @@ problems:
         -   text: ~ 39  MB
             valid: true
         -   text: ~ 2   GB
-        name: Comptage approximatif
-        limit: 0
         header: |+
             Si on souhaite compter de façon approximative le nombre de personnes ayant tweeté un jour donné, on peut utiliser un code semblable à celui donné ci-dessous. Sachant que le réseau social Twitter compte 328 millions d'utilisateurs actifs, choisis parmi les solutions données, la quantité minimiale de mémoire qui est nécessaire pour compter le nombre d'utilisateurs uniques ayant tweeté un jour donné (si on utilise le code donné). On fait ici l'hypothèse que la clé utilisée pour identifier chaque utilisateur est un entier (int).
 
@@ -273,8 +284,11 @@ problems:
                     compteur += 1;
                 }
 
+        name: Comptage approximatif
+        limit: 0
         type: multiple-choice
     implem_utile:
+        limit: 0
         choices:
         -   text: Solution A
         -   text: Solution B
@@ -342,7 +356,6 @@ problems:
 
 
         type: multiple-choice
-        limit: 0
         multiple: true
         name: Implémentation(s) utile(s)
 stored_submissions: 0
