@@ -1,6 +1,7 @@
 accessible: false
 author: xgillard
-context: ''
+context: |
+    Etant donné une fonction de hachage :math:`h(\left[v_0 \cdots v_n \right]) = \sum_{i=0}^{n} v_i R^{(n-i-1)} \% M` dans laquelle :math:`\left[v_0 \cdots v_n \right]` dénote un vecteur de bit et :math:`R` et :math:`M` sont des facteurs constants.
 environment: python3
 evaluate: best
 groups: false
@@ -12,16 +13,16 @@ name: Bilan Hashing
 network_grading: false
 problems:
     nombre_pair:
-        type: multiple-choice
         choices:
-        -   valid: true
-            text: ok
-        -   text: ko
+        -   text: Uniquement les bits :math:`\left[v_0 \cdots v_{1023} \right]`
+        -   text: Tous les bits de la clé
+        -   text: Uniquement les bits :math:`\left[v_{n-1024} \cdots v_{n} \right]`
+        -   text: Uniquement les deux derniers bits
+            valid: true
+        type: multiple-choice
         limit: 0
-        header: |-
-            Etant donné une fonction de hachage :math:`h(\left[v_0 \cdots v_n \right]) = \sum_{i=0}^{n} v_i R^{(n-i-1)} \% M` dans laquelle :math:`\left[v_0 \cdots v_n \right]` dénote un vecteur de bit et :math:`R` et :math:`M` sont des facteurs constants.
-
-            Quelle portion de la clé est utilisée si on pose :math:`R=31` et `M=16` ?
+        header: Quelle portion de la clé est utilisée si on pose :math:`R=32` et `M=1024`
+            ?
         name: 'Fraction de la clé utilisée '
 stored_submissions: 0
 submission_limit:
