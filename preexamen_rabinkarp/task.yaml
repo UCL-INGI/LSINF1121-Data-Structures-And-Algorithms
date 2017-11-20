@@ -85,44 +85,44 @@ network_grading: false
 order: 26
 problems:
     propositions:
+        type: multiple-choice
         choices:
         -   text: La complexité de la methode 'search' est :math:`O(nm)`
             feedback: :math:`O(nm)` est la complexité d'une recherche brute force.
                 Cette implémentation est dite `Monte Carlo` et sa complexité est :math:`O(n)`
-        -   text: La complexité de la methode 'search' est :math:`O(n)`
-            valid: true
-        -   text: La complexité de la methode 'search' est :math:`O\left(n~log_2(m)\right)`
-            feedback: Le logarithme n'a aucune raison d'être. Cette implémentation
+        -   valid: true
+            text: La complexité de la methode 'search' est :math:`O(n)`
+        -   feedback: Le logarithme n'a aucune raison d'être. Cette implémentation
                 est dite `Monte Carlo` et sa complexité est :math:`O(n)`
+            text: La complexité de la methode 'search' est :math:`O\left(n~log_2(m)\right)`
         -   feedback: Il n'y a aucune raison pour qu'n apparaise en exposant. Cette
                 implémentation est dite `Monte Carlo` et sa complexité est :math:`O(n)`
             text: La complexité de la methode 'search' est :math:`O(m^n)`
-        -   text: Cet implémentation renvoie toujours un résultat correct, c'est à
-                dire le premier indice i telle que la souchaine key[i::i+m-1] est
-                égale au pattern 'pat', ou n si le pattern pat ne s'y trouve pas.
-            feedback: C'est faux, puisqu'il ne vérifie pas que la sous-chaine trouvée
+        -   feedback: C'est faux, puisqu'il ne vérifie pas que la sous-chaine trouvée
                 correspond effectivement au pattern recherché, on dit que ce bout
                 de code implémente la variante `Monte Carlo` de l'algorithme de Rabin
                 Karp. Cet algorithme est très probablement correct, mais il y a une
                 faible probabilité pour qu'il renvoie un résultat erroné (du a une
                 collision sur les hash).
+            text: Cet implémentation renvoie toujours un résultat correct, c'est à
+                dire le premier indice i telle que la souchaine key[i::i+m-1] est
+                égale au pattern 'pat', ou n si le pattern pat ne s'y trouve pas.
         -   valid: true
             text: |+
                 Cet implémentation peut renvoyer un résultat incorrect, il est possible que pour l'indice i renvoyé, la souchaine key[i::i+m-1] ne soit pas égale au pattern 'pat'.
 
 
-        type: multiple-choice
+        name: Sélectionnez les propositions correctes
+        multiple: true
+        limit: 0
         header: |
             .. note::
 
                Dans toutes les propositions, on suppose que:
                  * `n` dénote la longueur du texte (key.length()) dans lequel on recherche le pattern
                  * `m` dénote la longueur du pattern à trouver dans le texte (pat.length())
-        limit: 0
-        name: Sélectionnez les propositions correctes
-        multiple: true
 stored_submissions: 0
 submission_limit:
-    amount: 1
+    amount: -1
     period: -1
 weight: 1.0
