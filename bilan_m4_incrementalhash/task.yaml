@@ -7,23 +7,22 @@ context: |+
 
     Le code pour calculer cette fonction de hash vous est donné.
     Nous vous demandons de calculer
-    :math:`hash([from+1,...,from+M])` au départ de
-    :math:`hash([from,...,from+M-1])` en O(1).
+    :math:`hash([from,...,from+M-1])` au départ de
+    :math:`hash([from-1,...,from+M])` en O(1).
 
 
 environment: java8scala
 evaluate: best
 groups: false
 limits:
-    output: '2'
-    memory: '100'
     time: '30'
+    memory: '100'
+    output: '2'
 name: Bilan M4 - Incremental Hash
 network_grading: false
 order: 25
 problems:
     TODO1:
-        language: java
         name: IncrementalHash.java
         header: |-
             Mettez votre implémentation complète de ``IncrementalHash.java`` ci-dessous. Conseil: copiez-collez d'abord tout le code source de la classe ci-dessous (celle-ci devrait compiler mais son contenu n'est pas correct). Voir le TODO ci-dessous. La réponse ne devrait pas prendre plus de deux lignes de code à ajouter.
@@ -85,6 +84,7 @@ problems:
                     return h;
                 }
                 }
+        language: java
         type: code
 stored_submissions: 0
 submission_limit:
