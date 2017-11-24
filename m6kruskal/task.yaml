@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2017-12-01 08:00:00/2017-12-10 20:00:00
 author: Simon Hardy
 context: |-
     For this mission, you are asked to implement Kruskal algorithm in order to compute the minimum spanning tree corresponding to an input file. As a reminder, we impose one implementation detail (which won't be checked on INGInious, but manually by the tutors) :
@@ -23,20 +23,20 @@ evaluate: best
 groups: true
 limits:
     output: '100'
-    time: '30'
     memory: '512'
+    time: '30'
 name: Mission 6 - Minimum spanning tree [group]
 network_grading: false
 order: 39
 problems:
     kruskal:
-        name: Kruskal
         allowed_exts:
         - .java
+        type: code-file
+        name: Kruskal
         header: 'Upload your file here. Your class should be named *Kruskal* and take
             two arguments as explained above. If you need other classes, just put
             them at the end of this file, without the *public* modifier. '
-        type: code-file
 stored_submissions: 0
 submission_limit:
     amount: -1
