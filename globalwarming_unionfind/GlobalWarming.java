@@ -30,7 +30,7 @@ abstract class GlobalWarming {
      * @param altitude is a n x n matrix of int values representing altitudes (positive or negative)
      * @param waterLevel is the water level, every entry <= waterLevel is flooded
      */
-    public GlobalWarming(int[][] altitude) {
+    public GlobalWarming(int[][] altitude, int waterLevel) {
         this.altitude = altitude;
         this.waterLevel = waterLevel;
     }
