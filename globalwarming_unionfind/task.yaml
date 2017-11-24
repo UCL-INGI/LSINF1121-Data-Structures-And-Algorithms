@@ -108,7 +108,7 @@ context: |+
                                   {1,1,1,6,3}};
         GlobalWarming gw = new MyGlobalWarming(tab,3);
 
-    .. image:: global_warming/matrix.png
+    .. image:: globalwarming_unionfind/matrix.png
                     :width: 200px
                     :align: center
                     :alt: matrix example
@@ -170,14 +170,6 @@ problems:
                        // TODO
                    }
 
-
-                   public int nbSafePoints(int waterLevel) {
-                       // TODO
-                       // expected time complexity O(log(n^2))
-                       return 0;
-                   }
-
-
                    public int nbIslands() {
                        // TODO
                        // expected time complexity O(1)
@@ -189,13 +181,6 @@ problems:
                        // TODO
                        // expected time complexity O(1)
                        return true;
-                   }
-
-
-                   public List<Point> shortestPath(Point p1, Point p2) {
-                       // TODO
-                       // expected time complexity O(n^2)
-                       return new ArrayList<Point>();
                    }
 
                }
