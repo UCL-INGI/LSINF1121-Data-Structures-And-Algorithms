@@ -94,7 +94,7 @@ limits:
     memory: '512'
 name: Mission 6 - Unit tests for Kruskal [individual]
 network_grading: false
-order: 36
+order: 38
 problems:
     tests:
         type: code-file

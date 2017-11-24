@@ -54,7 +54,7 @@ limits:
     time: '45'
 name: '[Old] Mission 6 - Unit tests for the Bucket-Sort [individual]'
 network_grading: false
-order: 48
+order: 50
 problems:
     bucketsort_tests:
         allowed_exts:

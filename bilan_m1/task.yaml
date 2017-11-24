@@ -63,7 +63,7 @@ limits:
     memory: '1500'
 name: Bilan M1 - Circular LinkedList
 network_grading: false
-order: 7
+order: 8
 problems:
     size:
         language: java
