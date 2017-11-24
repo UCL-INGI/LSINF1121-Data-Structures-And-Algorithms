@@ -114,13 +114,14 @@ context: |+
                     :alt: matrix example
 
 
-environment: scapy
+environment: java8scala
 evaluate: best
 groups: false
 limits:
-    memory: '100'
+    memory: '750'
     time: '30'
-    output: '2'
+    hard_time: '120'
+    output: '100'
 name: 'Bilan M5: Global Warming'
 network_grading: false
 problems:
