@@ -49,5 +49,18 @@ abstract class GlobalWarming {
      *        and there exists a path (vertical/horizontal moves) from p1 to p2 using only safe positions
      */
         public abstract boolean onSameIsland(Point p1, Point p2);
+    
+    
+        public int nbSafePointsCorrect(int waterLevel) {
+        int res = 0;
+        for (int i = 0; i < altitude.length; i++) {
+            for (int j = 0; j < altitude.length; j++) {
+                if (altitude[i][j] > waterLevel) {
+                    res++;
+                }
+            }
+        }
+        return res;
+    }
 
 }
