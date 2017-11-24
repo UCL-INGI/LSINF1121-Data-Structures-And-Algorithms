@@ -95,6 +95,13 @@ public class GlobalWarmingTest {
         System.out.println("onsameIslandsExam:"+ok1+" "+ok2+" "+ok3+" "+ok4);
         return ok1 && ok2 && ok3 && ok4;
     }
+    
+    public boolean testNbIslandsExam() {
+        GlobalWarming g =  new GlobalWarmingImpl(getExamMatrix(),3);
+        boolean ok = relaxedTestNbIsland(g,4);
+        if (!ok) System.out.println("islands returned (should be 4):"+g.nbIslands());
+        return ok;
+    }
 
   
 
@@ -381,14 +388,14 @@ public class GlobalWarmingTest {
         try {
 
             if (testOnSameIslandExam()) {
-                score += 15;
+                score += 20;
             } else {
-                System.out.println("exam on same island -15");
+                System.out.println("exam on same island -20");
             }
-            if (testIslandsExam()) {
-                score += 15;
+            if (testNbIslandsExam()) {
+                score += 20;
             } else {
-                System.out.println("exam islands -15");
+                System.out.println("exam nb islands -20");
             }
 
 
@@ -396,12 +403,12 @@ public class GlobalWarmingTest {
                 score += 10;
 
                 if (timeComplexityOnSameIsland()) {
-                    score += 10;
+                    score += 20;
                 } else {
-                    feedback("test complexity nbIslands:-10");
+                    feedback("test complexity nbIslands:-20");
                 }
             } else {
-                feedback("test correctness onSameIsland on random graphs:-20");
+                feedback("test correctness onSameIsland on random graphs:-30");
             }
 
 
@@ -409,12 +416,12 @@ public class GlobalWarmingTest {
                 score += 10;
 
                 if (timeComplexityNbIslands()) {
-                    score += 10;
+                    score += 20;
                 } else {
-                    feedback("test complexity nbIslands:-10");
+                    feedback("test complexity nbIslands:-20");
                 }
             } else {
-                feedback("test correctness nbIslands on random graphs:-20");
+                feedback("test correctness nbIslands on random graphs:-30");
             }
 
 

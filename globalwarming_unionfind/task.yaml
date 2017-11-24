@@ -16,7 +16,7 @@ context: |+
 
     represented in the array here under:
 
-    .. image:: global_warming/matrix.png
+    .. image:: globalwarming_unionfind/matrix.png
                     :width: 200px
                     :align: center
                     :alt: matrix example
