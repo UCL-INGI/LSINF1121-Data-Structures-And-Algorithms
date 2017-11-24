@@ -122,7 +122,7 @@ limits:
     time: '30'
     hard_time: '120'
     output: '100'
-name: 'Bilan M5: Global Warming'
+name: Bilan M5 - Global Warming
 network_grading: false
 problems:
     nbIslands:
