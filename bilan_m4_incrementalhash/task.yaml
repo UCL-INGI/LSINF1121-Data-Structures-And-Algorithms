@@ -8,7 +8,7 @@ context: |+
     Le code pour calculer cette fonction de hash vous est donné.
     Nous vous demandons de calculer
     :math:`hash([from,...,from+M-1])` au départ de
-    :math:`hash([from-1,...,from+M])` en O(1).
+    :math:`hash([from-1,...,from+M-2])` en O(1).
 
 
 environment: java8scala
