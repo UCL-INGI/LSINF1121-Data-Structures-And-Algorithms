@@ -1,0 +1,85 @@
+#!/bin/bash
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+
+
+
+# test preliminary question
+
+a=`getinput nbSafePoints`
+if [ $a -ne 14 ]; then 
+   echo "failed"; 
+   feedback-result failed
+   feedback-msg -ae -m "Le code n'est pas testé tant que vous n'avez pas bien répondu au petit exercice nbSafePoints \n"
+   exit
+fi
+
+a=`getinput nbIslands`
+if [ $a -ne 4 ]; then 
+   echo "failed"; 
+   feedback-result failed
+   feedback-msg -ae -m "Le code n'est pas testé tant que vous n'avez pas bien répondu au petit exercice nbIslands \n"
+   exit
+fi
+
+a=`getinput onSameIsland`
+if [[ "$a" != "false" ]]; then 
+   echo "failed"; 
+   feedback-result failed
+   feedback-msg -ae -m "Le code n'est pas testé tant que vous n'avez pas bien répondu au petit exercice onSameIsland \n"
+   exit
+fi
+
+a=`getinput shortestPath`
+if [[ "$a" != "(1,0),(2,0),(2,1),(3,1)" ]]; then 
+   echo "failed"; 
+   feedback-result failed
+   feedback-msg -ae -m "Le code n'est pas testé tant que vous n'avez pas bien répondu au petit exercice shortestPath \n"
+   exit
+fi
+
+   
+#produce the output directory
+mkdir output
+
+# parse templates
+parsetemplate GlobalWarmingImpl.java
+
+# run sur un seul exemple pour les erreurs de compilation etc
+
+javac -Xlint:none -cp . GlobalWarmingTest.java 2> output/comp.err 
+
+java -cp . GlobalWarmingTest 2> output/run.err > output/std.out
+
+
+# add files to archive
+#archive -a Median.java
+#for f in $(ls output); do
+#archive -a output/$f
+#done
+
+# run feedback
+if [ -s output/comp.err ] && grep -Fq "error" output/comp.err; then # compilation error
+   echo "compilation error"
+        feedback-result failed
+        feedback-msg -ae -m "Il y a eu une erreur de compilation : \n"
+        cat output/comp.err | rst-code | feedback-msg -a
+        exit
+fi
+
+
+
+
+
+if [ -s output/run.err ]; then # error in main()
+   echo "runtime error"
+   feedback-grade 0
+   feedback-result failed
+   feedback-msg -ae -m "Il y a eu une erreur lors de l'exécution : \n"
+   cat output/run.err | rst-code | feedback-msg -a
+   exit
+fi
+echo "testing ok"
+
