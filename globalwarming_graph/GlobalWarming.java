@@ -35,30 +35,7 @@ abstract class GlobalWarming {
         this.waterLevel = waterLevel;
     }
 
-    /**
-     *
-     * @param waterLevel
-     * @return the number of entries in altitude matrix that would be above
-     *         the specified waterLevel.
-     *         Warning: this is not the waterLevel given in the constructor/
-     */
-    public abstract int nbSafePoints(int waterLevel);
-
-    /**
-     * An island is a connected components of safe points wrt to waterLevel
-     * @return the number of islands
-     */
-    public abstract int nbIslands();
-
-    /**
-     *
-     * @param p1 a point with valid coordinates on altitude matrix
-     * @param p2 a point with valid coordinates on altitude matrix
-     * @return true if p1 and p2 are on the same island, that is both p1 and p2 are safe wrt waterLevel
-     *        and there exists a path (vertical/horizontal moves) from p1 to p2 using only safe positions
-     */
-        public abstract boolean onSameIsland(Point p1, Point p2);
-
+  
     /**
      *
      * @param p1 a safe point with valid coordinates on altitude matrix
@@ -68,26 +45,6 @@ abstract class GlobalWarming {
      *         an empty list if not path exists (p1 and p2 are not on the same island).
      */
     public abstract List<Point> shortestPath(Point p1, Point p2);
-
-
-    public int nbSafePointsCorrect(int waterLevel) {
-        int res = 0;
-        for (int i = 0; i < altitude.length; i++) {
-            for (int j = 0; j < altitude.length; j++) {
-                if (altitude[i][j] > waterLevel) {
-                    res++;
-                }
-            }
-        }
-        return res;
-    }
-
-
-
-
-        //res = correct answer
-    //res = correct_answer + (n*n-nbSafePoints(waterLevel))
-
 
 
 }
