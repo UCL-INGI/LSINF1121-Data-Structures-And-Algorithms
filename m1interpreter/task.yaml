@@ -28,7 +28,7 @@ limits:
     time: '70'
 name: Mission 1 - PostScript Interpreter [group]
 network_grading: false
-order: 7
+order: 6
 problems:
     interpreter:
         name: PostScript interpreter

@@ -11,7 +11,7 @@ limits:
     time: '15'
 name: Mission 6 - Program report [group]
 network_grading: false
-order: 41
+order: 40
 problems:
     program_report:
         max_size: 5000000

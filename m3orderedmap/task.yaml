@@ -92,7 +92,7 @@ limits:
     time: '45'
 name: Mission 3 - Ordered Map [group]
 network_grading: false
-order: 17
+order: 16
 problems:
     ordered_map:
         name: SearchTree

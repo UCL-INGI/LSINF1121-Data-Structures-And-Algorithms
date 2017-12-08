@@ -1,4 +1,4 @@
-accessible: true
+accessible: 2017-12-11 08:50:07/2018-12-11 08:50:07
 author: ''
 context: |+
     Context
@@ -112,8 +112,9 @@ limits:
     time: '120'
     memory: '750'
     output: '100'
-name: Global Warming
+name: Bilan M6 - Global Warming
 network_grading: false
+order: 43
 problems:
     shortestPath:
         type: match
@@ -165,4 +166,3 @@ submission_limit:
     amount: -1
     period: -1
 weight: 1.0
-order: 0

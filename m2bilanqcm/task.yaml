@@ -10,7 +10,7 @@ limits:
     memory: '100'
 name: Bilan M2 - QCM
 network_grading: false
-order: 14
+order: 13
 problems:
     qcm01:
         choices:
