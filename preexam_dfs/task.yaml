@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2017-12-11 08:21:56/2018-12-11 08:21:56
 author: ''
 context: |-
     Consider this class, ``DepthFirstPaths``, that computes paths to any connected node from a source node ``s`` in an undirected graph.
@@ -79,37 +79,38 @@ limits:
     output: '2'
     memory: '100'
     time: '30'
-name: Pré-examen - Depth First Paths
+name: Bilan M6 - Depth First Paths
 network_grading: false
+order: 43
 problems:
     import:
-        type: code
         name: ''
         header: |-
             You can use this to import additional classes your code may need.
 
             **Note:** This is only asked so that your code can be compiled and tested. During the exam, you won't need to provide this and you will be able to use pseudo-classes like ``Queue``.
+        type: code
         language: java
     question1:
-        language: java
         type: code
-        name: ''
         header: |-
             .. code-block:: java
 
                 private void dfs(Graph G, int v)
+        name: ''
+        language: java
     question2:
         header: |-
             .. code-block:: java
 
                 public boolean hasPathTo(int v)
         language: java
-        type: code
         name: ''
+        type: code
     question3:
         language: java
-        type: code
         name: ''
+        type: code
         header: |-
             .. code-block:: java
 
@@ -119,4 +120,3 @@ submission_limit:
     amount: -1
     period: -1
 weight: 1.0
-order: 43
