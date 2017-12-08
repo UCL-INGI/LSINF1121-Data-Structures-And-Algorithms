@@ -105,13 +105,13 @@ context: |+
                     :alt: matrix example
 
 
-environment: htmlcss
+environment: java8scala
 evaluate: best
 groups: false
 limits:
-    time: '30'
-    memory: '100'
-    output: '2'
+    time: '120'
+    memory: '750'
+    output: '100'
 name: Global Warming
 network_grading: false
 problems:
@@ -125,7 +125,7 @@ problems:
                 gw.shortestPath(new GlobalWarming.Point(1,0),new GlobalWarming.Point(3,1));
 
             expected: a list of comma separated positions such as (1,0),(1,1),(2,1),(3,1)
-        answer: '(1,0),(2,0),(2,1),(3,1)   '
+        answer: (1,0),(2,0),(2,1),(3,1)
         name: shortestPath
     implementation:
         header: |+
