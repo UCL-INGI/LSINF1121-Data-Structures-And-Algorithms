@@ -82,7 +82,7 @@ limits:
     memory: '100'
 name: Bilan M4 - Rabin Karp
 network_grading: false
-order: 27
+order: 28
 problems:
     propositions:
         type: multiple-choice

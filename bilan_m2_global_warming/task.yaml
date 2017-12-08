@@ -85,7 +85,7 @@ limits:
     time: '120'
 name: Bilan M3 - Global Warming
 network_grading: false
-order: 18
+order: 19
 problems:
     nbSafePoints:
         type: match

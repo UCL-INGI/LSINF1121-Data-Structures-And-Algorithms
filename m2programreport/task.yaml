@@ -10,7 +10,7 @@ limits:
     output: '2'
 name: Mission 2 - Program report [group]
 network_grading: false
-order: 10
+order: 11
 problems:
     program_report:
         name: Program report

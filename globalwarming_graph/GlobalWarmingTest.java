@@ -210,7 +210,7 @@ public class GlobalWarmingTest {
     public boolean timeComplexityConstructorCorrect() {
         try {
 
-            final int [][] matrix = getRandomMatrix(400,2000000);
+            final int [][] matrix = getRandomMatrix(100,2000000);
 
             boolean timeOk = new TimeLimitedCodeBlock() {
                 @Override
@@ -234,7 +234,7 @@ public class GlobalWarmingTest {
     public boolean timeComplexityShortestPath() {
         try {
 
-            final int [][] matrix = getRandomMatrix(200,2000000);
+            final int [][] matrix = getRandomMatrix(70,2000000);
             final GlobalWarming g = new GlobalWarmingImpl(matrix,1000000 );
 
             boolean timeOk = new TimeLimitedCodeBlock() {
@@ -252,7 +252,7 @@ public class GlobalWarmingTest {
                     long t1 = System.currentTimeMillis();
                     System.out.println("time shortestPath:"+(t1-t0));
                 }
-            }.run(500);
+            }.run(1000);
             if (!timeOk) return false;
 
         } catch (AssertionError e) {

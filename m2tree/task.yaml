@@ -50,7 +50,7 @@ limits:
     time: '45'
 name: '[Old] Mission 2 - Formal expression tree [group]'
 network_grading: false
-order: 45
+order: 46
 problems:
     tree:
         type: code-file
