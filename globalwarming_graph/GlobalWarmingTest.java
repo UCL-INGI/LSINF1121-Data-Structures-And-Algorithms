@@ -288,7 +288,7 @@ public class GlobalWarmingTest {
             if (testShortestPathExam()) {
                 score += 15;
             } else {
-                System.out.println("test exam shortest path -15");
+                feedback("test exam shortest path -15");
             }
 
 
