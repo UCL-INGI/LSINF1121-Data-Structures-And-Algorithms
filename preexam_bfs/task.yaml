@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2017-12-11 08:20:09/2018-12-11 08:20:09
 author: Frédéric Kaczynski
 context: |-
     Consider this class, ``BreadthFirstShortestPaths``, that computes the shortest path between multiple node sources and any node in an undirected graph.
@@ -82,38 +82,38 @@ limits:
     output: '2'
     memory: '100'
     time: '30'
-name: Pré-examen - Breadth First Paths
+name: Bilan M6 - Breadth First Paths
 network_grading: false
 order: 41
 problems:
     import:
-        type: code
         name: ''
         header: |-
             You can use this to import additional classes your code may need.
 
             **Note:** This is only asked so that your code can be compiled and tested. During the exam, you won't need to provide this and you will be able to use pseudo-classes like ``Queue``.
+        type: code
         language: java
     question1:
-        language: java
         type: code
-        name: ''
         header: |-
             .. code-block:: java
 
                 private void bfs(Graph G, Iterable<Integer> sources)
+        name: ''
+        language: java
     question2:
         header: |-
             .. code-block:: java
 
                 public boolean hasPathTo(int v)
         language: java
-        type: code
         name: ''
+        type: code
     question3:
         language: java
-        type: code
         name: ''
+        type: code
         header: |-
             .. code-block:: java
 
