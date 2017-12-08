@@ -27,12 +27,7 @@ context: |+
     A global water level specified in the constructor models the fact that all the positions of the matrix with a value <= the water level are flooded (under the water) and thus unsafe.
     In the above example, the water level is 3, all the safe points are green.
 
-    The methods you must implement are
-
-    * the computations of the number of safe-points with anotgher specified weter level
-    * the number of islands
-    * a test to verify if two positions are on the same island
-    * the shortest path between two positions on a same island
+    The method you must implement is the computation of the shortest path between two positions on a same island
 
     we assume that points are **only connected vertially or horizontally**.
 
@@ -77,29 +72,6 @@ context: |+
                this.waterLevel = waterLevel;
            }
 
-           /**
-            *
-            * @param waterLevel
-            * @return the number of entries in altitude matrix that would be above
-            *         the specified waterLevel.
-            *         Warning: this is not the waterLevel given in the constructor/
-            */
-           public abstract int nbSafePoints(int waterLevel);
-
-           /**
-            * An island is a connected components of safe points wrt to waterLevel
-            * @return the number of islands
-            */
-           public abstract int nbIslands();
-
-           /**
-            *
-            * @param p1 a point with valid coordinates on altitude matrix
-            * @param p2 a point with valid coordinates on altitude matrix
-            * @return true if p1 and p2 are on the same island, that is both p1 and p2 are safe wrt waterLevel
-            *        and there exists a path (vertical/horizontal moves) from p1 to p2 using only safe positions
-            */
-           public abstract boolean onSameIsland(Point p1, Point p2);
 
            /**
             *
@@ -170,29 +142,7 @@ problems:
 
                    public GlobalWarmingImpl(int[][] altitude, int waterLevel) {
                        super(altitude,waterLevel);
-                       // expected pre-processing time in the constructror : O(n^2 log(n^2))
                        // TODO
-                   }
-
-
-                   public int nbSafePoints(int waterLevel) {
-                       // TODO
-                       // expected time complexity O(log(n^2))
-                       return 0;
-                   }
-
-
-                   public int nbIslands() {
-                       // TODO
-                       // expected time complexity O(1)
-                       return 0;
-                   }
-
-
-                   public boolean onSameIsland(Point p1, Point p2) {
-                       // TODO
-                       // expected time complexity O(1)
-                       return true;
                    }
 
 
