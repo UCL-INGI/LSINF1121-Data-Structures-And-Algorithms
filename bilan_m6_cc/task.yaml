@@ -1,7 +1,7 @@
 accessible: true
 author: psc
 context: |-
-    L'API de la classe `Graph <connectedcomponents/javadoc/index.html>`_.
+    L'API de la classe `Graph <bilan_m6_cc/javadoc.zip>`_.
 
 
     L'API de `Java <https://docs.oracle.com/javase/8/docs/api/>`_.
@@ -40,10 +40,12 @@ problems:
                 :alt: graph example
         answer: '3'
     TODO1:
-        header: |-
+        header: |+
             Mettez votre implémentation complète de ``ConnectedComponents.java`` ci-dessous.
             Conseil: commencez par par copier-coller le code source de la classe ci-dessus (celle-ci devrait compiler mais son contenu n'est pas correct).
             N'hésitez pas à ajouter des méthodes ou des même des inner-class (``private static class`` ...) pour vous aider mais ne modifiez pas le nom de la classe ni la signature de la méthode ``numberOfConnectedComponents``. N'oubliez pas d'ajouter les imports au début de votre code si vous utilisez des objets de l'API de `Java <https://docs.oracle.com/javase/8/docs/api/>`_.
+
+
         name: Code
         language: java
         type: code
