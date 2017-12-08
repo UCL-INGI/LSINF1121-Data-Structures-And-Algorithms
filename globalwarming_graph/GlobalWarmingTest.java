@@ -288,21 +288,21 @@ public class GlobalWarmingTest {
             if (testShortestPathExam()) {
                 score += 15;
             } else {
-                System.out.println("exam shortest path -15");
+                System.out.println("test exam shortest path -15");
             }
 
 
             if (testCorrectnessShortestPath()) {
-                score += 10;
+                score += 35;
 
                 if (timeComplexityShortestPath()) {
-                    score += 10;
+                    score += 50;
                 } else {
-                    feedback("test complexity shortestPath (hint:could you stop earlier, do you really need to visit all positions?):-10");
+                    feedback("test complexity shortestPath (hint:could you stop earlier, do you really need to visit all positions?):-50");
                 }
 
             } else {
-                feedback("test correctness Path on random graphs:-20");
+                feedback("test correctness Path on random graphs:-35");
             }
 
 
