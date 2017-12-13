@@ -1,11 +1,14 @@
 
-
 import java.io.IOException;
 
 import java.util.Random;
 
 public class ConnectedComponentsTest {
 
+    private class Feedback {
+        public String value;
+        public Feedback () {}
+    }
 
     private static class WeightedQuickUnionUF {
         private int[] parent;   // parent[i] = parent of i
@@ -63,7 +66,7 @@ public class ConnectedComponentsTest {
         }
     }
 
-    public boolean testRandomGraphOk(int n, int e) {
+    public boolean testRandomGraphOk(int n, int e, Feedback f) {
         Graph g = new Graph(n);
         WeightedQuickUnionUF uf = new WeightedQuickUnionUF(n);
         Random r = new Random(6);
@@ -73,7 +76,15 @@ public class ConnectedComponentsTest {
             uf.union(orig,dest);
             g.addEdge(orig,dest);
         }
-        return (uf.count() == ConnectedComponents.numberOfConnectedComponents(g));
+	int nbCC = ConnectedComponents.numberOfConnectedComponents(g);
+	int expectedCC = uf.count();
+	if (expectedCC == nbCC) {
+		return true;
+	} else {
+		f.value = "Number of connected components on a random graph with " + n + " node(s) and " + e + " edge(s) is incorrect (Expected: " 
+				+ expectedCC + ", Got: " + nbCC + ")";
+		return false;
+	}
     }
 
     public boolean cycleGraphOk() {
@@ -118,35 +129,35 @@ public class ConnectedComponentsTest {
         try{
             int score = 0;
 
-
-            if (testRandomGraphOk(600,120))
+	    Feedback f = new Feedback();
+            if (testRandomGraphOk(600,120,f))
                 score += 10;
             else {
-                feedback("number of connected components not ok:-10");
+                feedback(f.value);
             }
 
-            if (testRandomGraphOk(220,7))
+            if (testRandomGraphOk(220,7,f))
                 score += 10;
             else {
-                feedback("number of connected components not ok:-10");
+                feedback(f.value);
             }
 
-            if (testRandomGraphOk(105,3))
+            if (testRandomGraphOk(105,3,f))
                 score += 10;
             else {
-                feedback("number of connected components on graph without edge not ok:-10");
+                feedback(f.value);
             }
 
-            if (testRandomGraphOk(0,0))
+            if (testRandomGraphOk(0,0,f))
                 score += 10;
             else {
-                feedback("number of connected components on empty graph not ok:-10");
+                feedback(f.value);
             }
 
-            if (testRandomGraphOk(10,2*10))
+            if (testRandomGraphOk(10,2*10,f))
                 score += 10;
             else {
-                feedback("number of connected components on dense graph not ok:-10");
+                feedback(f.value);
             }
 
             if (cycleGraphOk())
@@ -194,4 +205,3 @@ public class ConnectedComponentsTest {
     }
 
 }
-
