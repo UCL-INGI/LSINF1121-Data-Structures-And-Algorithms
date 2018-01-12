@@ -1,6 +1,7 @@
 accessible: 2017-10-30 08:43:58/2018-10-20 10:44:19
 author: Antoine Cailliau
 context: ''
+environment: mcq
 evaluate: last
 groups: false
 limits:
@@ -13,46 +14,44 @@ order: 19
 problems:
     qcm02:
         choices:
-        -   valid: true
-            text: \\(O(\\log N)\\) et \\(O(N)\\)
+        -   text: \\(O(\\log N)\\) et \\(O(N)\\)
+            valid: true
         -   text: \\(O(\\log N)\\) et \\(O(\\frac{N^2}{2})\\)
         -   text: \\(O(N)\\) et \\(O(N)\\)
         -   text: \\(O(\\frac{N^2}{2})\\) et \\(O(N)\\)
         -   text: \\(O(N^2)\\) et \\(O(N)\\)
         name: Complexité des opérations pour BinarySearchST
+        type: multiple-choice
         header: 'Dans le pire des cas, les opérations `get` et `put` dans `BinarySearchST`
             (une recherche dichotomique dans un tableau ordonné) ont les complexités
             suivantes :'
-        type: multiple-choice
         limit: 0
     qcm03:
+        limit: 0
         choices:
         -   text: \\(O(\\frac{N}{2})\\)
-        -   text: \\(O(\\log N)\\)
-            valid: true
+        -   valid: true
+            text: \\(O(\\log N)\\)
         -   text: \\(O(1.39\\times \\log N)\\)
         -   text: \\(O(\\frac{N^2}{2})\\)
         -   text: \\(O(N\\times log N)\\)
-        limit: 0
         name: Complexité des opérations de arbres Red-black
+        type: multiple-choice
         header: Le coût, dans le pire cas, d’un `get` dans un arbre *red-black* est
             de 
-        type: multiple-choice
     qcm04:
         choices:
-        -   valid: true
-            text: \\(O(N)\\)
+        -   text: \\(O(N)\\)
+            valid: true
         -   text: \\(O(\\log N)\\)
         -   text: \\(O(N\\times \\log N)\\)
         -   text: \\(O(N^2)\\)
+        type: multiple-choice
         name: Complexité des opérations de arbres binaires
+        limit: 0
         header: Quelle est la complexité pour énumérer en ordre croissant toutes les
             clés d’un arbre binaire ?
-        type: multiple-choice
-        limit: 0
     qcm05:
-        header: Quelles affirmations suivantes sont exactes ?
-        multiple: true
         choices:
         -   valid: true
             text: Le *Selection Sort* n’est pas stable et est en-place.
@@ -62,22 +61,24 @@ problems:
         -   text: Le *3-Way Quick Sort* n’est pas stable et est en place.
             valid: true
         -   text: Le *Shell Sort* est stable et est en place.
-        name: Propriétés des algorithmes de tri
         limit: 0
         type: multiple-choice
+        header: Quelles affirmations suivantes sont exactes ?
+        multiple: true
+        name: Propriétés des algorithmes de tri
     qcm07:
         choices:
-        -   valid: true
-            text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a1.png'
+        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a1.png'
+            valid: true
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a2.png'
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a3.png'
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a4.png'
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a5.png'
-        type: multiple-choice
-        limit: 0
         name: Algorithme de construction d'un arbre red-black
         header: Quel arbre red-black correspond à l’arbre construit à partir de la
             séquence 3, 5, 4, 2, 1, 7, 8, 6 ?
+        limit: 0
+        type: multiple-choice
 stored_submissions: 1
 submission_limit:
     amount: 5
