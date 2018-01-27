@@ -72,7 +72,7 @@ order: 24
 problems:
     plagiarism:
         name: Plagiarism detector
-        type: code-file
+        type: file
         allowed_exts:
         - .java
         header: Upload your plagiarism detector here. Your class should be named "Plagiarism"
@@ -80,7 +80,7 @@ problems:
             your submission.**
     hashmap:
         name: HashMap
-        type: code-file
+        type: file
         header: Upload your map implementation here. Your class should be named "HashMap"
             and implement *MapInterface*. **Don't include the interface in your submission.**
         allowed_exts:

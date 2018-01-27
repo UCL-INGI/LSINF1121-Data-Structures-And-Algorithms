@@ -17,7 +17,7 @@ problems:
         allowed_exts:
         - .pdf
         header: 'Please upload here your *questions report* for the mission 2. '
-        type: code-file
+        type: file
         max_size: 5000000
 stored_submissions: 0
 submission_limit:

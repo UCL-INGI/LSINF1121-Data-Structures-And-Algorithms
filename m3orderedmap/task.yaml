@@ -100,7 +100,7 @@ problems:
             your ordered map should be named *SearchTree* and implement *OrderedMap*. '
         allowed_exts:
         - .java
-        type: code-file
+        type: file
 stored_submissions: 0
 submission_limit:
     amount: -1

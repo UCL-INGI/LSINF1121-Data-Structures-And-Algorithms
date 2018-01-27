@@ -80,7 +80,7 @@ problems:
         header: 'Upload your file here, with only one class named *CompressTests*.
             The classes representing the compressor and decompressor under test are
             respectively named *Compress* and *Decompress*, as written in the template. '
-        type: code-file
+        type: file
 stored_submissions: 0
 submission_limit:
     amount: -1

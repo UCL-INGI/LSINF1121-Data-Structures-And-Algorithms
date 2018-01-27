@@ -39,7 +39,7 @@ problems:
     interpreter_tests:
         allowed_exts:
         - .java
-        type: code-file
+        type: file
         name: Unit tests for the interpreter
         header: 'Upload your file here, with only one class named "InterpreterTests".
             The class representing the interpreter under test is called *Interpreter*

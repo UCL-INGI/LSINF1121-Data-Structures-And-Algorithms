@@ -25,7 +25,7 @@ problems:
             aléatoirement initialement.
         limit: 0
         name: Complexité de l'algorithme QuickSort
-        type: multiple-choice
+        type: multiple_choice
     qcm05:
         name: Propriétés des algorithmes de tri
         choices:
@@ -40,7 +40,7 @@ problems:
         header: Quelles affirmations suivantes sont exactes ?
         limit: 0
         multiple: true
-        type: multiple-choice
+        type: multiple_choice
     qcm06:
         header: Quel état du tableau correspond à une étape valide lors d’un *Merge
             Sort* (Top-down) pour le tableau [3, 5, 4, 2, 1, 7, 8, 6] ?
@@ -51,7 +51,7 @@ problems:
         -   text: '[1, 2, 3, 4, 5] [7, 8, 9]'
         -   text: '[3, 5] [4, 2, 1, 7, 8, 6]'
         multiple: true
-        type: multiple-choice
+        type: multiple_choice
         limit: 0
         name: Algorithme de tri MergeSort
 stored_submissions: 1

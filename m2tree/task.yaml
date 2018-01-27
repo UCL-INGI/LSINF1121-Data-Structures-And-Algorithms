@@ -53,7 +53,7 @@ network_grading: false
 order: 46
 problems:
     tree:
-        type: code-file
+        type: file
         name: Expression tree
         allowed_exts:
         - .java
@@ -67,7 +67,7 @@ problems:
         name: ParseException
         allowed_exts:
         - .java
-        type: code-file
+        type: file
         max_size: 1000000
 stored_submissions: 0
 submission_limit:

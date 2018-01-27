@@ -16,7 +16,7 @@ problems:
         name: Report
         max_size: 5000000
         header: 'Please upload here your *questions report* for the mission 4. '
-        type: code-file
+        type: file
         allowed_exts:
         - .pdf
 stored_submissions: 0

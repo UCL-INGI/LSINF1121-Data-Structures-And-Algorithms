@@ -85,7 +85,7 @@ network_grading: false
 order: 27
 problems:
     propositions:
-        type: multiple-choice
+        type: multiple_choice
         choices:
         -   text: La complexité de la methode 'search' est :math:`O(nm)`
             feedback: :math:`O(nm)` est la complexité d'une recherche brute force.

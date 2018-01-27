@@ -33,9 +33,9 @@ problems:
         limit: 0
         header: If the algorithm makes an prefix traversal, what will be the printed
             output ?
-        type: multiple-choice
+        type: multiple_choice
     qcm1:
-        type: multiple-choice
+        type: multiple_choice
         choices:
         -   text: '``1 2 3 4 6 5 7``'
             valid: true
@@ -55,7 +55,7 @@ problems:
         header: If the algorithm makes an postfix (or suffix) traversal, what will
             be the printed output ?
         name: ''
-        type: multiple-choice
+        type: multiple_choice
 stored_submissions: 0
 submission_limit:
     amount: -1

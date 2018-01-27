@@ -72,7 +72,7 @@ problems:
     filter_tests:
         allowed_exts:
         - .java
-        type: code-file
+        type: file
         name: Unit tests for the spam filter
         header: Upload your file here, with only one class named "SpamFilterTests".
             The class representing the spam filter under test is called *SpamFilter*
@@ -82,7 +82,7 @@ problems:
         - .zip
         name: Archive with inputs as text files
         max_size: 5000000
-        type: code-file
+        type: file
         header: 'Upload the archive containing your .txt files here. It will be unzipped
             in the same directory as your *SpamFilterTests* class. Don''t forget that
             if you zip a directory (instead of your .txt files directly), then you

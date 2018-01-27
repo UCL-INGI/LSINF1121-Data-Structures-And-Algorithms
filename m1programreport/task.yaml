@@ -21,7 +21,7 @@ problems:
         header: 'Please upload here your *program report* for the mission 1. '
         allowed_exts:
         - .pdf
-        type: code-file
+        type: file
 stored_submissions: 0
 submission_limit:
     amount: -1

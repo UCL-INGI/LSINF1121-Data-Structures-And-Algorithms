@@ -17,7 +17,7 @@ problems:
         name: Report
         allowed_exts:
         - .pdf
-        type: code-file
+        type: file
         header: 'Please upload here your *questions report* for the mission 1. '
 stored_submissions: 0
 submission_limit:

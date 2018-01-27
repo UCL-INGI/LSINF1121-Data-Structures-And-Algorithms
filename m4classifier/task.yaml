@@ -67,9 +67,9 @@ problems:
         name: Spam filter
         allowed_exts:
         - .java
-        type: code-file
+        type: file
     map:
-        type: code-file
+        type: file
         name: Map
         header: 'Upload your map here. Your class should be named "MyMap" and implement
             the interface *Map* given in the other part of the mission (it can be
@@ -77,7 +77,7 @@ problems:
         allowed_exts:
         - .java
     word:
-        type: code-file
+        type: file
         header: 'Upload your class Word here. It should be named "Word" and implement
             *WordInterface*. '
         allowed_exts:

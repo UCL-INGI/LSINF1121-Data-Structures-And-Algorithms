@@ -14,7 +14,7 @@ network_grading: false
 order: 32
 problems:
     program_report:
-        type: code-file
+        type: file
         name: Program report
         allowed_exts:
         - .pdf

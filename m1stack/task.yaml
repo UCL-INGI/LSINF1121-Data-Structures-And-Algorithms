@@ -33,7 +33,7 @@ order: 4
 problems:
     stack:
         name: Stack
-        type: code-file
+        type: file
         header: |-
             Upload the file containing your implementation here. The class representing your stack should be named *MyStack* and implement *Stack* (as usual, the interface is available on INGInious).
 

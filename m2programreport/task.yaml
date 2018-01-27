@@ -15,7 +15,7 @@ problems:
     program_report:
         name: Program report
         max_size: 5000000
-        type: code-file
+        type: file
         allowed_exts:
         - .pdf
         header: 'Please upload here your *program report* for the mission 2. '

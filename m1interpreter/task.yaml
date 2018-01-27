@@ -38,7 +38,7 @@ problems:
             public class named *Interpreter* and implementing *InterpreterInterface*.
             Put additional classes inside *Interpreter*, or just after it in the same
             file but then without the *public* key-word. '
-        type: code-file
+        type: file
 stored_submissions: 0
 submission_limit:
     amount: -1

@@ -21,7 +21,7 @@ problems:
         -   text: \\(O(\\frac{N^2}{2})\\) et \\(O(N)\\)
         -   text: \\(O(N^2)\\) et \\(O(N)\\)
         name: Complexité des opérations pour BinarySearchST
-        type: multiple-choice
+        type: multiple_choice
         header: 'Dans le pire des cas, les opérations `get` et `put` dans `BinarySearchST`
             (une recherche dichotomique dans un tableau ordonné) ont les complexités
             suivantes :'
@@ -36,7 +36,7 @@ problems:
         -   text: \\(O(\\frac{N^2}{2})\\)
         -   text: \\(O(N\\times log N)\\)
         name: Complexité des opérations de arbres Red-black
-        type: multiple-choice
+        type: multiple_choice
         header: Le coût, dans le pire cas, d’un `get` dans un arbre *red-black* est
             de 
     qcm04:
@@ -46,7 +46,7 @@ problems:
         -   text: \\(O(\\log N)\\)
         -   text: \\(O(N\\times \\log N)\\)
         -   text: \\(O(N^2)\\)
-        type: multiple-choice
+        type: multiple_choice
         name: Complexité des opérations de arbres binaires
         limit: 0
         header: Quelle est la complexité pour énumérer en ordre croissant toutes les
@@ -62,7 +62,7 @@ problems:
             valid: true
         -   text: Le *Shell Sort* est stable et est en place.
         limit: 0
-        type: multiple-choice
+        type: multiple_choice
         header: Quelles affirmations suivantes sont exactes ?
         multiple: true
         name: Propriétés des algorithmes de tri
@@ -78,7 +78,7 @@ problems:
         header: Quel arbre red-black correspond à l’arbre construit à partir de la
             séquence 3, 5, 4, 2, 1, 7, 8, 6 ?
         limit: 0
-        type: multiple-choice
+        type: multiple_choice
 stored_submissions: 1
 submission_limit:
     amount: 5

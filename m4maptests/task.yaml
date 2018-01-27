@@ -79,7 +79,7 @@ problems:
             representing the map under test is called *MyMap* and implements *Map*,
             as written in the template !
         name: Unit tests for the Map implementation
-        type: code-file
+        type: file
 stored_submissions: 0
 submission_limit:
     amount: -1

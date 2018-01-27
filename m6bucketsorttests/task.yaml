@@ -62,7 +62,7 @@ problems:
         header: 'Upload your file here, with only one class named "BucketSortTests".
             You can suppose that the *sort* method to test is available under *BucketSort.sort(arg1,
             arg2)* as written in the template. '
-        type: code-file
+        type: file
         name: Unit tests for the Bucket-Sort
 stored_submissions: 0
 submission_limit:

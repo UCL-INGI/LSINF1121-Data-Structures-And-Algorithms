@@ -13,7 +13,7 @@ network_grading: false
 order: 14
 problems:
     report:
-        type: code-file
+        type: file
         max_size: 5000000
         header: 'Please upload here your *questions report* for the mission 3. '
         name: Report

@@ -51,7 +51,7 @@ network_grading: false
 order: 15
 problems:
     tests:
-        type: code-file
+        type: file
         name: Unit tests
         allowed_exts:
         - .java

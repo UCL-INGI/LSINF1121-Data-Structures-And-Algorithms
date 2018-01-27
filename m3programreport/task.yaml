@@ -18,7 +18,7 @@ problems:
         allowed_exts:
         - .pdf
         header: 'Please upload here your *program report* for the mission 3. '
-        type: code-file
+        type: file
         name: Program report
 stored_submissions: 0
 submission_limit:

@@ -25,11 +25,11 @@ problems:
             just put them at the end of this file (or at the end of the decompress),
             without the *public* modifier. '
         name: Text compressor
-        type: code-file
+        type: file
     decompressor:
         allowed_exts:
         - .java
-        type: code-file
+        type: file
         header: 'Upload your decompressor here. Your class should be named *Decompress*
             and take two arguments as explained above. '
         name: Decompressor

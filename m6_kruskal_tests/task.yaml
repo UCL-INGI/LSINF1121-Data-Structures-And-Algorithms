@@ -101,11 +101,11 @@ problems:
         header: 'Upload your file here, with only one class named *KruskalTests*.
             The class representing the implementation under test is called *Kruskal*,
             as written in the template. '
-        type: code-file
+        type: file
         allowed_exts:
         - .java
     archive:
-        type: code-file
+        type: file
         max_size: 5000000
         header: 'Upload the archive containing your .txt files here. It will be unzipped
             in the same directory as your *KruskalTests* class. Don''t forget that

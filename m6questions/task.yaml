@@ -14,7 +14,7 @@ order: 37
 problems:
     report:
         max_size: 5000000
-        type: code-file
+        type: file
         allowed_exts:
         - .pdf
         name: Report

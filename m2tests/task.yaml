@@ -104,7 +104,7 @@ network_grading: false
 order: 45
 problems:
     tree_tests:
-        type: code-file
+        type: file
         name: Unit tests for the formal expression tree
         allowed_exts:
         - .java

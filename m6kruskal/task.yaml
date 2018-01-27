@@ -32,7 +32,7 @@ problems:
     kruskal:
         allowed_exts:
         - .java
-        type: code-file
+        type: file
         name: Kruskal
         header: 'Upload your file here. Your class should be named *Kruskal* and take
             two arguments as explained above. If you need other classes, just put

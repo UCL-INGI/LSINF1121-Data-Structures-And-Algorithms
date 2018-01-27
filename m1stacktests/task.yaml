@@ -64,7 +64,7 @@ network_grading: false
 order: 3
 problems:
     stack_tests:
-        type: code-file
+        type: file
         allowed_exts:
         - .java
         header: |-
