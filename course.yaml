@@ -10,6 +10,7 @@ admins:
 - vanderschuea
 - jaoga
 - guest6
+- hcambazard
 accessible: true
 registration: true
 registration_password: null
@@ -21,3 +22,7 @@ registration_ac_list:
 groups_student_choice: true
 use_classrooms: false
 allow_unregister: true
+allow_preview: false
+is_lti: false
+lti_keys: {}
+lti_send_back_grade: false
