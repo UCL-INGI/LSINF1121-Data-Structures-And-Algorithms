@@ -114,7 +114,7 @@ limits:
     output: '100'
 name: Bilan M6 - Global Warming
 network_grading: false
-order: 43
+order: 44
 problems:
     shortestPath:
         type: match

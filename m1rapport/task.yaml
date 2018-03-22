@@ -10,7 +10,7 @@ limits:
     memory: '200'
 name: Mission 1 - Questions report [individual]
 network_grading: false
-order: 2
+order: 3
 problems:
     report:
         max_size: 5000000

@@ -27,7 +27,7 @@ limits:
     memory: '100'
 name: Bilan M5 - Heap
 network_grading: false
-order: 35
+order: 36
 problems:
     heap1:
         header: 'Starting with an empty ``Heap``, we add ``5`` to it. The array containing

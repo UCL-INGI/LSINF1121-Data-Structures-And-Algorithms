@@ -29,7 +29,7 @@ limits:
     output: '100'
 name: Mission 1 - Stack [individual]
 network_grading: false
-order: 4
+order: 5
 problems:
     stack:
         name: Stack

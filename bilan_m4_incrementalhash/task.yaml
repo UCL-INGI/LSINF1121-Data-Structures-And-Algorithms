@@ -20,7 +20,7 @@ limits:
     output: '2'
 name: Bilan M4 - Incremental Hash
 network_grading: false
-order: 26
+order: 27
 problems:
     TODO1:
         name: IncrementalHash.java
