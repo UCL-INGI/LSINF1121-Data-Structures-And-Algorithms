@@ -1,13 +1,8 @@
 name: '[LSINF1121] Algorithmique et structures de données'
 admins:
-- ancailliau
 - gderval
 - pschaus
-- xgillard
-- ogoletti
 - steugels
-- nbockstael
-- vanderschuea
 - jaoga
 - guest6
 - hcambazard
@@ -26,3 +21,4 @@ allow_preview: false
 is_lti: false
 lti_keys: {}
 lti_send_back_grade: false
+description: ''
