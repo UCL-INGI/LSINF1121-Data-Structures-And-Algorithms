@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: psc
 context: |-
     L'API de la classe `Graph <bilan_m6_cc/javadoc.zip>`_.
@@ -20,17 +20,17 @@ context: |-
 environment: java8scala
 evaluate: best
 groups: false
+input_random: '0'
 limits:
-    time: '30'
-    hard_time: '30'
-    memory: '250'
     output: '2'
+    memory: '250'
+    hard_time: '30'
+    time: '30'
 name: Bilan M6 - Connected Components
 network_grading: false
+order: 0
 problems:
     TODO0:
-        answer: '3'
-        type: match
         header: |-
             Combien de composante(s) connexe(s) y a-t-il dans le graph suivant?
 
@@ -38,20 +38,23 @@ problems:
                 :width: 300px
                 :align: center
                 :alt: graph example
+        answer: '3'
+        type: match
         name: Exercice préliminaire
     TODO1:
-        type: code
-        name: Code
+        default: ''
         language: java
+        name: Code
         header: |+
             Mettez votre implémentation complète de ``ConnectedComponents.java`` ci-dessous.
             Conseil: commencez par par copier-coller le code source de la classe ci-dessus (celle-ci devrait compiler mais son contenu n'est pas correct).
             N'hésitez pas à ajouter des méthodes ou des même des inner-class (``private static class`` ...) pour vous aider mais ne modifiez pas le nom de la classe ni la signature de la méthode ``numberOfConnectedComponents``. N'oubliez pas d'ajouter les imports au début de votre code si vous utilisez des objets de l'API de `Java <https://docs.oracle.com/javase/8/docs/api/>`_.
 
 
+        type: code
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0
-order: 0
