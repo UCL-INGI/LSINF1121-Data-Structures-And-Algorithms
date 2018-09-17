@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Frédéric Kaczynski
 context: |-
     Consider the (top-down) sorting algorithm ``Merge Sort``
@@ -47,10 +47,11 @@ context: |-
 environment: java8scala
 evaluate: best
 groups: false
+input_random: '0'
 limits:
-    time: '30'
     output: '2'
     memory: '100'
+    time: '30'
 name: Bilan M2 - Merge Sort
 network_grading: false
 order: 13
@@ -62,17 +63,20 @@ problems:
 
                 private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi)
         type: code
+        default: ''
         language: java
     question2:
-        language: java
+        name: ''
         header: |-
             .. code-block:: java
 
                 public static void sort(Comparable[] a)
-        name: ''
+        language: java
         type: code
+        default: ''
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 0.0

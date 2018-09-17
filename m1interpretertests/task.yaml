@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     You are asked to write unit tests (using JUnit) in order to check wether a particular interpreter does its job correctly (i.e. the method *interpret* follows its specifications).
@@ -28,10 +28,11 @@ context: |-
 environment: java8scala
 evaluate: best
 groups: false
+input_random: '0'
 limits:
-    time: '65'
     output: '100'
     memory: '512'
+    time: '65'
 name: Mission 1 - Unit tests for the interpreter [individual]
 network_grading: false
 order: 6
@@ -39,13 +40,14 @@ problems:
     interpreter_tests:
         allowed_exts:
         - .java
-        type: file
         name: Unit tests for the interpreter
         header: 'Upload your file here, with only one class named "InterpreterTests".
             The class representing the interpreter under test is called *Interpreter*
             and implements *InterpreterInterface*, as written in the template. '
+        type: file
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0

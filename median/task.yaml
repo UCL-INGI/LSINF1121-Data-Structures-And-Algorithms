@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Pierre Schaus
 context: |-
     Nous vous donnons l'API d'une classe Vector permettant d'accéder, modifier et interchanger deux élements en temps constant.
@@ -22,10 +22,11 @@ context: |-
 environment: java8scala
 evaluate: best
 groups: false
+input_random: '0'
 limits:
-    time: '30'
     output: '2'
     memory: '900'
+    time: '30'
 name: Bilan M2 - Median
 network_grading: false
 order: 12
@@ -67,9 +68,11 @@ problems:
                     // votre code sera substitué ici
                 }
         type: code
+        default: ''
         language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 10.0

@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Pierre Schaus
 context: |+
     Context
@@ -79,9 +79,10 @@ context: |+
 environment: java8scala
 evaluate: best
 groups: false
+input_random: '0'
 limits:
-    memory: '750'
     output: '100'
+    memory: '750'
     time: '120'
 name: Bilan M3 - Global Warming
 network_grading: false
@@ -89,7 +90,6 @@ order: 19
 problems:
     nbSafePoints:
         type: match
-        name: nbSafePoints
         header: |-
             What would be the result of
 
@@ -99,11 +99,10 @@ problems:
 
 
             expected: a number
+        name: nbSafePoints
         answer: '14'
     implementation:
-        name: ''
         language: java
-        type: code
         header: |+
             Copy-paste and complete the code below.
             Be careful with the expected time-complexity in each method.
@@ -134,8 +133,12 @@ problems:
 
 
 
+        type: code
+        default: ''
+        name: ''
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0

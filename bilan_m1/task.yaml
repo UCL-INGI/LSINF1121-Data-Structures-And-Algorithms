@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Pierre Schaus
 context: |+
     Context
@@ -57,41 +57,48 @@ context: |+
 environment: java8scala
 evaluate: best
 groups: false
+input_random: '0'
 limits:
     output: '2'
-    time: '300'
     memory: '1500'
+    time: '300'
 name: Bilan M1 - Circular LinkedList
 network_grading: false
 order: 9
 problems:
     size:
-        language: java
         header: ''
-        type: code
         name: size
-    isEmpty:
         language: java
-        header: ''
+        default: ''
         type: code
+    isEmpty:
+        type: code
+        language: java
         name: isEmpty
-    front:
+        default: ''
         header: ''
+    front:
         language: java
         name: front
+        header: ''
         type: code
+        default: ''
     enqueue:
         type: code
         name: enqueue
         language: java
         header: ''
+        default: ''
     dequeue:
-        header: ''
+        default: ''
         name: dequeue
         language: java
+        header: ''
         type: code
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0

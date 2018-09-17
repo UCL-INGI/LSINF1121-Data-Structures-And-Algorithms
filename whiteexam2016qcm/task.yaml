@@ -1,44 +1,45 @@
-accessible: 2017-10-30 08:43:58/2018-10-20 10:44:19
+accessible: false
 author: Antoine Cailliau
 context: ''
 environment: mcq
 evaluate: last
 groups: false
+input_random: '0'
 limits:
+    memory: '100'
     output: '2'
     time: '30'
-    memory: '100'
 name: Bilan M3 - Questions à choix multiples
 network_grading: false
 order: 20
 problems:
     qcm02:
         choices:
-        -   text: \\(O(\\log N)\\) et \\(O(N)\\)
-            valid: true
+        -   valid: true
+            text: \\(O(\\log N)\\) et \\(O(N)\\)
         -   text: \\(O(\\log N)\\) et \\(O(\\frac{N^2}{2})\\)
         -   text: \\(O(N)\\) et \\(O(N)\\)
         -   text: \\(O(\\frac{N^2}{2})\\) et \\(O(N)\\)
         -   text: \\(O(N^2)\\) et \\(O(N)\\)
-        name: Complexité des opérations pour BinarySearchST
-        type: multiple_choice
         header: 'Dans le pire des cas, les opérations `get` et `put` dans `BinarySearchST`
             (une recherche dichotomique dans un tableau ordonné) ont les complexités
             suivantes :'
         limit: 0
+        type: multiple_choice
+        name: Complexité des opérations pour BinarySearchST
     qcm03:
-        limit: 0
         choices:
         -   text: \\(O(\\frac{N}{2})\\)
-        -   valid: true
-            text: \\(O(\\log N)\\)
+        -   text: \\(O(\\log N)\\)
+            valid: true
         -   text: \\(O(1.39\\times \\log N)\\)
         -   text: \\(O(\\frac{N^2}{2})\\)
         -   text: \\(O(N\\times log N)\\)
-        name: Complexité des opérations de arbres Red-black
-        type: multiple_choice
         header: Le coût, dans le pire cas, d’un `get` dans un arbre *red-black* est
             de 
+        limit: 0
+        name: Complexité des opérations de arbres Red-black
+        type: multiple_choice
     qcm04:
         choices:
         -   text: \\(O(N)\\)
@@ -46,41 +47,42 @@ problems:
         -   text: \\(O(\\log N)\\)
         -   text: \\(O(N\\times \\log N)\\)
         -   text: \\(O(N^2)\\)
+        header: Quelle est la complexité pour énumérer en ordre croissant toutes les
+            clés d’un arbre binaire ?
         type: multiple_choice
         name: Complexité des opérations de arbres binaires
         limit: 0
-        header: Quelle est la complexité pour énumérer en ordre croissant toutes les
-            clés d’un arbre binaire ?
     qcm05:
         choices:
-        -   valid: true
-            text: Le *Selection Sort* n’est pas stable et est en-place.
+        -   text: Le *Selection Sort* n’est pas stable et est en-place.
+            valid: true
         -   text: Le *Quick Sort* est stable et en-place.
         -   valid: true
             text: Le *Merge Sort* est stable et n’est pas en-place.
-        -   text: Le *3-Way Quick Sort* n’est pas stable et est en place.
-            valid: true
+        -   valid: true
+            text: Le *3-Way Quick Sort* n’est pas stable et est en place.
         -   text: Le *Shell Sort* est stable et est en place.
-        limit: 0
         type: multiple_choice
         header: Quelles affirmations suivantes sont exactes ?
         multiple: true
+        limit: 0
         name: Propriétés des algorithmes de tri
     qcm07:
         choices:
-        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a1.png'
-            valid: true
+        -   valid: true
+            text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a1.png'
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a2.png'
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a3.png'
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a4.png'
         -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/whiteexam2016qcm/a5.png'
-        name: Algorithme de construction d'un arbre red-black
         header: Quel arbre red-black correspond à l’arbre construit à partir de la
             séquence 3, 5, 4, 2, 1, 7, 8, 6 ?
         limit: 0
         type: multiple_choice
+        name: Algorithme de construction d'un arbre red-black
 stored_submissions: 1
 submission_limit:
     amount: 5
     period: -1
+tags: {}
 weight: 1.0
