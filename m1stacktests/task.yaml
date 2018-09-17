@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     Recall the Stack interface :
@@ -55,25 +55,27 @@ context: |-
 environment: java8scala
 evaluate: best
 groups: false
+input_random: '0'
 limits:
-    time: '60'
-    memory: '512'
     output: '100'
+    memory: '512'
+    time: '60'
 name: Mission 1 - Unit tests for the stack [individual]
 network_grading: false
 order: 4
 problems:
     stack_tests:
-        type: file
+        name: Unit tests for the stack implementation
         allowed_exts:
         - .java
         header: |-
             Upload your file here, with only one class named *StackTests*. You can suppose that the class representing the stack under test is called *MyStack*, and that the interface is available (named *Stack*) as written in the template.
 
             **Note:** You should **not** put your class in a java package. In other words, you should **not** use the ``package`` keyword.
-        name: Unit tests for the stack implementation
+        type: file
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0

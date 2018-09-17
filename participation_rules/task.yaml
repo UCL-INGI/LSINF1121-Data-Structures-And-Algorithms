@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Kaczynski Frédéric
 context: |-
     Ce qui est interdit
@@ -43,22 +43,24 @@ context: |-
 environment: mcq
 evaluate: best
 groups: false
+input_random: '0'
 limits:
-    memory: '100'
     output: '2'
+    memory: '100'
     time: '30'
 name: Règles de participation aux cours
 network_grading: false
+order: 2
 problems:
     read_and_approved:
-        type: match
         name: ''
+        answer: Lu et approuvé
+        type: match
         header: Merci de prendre connaissance du règlement du cours ci-dessus et d'écrire
             la mention ``Lu et approuvé`` dans l'encadré ci-dessous
-        answer: Lu et approuvé
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 0.0
-order: 2
