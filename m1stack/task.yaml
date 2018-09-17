@@ -20,6 +20,8 @@ context: |-
             public E push(E item);
 
         }
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/m1stack/test.txt>`_.
 environment: java8scala
 evaluate: best
 groups: false
