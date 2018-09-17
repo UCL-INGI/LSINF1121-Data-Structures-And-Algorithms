@@ -85,7 +85,7 @@ limits:
     output: '2'
 name: Bilan M6 - Breadth First Paths
 network_grading: false
-order: 42
+order: 41
 problems:
     import:
         language: java

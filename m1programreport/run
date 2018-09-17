@@ -1,5 +1,0 @@
-#! /bin/bash
-
-getinput report > ProgramReport.pdf
-
-feedback --result success --feedback "Program report uploaded. "

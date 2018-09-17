@@ -28,7 +28,7 @@ limits:
     time: '30'
 name: Bilan M6 - Connected Components
 network_grading: false
-order: 0
+order: 43
 problems:
     TODO0:
         header: |-

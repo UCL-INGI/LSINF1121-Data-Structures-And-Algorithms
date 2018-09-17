@@ -30,7 +30,7 @@ limits:
     time: '45'
 name: Mission 1 - Stack [individual]
 network_grading: false
-order: 5
+order: 3
 problems:
     stack:
         type: file

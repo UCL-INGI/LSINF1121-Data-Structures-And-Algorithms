@@ -1,5 +1,0 @@
-#! /bin/bash
-
-getinput report > QuestionsReport.pdf
-
-feedback --result success --feedback "Questions report uploaded. "

@@ -21,7 +21,7 @@ limits:
     time: '30'
 name: Bilan M4 - Incremental Hash
 network_grading: false
-order: 27
+order: 25
 problems:
     TODO1:
         default: ''

@@ -50,7 +50,7 @@ limits:
     time: '30'
 name: Règles de participation aux cours
 network_grading: false
-order: 2
+order: 0
 problems:
     read_and_approved:
         name: ''

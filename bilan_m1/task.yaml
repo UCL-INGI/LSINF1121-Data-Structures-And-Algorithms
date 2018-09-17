@@ -64,7 +64,7 @@ limits:
     time: '300'
 name: Bilan M1 - Circular LinkedList
 network_grading: false
-order: 9
+order: 7
 problems:
     size:
         header: ''

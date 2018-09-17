@@ -1,5 +1,0 @@
-#! /bin/bash
-
-getinput report > M2QuestionsReport.pdf
-
-feedback --result success --feedback "Questions report uploaded. "

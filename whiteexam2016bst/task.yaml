@@ -35,7 +35,7 @@ limits:
     time: '30'
 name: Bilan M3 - Binary Search Tree
 network_grading: false
-order: 21
+order: 19
 problems:
     q:
         type: code

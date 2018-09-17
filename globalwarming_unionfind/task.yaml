@@ -125,7 +125,7 @@ limits:
     time: '30'
 name: Bilan M5 - Global Warming
 network_grading: false
-order: 35
+order: 34
 problems:
     nbIslands:
         name: nbIslands

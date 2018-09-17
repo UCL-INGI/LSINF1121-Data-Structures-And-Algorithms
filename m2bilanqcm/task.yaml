@@ -11,7 +11,7 @@ limits:
     output: '2'
 name: Bilan M2 - QCM
 network_grading: false
-order: 14
+order: 12
 problems:
     qcm01:
         name: Complexité de l'algorithme QuickSort

@@ -29,7 +29,7 @@ limits:
     time: '30'
 name: Bilan M2 - Median
 network_grading: false
-order: 12
+order: 10
 problems:
     question1:
         name: Votre code

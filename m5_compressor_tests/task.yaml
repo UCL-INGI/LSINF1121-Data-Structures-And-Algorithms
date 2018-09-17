@@ -71,7 +71,7 @@ limits:
     time: '60'
 name: Mission 5 - Unit tests for the text compressor [individual]
 network_grading: false
-order: 31
+order: 30
 problems:
     tests:
         allowed_exts:
