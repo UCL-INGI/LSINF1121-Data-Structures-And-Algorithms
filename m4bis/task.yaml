@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Simon Hardy
 context: |-
     For this mission, you have to write a plagiarism detector (a class named "Plagiarism") implementing the following interface :
@@ -62,31 +62,33 @@ context: |-
 environment: java8scala
 evaluate: best
 groups: true
+input_random: '0'
 limits:
-    memory: '512'
     output: '100'
+    memory: '512'
     time: '20'
 name: Mission 4 - Plagiarism detector [group]
 network_grading: false
 order: 25
 problems:
     plagiarism:
-        name: Plagiarism detector
-        type: file
         allowed_exts:
         - .java
+        name: Plagiarism detector
+        type: file
         header: Upload your plagiarism detector here. Your class should be named "Plagiarism"
             and implement *PlagiarismInterface*. **Don't include the interface in
             your submission.**
     hashmap:
-        name: HashMap
-        type: file
         header: Upload your map implementation here. Your class should be named "HashMap"
             and implement *MapInterface*. **Don't include the interface in your submission.**
+        name: HashMap
         allowed_exts:
         - .java
+        type: file
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0

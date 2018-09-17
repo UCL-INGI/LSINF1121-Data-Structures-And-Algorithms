@@ -1,4 +1,4 @@
-accessible: 2017-11-27 08:00:00/2018-11-10 15:17:15
+accessible: false
 author: ''
 context: |-
     Vous devez calculer un arbre de Huffman au départ de la fréquence donnée pour chacune des R lettres (characters).
@@ -21,14 +21,17 @@ context: |-
 environment: java8scala
 evaluate: best
 groups: false
+input_random: '0'
 limits:
     output: '2'
     memory: '100'
     time: '30'
 name: Bilan M5 - Huffman
 network_grading: false
+order: 34
 problems:
     TODO1:
+        default: ''
         language: java
         name: ''
         header: |-
@@ -79,5 +82,5 @@ stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0
-order: 34

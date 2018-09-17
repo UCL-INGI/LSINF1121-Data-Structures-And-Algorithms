@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Pierre Schaus
 context: |+
     La fonction de Hash calculée sur le sous tableau t[from,...,from+M-1] est calculée comme suit:
@@ -14,15 +14,18 @@ context: |+
 environment: java8scala
 evaluate: best
 groups: false
+input_random: '0'
 limits:
-    time: '30'
-    memory: '100'
     output: '2'
+    memory: '100'
+    time: '30'
 name: Bilan M4 - Incremental Hash
 network_grading: false
 order: 27
 problems:
     TODO1:
+        default: ''
+        language: java
         name: IncrementalHash.java
         header: |-
             Mettez votre implémentation complète de ``IncrementalHash.java`` ci-dessous. Conseil: copiez-collez d'abord tout le code source de la classe ci-dessous (celle-ci devrait compiler mais son contenu n'est pas correct). Voir le TODO ci-dessous. La réponse ne devrait pas prendre plus de deux lignes de code à ajouter.
@@ -84,10 +87,10 @@ problems:
                     return h;
                 }
                 }
-        language: java
         type: code
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0

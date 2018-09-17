@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Xavier Gillard
 context: |
     A la page 777 du livre "Algorithms" 4th edition, on vous propose l'implémentation suivante de l'algorithme de Rabin Karp.
@@ -76,53 +76,55 @@ context: |
 environment: mcq
 evaluate: best
 groups: false
+input_random: '0'
 limits:
-    output: '2'
     time: '30'
+    output: '2'
     memory: '100'
 name: Bilan M4 - Rabin Karp
 network_grading: false
 order: 28
 problems:
     propositions:
-        type: multiple_choice
         choices:
         -   text: La complexité de la methode 'search' est :math:`O(nm)`
             feedback: :math:`O(nm)` est la complexité d'une recherche brute force.
                 Cette implémentation est dite `Monte Carlo` et sa complexité est :math:`O(n)`
-        -   valid: true
-            text: La complexité de la methode 'search' est :math:`O(n)`
+        -   text: La complexité de la methode 'search' est :math:`O(n)`
+            valid: true
         -   feedback: Le logarithme n'a aucune raison d'être. Cette implémentation
                 est dite `Monte Carlo` et sa complexité est :math:`O(n)`
             text: La complexité de la methode 'search' est :math:`O\left(n~log_2(m)\right)`
-        -   feedback: Il n'y a aucune raison pour qu'n apparaise en exposant. Cette
+        -   text: La complexité de la methode 'search' est :math:`O(m^n)`
+            feedback: Il n'y a aucune raison pour qu'n apparaise en exposant. Cette
                 implémentation est dite `Monte Carlo` et sa complexité est :math:`O(n)`
-            text: La complexité de la methode 'search' est :math:`O(m^n)`
-        -   feedback: C'est faux, puisqu'il ne vérifie pas que la sous-chaine trouvée
+        -   text: Cet implémentation renvoie toujours un résultat correct, c'est à
+                dire le premier indice i telle que la souchaine key[i::i+m-1] est
+                égale au pattern 'pat', ou n si le pattern pat ne s'y trouve pas.
+            feedback: C'est faux, puisqu'il ne vérifie pas que la sous-chaine trouvée
                 correspond effectivement au pattern recherché, on dit que ce bout
                 de code implémente la variante `Monte Carlo` de l'algorithme de Rabin
                 Karp. Cet algorithme est très probablement correct, mais il y a une
                 faible probabilité pour qu'il renvoie un résultat erroné (du a une
                 collision sur les hash).
-            text: Cet implémentation renvoie toujours un résultat correct, c'est à
-                dire le premier indice i telle que la souchaine key[i::i+m-1] est
-                égale au pattern 'pat', ou n si le pattern pat ne s'y trouve pas.
-        -   valid: true
-            text: |+
+        -   text: |+
                 Cet implémentation peut renvoyer un résultat incorrect, il est possible que pour l'indice i renvoyé, la souchaine key[i::i+m-1] ne soit pas égale au pattern 'pat'.
 
 
-        name: Sélectionnez les propositions correctes
-        multiple: true
-        limit: 0
+            valid: true
         header: |
             .. note::
 
                Dans toutes les propositions, on suppose que:
                  * `n` dénote la longueur du texte (key.length()) dans lequel on recherche le pattern
                  * `m` dénote la longueur du pattern à trouver dans le texte (pat.length())
+        type: multiple_choice
+        multiple: true
+        name: Sélectionnez les propositions correctes
+        limit: 0
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0
