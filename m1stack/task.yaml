@@ -21,7 +21,7 @@ context: |-
 
         }
 
-    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/m1stack/test.txt>`_.
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/m1stack/project.zip>`_.
 environment: java8scala
 evaluate: best
 groups: false
