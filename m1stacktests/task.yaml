@@ -45,7 +45,7 @@ context: |-
         }
 
 
-    #NB : to compile this in local, either use a built-in tool like %Eclipse, or run the following Bash commands (download the JARs here https://github.com/junit-team/junit/wiki/Download-and-Install):
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/m1stacktests/project.zip>`_.
 
     .. code-block::
 
