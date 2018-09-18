@@ -45,7 +45,7 @@ context: |-
         }
 
 
-    NB : to compile this in local, either use a built-in tool like Eclipse, or run the following Bash commands (download the JARs here https://github.com/junit-team/junit/wiki/Download-and-Install):
+    #NB : to compile this in local, either use a built-in tool like %Eclipse, or run the following Bash commands (download the JARs here https://github.com/junit-team/junit/wiki/Download-and-Install):
 
     .. code-block::
 
@@ -57,22 +57,22 @@ evaluate: best
 groups: false
 input_random: '0'
 limits:
-    output: '100'
     memory: '512'
     time: '60'
+    output: '100'
 name: Mission 1 - Unit tests for the stack [individual]
 network_grading: false
 order: 2
 problems:
     stack_tests:
-        name: Unit tests for the stack implementation
+        type: file
         allowed_exts:
         - .java
         header: |-
             Upload your file here, with only one class named *StackTests*. You can suppose that the class representing the stack under test is called *MyStack*, and that the interface is available (named *Stack*) as written in the template.
 
             **Note:** You should **not** put your class in a java package. In other words, you should **not** use the ``package`` keyword.
-        type: file
+        name: Unit tests for the stack implementation
 stored_submissions: 0
 submission_limit:
     amount: -1
