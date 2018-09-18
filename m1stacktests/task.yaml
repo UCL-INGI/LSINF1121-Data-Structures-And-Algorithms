@@ -1,6 +1,6 @@
 accessible: false
 author: Simon Hardy, Frédéric Kaczynski
-context: |-
+context: |+
     Recall the Stack interface :
 
     .. code-block:: java
@@ -47,11 +47,6 @@ context: |-
 
     `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/m1stacktests/project.zip>`_.
 
-    .. code-block::
-
-        javac MyStack.java
-        javac -cp .:junit-4.12.jar StackTests.java
-        java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore StackTests
 environment: java8scala
 evaluate: best
 groups: false
