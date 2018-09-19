@@ -1,5 +1,5 @@
 accessible: false
-author: Pierre Schaus
+author: Pierre Schaus and John Aoga
 context: |-
     Implémentez l'interface ``Digraph.java`` dans la classe ``DigraphImplem.java`` à l'aide d'une structure de donnée de type ``liste d'adjacence`` pour représenter les graphes dirigés.
 
@@ -38,20 +38,21 @@ context: |-
 
 
 
-    `Le projet IntelliJ est disponible ici </course/LSINF1121-0818/Digraph/project.zip>`_.
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-0818/p1circularlinkedlist/LSINF1121CircularLinkedList.zip>`_.
 environment: java8scala
 evaluate: best
 groups: false
 input_random: '0'
 limits:
     output: '2'
-    time: '15'
     memory: '1000'
-name: Question Pratique - Circular LinkedList
+    time: '15'
+name: digraph
 network_grading: false
-order: 3
 problems:
     implementation:
+        name: Implementation of Digraph.java
+        default: ''
         header: |-
             .. code-block:: java
 
@@ -92,13 +93,12 @@ problems:
                }
 
             Copier votre implementation complète de ``DigraphImplem.java`` ci-desssous en completant la classe. Vous pouvez changer tout ce que vous souhaitez dans la classe sauf le nom du package et les signature des méthodes.
-        name: Implementation of Digraph.java
-        default: ''
-        type: code
         language: java
+        type: code
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
 tags: {}
 weight: 1.0
+order: 3
