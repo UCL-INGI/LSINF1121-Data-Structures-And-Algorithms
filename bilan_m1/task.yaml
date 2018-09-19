@@ -73,29 +73,29 @@ problems:
         default: ''
         type: code
     isEmpty:
+        default: ''
+        header: ''
         type: code
         language: java
         name: isEmpty
-        default: ''
-        header: ''
     front:
-        language: java
-        name: front
-        header: ''
         type: code
+        name: front
+        language: java
+        header: ''
         default: ''
     enqueue:
-        type: code
-        name: enqueue
-        language: java
-        header: ''
         default: ''
+        header: ''
+        language: java
+        name: enqueue
+        type: code
     dequeue:
+        language: java
+        type: code
         default: ''
         name: dequeue
-        language: java
         header: ''
-        type: code
 stored_submissions: 0
 submission_limit:
     amount: -1
