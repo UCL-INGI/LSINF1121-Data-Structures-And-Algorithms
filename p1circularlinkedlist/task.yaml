@@ -47,7 +47,7 @@ limits:
     output: '2'
     time: '15'
     memory: '1000'
-name: digraph
+name: Question Pratique - Circular LinkedList
 network_grading: false
 order: 3
 problems:
