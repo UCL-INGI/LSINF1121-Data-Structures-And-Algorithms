@@ -1,4 +1,4 @@
-accessible: true
+accessible: false
 author: Pierre Schaus
 context: |-
     Implémentez l'interface ``Digraph.java`` dans la classe ``DigraphImplem.java`` à l'aide d'une structure de donnée de type ``liste d'adjacence`` pour représenter les graphes dirigés.
@@ -45,14 +45,13 @@ groups: false
 input_random: '0'
 limits:
     output: '2'
-    memory: '1000'
     time: '15'
+    memory: '1000'
 name: digraph
 network_grading: false
+order: 3
 problems:
     implementation:
-        name: Implementation of Digraph.java
-        default: ''
         header: |-
             .. code-block:: java
 
@@ -93,12 +92,13 @@ problems:
                }
 
             Copier votre implementation complète de ``DigraphImplem.java`` ci-desssous en completant la classe. Vous pouvez changer tout ce que vous souhaitez dans la classe sauf le nom du package et les signature des méthodes.
-        language: java
+        name: Implementation of Digraph.java
+        default: ''
         type: code
+        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
 tags: {}
 weight: 1.0
-order: 3
