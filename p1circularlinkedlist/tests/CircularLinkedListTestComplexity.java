@@ -26,8 +26,8 @@ public class CircularLinkedListTestComplexity {
         this.correct = correct;
     }
 
-    @Test(timeout=500)
-    @Grade(value=50)
+    @Test(timeout=300)
+    @Grade(value=10) //10 par test x 5 = 50
     public void runAsExpected() {
         int sz = correct.size();
         for (int i = 0; i < sz/2; i++) {
