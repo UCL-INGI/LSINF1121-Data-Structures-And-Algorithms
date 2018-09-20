@@ -53,21 +53,21 @@ groups: false
 input_random: '0'
 limits:
     memory: '512'
-    time: '60'
     output: '100'
-name: Mission 1 - Unit tests for the stack [individual]
+    time: '60'
+name: PART 1 - Write Unit tests Stack (Implem)
 network_grading: false
 order: 1
 problems:
     stack_tests:
-        type: file
-        allowed_exts:
-        - .java
+        name: Unit tests for the stack implementation
         header: |-
             Upload your file here, with only one class named *StackTests*. You can suppose that the class representing the stack under test is called *MyStack*, and that the interface is available (named *Stack*) as written in the template.
 
             **Note:** You should **not** put your class in a java package. In other words, you should **not** use the ``package`` keyword.
-        name: Unit tests for the stack implementation
+        type: file
+        allowed_exts:
+        - .java
 stored_submissions: 0
 submission_limit:
     amount: -1
