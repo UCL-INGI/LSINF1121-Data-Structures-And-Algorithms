@@ -21,17 +21,17 @@ public class MyStack<E> implements Stack<E> {
 		return myStack.pop(); 
 	}
 	
-	public E push(E item) { // add the element at the end instead of the top of the stack
+	public void push(E item) { // add the element at the end instead of the top of the stack
     	java.util.Stack<E> tempStack = new java.util.Stack<E>(); 
     	for (int i = 0 ; i < size ; i++) {
         	tempStack.push(myStack.pop()); 
         }
-        E toRet = myStack.push(item); 
+        myStack.push(item); 
     	for (int i = 0 ; i < size ; i++) {
         	myStack.push(tempStack.pop());
         }
 		size++; 
-		return toRet; 
+		
 	}
 	
 }

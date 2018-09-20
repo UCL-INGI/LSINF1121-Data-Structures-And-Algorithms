@@ -18,7 +18,7 @@ public class MyStack<E> implements Stack<E> {
 		return myStack.pop(); 
 	}
 	
-	public E push(E item) {
+	public void push(E item) {
 		return myStack.push(item); 
 	}
 	
