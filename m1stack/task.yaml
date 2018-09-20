@@ -22,6 +22,50 @@ context: |-
         }
 
 
+
+    .. code-block:: java
+
+        import java.util.EmptyStackException;
+
+        public class MyStack<E> implements Stack<E> {
+
+            private Node<E> top;
+            private int size;
+
+            // helper linked list class
+            private class Node<E> {
+                private E item;
+                private Node<E> next;
+
+                public Node(E element, Node<E> next) {
+                    this.item = element;
+                    this.next = next;
+                }
+            }
+
+            @Override
+            public boolean empty() {
+                // TODO STUDENT: Implement empty method
+            }
+
+            @Override
+            public E peek() throws EmptyStackException {
+                // TODO STUDENT: Implement peek method
+            }
+
+            @Override
+            public E pop() throws EmptyStackException {
+                // TODO STUDENT: Implement pop method
+            }
+
+            @Override
+            public E push(E item) {
+                // TODO STUDENT: Implement push method
+
+            }
+        }
+
+
     `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/m1stack/project.zip>`_.
 environment: java8scala
 evaluate: best
