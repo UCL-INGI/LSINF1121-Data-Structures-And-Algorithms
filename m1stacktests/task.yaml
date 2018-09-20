@@ -1,7 +1,7 @@
 accessible: false
 author: Simon Hardy, Frédéric Kaczynski
 context: |+
-    Recall the Stack interface :
+    Rappelez-vous de l'interface Stack :
 
     .. code-block:: java
 
@@ -19,9 +19,9 @@ context: |+
 
         }
 
-    You are asked to write unit tests (using JUnit) in order to check wether a particular implementation of this interface is correct.
+    Il vous est demandé d'écrire des tests unitaire (en utilisant JUnit) afin de vérifier si une implémentation particulière de cette interface est correcte.
 
-    Here is a simple template you can use to write your tests (you can use other types than String, of course!) :
+    Voici un modèle simple que vous pouvez utiliser pour écrire vos tests (vous pouvez utiliser d'autres types que des String, bien sûr !) :
 
     .. code-block:: java
 
