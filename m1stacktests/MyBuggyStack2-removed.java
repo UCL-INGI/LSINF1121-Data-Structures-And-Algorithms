@@ -21,7 +21,7 @@ public class MyStack<E> implements Stack<E> {
 		return myStack.pop(); 
 	}
 	
-	public E push(E item) {
+	public void push(E item) {
 		nbrOp++; 
 		if (nbrOp > 10) myStack.push(item); 
 		return myStack.push(item); 
