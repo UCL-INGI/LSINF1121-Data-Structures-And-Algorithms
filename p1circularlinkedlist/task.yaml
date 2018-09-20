@@ -7,7 +7,7 @@ context: |-
     Il vous est donc demander d'implémenter cette liste simplement chaînée à partir de la classe ``CircularLinkedList.java`` où vous devez completer les méthodes d'ajout (``enqueue``) et de retrait (``remove``) ainsi que un itérateur (``ListIterator``) qui permet de parcourir la liste en LIFO.
     *Attention:* #un itérateur# ne peut être modifié au cours de son utilisation
 
-    `Le projet IntelliJ est disponible ici </course/LSINF1121-0818/p1circularlinkedlist/LSINF1121CircularLinkedList.zip>`_.
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/p1circularlinkedlist/LSINF1121CircularLinkedList.zip>`_.
 environment: java8scala
 evaluate: best
 groups: false
