@@ -1,7 +1,7 @@
 accessible: false
 author: Pierre Schaus
 context: |-
-    On s’intéresse à l'implémentation d'une ``liste simplement chaînée circulaire``, c’est-à-dire une liste pour laquelle la dernière position de la liste fait référence, comme position suivante, à la première position de la liste.(`voir un exemple ici </course/LSINF1121-2016/p1circularlinkedlist/CircularLinkedList.png>`_ ).
+    On s’intéresse à l'implémentation d'une ``liste simplement chaînée circulaire``, c’est-à-dire une liste pour laquelle la dernière position de la liste fait référence, comme position suivante, à la première position de la liste.
 
     .. image:: p1circularlinkedlist/CircularLinkedList.png
 
