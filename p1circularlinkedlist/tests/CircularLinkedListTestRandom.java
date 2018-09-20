@@ -26,7 +26,7 @@ public class CircularLinkedListTestRandom {
     }
 
     @Test
-    @Grade(value=15/50)
+    @Grade(value=0.3)
     public void runAsExpected() {
         Iterator<Integer> aIter = student.iterator();
         Iterator<Integer> bIter = correct.iterator();
