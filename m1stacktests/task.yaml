@@ -45,29 +45,29 @@ context: |+
         }
 
 
-    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/m1stacktests/project.zip>`_.
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/m1stacktests/LSINF1121_PART1_Stack.zip>`_.
 
 environment: java8scala
 evaluate: best
 groups: false
 input_random: '0'
 limits:
+    time: '60'
     memory: '512'
     output: '100'
-    time: '60'
 name: PART 1 - Write Unit tests Stack (Implem)
 network_grading: false
 order: 1
 problems:
     stack_tests:
-        name: Unit tests for the stack implementation
+        type: file
+        allowed_exts:
+        - .java
         header: |-
             Upload your file here, with only one class named *StackTests*. You can suppose that the class representing the stack under test is called *MyStack*, and that the interface is available (named *Stack*) as written in the template.
 
             **Note:** You should **not** put your class in a java package. In other words, you should **not** use the ``package`` keyword.
-        type: file
-        allowed_exts:
-        - .java
+        name: Unit tests for the stack implementation
 stored_submissions: 0
 submission_limit:
     amount: -1
