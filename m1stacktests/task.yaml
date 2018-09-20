@@ -67,7 +67,7 @@ problems:
             Téléchargez votre fichier ici, avec une seule classe nommée *StackTests*. Vous pouvez supposer que la classe représentant la stack sous test s'appelle *MyStack*, et que l'interface est disponible (nommée *Stack*) comme écrit dans le modèle.
 
             **Note:** : Vous ne devriez **pas** mettre votre classe dans un package java. En d'autres termes, vous ne devriez **pas** utiliser le mot-clé ``package``.
-        name: Unit tests for the stack implementation
+        name: Tests unitaires pour l'implémentation de stack
 stored_submissions: 0
 submission_limit:
     amount: -1
