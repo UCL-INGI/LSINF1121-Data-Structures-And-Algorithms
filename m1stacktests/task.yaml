@@ -64,9 +64,9 @@ problems:
         allowed_exts:
         - .java
         header: |-
-            Upload your file here, with only one class named *StackTests*. You can suppose that the class representing the stack under test is called *MyStack*, and that the interface is available (named *Stack*) as written in the template.
+            Téléchargez votre fichier ici, avec une seule classe nommée *StackTests*. Vous pouvez supposer que la classe représentant la stack sous test s'appelle *MyStack*, et que l'interface est disponible (nommée *Stack*) comme écrit dans le modèle.
 
-            **Note:** You should **not** put your class in a java package. In other words, you should **not** use the ``package`` keyword.
+            **Note:** : Vous ne devriez **pas** mettre votre classe dans un package java. En d'autres termes, vous ne devriez **pas** utiliser le mot-clé ``package``.
         name: Unit tests for the stack implementation
 stored_submissions: 0
 submission_limit:
