@@ -24,7 +24,7 @@ public class MyStack<E> implements Stack<E>  {
 	public void push(E item) {
 		if (size >= 5) return myStack.peek(); // doesn't push the element + return another one
 		size++; 
-		return myStack.push(item); 
+		myStack.push(item); 
 	}
 	
 }

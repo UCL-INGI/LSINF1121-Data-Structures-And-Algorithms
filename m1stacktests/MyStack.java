@@ -19,7 +19,7 @@ public class MyStack<E> implements Stack<E> {
 	}
 	
 	public void push(E item) {
-		return myStack.push(item); 
+		myStack.push(item); 
 	}
 	
 }

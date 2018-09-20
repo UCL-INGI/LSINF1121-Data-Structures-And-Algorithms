@@ -19,7 +19,7 @@ public class MyStack<E> implements Stack<E> {
 	}
 	
 	public void push(E item) {
-		return myStack.push(null); // pushes null instead of the right item
+		myStack.push(null); // pushes null instead of the right item
 	}
 	
 }
