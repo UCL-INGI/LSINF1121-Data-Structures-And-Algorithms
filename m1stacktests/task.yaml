@@ -60,9 +60,9 @@ network_grading: false
 order: 1
 problems:
     stack_tests:
-        type: file
         allowed_exts:
         - .java
+        type: file
         header: |-
             Téléchargez votre fichier ici, avec une seule classe nommée *StackTests*. Vous pouvez supposer que la classe représentant la stack sous test s'appelle *MyStack*, et que l'interface est disponible (nommée *Stack*) comme écrit dans le modèle.
 

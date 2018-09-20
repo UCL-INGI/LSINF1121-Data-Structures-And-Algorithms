@@ -18,7 +18,11 @@ public class MyStack<E> implements Stack<E>  {
 
 	public E pop() {
 		size--; 
-		if (size >= 5) return myStack.peek(); // returns the right element, but doesn't pop it !
+		if (size >= 5) 
+        {
+            return myStack.peek(); // returns the right element, but doesn't pop it
+        }
+        
 		return myStack.pop(); 
 	}
 	
