@@ -8,7 +8,7 @@ import subprocess
 from inginious import rst
 import re
 
-input.parse_template("student/Mystack.java")
+input.parse_template("student/MyStack.java")
 
 compile_error = subprocess.call('javac -cp ".:libs/junit-4.12.jar:libs/hamcrest-core-1.3.jar:libs/JavaGrading-0.1.jar" tests/*.java student/Mystack.java 2>&1', shell=True, stdout=open('compiler.out', 'w'))
 
