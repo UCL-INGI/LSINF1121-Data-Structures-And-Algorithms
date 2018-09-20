@@ -8,7 +8,7 @@ context: |-
     L’ajout d’un nouvel élément dans la file (méthode ``enqueue``) se fait en fin de liste et le retrait (méthode ``remove``) se fait a un `index` particulier de la liste. Une (seule) référence sur la fin de la liste (``last``) est nécessaire pour effectuer toutes les opérations sur cette file.
 
     Il vous est donc demander d'implémenter cette liste simplement chaînée circulaire à partir de la classe ``CircularLinkedList.java`` où vous devez completer (*TODO STUDENT*) les méthodes d'ajout (``enqueue``) et de retrait (``remove``) ainsi qu'un itérateur (``ListIterator``) qui permet de parcourir la liste en FIFO.
-    *Attention:* un itérateur ne peut être modifié au cours de son utilisation
+    *Attention:* un itérateur ne peut être modifié au cours de son utilisation.
 
     .. code-block:: java
 
