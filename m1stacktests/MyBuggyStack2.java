@@ -22,11 +22,11 @@ public class MyStack<E> implements Stack<E>  {
 	}
 	
 	public void push(E item) {
-		if (size >= 5){
-            return myStack.peek(); // doesn't push the element + return another one
+        // doesn't push the element 
+		if (size < 5){
+            size++; 
+            myStack.push(item); 
         }
-		size++; 
-		myStack.push(item); 
 	}
 	
 }
