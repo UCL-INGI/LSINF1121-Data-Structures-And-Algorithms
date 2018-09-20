@@ -1,9 +1,9 @@
 accessible: false
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
-    You are asked to implement the following interface, representing a stack, using a singly linked list. You should at least have one constructor with no argument, creating an empty stack.
+    Il vous est demandé d'implémenter l'interface suivante, représentant une pile, en utilisant une liste simplement chainée. Vous devriez avoir au moins un constructeur sans argument, créant une pile vide.
 
-    Note: using *java.util.Stack<E>* is forbidden!
+    Note: utiliser *java.util.Stack<E>* est interdit!
 
     .. code-block:: java
 
@@ -36,9 +36,9 @@ order: 2
 problems:
     stack:
         header: |-
-            Upload the file containing your implementation here. The class representing your stack should be named *MyStack* and implement *Stack* (as usual, the interface is available on INGInious).
+            Téléchargez ici le fichier contenant votre implémentation. La classe représentant votre pile doit être nommée *MyStack* et implémenter *Stack* (comme d'habitude, l'interface est disponible sur INGInious).
 
-            **Note:** You should **not** put your class in a java package. In other words, you should **not** use the ``package`` keyword.
+            **Note** : Vous ne devriez **pas** mettre votre classe dans un package java. En d'autres termes, vous ne devriez **pas** utiliser le mot-clé ``package``.
         type: file
         name: Stack
         allowed_exts:
