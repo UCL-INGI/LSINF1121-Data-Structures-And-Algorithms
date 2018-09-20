@@ -31,19 +31,11 @@ context: |-
             n = 0;
         }
 
-        public boolean isEmpty() {
-            return n == 0;
-        }
+        public boolean isEmpty() { return n == 0; }
 
-        public int size() {
-            return n;
-        }
+        public int size() { return n; }
 
-        private long nOp() {
-            return nOp;
-        }
-
-
+        private long nOp() { return nOp; }
 
         /**
          * Append an item at the end of the list
@@ -61,7 +53,6 @@ context: |-
         public Item remove(int index) {
             // TODO STUDENT: Implement remove method
         }
-
 
         /**
          * Returns an iterator that iterates through the items in FIFO order.
