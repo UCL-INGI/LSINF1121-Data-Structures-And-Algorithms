@@ -53,11 +53,20 @@ context: |-
                 // TODO STUDENT: Implement peek method
             }
 
+            /**
+            * Removes the object at the top of this stack
+            * and returns that object as the value of this function.
+            **/
+
             @Override
             public E pop() throws EmptyStackException {
                 // TODO STUDENT: Implement pop method
             }
 
+            /**
+      * Pushes an item onto the top of this stack
+      * @param item the item to append
+      */
             @Override
             public E push(E item) {
                 // TODO STUDENT: Implement push method
