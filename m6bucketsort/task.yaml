@@ -25,7 +25,7 @@ limits:
     time: '60'
 name: '[Old] Mission 6 - Bucket Sort [individual]'
 network_grading: false
-order: 53
+order: 42
 problems:
     bucketsort:
         type: file

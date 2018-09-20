@@ -28,7 +28,7 @@ limits:
     time: '30'
 name: Bilan M5 - Huffman
 network_grading: false
-order: 33
+order: 24
 problems:
     TODO1:
         default: ''

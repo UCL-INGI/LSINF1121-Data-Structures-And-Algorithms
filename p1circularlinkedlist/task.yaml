@@ -14,11 +14,11 @@ groups: false
 input_random: '0'
 limits:
     output: '2'
-    time: '15'
+    time: '30'
     memory: '1000'
 name: 'Question pratique 1: Circular linkedlist'
 network_grading: false
-order: 3
+order: 5
 problems:
     implementation:
         header: |-
