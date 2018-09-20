@@ -17,7 +17,7 @@ context: |-
 
             public E pop() throws EmptyStackException;
 
-            public E push(E item);
+            public void push(E item);
 
         }
 
@@ -74,7 +74,7 @@ context: |-
             * @param item the item to append
             */
             @Override
-            public E push(E item) {
+            public void push(E item) {
                 // TODO STUDENT: Implement push method
 
             }
