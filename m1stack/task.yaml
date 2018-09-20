@@ -94,15 +94,6 @@ name: PART 1 - Linked List Stack (Implem)
 network_grading: false
 order: 2
 problems:
-    stack:
-        name: Stack
-        header: |-
-            Téléchargez ici le fichier contenant votre implémentation. La classe représentant votre pile doit être nommée *MyStack* et implémenter *Stack* (comme d'habitude, l'interface est disponible sur INGInious).
-
-            **Note** : Vous ne devriez **pas** mettre votre classe dans un package java. En d'autres termes, vous ne devriez **pas** utiliser le mot-clé ``package``.
-        type: file
-        allowed_exts:
-        - .java
     empty:
         default: ''
         name: 'Implementation de la fonction empty: boolean empty()'
@@ -118,8 +109,8 @@ problems:
                 }
 
             Copier le contenu de la fonction ``public boolean empty()`` ci-desssous.
-        language: java
         type: code
+        language: java
     peek:
         default: ''
         type: code
