@@ -96,91 +96,14 @@ name: 'PART 1: Circular linkedlist (Implem)'
 network_grading: false
 order: 3
 problems:
-    implementation:
-        name: 'Implementation de la fonction ajout: void enqueue(Item item)'
-        type: code
-        language: java
-        header: |-
-            .. code-block:: java
-
-               package student;
-
-               import java.util.ConcurrentModificationException;
-               import java.util.Iterator;
-               import java.util.NoSuchElementException;
-
-               public class CircularLinkedList<Item> implements Iterable<Item> {
-                private long nOp = 0; // count the number of operations
-                private int n;          // size of the stack
-                private Node  last;   // trailer of the list
-
-                // helper linked list class
-                private class Node {
-                    private Item item;
-                    private Node next;
-                }
-
-                public CircularLinkedList() {
-                    last = null;
-                    n = 0;
-                }
-
-                public boolean isEmpty() {
-                    return n == 0;
-                }
-
-                public int size() {
-                    return n;
-                }
-
-                private long nOp() {
-                    return nOp;
-                }
-
-
-
-                /**
-                 * Append an item at the end of the list
-                 * @param item the item to append
-                 */
-                public void enqueue(Item item) {
-                    // TODO STUDENT: Implement add method
-                }
-
-                /**
-                 * Removes the element at the specified position in this list.
-                 * Shifts any subsequent elements to the left (subtracts one from their indices).
-                 * Returns the element that was removed from the list.
-                 */
-                public Item remove(int index) {
-                    // TODO STUDENT: Implement remove method
-                }
-
-
-                /**
-                 * Returns an iterator that iterates through the items in FIFO order.
-                 * @return an iterator that iterates through the items in FIFO order.
-                 */
-                public Iterator<Item> iterator() {
-                    return new ListIterator();
-                }
-
-                /**
-                 * Implementation of an iterator that iterates through the items in FIFO order.
-                 *
-                 */
-                private class ListIterator implements Iterator<Item> {
-                    // TODO STUDDENT: Implement the ListIterator
-                }
-
-               }
-
-
-            Copier votre implementation complète de ``CircularLinkedList.java`` ci-desssous en completant la classe au niveau des `TODO STUDDENT`. Ne chamgez surtout pas le nom du package et les signatures des méthodes.
-        default: ''
     enqueue:
+        type: code
+        default: ''
+        language: java
+        name: 'Implementation de la fonction ajout: void enqueue(Item item)'
         header: |-
             .. code-block:: java
+
                 /**
                  * Append an item at the end of the list
                  * @param item the item to append
@@ -190,15 +113,11 @@ problems:
                 }
 
             Copier le contenu de la fonction ``public void enqueue(Item item)`` ci-desssous.
-        type: code
-        default: ''
-        language: java
-        name: 'Implementation de la fonction ajout: void enqueue(Item item)'
     remove:
-        name: 'Implementation de la fonction ajout: Item remove(int index)'
         type: code
         header: |-
             .. code-block:: java
+
                 /**
                  * Removes the element at the specified position in this list.
                  * Shifts any subsequent elements to the left (subtracts one from their indices).
@@ -210,11 +129,11 @@ problems:
 
             Copier le contenu de la fonction ``public Item remove(int index)`` ci-desssous.
         default: ''
+        name: 'Implementation de la fonction ajout: Item remove(int index)'
         language: java
     listiterator:
         name: 'Implementation de l''iterateur: ListIterator'
         default: ''
-        language: java
         header: |-
             .. code-block:: java
 
@@ -228,6 +147,7 @@ problems:
 
             Copier le contenu de la class ``private class ListIterator implements Iterator<Item>`` ci-desssous.
         type: code
+        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
