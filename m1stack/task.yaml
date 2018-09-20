@@ -88,8 +88,8 @@ groups: false
 input_random: '0'
 limits:
     time: '45'
-    memory: '512'
     output: '100'
+    memory: '512'
 name: PART 1 - Linked List Stack (Implem)
 network_grading: false
 order: 2
@@ -103,6 +103,23 @@ problems:
         name: Stack
         allowed_exts:
         - .java
+    empty:
+        default: ''
+        header: |-
+            .. code-block:: java
+
+                /**
+                 * Tests if this stack is empty
+                 */
+                @Override
+                public boolean empty() {
+                    // TODO STUDENT: Implement empty method
+                }
+
+            Copier le contenu de la fonction ``public boolean empty()`` ci-desssous.
+        type: code
+        name: 'Implementation de la fonction empty: boolean empty()'
+        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
