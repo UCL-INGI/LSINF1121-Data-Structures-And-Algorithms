@@ -29,8 +29,8 @@ context: |-
 
         public class MyStack<E> implements Stack<E> {
 
-            private Node<E> top;
-            private int size;
+            private Node<E> top;        // the node on the top of the stack
+            private int size;        // size of the stack
 
             // helper linked list class
             private class Node<E> {
@@ -43,11 +43,18 @@ context: |-
                 }
             }
 
+            /**
+            * Tests if this stack is empty
+            */
             @Override
             public boolean empty() {
                 // TODO STUDENT: Implement empty method
             }
 
+            /**
+            * Looks at the object at the top of this stack
+            * without removing it from the stack
+            */
             @Override
             public E peek() throws EmptyStackException {
                 // TODO STUDENT: Implement peek method
@@ -55,18 +62,17 @@ context: |-
 
             /**
             * Removes the object at the top of this stack
-            * and returns that object as the value of this function.
-            **/
-
+            * and returns that object as the value of this function
+            */
             @Override
             public E pop() throws EmptyStackException {
                 // TODO STUDENT: Implement pop method
             }
 
             /**
-      * Pushes an item onto the top of this stack
-      * @param item the item to append
-      */
+            * Pushes an item onto the top of this stack
+            * @param item the item to append
+            */
             @Override
             public E push(E item) {
                 // TODO STUDENT: Implement push method
