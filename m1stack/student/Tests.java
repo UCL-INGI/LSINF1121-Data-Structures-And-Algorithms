@@ -32,6 +32,7 @@ public class Tests {
         assertFalse(message, stack.empty());
     }
 
+    /* PUSH IS NOW VOID
     @Test
     public void testPush()
     {
@@ -48,6 +49,7 @@ public class Tests {
         assertEquals(message, "test", stack.push("test"));
         assertEquals(message, "testBis", stack.push("testBis"));
     }
+    */
 
     @Test
     public void testPeek()
@@ -66,7 +68,8 @@ public class Tests {
         MyStack stack = new MyStack();
 
         for (int i = 0;i <= 100;i++) {
-            assertEquals(message, i, stack.push(i));
+            //assertEquals(message, i, stack.push(i));
+            stack.push(i);
         }
 
         for (int i = 100;i >= 0;i--) {
