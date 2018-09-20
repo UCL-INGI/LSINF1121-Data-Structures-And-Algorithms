@@ -27,22 +27,22 @@ evaluate: best
 groups: false
 input_random: '0'
 limits:
+    time: '45'
     memory: '512'
     output: '100'
-    time: '45'
 name: PART 1 - Linked List Stack (Implem)
 network_grading: false
 order: 2
 problems:
     stack:
-        type: file
-        allowed_exts:
-        - .java
-        name: Stack
         header: |-
             Upload the file containing your implementation here. The class representing your stack should be named *MyStack* and implement *Stack* (as usual, the interface is available on INGInious).
 
             **Note:** You should **not** put your class in a java package. In other words, you should **not** use the ``package`` keyword.
+        type: file
+        name: Stack
+        allowed_exts:
+        - .java
 stored_submissions: 0
 submission_limit:
     amount: -1
