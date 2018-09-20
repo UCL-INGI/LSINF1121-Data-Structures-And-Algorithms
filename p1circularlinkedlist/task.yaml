@@ -90,16 +90,16 @@ groups: false
 input_random: '0'
 limits:
     memory: '1000'
-    output: '2'
     time: '300'
+    output: '2'
 name: 'PART 1: Circular linkedlist (Implem)'
 network_grading: false
 order: 3
 problems:
     implementation:
-        language: java
-        name: Implementation de CircularLinkedList.java
+        name: 'Implementation de la fonction ajout: void enqueue(Item item)'
         type: code
+        language: java
         header: |-
             .. code-block:: java
 
@@ -178,6 +178,56 @@ problems:
 
             Copier votre implementation complète de ``CircularLinkedList.java`` ci-desssous en completant la classe au niveau des `TODO STUDDENT`. Ne chamgez surtout pas le nom du package et les signatures des méthodes.
         default: ''
+    enqueue:
+        header: |-
+            .. code-block:: java
+                /**
+                 * Append an item at the end of the list
+                 * @param item the item to append
+                 */
+                public void enqueue(Item item) {
+                    // TODO STUDENT: Implement add method
+                }
+
+            Copier le contenu de la fonction ``public void enqueue(Item item)`` ci-desssous.
+        type: code
+        default: ''
+        language: java
+        name: 'Implementation de la fonction ajout: void enqueue(Item item)'
+    remove:
+        name: 'Implementation de la fonction ajout: Item remove(int index)'
+        type: code
+        header: |-
+            .. code-block:: java
+                /**
+                 * Removes the element at the specified position in this list.
+                 * Shifts any subsequent elements to the left (subtracts one from their indices).
+                 * Returns the element that was removed from the list.
+                 */
+                public Item remove(int index) {
+                    // TODO STUDENT: Implement remove method
+                }
+
+            Copier le contenu de la fonction ``public Item remove(int index)`` ci-desssous.
+        default: ''
+        language: java
+    listiterator:
+        name: 'Implementation de l''iterateur: ListIterator'
+        default: ''
+        language: java
+        header: |-
+            .. code-block:: java
+
+                /**
+                 * Implementation of an iterator that iterates through the items in FIFO order.
+                 *
+                 */
+                private class ListIterator implements Iterator<Item> {
+                    // TODO STUDDENT: Implement the ListIterator
+                }
+
+            Copier le contenu de la class ``private class ListIterator implements Iterator<Item>`` ci-desssous.
+        type: code
 stored_submissions: 0
 submission_limit:
     amount: -1
