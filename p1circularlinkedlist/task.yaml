@@ -13,14 +13,17 @@ evaluate: best
 groups: false
 input_random: '0'
 limits:
+    memory: '1000'
     output: '2'
     time: '300'
-    memory: '1000'
 name: 'Question pratique 1: Circular linkedlist'
 network_grading: false
 order: 5
 problems:
     implementation:
+        language: java
+        name: Implementation de CircularLinkedList.java
+        type: code
         header: |-
             .. code-block:: java
 
@@ -98,10 +101,7 @@ problems:
 
 
             Copier votre implementation complète de ``CircularLinkedList.java`` ci-desssous en completant la classe au niveau des `TODO STUDDENT`. Ne chamgez surtout pas le nom du package et les signatures des méthodes.
-        name: Implementation de CircularLinkedList.java
         default: ''
-        type: code
-        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1
