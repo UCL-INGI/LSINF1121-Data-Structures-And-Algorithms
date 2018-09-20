@@ -5,7 +5,7 @@ context: |-
     L’ajout d’un nouvel élément dans la file (méthode ``enqueue``) se fait en fin de liste et le retrait (méthode ``remove``) se fait en début de liste. Une (seule) référence sur la fin de la liste (``last``) est nécessaire pour effectuer toutes les opérations sur cette file.
 
     Il vous est donc demander d'implémenter cette liste simplement chaînée à partir de la classe ``CircularLinkedList.java`` où vous devez completer les méthodes d'ajout (``enqueue``) et de retrait (``remove``) ainsi que un itérateur (``ListIterator``) qui permet de parcourir la liste en LIFO.
-    *Attention:* #un itérateur# ne peut être modifié au cours de son utilisation
+    *Attention:* un itérateur ne peut être modifié au cours de son utilisation
 
     `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/p1circularlinkedlist/LSINF1121CircularLinkedList.zip>`_.
 environment: java8scala
