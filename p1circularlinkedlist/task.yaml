@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2018-09-24 16:00:00/2019-09-24 16:00:00
 author: Pierre Schaus
 context: |-
     On s’intéresse à l'implémentation d'une ``liste simplement chaînée circulaire``, c’est-à-dire une liste pour laquelle la dernière position de la liste fait référence, comme position suivante, à la première position de la liste.
@@ -83,18 +83,14 @@ evaluate: best
 groups: false
 input_random: '0'
 limits:
-    memory: '1000'
     time: '300'
+    memory: '1000'
     output: '2'
 name: PART 1 -  Circular linkedlist (Implem)
 network_grading: false
 order: 3
 problems:
     enqueue:
-        type: code
-        default: ''
-        language: java
-        name: 'Implementation de la fonction ajout: void enqueue(Item item)'
         header: |-
             .. code-block:: java
 
@@ -107,8 +103,14 @@ problems:
                 }
 
             Copier le contenu de la fonction ``public void enqueue(Item item)`` ci-desssous.
-    remove:
+        default: ''
         type: code
+        name: 'Implementation de la fonction ajout: void enqueue(Item item)'
+        language: java
+    remove:
+        language: java
+        type: code
+        default: ''
         header: |-
             .. code-block:: java
 
@@ -122,12 +124,12 @@ problems:
                 }
 
             Copier le contenu de la fonction ``public Item remove(int index)`` ci-desssous.
-        default: ''
         name: 'Implementation de la fonction ajout: Item remove(int index)'
-        language: java
     listiterator:
         name: 'Implementation de l''iterateur: ListIterator'
         default: ''
+        type: code
+        language: java
         header: |-
             .. code-block:: java
 
@@ -140,8 +142,6 @@ problems:
                 }
 
             Copier le contenu de la class ``private class ListIterator implements Iterator<Item>`` ci-desssous.
-        type: code
-        language: java
 stored_submissions: 0
 submission_limit:
     amount: -1

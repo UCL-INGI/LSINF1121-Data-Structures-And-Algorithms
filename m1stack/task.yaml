@@ -1,4 +1,4 @@
-accessible: false
+accessible: 2018-09-24 16:00:00/2019-09-24 16:00:00
 author: Simon Hardy, Frédéric Kaczynski
 context: |-
     Il vous est demandé d'implémenter l'interface suivante, représentant une pile, en utilisant une liste simplement chainée. Vous devriez avoir au moins un constructeur sans argument, créant une pile vide.
