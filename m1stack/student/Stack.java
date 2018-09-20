@@ -8,6 +8,6 @@ public interface Stack<E> {
 
     public E pop() throws EmptyStackException;
 
-    public E push(E item);
+    public void push(E item);
 
 }
