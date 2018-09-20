@@ -37,7 +37,7 @@ public class CircularLinkedListTestExtreme {
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
-    @Grade(value=10)
+    @Grade(value=5)
     public void testOutOfBound() {
         CircularLinkedList<Integer> a = new CircularLinkedList<>();
         a.enqueue(3);
@@ -46,7 +46,7 @@ public class CircularLinkedListTestExtreme {
 
 
     @Test(expected = ConcurrentModificationException.class)
-    @Grade(value=10)
+    @Grade(value=5)
     public void testConcurrentModificationNext() {
         CircularLinkedList<Integer> a = new CircularLinkedList<>();
         Iterator iter = a.iterator();
