@@ -1,0 +1,62 @@
+accessible: 2018-10-08 17:00:00/2019-10-08 17:00:00
+author: Antoine Cailliau
+context: ''
+environment: mcq
+evaluate: last
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    time: '30'
+    memory: '100'
+name: PART 2 - QCM
+network_grading: false
+order: 9
+problems:
+    qcm01:
+        choices:
+        -   text: \\(O(N\\times\\log N)\\)
+            valid: true
+        -   text: \\(O(N)\\)
+        -   text: \\(O(N^2)\\)
+        -   text: \\(O(\\frac{N^2}{2})\\)
+        -   text: \\(O(\\log N)\\)
+        limit: 0
+        name: Complexité de l'algorithme QuickSort
+        header: En moyenne, l’algorithme *QuickSort* utilise [reponse] comparaisons
+            pour trier un tableau de longueur N où les clés sont distinctes et mélangées
+            aléatoirement initialement.
+        type: multiple_choice
+    qcm05:
+        multiple: true
+        choices:
+        -   text: Le *Selection Sort* n’est pas stable et est en-place.
+            valid: true
+        -   text: Le *Quick Sort* est stable et en-place.
+        -   valid: true
+            text: Le *Merge Sort* est stable et n’est pas en-place.
+        -   valid: true
+            text: Le *3-Way Quick Sort* n’est pas stable et est en place.
+        -   text: Le *Shell Sort* est stable et est en place.
+        type: multiple_choice
+        name: Propriétés des algorithmes de tri
+        limit: 0
+        header: Quelles affirmations suivantes sont exactes ?
+    qcm06:
+        choices:
+        -   valid: true
+            text: '[2, 3, 4, 5] [1, 6, 7, 8]'
+        -   text: '[2, 3] [4, 5] [1, 6] [7, 8]'
+        -   text: '[1, 2, 3, 4, 5] [7, 8, 9]'
+        -   text: '[3, 5] [4, 2, 1, 7, 8, 6]'
+        type: multiple_choice
+        multiple: true
+        limit: 0
+        header: Quel état du tableau correspond à une étape valide lors d’un *Merge
+            Sort* (Top-down) pour le tableau [3, 5, 4, 2, 1, 7, 8, 6] ?
+        name: Algorithme de tri MergeSort
+stored_submissions: 1
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,0 +1,29 @@
+#! /bin/bash
+
+# 1) put(key, value) doesn't put anything
+# 2) get(key, hashCode) does the same as get
+# 3) size() returns always 0
+# 4) incrementalHashCode returns the wrong hash (inc by 1)
+# 5) get(key) returns the right element the first time, and then always this same (wrong) element
+
+###################################
+# Test configuration
+###################################
+
+tot=6 # number of tests
+problemId="plagiarism_tests"
+name="HashMap"
+testName="HashMapTests"
+interfaceName="MapInterface"
+buggyName="BuggyHashMap"
+buggyFeedbacks=(
+	"Failed put() test"
+	"Failed get() test"
+	"Failed size() test"
+	"Failed incrementalHashCode() test"
+	"Methods should be tested multiple times with different elements to make sure there are no side-effects between calls"
+)
+countBeforeHints=2
+
+. ./execute_test
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints

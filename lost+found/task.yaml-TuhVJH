@@ -1,0 +1,79 @@
+accessible: 2018-11-26 17:00:00/2019-11-26 17:00:00
+author: Frédéric Kaczynski
+context: |-
+    Considérons la structure de données ``Heap`` dans laquelle on ajoute progressivement des nombres.
+
+    Les questions suivantes vous demanderont d'écrire une représentation du ``Heap`` au fur et à mesure que nous y ajoutons des objets. Vous devez écrire le ``Heap`` comme s'il était stocké dans un tableau. Par exemple, si votre réponse est :
+
+    ::
+
+            9
+           / \
+          5   8
+         / \
+        4   3
+
+    Vous devriez écrire:
+
+    ::
+
+        9 5 8 4 3
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: PART 5 - Heap
+network_grading: false
+order: 21
+problems:
+    heap1:
+        header: 'En commençant par un ``Heap`` vide, on y ajoute "5". Le tableau contenant
+            le ``Heap`` est :'
+        name: ''
+        type: match
+        answer: '5'
+    heap2:
+        header: 'Nous ajoutons ``1`` au ``Heap``, le tableau contenant le ``Heap``
+            est :'
+        name: ''
+        answer: 5 1
+        type: match
+    heap3:
+        type: match
+        header: 'Nous ajoutons ``9`` au ``Heap``, le tableau contenant le ``Heap``
+            est :'
+        answer: 9 1 5
+        name: ''
+    heap4:
+        name: ''
+        header: 'Nous ajoutons ``3`` au ``Heap``, le tableau contenant le ``Heap``
+            est :'
+        type: match
+        answer: 9 3 5 1
+    heap5:
+        answer: 9 8 5 1 3
+        header: 'Nous ajoutons ``8`` au ``Heap``, le tableau contenant le ``Heap``
+            est :'
+        type: match
+        name: ''
+    heap6:
+        type: match
+        answer: 9 8 6 1 3 5
+        header: 'Nous ajoutons ``6`` au ``Heap``, le tableau contenant le ``Heap``
+            est :'
+        name: ''
+    heap7:
+        type: match
+        name: ''
+        header: 'Nous ajoutons ``4`` au ``Heap``, le tableau contenant le ``Heap``
+            est :'
+        answer: 9 8 6 1 3 5 4
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 0.0

@@ -1,0 +1,32 @@
+#! /bin/bash
+# BuggyKruskal :
+# 1 : costs of all edges are artificially incremented ==> not optimal
+# 2 : LinkedList instead of PriorityQueue ==> not optimal
+# 3 : too few edges (1 less) ==> not connected OR not enough nodes
+# 4 : one node was removed from the graph
+# 5 : disconnects the graph while keeping every other parameter identical.
+
+###################################
+# Test configuration
+###################################
+tot=6 # number of tests
+problemId="tests"
+testName="KruskalTests"
+name="Kruskal"
+interfaceName=""
+buggyName="BuggyKruskal"
+buggyFeedbacks=(
+	""
+	""
+	"How many edges are there in a MST compared to the original graph ?"
+	"How many nodes are there in a MST compared to the original graph ?"
+	"What can be said about the connectivity of a MST if the original graph is connected ?"
+)
+countBeforeHints=2
+
+# SPECIFIC FOR THIS TEST
+getinput archive > arch.zip
+unzip arch.zip -d ./student
+
+. ./execute_test
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints

@@ -1,0 +1,74 @@
+accessible: 2018-11-26 17:00:00/2019-11-26 17:00:00
+author: Frédéric Kaczynski
+context: |-
+    Considérons un graphe composé de 10 nœuds disjoints (numérotés de 0 à 9). Nous utilisons une structure de données union-find pour représenter ce graphe. Dans un premier temps, chaque nœud est contenu dans une partition qui porte son nom. Ainsi, la représentation du graphique dans le tableau ``id[]`` est :
+
+    ::
+
+        0 1 2 3 4 5 6 7 8 9
+
+    Les questions suivantes vous demanderont de donner la représentation du graphe après avoir utilisé l'algorithme **quick-find** pour ajouter une arête entre 2 noeuds. Vous devez donner cette représentation de la même manière qu'elle a été donnée ci-dessus.
+
+    **Note:** Lorsque nous joignons ``p-q`` avec l'algorithme quick-find, la convention est de changer ``id[p]`` (et éventuellement d'autres entrées) mais pas ``id[q]``.
+environment: mcq
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: PART 5 - Union find
+network_grading: false
+order: 22
+problems:
+    unionfind1:
+        type: match
+        answer: 0 9 2 3 4 5 6 7 8 9
+        name: ''
+        header: Après avoir ajouté l'arête ``1-9``, ``id[] =``
+    unionfind2:
+        name: ''
+        header: Après avoir ajouté l'arête ``3-8``, ``id[] =``
+        answer: 0 9 2 8 4 5 6 7 8 9
+        type: match
+    unionfind3:
+        name: ''
+        type: match
+        answer: 0 0 2 8 4 5 6 7 8 0
+        header: Après avoir ajouté l'arête ``1-0``, ``id[] =``
+    unionfind4:
+        name: ''
+        header: Après avoir ajouté l'arête ``6-7``, ``id[] =``
+        type: match
+        answer: 0 0 2 8 4 5 7 7 8 0
+    unionfind5:
+        type: match
+        header: Après avoir ajouté l'arête ``0-6``, ``id[] =``
+        answer: 7 7 2 8 4 5 7 7 8 7
+        name: ''
+    unionfind6:
+        answer: 7 7 2 8 8 5 7 7 8 7
+        type: match
+        name: ''
+        header: Après avoir ajouté l'arête ``4-8``, ``id[] =``
+    unionfind7:
+        type: match
+        header: Après avoir ajouté l'arête ``8-5``, ``id[] =``
+        name: ''
+        answer: 7 7 2 5 5 5 7 7 5 7
+    unionfind8:
+        header: Après avoir ajouté l'arête ``2-7``, ``id[] =``
+        name: ''
+        answer: 7 7 7 5 5 5 7 7 5 7
+        type: match
+    unionfind9:
+        answer: 5 5 5 5 5 5 5 5 5 5
+        type: match
+        name: ''
+        header: Après avoir ajouté l'arête ``7-5``, ``id[] =``
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 0.0

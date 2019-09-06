@@ -1,0 +1,70 @@
+accessible: 2018-10-29 17:00:00/2019-10-29 17:00:00
+author: Guillaume Derval, Simon Teugels, John Aoga
+context: |-
+    Etant donné un arbre de recherche binaire, dont les noeuds implémentent l'interface Node:
+
+    .. code-block:: java
+
+        interface Node {
+            /**
+              * @return the value contained in this node
+              */
+            int getValue();
+
+            /**
+             * @return the node on the left (whose value is < than the current value)
+             * if it exists, null if not
+             */
+            Node getLeft();
+
+            /**
+              * @return the node on the right (whose value is > than the current value)
+              * if it exists, null if not
+              */
+            Node getRight();
+        }
+
+    L'on vous demande de fournir le **corps** de la fonction *ceil*, qui trouve dans l'arbre le plus petit élément plus grand ou égal à `value` (donc soit l'élément lui-même soit l'élément situé directement après par ordre de grandeur). Si un tel élément n'existe pas, elle doit retourner `null`.
+
+    Par exemple si on a ce BST,
+
+    .. figure:: PART3Bst/bst.png
+       :scale: 70 %
+       :alt: alternate text
+       :align: center
+       :figclass: align-center
+
+
+    - ceil(11) nous renverra 11,
+    - ceil(4) nous renverra 8,
+    - et ceil(21) nous renverra null.
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/PART3Bst/LSINF1121_PART3_BinarySearchTree.zip>`_.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '200'
+    output: '20'
+    time: '300'
+name: PART 3 - Binary Search Tree (implem)
+network_grading: false
+order: 15
+problems:
+    ceil:
+        header: |-
+            Fournissez ici le **corps** de la fonction `ceil`:
+
+            .. code-block:: java
+
+                Integer ceil(Node root, int value)
+        default: ''
+        name: ''
+        type: code
+        language: java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

@@ -1,0 +1,34 @@
+#! /bin/bash
+# BuggyCompress1 : wrong output (only bits set to 1)
+# BuggyCompress2 : wrong output (first character missing)
+# BuggyCompress4 : wrong output for long files (doesn't process input file after 100 characters)
+# BuggyCompress5 : compressed file too large (larger than input file !), but output correct
+
+# To avoid problems with encoding
+
+###################################
+# Test configuration
+###################################
+
+tot=5 # number of tests
+problemId="tests"
+testName="CompressTests"
+name="Compress"
+interfaceName=""
+buggyName="BuggyCompress"
+buggyFeedbacks=(
+	""
+	""
+	"Long files not tested"
+	"You did not test if the size was really lowering (hint : you can re-open a file that was used in a compress_decrompress call)"
+)
+countBeforeHints=2
+
+# SPECIFIC FOR THIS TEST
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
+cp Decompress.java student/Decompress.java
+cp InputBitStream.class student/InputBitStream.class
+cp OutputBitStream.class student/OutputBitStream.class
+
+. ./execute_test
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints

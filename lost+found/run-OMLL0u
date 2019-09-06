@@ -1,0 +1,41 @@
+#! /bin/bash
+getinput bucketsort > student/BucketSort.java
+cp MyBucketSort.java student/MyBucketSort.java
+
+# Compile the student code and parse it properly
+compilationMessage=$(javac student/BucketSort.java student/MyBucketSort.java 2>&1)
+compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
+if [ ! -f student/BucketSort.class ]; then
+    feedback --result failed --feedback "$compilationMessage"
+    exit 0
+fi
+
+# Copy everything in the 'student' directory for run_student
+cp BucketSortProps.scala student/BucketSortProps.scala
+cp scalacheck.jar student/scalacheck.jar
+cd student
+scalac -cp .:scalacheck.jar BucketSortProps.scala
+output=$(run_student scala -cp .:scalacheck.jar -J-Xmx2g -J-Xms2g BucketSortProps)
+r=$?
+cd ..
+
+if [ "$r" = "252" ]; then
+	feedback --result failed --feedback "Command was killed due to an out-of-memory"
+elif [ "$r" = "253" ]; then
+	feedback --result timeout --feedback "Command timed out"
+elif [ "$r" = "254" ]; then
+    feedback --result failed --feedback "Unfortunately, a runtime error occured"
+else
+	failed=$(echo "$output" | grep -c "Falsified")
+	passed=$(echo "$output" | grep -c "OK")
+	infos=$(echo "$output" | grep -o '! \w*.\w*')
+
+	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then
+    	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
+	elif [ "$failed" = "0" ]; then
+		feedback --result success --feedback "Congratulations, you passed the $passed tests!"
+	else
+		feedback --result failed --feedback "Unfortunately, you failed $failed tests out of $(($passed+$failed)) : $infos"
+	fi
+fi

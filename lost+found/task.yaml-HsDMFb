@@ -1,0 +1,166 @@
+accessible: 2018-09-24 16:00:00/2019-09-24 16:00:00/2019-09-24 16:00:00
+author: Pierre Schaus, John Aoga
+categories: []
+context: |-
+    On s’intéresse à l'implémentation d'une ``liste simplement chaînée circulaire``, c’est-à-dire une liste pour laquelle la dernière position de la liste fait référence, comme position suivante, à la première position de la liste.
+
+    .. figure:: Part1CircularLinkedList/CircularLinkedList.png
+       :scale: 100 %
+       :alt: alternate text
+       :align: center
+       :figclass: align-center
+
+    L’ajout d’un nouvel élément dans la file (méthode ``enqueue``) se fait en fin de liste et le retrait (méthode ``remove``) se fait a un `index` particulier de la liste. Une (seule) référence sur la fin de la liste (``last``) est nécessaire pour effectuer toutes les opérations sur cette file.
+
+    Il vous est donc demander d'implémenter cette liste simplement chaînée circulaire à partir de la classe ``CircularLinkedList.java`` où vous devez completer (*TODO STUDENT*):
+
+    - la méthode d'ajout (``enqueue``);
+
+    - la méthode de retrait (``remove``) [L'exception ``IndexOutOfBoundsException`` est lancée quand la valeur de l'index n'est pas comprise en 0 et size()-1];
+
+    - l'itérateur (``ListIterator``) qui permet de parcourir la liste en FIFO.
+
+    *Attention:* L'itérateur devra lancer des exceptions dans les cas suivants:
+
+    - étant donnée que le ``remove`` est optionnel dans l'`API <https://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html>`_ , l'iterateur devra juste lancer un ``UnsupportedOperationException`` en cas d'appel du ``remove``;
+
+    - étant donnée qu'on ne peut modifier l'itérateur alors qu'on est en train d'itérer,  l'iterateur devra lancer un ``ConcurrentModificationException`` dans ce cas dans le ``next`` et le ``hasNest``;
+
+    - si le ``next`` est appelé alors qu'il n'y a plus de prochain élément,  l'iterateur devra lancer un ``NoSuchElementException``.
+
+    .. code-block:: java
+
+       import java.util.ConcurrentModificationException;
+       import java.util.Iterator;
+       import java.util.NoSuchElementException;
+
+       public class CircularLinkedList<Item> implements Iterable<Item> {
+        private long nOp = 0; // count the number of operations
+        private int n;          // size of the stack
+        private Node  last;   // trailer of the list
+
+        // helper linked list class
+        private class Node {
+            private Item item;
+            private Node next;
+        }
+
+        public CircularLinkedList() {
+            last = null;
+            n = 0;
+        }
+
+        public boolean isEmpty() { return n == 0; }
+
+        public int size() { return n; }
+
+        private long nOp() { return nOp; }
+
+        /**
+         * Append an item at the end of the list
+         * @param item the item to append
+         */
+        public void enqueue(Item item) {
+            // TODO STUDENT: Implement add method
+        }
+
+        /**
+         * Removes the element at the specified position in this list.
+         * Shifts any subsequent elements to the left (subtracts one from their indices).
+         * Returns the element that was removed from the list.
+         */
+        public Item remove(int index) {
+            // TODO STUDENT: Implement remove method
+        }
+
+        /**
+         * Returns an iterator that iterates through the items in FIFO order.
+         * @return an iterator that iterates through the items in FIFO order.
+         */
+        public Iterator<Item> iterator() {
+            return new ListIterator();
+        }
+
+        /**
+         * Implementation of an iterator that iterates through the items in FIFO order.
+         *
+         */
+        private class ListIterator implements Iterator<Item> {
+            // TODO STUDENT: Implement the ListIterator
+        }
+
+       }
+
+
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part1CircularLinkedList/LSINF1121_PART1_CircularLinkedList.zip>`_.
+environment: java8scala
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+limits:
+    time: '500'
+    output: '2'
+    memory: '1000'
+name: PART 1 -  Circular linkedlist (Implem)
+network_grading: false
+order: 5
+problems:
+    enqueue:
+        header: |-
+            .. code-block:: java
+
+                /**
+                 * Append an item at the end of the list
+                 * @param item the item to append
+                 */
+                public void enqueue(Item item) {
+                    // TODO STUDENT: Implement add method
+                }
+
+            Copier le contenu de la fonction ``public void enqueue(Item item)`` ci-desssous.
+        language: java
+        name: 'Implementation de la fonction ajout: void enqueue(Item item)'
+        default: ''
+        type: code
+    remove:
+        header: |-
+            .. code-block:: java
+
+                /**
+                 * Removes the element at the specified position in this list.
+                 * Shifts any subsequent elements to the left (subtracts one from their indices).
+                 * Returns the element that was removed from the list.
+                 */
+                public Item remove(int index) {
+                    // TODO STUDENT: Implement remove method
+                }
+
+            Copier le contenu de la fonction ``public Item remove(int index)`` ci-desssous.
+        language: java
+        default: ''
+        type: code
+        name: 'Implementation de la fonction ajout: Item remove(int index)'
+    listiterator:
+        name: 'Implementation de l''iterateur: ListIterator'
+        header: |-
+            .. code-block:: java
+
+                /**
+                 * Implementation of an iterator that iterates through the items in FIFO order.
+                 *
+                 */
+                private class ListIterator implements Iterator<Item> {
+                    // TODO STUDENT: Implement the ListIterator
+                }
+
+            Copier le contenu de la class ``private class ListIterator implements Iterator<Item>`` ci-desssous.
+        default: ''
+        type: code
+        language: java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

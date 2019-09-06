@@ -1,0 +1,70 @@
+#! /bin/bash
+
+getinput plagiarism > student/Plagiarism.java
+getinput hashmap > student/HashMap.java
+
+cp MapInterface.java ./student
+cp PlagiarismInterface.java ./student
+
+cp MyHashMap.java student/MyHashMap.java
+cp MyPlagiarism.java student/MyPlagiarism.java
+cp Tester.java ./student/Tester.java
+cp ./*.txt ./student/
+cp -r ./corpus ./student
+cp -r ./corpus2 ./student
+cp -r ./corpus3 ./student
+cp -r ./corpus4 ./student
+
+cd student
+
+# Compile the student code and parse it properly
+compilationMessage=$(javac Plagiarism.java PlagiarismInterface.java HashMap.java MapInterface.java 2>&1)
+compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
+if [ ! -f Plagiarism.class ] || [ ! -f HashMap.class ]; then
+    feedback --result failed --feedback "$compilationMessage"
+    exit 0
+fi
+
+
+javac Tester.java
+output=$(run_student java Tester 2>&1)
+retval=$?
+cd ..
+
+
+if [ "$retval" = "252" ]; then
+   echo "out of memory"
+	feedback --result failed --feedback "Command was killed due to an out-of-memory"
+elif [ "$retval" = "253" ]; then
+   echo "time out"
+	feedback --result timeout --feedback "Command timed out"
+elif [ "$retval" = "254" ]; then
+   echo "runtime error"
+   feedback --result failed --feedback "Unfortunately, a runtime error occurred"
+else
+
+   failed=$(echo "$output" | grep -c "failed :")
+	passed=$(echo "$output" | grep -c "passed")
+	problem=$(echo "$output" | grep -c "An error occurred")
+   
+   if [ "$problem" != "0" ]; then
+      echo "exception"
+    	feedback --result failed --feedback "Unfortunately, an exception occurred during the execution of your code. "
+   elif [ "$passed" != "0" ] && [ "$failed" = "0" ]; then
+      echo "congratulation"
+    	FEED=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+    	FEED=$(printf "Congratulations, you passed all the tests! \n::\n\n$FEED")
+   	feedback --result success --feedback "$FEED"
+   elif [ "$failed" != "0" ]; then
+      echo "failed test"
+    	FEED=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+      FEED=$(printf "Unfortunately, you failed some tests : \n::\n\n$FEED")
+      feedback --result failed --feedback "$FEED"
+   else # should never happen
+      echo "exception grading script"
+    	FEED=$(printf "An exception occured:")
+      feedback --result failed --feedback "$FEED"
+      echo $output | rst-code -l java | feedback-msg -a
+   fi
+fi

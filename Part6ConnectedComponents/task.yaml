@@ -1,0 +1,58 @@
+accessible: 2018-12-10 17:00:00/2019-12-10 17:00:00
+author: psc, John Aoga
+context: |-
+    Il vous ait demandé d'implémenter la classe des composants connexes ``ConnectedComponent`` étant donnée un graphe.
+    La classe `Graph <Part6ConnectedComponents/javadoc.zip>`_ disponible dans le code est celle de l'API de la classe `Java <https://docs.oracle.com/javase/8/docs/api/>`_.
+
+    .. code-block:: java
+
+        public class ConnectedComponents {
+          /**
+           * @return the number of connected components in g
+           */
+          public static int numberOfConnectedComponents(Graph g) {
+            // TODO
+            return 0;
+          }
+        }
+
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part6ConnectedComponents/LSINF1121_PART6_ConnectedComponents.zip>`_.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    hard_time: '30'
+    memory: '250'
+    output: '2'
+name: PART 6 - Connected Components (implem)
+network_grading: false
+order: 28
+problems:
+    TODO0:
+        answer: '3'
+        header: |-
+            Combien de composante(s) connexe(s) y a-t-il dans le graph suivant?
+
+            .. image:: Part6ConnectedComponents/graph.png
+                :width: 30%
+                :align: center
+                :alt: graph example
+        name: Exercice préliminaire
+        type: match
+    TODO1:
+        default: ''
+        language: java
+        type: code
+        name: Code
+        header: |+
+            Mettez votre implémentation complète de ``ConnectedComponents.java`` ci-dessous.
+            **Conseil:* N'hésitez pas à ajouter des méthodes ou même des inner-class (``private static class``) pour vous aider mais ne modifiez pas le nom de la classe ni la signature de la méthode ``numberOfConnectedComponents``. N'oubliez pas d'ajouter les imports au début de votre code si vous utilisez des objets de l'API de `Java <https://docs.oracle.com/javase/8/docs/api/>`_.
+
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

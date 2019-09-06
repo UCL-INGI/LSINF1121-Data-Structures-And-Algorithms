@@ -1,0 +1,58 @@
+#! /bin/bash
+### Generic script to test a data structure (file named $class.java) implementing an interface (file named $interface.java) with ScalaCheck (file named ${interface}Props.scala). ###
+
+### Problem-specific data : 
+interface="Map"
+class="MyMap"
+getinput map > student/$class.java
+forbiddenPatterns="java.util.HashMap|java.util.ConcurrentHashMap|java.util.ConcurrentSkipListMap|java.util.EnumMap|java.util.Hashtable|java.util.IdentityHashMap|java.util.LinkedHashMap|java.util.TreeMap|java.util.WeakHashMap"
+# Execute with xmx/xms options only if you need to check complexity (allows more stable tests with less influence of GC)
+options="-J-Xmx2g -J-Xms2g"
+
+### Generic script : 
+cheat=$(cat student/$class.java | grep -c -E "$forbiddenPatterns")
+if [ "$cheat" != "0" ]; then
+	feedback --result failed --feedback "You can't use an exising $interface implementation!"
+    exit 0
+fi
+
+# Copy everything in the 'student' directory for run_student
+cp $interface.java ./student
+cp ${interface}Props.scala ./student
+cp scalacheck.jar ./student
+cd student
+
+# Compile the student code and parse it properly
+compilationMessage=$(javac $class.java $2>&1)
+compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+compilationMessage=$(printf "Compilation of $class.java failed :\n::\n\n $compilationMessage")
+if [ ! -f $class.class ]; then
+    feedback --result failed --feedback "$compilationMessage"
+    exit 0
+fi
+
+scalac -cp .:scalacheck.jar ${interface}Props.scala
+output=$(run_student scala -cp .:scalacheck.jar $options ${interface}Props)
+retval=$?
+
+if [ "$retval" = "252" ]; then
+	feedback --result failed --feedback "Command was killed due to an out-of-memory"
+elif [ "$retval" = "253" ]; then
+	feedback --result timeout --feedback "Command timed out"
+    # echo $output
+elif [ "$retval" = "254" ]; then
+    feedback --result failed --feedback "Unfortunately, a runtime error occured"
+else
+	failed=$(echo "$output" | grep -c "Falsified")
+	passed=$(echo "$output" | grep -c "OK")
+	infos=$(echo "$output" | grep -o '! \w*.\w*') # names of failed properties
+
+	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then # should never happen
+    	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
+	elif [ "$failed" = "0" ]; then
+		feedback --result success --feedback "Congratulations, you passed the $passed tests!"
+	else
+		feedback --result failed --feedback "Unfortunately, you failed $failed tests out of $(($passed+$failed)) : $infos"
+        # echo $output
+	fi
+fi

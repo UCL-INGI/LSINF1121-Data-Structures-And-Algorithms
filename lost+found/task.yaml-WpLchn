@@ -1,0 +1,85 @@
+accessible: 2018-10-08 17:00:00/2019-10-08 17:00:00/2019-10-08 17:00:00
+author: Frédéric Kaczynski
+categories: []
+context: |-
+    Considérons l'algorithme de tri (descendant) ``Merge Sort``.
+
+    .. code-block:: java
+
+        public class MergeSort {
+            /**
+             * Pre-conditions: a[lo..mid] and a[mid+1..hi] are sorted
+             * Post-conditions: a[lo..hi] is sorted
+             */
+            private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
+                for (int k = lo; k <= hi; k++) {
+                    aux[k] = a[k];
+                }
+
+                int i = lo;
+                int j = mid + 1;
+                for (int k = lo; k <= hi; k++) {
+                    if (i > mid) {
+                        a[k] = aux[j++];
+                    } else if (j > hi) {
+                        a[k] = aux[i++];
+                    } else if (aux[j].compareTo(aux[i]) < 0) {
+                        a[k] = aux[j++];
+                    } else {
+                        a[k] = aux[i++];
+                    }
+                }
+            }
+
+            // Mergesort a[lo..hi] using auxiliary array aux[lo..hi]
+            private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
+                // TODO
+            }
+
+            /**
+             * Rearranges the array in ascending order, using the natural order
+             */
+            public static void sort(Comparable[] a) {
+                // TODO
+            }
+        }
+
+    **Note:** Les questions suivantes vous demanderont d'implémenter la fonction left out. Vous n'avez pas besoin de mettre les accolades (``{ }``) entourant le corps de la fonction dans votre réponse.
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part2MergeSort/LSINF1121_PART2_MergeSort.zip>`_.
+environment: java8scala
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: PART 2 - Merge Sort (implem)
+network_grading: false
+order: 8
+problems:
+    question1:
+        language: java
+        type: code
+        header: |-
+            .. code-block:: java
+
+                private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi)
+        default: ''
+        name: Implementation de la fonction private sort
+    question2:
+        type: code
+        default: ''
+        header: |-
+            .. code-block:: java
+
+                public static void sort(Comparable[] a)
+        language: java
+        name: Implementation de la fonction public sort
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 0.0

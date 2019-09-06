@@ -1,0 +1,138 @@
+accessible: false
+author: John Aoga
+context: |-
+    Dans ce exercice il vous est demandé d'implémenter les fonctions ``resize``, ``put`` et ``get`` d'une table de symbole basé sur le hashage par Linear Probing.
+
+    Pour cela la classe suivant vous a été donné. Vous devez completer les *TODO*.
+
+
+
+    .. code-block:: java
+
+        import java.util.Arrays;
+
+        /**
+        * Symbol-table implementation with linear-probing hash table.
+        */
+        public class LinearProbingHashST<Key, Value> {
+
+        private int n;           // number of key-value pairs in the symbol table
+        private int m;           // size of linear probing table
+        private Key[] keys;      // the keys
+        private Value[] vals;    // the values
+
+
+        /**
+         * Initializes an empty symbol table.
+         */
+        public LinearProbingHashST() {this(16);}
+
+         /**
+         * Initializes an empty symbol table with the specified initial capacity.
+         */
+        public LinearProbingHashST(int capacity) {
+            m = capacity;
+            n = 0;
+            keys = (Key[])   new Object[m];
+            vals = (Value[]) new Object[m];
+        }
+
+        public int size() {return n;}
+        public boolean isEmpty() {return size() == 0;}
+
+        // hash function for keys - returns value between 0 and M-1
+        private int hash(Key key) {
+            return (key.hashCode() & 0x7fffffff) % m;
+        }
+
+        /**
+        * resizes the hash table to the given capacity by re-hashing all of the keys
+        */
+        private void resize(int capacity) {
+            //TODO STUDENT
+        }
+
+        /**
+        * Inserts the specified key-value pair into the symbol table, overwriting the old
+        * value with the new value.
+        */
+        public void put(Key key, Value val) {
+            //TODO STUDENT
+        }
+
+        /**
+        * Returns the value associated with the specified key.
+        */
+        public Value get(Key key) {
+            //TODO STUDENT
+        }
+        }
+
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/EXAM0119LinearProbing/LSINF1121_EXAM0119_LinearProbing.zip>`_.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: EXAM0119 - LinearProbing
+network_grading: false
+order: 0
+problems:
+    resize:
+        name: Implementation de resize
+        language: java
+        type: code
+        default: ''
+        header: |
+            .. code-block:: java
+
+                /**
+                 * resizes the hash table to the given capacity by re-hashing all of the keys
+                 */
+                private void resize(int capacity) {
+                    //TODO STUDENT
+                }
+
+            Collez ici le contenu de votre fonction ``resize``
+    put:
+        language: java
+        name: Implementation de put
+        default: ''
+        type: code
+        header: |-
+            .. code-block:: java
+
+                /**
+                 * Inserts the specified key-value pair into the symbol table, overwriting the old
+                 * value with the new value.
+                 */
+                public void put(Key key, Value val) {
+                    //TODO STUDENT
+                }
+
+            Collez ici le contenu de votre fonction ``put``
+    get:
+        type: code
+        language: java
+        header: |
+            .. code-block:: java
+
+                /**
+                 * Returns the value associated with the specified key.
+                 */
+                public Value get(Key key) {
+                    //TODO STUDENT
+                }
+
+            Collez ici le contenu de votre fonction ``get``
+        default: ''
+        name: Implementation de get
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

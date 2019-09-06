@@ -1,0 +1,41 @@
+#! /bin/bash
+# BuggySearchTree :
+# 1 : !isEmpty()
+# 2 : remove doesn't remove anything
+# 3 : constructor with String argument does same as no argument constructor
+# 4 : constructor with String argument only treats the 2 first lines of the file
+# 5 : ceilingEntry and floorEntry are inversed.
+# 6 : firstEntry() actually returns the second entry.
+# 7 : getOrdered doesn't sort the songs
+# 8 : entriesBetween returns entries STRICTLY in the range (should be inclusive)
+# 9 : entriesBetween returns entries from 'lowest' (but to the max, not to 'highest')
+# 10 : toString format not respected
+
+###################################
+# Test configuration
+###################################
+
+tot=11 # number of tests
+problemId="tests"
+name="SearchTree"
+testName="SearchTreeTests"
+interfaceName="OrderedMap"
+buggyName="BuggySearchTree"
+buggyFeedbacks=(
+	""
+	""
+	"A file \"songs.txt\" is provided to you for this test"
+	"A file \"songs.txt\" containing 50 songs is provided to you for this test"
+	"ceilingEntry() failed test"
+	"firstEntry() failed test"
+	"getOrdered() failed test"
+	"The specification of a method that returns an interval states wether the set is inclusive or not, i.e. if the set contains the \"border\" values."
+	"Unit tests should check if the set returned by a method doesn't contain more values than it should"
+	"toString() failed test"
+)
+countBeforeHints=3
+
+cp songs.txt student/songs.txt
+
+. ./execute_test
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints

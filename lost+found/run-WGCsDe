@@ -1,0 +1,21 @@
+#! /bin/bash
+
+###################################
+# Test configuration
+###################################
+
+tot=4 # number of tests
+problemId="RedBlack_tests"
+name="MyRedBlack"
+testName="RedBlackTests"
+interfaceName="RedBlack"
+buggyName="MyBuggyRedBlack"
+buggyFeedbacks=(
+	"Failed order value in RBT"
+	"Failed flipcolor() check"
+    "Failed 2-3 property check"
+)
+countBeforeHints=3
+
+. ./execute_test
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints

@@ -1,0 +1,96 @@
+accessible: 2018-11-12 17:00:00/2019-11-12 17:00:00
+author: Pierre Schaus
+context: |-
+    La fonction de Hash calculée sur le sous tableau :math:`t[from,...,from+M-1]` est calculée comme suit:
+
+    :math:`hash([from,...,from+M-1])= \left( \sum_{i=0}^{M-1} t[from+i] \cdot R^{(M-1-i)}\right)\%Q`
+
+    Le code pour calculer cette fonction de hash vous est donné.
+    Nous vous demandons de calculer
+    :math:`hash([from,...,from+M-1])` au départ de
+    :math:`hash([from-1,...,from+M-2])` en O(1).
+
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part4IncrementalHash/LSINF1121_PART4_IncrementalHash.zip>`_.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: PART 4 - Incremental Hash (implem)
+network_grading: false
+order: 19
+problems:
+    TODO1:
+        header: |-
+            Mettez votre implémentation complète de ``IncrementalHash.java`` ci-dessous.
+
+            .. code-block:: java
+
+                public class IncrementalHash {
+
+
+                private static final int R = 31;
+                private int M;
+                private int RM;
+                private int Q;
+
+                /**
+                 *
+                 * @param Q is the modulo to apply
+                 * @param M is the length of the words to hash
+                 */
+                public IncrementalHash(int Q, int M) {
+                    assert(M > 0);
+                    assert(Q > 0);
+                    this.Q = Q;
+                    this.M = M;
+                    // computes (R^(M-1))%Q
+                    // which might be useful for implementing nextHash
+                    RM = 1;
+                    for (int i = 1; i <= M-1; i++) {
+                        RM = (RM * R)%Q;
+                    }
+                }
+
+                /**
+                 * Compute the hash function on the substring
+                 * t[from,...,from+M-1] in O(1)
+                 * @param t
+                 * @param previousHash = hash(from-1)
+                 * @param 0 < from <= t.length-M
+                 * @return (t[from]*R^(M-1)+t[from+1]*R^(M-2)+...+t[from+M-1])%Q
+                 */
+                public int nextHash(char[] t, int previousHash, int from) {
+                    // TODO, obviously this is not O(1)
+                    return hash(t,from);
+                }
+
+
+                /**
+                 * Compute the hash function on the substring
+                 * t[from,...,from+M-1] in O(M)
+                 * @param t
+                 * @param 0 <= from <= t.length-M
+                 * @return (t[from]*R^(M-1)+t[from+1]*R^(M-2)+...+t[from+M-1])%Q
+                 */
+                public int hash(char[] t, int from) {
+                    int h = 0;
+                    for (int i = from; i < from+M; i++) {
+                        h = (R*h+t[i]) % Q;
+                    }
+                    return h;
+                }
+                }
+        type: code
+        default: ''
+        language: java
+        name: IncrementalHash.java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

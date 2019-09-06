@@ -1,0 +1,72 @@
+accessible: 2018-12-10 17:00:00/2019-12-10 17:00:00
+author: John Aoga
+context: |-
+    On vous demande d'implémenter la classe ``WordTransformationSP`` qui permet de trouver le plus court chemin permettant de passer d'un string *A* à un autre string *B* (avec la certitude qu'il y a bien un chemin permettant de transformer *A* en *B*).
+
+
+    Pour cela on definit une opération ``rotation(x, y)`` qui inverse l’ordre des lettres entre la position x et y (non-inclus).
+    Par exemple, avec A=``HAMBURGER``, si l'on fait ``rotation(A, 4, 8)``, cela nous donne ``HAMBEGRUR``. Vous pouvez donc constater que la sous-string ``URGE`` a été inversé en ``EGRU`` et le reste de la chaine est resté inchangé: ``HAMB`` + ``ECRU`` + ``R`` = ``HAMBEGRUR``.
+
+    Disons qu’une ``rotation(x, y)`` a un cout de y-x. Par exemple passer de ``HAMBURGER`` à ``HAMBEGRUR`` coût *8-4 = 4*.
+
+    La question est de savoir quel est le coût minimum pour atteindre une string B à partir A?
+
+    Vous devez donc inmplémenter la méthode  une fonction ``public static int minimalCost(String A, String B)`` qui retourne le cout minimal pour atteindre le String B depuis A en utilisant l'opération rotation.
+
+    .. code-block:: java
+
+        import java.util.*;
+
+        public  class WordTransformationSP {
+            /**
+             *
+             * Rotate the substring between start and end of a given string s
+             * eg. s = HAMBURGER, rotation(s,4,8) = HAMBEGRUR i.e. HAMB + EGRU + R
+             * @param s
+             * @param start
+             * @param end
+             * @return rotated string
+             */
+            public static String rotation(String s, int start, int end) {
+                return s.substring(0,start)+new StringBuilder(s.substring(start,end)).reverse().toString()+s.substring(end);
+            }
+
+            /**
+             * Compute the minimal cost from string "from" to string "to" representing the shortest path
+             * @param from
+             * @param to
+             * @return
+             */
+            public static int minimalCost(String from, String to) {
+                //TODO
+                return 0;
+            }
+        }
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part6DijkstraForWordTransformation/LSINF1121_PART6_WordTransformation.zip>`_.
+
+    **Note:** vous pouvez ajouter d'autres fonctions et des private classes si vous le désirez.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    time: '300'
+    memory: '2500'
+name: PART 6 - Word Transformation Shortest Path (implem)
+network_grading: false
+order: 31
+problems:
+    implem:
+        default: ''
+        name: Code
+        language: java
+        header: |
+            Coller tout le contenu de votre classe ``WordTransformationSP`` ici :
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

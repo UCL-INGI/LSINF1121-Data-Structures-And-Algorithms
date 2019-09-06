@@ -1,0 +1,65 @@
+accessible: true
+author: ''
+context: |
+    Implémentez un algorithme qui reçoit en entrée un tableau d'entiers et qui trouve deux valeurs issues de tableau dont la somme se rapproche le plus d'une valeur entière donnée :math:`x`. Soiet :math:`(a,b)` les deux valeurs trouvées, celles-ci doivent donc minimiser :math:`|x-(a+b)|`.
+    Les deux valeurs peuvent correspondre à la même entrée du tableau.
+
+    Par exemple pour le tableau suivant
+
+    .. code-block:: java
+
+        int [] input = new int [] {5,10,1,75,150,151,155,18,75,50,30};
+
+
+    * x=20, il faut retourner [10,10].
+    * x=153, il faut retrouner [1,151]
+    * x=13, il faut retrouner [1,10]
+    * x=140 il faut retourner [75,75]
+    * x=170 il faut retourner [18,151]
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/closestpair/project.zip>`_.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: 'Mid-Term Quizz: Closest Pair'
+network_grading: false
+order: 1
+problems:
+    code1:
+        header: |-
+            .. code-block:: java
+
+                public class ClosestPair {
+
+                    /**
+                     *
+                     * @param input a non empty array
+                     * @return an array containing two values a,b
+                               in the input array (possibly the same value)
+                     *         such that |x-(a+b)| is minimum
+                     *
+                     */
+                    public static int[] closestPair(int [] input, int x) {
+                        return new int []{input[0],input[0]};
+                    }
+
+                }
+
+
+            Copiez le contenu de la classe ClostestPair ci-dessus et complétez celle-ci
+            afin que la méthode closestPair s'exécute correctement en maximum O(n.log(n))
+            où n est la taille du tableau en entrée.
+        name: ''
+        type: code
+        default: ''
+        language: java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

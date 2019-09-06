@@ -1,0 +1,55 @@
+accessible: 2018-10-29 17:00:00/2019-10-29 17:00:00
+author: Simon Teugels
+context: |
+    Il vous est demandé d'écrire des tests unitaire (en utilisant JUnit) afin de vérifier si une implémentation particulière d'un ``Red-Black Tree`` est correcte.
+
+    Voici un modèle simple que vous pouvez utiliser pour écrire vos tests :
+
+
+     .. code-block:: java
+
+        import org.junit.Test;
+        import static org.junit.Assert.assertEquals;
+
+        public class RedBlackTests {
+
+            @Test
+            public void firstTest() {
+                // ... TODO ...
+            }
+
+            @Test
+            public void secondTest() {
+                // ... TODO ...
+            }
+
+        }
+
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/PART3WriteUnittestsRedBlackTree/LSINF1121_PART3_UnitTestsRedBlackTree.zip>`_.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '512'
+    output: '100'
+    time: '60'
+name: PART 3 - Write Unit tests Red Black Tree
+network_grading: false
+order: 11
+problems:
+    RedBlack_tests:
+        header: |-
+            Téléchargez votre fichier ici, avec une seule classe nommée *RedBlackTests*. Vous pouvez supposer que la classe représentant le ``Red-Black Tree`` sous test s'appelle *MyRedBlack*.
+
+            **Note:** : Vous ne devriez **pas** mettre votre classe dans un package java. En d'autres termes, vous ne devriez **pas** utiliser le mot-clé ``package``.
+        allowed_exts:
+        - .java
+        name: Tests unitaires pour l'implémentation d'un Red-Black Tree
+        type: file
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

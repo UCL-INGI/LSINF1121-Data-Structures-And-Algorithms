@@ -1,0 +1,88 @@
+accessible: 2018-10-08 17:00:00/2019-10-08 17:00:00/2019-10-08 17:00:00
+author: ''
+categories: []
+context: |-
+    Etant donné un tableau d'intervalles (fermés), Il vous est demandé d'implémenter l'opération ``union``. Cette opération retournera le tableau minimal d'intervalles triés couvrant exactement l'union des points couverts par les intervalles d'entrée.
+
+    Par exemple, l'union des intervalles *[7,9],[5,8],[2,4]* est *[2,4],[5,9]*.
+
+    La classe ``Interval`` permetant de stocker les intervalles vous est fourni et se présente comme suit (vous pouvez l'utiliser directement dans votre code):
+
+
+    .. code-block:: java
+
+        public class Interval implements Comparable<Interval> {
+
+            final int min, max;
+            public Interval(int min, int max) {
+                assert(min <= max);
+                this.min = min;
+                this.max = max;
+            }
+
+            @Override
+            public boolean equals(Object obj) {
+                return ((Interval) obj).min == min && ((Interval) obj).max == max;
+            }
+
+            @Override
+            public String toString() {
+                return "["+min+","+max+"]";
+            }
+
+            @Override
+            public int compareTo(Interval o) {
+                if (min < o.min) return -1;
+                else if (min == o.min) return max - o.max;
+                else return 1;
+            }
+        }
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part2UnionIntervals/LSINF1121_PART2_UnionIntervals.zip>`_.
+
+    Nous vous conseillons de le télécharger d'implémenter/tester avant de soumettre ce qui vous est demandé.
+environment: java7
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+limits:
+    hard_time: '40'
+    time: '20'
+    output: '2'
+    memory: '400'
+name: PART 2 - Union Intervals (implem)
+network_grading: false
+order: 6
+problems:
+    union:
+        header: |
+            Quelle est l'union de [10,10],[2,4],[3,4],[5,6],[6,9],[6,8]?
+            Exprimez votre réponse en utilisant les notations *[a,b],[c,d],...,[e,f]* avec a,b,c,d,e,f entiers.
+        type: match
+        name: Warm-up
+        answer: '[2,4],[5,9],[10,10]'
+    implementation:
+        type: code
+        language: java
+        name: Implementation
+        default: ''
+        header: |-
+            Implémentez complètement la classe Union dans la zone de texte.
+            N'hésitez pas à utiliser n'importe quelle méthode/classe de l'API Java.
+            Complexité temporelle attendue : ``O(nlog(n))``, où *n* est le nombre d'intervalles d'entrée.
+
+            .. code-block:: java
+
+                public class Union {
+
+                    public static Interval [] union(Interval [] intervals) {
+                        // TODO
+                        return new Interval[]{};
+                    }
+                }
+stored_submissions: 0
+submission_limit:
+    amount: 30
+    period: -1
+weight: 1.0

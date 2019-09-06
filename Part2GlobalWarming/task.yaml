@@ -1,0 +1,144 @@
+accessible: 2018-10-08 17:00:00/2019-10-08 17:00:00
+author: Pierre Schaus, John Aoga
+context: |+
+    Context
+    ==================================================
+
+    Supposons la matrice 5x5 suivante :
+
+    .. code-block:: java
+
+        int [][] tab = new int[][] {{1,3,3,1,3},
+                                  {4,2,2,4,5},
+                                  {4,4,1,4,2},
+                                  {1,4,2,3,6},
+                                  {1,1,1,6,3}};
+
+    représentée dans le tableau ci-dessous :
+
+    .. image:: Part2GlobalWarming/matrix.png
+                    :width: 200px
+                    :align: center
+                    :alt: matrix example
+
+
+    Chaque entrée de la matrice représente une altitude.
+    L'objectif est d'implémenter une classe ``GlobalWarmingImpl`` qui étend la méthode `GlobalWarming` décrite ci-dessous.
+
+    Compte tenu d'un niveau d'eau global, toutes les positions de la matrice ayant une valeur *<=* au niveau d'eau sont inondées et donc peu sûres. Donc, en supposant que le niveau d'eau est de *3*, tous les points sûrs sont en vert (dans la représentation ci-dessus).
+
+    La méthode que vous devez implémentez est ``nbSafePoints``
+
+    * le calcul du nombre de points de sécurité pour un niveau d'eau donné
+
+
+    .. code-block:: java
+
+
+       import java.util.List;
+
+       abstract class GlobalWarming {
+
+
+           final int[][] altitude;
+
+           /**
+            * @param altitude is a n x n matrix of int values representing altitudes (positive or negative)
+            */
+           public GlobalWarming(int[][] altitude) {
+               this.altitude = altitude;
+           }
+
+           /**
+            *
+            * @param waterLevel
+            * @return the number of entries in altitude matrix that would be above
+            *         the specified waterLevel.
+            *         Warning: this is not the waterLevel given in the constructor/
+            */
+           public abstract int nbSafePoints(int waterLevel);
+
+       }
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part2GlobalWarming/LSINF1121_PART2_GlobalWarming.zip>`_.
+
+    Exercices préliminaires
+    ==================================================
+
+
+    .. code-block:: java
+
+        int [][] tab = new int[][] {{1,3,3,1,3},
+                                  {4,2,2,4,5},
+                                  {4,4,1,4,2},
+                                  {1,4,2,3,6},
+                                  {1,1,1,6,3}};
+        GlobalWarming gw = new MyGlobalWarming(tab);
+
+
+
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '100'
+    time: '5000'
+    memory: '750'
+name: PART 2 - Global Warming (implem)
+network_grading: false
+order: 10
+problems:
+    nbSafePoints:
+        answer: '14'
+        header: |-
+            Quel serait le résultat de:
+
+            .. code-block:: java
+
+                gw.nbSafePoints(2)
+
+
+            attendu : un nombre
+        name: Vérifiez votre compréhension
+        type: match
+    implementation:
+        language: java
+        header: |+
+            Copier-coller et compléter le code ci-dessous.
+            Faites attention à la complexité temporelle prévue de chaque méthode.
+            Pour répondre à cette complexité temporelle, il faut déjà faire quelques pré-calculs dans le constructeur. N'hésitez pas à créer des classes internes dans GlobalWarmingImpl pour faciliter votre implémentation.
+            N'hésitez pas à utiliser n'importe quelle méthode ou structure de données disponible dans le langage Java et l'API.
+
+            .. code-block:: java
+
+               import java.util.*;
+
+               public class GlobalWarmingImpl extends GlobalWarming {
+
+                   public GlobalWarmingImpl(int[][] altitude) {
+                       super(altitude);
+                       // expected pre-processing time in the constructror : O(n^2 log(n^2))
+                       // TODO
+                   }
+
+
+                   public int nbSafePoints(int waterLevel) {
+                       // TODO
+                       // expected time complexity O(log(n^2))
+                       return 0;
+                   }
+
+               }
+
+
+
+
+        default: ''
+        name: 'Implémentation de GlobalWarmingImpl '
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

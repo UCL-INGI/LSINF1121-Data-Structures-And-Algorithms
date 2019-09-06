@@ -1,0 +1,102 @@
+accessible: 2018-11-12 17:00:00/2019-11-12 17:00:00
+author: ''
+context: |-
+    On s'intéresse à l'algorithme de Rabin-Karp. On voudrait le modifier quelque peu pour déterminer si un mot parmi une liste (tous les mots sont de même longueur) est présent dans le texte.
+
+    Pour cela, vous devez modifier l'algorithme de Rabin-Karp qui se trouve ci-dessous (Page 777 du livre).
+
+
+
+
+
+
+
+    Plus précisément, on vous demande de modifier cette classe de manière à avoir un constructeur de la forme:
+
+    .. code-block:: java
+
+     public RabinKarp(String[] pat)
+
+
+    De plus la fonction ``search`` doit retourner l'indice du début du premier mot (parmi le tableau ``pat``) trouvé dans le texte ou la taille du texte si aucun mot n'aparait dans le texte.
+
+    Exemple:
+    Si txt = “Here find interresting exercise for Rabin Karp” et pat={“have”, “find”, “Karp”} la fonction ``search`` doit renvoyer 5 car le mot "find" présent dans le texte et dans la liste commence à l'indice 5.
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part4RabinKarp/LSINF1121_PART4_RabinKarp.zip>`_.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: PART 4 - Rabin Karp of k patterns (implem)
+network_grading: false
+order: 20
+problems:
+    RabinKarp:
+        type: code
+        language: ''
+        header: |-
+            Mettez votre implémentation complète de ``RabinKarp.java`` ci-dessous.
+
+            .. code-block:: java
+
+                public class RabinKarp
+                {
+                    private String pat; // pattern (only needed for Las Vegas)
+                    private long patHash; // pattern hash value
+                    private int M; // pattern length
+                    private long Q; // a large prime
+                    private int R = 2048; // alphabet size
+                    private long RM; // R^(M-1) % Q
+
+                    public RabinKarp(String pat)
+                    {
+                        this.pat = pat; // save pattern (only needed for Las Vegas)
+                        this.M = pat.length();
+                        Q = 4463;
+                        RM = 1;
+                        for (int i = 1; i <= M-1; i++) // Compute R^(M-1) % Q for use
+                            RM = (R * RM) % Q; // in removing leading digit.
+                        patHash = hash(pat, M);
+                    }
+
+
+                    public boolean check(int i) // Monte Carlo (See text.)
+                    { return true; } // For Las Vegas, check pat vs txt(i..i-M+1).
+
+                    private long hash(String key, int M)
+                    { // Compute hash for key[0..M-1].
+                        long h = 0;
+                        for (int j = 0; j < M; j++)
+                            h = (R * h + key.charAt(j)) % Q;
+                        return h;
+                    }
+
+
+                    public int search(String txt)
+                    { // Search for hash match in text.
+                        int N = txt.length();
+                        long txtHash = hash(txt, M);
+                        if (patHash == txtHash) return 0; // Match at beginning.
+                        for (int i = M; i < N; i++)
+                        { // Remove leading digit, add trailing digit, check for match.
+                            txtHash = (txtHash + Q - RM*txt.charAt(i-M) % Q) % Q;
+                            txtHash = (txtHash*R + txt.charAt(i)) % Q;
+                            if (patHash == txtHash)
+                                if (check(i - M + 1)) return i - M + 1; // match
+
+                        }
+                        return N; // no match found
+                    }
+                }
+        name: Implémentation de Rabin-Karp pour une liste de mot
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

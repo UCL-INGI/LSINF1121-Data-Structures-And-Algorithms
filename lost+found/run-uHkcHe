@@ -1,0 +1,26 @@
+#! /bin/bash
+
+###################################
+# Test configuration
+###################################
+
+tot=9 # number of tests
+problemId="stack_tests"
+name="MyStack"
+testName="StackTests"
+interfaceName="Stack"
+buggyName="MyBuggyStack"
+buggyFeedbacks=(
+	"Failed empty() test"
+	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
+	"Some implementations of a stack could fail after a certain number of operations, specially power of two"
+	"Unit tests should also check if the implementation behaves correctly when it isn't used properly"
+	"Not only the return values of methods, but also their effects should be tested"
+	"Failed push() test"
+	"Not only the effects of methods, but also their return values should be tested"
+	"The order in which the Stack ADT puts & pops elements is specific"
+)
+countBeforeHints=3
+
+. ./execute_test
+execute_test "$tot" "$problemId" "$testName" "$interfaceName" "$name" "$buggyName" "buggyFeedbacks" $countBeforeHints

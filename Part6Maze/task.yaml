@@ -1,0 +1,84 @@
+accessible: 2018-12-10 17:00:00/2019-12-10 17:00:00/2019-12-10 17:00:00
+author: John Aoga
+categories: []
+context: |-
+    Nous sommes intéressés par la résolution de labyrinthe (labyrinthe) représenté par une matrice d'entiers 0-1 de taille `nxm`. Cette matrice est un tableau à deux dimensions. Une entrée égale à '1' signifie qu'il y a un mur et que cette position n'est donc pas accessible, tandis que '0' signifie que la position est libre.
+
+    Nous vous demandons d'écrire un code Java pour découvrir le chemin le plus court entre deux coordonnées sur cette matrice de (x1, y1) à (x2, y2).
+
+    Les déplacements ne peuvent être que verticaux ou horizontaux (pas en diagonale), un pas à la fois.
+
+    Le résultat du chemin est un ``Iterable`` de coordonnées de l'origine à la destination. Ces coordonnées sont représentées par des entiers compris entre 0 et `n * m-1`, où un entier 'a' représente la position `x =a/m` et `y=a%m`.
+
+    Si la position de début ou de fin est un mur ou s’il n’ya pas de chemin, il faut renvoyer un ``Iterable`` vide. Il en va de même s'il n'y a pas de chemin entre l'origine et la destination.
+
+    .. code-block:: java
+
+        import java.util.LinkedList;
+
+        public class Maze {
+            public static Iterable<Integer> shortestPath(int [][] maze,  int x1, int y1, int x2, int y2) {
+                //TODO
+                return new LinkedList<>();
+            }
+
+            public static int ind(int x,int y, int lg) {return x*lg + y;}
+
+            public static int row(int pos, int mCols) { return pos / mCols; }
+
+            public static int col(int pos, int mCols) { return pos % mCols; }
+        }
+
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part6Maze/LSINF1121_PART6_Maze.zip>`_.
+environment: java8scala
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: 'PART 6 : Maze (implem)'
+network_grading: false
+order: 32
+problems:
+    prelim:
+        type: code_single_line
+        header: |-
+            Etant donné un labyrinthe de taille `7x7`
+
+            .. code-block:: java
+
+                public int [][] maze = new int[][] {
+                        //  --y-->
+                        {0,0,0,0,0,0,0}, // |
+                        {1,1,0,0,0,0,0}, // x
+                        {0,0,0,0,0,1,0}, // |
+                        {0,1,1,1,1,1,1}, // V
+                        {0,0,0,0,1,0,0},
+                        {1,1,0,0,1,0,0},
+                        {0,0,0,0,1,0,0}
+                };
+
+            Quel est le chemin le plus court entre la position-origine `(x1 = 0, y1 = 1)` et la position-destination `(x2 = 2, y2 = 1)`?
+            La réponse est une liste de numéros séparés par des virgules, de l'origine à la destination. Une position (x, y) est représentée par ``x * numColumns + y``.
+
+            **Exemple de résultat:** par exemple pour le chemin allant de `(x1 = 4, y1 = 1)` à `(x2 = 5, y2 = 2)` on note: ``29,30,37``
+        default: ''
+        name: Question préliminaire
+    implem:
+        default: ''
+        type: code
+        name: Implementation
+        header: |
+            Ne changez pas la signature des méthodes existances. Cependant, n'hésitez pas à ajouter d'autres méthodes et à utiliser n'importe quelle collection de l'API Java.
+
+            Coller tout le contenu de votre classe ``Maze`` ici :
+        language: java
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

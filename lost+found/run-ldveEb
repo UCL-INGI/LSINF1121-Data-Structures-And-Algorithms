@@ -1,0 +1,43 @@
+#! /bin/bash
+getinput kruskal > student/Kruskal.java
+
+# Compile the student code and parse it properly
+compilationMessage=$(javac student/Kruskal.java 2>&1)
+compilationMessage=$(echo "$compilationMessage" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+compilationMessage=$(printf "Compilation failed :\n::\n\n $compilationMessage")
+if [ ! -f student/Kruskal.class ]; then
+    feedback --result failed --feedback "$compilationMessage"
+    exit 0
+fi
+
+# Copy everything in the 'student' directory for run_student
+cp KruskalTests.java student/KruskalTests.java
+cp *.txt ./student
+cd student
+javac KruskalTests.java
+output=$(run_student java KruskalTests)
+r=$?
+cd ..
+
+if [ "$r" = "252" ]; then
+	feedback --result failed --feedback "Command was killed due to an out-of-memory"
+elif [ "$r" = "253" ]; then
+	feedback --result timeout --feedback "Command timed out"
+elif [ "$r" = "254" ]; then
+    feedback --result failed --feedback "Unfortunately, a runtime error occured"
+else
+	failed=$(echo "$output" | grep -c "KO")
+	passed=$(echo "$output" | grep -c "OK")
+
+	if [ "$failed" = "0" ] && [ "$passed" = "0" ]; then
+    	feedback --result failed --feedback "It seems like an internal error occured. If this persists, please contact your course administrator. "
+	elif [ "$failed" = "0" ] && [ "$passed" != "0" ]; then
+        FEED=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+        FEED=$(printf "Congratulations, you passed the $passed tests! \n::\n\n $FEED")
+		feedback --result success --feedback "$FEED"
+	else
+    	FEED=$(echo "$output" | sed -e 's/^/\t/' | sed -e 's/%/%%%/g')
+        FEED=$(printf "Unfortunately, you failed some tests : \n::\n\n $FEED")
+		feedback --result failed --feedback "$FEED"
+	fi
+fi

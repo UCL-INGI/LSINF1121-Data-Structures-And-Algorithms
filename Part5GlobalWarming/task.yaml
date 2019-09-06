@@ -1,0 +1,204 @@
+accessible: 2018-11-26 17:00:00/2019-11-26 17:00:00
+author: ''
+context: |+
+    Context
+    ==================================================
+
+    Supposons la matrice 5x5 suivante:
+
+    .. code-block:: java
+
+        int [][] tab = new int[][] {{1,3,3,1,3},
+                                  {4,2,2,4,5},
+                                  {4,4,1,4,2},
+                                  {1,4,2,3,6},
+                                  {1,1,1,6,3}};
+
+    représentée dans le tableau ci-dessous :
+
+    .. image:: Part5GlobalWarming/matrix.png
+                    :width: 200px
+                    :align: center
+                    :alt: matrix example
+
+    Chaque entrée de la matrice représente une altitude.
+    L'objectif est d'implémenter une classe `GlobalWarmingImpl` qui implémente toutes les méthodes décrites dans `GlobalWarming` données ci-dessous.
+
+    Un niveau d'eau global spécifié dans le constructeur modélise le fait que toutes les positions de la matrice avec une valeur <= le niveau d'eau sont inondées (sous l'eau) et donc dangereuses.
+    Dans l'exemple ci-dessus, le niveau d'eau est de 3, tous les points sûrs sont en vert.
+
+    Les méthodes que vous devez implémenter sont les suivantes
+
+    * le nombre d'îles
+    * un test pour vérifier si deux positions sont sur la même île
+
+    nous supposons que les points sont **uniquement connectés verticalement ou horizontalement**.
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part5GlobalWarming/LSINF1121_PART5_GlobalWarming.zip>`_.
+
+
+    .. code-block:: java
+
+
+       import java.util.List;
+
+       abstract class GlobalWarming {
+
+           /**
+            * A class to represent the coordinates on the altitude matrix
+            */
+           public static class Point {
+
+               final int x, y;
+
+               Point(int x, int y) {
+                   this.x = x;
+                   this.y = y;
+               }
+
+               @Override
+               public boolean equals(Object obj) {
+                   Point p = (Point) obj;
+                   return p.x == x && p.y == y;
+               }
+           }
+
+           final int[][] altitude;
+           final int waterLevel;
+
+
+           /**
+            * In the following, we assume that the points are connected to
+            * horizontal or vertical neighbors but not to the diagonal ones
+            * @param altitude is a n x n matrix of int values representing altitudes (positive or negative)
+            * @param waterLevel is the water level, every entry <= waterLevel is flooded
+            */
+           public GlobalWarming(int[][] altitude, int waterLevel) {
+               this.altitude = altitude;
+               this.waterLevel = waterLevel;
+           }
+
+
+           /**
+            * An island is a connected components of safe points wrt to waterLevel
+            * @return the number of islands
+            */
+           public abstract int nbIslands();
+
+           /**
+            *
+            * @param p1 a point with valid coordinates on altitude matrix
+            * @param p2 a point with valid coordinates on altitude matrix
+            * @return true if p1 and p2 are on the same island, that is both p1 and p2 are safe wrt waterLevel
+            *        and there exists a path (vertical/horizontal moves) from p1 to p2 using only safe positions
+            */
+           public abstract boolean onSameIsland(Point p1, Point p2);
+
+
+       }
+
+
+    Preliminary exercises
+    ==================================================
+
+
+    .. code-block:: java
+
+        int [][] tab = new int[][] {{1,3,3,1,3},
+                                  {4,2,2,4,5},
+                                  {4,4,1,4,2},
+                                  {1,4,2,3,6},
+                                  {1,1,1,6,3}};
+        GlobalWarming gw = new MyGlobalWarming(tab,3);
+
+    .. image:: Part5GlobalWarming/matrix.png
+                    :width: 200px
+                    :align: center
+                    :alt: matrix example
+
+
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    hard_time: '120'
+    memory: '750'
+    output: '100'
+name: PART 5 - Global Warming (implem)
+network_grading: false
+order: 24
+problems:
+    nbIslands:
+        name: nbIslands
+        type: match
+        answer: '4'
+        header: |-
+            Quel serait le résultat de
+
+            .. code-block:: java
+
+                gw.nbIslands()
+
+
+            attendu : un nombre
+    onSameIsland:
+        type: match
+        answer: 'false'
+        name: onSameIsland
+        header: |-
+            Quel serait le résultat de
+
+            .. code-block:: java
+
+                gw.onSameIsland(new GlobalWarming.Point(1,3),new GlobalWarming.Point(3,4));
+
+            attendu: true/false
+    implementation:
+        language: java
+        type: code
+        header: |+
+            Copier-coller et compléter le code ci-dessous.
+            Faites attention à la complexité temporelle prévue de chaque méthode.
+            Pour répondre à cette complexité temporelle, il faut déjà faire quelques pré-calculs dans le constructeur. N'hésitez pas à créer des classes internes dans GlobalWarmingImpl pour faciliter votre implémentation.
+            N'hésitez pas à utiliser n'importe quelle méthode ou structure de données disponible dans le langage Java et l'API.
+
+
+            .. code-block:: java
+
+               import java.util.*;
+
+               public class GlobalWarmingImpl extends GlobalWarming {
+
+                   public GlobalWarmingImpl(int[][] altitude, int waterLevel) {
+                       super(altitude,waterLevel);
+                       // expected pre-processing time in the constructror : O(n^2 log(n^2))
+                       // TODO
+                   }
+
+                   public int nbIslands() {
+                       // TODO
+                       // expected time complexity O(1)
+                       return 0;
+                   }
+
+
+                   public boolean onSameIsland(Point p1, Point p2) {
+                       // TODO
+                       // expected time complexity O(1)
+                       return true;
+                   }
+
+               }
+
+
+
+
+        name: Remplissez la classe de manière à ce qu'elle corresponde à sa spécification.
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

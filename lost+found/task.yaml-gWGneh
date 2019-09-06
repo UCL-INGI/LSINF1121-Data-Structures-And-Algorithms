@@ -1,0 +1,120 @@
+accessible: 2018-11-26 17:00:00/2019-11-26 17:00:00
+author: ''
+context: |-
+    Dans cette tâche on vous propose d'implémenter la fonction d'insertion ``push()`` d'un heap binaire.
+
+        La fonction push agit sur un tableau, nommé ``contenu``, qui représente un arbre, selon la méthode vue au cours:
+        le noeud n°i de l'arbre a pour enfant les indices 2*i et 2*i+1.
+
+    il faut noter que dans le livre à la page 318 a été proposée le ``MaxPQ`` mais ici nous vous proposons de plutot réfléchir aux changements à apporter à ce code pour implémenter un ``MinPQ`` notamment à la fonction d'insertion.
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/PART5BinaryHeapPush/LSINF1121_PART5_BinaryHeapPush.zip>`_.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    output: '2'
+    memory: '100'
+name: PART 5 - Binary Heap Push (implem)
+network_grading: false
+order: 25
+problems:
+    first:
+        name: 'Vérifiez votre compréhension '
+        answer: 0 1 2 3 8 10 6 5
+        type: match
+        header: |-
+            Soit ce code:
+
+                        .. code-block:: java
+
+                            Heap heap = new Heap(10);
+                            heap.push(5);
+                            heap.push(1);
+                            heap.push(2);
+                            heap.push(3);
+                            heap.push(8);
+                            heap.push(10);
+                            heap.push(6);
+                            heap.push(0);
+
+            En considérant que le Heap est un ``MinPQ`` Quel est le contenu du tableau `content` après ces opérations?
+            (indiquez uniquement les entrées utilisées du tableau, dans l'ordre, séparés par **UN espace, sans espace de fin**.)
+
+            **Note** *Cette sous-question n'attribue pas de points, mais permet à la question de l'implémentation d'être corrigée.*
+    second:
+        default: ''
+        language: java
+        name: Code
+        type: code
+        header: |-
+            .. code-block:: java
+
+
+                            /**
+                             * A binary heap where the content is placed in the array `content`.
+                             *
+                             * The array `content` represents a tree and is based on the methods we have seen in the course:
+                             * The ith node of the tree has indices 2*i and 2*i+1 as children.
+                             *
+                             * remarks:
+                             * - This heap uses a 1-indexing, ie. the first index in the array is 1 instead of 0 as usual. This could ease your computations.
+                             *   By this way, the index O of the array `content` must always stay empty.
+                             * - You can use the function increaseSize() to double the size of the array `content`, if needed.
+                             * - The expected complexity is O(log n) for the insertion in the heap.
+                             */
+                            public class Heap {
+                                protected int[] content;
+                                protected int size;
+
+                                public Heap(int initSize) {
+                                    size = 0;
+                                    content = new int[initSize];
+                                }
+
+                                /**
+                                 * Doubles the size of the inner storage array
+                                 */
+                                protected void increaseSize() {
+                                    int[] newContent = new int[content.length*2];
+                                    System.arraycopy(content, 0, newContent, 0, content.length);
+                                    content = newContent;
+                                }
+
+                                /**
+                                 * Add a new value to the heap.
+                                 * @param val value to add
+                                 */
+                                public void push(int val) {
+                                    //TODO
+                                    //operation on this.content.
+                                    //use increaseSize() if needed.
+                                }
+
+                                //You can add other functions if needed here
+
+                                /**
+                                 * Returns the content of the inner array
+                                 */
+                                public int[] getContent() {
+                                    return content;
+                                }
+
+                                public int getSize() {
+                                    return size;
+                                }
+                            }
+
+
+            Copiez toute la fonction ``push()`` ici (y compris public void push(int val) et les accolades) ainsi que toutes les autres méthodes éventuelles que vous aviez implémenté.
+
+            .. code-block:: java
+
+                            public void push(int val)
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

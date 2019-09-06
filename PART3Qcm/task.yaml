@@ -1,0 +1,87 @@
+accessible: 2018-10-29 17:00:00/2019-10-29 17:00:00
+author: Antoine Cailliau
+context: ''
+environment: mcq
+evaluate: last
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: PART 3 - QCM
+network_grading: false
+order: 12
+problems:
+    qcm02:
+        choices:
+        -   text: \\(O(\\log N)\\) et \\(O(N)\\)
+            valid: true
+        -   text: \\(O(\\log N)\\) et \\(O(\\frac{N^2}{2})\\)
+        -   text: \\(O(N)\\) et \\(O(N)\\)
+        -   text: \\(O(\\frac{N^2}{2})\\) et \\(O(N)\\)
+        -   text: \\(O(N^2)\\) et \\(O(N)\\)
+        type: multiple_choice
+        limit: 0
+        header: 'Dans le pire des cas, les opérations `get` et `put` dans `BinarySearchST`
+            (une recherche dichotomique dans un tableau ordonné) ont les complexités
+            suivantes :'
+        name: Complexité des opérations pour BinarySearchST
+    qcm03:
+        choices:
+        -   text: \\(O(\\frac{N}{2})\\)
+        -   valid: true
+            text: \\(O(\\log N)\\)
+        -   text: \\(O(1.39\\times \\log N)\\)
+        -   text: \\(O(\\frac{N^2}{2})\\)
+        -   text: \\(O(N\\times log N)\\)
+        header: Le coût, dans le pire cas, d’un `get` dans un arbre *red-black* est
+            de 
+        limit: 0
+        type: multiple_choice
+        name: Complexité des opérations de arbres Red-black
+    qcm04:
+        header: Quelle est la complexité pour énumérer en ordre croissant toutes les
+            clés d’un arbre binaire ?
+        type: multiple_choice
+        limit: 0
+        choices:
+        -   text: \\(O(N)\\)
+            valid: true
+        -   text: \\(O(\\log N)\\)
+        -   text: \\(O(N\\times \\log N)\\)
+        -   text: \\(O(N^2)\\)
+        name: Complexité des opérations de arbres binaires
+    qcm05:
+        choices:
+        -   text: Le *Selection Sort* n’est pas stable et est en-place.
+            valid: true
+        -   text: Le *Quick Sort* est stable et en-place.
+        -   valid: true
+            text: Le *Merge Sort* est stable et n’est pas en-place.
+        -   valid: true
+            text: Le *3-Way Quick Sort* n’est pas stable et est en place.
+        -   text: Le *Shell Sort* est stable et est en place.
+        limit: 0
+        name: Propriétés des algorithmes de tri
+        multiple: true
+        type: multiple_choice
+        header: Quelles affirmations suivantes sont exactes ?
+    qcm07:
+        choices:
+        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Qcm/a1.png'
+            valid: true
+        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Qcm/a2.png'
+        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Qcm/a3.png'
+        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Qcm/a4.png'
+        -   text: '.. image:: https://inginious.info.ucl.ac.be/course/LSINF1121-2016/PART3Qcm/a5.png'
+        header: Quel arbre red-black correspond à l’arbre construit à partir de la
+            séquence 3, 5, 4, 2, 1, 7, 8, 6 ?
+        type: multiple_choice
+        limit: 0
+        name: Algorithme de construction d'un arbre red-black
+stored_submissions: 1
+submission_limit:
+    amount: 5
+    period: -1
+weight: 1.0

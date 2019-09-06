@@ -1,0 +1,103 @@
+accessible: 2018-12-10 17:00:00/2019-12-10 17:00:00
+author: Pierre Schaus
+context: |-
+    Implémentez l'interface ``Digraph.java`` dans la classe ``DigraphImplem.java`` à l'aide d'une structure de donnée de type ``liste d'adjacence`` pour représenter les graphes dirigés.
+
+    .. code-block:: java
+
+       package student;
+
+       public interface Digraph {
+
+           /**
+            * The number of vertices
+            */
+           public int V();
+
+           /**
+            * The number of edges
+            */
+           public int E();
+
+           /**
+            * Add the edge v->w
+            */
+           public void addEdge(int v, int w);
+
+           /**
+            * The nodes adjacent to edge v
+            */
+           public Iterable<Integer> adj(int v);
+
+           /**
+            * A copy of the digraph with all edges reversed
+            */
+           public Digraph reverse();
+
+       }
+
+
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part6Digraph/LSINF1121_PART6_Digraph.zip>`_.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '15'
+    memory: '1000'
+    output: '2'
+name: PART 6 - Digraph (implem)
+network_grading: false
+order: 30
+problems:
+    implementation:
+        name: Implementation de Digraph.java
+        language: java
+        type: code
+        header: |-
+            .. code-block:: java
+
+               package student;
+
+               public class DigraphImplem implements Digraph {
+
+                   /**
+                    * @param V is the number of vertices
+                    */
+                   public DigraphImplem(int V) {
+                        // TODO
+                   }
+
+                   public int V() {
+                       // TODO
+                       return 0;
+                   }
+
+                   public int E() {
+                       // TODO
+                       return 0;
+                   }
+
+                   public void addEdge(int v, int w) {
+                       // TODO
+                   }
+
+                   public Iterable<Integer> adj(int v) {
+                       return null;
+                       // TODO
+                   }
+
+                   public Digraph reverse() {
+                       return null;
+                       // TODO
+                   }
+               }
+
+            Copier votre implementation complète de ``DigraphImplem.java`` ci-desssous en completant la classe. Vous pouvez changer tout ce que vous souhaitez dans la classe sauf le nom du package et les signature des méthodes.
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

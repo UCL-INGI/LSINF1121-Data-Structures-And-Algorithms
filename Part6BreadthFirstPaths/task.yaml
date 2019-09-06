@@ -1,0 +1,132 @@
+accessible: 2018-12-10 17:00:00/2019-12-10 17:00:00
+author: Frédéric Kaczynski, John Aoga
+context: |-
+    Considérez cette classe, ``BreadthFirstShortestPaths``, qui calcule le chemin le plus court entre plusieurs sources de nœuds et n'importe quel nœud dans un graphe non dirigé en utilisant un parcours BFS.
+
+    .. code-block:: java
+
+        // TODO
+
+        public class BreadthFirstShortestPaths {
+
+            private static final int INFINITY = Integer.MAX_VALUE;
+            private boolean[] marked; // marked[v] = is there an s-v path
+            private int[] distTo;     // distTo[v] = number of edges shortest s-v path
+
+            /**
+             * Computes the shortest path between any
+             * one of the sources and very other vertex
+             * @param G the graph
+             * @param sources the source vertices
+             */
+             public BreadthFirstShortestPaths(Graph G, Iterable<Integer> sources) {
+                 marked = new boolean[G.V()];
+                 distTo = new int[G.V()];
+                 for (int v = 0;v < G.V();v++) {
+                     distTo[v] = INFINITY;
+                 }
+                 bfs(G, sources);
+             }
+
+             // Breadth-first search from multiple sources
+             private void bfs(Graph G, Iterable<Integer> sources) {
+                 // TODO
+             }
+
+             /**
+              * Is there a path between (at least one of) the sources and vertex v?
+              * @param v the vertex
+              * @return true if there is a path, and false otherwise
+              */
+             public boolean hasPathTo(int v) {
+                 // TODO
+             }
+
+             /**
+              * Returns the number of edges in a shortest path
+              * between one of the sources and vertex v?
+              * @param v the vertex
+              * @return the number of edges in a shortest path
+              */
+             public int distTo(int v) {
+                 // TODO
+             }
+        }
+
+    La classe ``Graph`` est déjà implémentée et la voici :
+
+    .. code-block:: java
+
+        public class Graph {
+            // @return the number of vertices
+            public int V() { }
+
+            // @return the number of edges
+            public int E() { }
+
+            // Add edge v-w to this graph
+            public void addEdge(int v, int w) { }
+
+            // @return the vertices adjacent to v
+            public Iterable<Integer> adj(int v) { }
+
+            // @return a string representation
+            public String toString() { }
+        }
+
+    **Note:** Les questions suivantes vous demanderont d'implémenter tous les ``TODO`` de la classe ``BreadthFirstShortestPaths``. Vous n'avez pas besoin de mettre les accolades (``{ }``) entourant le corps de la fonction dans votre réponse.
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part6BreadthFirstPaths/LSINF1121_PART6_BreadthFirstShortestPaths.zip>`_.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '30'
+    memory: '100'
+    output: '2'
+name: PART 6  - Breadth First Paths (implem)
+network_grading: false
+order: 26
+problems:
+    import:
+        default: ''
+        language: java
+        header: |-
+            Vous pouvez l'utiliser pour importer des classes supplémentaires dont votre code peut avoir besoin.
+
+            **Note:** Ceci n'est demandé que pour que votre code puisse être compilé et testé. Pendant l'examen, vous n'aurez pas besoin de fournir cette information et vous pourrez utiliser des pseudo-classes comme ``Queue``.
+        name: Les importations
+        type: code
+    question1:
+        type: code
+        name: Implémentation de la méthode bfs
+        header: |-
+            .. code-block:: java
+
+                private void bfs(Graph G, Iterable<Integer> sources)
+        language: java
+        default: ''
+    question2:
+        default: ''
+        header: |-
+            .. code-block:: java
+
+                public boolean hasPathTo(int v)
+        type: code
+        name: Implémentation de la méthode hasPathTo
+        language: java
+    question3:
+        language: java
+        name: Implémentation de la méthode distTo
+        header: |-
+            .. code-block:: java
+
+                public int distTo(int v)
+        default: ''
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 0.0

@@ -1,0 +1,172 @@
+accessible: 2018-12-10 17:00:00/2019-12-10 17:00:00
+author: John Aoga
+context: |+
+    Context
+    ==================================================
+
+    Supposons la matrice 5x5 suivante:
+
+    .. code-block:: java
+
+        int [][] tab = new int[][] {{1,3,3,1,3},
+                                  {4,2,2,4,5},
+                                  {4,4,1,4,2},
+                                  {1,4,2,3,6},
+                                  {1,1,1,6,3}};
+
+    représentée dans le tableau ci-dessous :
+
+    .. image:: Part6GlobalWarming/matrix.png
+                    :width: 200px
+                    :align: center
+                    :alt: matrix example
+
+    Chaque entrée de la matrice représente une altitude.
+    L'objectif est d'implémenter une classe `GlobalWarmingImpl` qui implémente toutes les méthodes décrites dans `GlobalWarming` données ci-dessous.
+
+    Un niveau d'eau global spécifié dans le constructeur modélise le fait que toutes les positions de la matrice avec une valeur <= le niveau d'eau sont inondées (sous l'eau) et donc dangereuses.
+    Dans l'exemple ci-dessus, le niveau d'eau est de 3, tous les points sûrs sont en vert.
+
+    La méthode que vous devez implémenter doit permettre de calculer le chemin le plus court entre deux positions sont sur la même île
+
+    nous supposons que les points sont **uniquement connectés verticalement ou horizontalement**.
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/Part6GlobalWarming/LSINF1121_PART6_GlobalWarming.zip>`_.
+
+    .. code-block:: java
+
+
+       import java.util.List;
+
+       abstract class GlobalWarming {
+
+           /**
+            * A class to represent the coordinates on the altitude matrix
+            */
+           public static class Point {
+
+               final int x, y;
+
+               Point(int x, int y) {
+                   this.x = x;
+                   this.y = y;
+               }
+
+               @Override
+               public boolean equals(Object obj) {
+                   Point p = (Point) obj;
+                   return p.x == x && p.y == y;
+               }
+           }
+
+           final int[][] altitude;
+           final int waterLevel;
+
+
+           /**
+            * In the following, we assume that the points are connected to
+            * horizontal or vertical neighbors but not to the diagonal ones
+            * @param altitude is a n x n matrix of int values representing altitudes (positive or negative)
+            * @param waterLevel is the water level, every entry <= waterLevel is flooded
+            */
+           public GlobalWarming(int[][] altitude, int waterLevel) {
+               this.altitude = altitude;
+               this.waterLevel = waterLevel;
+           }
+
+
+           /**
+            *
+            * @param p1 a safe point with valid coordinates on altitude matrix
+            * @param p2 a safe point (different from p1) with valid coordinates on altitude matrix
+            * @return the shortest simple path (vertical/horizontal moves) if any between from p1 to p2 using only vertical/horizontal moves on safe points.
+            *         an empty list if not path exists (i.e. p1 and p2 are not on the same island).
+            */
+           public abstract List<Point> shortestPath(Point p1, Point p2);
+
+       }
+
+
+
+    Exercices Preliminaires
+    ==================================================
+
+
+    .. code-block:: java
+
+        int [][] tab = new int[][] {{1,3,3,1,3},
+                                  {4,2,2,4,5},
+                                  {4,4,1,4,2},
+                                  {1,4,2,3,6},
+                                  {1,1,1,6,3}};
+        GlobalWarming gw = new MyGlobalWarming(tab,3);
+
+    .. image:: Part6GlobalWarming/matrix.png
+                    :width: 200px
+                    :align: center
+                    :alt: matrix example
+
+
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '120'
+    memory: '750'
+    output: '100'
+name: PART 6 - Global Warming (implem)
+network_grading: false
+order: 29
+problems:
+    shortestPath:
+        answer: (1,0),(2,0),(2,1),(3,1)
+        name: shortestPath
+        type: match
+        header: |-
+            Quel résultat on obtiendra avec cet appel?
+
+            .. code-block:: java
+
+                gw.shortestPath(new GlobalWarming.Point(1,0),new GlobalWarming.Point(3,1));
+
+            *Format du résultat attendu:* une liste de positions séparées par des virgules comme suit: (1,0),(1,1),(2,1),(3,1)
+    implementation:
+        name: Fill in the class such that it corresponds to its specification.
+        language: java
+        type: code
+        header: |+
+            Copier-coller et compléter le code ci-dessous.
+            Faites attention à la complexité temporelle prévue de chaque méthode.
+            Pour répondre à cette complexité temporelle, il faut déjà faire quelques pré-calculs dans le constructeur. N'hésitez pas à créer des classes internes dans GlobalWarmingImpl pour faciliter votre implémentation.
+            N'hésitez pas à utiliser n'importe quelle méthode ou structure de données disponible dans le langage Java et l'API.
+
+            .. code-block:: java
+
+               import java.util.*;
+
+               public class GlobalWarmingImpl extends GlobalWarming {
+
+                   public GlobalWarmingImpl(int[][] altitude, int waterLevel) {
+                       super(altitude,waterLevel);
+                       // TODO
+                   }
+
+
+                   public List<Point> shortestPath(Point p1, Point p2) {
+                       // TODO
+                       // expected time complexity O(n^2)
+                       return new ArrayList<Point>();
+                   }
+
+               }
+
+
+
+
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
