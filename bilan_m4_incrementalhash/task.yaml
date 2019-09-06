@@ -1,7 +1,7 @@
 accessible: false
 author: Pierre Schaus
 context: |+
-    La fonction de Hash calculée sur le sous tableau :math:`t[from,...,from+M-1]` est calculée comme suit:
+    La fonction de Hash calculée sur le sous tableau t[from,...,from+M-1] est calculée comme suit:
 
     :math:`hash([from,...,from+M-1])= \left( \sum_{i=0}^{M-1} t[from+i] \cdot R^{(M-1-i)}\right)\%Q`
 
@@ -16,18 +16,17 @@ evaluate: best
 groups: false
 input_random: '0'
 limits:
-    time: '30'
     output: '2'
     memory: '100'
-name: '[old] Bilan M4 Incremental Hash (implem)'
+    time: '30'
+name: Bilan M4 - Incremental Hash
 network_grading: false
-order: 55
+order: 18
 problems:
     TODO1:
-        name: IncrementalHash.java
-        language: java
         default: ''
-        type: code
+        language: java
+        name: IncrementalHash.java
         header: |-
             Mettez votre implémentation complète de ``IncrementalHash.java`` ci-dessous. Conseil: copiez-collez d'abord tout le code source de la classe ci-dessous (celle-ci devrait compiler mais son contenu n'est pas correct). Voir le TODO ci-dessous. La réponse ne devrait pas prendre plus de deux lignes de code à ajouter.
 
@@ -88,8 +87,10 @@ problems:
                     return h;
                 }
                 }
+        type: code
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0

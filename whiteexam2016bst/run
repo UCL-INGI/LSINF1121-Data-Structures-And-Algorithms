@@ -1,0 +1,50 @@
+#! /bin/bash
+
+parsetemplate -o student/StudentAnswer.java StudentAnswer.java
+cp Main.java student/
+cp Node.java student/
+cd student
+javac Main.java Node.java StudentAnswer.java &> ../compile
+if [ $? -eq 0 ]; then
+	content=`run_student java Main`
+    retval=$?
+    if [ $retval -eq 252 ]; then
+        feedback-result overflow
+        feedback-grade 0
+    elif [ $retval -eq 253 ]; then
+        feedback-result timeout
+        feedback-grade 0
+    elif [ $retval -eq 0 ]; then
+    	if [ "$content" == "ok" ]; then
+            feedback-result success
+            feedback-grade 100
+            feedback-msg -m "Bravo, c'est l'algorithme optimal."
+        elif [ "$content" == "wrongDirection" ]; then
+            feedback-result failed
+            feedback-grade 40
+            feedback-msg -m "Votre algorithme fonctionne, mais n'est pas optimal. Essayez d'améliorer sa complexité."
+        elif [ "$content" == "exception" ]; then
+            feedback-result failed
+            feedback-grade 0
+            feedback-msg -m "Votre programme a lancé une exception."
+            echo $content | rst-code | feedback-msg -a
+        elif [ "$content" == "ko" ]; then
+            feedback-result failed
+            feedback-grade 0
+            feedback-msg -m "Vous ne renvoyez pas toujours la bonne valeur."
+        else
+            feedback-result crash
+            feedback-grade 0
+            feedback-msg -e -m "Une erreur inconnue s'est produite"
+        fi
+    else
+        feedback-result crash
+        feedback-grade 0
+        feedback-msg -e -m "Une erreur inconnue s'est produite"
+    fi
+else
+    feedback-result failed
+    feedback-grade 0
+    feedback-msg -e -m "Erreur à la compilation:\n\n"
+    cat ../compile | rst-code | feedback-msg -a
+fi

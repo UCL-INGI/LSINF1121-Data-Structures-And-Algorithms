@@ -1,0 +1,82 @@
+accessible: false
+author: Frédéric Kaczynski
+context: |-
+    Consider the (top-down) sorting algorithm ``Merge Sort``
+
+    .. code-block:: java
+
+        public class MergeSort {
+            /**
+             * Pre-conditions: a[lo..mid] and a[mid+1..hi] are sorted
+             * Post-conditions: a[lo..hi] is sorted
+             */
+            private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
+                for (int k = lo; k <= hi; k++) {
+                    aux[k] = a[k];
+                }
+
+                int i = lo;
+                int j = mid + 1;
+                for (int k = lo; k <= hi; k++) {
+                    if (i > mid) {
+                        a[k] = aux[j++];
+                    } else if (j > hi) {
+                        a[k] = aux[i++];
+                    } else if (aux[j].compareTo(aux[i]) < 0) {
+                        a[k] = aux[j++];
+                    } else {
+                        a[k] = aux[i++];
+                    }
+                }
+            }
+
+            // Mergesort a[lo..hi] using auxiliary array aux[lo..hi]
+            private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
+                // TODO
+            }
+
+            /**
+             * Rearranges the array in ascending order, using the natural order
+             */
+            public static void sort(Comparable[] a) {
+                // TODO
+            }
+        }
+
+    **Note:** The following questions will ask you to implement the function left out. You don't need to put the brackets (``{ }``) surrounding the function body in your answer.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    output: '2'
+    memory: '100'
+    time: '30'
+name: Bilan M2 - Merge Sort
+network_grading: false
+order: 8
+problems:
+    question1:
+        name: ''
+        header: |-
+            .. code-block:: java
+
+                private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi)
+        type: code
+        default: ''
+        language: java
+    question2:
+        name: ''
+        header: |-
+            .. code-block:: java
+
+                public static void sort(Comparable[] a)
+        language: java
+        type: code
+        default: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags: {}
+weight: 0.0

@@ -1,0 +1,44 @@
+accessible: false
+author: xgillard
+context: |
+    Etant donné une fonction de hachage :math:`h(\left[v_0 \cdots v_n \right]) = \sum_{i=0}^{n} v_i R^{(n-i-1)} \% M` dans laquelle :math:`\left[v_0 \cdots v_n \right]` dénote un vecteur de bit et :math:`R` et :math:`M` sont des facteurs constants.
+environment: python3
+evaluate: best
+groups: false
+limits:
+    memory: '100'
+    output: '2'
+    time: '30'
+name: Bilan Hashing
+network_grading: false
+problems:
+    nombre_pair:
+        type: multiple_choice
+        limit: 0
+        choices:
+        -   text: Uniquement les bits :math:`\left[v_0 \cdots v_{1023} \right]`
+        -   text: Tous les bits de la clé
+        -   text: Uniquement les bits :math:`\left[v_{n-1024} \cdots v_{n} \right]`
+        -   text: Uniquement les deux derniers bits
+            valid: true
+        header: Quelle portion de la clé est utilisée si on pose :math:`R=32` et `M=1024`
+            ?
+        name: Fraction de la clé utilisée (1)
+    mult_trois:
+        type: multiple_choice
+        choices:
+        -   text: Tous les bits de la clé
+        -   text: Uniquement les bits :math:`\left[v_0 \cdots v_{80} \right]`
+        -   text: Uniquement les bits :math:`\left[v_{n-81} \cdots v_{n} \right]`
+        -   valid: true
+            text: Uniquement les quatre derniers bits
+        limit: 0
+        header: Quelle portion de la clé est utilisée si on pose :math:`R=3` et `M=81`
+            ?
+        name: Fraction de la clé utilisée (2)
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
+order: 19

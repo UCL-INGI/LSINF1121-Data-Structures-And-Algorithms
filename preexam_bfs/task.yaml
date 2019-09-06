@@ -1,0 +1,131 @@
+accessible: false
+author: Frédéric Kaczynski
+context: |-
+    Consider this class, ``BreadthFirstShortestPaths``, that computes the shortest path between multiple node sources and any node in an undirected graph.
+
+    .. code-block:: java
+
+        // TODO
+
+        public class BreadthFirstShortestPaths {
+
+            private static final int INFINITY = Integer.MAX_VALUE;
+            private boolean[] marked; // marked[v] = is there an s-v path
+            private int[] distTo;     // distTo[v] = number of edges shortest s-v path
+
+            /**
+             * Computes the shortest path between any
+             * one of the sources and very other vertex
+             * @param G the graph
+             * @param sources the source vertices
+             */
+             public BreadthFirstShortestPaths(Graph G, Iterable<Integer> sources) {
+                 marked = new boolean[G.V()];
+                 distTo = new int[G.V()];
+                 for (int v = 0;v < G.V();v++) {
+                     distTo[v] = INFINITY;
+                 }
+                 bfs(G, sources);
+             }
+
+             // Breadth-first search from multiple sources
+             private void bfs(Graph G, Iterable<Integer> sources) {
+                 // TODO
+             }
+
+             /**
+              * Is there a path between (at least one of) the sources and vertex v?
+              * @param v the vertex
+              * @return true if there is a path, and false otherwise
+              */
+             public boolean hasPathTo(int v) {
+                 // TODO
+             }
+
+             /**
+              * Returns the number of edges in a shortest path
+              * between one of the sources and vertex v?
+              * @param v the vertex
+              * @return the number of edges in a shortest path
+              */
+             public int distTo(int v) {
+                 // TODO
+             }
+        }
+
+    The class ``Graph`` is already implemented. Here is its specification:
+
+    .. code-block:: java
+
+        public class Graph {
+            // @return the number of vertices
+            public int V() { }
+
+            // @return the number of edges
+            public int E() { }
+
+            // Add edge v-w to this graph
+            public void addEdge(int v, int w) { }
+
+            // @return the vertices adjacent to v
+            public Iterable<Integer> adj(int v) { }
+
+            // @return a string representation
+            public String toString() { }
+        }
+
+    **Note:** The following questions will ask you to implement the function left out. You don't need to put the brackets (``{ }``) surrounding the function body in your answer.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    memory: '100'
+    time: '30'
+    output: '2'
+name: Bilan M6 - Breadth First Paths
+network_grading: false
+order: 30
+problems:
+    import:
+        language: java
+        name: ''
+        default: ''
+        header: |-
+            You can use this to import additional classes your code may need.
+
+            **Note:** This is only asked so that your code can be compiled and tested. During the exam, you won't need to provide this and you will be able to use pseudo-classes like ``Queue``.
+        type: code
+    question1:
+        name: ''
+        header: |-
+            .. code-block:: java
+
+                private void bfs(Graph G, Iterable<Integer> sources)
+        type: code
+        default: ''
+        language: java
+    question2:
+        type: code
+        default: ''
+        name: ''
+        language: java
+        header: |-
+            .. code-block:: java
+
+                public boolean hasPathTo(int v)
+    question3:
+        language: java
+        type: code
+        default: ''
+        header: |-
+            .. code-block:: java
+
+                public int distTo(int v)
+        name: ''
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags: {}
+weight: 0.0

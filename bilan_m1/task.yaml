@@ -60,44 +60,45 @@ groups: false
 input_random: '0'
 limits:
     output: '2'
-    time: '300'
     memory: '1500'
-name: '[old] Bilan M1 - Circular LinkedList'
+    time: '300'
+name: Bilan M1 - Circular LinkedList
 network_grading: false
-order: 36
+order: 6
 problems:
     size:
         header: ''
-        default: ''
-        language: java
         name: size
+        language: java
+        default: ''
         type: code
     isEmpty:
-        language: java
         default: ''
-        name: isEmpty
+        header: ''
         type: code
-        header: ''
-    front:
         language: java
-        header: ''
+        name: isEmpty
+    front:
         type: code
         name: front
+        language: java
+        header: ''
         default: ''
     enqueue:
+        default: ''
+        header: ''
+        language: java
+        name: enqueue
+        type: code
+    dequeue:
         language: java
         type: code
         default: ''
-        header: ''
-        name: enqueue
-    dequeue:
-        type: code
         name: dequeue
         header: ''
-        language: java
-        default: ''
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0

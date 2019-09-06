@@ -1,6 +1,5 @@
-accessible: 2018-09-24 16:00:00/2019-09-24 16:00:00/2019-09-24 16:00:00
+accessible: 2018-09-24 16:00:00/2019-09-24 16:00:00
 author: Simon Hardy, Frédéric Kaczynski
-categories: []
 context: |+
     Rappelez-vous de l'interface Stack :
 
@@ -50,28 +49,28 @@ context: |+
 
 environment: java8scala
 evaluate: best
-file: ''
 groups: false
 input_random: '0'
 limits:
     time: '60'
-    output: '100'
     memory: '512'
+    output: '100'
 name: PART 1 - Write Unit tests Stack (Implem)
 network_grading: false
 order: 1
 problems:
     stack_tests:
+        type: file
+        allowed_exts:
+        - .java
         header: |-
             Téléchargez votre fichier ici, avec une seule classe nommée *StackTests*. Vous pouvez supposer que la classe représentant la stack sous test s'appelle *MyStack*, et que l'interface est disponible (nommée *Stack*) comme écrit dans le modèle.
 
             **Note:** : Vous ne devriez **pas** mettre votre classe dans un package java. En d'autres termes, vous ne devriez **pas** utiliser le mot-clé ``package``.
-        allowed_exts:
-        - .java
         name: Tests unitaires pour l'implémentation de stack
-        type: file
 stored_submissions: 0
 submission_limit:
     amount: -1
     period: -1
+tags: {}
 weight: 1.0

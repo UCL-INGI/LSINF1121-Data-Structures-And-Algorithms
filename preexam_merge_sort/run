@@ -1,0 +1,12 @@
+#!/bin/bash
+
+names=(
+    "MergeSort"
+)
+forbiddenClasses=(
+)
+
+parsetemplate --output "student/${names[0]}.java" "student/${names[0]}.java"
+
+. ./execute
+execute names forbiddenClasses

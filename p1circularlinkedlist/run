@@ -1,0 +1,35 @@
+#! /bin/python3
+# coding: utf-8
+
+from inginious import input
+from inginious import feedback
+import subprocess
+from inginious import rst
+import re
+
+
+input.parse_template("student/CircularLinkedList.java")
+
+compile_error = subprocess.call('javac -cp ".:libs/junit-4.12.jar:libs/hamcrest-core-1.3.jar:libs/JavaGrading-0.1.jar" tests/*.java student/CircularLinkedList.java 2>&1', shell=True, stdout=open('compiler.out', 'w'))
+
+if compile_error != 0:
+    codeblock = rst.get_codeblock("java", open('compiler.out').read())
+    feedback.set_global_feedback("Votre code ne compile pas: \n\n" + codeblock, True)
+    feedback.set_global_result("failed")
+    exit(0)
+    
+
+
+try:
+    out = subprocess.check_output('java -cp "libs/junit-4.12.jar:libs/hamcrest-core-1.3.jar:libs/JavaGrading-0.1.jar:." tests/RunTests', shell=True).decode('utf8')
+    
+    grade = re.findall(r"^TOTAL ([0-9\.]+)/([0-9\.]+)$", out, re.MULTILINE)[-1]
+    grade = 100.0*float(grade[0])/float(grade[1])
+    
+    feedback.set_grade(grade)
+    codeblock = rst.get_codeblock("java", out)
+    feedback.set_global_feedback("Résultat des tests: \n\n" + codeblock, True)
+    feedback.set_global_result("success")
+except Exception as e:
+    feedback.set_global_feedback("Une erreur s'est produite!!." + str(e), True)
+    feedback.set_global_result("failed")

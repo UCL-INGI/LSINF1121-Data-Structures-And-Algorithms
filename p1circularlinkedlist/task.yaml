@@ -1,0 +1,150 @@
+accessible: 2018-09-24 16:00:00/2019-09-24 16:00:00
+author: Pierre Schaus
+context: |-
+    On s’intéresse à l'implémentation d'une ``liste simplement chaînée circulaire``, c’est-à-dire une liste pour laquelle la dernière position de la liste fait référence, comme position suivante, à la première position de la liste.
+
+    .. image:: p1circularlinkedlist/CircularLinkedList.png
+
+    L’ajout d’un nouvel élément dans la file (méthode ``enqueue``) se fait en fin de liste et le retrait (méthode ``remove``) se fait a un `index` particulier de la liste. Une (seule) référence sur la fin de la liste (``last``) est nécessaire pour effectuer toutes les opérations sur cette file.
+
+    Il vous est donc demander d'implémenter cette liste simplement chaînée circulaire à partir de la classe ``CircularLinkedList.java`` où vous devez completer (*TODO STUDENT*) les méthodes d'ajout (``enqueue``) et de retrait (``remove``) ainsi qu'un itérateur (``ListIterator``) qui permet de parcourir la liste en FIFO.
+    *Attention:* un itérateur ne peut être modifié au cours de son utilisation.
+
+    .. code-block:: java
+
+       package student;
+
+       import java.util.ConcurrentModificationException;
+       import java.util.Iterator;
+       import java.util.NoSuchElementException;
+
+       public class CircularLinkedList<Item> implements Iterable<Item> {
+        private long nOp = 0; // count the number of operations
+        private int n;          // size of the stack
+        private Node  last;   // trailer of the list
+
+        // helper linked list class
+        private class Node {
+            private Item item;
+            private Node next;
+        }
+
+        public CircularLinkedList() {
+            last = null;
+            n = 0;
+        }
+
+        public boolean isEmpty() { return n == 0; }
+
+        public int size() { return n; }
+
+        private long nOp() { return nOp; }
+
+        /**
+         * Append an item at the end of the list
+         * @param item the item to append
+         */
+        public void enqueue(Item item) {
+            // TODO STUDENT: Implement add method
+        }
+
+        /**
+         * Removes the element at the specified position in this list.
+         * Shifts any subsequent elements to the left (subtracts one from their indices).
+         * Returns the element that was removed from the list.
+         */
+        public Item remove(int index) {
+            // TODO STUDENT: Implement remove method
+        }
+
+        /**
+         * Returns an iterator that iterates through the items in FIFO order.
+         * @return an iterator that iterates through the items in FIFO order.
+         */
+        public Iterator<Item> iterator() {
+            return new ListIterator();
+        }
+
+        /**
+         * Implementation of an iterator that iterates through the items in FIFO order.
+         *
+         */
+        private class ListIterator implements Iterator<Item> {
+            // TODO STUDDENT: Implement the ListIterator
+        }
+
+       }
+
+
+
+    `Le projet IntelliJ est disponible ici </course/LSINF1121-2016/p1circularlinkedlist/LSINF1121CircularLinkedList.zip>`_.
+environment: java8scala
+evaluate: best
+groups: false
+input_random: '0'
+limits:
+    time: '300'
+    memory: '1000'
+    output: '2'
+name: PART 1 -  Circular linkedlist (Implem)
+network_grading: false
+order: 3
+problems:
+    enqueue:
+        header: |-
+            .. code-block:: java
+
+                /**
+                 * Append an item at the end of the list
+                 * @param item the item to append
+                 */
+                public void enqueue(Item item) {
+                    // TODO STUDENT: Implement add method
+                }
+
+            Copier le contenu de la fonction ``public void enqueue(Item item)`` ci-desssous.
+        default: ''
+        type: code
+        name: 'Implementation de la fonction ajout: void enqueue(Item item)'
+        language: java
+    remove:
+        language: java
+        type: code
+        default: ''
+        header: |-
+            .. code-block:: java
+
+                /**
+                 * Removes the element at the specified position in this list.
+                 * Shifts any subsequent elements to the left (subtracts one from their indices).
+                 * Returns the element that was removed from the list.
+                 */
+                public Item remove(int index) {
+                    // TODO STUDENT: Implement remove method
+                }
+
+            Copier le contenu de la fonction ``public Item remove(int index)`` ci-desssous.
+        name: 'Implementation de la fonction ajout: Item remove(int index)'
+    listiterator:
+        name: 'Implementation de l''iterateur: ListIterator'
+        default: ''
+        type: code
+        language: java
+        header: |-
+            .. code-block:: java
+
+                /**
+                 * Implementation of an iterator that iterates through the items in FIFO order.
+                 *
+                 */
+                private class ListIterator implements Iterator<Item> {
+                    // TODO STUDDENT: Implement the ListIterator
+                }
+
+            Copier le contenu de la class ``private class ListIterator implements Iterator<Item>`` ci-desssous.
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+tags: {}
+weight: 1.0
